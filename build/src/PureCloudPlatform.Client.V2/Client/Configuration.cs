@@ -3,17 +3,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Security.Cryptography;
 using PureCloudPlatform.Client.V2.Extensions;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-using IniParser;
-using IniParser.Model;
-using IniParser.Exceptions;
 
 namespace PureCloudPlatform.Client.V2.Client
 {
@@ -38,34 +28,30 @@ namespace PureCloudPlatform.Client.V2.Client
         /// <param name="shouldRefreshAccessToken">ShouldRefreshAccessToken</param>
         /// <param name="refreshTokenWaitTime">Refresh token wait time in seconds</param>
         /// <param name="userAgent">HTTP user agent</param>
-        /// <param name="configFilePath">Config file path</param>
-        /// <param name="autoReloadConfig">AutoReloadConfig</param>
         /// <param name="useDefaultApiClient">Use Default ApiClient</param>
         public Configuration(ApiClient apiClient = null,
-                             Dictionary<String, String> defaultHeader = null,
+                             Dictionary<string, string> defaultHeader = null,
                              string username = null,
                              string password = null,
                              string accessToken = null,
-                             Dictionary<String, String> apiKey = null,
-                             Dictionary<String, String> apiKeyPrefix = null,
+                             Dictionary<string, string> apiKey = null,
+                             Dictionary<string, string> apiKeyPrefix = null,
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
                              bool shouldRefreshAccessToken = true,
                              int refreshTokenWaitTime = 10,
                              string userAgent = "PureCloud SDK/dotnet",
-                             string configFilePath = null,
-                             bool autoReloadConfig = true,
                              bool useDefaultApiClient = true
                             )
         {
             if (useDefaultApiClient == true)
             {
-                setApiClientUsingDefault(apiClient);
+                SetApiClientUsingDefault(apiClient);
             }
             else
             {
-                setApiClient(apiClient);
+                SetApiClient(apiClient);
             }
 
             Username = username;
@@ -88,29 +74,6 @@ namespace PureCloudPlatform.Client.V2.Client
             RefreshTokenWaitTime = refreshTokenWaitTime;
 
             Logger = new Logger();
-
-            if (String.IsNullOrEmpty(configFilePath))
-            {
-                string homePath = (Environment.OSVersion.Platform == PlatformID.Unix ||
-                                Environment.OSVersion.Platform == PlatformID.MacOSX)
-                    ? Environment.GetEnvironmentVariable("HOME")
-                    : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
-                ConfigFilePath = Path.Combine(homePath, ".genesysclouddotnet", "config");
-            }
-            else
-            {
-                ConfigFilePath = configFilePath;
-            }
-
-            AutoReloadConfig = autoReloadConfig;
-
-            if (AutoReloadConfig)
-            {
-                ThreadStart configCheckerRef = new ThreadStart(runConfigChecker);
-                Thread configCheckerThread = new Thread(configCheckerRef);
-                configCheckerThread.IsBackground = true;
-                configCheckerThread.Start();
-            }
         }
 
         /// <summary>
@@ -119,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Client
         /// <param name="apiClient">Api client.</param>
         public Configuration(ApiClient apiClient)
         {
-            setApiClientUsingDefault(apiClient);
+            SetApiClientUsingDefault(apiClient);
         }
 
         /// <summary>
@@ -133,11 +96,11 @@ namespace PureCloudPlatform.Client.V2.Client
         {
             if (setDefaultApiClient == true)
             {
-                setApiClientUsingDefault(apiClient);
+                SetApiClientUsingDefault(apiClient);
             }
             else
             {
-                setApiClient(apiClient);
+                SetApiClient(apiClient);
             }
 
             Timeout = 100000;
@@ -145,140 +108,6 @@ namespace PureCloudPlatform.Client.V2.Client
             RefreshTokenWaitTime = 10;
 
             Logger = new Logger();
-            
-            string homePath = (Environment.OSVersion.Platform == PlatformID.Unix ||
-                                Environment.OSVersion.Platform == PlatformID.MacOSX)
-                    ? Environment.GetEnvironmentVariable("HOME")
-                    : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
-            ConfigFilePath = Path.Combine(homePath, ".genesysclouddotnet", "config");
-            
-            AutoReloadConfig = false;
-        }
-
-        private void applyConfigFromFile()
-        {
-            ConfigurationParser parser = new ConfigurationParser(ConfigFilePath);
-            if (!parser.Read())
-                return;
-
-            // Logging
-            string logLevel = parser.GetString("logging", "log_level");
-            if (!String.IsNullOrEmpty(logLevel))
-                Logger.Level = Logger.LogLevelFromString(logLevel);
-
-            string logFormat = parser.GetString("logging", "log_format");
-            if (!String.IsNullOrEmpty(logFormat))
-                Logger.Format = Logger.LogFormatFromString(logFormat);
-
-            if (!String.IsNullOrEmpty(parser.GetString("logging", "log_to_console")))
-                Logger.LogToConsole = parser.GetBool("logging", "log_to_console");
-
-            string logFilePath = parser.GetString("logging", "log_file_path");
-            if (!String.IsNullOrEmpty(logFilePath))
-                Logger.LogFilePath = logFilePath;
-
-            if (!String.IsNullOrEmpty(parser.GetString("logging", "log_request_body")))
-                Logger.LogRequestBody = parser.GetBool("logging", "log_request_body");
-
-            if (!String.IsNullOrEmpty(parser.GetString("logging", "log_response_body")))
-                Logger.LogResponseBody = parser.GetBool("logging", "log_response_body");
-
-            // General
-            string host = parser.GetString("general", "host");
-            if (!String.IsNullOrEmpty(host))
-                ApiClient.setBasePath(host);
-
-            if (!String.IsNullOrEmpty(parser.GetString("general", "live_reload_config")))
-                AutoReloadConfig = parser.GetBool("general", "live_reload_config");
-
-            // Re-authentication
-            if (!String.IsNullOrEmpty(parser.GetString("reauthentication", "refresh_access_token")))
-                ShouldRefreshAccessToken = parser.GetBool("reauthentication", "refresh_access_token");
-
-            if (!String.IsNullOrEmpty(parser.GetString("reauthentication", "refresh_token_wait_max")))
-                RefreshTokenWaitTime = parser.GetInt("reauthentication", "refresh_token_wait_max");
-
-            // Retry
-            if (!String.IsNullOrEmpty(parser.GetString("retry", "retry_wait_max")))
-                ApiClient.RetryConfig.MaxRetryTimeSec = parser.GetInt("retry", "retry_wait_max");
-
-            if (!String.IsNullOrEmpty(parser.GetString("retry", "retry_max")))
-                ApiClient.RetryConfig.RetryMax = parser.GetInt("retry", "retry_max");
-
-            // Gateway Configuration
-            String gatewayHost = parser.GetString("gateway", "host");
-            if (!String.IsNullOrEmpty(gatewayHost)) {
-                ApiClient.GatewayConfiguration gatewayConfiguration = new ApiClient.GatewayConfiguration();
-                gatewayConfiguration.Host = (gatewayHost);
-
-                String gatewayProtocol = parser.GetString("gateway", "protocol");
-                if (!String.IsNullOrEmpty(gatewayProtocol)) {
-                    gatewayConfiguration.Protocol = gatewayProtocol;
-                }
-                String gatewayPort = parser.GetString("gateway", "port");
-                if (!String.IsNullOrEmpty(gatewayPort)) {
-                    gatewayConfiguration.Port = parser.GetInt("gateway", "port");
-                }
-                String gatewayPathParamsLogin = parser.GetString("gateway", "path_params_login");
-                if (!String.IsNullOrEmpty(gatewayPathParamsLogin)) {
-                    gatewayConfiguration.PathParamsLogin = gatewayPathParamsLogin;
-                }
-                String gatewayPathParamsApi = parser.GetString("gateway", "path_params_api");
-                if (!String.IsNullOrEmpty(gatewayPathParamsApi)) {
-                    gatewayConfiguration.PathParamsApi = gatewayPathParamsApi;
-                }
-                String gatewayUsername = parser.GetString("gateway", "username");
-                if (!String.IsNullOrEmpty(gatewayUsername)) {
-                    gatewayConfiguration.Username = gatewayUsername;
-                }
-                String gatewayPassword = parser.GetString("gateway", "password");
-                if (!String.IsNullOrEmpty(gatewayPassword)) {
-                    gatewayConfiguration.Password = gatewayPassword;
-                }
-
-                ApiClient.GatewayConfig = gatewayConfiguration;
-            } else {
-                ApiClient.GatewayConfig = null;
-            }
-        }
-
-        private void runConfigChecker()
-        {
-            try
-            {
-                var configDir = Path.GetDirectoryName(ConfigFilePath);
-                var configFile = Path.GetFileName(ConfigFilePath);
-                while (!Directory.Exists(configDir))
-                {
-                    configDir = Path.GetDirectoryName(configDir);
-                    if (configDir == "") return;
-                }
-            
-                watcher = new FileSystemWatcher()
-                {
-                    Path = configDir,
-                    IncludeSubdirectories = true,
-                    Filter = configFile,
-                    EnableRaisingEvents = true
-                };
-                onChangedHandler = new FileSystemEventHandler(onChanged);
-                watcher.Changed += onChangedHandler;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("An error occurred in runConfigChecker(): " + e);
-                throw new Exception("An error occurred in runConfigChecker(): " + e.Message, e);
-            }
-        }
-
-        private void onChanged(object source, FileSystemEventArgs e)
-        {
-            if (!AutoReloadConfig)
-            {
-                watcher.Changed -= onChangedHandler;
-                return;
-            }
-            applyConfigFromFile();
         }
 
         /// <summary>
@@ -310,23 +139,14 @@ namespace PureCloudPlatform.Client.V2.Client
         /// </summary>
         /// <param name="apiClient">An instance of ApiClient.</param>
         /// <returns></returns>
-        public void setApiClientUsingDefault (ApiClient apiClient = null)
+        public void SetApiClientUsingDefault (ApiClient apiClient = null)
         {
             AuthTokenInfo = new AuthTokenInfo();
-            if (apiClient == null)
-            {
-                if (Default != null && Default.ApiClient == null)
-                    Default.ApiClient = new ApiClient(this);
 
-                ApiClient = Default != null ? Default.ApiClient : new ApiClient(this);
-            }
-            else
-            {
-                if (Default != null && Default.ApiClient == null)
-                    Default.ApiClient = apiClient;
+            if (Default != null && Default.ApiClient == null)
+                Default.ApiClient = apiClient ?? new ApiClient(this);
 
-                ApiClient = apiClient;
-            }
+            ApiClient = apiClient ?? Default?.ApiClient ?? new ApiClient(this);
         }
 
         /// <summary>
@@ -334,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Client
         /// </summary>
         /// <param name="apiClient">An instance of ApiClient.</param>
         /// <returns></returns>
-        public void setApiClient (ApiClient apiClient = null)
+        public void SetApiClient (ApiClient apiClient = null)
         {
             AuthTokenInfo = new AuthTokenInfo();
             if (apiClient == null)
@@ -348,12 +168,12 @@ namespace PureCloudPlatform.Client.V2.Client
             }
         }
 
-        private Dictionary<String, String> _defaultHeaderMap = new Dictionary<String, String>();
+        private Dictionary<string, string> _defaultHeaderMap = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets or sets the default header.
         /// </summary>
-        public Dictionary<String, String> DefaultHeader
+        public Dictionary<string, string> DefaultHeader
         {
             get { return _defaultHeaderMap; }
 
@@ -378,19 +198,19 @@ namespace PureCloudPlatform.Client.V2.Client
         /// Gets or sets the HTTP user agent.
         /// </summary>
         /// <value>Http user agent.</value>
-        public String UserAgent { get; set; }
+        public string UserAgent { get; set; }
 
         /// <summary>
         /// Gets or sets the username (HTTP basic authentication).
         /// </summary>
         /// <value>The username.</value>
-        public String Username { get; set; }
+        public string Username { get; set; }
 
         /// <summary>
         /// Gets or sets the password (HTTP basic authentication).
         /// </summary>
         /// <value>The password.</value>
-        public String Password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Gets or sets the AuthTokenInfo for OAuth2 authentication.
@@ -402,7 +222,7 @@ namespace PureCloudPlatform.Client.V2.Client
         /// Gets or sets the access token for OAuth2 authentication.
         /// </summary>
         /// <value>The access token.</value>
-        public String AccessToken
+        public string AccessToken
         {
             get
             { 
@@ -431,13 +251,13 @@ namespace PureCloudPlatform.Client.V2.Client
         /// Gets or sets the API key based on the authentication name.
         /// </summary>
         /// <value>The API key.</value>
-        public Dictionary<String, String> ApiKey = new Dictionary<String, String>();
+        public Dictionary<string, string> ApiKey = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
         /// </summary>
         /// <value>The prefix of the API key.</value>
-        public Dictionary<String, String> ApiKeyPrefix = new Dictionary<String, String>();
+        public Dictionary<string, string> ApiKeyPrefix = new Dictionary<string, string>();
 
         /// <summary>
         /// Get the API key with prefix.
@@ -446,10 +266,8 @@ namespace PureCloudPlatform.Client.V2.Client
         /// <returns>API key with prefix.</returns>
         public string GetApiKeyWithPrefix (string apiKeyIdentifier)
         {
-            var apiKeyValue = "";
-            ApiKey.TryGetValue (apiKeyIdentifier, out apiKeyValue);
-            var apiKeyPrefix = "";
-            if (ApiKeyPrefix.TryGetValue (apiKeyIdentifier, out apiKeyPrefix))
+            ApiKey.TryGetValue(apiKeyIdentifier, out string apiKeyValue);
+            if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out string apiKeyPrefix))
                 return apiKeyPrefix + " " + apiKeyValue;
             else
                 return apiKeyValue;
@@ -461,13 +279,13 @@ namespace PureCloudPlatform.Client.V2.Client
         /// Gets or sets the temporary folder path to store the files downloaded from the server.
         /// </summary>
         /// <value>Folder path.</value>
-        public String TempFolderPath
+        public string TempFolderPath
         {
             get { return _tempFolderPath; }
 
             set
             {
-                if (String.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
                     _tempFolderPath = value;
                     return;
@@ -497,7 +315,7 @@ namespace PureCloudPlatform.Client.V2.Client
         /// No validation is done to ensure that the string you're providing is valid
         /// </summary>
         /// <value>The DateTimeFormat string</value>
-        public String DateTimeFormat
+        public string DateTimeFormat
         {
             get
             {
@@ -524,36 +342,12 @@ namespace PureCloudPlatform.Client.V2.Client
         /// <value>Instance of Logger.</value>
         public Logger Logger { get; set; }
 
-        private string configFilePath;
-
-        /// <summary>
-        /// Gets or sets the ConfigFilePath value.
-        /// </summary>
-        /// <value>ConfigFilePath</value>
-        public string ConfigFilePath { get { return configFilePath; }
-            set
-            {
-                configFilePath = value;
-                applyConfigFromFile();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the AutoReloadConfig value.
-        /// </summary>
-        /// <value>AutoReloadConfig</value>
-        public bool AutoReloadConfig { get; set; }
-
-        private FileSystemWatcher watcher;
-
-        private FileSystemEventHandler onChangedHandler;
-
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (PureCloudPlatform.Client.V2) Debug Report:\n";
+            string report = "C# SDK (PureCloudPlatform.Client.V2) Debug Report:\n";
             report += "    OS: " + Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + Assembly
                      .GetExecutingAssembly()
@@ -563,169 +357,6 @@ namespace PureCloudPlatform.Client.V2.Client
             report += "    SDK Package Version: 232.0.0\n";
 
             return report;
-        }
-
-        private class ConfigurationParser
-        {
-            public ConfigurationParser(string filePath)
-            {
-                _filePath = filePath;
-                _fileFormat = FileFormat.Invalid;
-            }
-
-            private string _filePath;
-
-            private FileFormat _fileFormat;
-
-            private IniData _iniData;
-
-            private JObject _jsonData;
-
-            public bool Read()
-            {
-                try
-                {
-                    var parser = new FileIniDataParser();
-                    _iniData = parser.ReadFile(_filePath);
-                    _fileFormat = FileFormat.INI;
-                }
-                catch (ParsingException e)
-                {
-                    if (e.GetBaseException().GetType() == typeof(FileNotFoundException))
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            _jsonData = JObject.Parse(File.ReadAllText(_filePath));
-                            _fileFormat = FileFormat.JSON;
-                        }
-                        catch (Exception)
-                        {
-                            return false;
-                        }
-                    }
-                }
-
-                return true;
-            }
-
-            public string GetString(string section, string key)
-            {
-                switch (_fileFormat)
-                {
-                    case FileFormat.INI:
-                        return getIniString(section, key);
-                    case FileFormat.JSON:
-                        return getJsonString(section, key);
-                }
-
-                return "";
-            }
-
-            public bool GetBool(string section, string key)
-            {
-                switch (_fileFormat)
-                {
-                    case FileFormat.INI:
-                        return getIniBool(section, key);
-                    case FileFormat.JSON:
-                        return getJsonBool(section, key);
-                }
-
-                return false;
-            }
-
-            public int GetInt(string section, string key)
-            {
-                switch (_fileFormat)
-                {
-                    case FileFormat.INI:
-                        return getIniInt(section, key);
-                    case FileFormat.JSON:
-                        return getJsonInt(section, key);
-                }
-
-                return -1;
-            }
-
-            private string getJsonString(string section, string key)
-            {
-                try
-                {
-                    JObject sectionData = (JObject) _jsonData.GetValue(section);
-                    return sectionData.GetValue(key).ToString().Trim();
-                }
-                catch (Exception)
-                {
-                    return "";
-                }
-            }
-
-            private bool getJsonBool(string section, string key)
-            {
-                try
-                {
-                    JObject sectionData = (JObject) _jsonData.GetValue(section);
-                    return sectionData.GetValue(key).ToObject<Boolean>();
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-
-            private int getJsonInt(string section, string key)
-            {
-                try
-                {
-                    JObject sectionData = (JObject) _jsonData.GetValue(section);
-                    return sectionData.GetValue(key).ToObject<Int32>();
-                }
-                catch (Exception)
-                {
-                    return -1;
-                }
-            }
-
-            private string getIniString(string section, string key)
-            {
-                try
-                {
-                    return _iniData[section][key].Trim().ToLower();
-                } catch (Exception) {
-                    return "";
-                }
-            }
-
-            private bool getIniBool(string section, string key)
-            {
-                try
-                {
-                    return Boolean.Parse(getIniString(section, key));
-                } catch (Exception) {
-                    return false;
-                }
-            }
-
-            private int getIniInt(string section, string key)
-            {
-                try
-                {
-                    return Int32.Parse(getIniString(section, key));
-                } catch (Exception) {
-                    return -1;
-                }
-            }
-
-            private enum FileFormat
-            {
-                INI,
-                JSON,
-                Invalid
-            }
         }
     }
 }

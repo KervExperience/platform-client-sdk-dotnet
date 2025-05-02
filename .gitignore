@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/build/.vs/PureCloudPlatform.Client.V2
+/build/._PureCloudPlatform.Client.V2.sln
+/build/src/PureCloudPlatform.Client.V2.Tests/.vs
+/build/src/PureCloudPlatform.Client.V2/.vs

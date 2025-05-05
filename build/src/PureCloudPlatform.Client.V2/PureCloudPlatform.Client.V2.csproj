@@ -6,6 +6,10 @@
     <AssemblyName>PureCloudPlatform.Client.V2</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Platforms>AnyCPU</Platforms>
+    <Authors>Kerv.$(AssemblyName)</Authors>
+    <PackageId>Kerv.$(AssemblyName)</PackageId>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/KervExperience/platform-client-sdk-dotnet</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +24,10 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="https:\github.com\KervExperience\platform-client-sdk-dotnet\blob\master\README.md" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,5 @@
+This is a fork of the Genesys Cloud CX .NET Platform SDK. It will contain changes from the original.
+
 Platform API Client SDK - .NET
 
 [![NuGet Badge](https://img.shields.io/nuget/v/PureCloudPlatform.Client.V2)](https://www.nuget.org/packages/PureCloudPlatform.Client.V2/)

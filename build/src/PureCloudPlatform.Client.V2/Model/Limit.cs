@@ -51,6 +51,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Analyticsalerting,
             
             /// <summary>
+            /// Enum Analyticsdataextraction for "analytics.data.extraction"
+            /// </summary>
+            [EnumMember(Value = "analytics.data.extraction")]
+            Analyticsdataextraction,
+            
+            /// <summary>
             /// Enum Analytics for "analytics"
             /// </summary>
             [EnumMember(Value = "analytics")]
@@ -223,6 +229,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "groups")]
             Groups,
+            
+            /// <summary>
+            /// Enum Guides for "guides"
+            /// </summary>
+            [EnumMember(Value = "guides")]
+            Guides,
             
             /// <summary>
             /// Enum Historicaladherence for "historical.adherence"
@@ -439,6 +451,18 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "users")]
             Users,
+            
+            /// <summary>
+            /// Enum Usersrules for "users.rules"
+            /// </summary>
+            [EnumMember(Value = "users.rules")]
+            Usersrules,
+            
+            /// <summary>
+            /// Enum Voicetranscription for "voice.transcription"
+            /// </summary>
+            [EnumMember(Value = "voice.transcription")]
+            Voicetranscription,
             
             /// <summary>
             /// Enum Webdeployments for "web.deployments"

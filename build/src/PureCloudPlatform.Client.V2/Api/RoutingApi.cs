@@ -786,9 +786,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>InboundRoute</returns>
         
-        InboundRoute GetRoutingEmailDomainRoute (string domainName, string routeId);
+        InboundRoute GetRoutingEmailDomainRoute (string domainName, string routeId, List<string> expand = null);
 
         /// <summary>
         /// Get a route
@@ -799,16 +800,16 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of InboundRoute</returns>
         
-        ApiResponse<InboundRoute> GetRoutingEmailDomainRouteWithHttpInfo (string domainName, string routeId);
+        ApiResponse<InboundRoute> GetRoutingEmailDomainRouteWithHttpInfo (string domainName, string routeId, List<string> expand = null);
 
         /// <summary>
         /// Get a route identity resolution setting.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -822,7 +823,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -842,9 +842,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>InboundRouteEntityListing</returns>
         
-        InboundRouteEntityListing GetRoutingEmailDomainRoutes (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null);
+        InboundRouteEntityListing GetRoutingEmailDomainRoutes (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null);
 
         /// <summary>
         /// Get routes
@@ -857,9 +858,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of InboundRouteEntityListing</returns>
         
-        ApiResponse<InboundRouteEntityListing> GetRoutingEmailDomainRoutesWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null);
+        ApiResponse<InboundRouteEntityListing> GetRoutingEmailDomainRoutesWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null);
 
         /// <summary>
         /// Get domains
@@ -1263,9 +1265,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Queue</returns>
         
-        Queue GetRoutingQueue (string queueId);
+        Queue GetRoutingQueue (string queueId, List<string> expand = null);
 
         /// <summary>
         /// Get details about this queue.
@@ -1275,9 +1278,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of Queue</returns>
         
-        ApiResponse<Queue> GetRoutingQueueWithHttpInfo (string queueId);
+        ApiResponse<Queue> GetRoutingQueueWithHttpInfo (string queueId, List<string> expand = null);
 
         /// <summary>
         /// Get an assistant associated with a queue.
@@ -1386,7 +1390,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -1399,7 +1402,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -1539,9 +1541,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>WrapupCodeEntityListing</returns>
         
-        WrapupCodeEntityListing GetRoutingQueueWrapupcodes (string queueId, int? pageSize = null, int? pageNumber = null);
+        WrapupCodeEntityListing GetRoutingQueueWrapupcodes (string queueId, int? pageSize = null, int? pageNumber = null, string name = null);
 
         /// <summary>
         /// Get the wrap-up codes for a queue
@@ -1553,9 +1556,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>ApiResponse of WrapupCodeEntityListing</returns>
         
-        ApiResponse<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null);
+        ApiResponse<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null, string name = null);
 
         /// <summary>
         /// Get list of queues.
@@ -1573,9 +1577,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>QueueEntityListing</returns>
         
-        QueueEntityListing GetRoutingQueues (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null);
+        QueueEntityListing GetRoutingQueues (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null);
 
         /// <summary>
         /// Get list of queues.
@@ -1593,9 +1598,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of QueueEntityListing</returns>
         
-        ApiResponse<QueueEntityListing> GetRoutingQueuesWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null);
+        ApiResponse<QueueEntityListing> GetRoutingQueuesWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null);
 
         /// <summary>
         /// Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
@@ -2014,7 +2020,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -2027,7 +2032,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -2079,9 +2083,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>SmsPhoneNumberEntityListing</returns>
         
-        SmsPhoneNumberEntityListing GetRoutingSmsPhonenumbers (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null);
+        SmsPhoneNumberEntityListing GetRoutingSmsPhonenumbers (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null);
 
         /// <summary>
         /// Get a list of provisioned phone numbers.
@@ -2101,9 +2106,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of SmsPhoneNumberEntityListing</returns>
         
-        ApiResponse<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null);
+        ApiResponse<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null);
 
         /// <summary>
         /// Get the user&#39;s Direct Routing Backup settings.
@@ -2862,6 +2868,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of SkillGroup</returns>
         
         ApiResponse<SkillGroup> PatchRoutingSkillgroupWithHttpInfo (string skillGroupId, SkillGroup body);
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>SmsPhoneNumber</returns>
+        
+        SmsPhoneNumber PatchRoutingSmsPhonenumber (string phoneNumberId, SmsPhoneNumberPatchRequest body);
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>ApiResponse of SmsPhoneNumber</returns>
+        
+        ApiResponse<SmsPhoneNumber> PatchRoutingSmsPhonenumberWithHttpInfo (string phoneNumberId, SmsPhoneNumberPatchRequest body);
 
         /// <summary>
         /// Join or unjoin a queue for a user
@@ -3732,7 +3764,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -3747,7 +3778,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -3838,7 +3868,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -3852,7 +3881,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -3914,7 +3942,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -3928,7 +3955,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -4894,9 +4920,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of InboundRoute</returns>
         
-        System.Threading.Tasks.Task<InboundRoute> GetRoutingEmailDomainRouteAsync (string domainName, string routeId);
+        System.Threading.Tasks.Task<InboundRoute> GetRoutingEmailDomainRouteAsync (string domainName, string routeId, List<string> expand = null);
 
         /// <summary>
         /// Get a route
@@ -4907,16 +4934,16 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (InboundRoute)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<InboundRoute>> GetRoutingEmailDomainRouteAsyncWithHttpInfo (string domainName, string routeId);
+        System.Threading.Tasks.Task<ApiResponse<InboundRoute>> GetRoutingEmailDomainRouteAsyncWithHttpInfo (string domainName, string routeId, List<string> expand = null);
 
         /// <summary>
         /// Get a route identity resolution setting.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -4930,7 +4957,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -4950,9 +4976,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of InboundRouteEntityListing</returns>
         
-        System.Threading.Tasks.Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null);
+        System.Threading.Tasks.Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null);
 
         /// <summary>
         /// Get routes
@@ -4965,9 +4992,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (InboundRouteEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<InboundRouteEntityListing>> GetRoutingEmailDomainRoutesAsyncWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null);
+        System.Threading.Tasks.Task<ApiResponse<InboundRouteEntityListing>> GetRoutingEmailDomainRoutesAsyncWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null);
 
         /// <summary>
         /// Get domains
@@ -5371,9 +5399,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of Queue</returns>
         
-        System.Threading.Tasks.Task<Queue> GetRoutingQueueAsync (string queueId);
+        System.Threading.Tasks.Task<Queue> GetRoutingQueueAsync (string queueId, List<string> expand = null);
 
         /// <summary>
         /// Get details about this queue.
@@ -5383,9 +5412,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (Queue)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<Queue>> GetRoutingQueueAsyncWithHttpInfo (string queueId);
+        System.Threading.Tasks.Task<ApiResponse<Queue>> GetRoutingQueueAsyncWithHttpInfo (string queueId, List<string> expand = null);
 
         /// <summary>
         /// Get an assistant associated with a queue.
@@ -5494,7 +5524,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -5507,7 +5536,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -5647,9 +5675,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>Task of WrapupCodeEntityListing</returns>
         
-        System.Threading.Tasks.Task<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesAsync (string queueId, int? pageSize = null, int? pageNumber = null);
+        System.Threading.Tasks.Task<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesAsync (string queueId, int? pageSize = null, int? pageNumber = null, string name = null);
 
         /// <summary>
         /// Get the wrap-up codes for a queue
@@ -5661,9 +5690,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>Task of ApiResponse (WrapupCodeEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<WrapupCodeEntityListing>> GetRoutingQueueWrapupcodesAsyncWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null);
+        System.Threading.Tasks.Task<ApiResponse<WrapupCodeEntityListing>> GetRoutingQueueWrapupcodesAsyncWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null, string name = null);
 
         /// <summary>
         /// Get list of queues.
@@ -5681,9 +5711,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of QueueEntityListing</returns>
         
-        System.Threading.Tasks.Task<QueueEntityListing> GetRoutingQueuesAsync (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null);
+        System.Threading.Tasks.Task<QueueEntityListing> GetRoutingQueuesAsync (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null);
 
         /// <summary>
         /// Get list of queues.
@@ -5701,9 +5732,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (QueueEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<QueueEntityListing>> GetRoutingQueuesAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null);
+        System.Threading.Tasks.Task<ApiResponse<QueueEntityListing>> GetRoutingQueuesAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null);
 
         /// <summary>
         /// Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
@@ -6122,7 +6154,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -6135,7 +6166,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -6187,9 +6217,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of SmsPhoneNumberEntityListing</returns>
         
-        System.Threading.Tasks.Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null);
+        System.Threading.Tasks.Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null);
 
         /// <summary>
         /// Get a list of provisioned phone numbers.
@@ -6209,9 +6240,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (SmsPhoneNumberEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<SmsPhoneNumberEntityListing>> GetRoutingSmsPhonenumbersAsyncWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null);
+        System.Threading.Tasks.Task<ApiResponse<SmsPhoneNumberEntityListing>> GetRoutingSmsPhonenumbersAsyncWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null);
 
         /// <summary>
         /// Get the user&#39;s Direct Routing Backup settings.
@@ -6970,6 +7002,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (SkillGroup)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<SkillGroup>> PatchRoutingSkillgroupAsyncWithHttpInfo (string skillGroupId, SkillGroup body);
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>Task of SmsPhoneNumber</returns>
+        
+        System.Threading.Tasks.Task<SmsPhoneNumber> PatchRoutingSmsPhonenumberAsync (string phoneNumberId, SmsPhoneNumberPatchRequest body);
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>Task of ApiResponse (SmsPhoneNumber)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<SmsPhoneNumber>> PatchRoutingSmsPhonenumberAsyncWithHttpInfo (string phoneNumberId, SmsPhoneNumberPatchRequest body);
 
         /// <summary>
         /// Join or unjoin a queue for a user
@@ -7840,7 +7898,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -7855,7 +7912,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -7946,7 +8002,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -7960,7 +8015,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -8022,7 +8076,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -8036,7 +8089,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -14554,11 +14606,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>InboundRoute</returns>
         
-        public InboundRoute GetRoutingEmailDomainRoute (string domainName, string routeId)
+        public InboundRoute GetRoutingEmailDomainRoute (string domainName, string routeId, List<string> expand = null)
         {
-             ApiResponse<InboundRoute> localVarResponse = GetRoutingEmailDomainRouteWithHttpInfo(domainName, routeId);
+             ApiResponse<InboundRoute> localVarResponse = GetRoutingEmailDomainRouteWithHttpInfo(domainName, routeId, expand);
              return localVarResponse.Data;
         }
 
@@ -14569,9 +14622,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of InboundRoute</returns>
         
-        public ApiResponse< InboundRoute > GetRoutingEmailDomainRouteWithHttpInfo (string domainName, string routeId)
+        public ApiResponse< InboundRoute > GetRoutingEmailDomainRouteWithHttpInfo (string domainName, string routeId, List<string> expand = null)
         { 
             // verify the required parameter 'domainName' is set
             if (domainName == null)
@@ -14615,6 +14669,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (routeId != null) localVarPathParams.Add("routeId", this.Configuration.ApiClient.ParameterToString(routeId));
 
             // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -14659,11 +14714,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of InboundRoute</returns>
         
-        public async System.Threading.Tasks.Task<InboundRoute> GetRoutingEmailDomainRouteAsync (string domainName, string routeId)
+        public async System.Threading.Tasks.Task<InboundRoute> GetRoutingEmailDomainRouteAsync (string domainName, string routeId, List<string> expand = null)
         {
-             ApiResponse<InboundRoute> localVarResponse = await GetRoutingEmailDomainRouteAsyncWithHttpInfo(domainName, routeId);
+             ApiResponse<InboundRoute> localVarResponse = await GetRoutingEmailDomainRouteAsyncWithHttpInfo(domainName, routeId, expand);
              return localVarResponse.Data;
 
         }
@@ -14675,9 +14731,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
         /// <param name="routeId">route ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (InboundRoute)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<InboundRoute>> GetRoutingEmailDomainRouteAsyncWithHttpInfo (string domainName, string routeId)
+        public async System.Threading.Tasks.Task<ApiResponse<InboundRoute>> GetRoutingEmailDomainRouteAsyncWithHttpInfo (string domainName, string routeId, List<string> expand = null)
         { 
             // verify the required parameter 'domainName' is set
             if (domainName == null)
@@ -14723,6 +14780,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (routeId != null) localVarPathParams.Add("routeId", this.Configuration.ApiClient.ParameterToString(routeId));
 
             // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -14764,7 +14822,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a route identity resolution setting. 
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -14780,7 +14837,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a route identity resolution setting. 
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -14871,7 +14927,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a route identity resolution setting. 
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -14888,7 +14943,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a route identity resolution setting. 
         /// 
-        /// GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -14988,11 +15042,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>InboundRouteEntityListing</returns>
         
-        public InboundRouteEntityListing GetRoutingEmailDomainRoutes (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null)
+        public InboundRouteEntityListing GetRoutingEmailDomainRoutes (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null)
         {
-             ApiResponse<InboundRouteEntityListing> localVarResponse = GetRoutingEmailDomainRoutesWithHttpInfo(domainName, pageSize, pageNumber, pattern);
+             ApiResponse<InboundRouteEntityListing> localVarResponse = GetRoutingEmailDomainRoutesWithHttpInfo(domainName, pageSize, pageNumber, pattern, expand);
              return localVarResponse.Data;
         }
 
@@ -15005,9 +15060,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of InboundRouteEntityListing</returns>
         
-        public ApiResponse< InboundRouteEntityListing > GetRoutingEmailDomainRoutesWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null)
+        public ApiResponse< InboundRouteEntityListing > GetRoutingEmailDomainRoutesWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null)
         { 
             // verify the required parameter 'domainName' is set
             if (domainName == null)
@@ -15050,6 +15106,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
             if (pattern != null) localVarQueryParams.Add(new Tuple<string, string>("pattern", this.Configuration.ApiClient.ParameterToString(pattern)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -15096,11 +15153,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of InboundRouteEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null)
+        public async System.Threading.Tasks.Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null)
         {
-             ApiResponse<InboundRouteEntityListing> localVarResponse = await GetRoutingEmailDomainRoutesAsyncWithHttpInfo(domainName, pageSize, pageNumber, pattern);
+             ApiResponse<InboundRouteEntityListing> localVarResponse = await GetRoutingEmailDomainRoutesAsyncWithHttpInfo(domainName, pageSize, pageNumber, pattern, expand);
              return localVarResponse.Data;
 
         }
@@ -15114,9 +15172,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pattern">Filter routes by the route&#39;s pattern property (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (InboundRouteEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<InboundRouteEntityListing>> GetRoutingEmailDomainRoutesAsyncWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null)
+        public async System.Threading.Tasks.Task<ApiResponse<InboundRouteEntityListing>> GetRoutingEmailDomainRoutesAsyncWithHttpInfo (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null)
         { 
             // verify the required parameter 'domainName' is set
             if (domainName == null)
@@ -15160,6 +15219,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
             if (pattern != null) localVarQueryParams.Add(new Tuple<string, string>("pattern", this.Configuration.ApiClient.ParameterToString(pattern)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -18279,11 +18339,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Queue</returns>
         
-        public Queue GetRoutingQueue (string queueId)
+        public Queue GetRoutingQueue (string queueId, List<string> expand = null)
         {
-             ApiResponse<Queue> localVarResponse = GetRoutingQueueWithHttpInfo(queueId);
+             ApiResponse<Queue> localVarResponse = GetRoutingQueueWithHttpInfo(queueId, expand);
              return localVarResponse.Data;
         }
 
@@ -18293,9 +18354,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of Queue</returns>
         
-        public ApiResponse< Queue > GetRoutingQueueWithHttpInfo (string queueId)
+        public ApiResponse< Queue > GetRoutingQueueWithHttpInfo (string queueId, List<string> expand = null)
         { 
             // verify the required parameter 'queueId' is set
             if (queueId == null)
@@ -18335,6 +18397,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (queueId != null) localVarPathParams.Add("queueId", this.Configuration.ApiClient.ParameterToString(queueId));
 
             // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -18378,11 +18441,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of Queue</returns>
         
-        public async System.Threading.Tasks.Task<Queue> GetRoutingQueueAsync (string queueId)
+        public async System.Threading.Tasks.Task<Queue> GetRoutingQueueAsync (string queueId, List<string> expand = null)
         {
-             ApiResponse<Queue> localVarResponse = await GetRoutingQueueAsyncWithHttpInfo(queueId);
+             ApiResponse<Queue> localVarResponse = await GetRoutingQueueAsyncWithHttpInfo(queueId, expand);
              return localVarResponse.Data;
 
         }
@@ -18393,9 +18457,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (Queue)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<Queue>> GetRoutingQueueAsyncWithHttpInfo (string queueId)
+        public async System.Threading.Tasks.Task<ApiResponse<Queue>> GetRoutingQueueAsyncWithHttpInfo (string queueId, List<string> expand = null)
         { 
             // verify the required parameter 'queueId' is set
             if (queueId == null)
@@ -18436,6 +18501,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (queueId != null) localVarPathParams.Add("queueId", this.Configuration.ApiClient.ParameterToString(queueId));
 
             // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -19306,7 +19372,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Queue IdentityResolution Settings. 
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -19321,7 +19386,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Queue IdentityResolution Settings. 
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -19407,7 +19471,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Queue IdentityResolution Settings. 
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -19423,7 +19486,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Queue IdentityResolution Settings. 
         /// 
-        /// GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -20276,11 +20338,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>WrapupCodeEntityListing</returns>
         
-        public WrapupCodeEntityListing GetRoutingQueueWrapupcodes (string queueId, int? pageSize = null, int? pageNumber = null)
+        public WrapupCodeEntityListing GetRoutingQueueWrapupcodes (string queueId, int? pageSize = null, int? pageNumber = null, string name = null)
         {
-             ApiResponse<WrapupCodeEntityListing> localVarResponse = GetRoutingQueueWrapupcodesWithHttpInfo(queueId, pageSize, pageNumber);
+             ApiResponse<WrapupCodeEntityListing> localVarResponse = GetRoutingQueueWrapupcodesWithHttpInfo(queueId, pageSize, pageNumber, name);
              return localVarResponse.Data;
         }
 
@@ -20292,9 +20355,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>ApiResponse of WrapupCodeEntityListing</returns>
         
-        public ApiResponse< WrapupCodeEntityListing > GetRoutingQueueWrapupcodesWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null)
+        public ApiResponse< WrapupCodeEntityListing > GetRoutingQueueWrapupcodesWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null, string name = null)
         { 
             // verify the required parameter 'queueId' is set
             if (queueId == null)
@@ -20336,6 +20400,7 @@ namespace PureCloudPlatform.Client.V2.Api
             // Query params
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
 
             // Header params
 
@@ -20381,11 +20446,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>Task of WrapupCodeEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesAsync (string queueId, int? pageSize = null, int? pageNumber = null)
+        public async System.Threading.Tasks.Task<WrapupCodeEntityListing> GetRoutingQueueWrapupcodesAsync (string queueId, int? pageSize = null, int? pageNumber = null, string name = null)
         {
-             ApiResponse<WrapupCodeEntityListing> localVarResponse = await GetRoutingQueueWrapupcodesAsyncWithHttpInfo(queueId, pageSize, pageNumber);
+             ApiResponse<WrapupCodeEntityListing> localVarResponse = await GetRoutingQueueWrapupcodesAsyncWithHttpInfo(queueId, pageSize, pageNumber, name);
              return localVarResponse.Data;
 
         }
@@ -20398,9 +20464,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="queueId">Queue ID</param>
         /// <param name="pageSize">Page size (optional, default to 25)</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="name">Wrapup code&#39;s name (trailing asterisks allowed) (optional)</param>
         /// <returns>Task of ApiResponse (WrapupCodeEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<WrapupCodeEntityListing>> GetRoutingQueueWrapupcodesAsyncWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null)
+        public async System.Threading.Tasks.Task<ApiResponse<WrapupCodeEntityListing>> GetRoutingQueueWrapupcodesAsyncWithHttpInfo (string queueId, int? pageSize = null, int? pageNumber = null, string name = null)
         { 
             // verify the required parameter 'queueId' is set
             if (queueId == null)
@@ -20443,6 +20510,7 @@ namespace PureCloudPlatform.Client.V2.Api
             // Query params
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
 
             // Header params
 
@@ -20495,11 +20563,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>QueueEntityListing</returns>
         
-        public QueueEntityListing GetRoutingQueues (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null)
+        public QueueEntityListing GetRoutingQueues (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null)
         {
-             ApiResponse<QueueEntityListing> localVarResponse = GetRoutingQueuesWithHttpInfo(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer);
+             ApiResponse<QueueEntityListing> localVarResponse = GetRoutingQueuesWithHttpInfo(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand);
              return localVarResponse.Data;
         }
 
@@ -20517,9 +20586,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of QueueEntityListing</returns>
         
-        public ApiResponse< QueueEntityListing > GetRoutingQueuesWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null)
+        public ApiResponse< QueueEntityListing > GetRoutingQueuesWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null)
         { 
 
             var localVarPath = "/api/v2/routing/queues";
@@ -20564,6 +20634,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (peerId != null) peerId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("peerId", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (cannedResponseLibraryId != null) localVarQueryParams.Add(new Tuple<string, string>("cannedResponseLibraryId", this.Configuration.ApiClient.ParameterToString(cannedResponseLibraryId)));
             if (hasPeer != null) localVarQueryParams.Add(new Tuple<string, string>("hasPeer", this.Configuration.ApiClient.ParameterToString(hasPeer)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -20615,11 +20686,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of QueueEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<QueueEntityListing> GetRoutingQueuesAsync (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null)
+        public async System.Threading.Tasks.Task<QueueEntityListing> GetRoutingQueuesAsync (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null)
         {
-             ApiResponse<QueueEntityListing> localVarResponse = await GetRoutingQueuesAsyncWithHttpInfo(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer);
+             ApiResponse<QueueEntityListing> localVarResponse = await GetRoutingQueuesAsyncWithHttpInfo(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand);
              return localVarResponse.Data;
 
         }
@@ -20638,9 +20710,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="peerId">Include only queues with the specified peer ID(s) (optional)</param>
         /// <param name="cannedResponseLibraryId">Include only queues explicitly associated with the specified canned response library ID (optional)</param>
         /// <param name="hasPeer">Include only queues with a peer ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (QueueEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<QueueEntityListing>> GetRoutingQueuesAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null)
+        public async System.Threading.Tasks.Task<ApiResponse<QueueEntityListing>> GetRoutingQueuesAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null)
         { 
 
             var localVarPath = "/api/v2/routing/queues";
@@ -20685,6 +20758,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (peerId != null) peerId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("peerId", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (cannedResponseLibraryId != null) localVarQueryParams.Add(new Tuple<string, string>("cannedResponseLibraryId", this.Configuration.ApiClient.ParameterToString(cannedResponseLibraryId)));
             if (hasPeer != null) localVarQueryParams.Add(new Tuple<string, string>("hasPeer", this.Configuration.ApiClient.ParameterToString(hasPeer)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -23841,7 +23915,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a SMS identity resolution settings. 
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -23856,7 +23929,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a SMS identity resolution settings. 
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -23942,7 +24014,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a SMS identity resolution settings. 
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -23958,7 +24029,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a SMS identity resolution settings. 
         /// 
-        /// GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -24266,11 +24336,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>SmsPhoneNumberEntityListing</returns>
         
-        public SmsPhoneNumberEntityListing GetRoutingSmsPhonenumbers (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null)
+        public SmsPhoneNumberEntityListing GetRoutingSmsPhonenumbers (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null)
         {
-             ApiResponse<SmsPhoneNumberEntityListing> localVarResponse = GetRoutingSmsPhonenumbersWithHttpInfo(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId);
+             ApiResponse<SmsPhoneNumberEntityListing> localVarResponse = GetRoutingSmsPhonenumbersWithHttpInfo(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand);
              return localVarResponse.Data;
         }
 
@@ -24290,9 +24361,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of SmsPhoneNumberEntityListing</returns>
         
-        public ApiResponse< SmsPhoneNumberEntityListing > GetRoutingSmsPhonenumbersWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null)
+        public ApiResponse< SmsPhoneNumberEntityListing > GetRoutingSmsPhonenumbersWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null)
         { 
 
             var localVarPath = "/api/v2/routing/sms/phonenumbers";
@@ -24339,6 +24411,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (language != null) localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
             if (integrationId != null) localVarQueryParams.Add(new Tuple<string, string>("integration.id", this.Configuration.ApiClient.ParameterToString(integrationId)));
             if (supportedContentId != null) localVarQueryParams.Add(new Tuple<string, string>("supportedContent.id", this.Configuration.ApiClient.ParameterToString(supportedContentId)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -24392,11 +24465,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of SmsPhoneNumberEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null)
+        public async System.Threading.Tasks.Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null)
         {
-             ApiResponse<SmsPhoneNumberEntityListing> localVarResponse = await GetRoutingSmsPhonenumbersAsyncWithHttpInfo(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId);
+             ApiResponse<SmsPhoneNumberEntityListing> localVarResponse = await GetRoutingSmsPhonenumbersAsyncWithHttpInfo(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand);
              return localVarResponse.Data;
 
         }
@@ -24417,9 +24491,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="language">A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to "en-US")</param>
         /// <param name="integrationId">Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)</param>
         /// <param name="supportedContentId">Filter based on the supported content ID (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (SmsPhoneNumberEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<SmsPhoneNumberEntityListing>> GetRoutingSmsPhonenumbersAsyncWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<SmsPhoneNumberEntityListing>> GetRoutingSmsPhonenumbersAsyncWithHttpInfo (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null)
         { 
 
             var localVarPath = "/api/v2/routing/sms/phonenumbers";
@@ -24466,6 +24541,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (language != null) localVarQueryParams.Add(new Tuple<string, string>("language", this.Configuration.ApiClient.ParameterToString(language)));
             if (integrationId != null) localVarQueryParams.Add(new Tuple<string, string>("integration.id", this.Configuration.ApiClient.ParameterToString(integrationId)));
             if (supportedContentId != null) localVarQueryParams.Add(new Tuple<string, string>("supportedContent.id", this.Configuration.ApiClient.ParameterToString(supportedContentId)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -30517,6 +30593,230 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<SkillGroup>(localVarStatusCode,
                 localVarHeaders,
                 (SkillGroup) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SkillGroup)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>SmsPhoneNumber</returns>
+        
+        public SmsPhoneNumber PatchRoutingSmsPhonenumber (string phoneNumberId, SmsPhoneNumberPatchRequest body)
+        {
+             ApiResponse<SmsPhoneNumber> localVarResponse = PatchRoutingSmsPhonenumberWithHttpInfo(phoneNumberId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>ApiResponse of SmsPhoneNumber</returns>
+        
+        public ApiResponse< SmsPhoneNumber > PatchRoutingSmsPhonenumberWithHttpInfo (string phoneNumberId, SmsPhoneNumberPatchRequest body)
+        { 
+            // verify the required parameter 'phoneNumberId' is set
+            if (phoneNumberId == null)
+                throw new ApiException(400, "Missing required parameter 'phoneNumberId' when calling RoutingApi->PatchRoutingSmsPhonenumber");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling RoutingApi->PatchRoutingSmsPhonenumber");
+
+            var localVarPath = "/api/v2/routing/sms/phonenumbers/{phoneNumberId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (phoneNumberId != null) localVarPathParams.Add("phoneNumberId", this.Configuration.ApiClient.ParameterToString(phoneNumberId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<SmsPhoneNumber>(localVarStatusCode,
+                localVarHeaders,
+                (SmsPhoneNumber) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SmsPhoneNumber)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>Task of SmsPhoneNumber</returns>
+        
+        public async System.Threading.Tasks.Task<SmsPhoneNumber> PatchRoutingSmsPhonenumberAsync (string phoneNumberId, SmsPhoneNumberPatchRequest body)
+        {
+             ApiResponse<SmsPhoneNumber> localVarResponse = await PatchRoutingSmsPhonenumberAsyncWithHttpInfo(phoneNumberId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a phone number provisioned for SMS. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="phoneNumberId">phone number</param>
+        /// <param name="body">SmsPhoneNumberPatchRequest</param>
+        /// <returns>Task of ApiResponse (SmsPhoneNumber)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<SmsPhoneNumber>> PatchRoutingSmsPhonenumberAsyncWithHttpInfo (string phoneNumberId, SmsPhoneNumberPatchRequest body)
+        { 
+            // verify the required parameter 'phoneNumberId' is set
+            if (phoneNumberId == null)
+                throw new ApiException(400, "Missing required parameter 'phoneNumberId' when calling RoutingApi->PatchRoutingSmsPhonenumber");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling RoutingApi->PatchRoutingSmsPhonenumber");
+            
+
+            var localVarPath = "/api/v2/routing/sms/phonenumbers/{phoneNumberId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (phoneNumberId != null) localVarPathParams.Add("phoneNumberId", this.Configuration.ApiClient.ParameterToString(phoneNumberId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<SmsPhoneNumber>(localVarStatusCode,
+                localVarHeaders,
+                (SmsPhoneNumber) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SmsPhoneNumber)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -37918,7 +38218,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a route. 
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -37935,7 +38234,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a route. 
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -38036,7 +38334,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a route. 
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -38054,7 +38351,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a route. 
         /// 
-        /// PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="domainName">email domain</param>
@@ -38808,7 +39104,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update Queue IdentityResolution Settings. 
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -38824,7 +39119,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update Queue IdentityResolution Settings. 
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -38920,7 +39214,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update Queue IdentityResolution Settings. 
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -38937,7 +39230,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update Queue IdentityResolution Settings. 
         /// 
-        /// PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -39458,7 +39750,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an SMS identity resolution settings. 
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -39474,7 +39765,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an SMS identity resolution settings. 
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -39570,7 +39860,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an SMS identity resolution settings. 
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>
@@ -39587,7 +39876,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an SMS identity resolution settings. 
         /// 
-        /// PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressId">Address ID</param>

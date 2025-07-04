@@ -112,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchRoutingSettingsContactcenter**](#PatchRoutingSettingsContactcenter) | **Patch** /api/v2/routing/settings/contactcenter | Update Contact Center Settings |
 | [**PatchRoutingSettingsTranscription**](#PatchRoutingSettingsTranscription) | **Patch** /api/v2/routing/settings/transcription | Patch Transcription Settings |
 | [**PatchRoutingSkillgroup**](#PatchRoutingSkillgroup) | **Patch** /api/v2/routing/skillgroups/{skillGroupId} | Update skill group definition |
+| [**PatchRoutingSmsPhonenumber**](#PatchRoutingSmsPhonenumber) | **Patch** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Update a phone number provisioned for SMS. |
 | [**PatchUserQueue**](#PatchUserQueue) | **Patch** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user |
 | [**PatchUserQueues**](#PatchUserQueues) | **Patch** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user |
 | [**PatchUserRoutinglanguage**](#PatchUserRoutinglanguage) | **Patch** /api/v2/users/{userId}/routinglanguages/{languageId} | Update an assigned routing language&#39;s proficiency |
@@ -2074,7 +2075,7 @@ namespace Example
 
 ## GetRoutingEmailDomainRoute
 
-> [**InboundRoute**](InboundRoute) GetRoutingEmailDomainRoute (string domainName, string routeId)
+> [**InboundRoute**](InboundRoute) GetRoutingEmailDomainRoute (string domainName, string routeId, List<string> expand = null)
 
 
 Get a route
@@ -2107,11 +2108,12 @@ namespace Example
             var apiInstance = new RoutingApi();
             var domainName = domainName_example;  // string | email domain
             var routeId = routeId_example;  // string | route ID
+            var expand = new List<string>(); // List<string> | Which fields, if any, to expand (optional) 
 
             try
             { 
                 // Get a route
-                InboundRoute result = apiInstance.GetRoutingEmailDomainRoute(domainName, routeId);
+                InboundRoute result = apiInstance.GetRoutingEmailDomainRoute(domainName, routeId, expand);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2130,6 +2132,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **domainName** | **string**| email domain |  |
 | **routeId** | **string**| route ID |  |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -2142,8 +2145,6 @@ namespace Example
 
 
 Get a route identity resolution setting.
-
-GetRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -2205,7 +2206,7 @@ namespace Example
 
 ## GetRoutingEmailDomainRoutes
 
-> [**InboundRouteEntityListing**](InboundRouteEntityListing) GetRoutingEmailDomainRoutes (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null)
+> [**InboundRouteEntityListing**](InboundRouteEntityListing) GetRoutingEmailDomainRoutes (string domainName, int? pageSize = null, int? pageNumber = null, string pattern = null, List<string> expand = null)
 
 
 Get routes
@@ -2240,11 +2241,12 @@ namespace Example
             var pageSize = 56;  // int? | Page size (optional)  (default to 25)
             var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
             var pattern = pattern_example;  // string | Filter routes by the route's pattern property (optional) 
+            var expand = new List<string>(); // List<string> | Which fields, if any, to expand (optional) 
 
             try
             { 
                 // Get routes
-                InboundRouteEntityListing result = apiInstance.GetRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern);
+                InboundRouteEntityListing result = apiInstance.GetRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern, expand);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2265,6 +2267,7 @@ namespace Example
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
 | **pattern** | **string**| Filter routes by the route&#39;s pattern property | [optional]  |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -3233,7 +3236,7 @@ namespace Example
 
 ## GetRoutingQueue
 
-> [**Queue**](Queue) GetRoutingQueue (string queueId)
+> [**Queue**](Queue) GetRoutingQueue (string queueId, List<string> expand = null)
 
 
 Get details about this queue.
@@ -3265,11 +3268,12 @@ namespace Example
 
             var apiInstance = new RoutingApi();
             var queueId = queueId_example;  // string | Queue ID
+            var expand = new List<string>(); // List<string> | Which fields, if any, to expand (optional) 
 
             try
             { 
                 // Get details about this queue.
-                Queue result = apiInstance.GetRoutingQueue(queueId);
+                Queue result = apiInstance.GetRoutingQueue(queueId, expand);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3287,6 +3291,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **queueId** | **string**| Queue ID |  |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -3556,8 +3561,6 @@ namespace Example
 
 Get Queue IdentityResolution Settings.
 
-GetRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * routing:queue:view
@@ -3754,7 +3757,7 @@ namespace Example
 | **pageNumber** | **int?**|  | [optional] [default to 1] |
 | **pageSize** | **int?**| Max value is 100 | [optional] [default to 25] |
 | **sortOrder** | **string**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
-| **expand** | [**List<string>**](string)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **name** | **string**| Filter by queue member name (contains-style search) | [optional]  |
 | **profileSkills** | [**List<string>**](string)| Filter by profile skill (contains-style search) | [optional]  |
 | **skills** | [**List<string>**](string)| Filter by skill (contains-style search) | [optional]  |
@@ -3843,7 +3846,7 @@ namespace Example
 | **pageNumber** | **int?**|  | [optional] [default to 1] |
 | **pageSize** | **int?**| Max value is 100 | [optional] [default to 25] |
 | **sortOrder** | **string**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
-| **expand** | [**List<string>**](string)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **joined** | **bool?**| Filter by joined status | [optional]  |
 | **name** | **string**| Filter by queue member name | [optional]  |
 | **profileSkills** | [**List<string>**](string)| Filter by profile skill | [optional]  |
@@ -3859,7 +3862,7 @@ namespace Example
 
 ## GetRoutingQueueWrapupcodes
 
-> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) GetRoutingQueueWrapupcodes (string queueId, int? pageSize = null, int? pageNumber = null)
+> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) GetRoutingQueueWrapupcodes (string queueId, int? pageSize = null, int? pageNumber = null, string name = null)
 
 
 Get the wrap-up codes for a queue
@@ -3893,11 +3896,12 @@ namespace Example
             var queueId = queueId_example;  // string | Queue ID
             var pageSize = 56;  // int? | Page size (optional)  (default to 25)
             var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
+            var name = name_example;  // string | Wrapup code's name (trailing asterisks allowed) (optional) 
 
             try
             { 
                 // Get the wrap-up codes for a queue
-                WrapupCodeEntityListing result = apiInstance.GetRoutingQueueWrapupcodes(queueId, pageSize, pageNumber);
+                WrapupCodeEntityListing result = apiInstance.GetRoutingQueueWrapupcodes(queueId, pageSize, pageNumber, name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3917,6 +3921,7 @@ namespace Example
 | **queueId** | **string**| Queue ID |  |
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
+| **name** | **string**| Wrapup code&#39;s name (trailing asterisks allowed) | [optional]  |
 
 ### Return type
 
@@ -3925,7 +3930,7 @@ namespace Example
 
 ## GetRoutingQueues
 
-> [**QueueEntityListing**](QueueEntityListing) GetRoutingQueues (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null)
+> [**QueueEntityListing**](QueueEntityListing) GetRoutingQueues (int? pageNumber = null, int? pageSize = null, string sortOrder = null, string name = null, List<string> id = null, List<string> divisionId = null, List<string> peerId = null, string cannedResponseLibraryId = null, bool? hasPeer = null, List<string> expand = null)
 
 
 Get list of queues.
@@ -3965,11 +3970,12 @@ namespace Example
             var peerId = new List<string>(); // List<string> | Include only queues with the specified peer ID(s) (optional) 
             var cannedResponseLibraryId = cannedResponseLibraryId_example;  // string | Include only queues explicitly associated with the specified canned response library ID (optional) 
             var hasPeer = true;  // bool? | Include only queues with a peer ID (optional) 
+            var expand = new List<string>(); // List<string> | Which fields, if any, to expand (optional) 
 
             try
             { 
                 // Get list of queues.
-                QueueEntityListing result = apiInstance.GetRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer);
+                QueueEntityListing result = apiInstance.GetRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer, expand);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3995,6 +4001,7 @@ namespace Example
 | **peerId** | [**List<string>**](string)| Include only queues with the specified peer ID(s) | [optional]  |
 | **cannedResponseLibraryId** | **string**| Include only queues explicitly associated with the specified canned response library ID | [optional]  |
 | **hasPeer** | **bool?**| Include only queues with a peer ID | [optional]  |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -4978,8 +4985,6 @@ namespace Example
 
 Get a SMS identity resolution settings.
 
-GetRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * sms:phoneNumber:view
@@ -5102,7 +5107,7 @@ namespace Example
 
 ## GetRoutingSmsPhonenumbers
 
-> [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing) GetRoutingSmsPhonenumbers (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null)
+> [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing) GetRoutingSmsPhonenumbers (string phoneNumber = null, List<string> phoneNumberType = null, List<string> phoneNumberStatus = null, List<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, List<string> expand = null)
 
 
 Get a list of provisioned phone numbers.
@@ -5144,11 +5149,12 @@ namespace Example
             var language = en-US;  // string | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional)  (default to "en-US")
             var integrationId = integrationId_example;  // string | Filter on the Genesys Cloud integration id to which the phone number belongs to (optional) 
             var supportedContentId = supportedContentId_example;  // string | Filter based on the supported content ID (optional) 
+            var expand = new List<string>(); // List<string> | Which fields, if any, to expand (optional) 
 
             try
             { 
                 // Get a list of provisioned phone numbers.
-                SmsPhoneNumberEntityListing result = apiInstance.GetRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId);
+                SmsPhoneNumberEntityListing result = apiInstance.GetRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId, expand);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5176,6 +5182,7 @@ namespace Example
 | **language** | **string**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to "en-US"] |
 | **integrationId** | **string**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
 | **supportedContentId** | **string**| Filter based on the supported content ID | [optional]  |
+| **expand** | [**List<string>**](string)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution, supportedContent |
 
 ### Return type
 
@@ -7011,6 +7018,70 @@ namespace Example
 ### Return type
 
 [**SkillGroup**](SkillGroup)
+
+
+## PatchRoutingSmsPhonenumber
+
+> [**SmsPhoneNumber**](SmsPhoneNumber) PatchRoutingSmsPhonenumber (string phoneNumberId, SmsPhoneNumberPatchRequest body)
+
+
+Update a phone number provisioned for SMS.
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchRoutingSmsPhonenumberExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var phoneNumberId = phoneNumberId_example;  // string | phone number
+            var body = new SmsPhoneNumberPatchRequest(); // SmsPhoneNumberPatchRequest | SmsPhoneNumberPatchRequest
+
+            try
+            { 
+                // Update a phone number provisioned for SMS.
+                SmsPhoneNumber result = apiInstance.PatchRoutingSmsPhonenumber(phoneNumberId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PatchRoutingSmsPhonenumber: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **phoneNumberId** | **string**| phone number |  |
+| **body** | [**SmsPhoneNumberPatchRequest**](SmsPhoneNumberPatchRequest)| SmsPhoneNumberPatchRequest |  |
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
 
 ## PatchUserQueue
@@ -9187,8 +9258,6 @@ namespace Example
 
 Update identity resolution settings for a route.
 
-PutRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * routing:email:manage
@@ -9446,8 +9515,6 @@ namespace Example
 
 Update Queue IdentityResolution Settings.
 
-PutRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * routing:queue:edit
@@ -9636,8 +9703,6 @@ namespace Example
 
 
 Update an SMS identity resolution settings.
-
-PutRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -10145,4 +10210,4 @@ namespace Example
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatform.Client.V2 232.0.0_
+_PureCloudPlatform.Client.V2 237.0.0_

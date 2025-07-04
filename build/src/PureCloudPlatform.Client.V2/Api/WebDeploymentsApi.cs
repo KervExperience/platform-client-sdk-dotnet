@@ -298,26 +298,24 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>IdentityResolutionConfig</returns>
+        /// <returns>DeploymentIdentityResolutionConfig</returns>
         
-        IdentityResolutionConfig GetWebdeploymentsDeploymentIdentityresolution (string deploymentId);
+        DeploymentIdentityResolutionConfig GetWebdeploymentsDeploymentIdentityresolution (string deploymentId);
 
         /// <summary>
         /// Get a deployment identity resolution setting.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        /// <returns>ApiResponse of DeploymentIdentityResolutionConfig</returns>
         
-        ApiResponse<IdentityResolutionConfig> GetWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId);
+        ApiResponse<DeploymentIdentityResolutionConfig> GetWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId);
 
         /// <summary>
         /// Get deployments
@@ -520,28 +518,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>IdentityResolutionConfig</returns>
+        /// <returns>DeploymentIdentityResolutionConfig</returns>
         
-        IdentityResolutionConfig PutWebdeploymentsDeploymentIdentityresolution (string deploymentId, IdentityResolutionConfig body);
+        DeploymentIdentityResolutionConfig PutWebdeploymentsDeploymentIdentityresolution (string deploymentId, DeploymentIdentityResolutionConfig body);
 
         /// <summary>
         /// Update identity resolution settings for a deployment.
         /// </summary>
         /// <remarks>
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        /// <returns>ApiResponse of DeploymentIdentityResolutionConfig</returns>
         
-        ApiResponse<IdentityResolutionConfig> PutWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId, IdentityResolutionConfig body);
+        ApiResponse<DeploymentIdentityResolutionConfig> PutWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId, DeploymentIdentityResolutionConfig body);
 
         #endregion Synchronous Operations
 
@@ -830,26 +826,24 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>Task of IdentityResolutionConfig</returns>
+        /// <returns>Task of DeploymentIdentityResolutionConfig</returns>
         
-        System.Threading.Tasks.Task<IdentityResolutionConfig> GetWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId);
+        System.Threading.Tasks.Task<DeploymentIdentityResolutionConfig> GetWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId);
 
         /// <summary>
         /// Get a deployment identity resolution setting.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        /// <returns>Task of ApiResponse (DeploymentIdentityResolutionConfig)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId);
+        System.Threading.Tasks.Task<ApiResponse<DeploymentIdentityResolutionConfig>> GetWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId);
 
         /// <summary>
         /// Get deployments
@@ -1052,28 +1046,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>Task of IdentityResolutionConfig</returns>
+        /// <returns>Task of DeploymentIdentityResolutionConfig</returns>
         
-        System.Threading.Tasks.Task<IdentityResolutionConfig> PutWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId, IdentityResolutionConfig body);
+        System.Threading.Tasks.Task<DeploymentIdentityResolutionConfig> PutWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId, DeploymentIdentityResolutionConfig body);
 
         /// <summary>
         /// Update identity resolution settings for a deployment.
         /// </summary>
         /// <remarks>
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        /// <returns>Task of ApiResponse (DeploymentIdentityResolutionConfig)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId, IdentityResolutionConfig body);
+        System.Threading.Tasks.Task<ApiResponse<DeploymentIdentityResolutionConfig>> PutWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId, DeploymentIdentityResolutionConfig body);
 
         #endregion Asynchronous Operations
 
@@ -3382,28 +3374,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a deployment identity resolution setting. 
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>IdentityResolutionConfig</returns>
+        /// <returns>DeploymentIdentityResolutionConfig</returns>
         
-        public IdentityResolutionConfig GetWebdeploymentsDeploymentIdentityresolution (string deploymentId)
+        public DeploymentIdentityResolutionConfig GetWebdeploymentsDeploymentIdentityresolution (string deploymentId)
         {
-             ApiResponse<IdentityResolutionConfig> localVarResponse = GetWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(deploymentId);
+             ApiResponse<DeploymentIdentityResolutionConfig> localVarResponse = GetWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(deploymentId);
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a deployment identity resolution setting. 
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        /// <returns>ApiResponse of DeploymentIdentityResolutionConfig</returns>
         
-        public ApiResponse< IdentityResolutionConfig > GetWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId)
+        public ApiResponse< DeploymentIdentityResolutionConfig > GetWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId)
         { 
             // verify the required parameter 'deploymentId' is set
             if (deploymentId == null)
@@ -3472,9 +3462,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWebdeploymentsDeploymentIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+            return new ApiResponse<DeploymentIdentityResolutionConfig>(localVarStatusCode,
                 localVarHeaders,
-                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                (DeploymentIdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeploymentIdentityResolutionConfig)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -3483,15 +3473,14 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a deployment identity resolution setting. 
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>Task of IdentityResolutionConfig</returns>
+        /// <returns>Task of DeploymentIdentityResolutionConfig</returns>
         
-        public async System.Threading.Tasks.Task<IdentityResolutionConfig> GetWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId)
+        public async System.Threading.Tasks.Task<DeploymentIdentityResolutionConfig> GetWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId)
         {
-             ApiResponse<IdentityResolutionConfig> localVarResponse = await GetWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo(deploymentId);
+             ApiResponse<DeploymentIdentityResolutionConfig> localVarResponse = await GetWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo(deploymentId);
              return localVarResponse.Data;
 
         }
@@ -3499,13 +3488,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a deployment identity resolution setting. 
         /// 
-        /// GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
-        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        /// <returns>Task of ApiResponse (DeploymentIdentityResolutionConfig)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId)
+        public async System.Threading.Tasks.Task<ApiResponse<DeploymentIdentityResolutionConfig>> GetWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId)
         { 
             // verify the required parameter 'deploymentId' is set
             if (deploymentId == null)
@@ -3575,9 +3563,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWebdeploymentsDeploymentIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+            return new ApiResponse<DeploymentIdentityResolutionConfig>(localVarStatusCode,
                 localVarHeaders,
-                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                (DeploymentIdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeploymentIdentityResolutionConfig)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -5239,30 +5227,28 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a deployment. 
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>IdentityResolutionConfig</returns>
+        /// <returns>DeploymentIdentityResolutionConfig</returns>
         
-        public IdentityResolutionConfig PutWebdeploymentsDeploymentIdentityresolution (string deploymentId, IdentityResolutionConfig body)
+        public DeploymentIdentityResolutionConfig PutWebdeploymentsDeploymentIdentityresolution (string deploymentId, DeploymentIdentityResolutionConfig body)
         {
-             ApiResponse<IdentityResolutionConfig> localVarResponse = PutWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(deploymentId, body);
+             ApiResponse<DeploymentIdentityResolutionConfig> localVarResponse = PutWebdeploymentsDeploymentIdentityresolutionWithHttpInfo(deploymentId, body);
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Update identity resolution settings for a deployment. 
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        /// <returns>ApiResponse of DeploymentIdentityResolutionConfig</returns>
         
-        public ApiResponse< IdentityResolutionConfig > PutWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId, IdentityResolutionConfig body)
+        public ApiResponse< DeploymentIdentityResolutionConfig > PutWebdeploymentsDeploymentIdentityresolutionWithHttpInfo (string deploymentId, DeploymentIdentityResolutionConfig body)
         { 
             // verify the required parameter 'deploymentId' is set
             if (deploymentId == null)
@@ -5340,9 +5326,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWebdeploymentsDeploymentIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+            return new ApiResponse<DeploymentIdentityResolutionConfig>(localVarStatusCode,
                 localVarHeaders,
-                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                (DeploymentIdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeploymentIdentityResolutionConfig)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -5351,16 +5337,15 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a deployment. 
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>Task of IdentityResolutionConfig</returns>
+        /// <returns>Task of DeploymentIdentityResolutionConfig</returns>
         
-        public async System.Threading.Tasks.Task<IdentityResolutionConfig> PutWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId, IdentityResolutionConfig body)
+        public async System.Threading.Tasks.Task<DeploymentIdentityResolutionConfig> PutWebdeploymentsDeploymentIdentityresolutionAsync (string deploymentId, DeploymentIdentityResolutionConfig body)
         {
-             ApiResponse<IdentityResolutionConfig> localVarResponse = await PutWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo(deploymentId, body);
+             ApiResponse<DeploymentIdentityResolutionConfig> localVarResponse = await PutWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo(deploymentId, body);
              return localVarResponse.Data;
 
         }
@@ -5368,14 +5353,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update identity resolution settings for a deployment. 
         /// 
-        /// PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="deploymentId">The deployment ID</param>
         /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        /// <returns>Task of ApiResponse (DeploymentIdentityResolutionConfig)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId, IdentityResolutionConfig body)
+        public async System.Threading.Tasks.Task<ApiResponse<DeploymentIdentityResolutionConfig>> PutWebdeploymentsDeploymentIdentityresolutionAsyncWithHttpInfo (string deploymentId, DeploymentIdentityResolutionConfig body)
         { 
             // verify the required parameter 'deploymentId' is set
             if (deploymentId == null)
@@ -5455,9 +5439,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWebdeploymentsDeploymentIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+            return new ApiResponse<DeploymentIdentityResolutionConfig>(localVarStatusCode,
                 localVarHeaders,
-                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                (DeploymentIdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeploymentIdentityResolutionConfig)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

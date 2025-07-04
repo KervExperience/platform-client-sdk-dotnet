@@ -29,7 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsContactsSchemaVersion**](#GetExternalcontactsContactsSchemaVersion) | **Get** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
 | [**GetExternalcontactsContactsSchemaVersions**](#GetExternalcontactsContactsSchemaVersions) | **Get** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact&#39;s schema |
 | [**GetExternalcontactsContactsSchemas**](#GetExternalcontactsContactsSchemas) | **Get** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas. |
-| [**GetExternalcontactsContactsSchemasCoretype**](#GetExternalcontactsContactsSchemasCoretype) | **Get** /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built. |
+| [**GetExternalcontactsContactsSchemasCoretype**](#GetExternalcontactsContactsSchemasCoretype) | **Get** /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName} | Get a specific named core type. |
 | [**GetExternalcontactsContactsSchemasCoretypes**](#GetExternalcontactsContactsSchemasCoretypes) | **Get** /api/v2/externalcontacts/contacts/schemas/coretypes | Get the core types from which all schemas are built. |
 | [**GetExternalcontactsContactsSchemasLimits**](#GetExternalcontactsContactsSchemasLimits) | **Get** /api/v2/externalcontacts/contacts/schemas/limits | Get quantitative limits on schemas |
 | [**GetExternalcontactsExternalsource**](#GetExternalcontactsExternalsource) | **Get** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source |
@@ -53,7 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsOrganizationsSchemaVersion**](#GetExternalcontactsOrganizationsSchemaVersion) | **Get** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
 | [**GetExternalcontactsOrganizationsSchemaVersions**](#GetExternalcontactsOrganizationsSchemaVersions) | **Get** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization&#39;s schema |
 | [**GetExternalcontactsOrganizationsSchemas**](#GetExternalcontactsOrganizationsSchemas) | **Get** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas. |
-| [**GetExternalcontactsOrganizationsSchemasCoretype**](#GetExternalcontactsOrganizationsSchemasCoretype) | **Get** /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built. |
+| [**GetExternalcontactsOrganizationsSchemasCoretype**](#GetExternalcontactsOrganizationsSchemasCoretype) | **Get** /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName} | Get a specific named core type. |
 | [**GetExternalcontactsOrganizationsSchemasCoretypes**](#GetExternalcontactsOrganizationsSchemasCoretypes) | **Get** /api/v2/externalcontacts/organizations/schemas/coretypes | Get the core types from which all schemas are built. |
 | [**GetExternalcontactsOrganizationsSchemasLimits**](#GetExternalcontactsOrganizationsSchemasLimits) | **Get** /api/v2/externalcontacts/organizations/schemas/limits | Get quantitative limits on schemas |
 | [**GetExternalcontactsRelationship**](#GetExternalcontactsRelationship) | **Get** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship |
@@ -1602,7 +1602,7 @@ This endpoint does require any parameters.
 > [**Coretype**](Coretype) GetExternalcontactsContactsSchemasCoretype (string coreTypeName)
 
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Requires ANY permissions: 
 
@@ -1634,7 +1634,7 @@ namespace Example
 
             try
             { 
-                // Get the core types from which all schemas are built.
+                // Get a specific named core type.
                 Coretype result = apiInstance.GetExternalcontactsContactsSchemasCoretype(coreTypeName);
                 Debug.WriteLine(result);
             }
@@ -1661,7 +1661,7 @@ namespace Example
 
 ## GetExternalcontactsContactsSchemasCoretypes
 
-> [**Coretype**](Coretype) GetExternalcontactsContactsSchemasCoretypes ()
+> [**CoretypeListing**](CoretypeListing) GetExternalcontactsContactsSchemasCoretypes ()
 
 
 Get the core types from which all schemas are built.
@@ -1696,7 +1696,7 @@ namespace Example
             try
             { 
                 // Get the core types from which all schemas are built.
-                Coretype result = apiInstance.GetExternalcontactsContactsSchemasCoretypes();
+                CoretypeListing result = apiInstance.GetExternalcontactsContactsSchemasCoretypes();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1713,7 +1713,7 @@ This endpoint does require any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 ## GetExternalcontactsContactsSchemasLimits
@@ -2570,8 +2570,6 @@ namespace Example
 
 List the identifiers for an external organization
 
-GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * externalContacts:externalOrganization:view
@@ -3163,7 +3161,7 @@ This endpoint does require any parameters.
 > [**Coretype**](Coretype) GetExternalcontactsOrganizationsSchemasCoretype (string coreTypeName)
 
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Requires ANY permissions: 
 
@@ -3195,7 +3193,7 @@ namespace Example
 
             try
             { 
-                // Get the core types from which all schemas are built.
+                // Get a specific named core type.
                 Coretype result = apiInstance.GetExternalcontactsOrganizationsSchemasCoretype(coreTypeName);
                 Debug.WriteLine(result);
             }
@@ -3222,7 +3220,7 @@ namespace Example
 
 ## GetExternalcontactsOrganizationsSchemasCoretypes
 
-> [**Coretype**](Coretype) GetExternalcontactsOrganizationsSchemasCoretypes ()
+> [**CoretypeListing**](CoretypeListing) GetExternalcontactsOrganizationsSchemasCoretypes ()
 
 
 Get the core types from which all schemas are built.
@@ -3257,7 +3255,7 @@ namespace Example
             try
             { 
                 // Get the core types from which all schemas are built.
-                Coretype result = apiInstance.GetExternalcontactsOrganizationsSchemasCoretypes();
+                CoretypeListing result = apiInstance.GetExternalcontactsOrganizationsSchemasCoretypes();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3274,7 +3272,7 @@ This endpoint does require any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 ## GetExternalcontactsOrganizationsSchemasLimits
@@ -3539,8 +3537,6 @@ namespace Example
 
 Scan for external contacts using paging
 
-GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * externalContacts:contact:viewAll
@@ -3671,8 +3667,6 @@ namespace Example
 
 
 Scan for notes using paging
-
-GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -3805,8 +3799,6 @@ namespace Example
 
 Scan for external organizations using paging
 
-GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * externalContacts:externalOrganization:viewAll
@@ -3938,8 +3930,6 @@ namespace Example
 
 Scan for relationships
 
-GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions: 
 
 * externalContacts:contact:viewAll
@@ -4067,8 +4057,6 @@ namespace Example
 
 
 Claim or release identifiers for an external organization
-
-PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -4258,8 +4246,6 @@ namespace Example
 
 Bulk fetch contacts across divisions
 
-PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * externalContacts:contact:search
@@ -4323,8 +4309,6 @@ namespace Example
 Bulk Enrich Contacts - Run up to 10 Enrich operations per request
 
 See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-
-PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -4952,8 +4936,6 @@ namespace Example
 
 Bulk fetch organizations across divisions
 
-PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * externalContacts:externalOrganization:search
@@ -5017,8 +4999,6 @@ namespace Example
 Bulk enrich external organizations - Run up to 10 Enrich operations per request
 
 See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-
-PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -5652,8 +5632,6 @@ Modify or create an External Contact, with powerful behaviors for finding and co
 
 You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
 
-PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * externalContacts:contact:enrich
@@ -5782,8 +5760,6 @@ namespace Example
 Merge up to 25 contacts into a new contact record
 
 Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-
-PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -6043,8 +6019,6 @@ Fetch a contact using an identifier type and value.
 
 Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
 
-PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * externalContacts:contact:view
@@ -6110,8 +6084,6 @@ namespace Example
 Fetch an external organization using an identifier type and value.
 
 This endpoint will only accept ExternalId type identifiers.
-
-PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -6683,8 +6655,6 @@ namespace Example
 Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
 
 You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-
-PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -7711,4 +7681,4 @@ namespace Example
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatform.Client.V2 232.0.0_
+_PureCloudPlatform.Client.V2 237.0.0_

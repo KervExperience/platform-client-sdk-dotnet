@@ -859,7 +859,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a pageable list of basic emergency group objects filterable by query parameters.
         /// </summary>
         /// <remarks>
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -877,7 +877,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a pageable list of basic emergency group objects filterable by query parameters.
         /// </summary>
         /// <remarks>
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -1012,7 +1012,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -1025,7 +1024,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -1047,9 +1045,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>IVREntityListing</returns>
         
-        IVREntityListing GetArchitectIvrs (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null);
+        IVREntityListing GetArchitectIvrs (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null);
 
         /// <summary>
         /// Get IVR configs.
@@ -1065,9 +1064,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of IVREntityListing</returns>
         
-        ApiResponse<IVREntityListing> GetArchitectIvrsWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null);
+        ApiResponse<IVREntityListing> GetArchitectIvrsWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null);
 
         /// <summary>
         /// Get a pageable list of basic ivr configuration information objects filterable by query parameters.
@@ -1936,12 +1936,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>FlowEntityListing</returns>
         
-        FlowEntityListing GetFlows (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
+        FlowEntityListing GetFlows (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
 
         /// <summary>
         /// Get a pageable list of flows, filtered by query parameters
@@ -1966,12 +1967,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>ApiResponse of FlowEntityListing</returns>
         
-        ApiResponse<FlowEntityListing> GetFlowsWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
+        ApiResponse<FlowEntityListing> GetFlowsWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
 
         /// <summary>
         /// Returns a specific datatable by id
@@ -3012,6 +3014,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -3025,6 +3028,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -3160,6 +3164,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -3173,6 +3178,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -3786,7 +3792,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -3800,7 +3805,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -4979,7 +4983,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a pageable list of basic emergency group objects filterable by query parameters.
         /// </summary>
         /// <remarks>
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -4997,7 +5001,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a pageable list of basic emergency group objects filterable by query parameters.
         /// </summary>
         /// <remarks>
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -5132,7 +5136,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -5145,7 +5148,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -5167,9 +5169,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of IVREntityListing</returns>
         
-        System.Threading.Tasks.Task<IVREntityListing> GetArchitectIvrsAsync (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null);
+        System.Threading.Tasks.Task<IVREntityListing> GetArchitectIvrsAsync (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null);
 
         /// <summary>
         /// Get IVR configs.
@@ -5185,9 +5188,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (IVREntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<IVREntityListing>> GetArchitectIvrsAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null);
+        System.Threading.Tasks.Task<ApiResponse<IVREntityListing>> GetArchitectIvrsAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null);
 
         /// <summary>
         /// Get a pageable list of basic ivr configuration information objects filterable by query parameters.
@@ -6056,12 +6060,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>Task of FlowEntityListing</returns>
         
-        System.Threading.Tasks.Task<FlowEntityListing> GetFlowsAsync (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
+        System.Threading.Tasks.Task<FlowEntityListing> GetFlowsAsync (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
 
         /// <summary>
         /// Get a pageable list of flows, filtered by query parameters
@@ -6086,12 +6091,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>Task of ApiResponse (FlowEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<FlowEntityListing>> GetFlowsAsyncWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
+        System.Threading.Tasks.Task<ApiResponse<FlowEntityListing>> GetFlowsAsyncWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null);
 
         /// <summary>
         /// Returns a specific datatable by id
@@ -7132,6 +7138,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -7145,6 +7152,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -7280,6 +7288,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -7293,6 +7302,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -7906,7 +7916,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -7920,7 +7929,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -14860,7 +14868,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a pageable list of basic emergency group objects filterable by query parameters. 
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -14880,7 +14888,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a pageable list of basic emergency group objects filterable by query parameters. 
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -14974,7 +14982,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a pageable list of basic emergency group objects filterable by query parameters. 
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -14995,7 +15003,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a pageable list of basic emergency group objects filterable by query parameters. 
-        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+        /// This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch emergency groups that match the given ID(s) and not use any additional supplied query parameters in the search.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
@@ -15955,7 +15963,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an IVR IdentityResolutionConfig. 
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -15970,7 +15977,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an IVR IdentityResolutionConfig. 
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -16056,7 +16062,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an IVR IdentityResolutionConfig. 
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -16072,7 +16077,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an IVR IdentityResolutionConfig. 
         /// 
-        /// GetArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -16169,11 +16173,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>IVREntityListing</returns>
         
-        public IVREntityListing GetArchitectIvrs (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null)
+        public IVREntityListing GetArchitectIvrs (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null)
         {
-             ApiResponse<IVREntityListing> localVarResponse = GetArchitectIvrsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup);
+             ApiResponse<IVREntityListing> localVarResponse = GetArchitectIvrsWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup, expand);
              return localVarResponse.Data;
         }
 
@@ -16189,9 +16194,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of IVREntityListing</returns>
         
-        public ApiResponse< IVREntityListing > GetArchitectIvrsWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null)
+        public ApiResponse< IVREntityListing > GetArchitectIvrsWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null)
         { 
 
             var localVarPath = "/api/v2/architect/ivrs";
@@ -16234,6 +16240,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
             if (dnis != null) localVarQueryParams.Add(new Tuple<string, string>("dnis", this.Configuration.ApiClient.ParameterToString(dnis)));
             if (scheduleGroup != null) localVarQueryParams.Add(new Tuple<string, string>("scheduleGroup", this.Configuration.ApiClient.ParameterToString(scheduleGroup)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -16283,11 +16290,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of IVREntityListing</returns>
         
-        public async System.Threading.Tasks.Task<IVREntityListing> GetArchitectIvrsAsync (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null)
+        public async System.Threading.Tasks.Task<IVREntityListing> GetArchitectIvrsAsync (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null)
         {
-             ApiResponse<IVREntityListing> localVarResponse = await GetArchitectIvrsAsyncWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup);
+             ApiResponse<IVREntityListing> localVarResponse = await GetArchitectIvrsAsyncWithHttpInfo(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup, expand);
              return localVarResponse.Data;
 
         }
@@ -16304,9 +16312,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="name">Name of the IVR to filter by. (optional)</param>
         /// <param name="dnis">The phone number of the IVR to filter by. (optional)</param>
         /// <param name="scheduleGroup">The Schedule Group of the IVR to filter by. (optional)</param>
+        /// <param name="expand">Which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (IVREntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<IVREntityListing>> GetArchitectIvrsAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null)
+        public async System.Threading.Tasks.Task<ApiResponse<IVREntityListing>> GetArchitectIvrsAsyncWithHttpInfo (int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string name = null, string dnis = null, string scheduleGroup = null, List<string> expand = null)
         { 
 
             var localVarPath = "/api/v2/architect/ivrs";
@@ -16349,6 +16358,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
             if (dnis != null) localVarQueryParams.Add(new Tuple<string, string>("dnis", this.Configuration.ApiClient.ParameterToString(dnis)));
             if (scheduleGroup != null) localVarQueryParams.Add(new Tuple<string, string>("scheduleGroup", this.Configuration.ApiClient.ParameterToString(scheduleGroup)));
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -22479,14 +22489,15 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>FlowEntityListing</returns>
         
-        public FlowEntityListing GetFlows (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
+        public FlowEntityListing GetFlows (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
         {
-             ApiResponse<FlowEntityListing> localVarResponse = GetFlowsWithHttpInfo(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId);
+             ApiResponse<FlowEntityListing> localVarResponse = GetFlowsWithHttpInfo(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, virtualAgentEnabled, publishedAfter, publishedBefore, divisionId);
              return localVarResponse.Data;
         }
 
@@ -22511,12 +22522,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>ApiResponse of FlowEntityListing</returns>
         
-        public ApiResponse< FlowEntityListing > GetFlowsWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
+        public ApiResponse< FlowEntityListing > GetFlowsWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
         { 
 
             var localVarPath = "/api/v2/flows";
@@ -22568,6 +22580,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (secure != null) localVarQueryParams.Add(new Tuple<string, string>("secure", this.Configuration.ApiClient.ParameterToString(secure)));
             if (deleted != null) localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
             if (includeSchemas != null) localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", this.Configuration.ApiClient.ParameterToString(includeSchemas)));
+            if (virtualAgentEnabled != null) localVarQueryParams.Add(new Tuple<string, string>("virtualAgentEnabled", this.Configuration.ApiClient.ParameterToString(virtualAgentEnabled)));
             if (publishedAfter != null) localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", this.Configuration.ApiClient.ParameterToString(publishedAfter)));
             if (publishedBefore != null) localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", this.Configuration.ApiClient.ParameterToString(publishedBefore)));
             if (divisionId != null) divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
@@ -22629,14 +22642,15 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>Task of FlowEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<FlowEntityListing> GetFlowsAsync (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
+        public async System.Threading.Tasks.Task<FlowEntityListing> GetFlowsAsync (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
         {
-             ApiResponse<FlowEntityListing> localVarResponse = await GetFlowsAsyncWithHttpInfo(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId);
+             ApiResponse<FlowEntityListing> localVarResponse = await GetFlowsAsyncWithHttpInfo(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, virtualAgentEnabled, publishedAfter, publishedBefore, divisionId);
              return localVarResponse.Data;
 
         }
@@ -22662,12 +22676,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="secure">Secure (optional)</param>
         /// <param name="deleted">Include deleted (optional, default to false)</param>
         /// <param name="includeSchemas">Include variable schemas (optional, default to false)</param>
+        /// <param name="virtualAgentEnabled">Include/exclude virtual agent flows (optional)</param>
         /// <param name="publishedAfter">Published after (optional)</param>
         /// <param name="publishedBefore">Published before (optional)</param>
         /// <param name="divisionId">division ID(s) (optional)</param>
         /// <returns>Task of ApiResponse (FlowEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<FlowEntityListing>> GetFlowsAsyncWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FlowEntityListing>> GetFlowsAsyncWithHttpInfo (List<string> type = null, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, List<string> id = null, string name = null, string description = null, string nameOrDescription = null, string publishVersionId = null, string editableBy = null, string lockedBy = null, string lockedByClientId = null, string secure = null, bool? deleted = null, bool? includeSchemas = null, bool? virtualAgentEnabled = null, string publishedAfter = null, string publishedBefore = null, List<string> divisionId = null)
         { 
 
             var localVarPath = "/api/v2/flows";
@@ -22719,6 +22734,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (secure != null) localVarQueryParams.Add(new Tuple<string, string>("secure", this.Configuration.ApiClient.ParameterToString(secure)));
             if (deleted != null) localVarQueryParams.Add(new Tuple<string, string>("deleted", this.Configuration.ApiClient.ParameterToString(deleted)));
             if (includeSchemas != null) localVarQueryParams.Add(new Tuple<string, string>("includeSchemas", this.Configuration.ApiClient.ParameterToString(includeSchemas)));
+            if (virtualAgentEnabled != null) localVarQueryParams.Add(new Tuple<string, string>("virtualAgentEnabled", this.Configuration.ApiClient.ParameterToString(virtualAgentEnabled)));
             if (publishedAfter != null) localVarQueryParams.Add(new Tuple<string, string>("publishedAfter", this.Configuration.ApiClient.ParameterToString(publishedAfter)));
             if (publishedBefore != null) localVarQueryParams.Add(new Tuple<string, string>("publishedBefore", this.Configuration.ApiClient.ParameterToString(publishedBefore)));
             if (divisionId != null) divisionId.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("divisionId", this.Configuration.ApiClient.ParameterToString(obj))); });
@@ -30698,6 +30714,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a user prompt file 
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -30713,6 +30730,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a user prompt file 
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -30803,6 +30821,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a user prompt file 
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -30819,6 +30838,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a user prompt file 
         /// 
+        /// PostArchitectPromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -31970,6 +31990,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a system prompt file 
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -31985,6 +32006,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a system prompt file 
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -32075,6 +32097,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a system prompt file 
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -32091,6 +32114,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Creates a presigned URL for uploading a system prompt file 
         /// 
+        /// PostArchitectSystempromptResourceUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="promptId">Prompt ID</param>
@@ -37258,7 +37282,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an IVR IdentityResolutionConfig. 
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -37274,7 +37297,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an IVR IdentityResolutionConfig. 
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -37370,7 +37392,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an IVR IdentityResolutionConfig. 
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>
@@ -37387,7 +37408,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an IVR IdentityResolutionConfig. 
         /// 
-        /// PutArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ivrId">IVR id</param>

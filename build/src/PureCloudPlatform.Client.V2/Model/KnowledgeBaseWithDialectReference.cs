@@ -196,10 +196,28 @@ namespace PureCloudPlatform.Client.V2.Model
             Hiin,
             
             /// <summary>
+            /// Enum Trtr for "tr-TR"
+            /// </summary>
+            [EnumMember(Value = "tr-TR")]
+            Trtr,
+            
+            /// <summary>
             /// Enum Esar for "es-AR"
             /// </summary>
             [EnumMember(Value = "es-AR")]
-            Esar
+            Esar,
+            
+            /// <summary>
+            /// Enum Fifi for "fi-FI"
+            /// </summary>
+            [EnumMember(Value = "fi-FI")]
+            Fifi,
+            
+            /// <summary>
+            /// Enum Nbno for "nb-NO"
+            /// </summary>
+            [EnumMember(Value = "nb-NO")]
+            Nbno
         }
         /// <summary>
         /// The dialect for the knowledge base.

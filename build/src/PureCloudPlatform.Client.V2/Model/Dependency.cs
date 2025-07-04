@@ -147,10 +147,22 @@ namespace PureCloudPlatform.Client.V2.Model
             Digitalbotconnector,
             
             /// <summary>
+            /// Enum Digitalbotconnectorintegration for "DIGITALBOTCONNECTORINTEGRATION"
+            /// </summary>
+            [EnumMember(Value = "DIGITALBOTCONNECTORINTEGRATION")]
+            Digitalbotconnectorintegration,
+            
+            /// <summary>
             /// Enum Digitalbotflow for "DIGITALBOTFLOW"
             /// </summary>
             [EnumMember(Value = "DIGITALBOTFLOW")]
             Digitalbotflow,
+            
+            /// <summary>
+            /// Enum Division for "DIVISION"
+            /// </summary>
+            [EnumMember(Value = "DIVISION")]
+            Division,
             
             /// <summary>
             /// Enum Emailroute for "EMAILROUTE"
@@ -199,6 +211,18 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "GROUP")]
             Group,
+            
+            /// <summary>
+            /// Enum Guide for "GUIDE"
+            /// </summary>
+            [EnumMember(Value = "GUIDE")]
+            Guide,
+            
+            /// <summary>
+            /// Enum Guideversion for "GUIDEVERSION"
+            /// </summary>
+            [EnumMember(Value = "GUIDEVERSION")]
+            Guideversion,
             
             /// <summary>
             /// Enum Image for "IMAGE"

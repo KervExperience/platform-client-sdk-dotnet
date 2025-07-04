@@ -608,7 +608,7 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<DataSchemaListing> GetExternalcontactsContactsSchemasWithHttpInfo ();
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -620,7 +620,7 @@ namespace PureCloudPlatform.Client.V2.Api
         Coretype GetExternalcontactsContactsSchemasCoretype (string coreTypeName);
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -638,9 +638,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Coretype</returns>
+        /// <returns>CoretypeListing</returns>
         
-        Coretype GetExternalcontactsContactsSchemasCoretypes ();
+        CoretypeListing GetExternalcontactsContactsSchemasCoretypes ();
 
         /// <summary>
         /// Get the core types from which all schemas are built.
@@ -649,9 +649,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Coretype</returns>
+        /// <returns>ApiResponse of CoretypeListing</returns>
         
-        ApiResponse<Coretype> GetExternalcontactsContactsSchemasCoretypesWithHttpInfo ();
+        ApiResponse<CoretypeListing> GetExternalcontactsContactsSchemasCoretypesWithHttpInfo ();
 
         /// <summary>
         /// Get quantitative limits on schemas
@@ -1008,7 +1008,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -1021,7 +1020,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -1256,7 +1254,7 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<DataSchemaListing> GetExternalcontactsOrganizationsSchemasWithHttpInfo ();
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -1268,7 +1266,7 @@ namespace PureCloudPlatform.Client.V2.Api
         Coretype GetExternalcontactsOrganizationsSchemasCoretype (string coreTypeName);
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -1286,9 +1284,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Coretype</returns>
+        /// <returns>CoretypeListing</returns>
         
-        Coretype GetExternalcontactsOrganizationsSchemasCoretypes ();
+        CoretypeListing GetExternalcontactsOrganizationsSchemasCoretypes ();
 
         /// <summary>
         /// Get the core types from which all schemas are built.
@@ -1297,9 +1295,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Coretype</returns>
+        /// <returns>ApiResponse of CoretypeListing</returns>
         
-        ApiResponse<Coretype> GetExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo ();
+        ApiResponse<CoretypeListing> GetExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo ();
 
         /// <summary>
         /// Get quantitative limits on schemas
@@ -1410,7 +1408,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1424,7 +1421,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1466,7 +1462,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1480,7 +1475,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1522,7 +1516,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1536,7 +1529,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1578,7 +1570,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1592,7 +1583,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -1632,7 +1622,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -1646,7 +1635,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -1708,7 +1696,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -1721,7 +1708,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -1734,7 +1720,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -1748,7 +1733,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -1978,7 +1962,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -1991,7 +1974,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -2004,7 +1986,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -2018,7 +1999,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -2250,7 +2230,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -2264,7 +2243,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -2302,7 +2280,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -2315,7 +2292,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -2402,7 +2378,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -2416,7 +2391,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -2430,7 +2404,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -2444,7 +2417,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -2652,7 +2624,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -2666,7 +2637,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -3662,7 +3632,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<DataSchemaListing>> GetExternalcontactsContactsSchemasAsyncWithHttpInfo ();
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -3674,7 +3644,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<Coretype> GetExternalcontactsContactsSchemasCoretypeAsync (string coreTypeName);
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -3692,9 +3662,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Coretype</returns>
+        /// <returns>Task of CoretypeListing</returns>
         
-        System.Threading.Tasks.Task<Coretype> GetExternalcontactsContactsSchemasCoretypesAsync ();
+        System.Threading.Tasks.Task<CoretypeListing> GetExternalcontactsContactsSchemasCoretypesAsync ();
 
         /// <summary>
         /// Get the core types from which all schemas are built.
@@ -3703,9 +3673,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Coretype)</returns>
+        /// <returns>Task of ApiResponse (CoretypeListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<Coretype>> GetExternalcontactsContactsSchemasCoretypesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<CoretypeListing>> GetExternalcontactsContactsSchemasCoretypesAsyncWithHttpInfo ();
 
         /// <summary>
         /// Get quantitative limits on schemas
@@ -4062,7 +4032,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -4075,7 +4044,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -4310,7 +4278,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<DataSchemaListing>> GetExternalcontactsOrganizationsSchemasAsyncWithHttpInfo ();
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -4322,7 +4290,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<Coretype> GetExternalcontactsOrganizationsSchemasCoretypeAsync (string coreTypeName);
 
         /// <summary>
-        /// Get the core types from which all schemas are built.
+        /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
@@ -4340,9 +4308,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Coretype</returns>
+        /// <returns>Task of CoretypeListing</returns>
         
-        System.Threading.Tasks.Task<Coretype> GetExternalcontactsOrganizationsSchemasCoretypesAsync ();
+        System.Threading.Tasks.Task<CoretypeListing> GetExternalcontactsOrganizationsSchemasCoretypesAsync ();
 
         /// <summary>
         /// Get the core types from which all schemas are built.
@@ -4351,9 +4319,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Coretype)</returns>
+        /// <returns>Task of ApiResponse (CoretypeListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<Coretype>> GetExternalcontactsOrganizationsSchemasCoretypesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<CoretypeListing>> GetExternalcontactsOrganizationsSchemasCoretypesAsyncWithHttpInfo ();
 
         /// <summary>
         /// Get quantitative limits on schemas
@@ -4464,7 +4432,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4478,7 +4445,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4520,7 +4486,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4534,7 +4499,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4576,7 +4540,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4590,7 +4553,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4632,7 +4594,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4646,7 +4607,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -4686,7 +4646,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -4700,7 +4659,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -4762,7 +4720,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -4775,7 +4732,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -4788,7 +4744,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -4802,7 +4757,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -5032,7 +4986,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -5045,7 +4998,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -5058,7 +5010,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -5072,7 +5023,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -5304,7 +5254,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -5318,7 +5267,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -5356,7 +5304,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -5369,7 +5316,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -5456,7 +5402,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -5470,7 +5415,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -5484,7 +5428,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -5498,7 +5441,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -5706,7 +5648,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -5720,7 +5661,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -10954,7 +10894,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -10968,7 +10908,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -11053,7 +10993,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -11068,7 +11008,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -11159,11 +11099,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Coretype</returns>
+        /// <returns>CoretypeListing</returns>
         
-        public Coretype GetExternalcontactsContactsSchemasCoretypes ()
+        public CoretypeListing GetExternalcontactsContactsSchemasCoretypes ()
         {
-             ApiResponse<Coretype> localVarResponse = GetExternalcontactsContactsSchemasCoretypesWithHttpInfo();
+             ApiResponse<CoretypeListing> localVarResponse = GetExternalcontactsContactsSchemasCoretypesWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -11172,9 +11112,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Coretype</returns>
+        /// <returns>ApiResponse of CoretypeListing</returns>
         
-        public ApiResponse< Coretype > GetExternalcontactsContactsSchemasCoretypesWithHttpInfo ()
+        public ApiResponse< CoretypeListing > GetExternalcontactsContactsSchemasCoretypesWithHttpInfo ()
         { 
 
             var localVarPath = "/api/v2/externalcontacts/contacts/schemas/coretypes";
@@ -11239,9 +11179,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetExternalcontactsContactsSchemasCoretypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<Coretype>(localVarStatusCode,
+            return new ApiResponse<CoretypeListing>(localVarStatusCode,
                 localVarHeaders,
-                (Coretype) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+                (CoretypeListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CoretypeListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -11252,11 +11192,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Coretype</returns>
+        /// <returns>Task of CoretypeListing</returns>
         
-        public async System.Threading.Tasks.Task<Coretype> GetExternalcontactsContactsSchemasCoretypesAsync ()
+        public async System.Threading.Tasks.Task<CoretypeListing> GetExternalcontactsContactsSchemasCoretypesAsync ()
         {
-             ApiResponse<Coretype> localVarResponse = await GetExternalcontactsContactsSchemasCoretypesAsyncWithHttpInfo();
+             ApiResponse<CoretypeListing> localVarResponse = await GetExternalcontactsContactsSchemasCoretypesAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -11266,9 +11206,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Coretype)</returns>
+        /// <returns>Task of ApiResponse (CoretypeListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<Coretype>> GetExternalcontactsContactsSchemasCoretypesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<CoretypeListing>> GetExternalcontactsContactsSchemasCoretypesAsyncWithHttpInfo ()
         { 
 
             var localVarPath = "/api/v2/externalcontacts/contacts/schemas/coretypes";
@@ -11333,9 +11273,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetExternalcontactsContactsSchemasCoretypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<Coretype>(localVarStatusCode,
+            return new ApiResponse<CoretypeListing>(localVarStatusCode,
                 localVarHeaders,
-                (Coretype) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+                (CoretypeListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CoretypeListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -14037,7 +13977,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// List the identifiers for an external organization 
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -14052,7 +13991,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// List the identifiers for an external organization 
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -14138,7 +14076,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// List the identifiers for an external organization 
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -14154,7 +14091,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// List the identifiers for an external organization 
         /// 
-        /// GetExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -15950,7 +15886,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -15964,7 +15900,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -16049,7 +15985,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -16064,7 +16000,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Get the core types from which all schemas are built. 
+        /// Get a specific named core type. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -16155,11 +16091,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Coretype</returns>
+        /// <returns>CoretypeListing</returns>
         
-        public Coretype GetExternalcontactsOrganizationsSchemasCoretypes ()
+        public CoretypeListing GetExternalcontactsOrganizationsSchemasCoretypes ()
         {
-             ApiResponse<Coretype> localVarResponse = GetExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo();
+             ApiResponse<CoretypeListing> localVarResponse = GetExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -16168,9 +16104,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Coretype</returns>
+        /// <returns>ApiResponse of CoretypeListing</returns>
         
-        public ApiResponse< Coretype > GetExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo ()
+        public ApiResponse< CoretypeListing > GetExternalcontactsOrganizationsSchemasCoretypesWithHttpInfo ()
         { 
 
             var localVarPath = "/api/v2/externalcontacts/organizations/schemas/coretypes";
@@ -16235,9 +16171,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetExternalcontactsOrganizationsSchemasCoretypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<Coretype>(localVarStatusCode,
+            return new ApiResponse<CoretypeListing>(localVarStatusCode,
                 localVarHeaders,
-                (Coretype) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+                (CoretypeListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CoretypeListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -16248,11 +16184,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of Coretype</returns>
+        /// <returns>Task of CoretypeListing</returns>
         
-        public async System.Threading.Tasks.Task<Coretype> GetExternalcontactsOrganizationsSchemasCoretypesAsync ()
+        public async System.Threading.Tasks.Task<CoretypeListing> GetExternalcontactsOrganizationsSchemasCoretypesAsync ()
         {
-             ApiResponse<Coretype> localVarResponse = await GetExternalcontactsOrganizationsSchemasCoretypesAsyncWithHttpInfo();
+             ApiResponse<CoretypeListing> localVarResponse = await GetExternalcontactsOrganizationsSchemasCoretypesAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -16262,9 +16198,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (Coretype)</returns>
+        /// <returns>Task of ApiResponse (CoretypeListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<Coretype>> GetExternalcontactsOrganizationsSchemasCoretypesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<CoretypeListing>> GetExternalcontactsOrganizationsSchemasCoretypesAsyncWithHttpInfo ()
         { 
 
             var localVarPath = "/api/v2/externalcontacts/organizations/schemas/coretypes";
@@ -16329,9 +16265,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetExternalcontactsOrganizationsSchemasCoretypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<Coretype>(localVarStatusCode,
+            return new ApiResponse<CoretypeListing>(localVarStatusCode,
                 localVarHeaders,
-                (Coretype) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Coretype)),
+                (CoretypeListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CoretypeListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -17155,7 +17091,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external contacts using paging 
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17171,7 +17106,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external contacts using paging 
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17256,7 +17190,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external contacts using paging 
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17273,7 +17206,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external contacts using paging 
         /// 
-        /// GetExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of contacts per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17565,7 +17497,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for notes using paging 
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17581,7 +17512,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for notes using paging 
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17666,7 +17596,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for notes using paging 
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17683,7 +17612,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for notes using paging 
         /// 
-        /// GetExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of notes per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17975,7 +17903,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external organizations using paging 
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -17991,7 +17918,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external organizations using paging 
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18076,7 +18002,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external organizations using paging 
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18093,7 +18018,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for external organizations using paging 
         /// 
-        /// GetExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of organizations per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18385,7 +18309,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for relationships 
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18401,7 +18324,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for relationships 
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18486,7 +18408,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for relationships 
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18503,7 +18424,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Scan for relationships 
         /// 
-        /// GetExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">The number of relationships per page; must be between 10 and 200, default is 100 (optional)</param>
@@ -18813,7 +18733,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Claim or release identifiers for an external organization 
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -18829,7 +18748,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Claim or release identifiers for an external organization 
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -18925,7 +18843,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Claim or release identifiers for an external organization 
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -18942,7 +18859,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Claim or release identifiers for an external organization 
         /// 
-        /// PatchExternalcontactsOrganizationIdentifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="externalOrganizationId">External Organization ID</param>
@@ -19463,7 +19379,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch contacts across divisions 
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -19478,7 +19393,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch contacts across divisions 
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -19569,7 +19483,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch contacts across divisions 
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -19585,7 +19498,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch contacts across divisions 
         /// 
-        /// PostExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact ids</param>
@@ -19678,7 +19590,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk Enrich Contacts - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -19694,7 +19605,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk Enrich Contacts - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -19787,7 +19697,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk Enrich Contacts - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -19804,7 +19713,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk Enrich Contacts - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Contact Enrich Requests</param>
@@ -21798,7 +21706,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch organizations across divisions 
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -21813,7 +21720,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch organizations across divisions 
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -21904,7 +21810,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch organizations across divisions 
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -21920,7 +21825,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk fetch organizations across divisions 
         /// 
-        /// PostExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Organizations ids</param>
@@ -22013,7 +21917,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk enrich external organizations - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -22029,7 +21932,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk enrich external organizations - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -22122,7 +22024,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk enrich external organizations - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -22139,7 +22040,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Bulk enrich external organizations - Run up to 10 Enrich operations per request 
         /// See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-        /// PostExternalcontactsBulkOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">External Organization Enrich Requests</param>
@@ -24136,7 +24036,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -24152,7 +24051,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -24245,7 +24143,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -24262,7 +24159,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
-        /// PostExternalcontactsContactsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ContactEnrichRequest</param>
@@ -24568,7 +24464,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Merge up to 25 contacts into a new contact record 
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -24583,7 +24478,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Merge up to 25 contacts into a new contact record 
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -24674,7 +24568,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Merge up to 25 contacts into a new contact record 
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -24690,7 +24583,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Merge up to 25 contacts into a new contact record 
         /// Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/_*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-        /// PostExternalcontactsContactsMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">MergeRequest</param>
@@ -25422,7 +25314,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch a contact using an identifier type and value. 
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25438,7 +25329,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch a contact using an identifier type and value. 
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25531,7 +25421,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch a contact using an identifier type and value. 
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25548,7 +25437,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch a contact using an identifier type and value. 
         /// Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-        /// PostExternalcontactsIdentifierlookupContacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25643,7 +25531,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch an external organization using an identifier type and value. 
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25659,7 +25546,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch an external organization using an identifier type and value. 
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25752,7 +25638,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch an external organization using an identifier type and value. 
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -25769,7 +25654,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Fetch an external organization using an identifier type and value. 
         /// This endpoint will only accept ExternalId type identifiers.
-        /// PostExternalcontactsIdentifierlookupOrganizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
@@ -27565,7 +27449,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -27581,7 +27464,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -27674,7 +27556,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>
@@ -27691,7 +27572,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. 
         /// You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-        /// PostExternalcontactsOrganizationsEnrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ExternalOrgEnrichRequest</param>

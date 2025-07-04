@@ -26,8 +26,4 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="https:\github.com\KervExperience\platform-client-sdk-dotnet\blob\master\README.md" />
-  </ItemGroup>
-
 </Project>

@@ -118,10 +118,34 @@ namespace PureCloudPlatform.Client.V2.Model
             Datepicker,
             
             /// <summary>
+            /// Enum Listpicker for "ListPicker"
+            /// </summary>
+            [EnumMember(Value = "ListPicker")]
+            Listpicker,
+            
+            /// <summary>
             /// Enum Interactiveapplication for "InteractiveApplication"
             /// </summary>
             [EnumMember(Value = "InteractiveApplication")]
-            Interactiveapplication
+            Interactiveapplication,
+            
+            /// <summary>
+            /// Enum Paymentrequest for "PaymentRequest"
+            /// </summary>
+            [EnumMember(Value = "PaymentRequest")]
+            Paymentrequest,
+            
+            /// <summary>
+            /// Enum Paymentresponse for "PaymentResponse"
+            /// </summary>
+            [EnumMember(Value = "PaymentResponse")]
+            Paymentresponse,
+            
+            /// <summary>
+            /// Enum Form for "Form"
+            /// </summary>
+            [EnumMember(Value = "Form")]
+            Form
         }
         /// <summary>
         /// For social media messages, the visibility of the message in the originating social platform

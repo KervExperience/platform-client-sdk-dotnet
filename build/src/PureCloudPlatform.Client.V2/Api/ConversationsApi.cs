@@ -560,6 +560,68 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<Conversation> GetConversationWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Get message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>InternalMessageData</returns>
+        
+        InternalMessageData GetConversationCommunicationInternalmessage (string conversationId, string communicationId, string messageId);
+
+        /// <summary>
+        /// Get message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>ApiResponse of InternalMessageData</returns>
+        
+        ApiResponse<InternalMessageData> GetConversationCommunicationInternalmessageWithHttpInfo (string conversationId, string communicationId, string messageId);
+
+        /// <summary>
+        /// Get messages for communication
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>InternalMessageDataEntityListing</returns>
+        
+        InternalMessageDataEntityListing GetConversationCommunicationInternalmessages (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null);
+
+        /// <summary>
+        /// Get messages for communication
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>ApiResponse of InternalMessageDataEntityListing</returns>
+        
+        ApiResponse<InternalMessageDataEntityListing> GetConversationCommunicationInternalmessagesWithHttpInfo (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null);
+
+        /// <summary>
         /// Fetch info on a secure session
         /// </summary>
         /// <remarks>
@@ -833,7 +895,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsCallParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -848,7 +910,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsCallParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -862,7 +924,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsCallParticipantWrapup (string conversationId, string participantId, bool? provisional = null);
@@ -876,7 +938,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsCallParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -941,7 +1003,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsCallbackParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -956,7 +1018,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsCallbackParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -970,7 +1032,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsCallbackParticipantWrapup (string conversationId, string participantId, bool? provisional = null);
@@ -984,7 +1046,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsCallbackParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -1203,7 +1265,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         AssignedWrapupCode GetConversationsChatParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1218,7 +1280,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         ApiResponse<AssignedWrapupCode> GetConversationsChatParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1232,7 +1294,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         AssignedWrapupCode GetConversationsChatParticipantWrapup (string conversationId, string participantId, bool? provisional = null);
@@ -1246,7 +1308,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         ApiResponse<AssignedWrapupCode> GetConversationsChatParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -1333,7 +1395,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         AssignedWrapupCode GetConversationsCobrowsesessionParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1348,7 +1410,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         ApiResponse<AssignedWrapupCode> GetConversationsCobrowsesessionParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1362,7 +1424,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         AssignedWrapupCode GetConversationsCobrowsesessionParticipantWrapup (string conversationId, string participantId, bool? provisional = null);
@@ -1376,7 +1438,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         ApiResponse<AssignedWrapupCode> GetConversationsCobrowsesessionParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -1537,7 +1599,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsEmailParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1552,7 +1614,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsEmailParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1566,7 +1628,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsEmailParticipantWrapup (string conversationId, string participantId, bool? provisional = null);
@@ -1580,7 +1642,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsEmailParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -1656,6 +1718,56 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of EmailConversationEntityListing</returns>
         
         ApiResponse<EmailConversationEntityListing> GetConversationsEmailsWithHttpInfo ();
+
+        /// <summary>
+        /// Get internal message conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>InternalMessageConversation</returns>
+        
+        InternalMessageConversation GetConversationsInternalmessage (string conversationId);
+
+        /// <summary>
+        /// Get internal message conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>ApiResponse of InternalMessageConversation</returns>
+        
+        ApiResponse<InternalMessageConversation> GetConversationsInternalmessageWithHttpInfo (string conversationId);
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>InternalMessageConversationEntityListing</returns>
+        
+        InternalMessageConversationEntityListing GetConversationsInternalmessages ();
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InternalMessageConversationEntityListing</returns>
+        
+        ApiResponse<InternalMessageConversationEntityListing> GetConversationsInternalmessagesWithHttpInfo ();
 
         /// <summary>
         /// Get the encryption key configurations
@@ -1763,7 +1875,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>MessageData</returns>
         
         MessageData GetConversationsMessageDetails (string messageId, bool? useNormalizedMessage = null);
@@ -1776,7 +1888,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>ApiResponse of MessageData</returns>
         
         ApiResponse<MessageData> GetConversationsMessageDetailsWithHttpInfo (string messageId, bool? useNormalizedMessage = null);
@@ -1790,7 +1902,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>MessageData</returns>
         
         MessageData GetConversationsMessageMessage (string conversationId, string messageId, bool? useNormalizedMessage = null);
@@ -1804,7 +1916,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>ApiResponse of MessageData</returns>
         
         ApiResponse<MessageData> GetConversationsMessageMessageWithHttpInfo (string conversationId, string messageId, bool? useNormalizedMessage = null);
@@ -1819,7 +1931,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsMessageParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1834,7 +1946,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsMessageParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -1848,7 +1960,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsMessageParticipantWrapup (string conversationId, string participantId, bool? provisional = null);
@@ -1862,7 +1974,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsMessageParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -2012,11 +2124,36 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<FacebookPermissionEntityListing> GetConversationsMessagingFacebookPermissionsWithHttpInfo ();
 
         /// <summary>
+        /// Get Apple messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        IdentityResolutionConfig GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId (string integrationId);
+
+        /// <summary>
+        /// Get Apple messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        ApiResponse<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo (string integrationId);
+
+        /// <summary>
         /// Get Facebook messaging integration identity resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -2029,7 +2166,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -2038,11 +2174,34 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo (string integrationId);
 
         /// <summary>
+        /// Get an Instagram integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        IdentityResolutionConfig GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId (string integrationId);
+
+        /// <summary>
+        /// Get an Instagram integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        ApiResponse<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo (string integrationId);
+
+        /// <summary>
         /// Get an open messaging integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -2055,7 +2214,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -2064,11 +2222,34 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<OpenMessagingIdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdWithHttpInfo (string integrationId);
 
         /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        IdentityResolutionConfig GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId (string integrationId);
+
+        /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        ApiResponse<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo (string integrationId);
+
+        /// <summary>
         /// Get a whatsApp integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -2081,7 +2262,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -2633,7 +2813,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         AssignedWrapupCode GetConversationsScreenshareParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -2648,7 +2828,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         ApiResponse<AssignedWrapupCode> GetConversationsScreenshareParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -2685,7 +2865,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsSocialParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -2700,7 +2880,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsSocialParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -2741,7 +2921,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         AssignedWrapupCode GetConversationsVideoParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -2756,7 +2936,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         ApiResponse<AssignedWrapupCode> GetConversationsVideoParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -2870,11 +3050,38 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<string> PatchConversationSecureattributesWithHttpInfo (string conversationId, ConversationSecureAttributes body);
 
         /// <summary>
+        /// Update agent&#39;s engagement for the summary.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        
+        void PatchConversationSummaryEngagements (string conversationId, string summaryId, EngagementRequest body = null);
+
+        /// <summary>
+        /// Update agent&#39;s engagement for the summary.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        ApiResponse<Object> PatchConversationSummaryEngagementsWithHttpInfo (string conversationId, string summaryId, EngagementRequest body = null);
+
+        /// <summary>
         /// Update the feedback for the summary.
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -2889,7 +3096,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -3845,7 +4051,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
         /// </summary>
         /// <remarks>
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -3858,7 +4064,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
         /// </summary>
         /// <remarks>
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -4196,6 +4402,36 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<CobrowseWebMessagingSession> PostConversationCobrowseWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Send internal message
+        /// </summary>
+        /// <remarks>
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>InternalMessageData</returns>
+        
+        InternalMessageData PostConversationCommunicationInternalmessages (string conversationId, string communicationId, InternalMessageRequest body);
+
+        /// <summary>
+        /// Send internal message
+        /// </summary>
+        /// <remarks>
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>ApiResponse of InternalMessageData</returns>
+        
+        ApiResponse<InternalMessageData> PostConversationCommunicationInternalmessagesWithHttpInfo (string conversationId, string communicationId, InternalMessageRequest body);
+
+        /// <summary>
         /// Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
         /// </summary>
         /// <remarks>
@@ -4276,6 +4512,36 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<Object> PostConversationParticipantDigitsWithHttpInfo (string conversationId, string participantId, Digits body = null);
 
         /// <summary>
+        /// Setup internal message communication with user
+        /// </summary>
+        /// <remarks>
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>MessagingConferResponse</returns>
+        
+        MessagingConferResponse PostConversationParticipantInternalmessagesUsersCommunications (string conversationId, string participantId, MessagingConferWithUserRequest body);
+
+        /// <summary>
+        /// Setup internal message communication with user
+        /// </summary>
+        /// <remarks>
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>ApiResponse of MessagingConferResponse</returns>
+        
+        ApiResponse<MessagingConferResponse> PostConversationParticipantInternalmessagesUsersCommunicationsWithHttpInfo (string conversationId, string participantId, MessagingConferWithUserRequest body);
+
+        /// <summary>
         /// Replace this participant with the specified user and/or address
         /// </summary>
         /// <remarks>
@@ -4330,6 +4596,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of Object(void)</returns>
         
         ApiResponse<Object> PostConversationParticipantReplaceAgentWithHttpInfo (string conversationId, string participantId, TransferToAgentRequest body);
+
+        /// <summary>
+        /// Replace this participant with the an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns></returns>
+        
+        void PostConversationParticipantReplaceContactExternal (string conversationId, string participantId, TransferToExternalContactRequest body);
+
+        /// <summary>
+        /// Replace this participant with the an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        ApiResponse<Object> PostConversationParticipantReplaceContactExternalWithHttpInfo (string conversationId, string participantId, TransferToExternalContactRequest body);
 
         /// <summary>
         /// Replace this participant with the an external contact
@@ -4414,6 +4710,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of SecureSession</returns>
         
         ApiResponse<SecureSession> PostConversationParticipantSecureivrsessionsWithHttpInfo (string conversationId, string participantId, CreateSecureSession body = null);
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns></returns>
+        
+        void PostConversationParticipantTransfer (string conversationId, string participantId, TransferToAddressRequest body);
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        ApiResponse<Object> PostConversationParticipantTransferWithHttpInfo (string conversationId, string participantId, TransferToAddressRequest body);
 
         /// <summary>
         /// Save an engagement on the suggestion.
@@ -4666,6 +4992,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ConsultTransferResponse</returns>
+        
+        ConsultTransferResponse PostConversationsCallParticipantConsultContactExternal (string conversationId, string participantId, ConsultTransferToExternalContact body);
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ApiResponse of ConsultTransferResponse</returns>
+        
+        ApiResponse<ConsultTransferResponse> PostConversationsCallParticipantConsultContactExternalWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternalContact body);
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -4770,6 +5126,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of Object(void)</returns>
         
         ApiResponse<Object> PostConversationsCallParticipantReplaceWithHttpInfo (string conversationId, string participantId, TransferRequest body);
+
+        /// <summary>
+        /// Initiate voice consult transfer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ConsultTransferResponse</returns>
+        
+        ConsultTransferResponse PostConversationsCallParticipantVoiceConsult (string conversationId, string participantId, ConsultTransferToAddress body);
+
+        /// <summary>
+        /// Initiate voice consult transfer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ApiResponse of ConsultTransferResponse</returns>
+        
+        ApiResponse<ConsultTransferResponse> PostConversationsCallParticipantVoiceConsultWithHttpInfo (string conversationId, string participantId, ConsultTransferToAddress body);
 
         /// <summary>
         /// Add participants to a conversation
@@ -5429,13 +5815,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>MessageData</returns>
         
         MessageData PostConversationsMessageCommunicationMessages (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null);
@@ -5444,13 +5830,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>ApiResponse of MessageData</returns>
         
         ApiResponse<MessageData> PostConversationsMessageCommunicationMessagesWithHttpInfo (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null);
@@ -5508,6 +5894,34 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of MessageMediaUploadData</returns>
         
         ApiResponse<MessageMediaUploadData> PostConversationsMessageCommunicationMessagesMediaUploadsWithHttpInfo (string conversationId, string communicationId, UploadMediaRequest body);
+
+        /// <summary>
+        /// Send a social media message
+        /// </summary>
+        /// <remarks>
+        /// Send a social media message on existing conversation/communication.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>SocialMediaMessageData</returns>
+        
+        SocialMediaMessageData PostConversationsMessageCommunicationSocialmediaMessages (string conversationId, string communicationId, AdditionalSocialMediaMessage body);
+
+        /// <summary>
+        /// Send a social media message
+        /// </summary>
+        /// <remarks>
+        /// Send a social media message on existing conversation/communication.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>ApiResponse of SocialMediaMessageData</returns>
+        
+        ApiResponse<SocialMediaMessageData> PostConversationsMessageCommunicationSocialmediaMessagesWithHttpInfo (string conversationId, string communicationId, AdditionalSocialMediaMessage body);
 
         /// <summary>
         /// Send message typing event
@@ -5618,6 +6032,32 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<OpenReceiptNormalizedMessage> PostConversationsMessageInboundOpenReceiptWithHttpInfo (string integrationId, OpenInboundNormalizedReceipt body);
 
         /// <summary>
+        /// Send inbound Open Response
+        /// </summary>
+        /// <remarks>
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>OpenStructuredResponseNormalizedMessage</returns>
+        
+        OpenStructuredResponseNormalizedMessage PostConversationsMessageInboundOpenStructuredResponse (string integrationId, OpenInboundStructuredResponseMessage body);
+
+        /// <summary>
+        /// Send inbound Open Response
+        /// </summary>
+        /// <remarks>
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>ApiResponse of OpenStructuredResponseNormalizedMessage</returns>
+        
+        ApiResponse<OpenStructuredResponseNormalizedMessage> PostConversationsMessageInboundOpenStructuredResponseWithHttpInfo (string integrationId, OpenInboundStructuredResponseMessage body);
+
+        /// <summary>
         /// Get messages in batch
         /// </summary>
         /// <remarks>
@@ -5625,7 +6065,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>TextMessageListing</returns>
         
@@ -5639,7 +6079,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>ApiResponse of TextMessageListing</returns>
         
@@ -6480,11 +6920,38 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<string> PutConversationsMessageRecordingstateWithHttpInfo (string conversationId, SetRecordingState body);
 
         /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        IdentityResolutionConfig PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        ApiResponse<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
         /// Create an identity resolution settings for a Facebook messaging integration
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -6498,7 +6965,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -6508,11 +6974,36 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body);
 
         /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        IdentityResolutionConfig PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        ApiResponse<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
         /// Update an open messaging integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -6526,7 +7017,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -6536,11 +7026,36 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<OpenMessagingIdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdWithHttpInfo (string integrationId, OpenMessagingIdentityResolutionConfig body);
 
         /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        IdentityResolutionConfig PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        ApiResponse<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
         /// Update a whatsApp integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -6554,7 +7069,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -7262,6 +7776,68 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<Conversation>> GetConversationAsyncWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Get message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>Task of InternalMessageData</returns>
+        
+        System.Threading.Tasks.Task<InternalMessageData> GetConversationCommunicationInternalmessageAsync (string conversationId, string communicationId, string messageId);
+
+        /// <summary>
+        /// Get message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>Task of ApiResponse (InternalMessageData)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InternalMessageData>> GetConversationCommunicationInternalmessageAsyncWithHttpInfo (string conversationId, string communicationId, string messageId);
+
+        /// <summary>
+        /// Get messages for communication
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>Task of InternalMessageDataEntityListing</returns>
+        
+        System.Threading.Tasks.Task<InternalMessageDataEntityListing> GetConversationCommunicationInternalmessagesAsync (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null);
+
+        /// <summary>
+        /// Get messages for communication
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>Task of ApiResponse (InternalMessageDataEntityListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InternalMessageDataEntityListing>> GetConversationCommunicationInternalmessagesAsyncWithHttpInfo (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null);
+
+        /// <summary>
         /// Fetch info on a secure session
         /// </summary>
         /// <remarks>
@@ -7535,7 +8111,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -7550,7 +8126,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -7564,7 +8140,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null);
@@ -7578,7 +8154,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -7643,7 +8219,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallbackParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -7658,7 +8234,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallbackParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -7672,7 +8248,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallbackParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null);
@@ -7686,7 +8262,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallbackParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -7905,7 +8481,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsChatParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -7920,7 +8496,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsChatParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -7934,7 +8510,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsChatParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null);
@@ -7948,7 +8524,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsChatParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -8035,7 +8611,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCobrowsesessionParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -8050,7 +8626,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCobrowsesessionParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -8064,7 +8640,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCobrowsesessionParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null);
@@ -8078,7 +8654,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCobrowsesessionParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -8239,7 +8815,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsEmailParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -8254,7 +8830,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsEmailParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -8268,7 +8844,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsEmailParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null);
@@ -8282,7 +8858,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsEmailParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -8358,6 +8934,56 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (EmailConversationEntityListing)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<EmailConversationEntityListing>> GetConversationsEmailsAsyncWithHttpInfo ();
+
+        /// <summary>
+        /// Get internal message conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>Task of InternalMessageConversation</returns>
+        
+        System.Threading.Tasks.Task<InternalMessageConversation> GetConversationsInternalmessageAsync (string conversationId);
+
+        /// <summary>
+        /// Get internal message conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>Task of ApiResponse (InternalMessageConversation)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InternalMessageConversation>> GetConversationsInternalmessageAsyncWithHttpInfo (string conversationId);
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InternalMessageConversationEntityListing</returns>
+        
+        System.Threading.Tasks.Task<InternalMessageConversationEntityListing> GetConversationsInternalmessagesAsync ();
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InternalMessageConversationEntityListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InternalMessageConversationEntityListing>> GetConversationsInternalmessagesAsyncWithHttpInfo ();
 
         /// <summary>
         /// Get the encryption key configurations
@@ -8465,7 +9091,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of MessageData</returns>
         
         System.Threading.Tasks.Task<MessageData> GetConversationsMessageDetailsAsync (string messageId, bool? useNormalizedMessage = null);
@@ -8478,7 +9104,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of ApiResponse (MessageData)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<MessageData>> GetConversationsMessageDetailsAsyncWithHttpInfo (string messageId, bool? useNormalizedMessage = null);
@@ -8492,7 +9118,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of MessageData</returns>
         
         System.Threading.Tasks.Task<MessageData> GetConversationsMessageMessageAsync (string conversationId, string messageId, bool? useNormalizedMessage = null);
@@ -8506,7 +9132,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of ApiResponse (MessageData)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<MessageData>> GetConversationsMessageMessageAsyncWithHttpInfo (string conversationId, string messageId, bool? useNormalizedMessage = null);
@@ -8521,7 +9147,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsMessageParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -8536,7 +9162,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsMessageParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -8550,7 +9176,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsMessageParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null);
@@ -8564,7 +9190,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsMessageParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null);
@@ -8714,11 +9340,36 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<FacebookPermissionEntityListing>> GetConversationsMessagingFacebookPermissionsAsyncWithHttpInfo ();
 
         /// <summary>
+        /// Get Apple messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        System.Threading.Tasks.Task<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync (string integrationId);
+
+        /// <summary>
+        /// Get Apple messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsyncWithHttpInfo (string integrationId);
+
+        /// <summary>
         /// Get Facebook messaging integration identity resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -8731,7 +9382,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -8740,11 +9390,34 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsyncWithHttpInfo (string integrationId);
 
         /// <summary>
+        /// Get an Instagram integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        System.Threading.Tasks.Task<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync (string integrationId);
+
+        /// <summary>
+        /// Get an Instagram integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsyncWithHttpInfo (string integrationId);
+
+        /// <summary>
         /// Get an open messaging integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -8757,7 +9430,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -8766,11 +9438,34 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<OpenMessagingIdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdAsyncWithHttpInfo (string integrationId);
 
         /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        System.Threading.Tasks.Task<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync (string integrationId);
+
+        /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsyncWithHttpInfo (string integrationId);
+
+        /// <summary>
         /// Get a whatsApp integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -8783,7 +9478,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -9335,7 +10029,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsScreenshareParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -9350,7 +10044,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsScreenshareParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -9387,7 +10081,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsSocialParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -9402,7 +10096,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsSocialParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -9443,7 +10137,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsVideoParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -9458,7 +10152,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsVideoParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null);
@@ -9572,11 +10266,38 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<string>> PatchConversationSecureattributesAsyncWithHttpInfo (string conversationId, ConversationSecureAttributes body);
 
         /// <summary>
+        /// Update agent&#39;s engagement for the summary.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of void</returns>
+        
+        System.Threading.Tasks.Task PatchConversationSummaryEngagementsAsync (string conversationId, string summaryId, EngagementRequest body = null);
+
+        /// <summary>
+        /// Update agent&#39;s engagement for the summary.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<Object>> PatchConversationSummaryEngagementsAsyncWithHttpInfo (string conversationId, string summaryId, EngagementRequest body = null);
+
+        /// <summary>
         /// Update the feedback for the summary.
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -9591,7 +10312,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -10547,7 +11267,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
         /// </summary>
         /// <remarks>
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -10560,7 +11280,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
         /// </summary>
         /// <remarks>
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -10898,6 +11618,36 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<CobrowseWebMessagingSession>> PostConversationCobrowseAsyncWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Send internal message
+        /// </summary>
+        /// <remarks>
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of InternalMessageData</returns>
+        
+        System.Threading.Tasks.Task<InternalMessageData> PostConversationCommunicationInternalmessagesAsync (string conversationId, string communicationId, InternalMessageRequest body);
+
+        /// <summary>
+        /// Send internal message
+        /// </summary>
+        /// <remarks>
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of ApiResponse (InternalMessageData)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InternalMessageData>> PostConversationCommunicationInternalmessagesAsyncWithHttpInfo (string conversationId, string communicationId, InternalMessageRequest body);
+
+        /// <summary>
         /// Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
         /// </summary>
         /// <remarks>
@@ -10978,6 +11728,36 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantDigitsAsyncWithHttpInfo (string conversationId, string participantId, Digits body = null);
 
         /// <summary>
+        /// Setup internal message communication with user
+        /// </summary>
+        /// <remarks>
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>Task of MessagingConferResponse</returns>
+        
+        System.Threading.Tasks.Task<MessagingConferResponse> PostConversationParticipantInternalmessagesUsersCommunicationsAsync (string conversationId, string participantId, MessagingConferWithUserRequest body);
+
+        /// <summary>
+        /// Setup internal message communication with user
+        /// </summary>
+        /// <remarks>
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>Task of ApiResponse (MessagingConferResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<MessagingConferResponse>> PostConversationParticipantInternalmessagesUsersCommunicationsAsyncWithHttpInfo (string conversationId, string participantId, MessagingConferWithUserRequest body);
+
+        /// <summary>
         /// Replace this participant with the specified user and/or address
         /// </summary>
         /// <remarks>
@@ -11032,6 +11812,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse</returns>
         
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceAgentAsyncWithHttpInfo (string conversationId, string participantId, TransferToAgentRequest body);
+
+        /// <summary>
+        /// Replace this participant with the an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of void</returns>
+        
+        System.Threading.Tasks.Task PostConversationParticipantReplaceContactExternalAsync (string conversationId, string participantId, TransferToExternalContactRequest body);
+
+        /// <summary>
+        /// Replace this participant with the an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceContactExternalAsyncWithHttpInfo (string conversationId, string participantId, TransferToExternalContactRequest body);
 
         /// <summary>
         /// Replace this participant with the an external contact
@@ -11116,6 +11926,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (SecureSession)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<SecureSession>> PostConversationParticipantSecureivrsessionsAsyncWithHttpInfo (string conversationId, string participantId, CreateSecureSession body = null);
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of void</returns>
+        
+        System.Threading.Tasks.Task PostConversationParticipantTransferAsync (string conversationId, string participantId, TransferToAddressRequest body);
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantTransferAsyncWithHttpInfo (string conversationId, string participantId, TransferToAddressRequest body);
 
         /// <summary>
         /// Save an engagement on the suggestion.
@@ -11368,6 +12208,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ConsultTransferResponse</returns>
+        
+        System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantConsultContactExternalAsync (string conversationId, string participantId, ConsultTransferToExternalContact body);
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultContactExternalAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternalContact body);
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -11472,6 +12342,36 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse</returns>
         
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationsCallParticipantReplaceAsyncWithHttpInfo (string conversationId, string participantId, TransferRequest body);
+
+        /// <summary>
+        /// Initiate voice consult transfer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ConsultTransferResponse</returns>
+        
+        System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantVoiceConsultAsync (string conversationId, string participantId, ConsultTransferToAddress body);
+
+        /// <summary>
+        /// Initiate voice consult transfer
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantVoiceConsultAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToAddress body);
 
         /// <summary>
         /// Add participants to a conversation
@@ -12131,13 +13031,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of MessageData</returns>
         
         System.Threading.Tasks.Task<MessageData> PostConversationsMessageCommunicationMessagesAsync (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null);
@@ -12146,13 +13046,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of ApiResponse (MessageData)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<MessageData>> PostConversationsMessageCommunicationMessagesAsyncWithHttpInfo (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null);
@@ -12210,6 +13110,34 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (MessageMediaUploadData)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<MessageMediaUploadData>> PostConversationsMessageCommunicationMessagesMediaUploadsAsyncWithHttpInfo (string conversationId, string communicationId, UploadMediaRequest body);
+
+        /// <summary>
+        /// Send a social media message
+        /// </summary>
+        /// <remarks>
+        /// Send a social media message on existing conversation/communication.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of SocialMediaMessageData</returns>
+        
+        System.Threading.Tasks.Task<SocialMediaMessageData> PostConversationsMessageCommunicationSocialmediaMessagesAsync (string conversationId, string communicationId, AdditionalSocialMediaMessage body);
+
+        /// <summary>
+        /// Send a social media message
+        /// </summary>
+        /// <remarks>
+        /// Send a social media message on existing conversation/communication.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of ApiResponse (SocialMediaMessageData)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<SocialMediaMessageData>> PostConversationsMessageCommunicationSocialmediaMessagesAsyncWithHttpInfo (string conversationId, string communicationId, AdditionalSocialMediaMessage body);
 
         /// <summary>
         /// Send message typing event
@@ -12320,6 +13248,32 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<OpenReceiptNormalizedMessage>> PostConversationsMessageInboundOpenReceiptAsyncWithHttpInfo (string integrationId, OpenInboundNormalizedReceipt body);
 
         /// <summary>
+        /// Send inbound Open Response
+        /// </summary>
+        /// <remarks>
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>Task of OpenStructuredResponseNormalizedMessage</returns>
+        
+        System.Threading.Tasks.Task<OpenStructuredResponseNormalizedMessage> PostConversationsMessageInboundOpenStructuredResponseAsync (string integrationId, OpenInboundStructuredResponseMessage body);
+
+        /// <summary>
+        /// Send inbound Open Response
+        /// </summary>
+        /// <remarks>
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>Task of ApiResponse (OpenStructuredResponseNormalizedMessage)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<OpenStructuredResponseNormalizedMessage>> PostConversationsMessageInboundOpenStructuredResponseAsyncWithHttpInfo (string integrationId, OpenInboundStructuredResponseMessage body);
+
+        /// <summary>
         /// Get messages in batch
         /// </summary>
         /// <remarks>
@@ -12327,7 +13281,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>Task of TextMessageListing</returns>
         
@@ -12341,7 +13295,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>Task of ApiResponse (TextMessageListing)</returns>
         
@@ -13182,11 +14136,38 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<string>> PutConversationsMessageRecordingstateAsyncWithHttpInfo (string conversationId, SetRecordingState body);
 
         /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        System.Threading.Tasks.Task<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
         /// Create an identity resolution settings for a Facebook messaging integration
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -13200,7 +14181,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -13210,11 +14190,36 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body);
 
         /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        System.Threading.Tasks.Task<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
         /// Update an open messaging integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -13228,7 +14233,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -13238,11 +14242,36 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<OpenMessagingIdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationIdAsyncWithHttpInfo (string integrationId, OpenMessagingIdentityResolutionConfig body);
 
         /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        System.Threading.Tasks.Task<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body);
+
+        /// <summary>
         /// Update a whatsApp integration Identity Resolution settings
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -13256,7 +14285,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -17962,6 +18990,467 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Get message 
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>InternalMessageData</returns>
+        
+        public InternalMessageData GetConversationCommunicationInternalmessage (string conversationId, string communicationId, string messageId)
+        {
+             ApiResponse<InternalMessageData> localVarResponse = GetConversationCommunicationInternalmessageWithHttpInfo(conversationId, communicationId, messageId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get message 
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>ApiResponse of InternalMessageData</returns>
+        
+        public ApiResponse< InternalMessageData > GetConversationCommunicationInternalmessageWithHttpInfo (string conversationId, string communicationId, string messageId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationInternalmessage");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationInternalmessage");
+            // verify the required parameter 'messageId' is set
+            if (messageId == null)
+                throw new ApiException(400, "Missing required parameter 'messageId' when calling ConversationsApi->GetConversationCommunicationInternalmessage");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (messageId != null) localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageData>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageData)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get message 
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>Task of InternalMessageData</returns>
+        
+        public async System.Threading.Tasks.Task<InternalMessageData> GetConversationCommunicationInternalmessageAsync (string conversationId, string communicationId, string messageId)
+        {
+             ApiResponse<InternalMessageData> localVarResponse = await GetConversationCommunicationInternalmessageAsyncWithHttpInfo(conversationId, communicationId, messageId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get message 
+        /// 
+        /// GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="messageId">messageId</param>
+        /// <returns>Task of ApiResponse (InternalMessageData)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InternalMessageData>> GetConversationCommunicationInternalmessageAsyncWithHttpInfo (string conversationId, string communicationId, string messageId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationInternalmessage");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationInternalmessage");
+            
+            // verify the required parameter 'messageId' is set
+            if (messageId == null)
+                throw new ApiException(400, "Missing required parameter 'messageId' when calling ConversationsApi->GetConversationCommunicationInternalmessage");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (messageId != null) localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageData>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageData)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get messages for communication 
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>InternalMessageDataEntityListing</returns>
+        
+        public InternalMessageDataEntityListing GetConversationCommunicationInternalmessages (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null)
+        {
+             ApiResponse<InternalMessageDataEntityListing> localVarResponse = GetConversationCommunicationInternalmessagesWithHttpInfo(conversationId, communicationId, pageSize, pageNumber);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get messages for communication 
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>ApiResponse of InternalMessageDataEntityListing</returns>
+        
+        public ApiResponse< InternalMessageDataEntityListing > GetConversationCommunicationInternalmessagesWithHttpInfo (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationInternalmessages");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationInternalmessages");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageDataEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageDataEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageDataEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get messages for communication 
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>Task of InternalMessageDataEntityListing</returns>
+        
+        public async System.Threading.Tasks.Task<InternalMessageDataEntityListing> GetConversationCommunicationInternalmessagesAsync (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null)
+        {
+             ApiResponse<InternalMessageDataEntityListing> localVarResponse = await GetConversationCommunicationInternalmessagesAsyncWithHttpInfo(conversationId, communicationId, pageSize, pageNumber);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get messages for communication 
+        /// 
+        /// GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="pageSize">Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional, default to 25)</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <returns>Task of ApiResponse (InternalMessageDataEntityListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InternalMessageDataEntityListing>> GetConversationCommunicationInternalmessagesAsyncWithHttpInfo (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationInternalmessages");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationInternalmessages");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationInternalmessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageDataEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageDataEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageDataEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Fetch info on a secure session 
         /// 
         /// </summary>
@@ -20086,7 +21575,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsCallParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -20103,7 +21592,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsCallParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -20200,7 +21689,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -20218,7 +21707,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -20318,7 +21807,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsCallParticipantWrapup (string conversationId, string participantId, bool? provisional = null)
@@ -20334,7 +21823,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsCallParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -20426,7 +21915,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null)
@@ -20443,7 +21932,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -20954,7 +22443,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsCallbackParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -20971,7 +22460,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsCallbackParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -21068,7 +22557,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallbackParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -21086,7 +22575,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallbackParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -21186,7 +22675,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsCallbackParticipantWrapup (string conversationId, string participantId, bool? provisional = null)
@@ -21202,7 +22691,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsCallbackParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -21294,7 +22783,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCallbackParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null)
@@ -21311,7 +22800,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCallbackParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -23037,7 +24526,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         public AssignedWrapupCode GetConversationsChatParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -23054,7 +24543,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         public ApiResponse< AssignedWrapupCode > GetConversationsChatParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -23151,7 +24640,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsChatParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -23169,7 +24658,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsChatParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -23269,7 +24758,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         public AssignedWrapupCode GetConversationsChatParticipantWrapup (string conversationId, string participantId, bool? provisional = null)
@@ -23285,7 +24774,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         public ApiResponse< AssignedWrapupCode > GetConversationsChatParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -23377,7 +24866,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsChatParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null)
@@ -23394,7 +24883,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsChatParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -24093,7 +25582,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         public AssignedWrapupCode GetConversationsCobrowsesessionParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -24110,7 +25599,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         public ApiResponse< AssignedWrapupCode > GetConversationsCobrowsesessionParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -24207,7 +25696,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCobrowsesessionParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -24225,7 +25714,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCobrowsesessionParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -24325,7 +25814,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         public AssignedWrapupCode GetConversationsCobrowsesessionParticipantWrapup (string conversationId, string participantId, bool? provisional = null)
@@ -24341,7 +25830,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         public ApiResponse< AssignedWrapupCode > GetConversationsCobrowsesessionParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -24433,7 +25922,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsCobrowsesessionParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null)
@@ -24450,7 +25939,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsCobrowsesessionParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -25765,7 +27254,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsEmailParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -25782,7 +27271,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsEmailParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -25879,7 +27368,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsEmailParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -25897,7 +27386,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsEmailParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -25997,7 +27486,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsEmailParticipantWrapup (string conversationId, string participantId, bool? provisional = null)
@@ -26013,7 +27502,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsEmailParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -26105,7 +27594,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsEmailParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null)
@@ -26122,7 +27611,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsEmailParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -26807,6 +28296,403 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<EmailConversationEntityListing>(localVarStatusCode,
                 localVarHeaders,
                 (EmailConversationEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailConversationEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get internal message conversation 
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>InternalMessageConversation</returns>
+        
+        public InternalMessageConversation GetConversationsInternalmessage (string conversationId)
+        {
+             ApiResponse<InternalMessageConversation> localVarResponse = GetConversationsInternalmessageWithHttpInfo(conversationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get internal message conversation 
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>ApiResponse of InternalMessageConversation</returns>
+        
+        public ApiResponse< InternalMessageConversation > GetConversationsInternalmessageWithHttpInfo (string conversationId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationsInternalmessage");
+
+            var localVarPath = "/api/v2/conversations/internalmessages/{conversationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageConversation>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageConversation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageConversation)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get internal message conversation 
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>Task of InternalMessageConversation</returns>
+        
+        public async System.Threading.Tasks.Task<InternalMessageConversation> GetConversationsInternalmessageAsync (string conversationId)
+        {
+             ApiResponse<InternalMessageConversation> localVarResponse = await GetConversationsInternalmessageAsyncWithHttpInfo(conversationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get internal message conversation 
+        /// 
+        /// GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <returns>Task of ApiResponse (InternalMessageConversation)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InternalMessageConversation>> GetConversationsInternalmessageAsyncWithHttpInfo (string conversationId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationsInternalmessage");
+            
+
+            var localVarPath = "/api/v2/conversations/internalmessages/{conversationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageConversation>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageConversation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageConversation)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user 
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>InternalMessageConversationEntityListing</returns>
+        
+        public InternalMessageConversationEntityListing GetConversationsInternalmessages ()
+        {
+             ApiResponse<InternalMessageConversationEntityListing> localVarResponse = GetConversationsInternalmessagesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user 
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of InternalMessageConversationEntityListing</returns>
+        
+        public ApiResponse< InternalMessageConversationEntityListing > GetConversationsInternalmessagesWithHttpInfo ()
+        { 
+
+            var localVarPath = "/api/v2/conversations/internalmessages";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageConversationEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageConversationEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageConversationEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user 
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of InternalMessageConversationEntityListing</returns>
+        
+        public async System.Threading.Tasks.Task<InternalMessageConversationEntityListing> GetConversationsInternalmessagesAsync ()
+        {
+             ApiResponse<InternalMessageConversationEntityListing> localVarResponse = await GetConversationsInternalmessagesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get active internal message conversations for the logged in user 
+        /// 
+        /// GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (InternalMessageConversationEntityListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InternalMessageConversationEntityListing>> GetConversationsInternalmessagesAsyncWithHttpInfo ()
+        { 
+
+            var localVarPath = "/api/v2/conversations/internalmessages";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsInternalmessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageConversationEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageConversationEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageConversationEntityListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -27636,7 +29522,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>MessageData</returns>
         
         public MessageData GetConversationsMessageDetails (string messageId, bool? useNormalizedMessage = null)
@@ -27651,7 +29537,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>ApiResponse of MessageData</returns>
         
         public ApiResponse< MessageData > GetConversationsMessageDetailsWithHttpInfo (string messageId, bool? useNormalizedMessage = null)
@@ -27738,7 +29624,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of MessageData</returns>
         
         public async System.Threading.Tasks.Task<MessageData> GetConversationsMessageDetailsAsync (string messageId, bool? useNormalizedMessage = null)
@@ -27754,7 +29640,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of ApiResponse (MessageData)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<MessageData>> GetConversationsMessageDetailsAsyncWithHttpInfo (string messageId, bool? useNormalizedMessage = null)
@@ -27844,7 +29730,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>MessageData</returns>
         
         public MessageData GetConversationsMessageMessage (string conversationId, string messageId, bool? useNormalizedMessage = null)
@@ -27860,7 +29746,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>ApiResponse of MessageData</returns>
         
         public ApiResponse< MessageData > GetConversationsMessageMessageWithHttpInfo (string conversationId, string messageId, bool? useNormalizedMessage = null)
@@ -27952,7 +29838,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of MessageData</returns>
         
         public async System.Threading.Tasks.Task<MessageData> GetConversationsMessageMessageAsync (string conversationId, string messageId, bool? useNormalizedMessage = null)
@@ -27969,7 +29855,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="messageId">messageId</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of ApiResponse (MessageData)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<MessageData>> GetConversationsMessageMessageAsyncWithHttpInfo (string conversationId, string messageId, bool? useNormalizedMessage = null)
@@ -28065,7 +29951,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsMessageParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -28082,7 +29968,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsMessageParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -28179,7 +30065,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsMessageParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -28197,7 +30083,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsMessageParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -28297,7 +30183,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsMessageParticipantWrapup (string conversationId, string participantId, bool? provisional = null)
@@ -28313,7 +30199,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsMessageParticipantWrapupWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -28405,7 +30291,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsMessageParticipantWrapupAsync (string conversationId, string participantId, bool? provisional = null)
@@ -28422,7 +30308,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsMessageParticipantWrapupAsyncWithHttpInfo (string conversationId, string participantId, bool? provisional = null)
@@ -29696,9 +31582,213 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Get Apple messaging integration identity resolution settings 
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        public IdentityResolutionConfig GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId (string integrationId)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo(integrationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Apple messaging integration identity resolution settings 
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        public ApiResponse< IdentityResolutionConfig > GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo (string integrationId)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get Apple messaging integration identity resolution settings 
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        public async System.Threading.Tasks.Task<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync (string integrationId)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = await GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsyncWithHttpInfo(integrationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Apple messaging integration identity resolution settings 
+        /// 
+        /// GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsyncWithHttpInfo (string integrationId)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
+            
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Get Facebook messaging integration identity resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -29713,7 +31803,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Facebook messaging integration identity resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -29799,7 +31888,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Facebook messaging integration identity resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -29815,7 +31903,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get Facebook messaging integration identity resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -29901,9 +31988,209 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Get an Instagram integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        public IdentityResolutionConfig GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId (string integrationId)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo(integrationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get an Instagram integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        public ApiResponse< IdentityResolutionConfig > GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo (string integrationId)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get an Instagram integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        public async System.Threading.Tasks.Task<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync (string integrationId)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = await GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsyncWithHttpInfo(integrationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get an Instagram integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsyncWithHttpInfo (string integrationId)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
+            
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Get an open messaging integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -29918,7 +32205,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an open messaging integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -30004,7 +32290,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an open messaging integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -30020,7 +32305,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get an open messaging integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -30106,9 +32390,209 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        public IdentityResolutionConfig GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId (string integrationId)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(integrationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        public ApiResponse< IdentityResolutionConfig > GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo (string integrationId)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        public async System.Threading.Tasks.Task<IdentityResolutionConfig> GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync (string integrationId)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = await GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsyncWithHttpInfo(integrationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get X (Formally Twitter) messaging integration identity resolution settings 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsyncWithHttpInfo (string integrationId)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+            
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Get a whatsApp integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -30123,7 +32607,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a whatsApp integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -30209,7 +32692,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a whatsApp integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -30225,7 +32707,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a whatsApp integration Identity Resolution settings 
         /// 
-        /// GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -34416,7 +36897,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         [Obsolete]
         public AssignedWrapupCode GetConversationsScreenshareParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34433,7 +36914,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         [Obsolete]
         public ApiResponse< AssignedWrapupCode > GetConversationsScreenshareParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34530,7 +37011,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsScreenshareParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34548,7 +37029,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsScreenshareParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34837,7 +37318,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsSocialParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34854,7 +37335,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsSocialParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34951,7 +37432,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsSocialParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -34969,7 +37450,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsSocialParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -35275,7 +37756,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>AssignedWrapupCode</returns>
         
         public AssignedWrapupCode GetConversationsVideoParticipantCommunicationWrapup (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -35292,7 +37773,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>ApiResponse of AssignedWrapupCode</returns>
         
         public ApiResponse< AssignedWrapupCode > GetConversationsVideoParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -35389,7 +37870,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of AssignedWrapupCode</returns>
         
         public async System.Threading.Tasks.Task<AssignedWrapupCode> GetConversationsVideoParticipantCommunicationWrapupAsync (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -35407,7 +37888,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="communicationId">communicationId</param>
-        /// <param name="provisional">Indicates if the wrap-up code is provisional. (optional, default to false)</param>
+        /// <param name="provisional">Indicates whether or not to fetch provisional wrap-up code. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AssignedWrapupCode)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<AssignedWrapupCode>> GetConversationsVideoParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, bool? provisional = null)
@@ -36400,9 +38881,236 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Update agent&#39;s engagement for the summary. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        
+        public void PatchConversationSummaryEngagements (string conversationId, string summaryId, EngagementRequest body = null)
+        {
+             PatchConversationSummaryEngagementsWithHttpInfo(conversationId, summaryId, body);
+        }
+
+        /// <summary>
+        /// Update agent&#39;s engagement for the summary. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        public ApiResponse<Object> PatchConversationSummaryEngagementsWithHttpInfo (string conversationId, string summaryId, EngagementRequest body = null)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PatchConversationSummaryEngagements");
+            // verify the required parameter 'summaryId' is set
+            if (summaryId == null)
+                throw new ApiException(400, "Missing required parameter 'summaryId' when calling ConversationsApi->PatchConversationSummaryEngagements");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (summaryId != null) localVarPathParams.Add("summaryId", this.Configuration.ApiClient.ParameterToString(summaryId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchConversationSummaryEngagements: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchConversationSummaryEngagements: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update agent&#39;s engagement for the summary. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of void</returns>
+        
+        public async System.Threading.Tasks.Task PatchConversationSummaryEngagementsAsync (string conversationId, string summaryId, EngagementRequest body = null)
+        {
+             await PatchConversationSummaryEngagementsAsyncWithHttpInfo(conversationId, summaryId, body);
+
+        }
+
+        /// <summary>
+        /// Update agent&#39;s engagement for the summary. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="summaryId">Summary ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PatchConversationSummaryEngagementsAsyncWithHttpInfo (string conversationId, string summaryId, EngagementRequest body = null)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PatchConversationSummaryEngagements");
+            
+            // verify the required parameter 'summaryId' is set
+            if (summaryId == null)
+                throw new ApiException(400, "Missing required parameter 'summaryId' when calling ConversationsApi->PatchConversationSummaryEngagements");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (summaryId != null) localVarPathParams.Add("summaryId", this.Configuration.ApiClient.ParameterToString(summaryId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchConversationSummaryEngagements: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchConversationSummaryEngagements: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Update the feedback for the summary. 
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -36418,7 +39126,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the feedback for the summary. 
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -36516,7 +39223,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the feedback for the summary. 
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -36533,7 +39239,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the feedback for the summary. 
         /// 
-        /// PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -44563,7 +47268,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow 
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -44578,7 +47283,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow 
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -44673,7 +47378,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow 
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -44689,7 +47394,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow 
-        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        /// Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -47586,6 +50291,247 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Send internal message 
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>InternalMessageData</returns>
+        
+        public InternalMessageData PostConversationCommunicationInternalmessages (string conversationId, string communicationId, InternalMessageRequest body)
+        {
+             ApiResponse<InternalMessageData> localVarResponse = PostConversationCommunicationInternalmessagesWithHttpInfo(conversationId, communicationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Send internal message 
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>ApiResponse of InternalMessageData</returns>
+        
+        public ApiResponse< InternalMessageData > PostConversationCommunicationInternalmessagesWithHttpInfo (string conversationId, string communicationId, InternalMessageRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationInternalmessages");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationInternalmessages");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationInternalmessages");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationInternalmessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationInternalmessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageData>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageData)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Send internal message 
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of InternalMessageData</returns>
+        
+        public async System.Threading.Tasks.Task<InternalMessageData> PostConversationCommunicationInternalmessagesAsync (string conversationId, string communicationId, InternalMessageRequest body)
+        {
+             ApiResponse<InternalMessageData> localVarResponse = await PostConversationCommunicationInternalmessagesAsyncWithHttpInfo(conversationId, communicationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Send internal message 
+        /// Send a new internal message for an existing communication.
+        /// PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of ApiResponse (InternalMessageData)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InternalMessageData>> PostConversationCommunicationInternalmessagesAsyncWithHttpInfo (string conversationId, string communicationId, InternalMessageRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationInternalmessages");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationInternalmessages");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationInternalmessages");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationInternalmessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationInternalmessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InternalMessageData>(localVarStatusCode,
+                localVarHeaders,
+                (InternalMessageData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InternalMessageData)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation. 
         /// 
         /// </summary>
@@ -48243,6 +51189,247 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Setup internal message communication with user 
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>MessagingConferResponse</returns>
+        
+        public MessagingConferResponse PostConversationParticipantInternalmessagesUsersCommunications (string conversationId, string participantId, MessagingConferWithUserRequest body)
+        {
+             ApiResponse<MessagingConferResponse> localVarResponse = PostConversationParticipantInternalmessagesUsersCommunicationsWithHttpInfo(conversationId, participantId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Setup internal message communication with user 
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>ApiResponse of MessagingConferResponse</returns>
+        
+        public ApiResponse< MessagingConferResponse > PostConversationParticipantInternalmessagesUsersCommunicationsWithHttpInfo (string conversationId, string participantId, MessagingConferWithUserRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationParticipantInternalmessagesUsersCommunications");
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationParticipantInternalmessagesUsersCommunications");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationParticipantInternalmessagesUsersCommunications");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantInternalmessagesUsersCommunications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantInternalmessagesUsersCommunications: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<MessagingConferResponse>(localVarStatusCode,
+                localVarHeaders,
+                (MessagingConferResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MessagingConferResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Setup internal message communication with user 
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>Task of MessagingConferResponse</returns>
+        
+        public async System.Threading.Tasks.Task<MessagingConferResponse> PostConversationParticipantInternalmessagesUsersCommunicationsAsync (string conversationId, string participantId, MessagingConferWithUserRequest body)
+        {
+             ApiResponse<MessagingConferResponse> localVarResponse = await PostConversationParticipantInternalmessagesUsersCommunicationsAsyncWithHttpInfo(conversationId, participantId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Setup internal message communication with user 
+        /// The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+        /// PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Confer request</param>
+        /// <returns>Task of ApiResponse (MessagingConferResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<MessagingConferResponse>> PostConversationParticipantInternalmessagesUsersCommunicationsAsyncWithHttpInfo (string conversationId, string participantId, MessagingConferWithUserRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationParticipantInternalmessagesUsersCommunications");
+            
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationParticipantInternalmessagesUsersCommunications");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationParticipantInternalmessagesUsersCommunications");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantInternalmessagesUsersCommunications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantInternalmessagesUsersCommunications: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<MessagingConferResponse>(localVarStatusCode,
+                localVarHeaders,
+                (MessagingConferResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MessagingConferResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Replace this participant with the specified user and/or address 
         /// 
         /// </summary>
@@ -48702,6 +51889,245 @@ namespace PureCloudPlatform.Client.V2.Api
                 throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantReplaceAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantReplaceAgent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Replace this participant with the an external contact 
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns></returns>
+        
+        public void PostConversationParticipantReplaceContactExternal (string conversationId, string participantId, TransferToExternalContactRequest body)
+        {
+             PostConversationParticipantReplaceContactExternalWithHttpInfo(conversationId, participantId, body);
+        }
+
+        /// <summary>
+        /// Replace this participant with the an external contact 
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        public ApiResponse<Object> PostConversationParticipantReplaceContactExternalWithHttpInfo (string conversationId, string participantId, TransferToExternalContactRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationParticipantReplaceContactExternal");
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationParticipantReplaceContactExternal");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationParticipantReplaceContactExternal");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantReplaceContactExternal: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantReplaceContactExternal: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Replace this participant with the an external contact 
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of void</returns>
+        
+        public async System.Threading.Tasks.Task PostConversationParticipantReplaceContactExternalAsync (string conversationId, string participantId, TransferToExternalContactRequest body)
+        {
+             await PostConversationParticipantReplaceContactExternalAsyncWithHttpInfo(conversationId, participantId, body);
+
+        }
+
+        /// <summary>
+        /// Replace this participant with the an external contact 
+        /// 
+        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceContactExternalAsyncWithHttpInfo (string conversationId, string participantId, TransferToExternalContactRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationParticipantReplaceContactExternal");
+            
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationParticipantReplaceContactExternal");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationParticipantReplaceContactExternal");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantReplaceContactExternal: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantReplaceContactExternal: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
@@ -49406,6 +52832,245 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<SecureSession>(localVarStatusCode,
                 localVarHeaders,
                 (SecureSession) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SecureSession)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination. 
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns></returns>
+        
+        public void PostConversationParticipantTransfer (string conversationId, string participantId, TransferToAddressRequest body)
+        {
+             PostConversationParticipantTransferWithHttpInfo(conversationId, participantId, body);
+        }
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination. 
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        public ApiResponse<Object> PostConversationParticipantTransferWithHttpInfo (string conversationId, string participantId, TransferToAddressRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationParticipantTransfer");
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationParticipantTransfer");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationParticipantTransfer");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/transfer";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantTransfer: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantTransfer: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination. 
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of void</returns>
+        
+        public async System.Threading.Tasks.Task PostConversationParticipantTransferAsync (string conversationId, string participantId, TransferToAddressRequest body)
+        {
+             await PostConversationParticipantTransferAsyncWithHttpInfo(conversationId, participantId, body);
+
+        }
+
+        /// <summary>
+        /// Replace this participant by another one using the address of the destination. 
+        /// 
+        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversation ID</param>
+        /// <param name="participantId">participant ID</param>
+        /// <param name="body">Transfer request</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantTransferAsyncWithHttpInfo (string conversationId, string participantId, TransferToAddressRequest body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationParticipantTransfer");
+            
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationParticipantTransfer");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationParticipantTransfer");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/participants/{participantId}/transfer";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantTransfer: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationParticipantTransfer: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -51465,6 +55130,247 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate a consult transfer to an external contact 
         /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ConsultTransferResponse</returns>
+        
+        public ConsultTransferResponse PostConversationsCallParticipantConsultContactExternal (string conversationId, string participantId, ConsultTransferToExternalContact body)
+        {
+             ApiResponse<ConsultTransferResponse> localVarResponse = PostConversationsCallParticipantConsultContactExternalWithHttpInfo(conversationId, participantId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact 
+        /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ApiResponse of ConsultTransferResponse</returns>
+        
+        public ApiResponse< ConsultTransferResponse > PostConversationsCallParticipantConsultContactExternalWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternalContact body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationsCallParticipantConsultContactExternal");
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationsCallParticipantConsultContactExternal");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsCallParticipantConsultContactExternal");
+
+            var localVarPath = "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantConsultContactExternal: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantConsultContactExternal: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConsultTransferResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConsultTransferResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsultTransferResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact 
+        /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ConsultTransferResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantConsultContactExternalAsync (string conversationId, string participantId, ConsultTransferToExternalContact body)
+        {
+             ApiResponse<ConsultTransferResponse> localVarResponse = await PostConversationsCallParticipantConsultContactExternalAsyncWithHttpInfo(conversationId, participantId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact 
+        /// 
+        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultContactExternalAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternalContact body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationsCallParticipantConsultContactExternal");
+            
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationsCallParticipantConsultContactExternal");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsCallParticipantConsultContactExternal");
+            
+
+            var localVarPath = "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantConsultContactExternal: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantConsultContactExternal: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConsultTransferResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConsultTransferResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsultTransferResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Initiate a consult transfer to an external contact 
+        /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -52377,6 +56283,247 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
                 null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Initiate voice consult transfer 
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ConsultTransferResponse</returns>
+        
+        public ConsultTransferResponse PostConversationsCallParticipantVoiceConsult (string conversationId, string participantId, ConsultTransferToAddress body)
+        {
+             ApiResponse<ConsultTransferResponse> localVarResponse = PostConversationsCallParticipantVoiceConsultWithHttpInfo(conversationId, participantId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Initiate voice consult transfer 
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>ApiResponse of ConsultTransferResponse</returns>
+        
+        public ApiResponse< ConsultTransferResponse > PostConversationsCallParticipantVoiceConsultWithHttpInfo (string conversationId, string participantId, ConsultTransferToAddress body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationsCallParticipantVoiceConsult");
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationsCallParticipantVoiceConsult");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsCallParticipantVoiceConsult");
+
+            var localVarPath = "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantVoiceConsult: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantVoiceConsult: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConsultTransferResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConsultTransferResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsultTransferResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Initiate voice consult transfer 
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ConsultTransferResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantVoiceConsultAsync (string conversationId, string participantId, ConsultTransferToAddress body)
+        {
+             ApiResponse<ConsultTransferResponse> localVarResponse = await PostConversationsCallParticipantVoiceConsultAsyncWithHttpInfo(conversationId, participantId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Initiate voice consult transfer 
+        /// 
+        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="participantId">participantId</param>
+        /// <param name="body">Destination address &amp; initial speak to</param>
+        /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantVoiceConsultAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToAddress body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationsCallParticipantVoiceConsult");
+            
+            // verify the required parameter 'participantId' is set
+            if (participantId == null)
+                throw new ApiException(400, "Missing required parameter 'participantId' when calling ConversationsApi->PostConversationsCallParticipantVoiceConsult");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsCallParticipantVoiceConsult");
+            
+
+            var localVarPath = "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (participantId != null) localVarPathParams.Add("participantId", this.Configuration.ApiClient.ParameterToString(participantId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantVoiceConsult: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsCallParticipantVoiceConsult: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConsultTransferResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConsultTransferResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConsultTransferResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -57936,13 +62083,13 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Send message 
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>MessageData</returns>
         
         public MessageData PostConversationsMessageCommunicationMessages (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null)
@@ -57953,13 +62100,13 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Send message 
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>ApiResponse of MessageData</returns>
         
         public ApiResponse< MessageData > PostConversationsMessageCommunicationMessagesWithHttpInfo (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null)
@@ -58055,13 +62202,13 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Send message 
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of MessageData</returns>
         
         public async System.Threading.Tasks.Task<MessageData> PostConversationsMessageCommunicationMessagesAsync (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null)
@@ -58073,13 +62220,13 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Send message 
-        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        /// Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="communicationId">communicationId</param>
         /// <param name="body">Message</param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <returns>Task of ApiResponse (MessageData)</returns>
         
         public async System.Threading.Tasks.Task<ApiResponse<MessageData>> PostConversationsMessageCommunicationMessagesAsyncWithHttpInfo (string conversationId, string communicationId, AdditionalMessage body, bool? useNormalizedMessage = null)
@@ -58622,6 +62769,243 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<MessageMediaUploadData>(localVarStatusCode,
                 localVarHeaders,
                 (MessageMediaUploadData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MessageMediaUploadData)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Send a social media message 
+        /// Send a social media message on existing conversation/communication.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>SocialMediaMessageData</returns>
+        
+        public SocialMediaMessageData PostConversationsMessageCommunicationSocialmediaMessages (string conversationId, string communicationId, AdditionalSocialMediaMessage body)
+        {
+             ApiResponse<SocialMediaMessageData> localVarResponse = PostConversationsMessageCommunicationSocialmediaMessagesWithHttpInfo(conversationId, communicationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Send a social media message 
+        /// Send a social media message on existing conversation/communication.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>ApiResponse of SocialMediaMessageData</returns>
+        
+        public ApiResponse< SocialMediaMessageData > PostConversationsMessageCommunicationSocialmediaMessagesWithHttpInfo (string conversationId, string communicationId, AdditionalSocialMediaMessage body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationsMessageCommunicationSocialmediaMessages");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationsMessageCommunicationSocialmediaMessages");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsMessageCommunicationSocialmediaMessages");
+
+            var localVarPath = "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageCommunicationSocialmediaMessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageCommunicationSocialmediaMessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<SocialMediaMessageData>(localVarStatusCode,
+                localVarHeaders,
+                (SocialMediaMessageData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaMessageData)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Send a social media message 
+        /// Send a social media message on existing conversation/communication.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of SocialMediaMessageData</returns>
+        
+        public async System.Threading.Tasks.Task<SocialMediaMessageData> PostConversationsMessageCommunicationSocialmediaMessagesAsync (string conversationId, string communicationId, AdditionalSocialMediaMessage body)
+        {
+             ApiResponse<SocialMediaMessageData> localVarResponse = await PostConversationsMessageCommunicationSocialmediaMessagesAsyncWithHttpInfo(conversationId, communicationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Send a social media message 
+        /// Send a social media message on existing conversation/communication.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">conversationId</param>
+        /// <param name="communicationId">communicationId</param>
+        /// <param name="body">Message</param>
+        /// <returns>Task of ApiResponse (SocialMediaMessageData)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<SocialMediaMessageData>> PostConversationsMessageCommunicationSocialmediaMessagesAsyncWithHttpInfo (string conversationId, string communicationId, AdditionalSocialMediaMessage body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationsMessageCommunicationSocialmediaMessages");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationsMessageCommunicationSocialmediaMessages");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsMessageCommunicationSocialmediaMessages");
+            
+
+            var localVarPath = "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageCommunicationSocialmediaMessages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageCommunicationSocialmediaMessages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<SocialMediaMessageData>(localVarStatusCode,
+                localVarHeaders,
+                (SocialMediaMessageData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SocialMediaMessageData)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -59542,12 +63926,236 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Send inbound Open Response 
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>OpenStructuredResponseNormalizedMessage</returns>
+        
+        public OpenStructuredResponseNormalizedMessage PostConversationsMessageInboundOpenStructuredResponse (string integrationId, OpenInboundStructuredResponseMessage body)
+        {
+             ApiResponse<OpenStructuredResponseNormalizedMessage> localVarResponse = PostConversationsMessageInboundOpenStructuredResponseWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Send inbound Open Response 
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>ApiResponse of OpenStructuredResponseNormalizedMessage</returns>
+        
+        public ApiResponse< OpenStructuredResponseNormalizedMessage > PostConversationsMessageInboundOpenStructuredResponseWithHttpInfo (string integrationId, OpenInboundStructuredResponseMessage body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PostConversationsMessageInboundOpenStructuredResponse");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsMessageInboundOpenStructuredResponse");
+
+            var localVarPath = "/api/v2/conversations/messages/{integrationId}/inbound/open/structured/response";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageInboundOpenStructuredResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageInboundOpenStructuredResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<OpenStructuredResponseNormalizedMessage>(localVarStatusCode,
+                localVarHeaders,
+                (OpenStructuredResponseNormalizedMessage) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenStructuredResponseNormalizedMessage)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Send inbound Open Response 
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>Task of OpenStructuredResponseNormalizedMessage</returns>
+        
+        public async System.Threading.Tasks.Task<OpenStructuredResponseNormalizedMessage> PostConversationsMessageInboundOpenStructuredResponseAsync (string integrationId, OpenInboundStructuredResponseMessage body)
+        {
+             ApiResponse<OpenStructuredResponseNormalizedMessage> localVarResponse = await PostConversationsMessageInboundOpenStructuredResponseAsyncWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Send inbound Open Response 
+        /// Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">integrationId</param>
+        /// <param name="body">OpenInboundStructuredResponseMessage</param>
+        /// <returns>Task of ApiResponse (OpenStructuredResponseNormalizedMessage)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<OpenStructuredResponseNormalizedMessage>> PostConversationsMessageInboundOpenStructuredResponseAsyncWithHttpInfo (string integrationId, OpenInboundStructuredResponseMessage body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PostConversationsMessageInboundOpenStructuredResponse");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationsMessageInboundOpenStructuredResponse");
+            
+
+            var localVarPath = "/api/v2/conversations/messages/{integrationId}/inbound/open/structured/response";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageInboundOpenStructuredResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationsMessageInboundOpenStructuredResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<OpenStructuredResponseNormalizedMessage>(localVarStatusCode,
+                localVarHeaders,
+                (OpenStructuredResponseNormalizedMessage) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OpenStructuredResponseNormalizedMessage)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Get messages in batch 
         /// The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>TextMessageListing</returns>
         
@@ -59563,7 +64171,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>ApiResponse of TextMessageListing</returns>
         
@@ -59657,7 +64265,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>Task of TextMessageListing</returns>
         
@@ -59674,7 +64282,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId"></param>
-        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media, stickers) (optional, default to false)</param>
+        /// <param name="useNormalizedMessage">If true, response removes deprecated fields (textBody, media) (optional, default to false)</param>
         /// <param name="body">messageIds (optional)</param>
         /// <returns>Task of ApiResponse (TextMessageListing)</returns>
         
@@ -66849,9 +71457,236 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration 
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        public IdentityResolutionConfig PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId (string integrationId, IdentityResolutionConfig body)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration 
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        public ApiResponse< IdentityResolutionConfig > PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration 
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        public async System.Threading.Tasks.Task<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsync (string integrationId, IdentityResolutionConfig body)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = await PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsyncWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create an identity resolution settings for a Apple messaging integration 
+        /// 
+        /// PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId");
+            
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Create an identity resolution settings for a Facebook messaging integration 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -66867,7 +71702,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create an identity resolution settings for a Facebook messaging integration 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -66963,7 +71797,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create an identity resolution settings for a Facebook messaging integration 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -66980,7 +71813,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create an identity resolution settings for a Facebook messaging integration 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67077,9 +71909,232 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        public IdentityResolutionConfig PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId (string integrationId, IdentityResolutionConfig body)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        public ApiResponse< IdentityResolutionConfig > PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        public async System.Threading.Tasks.Task<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsync (string integrationId, IdentityResolutionConfig body)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = await PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsyncWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create identity resolution settings for an Instagram messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration ID</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId");
+            
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Update an open messaging integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67095,7 +72150,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an open messaging integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67191,7 +72245,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an open messaging integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67208,7 +72261,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an open messaging integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67305,9 +72357,232 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>IdentityResolutionConfig</returns>
+        
+        public IdentityResolutionConfig PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId (string integrationId, IdentityResolutionConfig body)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>ApiResponse of IdentityResolutionConfig</returns>
+        
+        public ApiResponse< IdentityResolutionConfig > PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdWithHttpInfo (string integrationId, IdentityResolutionConfig body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of IdentityResolutionConfig</returns>
+        
+        public async System.Threading.Tasks.Task<IdentityResolutionConfig> PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsync (string integrationId, IdentityResolutionConfig body)
+        {
+             ApiResponse<IdentityResolutionConfig> localVarResponse = await PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsyncWithHttpInfo(integrationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create an identity resolution settings for an X (Formally Twitter) messaging integration 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="integrationId">Integration Id</param>
+        /// <param name="body">IdentityResolutionConfig</param>
+        /// <returns>Task of ApiResponse (IdentityResolutionConfig)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityResolutionConfig>> PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdAsyncWithHttpInfo (string integrationId, IdentityResolutionConfig body)
+        { 
+            // verify the required parameter 'integrationId' is set
+            if (integrationId == null)
+                throw new ApiException(400, "Missing required parameter 'integrationId' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId");
+            
+
+            var localVarPath = "/api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (integrationId != null) localVarPathParams.Add("integrationId", this.Configuration.ApiClient.ParameterToString(integrationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<IdentityResolutionConfig>(localVarStatusCode,
+                localVarHeaders,
+                (IdentityResolutionConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(IdentityResolutionConfig)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Update a whatsApp integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67323,7 +72598,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a whatsApp integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67419,7 +72693,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a whatsApp integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>
@@ -67436,7 +72709,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a whatsApp integration Identity Resolution settings 
         /// 
-        /// PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="integrationId">Integration ID</param>

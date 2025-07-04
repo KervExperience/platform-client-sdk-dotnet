@@ -705,12 +705,10 @@ namespace Example
 
 ## GetWebdeploymentsDeploymentIdentityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) GetWebdeploymentsDeploymentIdentityresolution (string deploymentId)
+> [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig) GetWebdeploymentsDeploymentIdentityresolution (string deploymentId)
 
 
 Get a deployment identity resolution setting.
-
-GetWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -744,7 +742,7 @@ namespace Example
             try
             { 
                 // Get a deployment identity resolution setting.
-                IdentityResolutionConfig result = apiInstance.GetWebdeploymentsDeploymentIdentityresolution(deploymentId);
+                DeploymentIdentityResolutionConfig result = apiInstance.GetWebdeploymentsDeploymentIdentityresolution(deploymentId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -765,7 +763,7 @@ namespace Example
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
 ## GetWebdeploymentsDeployments
@@ -823,7 +821,7 @@ namespace Example
 
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**List<string>**](string)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent |
+| **expand** | [**List<string>**](string)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent, identityresolution |
 
 ### Return type
 
@@ -1257,12 +1255,10 @@ namespace Example
 
 ## PutWebdeploymentsDeploymentIdentityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) PutWebdeploymentsDeploymentIdentityresolution (string deploymentId, IdentityResolutionConfig body)
+> [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig) PutWebdeploymentsDeploymentIdentityresolution (string deploymentId, DeploymentIdentityResolutionConfig body)
 
 
 Update identity resolution settings for a deployment.
-
-PutWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -1292,12 +1288,12 @@ namespace Example
 
             var apiInstance = new WebDeploymentsApi();
             var deploymentId = deploymentId_example;  // string | The deployment ID
-            var body = new IdentityResolutionConfig(); // IdentityResolutionConfig | 
+            var body = new DeploymentIdentityResolutionConfig(); // DeploymentIdentityResolutionConfig | 
 
             try
             { 
                 // Update identity resolution settings for a deployment.
-                IdentityResolutionConfig result = apiInstance.PutWebdeploymentsDeploymentIdentityresolution(deploymentId, body);
+                DeploymentIdentityResolutionConfig result = apiInstance.PutWebdeploymentsDeploymentIdentityresolution(deploymentId, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1315,11 +1311,11 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **deploymentId** | **string**| The deployment ID |  |
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+| **body** | [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)|  |  |
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_PureCloudPlatform.Client.V2 232.0.0_
+_PureCloudPlatform.Client.V2 237.0.0_

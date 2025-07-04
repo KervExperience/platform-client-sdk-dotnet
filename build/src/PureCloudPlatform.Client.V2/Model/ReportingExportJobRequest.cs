@@ -790,7 +790,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum ContentExplorationView for "CONTENT_EXPLORATION_VIEW"
             /// </summary>
             [EnumMember(Value = "CONTENT_EXPLORATION_VIEW")]
-            ContentExplorationView
+            ContentExplorationView,
+            
+            /// <summary>
+            /// Enum EvaluationPerformanceSummaryView for "EVALUATION_PERFORMANCE_SUMMARY_VIEW"
+            /// </summary>
+            [EnumMember(Value = "EVALUATION_PERFORMANCE_SUMMARY_VIEW")]
+            EvaluationPerformanceSummaryView,
+            
+            /// <summary>
+            /// Enum EvaluationPerformanceDetailView for "EVALUATION_PERFORMANCE_DETAIL_VIEW"
+            /// </summary>
+            [EnumMember(Value = "EVALUATION_PERFORMANCE_DETAIL_VIEW")]
+            EvaluationPerformanceDetailView,
+            
+            /// <summary>
+            /// Enum EvaluationPerformanceQuestionGroupDetailView for "EVALUATION_PERFORMANCE_QUESTION_GROUP_DETAIL_VIEW"
+            /// </summary>
+            [EnumMember(Value = "EVALUATION_PERFORMANCE_QUESTION_GROUP_DETAIL_VIEW")]
+            EvaluationPerformanceQuestionGroupDetailView,
+            
+            /// <summary>
+            /// Enum EvaluationPerformanceQuestionDetailView for "EVALUATION_PERFORMANCE_QUESTION_DETAIL_VIEW"
+            /// </summary>
+            [EnumMember(Value = "EVALUATION_PERFORMANCE_QUESTION_DETAIL_VIEW")]
+            EvaluationPerformanceQuestionDetailView
         }
         /// <summary>
         /// The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
@@ -911,7 +935,8 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="RecipientEmails">The list of email recipients for the exports.</param>
         /// <param name="IncludeDurationFormatInHeader">Indicates whether to include selected duration format to the column headers.</param>
         /// <param name="DurationFormat">Indicates the duration format for the exports.</param>
-        public ReportingExportJobRequest(string Name = null, string TimeZone = null, ExportFormatEnum? ExportFormat = null, string Interval = null, string Period = null, ViewTypeEnum? ViewType = null, ViewFilter Filter = null, bool? Read = null, string Locale = null, bool? HasFormatDurations = null, bool? HasSplitFilters = null, bool? ExcludeEmptyRows = null, bool? HasSplitByMedia = null, bool? HasSummaryRow = null, CsvDelimiterEnum? CsvDelimiter = null, List<SelectedColumns> SelectedColumns = null, bool? HasCustomParticipantAttributes = null, List<string> RecipientEmails = null, bool? IncludeDurationFormatInHeader = null, DurationFormatEnum? DurationFormat = null)
+        /// <param name="ChartColumns">The list of columns for which chart is going to be displayed in export.</param>
+        public ReportingExportJobRequest(string Name = null, string TimeZone = null, ExportFormatEnum? ExportFormat = null, string Interval = null, string Period = null, ViewTypeEnum? ViewType = null, ViewFilter Filter = null, bool? Read = null, string Locale = null, bool? HasFormatDurations = null, bool? HasSplitFilters = null, bool? ExcludeEmptyRows = null, bool? HasSplitByMedia = null, bool? HasSummaryRow = null, CsvDelimiterEnum? CsvDelimiter = null, List<SelectedColumns> SelectedColumns = null, bool? HasCustomParticipantAttributes = null, List<string> RecipientEmails = null, bool? IncludeDurationFormatInHeader = null, DurationFormatEnum? DurationFormat = null, List<ChartColumn> ChartColumns = null)
         {
             this.Name = Name;
             this.TimeZone = TimeZone;
@@ -933,6 +958,7 @@ namespace PureCloudPlatform.Client.V2.Model
             this.RecipientEmails = RecipientEmails;
             this.IncludeDurationFormatInHeader = IncludeDurationFormatInHeader;
             this.DurationFormat = DurationFormat;
+            this.ChartColumns = ChartColumns;
             
         }
         
@@ -1089,6 +1115,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
 
+
+        /// <summary>
+        /// The list of columns for which chart is going to be displayed in export
+        /// </summary>
+        /// <value>The list of columns for which chart is going to be displayed in export</value>
+        [DataMember(Name="chartColumns", EmitDefaultValue=false)]
+        public List<ChartColumn> ChartColumns { get; set; }
+
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -1118,6 +1153,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  RecipientEmails: ").Append(RecipientEmails).Append("\n");
             sb.Append("  IncludeDurationFormatInHeader: ").Append(IncludeDurationFormatInHeader).Append("\n");
             sb.Append("  DurationFormat: ").Append(DurationFormat).Append("\n");
+            sb.Append("  ChartColumns: ").Append(ChartColumns).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1257,6 +1293,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.DurationFormat == other.DurationFormat ||
                     this.DurationFormat != null &&
                     this.DurationFormat.Equals(other.DurationFormat)
+                ) &&
+                (
+                    this.ChartColumns == other.ChartColumns ||
+                    this.ChartColumns != null &&
+                    this.ChartColumns.SequenceEqual(other.ChartColumns)
                 );
         }
 
@@ -1330,6 +1371,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.DurationFormat != null)
                     hash = hash * 59 + this.DurationFormat.GetHashCode();
+
+                if (this.ChartColumns != null)
+                    hash = hash * 59 + this.ChartColumns.GetHashCode();
 
                 return hash;
             }

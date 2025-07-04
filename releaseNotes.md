@@ -1,402 +1,261 @@
-Platform API version: 9171
+Platform API version: 9375
 
 
 
 
-# Major Changes (9 changes)
+# Major Changes (23 changes)
 
-**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (1 change)
+**/api/v2/workforcemanagement/historicaldata/deletejob** (1 change)
+
+* Path /api/v2/workforcemanagement/historicaldata/deletejob was removed
+
+**GET /api/v2/integrations/credentials** (1 change)
 
 * Has been deprecated
 
-**GET /api/v2/chats/users/me/settings** (1 change)
+**GET /api/v2/routing/queues/{queueId}/wrapupcodes** (1 change)
 
-* Response 200 type was changed from ChatUserSettings to UserSettingsForChat
+* Parameter name was added
 
-**PATCH /api/v2/chats/users/me/settings** (1 change)
+**ContentAttachment** (1 change)
 
-* Response 200 type was changed from ChatUserSettings to UserSettingsForChat
+* Model ContentAttachment was removed
 
-**ReverseWhitepagesLookupResult** (1 change)
+**ContentGeneric** (1 change)
 
-* Property externalOrganizations was removed
+* Model ContentGeneric was removed
 
-**JourneySegmentRequest** (1 change)
+**ContentList** (1 change)
 
-* Property scope was removed
+* Model ContentList was removed
 
-**JourneyViewJob** (2 changes)
+**ContentLocation** (1 change)
 
-* Required property estimatedCompletionMargin was added
-* Required property userId was added
+* Model ContentLocation was removed
 
-**EvaluationResponse** (2 changes)
+**ContentNotificationTemplate** (1 change)
 
-* Property calibration was changed from Calibration to AddressableEntityRef
-* calibration has been made readonly
+* Model ContentNotificationTemplate was removed
+
+**ContentPostback** (1 change)
+
+* Model ContentPostback was removed
+
+**ContentQuickReply** (1 change)
+
+* Model ContentQuickReply was removed
+
+**ContentQuickReplyV2** (1 change)
+
+* Model ContentQuickReplyV2 was removed
+
+**ContentStory** (1 change)
+
+* Model ContentStory was removed
+
+**ContentText** (1 change)
+
+* Model ContentText was removed
+
+**ListItemComponent** (1 change)
+
+* Model ListItemComponent was removed
+
+**MessageContent** (1 change)
+
+* Model MessageContent was removed
+
+**MessagingRecipient** (1 change)
+
+* Model MessagingRecipient was removed
+
+**NotificationTemplateBody** (1 change)
+
+* Model NotificationTemplateBody was removed
+
+**NotificationTemplateButton** (1 change)
+
+* Model NotificationTemplateButton was removed
+
+**NotificationTemplateFooter** (1 change)
+
+* Model NotificationTemplateFooter was removed
+
+**NotificationTemplateHeader** (1 change)
+
+* Model NotificationTemplateHeader was removed
+
+**NotificationTemplateParameter** (1 change)
+
+* Model NotificationTemplateParameter was removed
+
+**HistoricalImportDeleteJobResponse** (1 change)
+
+* Model HistoricalImportDeleteJobResponse was removed
+
+**TextBotPromptSegment** (1 change)
+
+* Property content was changed from MessageContent[] to ConversationMessageContent[]
 
 
-# Minor Changes (107 changes)
+# Minor Changes (45 changes)
 
-**/api/v2/scripts/published/divisionviews/{scriptId}/variables** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads** (2 changes)
+**/api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**ADFS** (1 change)
+**/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**CustomerInteractionCenter** (1 change)
+**/api/v2/conversations/{conversationId}/participants/{participantId}/transfer** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**GSuite** (1 change)
+**/api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external** (2 changes)
 
-* Optional property metadataURL was added
+* Path was added
+* Operation POST was added
 
-**GenericSAML** (1 change)
+**AnalyticsConversationWithoutAttributes** (1 change)
 
-* Optional property metadataURL was added
+* Optional property inactivityTimeout was added
 
-**IdentityNow** (1 change)
+**AnalyticsConversation** (1 change)
 
-* Optional property metadataURL was added
-
-**SAMLProvider** (1 change)
-
-* Optional property metadataURL was added
-
-**CustomProvider** (1 change)
-
-* Optional property metadataURL was added
-
-**Okta** (1 change)
-
-* Optional property metadataURL was added
-
-**OneLogin** (1 change)
-
-* Optional property metadataURL was added
-
-**PingIdentity** (1 change)
-
-* Optional property metadataURL was added
-
-**PureEngage** (1 change)
-
-* Optional property metadataURL was added
-
-**Salesforce** (1 change)
-
-* Optional property metadataURL was added
-
-**JourneyAggregateQueryPredicate** (1 change)
-
-* Enum value journeySegmentAssignmentState was added to property dimension
-
-**JourneyAggregationQuery** (1 change)
-
-* Enum value journeySegmentAssignmentState was added to property groupBy
-
-**KnowledgeAggregateQueryPredicate** (1 change)
-
-* Enum value messageType was added to property dimension
-
-**KnowledgeAggregationQuery** (1 change)
-
-* Enum value messageType was added to property groupBy
+* Optional property inactivityTimeout was added
 
 **ViewFilter** (2 changes)
 
-* Enum value GoogleBusinessProfile was added to property socialChannels
-* Optional property deliveryPushed was added
+* Enum value INBOUND_AUDIO_COUNT was added to property viewMetrics
+* Enum value OUTBOUND_AUDIO_COUNT was added to property viewMetrics
 
-**ReportingExportJobResponse** (1 change)
+**Widget** (2 changes)
 
-* Enum value CONTENT_EXPLORATION_VIEW was added to property viewType
-
-**ReportingExportMetadataJobResponse** (1 change)
-
-* Enum value CONTENT_EXPLORATION_VIEW was added to property viewType
-
-**ReportingExportJobRequest** (1 change)
-
-* Enum value CONTENT_EXPLORATION_VIEW was added to property viewType
-
-**ConditionalGroupActivation** (1 change)
-
-* Model was added
-
-**ConditionalGroupActivationCondition** (1 change)
-
-* Model was added
-
-**ConditionalGroupActivationPilotRule** (1 change)
-
-* Model was added
-
-**ConditionalGroupActivationRule** (1 change)
-
-* Model was added
-
-**ConditionalGroupActivationSimpleMetric** (1 change)
-
-* Model was added
-
-**DataSchemaRef** (1 change)
-
-* Model was added
-
-**EvaluationQuestion** (1 change)
-
-* Enum value multipleSelectQuestion was added to property type
+* Enum value INBOUND_AUDIO_COUNT was added to property metrics
+* Enum value OUTBOUND_AUDIO_COUNT was added to property metrics
 
 **ConversationMessageMetadataContent** (1 change)
 
-* Enum value ListPicker was added to property contentType
+* Enum value RoadsideAssistance was added to property contentType
 
-**Evaluation** (2 changes)
-
-* Optional property createdDate was added
-* Optional property submittedDate was added
-
-**ConversationContentButtonResponse** (1 change)
-
-* Enum value ListPicker was added to property type
-
-**ConversationContentDatePicker** (1 change)
-
-* Optional property location was added
-
-**ConversationContentListPicker** (1 change)
+**ConversationContentRoadsideAssistance** (1 change)
 
 * Model was added
 
-**ConversationContentListPickerItem** (1 change)
+**ConversationMessageContent** (1 change)
+
+* Enum value RoadsideAssistance was added to property contentType
+
+**ContestUserRank** (1 change)
+
+* Optional property score was added
+
+**ContestWinners** (1 change)
+
+* Optional property winnersCount was added
+
+**ButtonResponse** (1 change)
+
+* Optional property originatingMessageId was added
+
+**DatePicker** (2 changes)
+
+* Optional property id was added
+* Optional property dateSelected was added
+
+**ListPicker** (1 change)
+
+* Optional property id was added
+
+**ReceivedReplyMessage** (1 change)
 
 * Model was added
 
-**ConversationContentListPickerSection** (1 change)
+**RecordingForm** (1 change)
 
 * Model was added
 
-**ConversationEventPresence** (3 changes)
-
-* Enum value Authenticate was added to property type
-* Optional property receivedMessage was added
-* Optional property replyMessage was added
-
-**ConversationMessageContent** (2 changes)
-
-* Enum value ListPicker was added to property contentType
-* Optional property reactions was added
-
-**ConversationMessagingChannel** (2 changes)
-
-* Optional property type was added
-* Optional property publicMetadata was added
-
-**ConversationNormalizedMessage** (2 changes)
-
-* Optional property relatedMessages was added
-* Optional property enrichment was added
-
-**ConversationPublicMetadata** (1 change)
-
-* Optional property url was added
-
-**MessageMediaUploadData** (1 change)
+**RecordingFormPage** (1 change)
 
 * Model was added
 
-**UploadMediaRequest** (1 change)
+**RecordingFormPageComponent** (1 change)
 
 * Model was added
 
-**DivisionedDomainEntityRef** (1 change)
-
-* Optional property division was added
-
-**UserSettingsForChat** (1 change)
+**RecordingFormResponseComponent** (1 change)
 
 * Model was added
 
-**KnowledgeDocumentsAnswerFilter** (1 change)
-
-* Enum value ExpandedArticle was added to property queryType
-
-**KnowledgeConversationContext** (1 change)
-
-* Optional property messageType was added
-
-**KnowledgeDocumentCopy** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentPresentation** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**PresentedKnowledgeDocument** (1 change)
-
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentFeedbackResponse** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentFeedback** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeDocumentView** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentFeedback** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentPresentation** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentView** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**KnowledgeGuestDocumentCopy** (2 changes)
-
-* Enum value ExpandedArticle was added to property queryType
-* Enum value Generative was added to property surfacingMethod
-
-**SurveyQuestion** (1 change)
-
-* Enum value multipleSelectQuestion was added to property type
-
-**InteractiveApplication** (1 change)
+**RecordingFormResponseContent** (1 change)
 
 * Model was added
 
-**RecordingMessagingMessage** (2 changes)
-
-* Enum value InteractiveApplication was added to property contentType
-* Optional property socialVisibility was added
-
-**SocialMediaAsyncDetailQuery** (1 change)
-
-* Optional property topicIds was added
-
-**BotSearchResponse** (1 change)
-
-* Enum value GenesysDigitalBotConnector was added to property botType
-
-**ConversationAppSettings** (1 change)
-
-* Optional property sessionDurationSeconds was added
-
-**NotificationsSettings** (1 change)
-
-* Optional property notificationContentType was added
-
-**WebDeployment** (1 change)
-
-* Optional property pushIntegrations was added
-
-**ExpandableWebDeployment** (1 change)
-
-* Optional property pushIntegrations was added
-
-**TimeOffRequestResponse** (3 changes)
-
-* Enum value BlockedDate was added to property substatus
-* Enum value ManualApproval was added to property substatus
-* Enum value ReviewDate was added to property substatus
-
-**TimeOffRequest** (3 changes)
-
-* Enum value BlockedDate was added to property substatus
-* Enum value ManualApproval was added to property substatus
-* Enum value ReviewDate was added to property substatus
-
-**TimeOffRequestQueryBody** (3 changes)
-
-* Enum value BlockedDate was added to property substatuses
-* Enum value ManualApproval was added to property substatuses
-* Enum value ReviewDate was added to property substatuses
-
-**OverrideDate** (1 change)
+**RecordingInput** (1 change)
 
 * Model was added
 
-**ListWrapperOverrideDate** (1 change)
+**RecordingIntroduction** (1 change)
 
 * Model was added
 
-**WorkitemDelta** (3 changes)
+**RecordingMessagingMessage** (1 change)
 
-* Optional property dateAssignmentStateChanged was added
-* Optional property alertTimeoutSeconds was added
-* Optional property scoredAgents was added
+* Enum value Form was added to property contentType
 
-**WorkitemScoredAgentDelta** (1 change)
+**RecordingWheelPicker** (1 change)
 
 * Model was added
 
-**WorkitemsAttributeChangeListWorkitemScoredAgentDelta** (1 change)
+**RecordingWheelPickerItem** (1 change)
 
 * Model was added
 
-**WorkitemsAttributeChangeWorkitemRuleSettings** (1 change)
+**VoicemailMailboxInfo** (3 changes)
+
+* Optional property id was added
+* Optional property ownerType was added
+* Optional property selfUri was added
+
+**LearningModuleAutoAssignResponse** (1 change)
 
 * Model was added
 
-**WorktypeDelta** (3 changes)
+**UsersRulesRuleReference** (1 change)
 
-* Optional property flowId was added
-* Optional property ruleSettings was added
-* Optional property unassignedDivisionContactsEnabled was added
+* Model was added
 
-**JourneyAsyncAggregationQuery** (1 change)
+**LearningModuleAutoAssignRequest** (1 change)
 
-* Enum value journeySegmentAssignmentState was added to property groupBy
+* Model was added
 
-**KnowledgeAsyncAggregationQuery** (1 change)
+**LearningModuleJobRequest** (1 change)
 
-* Enum value messageType was added to property groupBy
+* Enum value Assign was added to property action
+
+**ConsultTransferToAddress** (1 change)
+
+* Model was added
+
+**ConsultTransferToExternalContact** (1 change)
+
+* Model was added
+
+**TransferToAddressRequest** (1 change)
+
+* Model was added
+
+**TransferToExternalContactRequest** (1 change)
+
+* Model was added
 
 
-# Point Changes (7 changes)
+# Point Changes (1 change)
 
-**GET /api/v2/externalcontacts/reversewhitepageslookup** (3 changes)
+**GET /api/v2/integrations/credentials** (1 change)
 
-* Summary was changed
-* Description was changed for parameter lookupVal
-* Description was changed for parameter divisionId
-
-**GET /api/v2/recording/jobs/{jobId}/failedrecordings** (1 change)
-
-* Description was changed for parameter includeTotal
-
-**GET /api/v2/recording/jobs** (1 change)
-
-* Description was changed for parameter includeTotal
-
-**GET /api/v2/textbots/bots/search** (2 changes)
-
-* Description was changed for parameter botId
-* Description was changed for parameter pageSize
+* Description was changed

@@ -28,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetAnalyticsConversationsDetailsJobResults**](#GetAnalyticsConversationsDetailsJobResults) | **Get** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job |
 | [**GetAnalyticsConversationsDetailsJobsAvailability**](#GetAnalyticsConversationsDetailsJobsAvailability) | **Get** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time |
 | [**GetConversation**](#GetConversation) | **Get** /api/v2/conversations/{conversationId} | Get conversation |
+| [**GetConversationCommunicationInternalmessage**](#GetConversationCommunicationInternalmessage) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message |
+| [**GetConversationCommunicationInternalmessages**](#GetConversationCommunicationInternalmessages) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication |
 | [**GetConversationParticipantSecureivrsession**](#GetConversationParticipantSecureivrsession) | **Get** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session |
 | [**GetConversationParticipantSecureivrsessions**](#GetConversationParticipantSecureivrsessions) | **Get** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant. |
 | [**GetConversationParticipantWrapup**](#GetConversationParticipantWrapup) | **Get** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant.  |
@@ -70,6 +72,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsEmailParticipantWrapupcodes**](#GetConversationsEmailParticipantWrapupcodes) | **Get** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant |
 | [**GetConversationsEmailSettings**](#GetConversationsEmailSettings) | **Get** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation |
 | [**GetConversationsEmails**](#GetConversationsEmails) | **Get** /api/v2/conversations/emails | Get active email conversations for the logged in user |
+| [**GetConversationsInternalmessage**](#GetConversationsInternalmessage) | **Get** /api/v2/conversations/internalmessages/{conversationId} | Get internal message conversation |
+| [**GetConversationsInternalmessages**](#GetConversationsInternalmessages) | **Get** /api/v2/conversations/internalmessages | Get active internal message conversations for the logged in user |
 | [**GetConversationsKeyconfiguration**](#GetConversationsKeyconfiguration) | **Get** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations |
 | [**GetConversationsKeyconfigurations**](#GetConversationsKeyconfigurations) | **Get** /api/v2/conversations/keyconfigurations | Get a list of key configurations data |
 | [**GetConversationsMessage**](#GetConversationsMessage) | **Get** /api/v2/conversations/messages/{conversationId} | Get message conversation |
@@ -84,8 +88,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsMessagesCachedmediaCachedMediaItemId**](#GetConversationsMessagesCachedmediaCachedMediaItemId) | **Get** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item |
 | [**GetConversationsMessagingFacebookApp**](#GetConversationsMessagingFacebookApp) | **Get** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id |
 | [**GetConversationsMessagingFacebookPermissions**](#GetConversationsMessagingFacebookPermissions) | **Get** /api/v2/conversations/messaging/facebook/permissions | Get a list of Facebook Permissions |
+| [**GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**](#GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId) | **Get** /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} | Get Apple messaging integration identity resolution settings |
 | [**GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](#GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **Get** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Get Facebook messaging integration identity resolution settings |
+| [**GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](#GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **Get** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Get an Instagram integration identity resolution settings |
 | [**GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](#GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **Get** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Get an open messaging integration Identity Resolution settings |
+| [**GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](#GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | **Get** /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} | Get X (Formally Twitter) messaging integration identity resolution settings |
 | [**GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](#GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **Get** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings |
 | [**GetConversationsMessagingIntegrationTwitterOauthSettings**](#GetConversationsMessagingIntegrationTwitterOauthSettings) | **Get** /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings | Get twitter oauth settings to patch an integration |
 | [**GetConversationsMessagingIntegrations**](#GetConversationsMessagingIntegrations) | **Get** /api/v2/conversations/messaging/integrations | Get a list of Integrations |
@@ -116,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchConversationParticipant**](#PatchConversationParticipant) | **Patch** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant. |
 | [**PatchConversationParticipantAttributes**](#PatchConversationParticipantAttributes) | **Patch** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant. |
 | [**PatchConversationSecureattributes**](#PatchConversationSecureattributes) | **Patch** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation. |
+| [**PatchConversationSummaryEngagements**](#PatchConversationSummaryEngagements) | **Patch** /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements | Update agent&#39;s engagement for the summary. |
 | [**PatchConversationSummaryFeedback**](#PatchConversationSummaryFeedback) | **Patch** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary. |
 | [**PatchConversationUtilizationlabel**](#PatchConversationUtilizationlabel) | **Patch** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied |
 | [**PatchConversationsAftercallworkConversationIdParticipantCommunication**](#PatchConversationsAftercallworkConversationIdParticipantCommunication) | **Patch** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication. |
@@ -165,14 +173,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationAssign**](#PostConversationAssign) | **Post** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages. |
 | [**PostConversationBarge**](#PostConversationBarge) | **Post** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants. |
 | [**PostConversationCobrowse**](#PostConversationCobrowse) | **Post** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission. |
+| [**PostConversationCommunicationInternalmessages**](#PostConversationCommunicationInternalmessages) | **Post** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Send internal message |
 | [**PostConversationDisconnect**](#PostConversationDisconnect) | **Post** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation. |
 | [**PostConversationParticipantCallbacks**](#PostConversationParticipantCallbacks) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation. |
 | [**PostConversationParticipantDigits**](#PostConversationParticipantDigits) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant |
+| [**PostConversationParticipantInternalmessagesUsersCommunications**](#PostConversationParticipantInternalmessagesUsersCommunications) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications | Setup internal message communication with user |
 | [**PostConversationParticipantReplace**](#PostConversationParticipantReplace) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address |
 | [**PostConversationParticipantReplaceAgent**](#PostConversationParticipantReplaceAgent) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent |
+| [**PostConversationParticipantReplaceContactExternal**](#PostConversationParticipantReplaceContactExternal) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external | Replace this participant with the an external contact |
 | [**PostConversationParticipantReplaceExternal**](#PostConversationParticipantReplaceExternal) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact |
 | [**PostConversationParticipantReplaceQueue**](#PostConversationParticipantReplaceQueue) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue |
 | [**PostConversationParticipantSecureivrsessions**](#PostConversationParticipantSecureivrsessions) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
+| [**PostConversationParticipantTransfer**](#PostConversationParticipantTransfer) | **Post** /api/v2/conversations/{conversationId}/participants/{participantId}/transfer | Replace this participant by another one using the address of the destination. |
 | [**PostConversationSuggestionEngagement**](#PostConversationSuggestionEngagement) | **Post** /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement | Save an engagement on the suggestion. |
 | [**PostConversationSuggestionsFeedback**](#PostConversationSuggestionsFeedback) | **Post** /api/v2/conversations/{conversationId}/suggestions/feedback | Suggestion feedback. |
 | [**PostConversationSummaryFeedback**](#PostConversationSummaryFeedback) | **Post** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Submit feedback for the summary. |
@@ -182,10 +194,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationsCallParticipantCommunicationWrapup**](#PostConversationsCallParticipantCommunicationWrapup) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication |
 | [**PostConversationsCallParticipantConsult**](#PostConversationsCallParticipantConsult) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer |
 | [**PostConversationsCallParticipantConsultAgent**](#PostConversationsCallParticipantConsultAgent) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent |
+| [**PostConversationsCallParticipantConsultContactExternal**](#PostConversationsCallParticipantConsultContactExternal) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external | Initiate a consult transfer to an external contact |
 | [**PostConversationsCallParticipantConsultExternal**](#PostConversationsCallParticipantConsultExternal) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact |
 | [**PostConversationsCallParticipantConsultQueue**](#PostConversationsCallParticipantConsultQueue) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue |
 | [**PostConversationsCallParticipantMonitor**](#PostConversationsCallParticipantMonitor) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant. |
 | [**PostConversationsCallParticipantReplace**](#PostConversationsCallParticipantReplace) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address |
+| [**PostConversationsCallParticipantVoiceConsult**](#PostConversationsCallParticipantVoiceConsult) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer |
 | [**PostConversationsCallParticipants**](#PostConversationsCallParticipants) | **Post** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation |
 | [**PostConversationsCallbackParticipantCommunicationWrapup**](#PostConversationsCallbackParticipantCommunicationWrapup) | **Post** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication |
 | [**PostConversationsCallbackParticipantReplace**](#PostConversationsCallbackParticipantReplace) | **Post** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address |
@@ -214,10 +228,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationsMessageCommunicationMessages**](#PostConversationsMessageCommunicationMessages) | **Post** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message |
 | [**PostConversationsMessageCommunicationMessagesMedia**](#PostConversationsMessageCommunicationMessagesMedia) | **Post** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media |
 | [**PostConversationsMessageCommunicationMessagesMediaUploads**](#PostConversationsMessageCommunicationMessagesMediaUploads) | **Post** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads | Create a URL to upload a message media file |
+| [**PostConversationsMessageCommunicationSocialmediaMessages**](#PostConversationsMessageCommunicationSocialmediaMessages) | **Post** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages | Send a social media message |
 | [**PostConversationsMessageCommunicationTyping**](#PostConversationsMessageCommunicationTyping) | **Post** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event |
 | [**PostConversationsMessageInboundOpenEvent**](#PostConversationsMessageInboundOpenEvent) | **Post** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message |
 | [**PostConversationsMessageInboundOpenMessage**](#PostConversationsMessageInboundOpenMessage) | **Post** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message |
 | [**PostConversationsMessageInboundOpenReceipt**](#PostConversationsMessageInboundOpenReceipt) | **Post** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message |
+| [**PostConversationsMessageInboundOpenStructuredResponse**](#PostConversationsMessageInboundOpenStructuredResponse) | **Post** /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response | Send inbound Open Response |
 | [**PostConversationsMessageMessagesBulk**](#PostConversationsMessageMessagesBulk) | **Post** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch |
 | [**PostConversationsMessageParticipantCommunicationWrapup**](#PostConversationsMessageParticipantCommunicationWrapup) | **Post** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication |
 | [**PostConversationsMessageParticipantMonitor**](#PostConversationsMessageParticipantMonitor) | **Post** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant. |
@@ -251,8 +267,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PutConversationsEmailRecordingstate**](#PutConversationsEmailRecordingstate) | **Put** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state |
 | [**PutConversationsKeyconfiguration**](#PutConversationsKeyconfiguration) | **Put** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations |
 | [**PutConversationsMessageRecordingstate**](#PutConversationsMessageRecordingstate) | **Put** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state |
+| [**PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**](#PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId) | **Put** /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} | Create an identity resolution settings for a Apple messaging integration |
 | [**PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](#PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **Put** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Create an identity resolution settings for a Facebook messaging integration |
+| [**PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](#PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **Put** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Create identity resolution settings for an Instagram messaging integration |
 | [**PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](#PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **Put** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Update an open messaging integration Identity Resolution settings |
+| [**PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](#PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | **Put** /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} | Create an identity resolution settings for an X (Formally Twitter) messaging integration |
 | [**PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](#PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **Put** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Update a whatsApp integration Identity Resolution settings |
 | [**PutConversationsMessagingSettingsDefault**](#PutConversationsMessagingSettingsDefault) | **Put** /api/v2/conversations/messaging/settings/default | Set the organization&#39;s default setting that may be applied to to integrations without settings |
 | [**PutConversationsMessagingSupportedcontentDefault**](#PutConversationsMessagingSupportedcontentDefault) | **Put** /api/v2/conversations/messaging/supportedcontent/default | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created. |
@@ -1629,6 +1648,144 @@ namespace Example
 [**Conversation**](Conversation)
 
 
+## GetConversationCommunicationInternalmessage
+
+> [**InternalMessageData**](InternalMessageData) GetConversationCommunicationInternalmessage (string conversationId, string communicationId, string messageId)
+
+
+Get message
+
+GetConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationCommunicationInternalmessageExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var communicationId = communicationId_example;  // string | communicationId
+            var messageId = messageId_example;  // string | messageId
+
+            try
+            { 
+                // Get message
+                InternalMessageData result = apiInstance.GetConversationCommunicationInternalmessage(conversationId, communicationId, messageId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationCommunicationInternalmessage: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **communicationId** | **string**| communicationId |  |
+| **messageId** | **string**| messageId |  |
+
+### Return type
+
+[**InternalMessageData**](InternalMessageData)
+
+
+## GetConversationCommunicationInternalmessages
+
+> [**InternalMessageDataEntityListing**](InternalMessageDataEntityListing) GetConversationCommunicationInternalmessages (string conversationId, string communicationId, int? pageSize = null, int? pageNumber = null)
+
+
+Get messages for communication
+
+GetConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationCommunicationInternalmessagesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var communicationId = communicationId_example;  // string | communicationId
+            var pageSize = 56;  // int? | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional)  (default to 25)
+            var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
+
+            try
+            { 
+                // Get messages for communication
+                InternalMessageDataEntityListing result = apiInstance.GetConversationCommunicationInternalmessages(conversationId, communicationId, pageSize, pageNumber);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationCommunicationInternalmessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **communicationId** | **string**| communicationId |  |
+| **pageSize** | **int?**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. | [optional] [default to 25] |
+| **pageNumber** | **int?**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**InternalMessageDataEntityListing**](InternalMessageDataEntityListing)
+
+
 ## GetConversationParticipantSecureivrsession
 
 > [**SecureSession**](SecureSession) GetConversationParticipantSecureivrsession (string conversationId, string participantId, string secureSessionId)
@@ -2302,7 +2459,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -2327,7 +2484,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2368,7 +2525,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -2392,7 +2549,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2558,7 +2715,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -2583,7 +2740,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -2624,7 +2781,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -2648,7 +2805,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3201,7 +3358,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -3226,7 +3383,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3272,7 +3429,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -3296,7 +3453,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3533,7 +3690,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -3558,7 +3715,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -3604,7 +3761,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -3628,7 +3785,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -4040,7 +4197,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -4065,7 +4222,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -4106,7 +4263,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -4130,7 +4287,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -4315,6 +4472,129 @@ This endpoint does require any parameters.
 ### Return type
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing)
+
+
+## GetConversationsInternalmessage
+
+> [**InternalMessageConversation**](InternalMessageConversation) GetConversationsInternalmessage (string conversationId)
+
+
+Get internal message conversation
+
+GetConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsInternalmessageExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+
+            try
+            { 
+                // Get internal message conversation
+                InternalMessageConversation result = apiInstance.GetConversationsInternalmessage(conversationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsInternalmessage: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+
+### Return type
+
+[**InternalMessageConversation**](InternalMessageConversation)
+
+
+## GetConversationsInternalmessages
+
+> [**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing) GetConversationsInternalmessages ()
+
+
+Get active internal message conversations for the logged in user
+
+GetConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsInternalmessagesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+
+            try
+            { 
+                // Get active internal message conversations for the logged in user
+                InternalMessageConversationEntityListing result = apiInstance.GetConversationsInternalmessages();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsInternalmessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing)
 
 
 ## GetConversationsKeyconfiguration
@@ -4601,7 +4881,7 @@ namespace Example
 
             var apiInstance = new ConversationsApi();
             var messageId = messageId_example;  // string | messageId
-            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media, stickers) (optional)  (default to false)
+            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media) (optional)  (default to false)
 
             try
             { 
@@ -4624,7 +4904,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **messageId** | **string**| messageId |  |
-| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
@@ -4667,7 +4947,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var messageId = messageId_example;  // string | messageId
-            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media, stickers) (optional)  (default to false)
+            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media) (optional)  (default to false)
 
             try
             { 
@@ -4691,7 +4971,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **messageId** | **string**| messageId |  |
-| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
@@ -4733,7 +5013,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -4758,7 +5038,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -4799,7 +5079,7 @@ namespace Example
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -4823,7 +5103,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -5193,14 +5473,77 @@ This endpoint does require any parameters.
 [**FacebookPermissionEntityListing**](FacebookPermissionEntityListing)
 
 
+## GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId (string integrationId)
+
+
+Get Apple messaging integration identity resolution settings
+
+GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionApple:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+
+            try
+            { 
+                // Get Apple messaging integration identity resolution settings
+                IdentityResolutionConfig result = apiInstance.GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId (string integrationId)
 
 
 Get Facebook messaging integration identity resolution settings
-
-GetConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -5258,14 +5601,75 @@ namespace Example
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
+## GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId (string integrationId)
+
+
+Get an Instagram integration identity resolution settings
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionInstagram:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+
+            try
+            { 
+                // Get an Instagram integration identity resolution settings
+                IdentityResolutionConfig result = apiInstance.GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
 
 > [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig) GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId (string integrationId)
 
 
 Get an open messaging integration Identity Resolution settings
-
-GetConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -5323,14 +5727,75 @@ namespace Example
 [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig)
 
 
+## GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId (string integrationId)
+
+
+Get X (Formally Twitter) messaging integration identity resolution settings
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionX:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration Id
+
+            try
+            { 
+                // Get X (Formally Twitter) messaging integration identity resolution settings
+                IdentityResolutionConfig result = apiInstance.GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration Id |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId (string integrationId)
 
 
 Get a whatsApp integration Identity Resolution settings
-
-GetConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -5511,7 +5976,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **expand** | [**List<string>**](string)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | [**List<string>**](string)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supportedContentId** | **string**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messagingSettingId** | **string**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -5581,7 +6046,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supportedContentId** | **string**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messagingSettingId** | **string**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -5647,7 +6112,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **integrationId** | **string**| Integration ID |  |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -5715,7 +6180,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supportedContentId** | **string**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messagingSettingId** | **string**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -5781,7 +6246,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **integrationId** | **string**| Integration ID |  |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -5851,7 +6316,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supportedContentId** | **string**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messagingSettingId** | **string**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -5919,7 +6384,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **integrationId** | **string**| Integration ID |  |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -5987,7 +6452,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supportedContentId** | **string**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messagingSettingId** | **string**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -6053,7 +6518,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **integrationId** | **string**| Integration ID |  |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -6178,7 +6643,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **pageSize** | **int?**| Page size | [optional] [default to 25] |
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supportedContentId** | **string**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messagingSettingId** | **string**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -6244,7 +6709,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **integrationId** | **string**| Integration ID |  |
-| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -6720,7 +7185,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -6745,7 +7210,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -6844,7 +7309,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -6869,7 +7334,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -6975,7 +7440,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var participantId = participantId_example;  // string | participantId
             var communicationId = communicationId_example;  // string | communicationId
-            var provisional = true;  // bool? | Indicates if the wrap-up code is provisional. (optional)  (default to false)
+            var provisional = true;  // bool? | Indicates whether or not to fetch provisional wrap-up code. (optional)  (default to false)
 
             try
             { 
@@ -7000,7 +7465,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **participantId** | **string**| participantId |  |
 | **communicationId** | **string**| communicationId |  |
-| **provisional** | **bool?**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+| **provisional** | **bool?**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
@@ -7083,6 +7548,8 @@ Update conversation participant.
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 ```{"language":"csharp"}
@@ -7266,14 +7733,77 @@ namespace Example
 **string**
 
 
+## PatchConversationSummaryEngagements
+
+> void PatchConversationSummaryEngagements (string conversationId, string summaryId, EngagementRequest body = null)
+
+
+Update agent's engagement for the summary.
+
+Requires ALL permissions: 
+
+* conversation:summaryEngagement:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchConversationSummaryEngagementsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | Conversation ID
+            var summaryId = summaryId_example;  // string | Summary ID
+            var body = new EngagementRequest(); // EngagementRequest |  (optional) 
+
+            try
+            { 
+                // Update agent's engagement for the summary.
+                apiInstance.PatchConversationSummaryEngagements(conversationId, summaryId, body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PatchConversationSummaryEngagements: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| Conversation ID |  |
+| **summaryId** | **string**| Summary ID |  |
+| **body** | [**EngagementRequest**](EngagementRequest)|  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
 ## PatchConversationSummaryFeedback
 
 > void PatchConversationSummaryFeedback (string conversationId, string summaryId, FeedbackUpdateRequest body = null)
 
 
 Update the feedback for the summary.
-
-PatchConversationSummaryFeedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -7539,6 +8069,8 @@ Update conversation participant
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 ```{"language":"csharp"}
@@ -7865,6 +8397,8 @@ Update conversation participant
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 ```{"language":"csharp"}
@@ -8198,6 +8732,8 @@ This endpoint is deprecated. Please see the article https://help.mypurecloud.com
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 ```{"language":"csharp"}
@@ -8479,6 +9015,8 @@ This endpoint is deprecated. Please see the article https://help.mypurecloud.com
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 ```{"language":"csharp"}
@@ -8817,6 +9355,9 @@ Update conversation participant
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
+* conversation:email:park
 
 ### Example
 ```{"language":"csharp"}
@@ -9143,6 +9684,8 @@ Update conversation participant
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 ```{"language":"csharp"}
@@ -9595,7 +10138,7 @@ namespace Example
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 
-Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 
 Requires ALL permissions: 
 
@@ -10486,6 +11029,76 @@ namespace Example
 [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
 
+## PostConversationCommunicationInternalmessages
+
+> [**InternalMessageData**](InternalMessageData) PostConversationCommunicationInternalmessages (string conversationId, string communicationId, InternalMessageRequest body)
+
+
+Send internal message
+
+Send a new internal message for an existing communication.
+
+PostConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:create
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationCommunicationInternalmessagesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var communicationId = communicationId_example;  // string | communicationId
+            var body = new InternalMessageRequest(); // InternalMessageRequest | Message
+
+            try
+            { 
+                // Send internal message
+                InternalMessageData result = apiInstance.PostConversationCommunicationInternalmessages(conversationId, communicationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationCommunicationInternalmessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **communicationId** | **string**| communicationId |  |
+| **body** | [**InternalMessageRequest**](InternalMessageRequest)| Message |  |
+
+### Return type
+
+[**InternalMessageData**](InternalMessageData)
+
+
 ## PostConversationDisconnect
 
 > **string** PostConversationDisconnect (string conversationId)
@@ -10677,6 +11290,76 @@ namespace Example
 void (empty response body)
 
 
+## PostConversationParticipantInternalmessagesUsersCommunications
+
+> [**MessagingConferResponse**](MessagingConferResponse) PostConversationParticipantInternalmessagesUsersCommunications (string conversationId, string participantId, MessagingConferWithUserRequest body)
+
+
+Setup internal message communication with user
+
+The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+
+PostConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:setupWithUser
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationParticipantInternalmessagesUsersCommunicationsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var participantId = participantId_example;  // string | participant ID
+            var body = new MessagingConferWithUserRequest(); // MessagingConferWithUserRequest | Confer request
+
+            try
+            { 
+                // Setup internal message communication with user
+                MessagingConferResponse result = apiInstance.PostConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationParticipantInternalmessagesUsersCommunications: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **participantId** | **string**| participant ID |  |
+| **body** | [**MessagingConferWithUserRequest**](MessagingConferWithUserRequest)| Confer request |  |
+
+### Return type
+
+[**MessagingConferResponse**](MessagingConferResponse)
+
+
 ## PostConversationParticipantReplace
 
 > void PostConversationParticipantReplace (string conversationId, string participantId, TransferRequest body)
@@ -10802,6 +11485,74 @@ namespace Example
 | **conversationId** | **string**| conversation ID |  |
 | **participantId** | **string**| participant ID |  |
 | **body** | [**TransferToAgentRequest**](TransferToAgentRequest)| Transfer request |  |
+
+### Return type
+
+void (empty response body)
+
+
+## PostConversationParticipantReplaceContactExternal
+
+> void PostConversationParticipantReplaceContactExternal (string conversationId, string participantId, TransferToExternalContactRequest body)
+
+
+Replace this participant with the an external contact
+
+PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternalContact
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationParticipantReplaceContactExternalExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var participantId = participantId_example;  // string | participant ID
+            var body = new TransferToExternalContactRequest(); // TransferToExternalContactRequest | Transfer request
+
+            try
+            { 
+                // Replace this participant with the an external contact
+                apiInstance.PostConversationParticipantReplaceContactExternal(conversationId, participantId, body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationParticipantReplaceContactExternal: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **participantId** | **string**| participant ID |  |
+| **body** | [**TransferToExternalContactRequest**](TransferToExternalContactRequest)| Transfer request |  |
 
 ### Return type
 
@@ -11003,6 +11754,73 @@ namespace Example
 ### Return type
 
 [**SecureSession**](SecureSession)
+
+
+## PostConversationParticipantTransfer
+
+> void PostConversationParticipantTransfer (string conversationId, string participantId, TransferToAddressRequest body)
+
+
+Replace this participant by another one using the address of the destination.
+
+PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationParticipantTransferExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var participantId = participantId_example;  // string | participant ID
+            var body = new TransferToAddressRequest(); // TransferToAddressRequest | Transfer request
+
+            try
+            { 
+                // Replace this participant by another one using the address of the destination.
+                apiInstance.PostConversationParticipantTransfer(conversationId, participantId, body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationParticipantTransfer: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **participantId** | **string**| participant ID |  |
+| **body** | [**TransferToAddressRequest**](TransferToAddressRequest)| Transfer request |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## PostConversationSuggestionEngagement
@@ -11593,6 +12411,75 @@ namespace Example
 [**ConsultTransferResponse**](ConsultTransferResponse)
 
 
+## PostConversationsCallParticipantConsultContactExternal
+
+> [**ConsultTransferResponse**](ConsultTransferResponse) PostConversationsCallParticipantConsultContactExternal (string conversationId, string participantId, ConsultTransferToExternalContact body)
+
+
+Initiate a consult transfer to an external contact
+
+PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternalContact
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsCallParticipantConsultContactExternalExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var participantId = participantId_example;  // string | participantId
+            var body = new ConsultTransferToExternalContact(); // ConsultTransferToExternalContact | Destination address & initial speak to
+
+            try
+            { 
+                // Initiate a consult transfer to an external contact
+                ConsultTransferResponse result = apiInstance.PostConversationsCallParticipantConsultContactExternal(conversationId, participantId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsCallParticipantConsultContactExternal: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **participantId** | **string**| participantId |  |
+| **body** | [**ConsultTransferToExternalContact**](ConsultTransferToExternalContact)| Destination address &amp; initial speak to |  |
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse)
+
+
 ## PostConversationsCallParticipantConsultExternal
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) PostConversationsCallParticipantConsultExternal (string conversationId, string participantId, ConsultTransferToExternal body)
@@ -11853,6 +12740,74 @@ namespace Example
 ### Return type
 
 void (empty response body)
+
+
+## PostConversationsCallParticipantVoiceConsult
+
+> [**ConsultTransferResponse**](ConsultTransferResponse) PostConversationsCallParticipantVoiceConsult (string conversationId, string participantId, ConsultTransferToAddress body)
+
+
+Initiate voice consult transfer
+
+PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsCallParticipantVoiceConsultExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var participantId = participantId_example;  // string | participantId
+            var body = new ConsultTransferToAddress(); // ConsultTransferToAddress | Destination address & initial speak to
+
+            try
+            { 
+                // Initiate voice consult transfer
+                ConsultTransferResponse result = apiInstance.PostConversationsCallParticipantVoiceConsult(conversationId, participantId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsCallParticipantVoiceConsult: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **participantId** | **string**| participantId |  |
+| **body** | [**ConsultTransferToAddress**](ConsultTransferToAddress)| Destination address &amp; initial speak to |  |
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## PostConversationsCallParticipants
@@ -12856,8 +13811,9 @@ namespace Example
 
 Send an email reply
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:email:send
 
 ### Example
 ```{"language":"csharp"}
@@ -13487,7 +14443,7 @@ namespace Example
 
 Send message
 
-Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
 
 Requires ANY permissions: 
 
@@ -13519,7 +14475,7 @@ namespace Example
             var conversationId = conversationId_example;  // string | conversationId
             var communicationId = communicationId_example;  // string | communicationId
             var body = new AdditionalMessage(); // AdditionalMessage | Message
-            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media, stickers) (optional)  (default to false)
+            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media) (optional)  (default to false)
 
             try
             { 
@@ -13544,7 +14500,7 @@ namespace Example
 | **conversationId** | **string**| conversationId |  |
 | **communicationId** | **string**| communicationId |  |
 | **body** | [**AdditionalMessage**](AdditionalMessage)| Message |  |
-| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
@@ -13690,6 +14646,74 @@ namespace Example
 ### Return type
 
 [**MessageMediaUploadData**](MessageMediaUploadData)
+
+
+## PostConversationsMessageCommunicationSocialmediaMessages
+
+> [**SocialMediaMessageData**](SocialMediaMessageData) PostConversationsMessageCommunicationSocialmediaMessages (string conversationId, string communicationId, AdditionalSocialMediaMessage body)
+
+
+Send a social media message
+
+Send a social media message on existing conversation/communication.
+
+Requires ANY permissions: 
+
+* conversation:socialmedia:create
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsMessageCommunicationSocialmediaMessagesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var communicationId = communicationId_example;  // string | communicationId
+            var body = new AdditionalSocialMediaMessage(); // AdditionalSocialMediaMessage | Message
+
+            try
+            { 
+                // Send a social media message
+                SocialMediaMessageData result = apiInstance.PostConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsMessageCommunicationSocialmediaMessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **communicationId** | **string**| communicationId |  |
+| **body** | [**AdditionalSocialMediaMessage**](AdditionalSocialMediaMessage)| Message |  |
+
+### Return type
+
+[**SocialMediaMessageData**](SocialMediaMessageData)
 
 
 ## PostConversationsMessageCommunicationTyping
@@ -13960,6 +14984,72 @@ namespace Example
 [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage)
 
 
+## PostConversationsMessageInboundOpenStructuredResponse
+
+> [**OpenStructuredResponseNormalizedMessage**](OpenStructuredResponseNormalizedMessage) PostConversationsMessageInboundOpenStructuredResponse (string integrationId, OpenInboundStructuredResponseMessage body)
+
+
+Send inbound Open Response
+
+Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsMessageInboundOpenStructuredResponseExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | integrationId
+            var body = new OpenInboundStructuredResponseMessage(); // OpenInboundStructuredResponseMessage | OpenInboundStructuredResponseMessage
+
+            try
+            { 
+                // Send inbound Open Response
+                OpenStructuredResponseNormalizedMessage result = apiInstance.PostConversationsMessageInboundOpenStructuredResponse(integrationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsMessageInboundOpenStructuredResponse: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| integrationId |  |
+| **body** | [**OpenInboundStructuredResponseMessage**](OpenInboundStructuredResponseMessage)| OpenInboundStructuredResponseMessage |  |
+
+### Return type
+
+[**OpenStructuredResponseNormalizedMessage**](OpenStructuredResponseNormalizedMessage)
+
+
 ## PostConversationsMessageMessagesBulk
 
 > [**TextMessageListing**](TextMessageListing) PostConversationsMessageMessagesBulk (string conversationId, bool? useNormalizedMessage = null, List<string> body = null)
@@ -13997,7 +15087,7 @@ namespace Example
 
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | 
-            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media, stickers) (optional)  (default to false)
+            var useNormalizedMessage = true;  // bool? | If true, response removes deprecated fields (textBody, media) (optional)  (default to false)
             var body = new List<string>(); // List<string> | messageIds (optional) 
 
             try
@@ -14021,7 +15111,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**|  |  |
-| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+| **useNormalizedMessage** | **bool?**| If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 | **body** | [**List<string>**](string)| messageIds | [optional]  |
 
 ### Return type
@@ -16102,14 +17192,79 @@ namespace Example
 **string**
 
 
+## PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId (string integrationId, IdentityResolutionConfig body)
+
+
+Create an identity resolution settings for a Apple messaging integration
+
+PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+* messaging:identityResolutionApple:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+            var body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+
+            try
+            { 
+                // Create an identity resolution settings for a Apple messaging integration
+                IdentityResolutionConfig result = apiInstance.PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PutConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId (string integrationId, IdentityResolutionConfig body)
 
 
 Create an identity resolution settings for a Facebook messaging integration
-
-PutConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -16169,14 +17324,77 @@ namespace Example
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
+## PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId (string integrationId, IdentityResolutionConfig body)
+
+
+Create identity resolution settings for an Instagram messaging integration
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+* messaging:identityResolutionInstagram:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+            var body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+
+            try
+            { 
+                // Create identity resolution settings for an Instagram messaging integration
+                IdentityResolutionConfig result = apiInstance.PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PutConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
 
 > [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig) PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId (string integrationId, OpenMessagingIdentityResolutionConfig body)
 
 
 Update an open messaging integration Identity Resolution settings
-
-PutConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -16236,14 +17454,77 @@ namespace Example
 [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig)
 
 
+## PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId (string integrationId, IdentityResolutionConfig body)
+
+
+Create an identity resolution settings for an X (Formally Twitter) messaging integration
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:edit
+* messaging:identityResolutionX:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration Id
+            var body = new IdentityResolutionConfig(); // IdentityResolutionConfig | IdentityResolutionConfig
+
+            try
+            { 
+                // Create an identity resolution settings for an X (Formally Twitter) messaging integration
+                IdentityResolutionConfig result = apiInstance.PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PutConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration Id |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId (string integrationId, IdentityResolutionConfig body)
 
 
 Update a whatsApp integration Identity Resolution settings
-
-PutConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions: 
 
@@ -16692,4 +17973,4 @@ namespace Example
 **string**
 
 
-_PureCloudPlatform.Client.V2 232.0.0_
+_PureCloudPlatform.Client.V2 237.0.0_

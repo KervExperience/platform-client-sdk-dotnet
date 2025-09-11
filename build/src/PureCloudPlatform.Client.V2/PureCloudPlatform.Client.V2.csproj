@@ -8,8 +8,9 @@
     <Platforms>AnyCPU</Platforms>
     <Authors>Kerv.$(AssemblyName)</Authors>
     <PackageId>Kerv.$(AssemblyName)</PackageId>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/KervExperience/platform-client-sdk-dotnet</PackageProjectUrl>
+    <Version />
   </PropertyGroup>
 
   <ItemGroup>

@@ -12,12 +12,12 @@
 | **Total** | **long?** |  | [optional] |
 | **AllDivsPermitted** | **bool?** |  | [optional] |
 | **FirstUri** | **string** |  | [optional] |
+| **NextUri** | **string** |  | [optional] |
+| **PreviousUri** | **string** |  | [optional] |
 | **LastUri** | **string** |  | [optional] |
 | **SelfUri** | **string** |  | [optional] |
-| **PreviousUri** | **string** |  | [optional] |
-| **NextUri** | **string** |  | [optional] |
 | **PageCount** | **int?** |  | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 237.0.0_
+_PureCloudPlatform.Client.V2 241.0.0_

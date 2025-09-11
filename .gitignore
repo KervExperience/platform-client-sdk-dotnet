@@ -7,3 +7,5 @@
 /build/._PureCloudPlatform.Client.V2.sln
 /build/src/PureCloudPlatform.Client.V2.Tests/.vs
 /build/src/PureCloudPlatform.Client.V2/.vs
+/build/bin/PureCloudPlatform.Client.V2.dll
+/build/.openapi-generator/FILES

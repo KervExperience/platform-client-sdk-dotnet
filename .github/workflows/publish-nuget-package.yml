@@ -21,6 +21,9 @@ jobs:
       with:
         dotnet-version: '8.x' 
 
+    - name: Clean project
+      run: dotnet clean ./build/src/PureCloudPlatform.Client.V2/PureCloudPlatform.Client.V2.csproj --configuration Release
+
     - name: Restoring dependencies
       run: dotnet restore ./build/src/PureCloudPlatform.Client.V2/PureCloudPlatform.Client.V2.csproj
 

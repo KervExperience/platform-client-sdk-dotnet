@@ -137,29 +137,31 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="ServiceLevel">The targeted service level for the media type.</param>
         /// <param name="AutoAnswerAlertToneSeconds">How long to play the alerting tone for an auto-answer interaction.</param>
         /// <param name="ManualAnswerAlertToneSeconds">How long to play the alerting tone for a manual-answer interaction.</param>
-        /// <param name="SubTypeSettings">Map of media subtype to media subtype specific settings..</param>
         /// <param name="Mode">The mode callbacks will use on this queue..</param>
         /// <param name="EnableAutoDialAndEnd">Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue..</param>
         /// <param name="AutoDialDelaySeconds">Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds..</param>
         /// <param name="AutoEndDelaySeconds">Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds..</param>
         /// <param name="PacingModifier">Controls the maximum number of outbound calls at one time when mode is CustomerFirst..</param>
+        /// <param name="MaxRetryCount">Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect..</param>
+        /// <param name="RetryDelaySeconds">Delay in seconds between each retry of a customer first callback..</param>
         /// <param name="LiveVoiceReactionType">The action to take if a live voice is detected during the outbound call of a customer first callback..</param>
         /// <param name="LiveVoiceFlow">The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback..</param>
         /// <param name="AnsweringMachineReactionType">The action to take if an answering machine is detected during the outbound call of a customer first callback..</param>
         /// <param name="AnsweringMachineFlow">The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow..</param>
-        public CallbackMediaSettings(bool? EnableAutoAnswer = null, int? AlertingTimeoutSeconds = null, ServiceLevel ServiceLevel = null, double? AutoAnswerAlertToneSeconds = null, double? ManualAnswerAlertToneSeconds = null, Dictionary<string, BaseMediaSettings> SubTypeSettings = null, ModeEnum? Mode = null, bool? EnableAutoDialAndEnd = null, int? AutoDialDelaySeconds = null, int? AutoEndDelaySeconds = null, double? PacingModifier = null, LiveVoiceReactionTypeEnum? LiveVoiceReactionType = null, DomainEntityRef LiveVoiceFlow = null, AnsweringMachineReactionTypeEnum? AnsweringMachineReactionType = null, DomainEntityRef AnsweringMachineFlow = null)
+        public CallbackMediaSettings(bool? EnableAutoAnswer = null, int? AlertingTimeoutSeconds = null, ServiceLevel ServiceLevel = null, double? AutoAnswerAlertToneSeconds = null, double? ManualAnswerAlertToneSeconds = null, ModeEnum? Mode = null, bool? EnableAutoDialAndEnd = null, int? AutoDialDelaySeconds = null, int? AutoEndDelaySeconds = null, double? PacingModifier = null, int? MaxRetryCount = null, int? RetryDelaySeconds = null, LiveVoiceReactionTypeEnum? LiveVoiceReactionType = null, DomainEntityRef LiveVoiceFlow = null, AnsweringMachineReactionTypeEnum? AnsweringMachineReactionType = null, DomainEntityRef AnsweringMachineFlow = null)
         {
             this.EnableAutoAnswer = EnableAutoAnswer;
             this.AlertingTimeoutSeconds = AlertingTimeoutSeconds;
             this.ServiceLevel = ServiceLevel;
             this.AutoAnswerAlertToneSeconds = AutoAnswerAlertToneSeconds;
             this.ManualAnswerAlertToneSeconds = ManualAnswerAlertToneSeconds;
-            this.SubTypeSettings = SubTypeSettings;
             this.Mode = Mode;
             this.EnableAutoDialAndEnd = EnableAutoDialAndEnd;
             this.AutoDialDelaySeconds = AutoDialDelaySeconds;
             this.AutoEndDelaySeconds = AutoEndDelaySeconds;
             this.PacingModifier = PacingModifier;
+            this.MaxRetryCount = MaxRetryCount;
+            this.RetryDelaySeconds = RetryDelaySeconds;
             this.LiveVoiceReactionType = LiveVoiceReactionType;
             this.LiveVoiceFlow = LiveVoiceFlow;
             this.AnsweringMachineReactionType = AnsweringMachineReactionType;
@@ -214,15 +216,6 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
 
-        /// <summary>
-        /// Map of media subtype to media subtype specific settings.
-        /// </summary>
-        /// <value>Map of media subtype to media subtype specific settings.</value>
-        [DataMember(Name="subTypeSettings", EmitDefaultValue=false)]
-        public Dictionary<string, BaseMediaSettings> SubTypeSettings { get; set; }
-
-
-
 
 
         /// <summary>
@@ -261,6 +254,24 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
 
+        /// <summary>
+        /// Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.
+        /// </summary>
+        /// <value>Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.</value>
+        [DataMember(Name="maxRetryCount", EmitDefaultValue=false)]
+        public int? MaxRetryCount { get; set; }
+
+
+
+        /// <summary>
+        /// Delay in seconds between each retry of a customer first callback.
+        /// </summary>
+        /// <value>Delay in seconds between each retry of a customer first callback.</value>
+        [DataMember(Name="retryDelaySeconds", EmitDefaultValue=false)]
+        public int? RetryDelaySeconds { get; set; }
+
+
+
 
 
         /// <summary>
@@ -296,12 +307,13 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ServiceLevel: ").Append(ServiceLevel).Append("\n");
             sb.Append("  AutoAnswerAlertToneSeconds: ").Append(AutoAnswerAlertToneSeconds).Append("\n");
             sb.Append("  ManualAnswerAlertToneSeconds: ").Append(ManualAnswerAlertToneSeconds).Append("\n");
-            sb.Append("  SubTypeSettings: ").Append(SubTypeSettings).Append("\n");
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  EnableAutoDialAndEnd: ").Append(EnableAutoDialAndEnd).Append("\n");
             sb.Append("  AutoDialDelaySeconds: ").Append(AutoDialDelaySeconds).Append("\n");
             sb.Append("  AutoEndDelaySeconds: ").Append(AutoEndDelaySeconds).Append("\n");
             sb.Append("  PacingModifier: ").Append(PacingModifier).Append("\n");
+            sb.Append("  MaxRetryCount: ").Append(MaxRetryCount).Append("\n");
+            sb.Append("  RetryDelaySeconds: ").Append(RetryDelaySeconds).Append("\n");
             sb.Append("  LiveVoiceReactionType: ").Append(LiveVoiceReactionType).Append("\n");
             sb.Append("  LiveVoiceFlow: ").Append(LiveVoiceFlow).Append("\n");
             sb.Append("  AnsweringMachineReactionType: ").Append(AnsweringMachineReactionType).Append("\n");
@@ -372,11 +384,6 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.ManualAnswerAlertToneSeconds.Equals(other.ManualAnswerAlertToneSeconds)
                 ) &&
                 (
-                    this.SubTypeSettings == other.SubTypeSettings ||
-                    this.SubTypeSettings != null &&
-                    this.SubTypeSettings.SequenceEqual(other.SubTypeSettings)
-                ) &&
-                (
                     this.Mode == other.Mode ||
                     this.Mode != null &&
                     this.Mode.Equals(other.Mode)
@@ -400,6 +407,16 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.PacingModifier == other.PacingModifier ||
                     this.PacingModifier != null &&
                     this.PacingModifier.Equals(other.PacingModifier)
+                ) &&
+                (
+                    this.MaxRetryCount == other.MaxRetryCount ||
+                    this.MaxRetryCount != null &&
+                    this.MaxRetryCount.Equals(other.MaxRetryCount)
+                ) &&
+                (
+                    this.RetryDelaySeconds == other.RetryDelaySeconds ||
+                    this.RetryDelaySeconds != null &&
+                    this.RetryDelaySeconds.Equals(other.RetryDelaySeconds)
                 ) &&
                 (
                     this.LiveVoiceReactionType == other.LiveVoiceReactionType ||
@@ -449,9 +466,6 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.ManualAnswerAlertToneSeconds != null)
                     hash = hash * 59 + this.ManualAnswerAlertToneSeconds.GetHashCode();
 
-                if (this.SubTypeSettings != null)
-                    hash = hash * 59 + this.SubTypeSettings.GetHashCode();
-
                 if (this.Mode != null)
                     hash = hash * 59 + this.Mode.GetHashCode();
 
@@ -466,6 +480,12 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.PacingModifier != null)
                     hash = hash * 59 + this.PacingModifier.GetHashCode();
+
+                if (this.MaxRetryCount != null)
+                    hash = hash * 59 + this.MaxRetryCount.GetHashCode();
+
+                if (this.RetryDelaySeconds != null)
+                    hash = hash * 59 + this.RetryDelaySeconds.GetHashCode();
 
                 if (this.LiveVoiceReactionType != null)
                     hash = hash * 59 + this.LiveVoiceReactionType.GetHashCode();

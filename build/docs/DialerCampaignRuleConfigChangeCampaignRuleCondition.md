@@ -10,7 +10,8 @@
 | **Parameters** | **Dictionary&lt;string, string&gt;** | The parameters to match this condition | [optional] |
 | **ConditionType** | **string** | The type of this condition | [optional] |
 | **AdditionalProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] |
+| **GetAdditionalProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 237.0.0_
+_PureCloudPlatform.Client.V2 241.0.0_

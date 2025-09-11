@@ -105,6 +105,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Learning,
             
             /// <summary>
+            /// Enum Usersrules for "UsersRules"
+            /// </summary>
+            [EnumMember(Value = "UsersRules")]
+            Usersrules,
+            
+            /// <summary>
             /// Enum Gamification for "Gamification"
             /// </summary>
             [EnumMember(Value = "Gamification")]
@@ -545,6 +551,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Revoke,
             
             /// <summary>
+            /// Enum Licenseupdate for "LicenseUpdate"
+            /// </summary>
+            [EnumMember(Value = "LicenseUpdate")]
+            Licenseupdate,
+            
+            /// <summary>
             /// Enum Checkin for "Checkin"
             /// </summary>
             [EnumMember(Value = "Checkin")]
@@ -857,6 +869,18 @@ namespace PureCloudPlatform.Client.V2.Model
             Rollbackimplemented,
             
             /// <summary>
+            /// Enum Inreview for "InReview"
+            /// </summary>
+            [EnumMember(Value = "InReview")]
+            Inreview,
+            
+            /// <summary>
+            /// Enum Active for "Active"
+            /// </summary>
+            [EnumMember(Value = "Active")]
+            Active,
+            
+            /// <summary>
             /// Enum Write for "Write"
             /// </summary>
             [EnumMember(Value = "Write")]
@@ -1118,7 +1142,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Updateaborted for "UpdateAborted"
             /// </summary>
             [EnumMember(Value = "UpdateAborted")]
-            Updateaborted
+            Updateaborted,
+            
+            /// <summary>
+            /// Enum Edit for "Edit"
+            /// </summary>
+            [EnumMember(Value = "Edit")]
+            Edit
         }
         /// <summary>
         /// Gets or Sets EntityType
@@ -1363,6 +1393,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Screenrecording,
             
             /// <summary>
+            /// Enum Snippetrecording for "SnippetRecording"
+            /// </summary>
+            [EnumMember(Value = "SnippetRecording")]
+            Snippetrecording,
+            
+            /// <summary>
             /// Enum Bulkactions for "BulkActions"
             /// </summary>
             [EnumMember(Value = "BulkActions")]
@@ -1385,6 +1421,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "RecordingSettings")]
             Recordingsettings,
+            
+            /// <summary>
+            /// Enum Snippetrecordingsettings for "SnippetRecordingSettings"
+            /// </summary>
+            [EnumMember(Value = "SnippetRecordingSettings")]
+            Snippetrecordingsettings,
             
             /// <summary>
             /// Enum Recordingkey for "RecordingKey"
@@ -2143,6 +2185,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Migration,
             
             /// <summary>
+            /// Enum Suspension for "Suspension"
+            /// </summary>
+            [EnumMember(Value = "Suspension")]
+            Suspension,
+            
+            /// <summary>
             /// Enum Externalmetricsdefinition for "ExternalMetricsDefinition"
             /// </summary>
             [EnumMember(Value = "ExternalMetricsDefinition")]
@@ -2279,6 +2327,18 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "EdgeLog")]
             Edgelog,
+            
+            /// <summary>
+            /// Enum Disasterrecoverylinkorg for "DisasterRecoveryLinkOrg"
+            /// </summary>
+            [EnumMember(Value = "DisasterRecoveryLinkOrg")]
+            Disasterrecoverylinkorg,
+            
+            /// <summary>
+            /// Enum Disasterrecoverynumberrouting for "DisasterRecoveryNumberRouting"
+            /// </summary>
+            [EnumMember(Value = "DisasterRecoveryNumberRouting")]
+            Disasterrecoverynumberrouting,
             
             /// <summary>
             /// Enum Organizationfeature for "OrganizationFeature"
@@ -2425,6 +2485,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Inboundroute,
             
             /// <summary>
+            /// Enum Emailsetting for "EmailSetting"
+            /// </summary>
+            [EnumMember(Value = "EmailSetting")]
+            Emailsetting,
+            
+            /// <summary>
             /// Enum Organizationlimits for "OrganizationLimits"
             /// </summary>
             [EnumMember(Value = "OrganizationLimits")]
@@ -2548,7 +2614,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Externalorg for "ExternalOrg"
             /// </summary>
             [EnumMember(Value = "ExternalOrg")]
-            Externalorg
+            Externalorg,
+            
+            /// <summary>
+            /// Enum Socialmediamessage for "SocialMediaMessage"
+            /// </summary>
+            [EnumMember(Value = "SocialMediaMessage")]
+            Socialmediamessage
         }
         /// <summary>
         /// Gets or Sets ServiceName

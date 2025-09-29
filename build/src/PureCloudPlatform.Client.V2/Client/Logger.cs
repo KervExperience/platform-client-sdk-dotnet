@@ -1,10 +1,8 @@
 using System;
-using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using RestSharp;
 using System.Threading.Tasks;
 using PureCloudPlatform.Client.V2.Logging;
 

@@ -9,3 +9,4 @@
 /build/src/PureCloudPlatform.Client.V2/.vs
 /build/bin/PureCloudPlatform.Client.V2.dll
 /build/.openapi-generator/FILES
+/build/.vs

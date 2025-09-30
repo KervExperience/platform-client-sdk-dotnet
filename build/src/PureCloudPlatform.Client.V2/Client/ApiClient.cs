@@ -1,18 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
-using System.Web;
 using System.Linq;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
-using PureCloudPlatform.Client.V2.Extensions;
-using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 
 namespace PureCloudPlatform.Client.V2.Client
@@ -22,7 +18,7 @@ namespace PureCloudPlatform.Client.V2.Client
     /// </summary>
     public class ApiClient
     {
-        private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
+        private readonly JsonSerializerSettings serializerSettings = new()
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
             MetadataPropertyHandling = MetadataPropertyHandling.Ignore
@@ -39,8 +35,10 @@ namespace PureCloudPlatform.Client.V2.Client
 
             Configuration = Configuration.Default;
             
-            ClientOptions = new ClientRestOptions();
-            ClientOptions.BaseUrl = new Uri("https://api.mypurecloud.com");
+            ClientOptions = new()
+            {
+                BaseUrl = new Uri("https://api.mypurecloud.com")
+            };
             RetryConfig = DEFAULT_RETRY_CONFIG;
             AddSerializerSettings();
         }
@@ -72,12 +70,12 @@ namespace PureCloudPlatform.Client.V2.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://api.mypurecloud.com")
+        public ApiClient(string basePath = "https://api.mypurecloud.com")
         {
             // Use TLS 1.2
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            if (String.IsNullOrEmpty(basePath))
+            if (string.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             ClientOptions = new ClientRestOptions();

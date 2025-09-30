@@ -1,148 +1,68 @@
-using System;
-using System.Text;
-using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System.Threading.Tasks;
-using PureCloudPlatform.Client.V2.Logging;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
 
 namespace PureCloudPlatform.Client.V2.Client
 {
     /// <summary>
     /// SDK Logger with pluggable sink architecture
     /// </summary>
-    public class Logger : IAsyncDisposable, IDisposable
+    /// <remarks>
+    /// Initializes a new instance of the Logger class
+    /// </remarks>
+    public class Logger(
+                  bool logToConsole = true,
+                  LogFormat logFormat = LogFormat.Text,
+                  LogLevel logLevel = LogLevel.LNone,
+                  bool logResponseBody = false,
+                  bool logRequestBody = false)
     {
-        private readonly List<ILogSink> _sinks = new();
-        private string logFilePath; // retained for backwards compat property semantics
+        private ILogger ExternaLogger;
 
         /// <summary>
-        /// Initializes a new instance of the Logger class (backwards compatible)
+        /// Sets the external logger to be used for logging operations.
         /// </summary>
-        public Logger(string logFilePath = null,
-                      bool logToConsole = true,
-                      LogFormat logFormat = LogFormat.Text,
-                      LogLevel logLevel = LogLevel.LNone,
-                      bool logResponseBody = false,
-                      bool logRequestBody = false,
-                      IEnumerable<ILogSink> sinks = null)
-        {
-            this.logFilePath = logFilePath;
-            LogToConsole = logToConsole;
-            Format = logFormat;
-            Level = logLevel;
-            LogResponseBody = logResponseBody;
-            LogRequestBody = logRequestBody;
-
-            // Register implicit sinks to preserve original behavior
-            if (LogToConsole)
-                _sinks.Add(new ConsoleLogSink());
-            if (!string.IsNullOrEmpty(logFilePath))
-            {
-                try { _sinks.Add(new FileLogSink(logFilePath)); }
-                catch { /* ignore */ }
-            }
-            if (sinks != null)
-                _sinks.AddRange(sinks);
-        }
-
-        /// <summary>
-        /// Add a sink at runtime
-        /// </summary>
-        public Logger AddSink(ILogSink sink)
-        {
-            if (sink != null) _sinks.Add(sink);
-            return this;
-        }
-
-        /// <summary>
-        /// Gets or sets the LogFilePath (setting after construction will add a FileLogSink)
-        /// </summary>
-        public string LogFilePath
-        {
-            get => logFilePath;
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    logFilePath = value;
-                    try { _sinks.Add(new FileLogSink(value)); } catch { /* no-op */ }
-                }
-            }
-        }
+        /// <param name="logger">The logger instance that will handle log messages. Cannot be null.</param>
+        public void SetExternalLogger(ILogger logger) => ExternaLogger = logger;
 
         /// <summary>
         /// Gets or sets the LogToConsole value (setting to true after construction will add a Console sink)
         /// </summary>
-        public bool LogToConsole { get; set; }
+        public bool LogToConsole { get; set; } = logToConsole;
 
         /// <summary>
         /// Gets or sets the Log Format.
         /// </summary>
-        public LogFormat? Format { get; set; }
+        public LogFormat? Format { get; set; } = logFormat;
 
         /// <summary>
         /// Gets or sets the Log Level.
         /// </summary>
-        public LogLevel? Level { get; set; }
+        public LogLevel? Level { get; set; } = logLevel;
 
         /// <summary>
         /// Gets or sets the LogResponseBody value.
         /// </summary>
-        public bool LogResponseBody { get; set; }
+        public bool LogResponseBody { get; set; } = logResponseBody;
 
         /// <summary>
         /// Gets or sets the LogRequestBody value.
         /// </summary>
-        public bool LogRequestBody { get; set; }
+        public bool LogRequestBody { get; set; } = logRequestBody;
 
-        /// <summary>
-        /// Parses a LogLevel value from a string
-        /// </summary>
-        internal static LogLevel? LogLevelFromString(string logLevel)
-        {
-            logLevel = "l" + logLevel;
-            try
-            {
-                LogLevel logLevelValue = (LogLevel)Enum.Parse(typeof(LogLevel), logLevel, true);
-                if (Enum.IsDefined(typeof(LogLevel), logLevelValue) | logLevelValue.ToString().Contains(","))
-                    return logLevelValue;
-                else
-                    return null;
-            }
-            catch (ArgumentException)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Parses a LogFormat value from a string
-        /// </summary>
-        internal static LogFormat? LogFormatFromString(string logFormat)
-        {
-            try
-            {
-                LogFormat logFormatValue = (LogFormat)Enum.Parse(typeof(LogFormat), logFormat, true);
-                if (Enum.IsDefined(typeof(LogFormat), logFormatValue) | logFormatValue.ToString().Contains(","))
-                    return logFormatValue;
-                else
-                    return null;
-            }
-            catch (ArgumentException)
-            {
-                return null;
-            }
-        }
 
         internal void Trace(string method,
                           string url,
                           object requestBody,
                           int statusCode,
-                          Dictionary<String, String> requestHeaders,
-                          Dictionary<String, String> responseHeaders)
+                          Dictionary<string, string> requestHeaders,
+                          Dictionary<string, string> responseHeaders)
         {
-            LogStatement logStatement = new LogStatement(
+            LogStatement logStatement = new(
                 DateTime.UtcNow,
                 "trace",
                 method,
@@ -160,9 +80,9 @@ namespace PureCloudPlatform.Client.V2.Client
                           string url,
                           object requestBody,
                           int statusCode,
-                          Dictionary<String, String> requestHeaders)
+                          Dictionary<string, string> requestHeaders)
         {
-            LogStatement logStatement = new LogStatement(
+            LogStatement logStatement = new (
                 DateTime.UtcNow,
                 "debug",
                 method,
@@ -180,10 +100,10 @@ namespace PureCloudPlatform.Client.V2.Client
                           object requestBody,
                           string responseBody,
                           int statusCode,
-                          Dictionary<String, String> requestHeaders,
-                          Dictionary<String, String> responseHeaders)
+                          Dictionary<string, string> requestHeaders,
+                          Dictionary<string, string> responseHeaders)
         {
-            LogStatement logStatement = new LogStatement(
+            LogStatement logStatement = new (
                 DateTime.UtcNow,
                 "error",
                 method,
@@ -208,15 +128,12 @@ namespace PureCloudPlatform.Client.V2.Client
 
             string rendered = logStatement.AsString(Format, LogRequestBody, LogResponseBody);
 
-            // Ensure console sink present if LogToConsole toggled after construction
-            if (LogToConsole && _sinks.Find(s => s is ConsoleLogSink) == null)
-                _sinks.Add(new ConsoleLogSink());
-
-            foreach (var sink in _sinks)
-            {
-                try { sink.Emit(logStatement, rendered); }
-                catch { /* swallow sink errors */ }
-            }
+            ExternaLogger?.Log(
+                    logLevel == LogLevel.LTrace ? Microsoft.Extensions.Logging.LogLevel.Trace :
+                    logLevel == LogLevel.LDebug ? Microsoft.Extensions.Logging.LogLevel.Debug :
+                    logLevel == LogLevel.LError ? Microsoft.Extensions.Logging.LogLevel.Error :
+                    Microsoft.Extensions.Logging.LogLevel.None,
+                    rendered);
         }
 
         private static string requestBodyToString(object requestBody)
@@ -230,104 +147,112 @@ namespace PureCloudPlatform.Client.V2.Client
             }
             return null;
         }
-
-        /// <summary>
-        /// Dispose sinks synchronously
-        /// </summary>
-        public void Dispose()
-        {
-            foreach (var sink in _sinks)
-            {
-                try { sink.Dispose(); } catch { }
-            }
-        }
-
-        /// <summary>
-        /// Dispose sinks asynchronously if supported
-        /// </summary>
-        public async ValueTask DisposeAsync()
-        {
-            foreach (var sink in _sinks)
-            {
-                try { await sink.DisposeAsync(); } catch { }
-            }
-        }
     }
 
+    /// <summary>
+    /// Specifies the available formats for log output.
+    /// </summary>
+    /// <remarks>Use this enumeration to select the format in which log entries are written. The format
+    /// affects how log data is structured and consumed by downstream systems or tools.</remarks>
     public enum LogFormat
     {
+        /// <summary>
+        /// Represents a type or member related to JSON functionality.
+        /// </summary>
         JSON,
+        /// <summary>
+        /// Gets or sets the text content associated with this instance.
+        /// </summary>
         Text
     }
 
+    /// <summary>
+    /// Specifies the severity level for logging messages.
+    /// </summary>
+    /// <remarks>Use the LogLevel enumeration to control which messages are recorded by a logging system.
+    /// Lower levels, such as LTrace and LDebug, are typically used for detailed diagnostic information, while LError
+    /// indicates error conditions. LNone disables logging output. The effective log level determines which messages are
+    /// included in logs; messages below the configured level are ignored.</remarks>
     public enum LogLevel
     {
+        /// <summary>
+        /// Provides tracing and logging functionality for diagnostic purposes within the application.
+        /// </summary>
+        /// <remarks>Use this class to record informational messages, warnings, and errors to assist with
+        /// debugging and monitoring application behavior. Tracing output may be directed to various listeners depending
+        /// on configuration. This class is typically used during development and troubleshooting to gain insight into
+        /// application execution.</remarks>
         LTrace,
+        /// <summary>
+        /// Provides logging and debugging utilities for application development.
+        /// </summary>
+        /// <remarks>Use this class to output diagnostic information during development or
+        /// troubleshooting. The available methods and properties facilitate logging messages, tracking execution flow,
+        /// and inspecting application state. This class is intended for use in development and may be disabled or
+        /// omitted in production environments.</remarks>
         LDebug,
+        /// <summary>
+        /// Represents an error encountered during Lua script execution.
+        /// </summary>
+        /// <remarks>Use this type to capture and inspect details about errors that occur when running Lua
+        /// code. The contents typically include the error message and any relevant context provided by the Lua
+        /// runtime.</remarks>
         LError,
+        /// <summary>
+        /// Represents the absence of a specific value or option in the enumeration.
+        /// </summary>
         LNone
     }
 
     /// <summary>
     /// LogStatement represents a single log entry
     /// </summary>
-    public class LogStatement
+    public class LogStatement(DateTime date,
+                        string level = null,
+                        string method = null,
+                        string url = null,
+                        Dictionary<string, string> requestHeaders = null,
+                        Dictionary<string, string> responseHeaders = null,
+                        int statusCode = 0,
+                        string requestBody = null,
+                        string responseBody = null)
     {
-        public LogStatement(DateTime date,
-                            string level = null,
-                            string method = null,
-                            string url = null,
-                            Dictionary<String, String> requestHeaders = null,
-                            Dictionary<String, String> responseHeaders = null,
-                            int statusCode = 0,
-                            string requestBody = null,
-                            string responseBody = null)
-        {
-            this.date = date;
-            this.level = level;
-            this.method = method;
-            this.url = url;
-            this.requestHeaders = requestHeaders ?? new Dictionary<string, string>();
-            this.responseHeaders = responseHeaders;
-            this.correlationId = getCorrelationId(responseHeaders);
-            this.statusCode = statusCode;
-            this.requestBody = requestBody;
-            this.responseBody = responseBody;
-        }
+        [JsonProperty]
+        private readonly DateTime date = date;
+        [JsonProperty]
+        private readonly string level = level;
+        [JsonProperty]
+        private readonly string method = method;
+        [JsonProperty]
+        private readonly string url = url;
+        [JsonProperty]
+        private readonly Dictionary<string, string> requestHeaders = requestHeaders ?? [];
+        [JsonProperty]
+        private readonly Dictionary<string, string> responseHeaders = responseHeaders;
+        [JsonProperty]
+        private readonly string correlationId = GetCorrelationId(responseHeaders);
+        [JsonProperty]
+        private readonly int statusCode = statusCode;
+        [JsonProperty]
+        private string requestBody = requestBody;
+        [JsonProperty]
+        private string responseBody = responseBody;
 
-        [JsonProperty]
-        private DateTime date;
-        [JsonProperty]
-        private string level;
-        [JsonProperty]
-        private string method;
-        [JsonProperty]
-        private string url;
-        [JsonProperty]
-        private Dictionary<String, String> requestHeaders;
-        [JsonProperty]
-        private Dictionary<String, String> responseHeaders;
-        [JsonProperty]
-        private string correlationId;
-        [JsonProperty]
-        private int statusCode;
-        [JsonProperty]
-        private string requestBody;
-        [JsonProperty]
-        private string responseBody;
-
-        // Public read-only accessors for sinks (avoid reflection)
-        public DateTime Date => date;
-        public string Level => level;
-        public string Method => method;
-        public string Url => url;
-        public IReadOnlyDictionary<string, string> RequestHeaders => requestHeaders;
-        public IReadOnlyDictionary<string, string> ResponseHeaders => responseHeaders;
-        public string CorrelationId => correlationId;
-        public int StatusCode => statusCode;
-        public string RequestBody => requestBody;
-        public string ResponseBody => responseBody;
-
+        /// <summary>
+        /// Returns a string representation of the log entry in the specified format, optionally including the request
+        /// and response bodies.
+        /// </summary>
+        /// <remarks>When logging, authorization headers are automatically redacted to protect sensitive
+        /// information. Use the <paramref name="logRequestBody"/> and <paramref name="logResponseBody"/> parameters to
+        /// control whether potentially sensitive request and response bodies are included in the output.</remarks>
+        /// <param name="logFormat">The format to use for the log output. Specify <see cref="LogFormat.JSON"/> to serialize the log entry as
+        /// JSON; otherwise, a plain text format is used.</param>
+        /// <param name="logRequestBody">Indicates whether the request body should be included in the log output. If <see langword="false"/>, the
+        /// request body is omitted.</param>
+        /// <param name="logResponseBody">Indicates whether the response body should be included in the log output. If <see langword="false"/>, the
+        /// response body is omitted.</param>
+        /// <returns>A string containing the formatted log entry. The output will be in JSON or plain text format, depending on
+        /// <paramref name="logFormat"/>. Sensitive information such as authorization headers is redacted.</returns>
         public string AsString(LogFormat? logFormat, bool logRequestBody, bool logResponseBody)
         {
             if (requestHeaders != null && requestHeaders.ContainsKey("Authorization"))
@@ -340,7 +265,7 @@ namespace PureCloudPlatform.Client.V2.Client
 
             if (logFormat == LogFormat.JSON)
             {
-                JsonSerializerSettings settings = new JsonSerializerSettings()
+                JsonSerializerSettings settings = new()
                 {
                     NullValueHandling = NullValueHandling.Ignore,
                     ContractResolver = new DefaultContractResolver
@@ -352,27 +277,27 @@ namespace PureCloudPlatform.Client.V2.Client
                 return JsonConvert.SerializeObject(this, settings);
             }
 
-            return String.Format(@"{0}: {1}
+            return string.Format(@"{0}: {1}
 === REQUEST ==={2}{3}{4}{5}
 === RESPONSE ==={6}{7}{8}{9}", level?.ToUpper(),
                             date,
-                            formatValue("URL", url),
-                            formatValue("Method", method),
-                            formatValue("Headers", formatHeaders(requestHeaders)),
-                            formatValue("Body", requestBody),
+                            FormatValue("URL", url),
+                            FormatValue("Method", method),
+                            FormatValue("Headers", FormatHeaders(requestHeaders)),
+                            FormatValue("Body", requestBody),
 
-                            formatValue("Status", String.Format("{0}", statusCode)),
-                            formatValue("Headers", formatHeaders(responseHeaders)),
-                            formatValue("CorrelationId", correlationId),
-                            formatValue("Body", responseBody));
+                            FormatValue("Status", string.Format("{0}", statusCode)),
+                            FormatValue("Headers", FormatHeaders(responseHeaders)),
+                            FormatValue("CorrelationId", correlationId),
+                            FormatValue("Body", responseBody));
         }
 
-        private string formatValue(string name, string value)
+        private static string FormatValue(string name, string value)
         {
-            return String.IsNullOrEmpty(value) ? "" : String.Format("\n{0}: {1}", name, value);
+            return string.IsNullOrEmpty(value) ? "" : string.Format("\n{0}: {1}", name, value);
         }
 
-        private string formatHeaders(Dictionary<String, String> headers)
+        private static string FormatHeaders(Dictionary<string, string> headers)
         {
             if (headers == null)
                 return "";
@@ -383,7 +308,7 @@ namespace PureCloudPlatform.Client.V2.Client
             return sb.ToString();
         }
 
-        private string getCorrelationId(Dictionary<String, String> headers)
+        private static string GetCorrelationId(Dictionary<string, string> headers)
         {
             if (headers == null)
                 return "";

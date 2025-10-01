@@ -82,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Client
                           int statusCode,
                           Dictionary<string, string> requestHeaders)
         {
-            LogStatement logStatement = new (
+            LogStatement logStatement = new(
                 DateTime.UtcNow,
                 "debug",
                 method,
@@ -103,7 +103,7 @@ namespace PureCloudPlatform.Client.V2.Client
                           Dictionary<string, string> requestHeaders,
                           Dictionary<string, string> responseHeaders)
         {
-            LogStatement logStatement = new (
+            LogStatement logStatement = new(
                 DateTime.UtcNow,
                 "error",
                 method,
@@ -128,12 +128,8 @@ namespace PureCloudPlatform.Client.V2.Client
 
             string rendered = logStatement.AsString(Format, LogRequestBody, LogResponseBody);
 
-            ExternaLogger?.Log(
-                    logLevel == LogLevel.LTrace ? Microsoft.Extensions.Logging.LogLevel.Trace :
-                    logLevel == LogLevel.LDebug ? Microsoft.Extensions.Logging.LogLevel.Debug :
-                    logLevel == LogLevel.LError ? Microsoft.Extensions.Logging.LogLevel.Error :
-                    Microsoft.Extensions.Logging.LogLevel.None,
-                    rendered);
+            // if we have an external logger, we always log as info
+            ExternaLogger?.Log(Microsoft.Extensions.Logging.LogLevel.Information, "GenesysAPI Call:\n{apiCall}", rendered);
         }
 
         private static string requestBodyToString(object requestBody)

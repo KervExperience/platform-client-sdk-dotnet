@@ -34,7 +34,7 @@ namespace PureCloudPlatform.Client.V2.Client
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             Configuration = Configuration.Default;
-            
+
             ClientOptions = new()
             {
                 BaseUrl = new Uri("https://api.mypurecloud.com")
@@ -109,7 +109,8 @@ namespace PureCloudPlatform.Client.V2.Client
         ///<Summary>
         /// Gets or Sets the Retry Configuration
         ///</Summary>
-        public RetryConfiguration RetryConfig {
+        public RetryConfiguration RetryConfig
+        {
             get
             {
                 return this.retryConfig;
@@ -125,16 +126,20 @@ namespace PureCloudPlatform.Client.V2.Client
         ///<Summary>
         /// Gets or Sets the Gateway Configuration
         ///</Summary>
-        public GatewayConfiguration GatewayConfig {
+        public GatewayConfiguration GatewayConfig
+        {
             get
             {
                 return this.gatewayConfig;
             }
             set
             {
-                if (value != null) {
+                if (value != null)
+                {
                     this.gatewayConfig = value;
-                } else {
+                }
+                else
+                {
                     // Reset
                     this.gatewayConfig = null;
                 }
@@ -145,19 +150,24 @@ namespace PureCloudPlatform.Client.V2.Client
         ///<Summary>
         /// Gets or Sets the HttpClient
         ///</Summary>
-        public AbstractHttpClient HttpClient {
+        public AbstractHttpClient HttpClient
+        {
             get
             {
-                if (httpClient != null) {
+                if (httpClient != null)
+                {
                     return this.httpClient;
-                } else {
+                }
+                else
+                {
                     httpClient = new DefaultHttpClient(ClientOptions, Configuration);
                     return this.httpClient;
                 }
             }
             set
             {
-                if (!(value is AbstractHttpClient)) {
+                if (!(value is AbstractHttpClient))
+                {
                     throw new ArgumentException("httpclient must be an instance of AbstractHttpClient. See DefaultltHttpClient for a prototype");
                 }
                 httpClient = value;
@@ -182,34 +192,52 @@ namespace PureCloudPlatform.Client.V2.Client
         ///<Summary>
         /// Gets the Login or the API Uri based on Configuration and Gateway Configuration
         ///</Summary>
-        public Uri GetConfUri(String pathType, Uri baseUri) {
-            if (pathType.Equals("login")) {
-                if (this.GatewayConfig == null || String.IsNullOrEmpty(this.GatewayConfig.Host)) {
+        public Uri GetConfUri(String pathType, Uri baseUri)
+        {
+            if (pathType.Equals("login"))
+            {
+                if (this.GatewayConfig == null || String.IsNullOrEmpty(this.GatewayConfig.Host))
+                {
                     var regex = new Regex(@"://(api)\.");
                     var authUrl = regex.Replace(baseUri.ToString(), "://login.");
                     return new Uri(authUrl);
-                } else {
+                }
+                else
+                {
                     String confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
                     if (this.GatewayConfig.Port > 0) confUrl = confUrl + ":" + this.GatewayConfig.Port.ToString();
-                    if (!String.IsNullOrEmpty(this.GatewayConfig.PathParamsLogin)) {
-                        if (this.GatewayConfig.PathParamsLogin.StartsWith("/")) {
+                    if (!String.IsNullOrEmpty(this.GatewayConfig.PathParamsLogin))
+                    {
+                        if (this.GatewayConfig.PathParamsLogin.StartsWith("/"))
+                        {
                             confUrl = confUrl + this.GatewayConfig.PathParamsLogin;
-                        } else {
+                        }
+                        else
+                        {
                             confUrl = confUrl + "/" + this.GatewayConfig.PathParamsLogin;
                         }
                     }
                     return new Uri(confUrl);
                 }
-            } else {
-                if (this.GatewayConfig == null || String.IsNullOrEmpty(this.GatewayConfig.Host)) {
+            }
+            else
+            {
+                if (this.GatewayConfig == null || String.IsNullOrEmpty(this.GatewayConfig.Host))
+                {
                     return baseUri;
-                } else {
+                }
+                else
+                {
                     String confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
                     if (this.GatewayConfig.Port > 0) confUrl = confUrl + ":" + this.GatewayConfig.Port.ToString();
-                    if (!String.IsNullOrEmpty(this.GatewayConfig.PathParamsApi)) {
-                        if (this.GatewayConfig.PathParamsApi.StartsWith("/")) {
+                    if (!String.IsNullOrEmpty(this.GatewayConfig.PathParamsApi))
+                    {
+                        if (this.GatewayConfig.PathParamsApi.StartsWith("/"))
+                        {
                             confUrl = confUrl + this.GatewayConfig.PathParamsApi;
-                        } else {
+                        }
+                        else
+                        {
                             confUrl = confUrl + "/" + this.GatewayConfig.PathParamsApi;
                         }
                     }
@@ -227,7 +255,8 @@ namespace PureCloudPlatform.Client.V2.Client
             String pathParamsLogin,
             String pathParamsApi,
             String username,
-            String password) {
+            String password)
+        {
             this.GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi, username, password);
         }
 
@@ -238,10 +267,11 @@ namespace PureCloudPlatform.Client.V2.Client
             String protocol,
             int port,
             String pathParamsLogin,
-            String pathParamsApi) {
+            String pathParamsApi)
+        {
             this.GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
         }
-        
+
 
         // These fields are only applicable to the Code Authorization OAuth flow:
         ///<Summary>
@@ -277,7 +307,8 @@ namespace PureCloudPlatform.Client.V2.Client
             else
             {
                 // Abort with error if we have waited the configured time and refresh still isn't complete
-                if (!Monitor.TryEnter(Configuration, TimeSpan.FromSeconds(Configuration.RefreshTokenWaitTime))) {
+                if (!Monitor.TryEnter(Configuration, TimeSpan.FromSeconds(Configuration.RefreshTokenWaitTime)))
+                {
                     throw new ApiException(500, $"Token refresh took longer than {Configuration.RefreshTokenWaitTime} seconds");
                 }
                 else
@@ -322,7 +353,7 @@ namespace PureCloudPlatform.Client.V2.Client
             requestOptions.AddHeaderParam("purecloud-sdk", "241.0.0");
 
             Retry retry = new Retry(this.RetryConfig);
-            
+
             ClientOptions.Prefix = "api";
 
             IHttpResponse response;
@@ -333,11 +364,11 @@ namespace PureCloudPlatform.Client.V2.Client
                 Configuration.Logger.Debug(method, path, postBody, (int)response.StatusCode, headerParams);
                 Configuration.Logger.Trace(method, path, postBody, (int)response.StatusCode, headerParams, response.Headers ?? new Dictionary<string, string>());
 
-            } while(retry.ShouldRetry(response));
+            } while (retry.ShouldRetry(response));
 
             if (UsingCodeAuth && Configuration.ShouldRefreshAccessToken)
             {
-                int statusCode = (int) response.StatusCode;
+                int statusCode = (int)response.StatusCode;
                 if (statusCode == 401)
                 {
                     HandleExpiredAccessToken();
@@ -349,7 +380,7 @@ namespace PureCloudPlatform.Client.V2.Client
             if ((int)response.StatusCode < 200 || (int)response.StatusCode >= 300)
                 Configuration.Logger.Error(method, path, postBody, response.Content, (int)response.StatusCode, headerParams, response.Headers ?? new Dictionary<string, string>());
 
-            return (Object) response;
+            return (Object)response;
         }
         /// <summary>
         /// Makes the asynchronous HTTP request.
@@ -383,7 +414,7 @@ namespace PureCloudPlatform.Client.V2.Client
             );
 
             Retry retry = new Retry(this.RetryConfig);
-            
+
             ClientOptions.Prefix = "api";
 
             IHttpResponse response;
@@ -391,14 +422,13 @@ namespace PureCloudPlatform.Client.V2.Client
             do
             {
                 response = await HttpClient.ExecuteAsync(requestOptions);
-                Configuration.Logger.Debug(method, path, postBody, (int)response.StatusCode, headerParams);
-                Configuration.Logger.Trace(method, path, postBody, (int)response.StatusCode, headerParams, response.Headers ?? new Dictionary<string, string>());
-            
-            } while(retry.ShouldRetry(response));
+                Configuration.Logger.Trace(method, path, postBody, response.Content, (int)response.StatusCode, headerParams, response.Headers ?? []);
+
+            } while (retry.ShouldRetry(response));
 
             if (UsingCodeAuth && Configuration.ShouldRefreshAccessToken)
             {
-                int statusCode = (int) response.StatusCode;
+                int statusCode = (int)response.StatusCode;
                 if (statusCode == 401)
                 {
                     HandleExpiredAccessToken();
@@ -434,13 +464,13 @@ namespace PureCloudPlatform.Client.V2.Client
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTime)obj).ToString (Configuration.DateTimeFormat);
+                return ((DateTime)obj).ToString(Configuration.DateTimeFormat);
             else if (obj is DateTimeOffset)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTimeOffset)obj).ToString (Configuration.DateTimeFormat);
+                return ((DateTimeOffset)obj).ToString(Configuration.DateTimeFormat);
             else if (obj is IList)
             {
                 var flattenedString = new StringBuilder();
@@ -457,7 +487,7 @@ namespace PureCloudPlatform.Client.V2.Client
                 return Convert.ToString(obj).ToLower();
             }
             else
-                return Convert.ToString (obj);
+                return Convert.ToString(obj);
         }
 
         /// <summary>
@@ -465,12 +495,13 @@ namespace PureCloudPlatform.Client.V2.Client
         /// </summary>
         /// <returns>Return changed from RestClient to Void . Since no purpose to expose underlying RestClient to Consumer and 
         ///  design changed to One Restclient per API</returns>
-        public void setBasePath(String basePath){
+        public void setBasePath(String basePath)
+        {
             if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
-                
-                ClientOptions.BaseUrl = new Uri(basePath);
-                
+
+            ClientOptions.BaseUrl = new Uri(basePath);
+
 
         }
         /// <summary>
@@ -478,8 +509,9 @@ namespace PureCloudPlatform.Client.V2.Client
         /// </summary>
         /// <returns>Return changed from RestClient to Void . Since no purpose to expose underlying RestClient to Consumer and 
         ///  design changed to One Restclient per API</returns>
-        public void setBasePath(PureCloudRegionHosts region){
-             setBasePath(region.GetDescription());
+        public void setBasePath(PureCloudRegionHosts region)
+        {
+            setBasePath(region.GetDescription());
         }
 
         /// <summary>
@@ -521,7 +553,7 @@ namespace PureCloudPlatform.Client.V2.Client
 
             if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
             {
-                return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
+                return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
             if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
@@ -549,9 +581,12 @@ namespace PureCloudPlatform.Client.V2.Client
         {
             try
             {
-                if (obj != null){
+                if (obj != null)
+                {
                     return obj is string str ? str : JsonConvert.SerializeObject(obj);
-                } else {
+                }
+                else
+                {
                     return null;
                 }
             }
@@ -627,7 +662,7 @@ namespace PureCloudPlatform.Client.V2.Client
         /// <returns>Byte array</returns>
         public static byte[] ReadAsBytes(Stream input)
         {
-            byte[] buffer = new byte[16*1024];
+            byte[] buffer = new byte[16 * 1024];
             using (MemoryStream ms = new MemoryStream())
             {
                 int read;
@@ -745,7 +780,7 @@ namespace PureCloudPlatform.Client.V2.Client
             ///<Summary>
             /// Max RetryTime (Sec)
             ///</Summary>
-           public int MaxRetryTimeSec
+            public int MaxRetryTimeSec
             {
                 get
                 {
@@ -866,7 +901,8 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) {
+                    if (!String.IsNullOrEmpty(value))
+                    {
                         this.host = value;
                     }
                 }
@@ -883,9 +919,12 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) {
+                    if (!String.IsNullOrEmpty(value))
+                    {
                         this.protocol = value;
-                    } else {
+                    }
+                    else
+                    {
                         this.protocol = "https";
                     }
                 }
@@ -902,9 +941,12 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (value > -1) {
+                    if (value > -1)
+                    {
                         this.port = value;
-                    } else {
+                    }
+                    else
+                    {
                         this.port = -1;
                     }
                 }
@@ -921,12 +963,16 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) {
+                    if (!String.IsNullOrEmpty(value))
+                    {
                         this.pathParamsLogin = value;
-                        if (this.pathParamsLogin.EndsWith("/")) {
-                            this.pathParamsLogin = this.pathParamsLogin.Substring(0, this.pathParamsLogin.Length-1);
+                        if (this.pathParamsLogin.EndsWith("/"))
+                        {
+                            this.pathParamsLogin = this.pathParamsLogin.Substring(0, this.pathParamsLogin.Length - 1);
                         }
-                    } else {
+                    }
+                    else
+                    {
                         this.pathParamsLogin = "";
                     }
                 }
@@ -943,12 +989,16 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) {
+                    if (!String.IsNullOrEmpty(value))
+                    {
                         this.pathParamsApi = value;
-                        if (this.pathParamsApi.EndsWith("/")) {
-                            this.pathParamsApi = this.pathParamsApi.Substring(0, this.pathParamsApi.Length-1);
+                        if (this.pathParamsApi.EndsWith("/"))
+                        {
+                            this.pathParamsApi = this.pathParamsApi.Substring(0, this.pathParamsApi.Length - 1);
                         }
-                    } else {
+                    }
+                    else
+                    {
                         this.pathParamsApi = "";
                     }
                 }
@@ -965,7 +1015,8 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) {
+                    if (!String.IsNullOrEmpty(value))
+                    {
                         this.username = value;
                     }
                 }
@@ -982,7 +1033,8 @@ namespace PureCloudPlatform.Client.V2.Client
                 }
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) {
+                    if (!String.IsNullOrEmpty(value))
+                    {
                         this.password = value;
                     }
                 }
@@ -993,7 +1045,7 @@ namespace PureCloudPlatform.Client.V2.Client
         /// ClientOptions
         ///</Summary>
         public ClientRestOptions ClientOptions { get; set; }
-        
+
         private class Retry
         {
             private long backoffIntervalMs;
@@ -1027,17 +1079,17 @@ namespace PureCloudPlatform.Client.V2.Client
             {
                 if (stopwatch.ElapsedMilliseconds < maxRetryTimeSec * 1000L && statusCodes.Contains((int)response.StatusCode) && retryCount <= retryMax)
                 {
-                   var retryAfterHeader = response.Headers
-    .Select(header => new 
-    { 
-        Key = header.Key,
-        Value = header.Value,
-    })
-    .FirstOrDefault(header => header.Key.Equals("Retry-After"));
+                    var retryAfterHeader = response.Headers
+     .Select(header => new
+     {
+         Key = header.Key,
+         Value = header.Value,
+     })
+     .FirstOrDefault(header => header.Key.Equals("Retry-After"));
 
                     if (retryAfterHeader != null && Int32.TryParse(retryAfterHeader.Value, out int retryAfterSec))
                     {
-                        retryAfterMs =  retryAfterSec * 1000;
+                        retryAfterMs = retryAfterSec * 1000;
                     }
                     else
                     {
@@ -1048,8 +1100,9 @@ namespace PureCloudPlatform.Client.V2.Client
                     {
                         // Some APIs started sending in daily max limit breach with 429 and retry-after that can be anywhere from few minutes to hours. It is not a pausible option
                         // to retry in such scenarios. For DotNet SDK this retry Max time is set to 3 Minutes.
-                        if (retryAfterMs > defaultMaxRetry) {
-                           return false;
+                        if (retryAfterMs > defaultMaxRetry)
+                        {
+                            return false;
                         }
                         retryCount++;
                         return waitBeforeRetry(retryAfterMs);
@@ -1067,7 +1120,7 @@ namespace PureCloudPlatform.Client.V2.Client
             {
                 try
                 {
-                    Thread.Sleep((int) retryAfterMs);
+                    Thread.Sleep((int)retryAfterMs);
                 }
                 catch (ThreadInterruptedException)
                 {

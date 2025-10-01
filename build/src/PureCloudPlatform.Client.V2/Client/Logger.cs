@@ -58,6 +58,7 @@ namespace PureCloudPlatform.Client.V2.Client
         internal void Trace(string method,
                           string url,
                           object requestBody,
+                          object responseBody,
                           int statusCode,
                           Dictionary<string, string> requestHeaders,
                           Dictionary<string, string> responseHeaders)
@@ -70,7 +71,8 @@ namespace PureCloudPlatform.Client.V2.Client
                 requestHeaders,
                 responseHeaders,
                 statusCode,
-                requestBodyToString(requestBody)
+                requestBodyToString(requestBody),
+                requestBodyToString(responseBody)
             );
 
             Log(LogLevel.LTrace, logStatement);

@@ -361,8 +361,8 @@ namespace PureCloudPlatform.Client.V2.Client
             do
             {
                 response = HttpClient.Execute(requestOptions);
-                Configuration.Logger.Debug(method, path, postBody, (int)response.StatusCode, headerParams);
-                Configuration.Logger.Trace(method, path, postBody, (int)response.StatusCode, headerParams, response.Headers ?? new Dictionary<string, string>());
+
+                Configuration.Logger.Trace(method, path, postBody, response.Content, (int)response.StatusCode, headerParams, response.Headers ?? new Dictionary<string, string>());
 
             } while (retry.ShouldRetry(response));
 

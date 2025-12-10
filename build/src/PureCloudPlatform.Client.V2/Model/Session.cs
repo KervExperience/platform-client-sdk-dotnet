@@ -178,7 +178,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Donotdisturbtransfer for "DoNotDisturbTransfer"
             /// </summary>
             [EnumMember(Value = "DoNotDisturbTransfer")]
-            Donotdisturbtransfer
+            Donotdisturbtransfer,
+            
+            /// <summary>
+            /// Enum Sessionexpired for "SessionExpired"
+            /// </summary>
+            [EnumMember(Value = "SessionExpired")]
+            Sessionexpired
         }
         /// <summary>
         /// Last ACD outcome for the conversation.
@@ -247,6 +253,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Initializes a new instance of the <see cref="Session" /> class.
         /// </summary>
         /// <param name="Id">The ID of the session. (required).</param>
+        /// <param name="ExternalContact">The external contact associated with this session..</param>
         /// <param name="CustomerId">Primary identifier of the customer in the source where the events for the session originate from..</param>
         /// <param name="CustomerIdType">Type of source customer identifier (e.g. cookie, email, phone)..</param>
         /// <param name="Type">Session types indicate the type or category of sessions (e.g. web, app). (required).</param>
@@ -275,6 +282,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="PageviewCount">The count of all pageviews performed during the session..</param>
         /// <param name="ScreenviewCount">The count of all screenviews performed during the session..</param>
         /// <param name="LastEvent">Information about the most recent event in this session. (required).</param>
+        /// <param name="Conversation">The conversation for this session..</param>
         /// <param name="LastConnectedQueue">The last queue connected to this session..</param>
         /// <param name="LastConnectedUser">The last user connected to this session..</param>
         /// <param name="LastUserDisposition">The last user disposition connected to this session..</param>
@@ -290,9 +298,10 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="EndedDate">Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
         /// <param name="AwayDate">Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
         /// <param name="IdleDate">Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
-        public Session(string Id = null, string CustomerId = null, string CustomerIdType = null, string Type = null, string ExternalId = null, string ExternalUrl = null, string ShortId = null, List<OutcomeAchievement> OutcomeAchievements = null, List<SessionSegmentAssignment> SegmentAssignments = null, Dictionary<string, CustomEventAttribute> Attributes = null, Dictionary<string, CustomEventAttributeList> AttributeLists = null, Browser Browser = null, Device Device = null, JourneyGeolocation Geolocation = null, string IpAddress = null, string IpOrganization = null, JourneyPage LastPage = null, JourneyCampaign MktCampaign = null, Referrer Referrer = null, JourneyApp App = null, SdkLibrary SdkLibrary = null, NetworkConnectivity NetworkConnectivity = null, List<string> SearchTerms = null, string UserAgentString = null, int? DurationInSeconds = null, int? EventCount = null, int? PageviewCount = null, int? ScreenviewCount = null, SessionLastEvent LastEvent = null, ConnectedQueue LastConnectedQueue = null, ConnectedUser LastConnectedUser = null, ConversationUserDisposition LastUserDisposition = null, List<ConversationChannel> ConversationChannels = null, OriginatingDirectionEnum? OriginatingDirection = null, string ConversationSubject = null, LastUserDisconnectTypeEnum? LastUserDisconnectType = null, LastAcdOutcomeEnum? LastAcdOutcome = null, bool? Authenticated = null, List<string> DivisionIds = null, string LastScreen = null, DateTime? CreatedDate = null, DateTime? EndedDate = null, DateTime? AwayDate = null, DateTime? IdleDate = null)
+        public Session(string Id = null, AddressableEntityRef ExternalContact = null, string CustomerId = null, string CustomerIdType = null, string Type = null, string ExternalId = null, string ExternalUrl = null, string ShortId = null, List<OutcomeAchievement> OutcomeAchievements = null, List<SessionSegmentAssignment> SegmentAssignments = null, Dictionary<string, CustomEventAttribute> Attributes = null, Dictionary<string, CustomEventAttributeList> AttributeLists = null, Browser Browser = null, Device Device = null, JourneyGeolocation Geolocation = null, string IpAddress = null, string IpOrganization = null, JourneyPage LastPage = null, JourneyCampaign MktCampaign = null, Referrer Referrer = null, JourneyApp App = null, SdkLibrary SdkLibrary = null, NetworkConnectivity NetworkConnectivity = null, List<string> SearchTerms = null, string UserAgentString = null, int? DurationInSeconds = null, int? EventCount = null, int? PageviewCount = null, int? ScreenviewCount = null, SessionLastEvent LastEvent = null, AddressableEntityRef Conversation = null, ConnectedQueue LastConnectedQueue = null, ConnectedUser LastConnectedUser = null, ConversationUserDisposition LastUserDisposition = null, List<ConversationChannel> ConversationChannels = null, OriginatingDirectionEnum? OriginatingDirection = null, string ConversationSubject = null, LastUserDisconnectTypeEnum? LastUserDisconnectType = null, LastAcdOutcomeEnum? LastAcdOutcome = null, bool? Authenticated = null, List<string> DivisionIds = null, string LastScreen = null, DateTime? CreatedDate = null, DateTime? EndedDate = null, DateTime? AwayDate = null, DateTime? IdleDate = null)
         {
             this.Id = Id;
+            this.ExternalContact = ExternalContact;
             this.CustomerId = CustomerId;
             this.CustomerIdType = CustomerIdType;
             this.Type = Type;
@@ -321,6 +330,7 @@ namespace PureCloudPlatform.Client.V2.Model
             this.PageviewCount = PageviewCount;
             this.ScreenviewCount = ScreenviewCount;
             this.LastEvent = LastEvent;
+            this.Conversation = Conversation;
             this.LastConnectedQueue = LastConnectedQueue;
             this.LastConnectedUser = LastConnectedUser;
             this.LastUserDisposition = LastUserDisposition;
@@ -347,6 +357,15 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <value>The ID of the session.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
+
+
+
+        /// <summary>
+        /// The external contact associated with this session.
+        /// </summary>
+        /// <value>The external contact associated with this session.</value>
+        [DataMember(Name="externalContact", EmitDefaultValue=false)]
+        public AddressableEntityRef ExternalContact { get; set; }
 
 
 
@@ -603,6 +622,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
+        /// The conversation for this session.
+        /// </summary>
+        /// <value>The conversation for this session.</value>
+        [DataMember(Name="conversation", EmitDefaultValue=false)]
+        public AddressableEntityRef Conversation { get; set; }
+
+
+
+        /// <summary>
         /// The last queue connected to this session.
         /// </summary>
         /// <value>The last queue connected to this session.</value>
@@ -708,15 +736,6 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// The external contact associated with this session.
-        /// </summary>
-        /// <value>The external contact associated with this session.</value>
-        [DataMember(Name="externalContact", EmitDefaultValue=false)]
-        public AddressableEntityRef ExternalContact { get; private set; }
-
-
-
-        /// <summary>
         /// Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
@@ -733,15 +752,6 @@ namespace PureCloudPlatform.Client.V2.Model
         public DateTime? IdleDate { get; set; }
 
 
-
-        /// <summary>
-        /// The conversation for this session.
-        /// </summary>
-        /// <value>The conversation for this session.</value>
-        [DataMember(Name="conversation", EmitDefaultValue=false)]
-        public AddressableEntityRef Conversation { get; private set; }
-
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -752,6 +762,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("class Session {\n");
 
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  ExternalContact: ").Append(ExternalContact).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  CustomerIdType: ").Append(CustomerIdType).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -780,6 +791,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  PageviewCount: ").Append(PageviewCount).Append("\n");
             sb.Append("  ScreenviewCount: ").Append(ScreenviewCount).Append("\n");
             sb.Append("  LastEvent: ").Append(LastEvent).Append("\n");
+            sb.Append("  Conversation: ").Append(Conversation).Append("\n");
             sb.Append("  LastConnectedQueue: ").Append(LastConnectedQueue).Append("\n");
             sb.Append("  LastConnectedUser: ").Append(LastConnectedUser).Append("\n");
             sb.Append("  LastUserDisposition: ").Append(LastUserDisposition).Append("\n");
@@ -794,10 +806,8 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  EndedDate: ").Append(EndedDate).Append("\n");
-            sb.Append("  ExternalContact: ").Append(ExternalContact).Append("\n");
             sb.Append("  AwayDate: ").Append(AwayDate).Append("\n");
             sb.Append("  IdleDate: ").Append(IdleDate).Append("\n");
-            sb.Append("  Conversation: ").Append(Conversation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -842,6 +852,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.Id == other.Id ||
                     this.Id != null &&
                     this.Id.Equals(other.Id)
+                ) &&
+                (
+                    this.ExternalContact == other.ExternalContact ||
+                    this.ExternalContact != null &&
+                    this.ExternalContact.Equals(other.ExternalContact)
                 ) &&
                 (
                     this.CustomerId == other.CustomerId ||
@@ -984,6 +999,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.LastEvent.Equals(other.LastEvent)
                 ) &&
                 (
+                    this.Conversation == other.Conversation ||
+                    this.Conversation != null &&
+                    this.Conversation.Equals(other.Conversation)
+                ) &&
+                (
                     this.LastConnectedQueue == other.LastConnectedQueue ||
                     this.LastConnectedQueue != null &&
                     this.LastConnectedQueue.Equals(other.LastConnectedQueue)
@@ -1054,11 +1074,6 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.EndedDate.Equals(other.EndedDate)
                 ) &&
                 (
-                    this.ExternalContact == other.ExternalContact ||
-                    this.ExternalContact != null &&
-                    this.ExternalContact.Equals(other.ExternalContact)
-                ) &&
-                (
                     this.AwayDate == other.AwayDate ||
                     this.AwayDate != null &&
                     this.AwayDate.Equals(other.AwayDate)
@@ -1067,11 +1082,6 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.IdleDate == other.IdleDate ||
                     this.IdleDate != null &&
                     this.IdleDate.Equals(other.IdleDate)
-                ) &&
-                (
-                    this.Conversation == other.Conversation ||
-                    this.Conversation != null &&
-                    this.Conversation.Equals(other.Conversation)
                 );
         }
 
@@ -1088,6 +1098,9 @@ namespace PureCloudPlatform.Client.V2.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Id != null)
                     hash = hash * 59 + this.Id.GetHashCode();
+
+                if (this.ExternalContact != null)
+                    hash = hash * 59 + this.ExternalContact.GetHashCode();
 
                 if (this.CustomerId != null)
                     hash = hash * 59 + this.CustomerId.GetHashCode();
@@ -1173,6 +1186,9 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.LastEvent != null)
                     hash = hash * 59 + this.LastEvent.GetHashCode();
 
+                if (this.Conversation != null)
+                    hash = hash * 59 + this.Conversation.GetHashCode();
+
                 if (this.LastConnectedQueue != null)
                     hash = hash * 59 + this.LastConnectedQueue.GetHashCode();
 
@@ -1215,17 +1231,11 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.EndedDate != null)
                     hash = hash * 59 + this.EndedDate.GetHashCode();
 
-                if (this.ExternalContact != null)
-                    hash = hash * 59 + this.ExternalContact.GetHashCode();
-
                 if (this.AwayDate != null)
                     hash = hash * 59 + this.AwayDate.GetHashCode();
 
                 if (this.IdleDate != null)
                     hash = hash * 59 + this.IdleDate.GetHashCode();
-
-                if (this.Conversation != null)
-                    hash = hash * 59 + this.Conversation.GetHashCode();
 
                 return hash;
             }

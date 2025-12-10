@@ -746,7 +746,7 @@ namespace Example
             var apiInstance = new AuthorizationApi();
             var before = before_example;  // string | The cursor that points to the start of the set of entities that has been returned. (optional) 
             var after = after_example;  // string | The cursor that points to the end of the set of entities that has been returned. (optional) 
-            var pageSize = pageSize_example;  // string | Number of entities to return. Maximum of 200. (optional) 
+            var pageSize = pageSize_example;  // string | Page size (max 200, default 25) (optional)  (default to "25")
             var id = new List<string>(); // List<string> | Optionally request specific divisions by their IDs (optional) 
             var name = name_example;  // string | Optionally request specific divisions by division name (optional) 
 
@@ -772,7 +772,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **before** | **string**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **string**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **pageSize** | **string**| Number of entities to return. Maximum of 200. | [optional]  |
+| **pageSize** | **string**| Page size (max 200, default 25) | [optional] [default to "25"] |
 | **id** | [**List<string>**](string)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **string**| Optionally request specific divisions by division name | [optional]  |
 
@@ -988,7 +988,7 @@ namespace Example
 
 ## GetAuthorizationPermissions
 
-> [**DomainPermissionEntityListing**](DomainPermissionEntityListing) GetAuthorizationPermissions (int? pageSize = null, int? pageNumber = null, string queryType = null, string query = null)
+> [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing) GetAuthorizationPermissions (int? pageSize = null, int? pageNumber = null, string queryType = null, string query = null)
 
 
 Get all permissions.
@@ -1028,7 +1028,7 @@ namespace Example
             try
             { 
                 // Get all permissions.
-                DomainPermissionEntityListing result = apiInstance.GetAuthorizationPermissions(pageSize, pageNumber, queryType, query);
+                PermissionCollectionEntityListing result = apiInstance.GetAuthorizationPermissions(pageSize, pageNumber, queryType, query);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1052,7 +1052,7 @@ namespace Example
 
 ### Return type
 
-[**DomainPermissionEntityListing**](DomainPermissionEntityListing)
+[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
 
 
 ## GetAuthorizationPolicies
@@ -3918,4 +3918,4 @@ namespace Example
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatform.Client.V2 242.0.0_
+_PureCloudPlatform.Client.V2 250.0.0_

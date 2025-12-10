@@ -2388,9 +2388,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>MessagingCampaignEntityListing</returns>
         
-        MessagingCampaignEntityListing GetOutboundMessagingcampaigns (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null);
+        MessagingCampaignEntityListing GetOutboundMessagingcampaigns (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null);
 
         /// <summary>
         /// Query a list of Messaging Campaigns
@@ -2411,9 +2412,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>ApiResponse of MessagingCampaignEntityListing</returns>
         
-        ApiResponse<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null);
+        ApiResponse<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null);
 
         /// <summary>
         /// Get a basic Messaging Campaign information object
@@ -3248,6 +3250,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of Campaign</returns>
         
         ApiResponse<Campaign> PostOutboundCampaignsWithHttpInfo (Campaign body, bool? useMaxCallsPerAgentDecimal = null);
+
+        /// <summary>
+        /// Get performance data for a list of campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>CampaignPerformanceDataListing</returns>
+        
+        CampaignPerformanceDataListing PostOutboundCampaignsPerformanceQuery (List<string> body);
+
+        /// <summary>
+        /// Get performance data for a list of campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>ApiResponse of CampaignPerformanceDataListing</returns>
+        
+        ApiResponse<CampaignPerformanceDataListing> PostOutboundCampaignsPerformanceQueryWithHttpInfo (List<string> body);
 
         /// <summary>
         /// Get progress for a list of campaigns
@@ -6972,9 +6998,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>Task of MessagingCampaignEntityListing</returns>
         
-        System.Threading.Tasks.Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null);
+        System.Threading.Tasks.Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null);
 
         /// <summary>
         /// Query a list of Messaging Campaigns
@@ -6995,9 +7022,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>Task of ApiResponse (MessagingCampaignEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<MessagingCampaignEntityListing>> GetOutboundMessagingcampaignsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null);
+        System.Threading.Tasks.Task<ApiResponse<MessagingCampaignEntityListing>> GetOutboundMessagingcampaignsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null);
 
         /// <summary>
         /// Get a basic Messaging Campaign information object
@@ -7832,6 +7860,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (Campaign)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<Campaign>> PostOutboundCampaignsAsyncWithHttpInfo (Campaign body, bool? useMaxCallsPerAgentDecimal = null);
+
+        /// <summary>
+        /// Get performance data for a list of campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>Task of CampaignPerformanceDataListing</returns>
+        
+        System.Threading.Tasks.Task<CampaignPerformanceDataListing> PostOutboundCampaignsPerformanceQueryAsync (List<string> body);
+
+        /// <summary>
+        /// Get performance data for a list of campaigns
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>Task of ApiResponse (CampaignPerformanceDataListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<CampaignPerformanceDataListing>> PostOutboundCampaignsPerformanceQueryAsyncWithHttpInfo (List<string> body);
 
         /// <summary>
         /// Get progress for a list of campaigns
@@ -27157,11 +27209,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>MessagingCampaignEntityListing</returns>
         
-        public MessagingCampaignEntityListing GetOutboundMessagingcampaigns (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null)
+        public MessagingCampaignEntityListing GetOutboundMessagingcampaigns (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null)
         {
-             ApiResponse<MessagingCampaignEntityListing> localVarResponse = GetOutboundMessagingcampaignsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus);
+             ApiResponse<MessagingCampaignEntityListing> localVarResponse = GetOutboundMessagingcampaignsWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds);
              return localVarResponse.Data;
         }
 
@@ -27182,9 +27235,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>ApiResponse of MessagingCampaignEntityListing</returns>
         
-        public ApiResponse< MessagingCampaignEntityListing > GetOutboundMessagingcampaignsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null)
+        public ApiResponse< MessagingCampaignEntityListing > GetOutboundMessagingcampaignsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null)
         { 
 
             var localVarPath = "/api/v2/outbound/messagingcampaigns";
@@ -27232,6 +27286,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (id != null) id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (contentTemplateId != null) localVarQueryParams.Add(new Tuple<string, string>("contentTemplateId", this.Configuration.ApiClient.ParameterToString(contentTemplateId)));
             if (campaignStatus != null) localVarQueryParams.Add(new Tuple<string, string>("campaignStatus", this.Configuration.ApiClient.ParameterToString(campaignStatus)));
+            if (ruleSetIds != null) ruleSetIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ruleSetIds", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -27286,11 +27341,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>Task of MessagingCampaignEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null)
+        public async System.Threading.Tasks.Task<MessagingCampaignEntityListing> GetOutboundMessagingcampaignsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null)
         {
-             ApiResponse<MessagingCampaignEntityListing> localVarResponse = await GetOutboundMessagingcampaignsAsyncWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus);
+             ApiResponse<MessagingCampaignEntityListing> localVarResponse = await GetOutboundMessagingcampaignsAsyncWithHttpInfo(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds);
              return localVarResponse.Data;
 
         }
@@ -27312,9 +27368,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="id">A list of messaging campaign ids to bulk fetch (optional)</param>
         /// <param name="contentTemplateId">Content template ID (optional)</param>
         /// <param name="campaignStatus">Campaign Status (optional)</param>
+        /// <param name="ruleSetIds">Ruleset ID(s) (optional)</param>
         /// <returns>Task of ApiResponse (MessagingCampaignEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<MessagingCampaignEntityListing>> GetOutboundMessagingcampaignsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null)
+        public async System.Threading.Tasks.Task<ApiResponse<MessagingCampaignEntityListing>> GetOutboundMessagingcampaignsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null)
         { 
 
             var localVarPath = "/api/v2/outbound/messagingcampaigns";
@@ -27362,6 +27419,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (id != null) id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (contentTemplateId != null) localVarQueryParams.Add(new Tuple<string, string>("contentTemplateId", this.Configuration.ApiClient.ParameterToString(contentTemplateId)));
             if (campaignStatus != null) localVarQueryParams.Add(new Tuple<string, string>("campaignStatus", this.Configuration.ApiClient.ParameterToString(campaignStatus)));
+            if (ruleSetIds != null) ruleSetIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ruleSetIds", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -34229,6 +34287,217 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<Campaign>(localVarStatusCode,
                 localVarHeaders,
                 (Campaign) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Campaign)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get performance data for a list of campaigns 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>CampaignPerformanceDataListing</returns>
+        
+        public CampaignPerformanceDataListing PostOutboundCampaignsPerformanceQuery (List<string> body)
+        {
+             ApiResponse<CampaignPerformanceDataListing> localVarResponse = PostOutboundCampaignsPerformanceQueryWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get performance data for a list of campaigns 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>ApiResponse of CampaignPerformanceDataListing</returns>
+        
+        public ApiResponse< CampaignPerformanceDataListing > PostOutboundCampaignsPerformanceQueryWithHttpInfo (List<string> body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling OutboundApi->PostOutboundCampaignsPerformanceQuery");
+
+            var localVarPath = "/api/v2/outbound/campaigns/performance/query";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostOutboundCampaignsPerformanceQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostOutboundCampaignsPerformanceQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<CampaignPerformanceDataListing>(localVarStatusCode,
+                localVarHeaders,
+                (CampaignPerformanceDataListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CampaignPerformanceDataListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get performance data for a list of campaigns 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>Task of CampaignPerformanceDataListing</returns>
+        
+        public async System.Threading.Tasks.Task<CampaignPerformanceDataListing> PostOutboundCampaignsPerformanceQueryAsync (List<string> body)
+        {
+             ApiResponse<CampaignPerformanceDataListing> localVarResponse = await PostOutboundCampaignsPerformanceQueryAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get performance data for a list of campaigns 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Campaign IDs. Maximum of 50 IDs allowed.</param>
+        /// <returns>Task of ApiResponse (CampaignPerformanceDataListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<CampaignPerformanceDataListing>> PostOutboundCampaignsPerformanceQueryAsyncWithHttpInfo (List<string> body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling OutboundApi->PostOutboundCampaignsPerformanceQuery");
+            
+
+            var localVarPath = "/api/v2/outbound/campaigns/performance/query";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostOutboundCampaignsPerformanceQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostOutboundCampaignsPerformanceQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<CampaignPerformanceDataListing>(localVarStatusCode,
+                localVarHeaders,
+                (CampaignPerformanceDataListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CampaignPerformanceDataListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

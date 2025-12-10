@@ -27,12 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentIdentityResolutionConfig" /> class.
         /// </summary>
-        /// <param name="Division">The division to which this entity belongs..</param>
+        /// <param name="Division">The division to use when performing identity resolution..</param>
         /// <param name="ResolveIdentities">Whether the channel should resolve identities (required).</param>
-        public DeploymentIdentityResolutionConfig(WritableStarrableDivision Division = null, bool? ResolveIdentities = null)
+        /// <param name="ExternalSource">The external source used for stitching this channel..</param>
+        /// <param name="Automerge">Whether automerging of contacts should be enabled for each channel..</param>
+        public DeploymentIdentityResolutionConfig(WritableStarrableDivision Division = null, bool? ResolveIdentities = null, IdentityResolutionExternalSource ExternalSource = null, IdentityResolutionAutomergeConfig Automerge = null)
         {
             this.Division = Division;
             this.ResolveIdentities = ResolveIdentities;
+            this.ExternalSource = ExternalSource;
+            this.Automerge = Automerge;
             
         }
         
@@ -48,9 +52,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// The division to which this entity belongs.
+        /// The division to use when performing identity resolution.
         /// </summary>
-        /// <value>The division to which this entity belongs.</value>
+        /// <value>The division to use when performing identity resolution.</value>
         [DataMember(Name="division", EmitDefaultValue=false)]
         public WritableStarrableDivision Division { get; set; }
 
@@ -62,6 +66,24 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <value>Whether the channel should resolve identities</value>
         [DataMember(Name="resolveIdentities", EmitDefaultValue=false)]
         public bool? ResolveIdentities { get; set; }
+
+
+
+        /// <summary>
+        /// The external source used for stitching this channel.
+        /// </summary>
+        /// <value>The external source used for stitching this channel.</value>
+        [DataMember(Name="externalSource", EmitDefaultValue=false)]
+        public IdentityResolutionExternalSource ExternalSource { get; set; }
+
+
+
+        /// <summary>
+        /// Whether automerging of contacts should be enabled for each channel.
+        /// </summary>
+        /// <value>Whether automerging of contacts should be enabled for each channel.</value>
+        [DataMember(Name="automerge", EmitDefaultValue=false)]
+        public IdentityResolutionAutomergeConfig Automerge { get; set; }
 
 
 
@@ -85,6 +107,8 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Division: ").Append(Division).Append("\n");
             sb.Append("  ResolveIdentities: ").Append(ResolveIdentities).Append("\n");
+            sb.Append("  ExternalSource: ").Append(ExternalSource).Append("\n");
+            sb.Append("  Automerge: ").Append(Automerge).Append("\n");
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -142,6 +166,16 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.ResolveIdentities.Equals(other.ResolveIdentities)
                 ) &&
                 (
+                    this.ExternalSource == other.ExternalSource ||
+                    this.ExternalSource != null &&
+                    this.ExternalSource.Equals(other.ExternalSource)
+                ) &&
+                (
+                    this.Automerge == other.Automerge ||
+                    this.Automerge != null &&
+                    this.Automerge.Equals(other.Automerge)
+                ) &&
+                (
                     this.SelfUri == other.SelfUri ||
                     this.SelfUri != null &&
                     this.SelfUri.Equals(other.SelfUri)
@@ -167,6 +201,12 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.ResolveIdentities != null)
                     hash = hash * 59 + this.ResolveIdentities.GetHashCode();
+
+                if (this.ExternalSource != null)
+                    hash = hash * 59 + this.ExternalSource.GetHashCode();
+
+                if (this.Automerge != null)
+                    hash = hash * 59 + this.Automerge.GetHashCode();
 
                 if (this.SelfUri != null)
                     hash = hash * 59 + this.SelfUri.GetHashCode();

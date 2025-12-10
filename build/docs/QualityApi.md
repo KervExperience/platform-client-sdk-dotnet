@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetQualityConversationsAuditsQueryTransactionId**](#GetQualityConversationsAuditsQueryTransactionId) | **Get** /api/v2/quality/conversations/audits/query/{transactionId} | Get status of audit query execution |
 | [**GetQualityConversationsAuditsQueryTransactionIdResults**](#GetQualityConversationsAuditsQueryTransactionIdResults) | **Get** /api/v2/quality/conversations/audits/query/{transactionId}/results | Get results of audit query |
 | [**GetQualityEvaluationsQuery**](#GetQualityEvaluationsQuery) | **Get** /api/v2/quality/evaluations/query | Queries Evaluations and returns a paged list |
-| [**GetQualityEvaluatorsActivity**](#GetQualityEvaluatorsActivity) | **Get** /api/v2/quality/evaluators/activity | Get an evaluator activity |
+| [**GetQualityEvaluatorsActivity**](#GetQualityEvaluatorsActivity) | **Get** /api/v2/quality/evaluators/activity | Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests. |
 | [**GetQualityForm**](#GetQualityForm) | **Get** /api/v2/quality/forms/{formId} | Get an evaluation form |
 | [**GetQualityFormVersions**](#GetQualityFormVersions) | **Get** /api/v2/quality/forms/{formId}/versions | Gets all the revisions for a specific evaluation. |
 | [**GetQualityForms**](#GetQualityForms) | **Get** /api/v2/quality/forms | Get the list of evaluation forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding evaluation form. |
@@ -42,12 +42,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetQualityPublishedforms**](#GetQualityPublishedforms) | **Get** /api/v2/quality/publishedforms | Get the published evaluation forms. |
 | [**GetQualityPublishedformsEvaluation**](#GetQualityPublishedformsEvaluation) | **Get** /api/v2/quality/publishedforms/evaluations/{formId} | Get the most recent published version of an evaluation form. |
 | [**GetQualityPublishedformsEvaluations**](#GetQualityPublishedformsEvaluations) | **Get** /api/v2/quality/publishedforms/evaluations | Get the published evaluation forms. |
-| [**GetQualityPublishedformsEvaluationsDivisionview**](#GetQualityPublishedformsEvaluationsDivisionview) | **Get** /api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId} | Get the most recent published version of an evaluation form across any division. |
-| [**GetQualityPublishedformsEvaluationsDivisionviews**](#GetQualityPublishedformsEvaluationsDivisionviews) | **Get** /api/v2/quality/publishedforms/evaluations/divisionviews | Get the published evaluation forms across any division. |
 | [**GetQualityPublishedformsSurvey**](#GetQualityPublishedformsSurvey) | **Get** /api/v2/quality/publishedforms/surveys/{formId} | Get the most recent published version of a survey form. |
 | [**GetQualityPublishedformsSurveys**](#GetQualityPublishedformsSurveys) | **Get** /api/v2/quality/publishedforms/surveys | Get the published survey forms. |
-| [**GetQualityPublishedformsSurveysDivisionview**](#GetQualityPublishedformsSurveysDivisionview) | **Get** /api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId} | Get the most recent published version of an enabled survey form across any division. |
-| [**GetQualityPublishedformsSurveysDivisionviews**](#GetQualityPublishedformsSurveysDivisionviews) | **Get** /api/v2/quality/publishedforms/surveys/divisionviews | Get the published and enabled survey forms across any division. |
 | [**GetQualitySurvey**](#GetQualitySurvey) | **Get** /api/v2/quality/surveys/{surveyId} | Get a survey for a conversation |
 | [**GetQualitySurveysScorable**](#GetQualitySurveysScorable) | **Get** /api/v2/quality/surveys/scorable | Get a survey as an end-customer, for the purposes of scoring it. |
 | [**PatchQualityFormsSurvey**](#PatchQualityFormsSurvey) | **Patch** /api/v2/quality/forms/surveys/{formId} | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form. |
@@ -1386,7 +1382,7 @@ namespace Example
 > [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing) GetQualityEvaluatorsActivity (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, DateTime? startTime = null, DateTime? endTime = null, string name = null, List<string> permission = null, string group = null, string agentTeamId = null)
 
 
-Get an evaluator activity
+Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 Requires ANY permissions: 
 
@@ -1429,7 +1425,7 @@ namespace Example
 
             try
             { 
-                // Get an evaluator activity
+                // Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
                 EvaluatorActivityEntityListing result = apiInstance.GetQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group, agentTeamId);
                 Debug.WriteLine(result);
             }
@@ -2544,138 +2540,6 @@ namespace Example
 [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
 
-## GetQualityPublishedformsEvaluationsDivisionview
-
-> [**EvaluationFormDivisionView**](EvaluationFormDivisionView) GetQualityPublishedformsEvaluationsDivisionview (string evaluationFormId)
-
-
-Get the most recent published version of an evaluation form across any division.
-
-GetQualityPublishedformsEvaluationsDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* quality:evaluationForm:search
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetQualityPublishedformsEvaluationsDivisionviewExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new QualityApi();
-            var evaluationFormId = evaluationFormId_example;  // string | Evaluation Form ID
-
-            try
-            { 
-                // Get the most recent published version of an evaluation form across any division.
-                EvaluationFormDivisionView result = apiInstance.GetQualityPublishedformsEvaluationsDivisionview(evaluationFormId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling QualityApi.GetQualityPublishedformsEvaluationsDivisionview: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **evaluationFormId** | **string**| Evaluation Form ID |  |
-
-### Return type
-
-[**EvaluationFormDivisionView**](EvaluationFormDivisionView)
-
-
-## GetQualityPublishedformsEvaluationsDivisionviews
-
-> [**EvaluationFormDivisionViewListing**](EvaluationFormDivisionViewListing) GetQualityPublishedformsEvaluationsDivisionviews (int? pageSize = null, int? pageNumber = null, string name = null)
-
-
-Get the published evaluation forms across any division.
-
-GetQualityPublishedformsEvaluationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* quality:evaluationForm:search
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetQualityPublishedformsEvaluationsDivisionviewsExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new QualityApi();
-            var pageSize = 56;  // int? | Page size (optional)  (default to 25)
-            var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
-            var name = name_example;  // string | Name (optional) 
-
-            try
-            { 
-                // Get the published evaluation forms across any division.
-                EvaluationFormDivisionViewListing result = apiInstance.GetQualityPublishedformsEvaluationsDivisionviews(pageSize, pageNumber, name);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling QualityApi.GetQualityPublishedformsEvaluationsDivisionviews: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **pageSize** | **int?**| Page size | [optional] [default to 25] |
-| **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **name** | **string**| Name | [optional]  |
-
-### Return type
-
-[**EvaluationFormDivisionViewListing**](EvaluationFormDivisionViewListing)
-
-
 ## GetQualityPublishedformsSurvey
 
 > [**SurveyForm**](SurveyForm) GetQualityPublishedformsSurvey (string formId)
@@ -2804,138 +2668,6 @@ namespace Example
 ### Return type
 
 [**SurveyFormEntityListing**](SurveyFormEntityListing)
-
-
-## GetQualityPublishedformsSurveysDivisionview
-
-> [**SurveyFormDivisionView**](SurveyFormDivisionView) GetQualityPublishedformsSurveysDivisionview (string surveyFormId)
-
-
-Get the most recent published version of an enabled survey form across any division.
-
-GetQualityPublishedformsSurveysDivisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* quality:surveyForm:search
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetQualityPublishedformsSurveysDivisionviewExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new QualityApi();
-            var surveyFormId = surveyFormId_example;  // string | Survey Form ID
-
-            try
-            { 
-                // Get the most recent published version of an enabled survey form across any division.
-                SurveyFormDivisionView result = apiInstance.GetQualityPublishedformsSurveysDivisionview(surveyFormId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling QualityApi.GetQualityPublishedformsSurveysDivisionview: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **surveyFormId** | **string**| Survey Form ID |  |
-
-### Return type
-
-[**SurveyFormDivisionView**](SurveyFormDivisionView)
-
-
-## GetQualityPublishedformsSurveysDivisionviews
-
-> [**SurveyFormDivisionViewListing**](SurveyFormDivisionViewListing) GetQualityPublishedformsSurveysDivisionviews (int? pageSize = null, int? pageNumber = null, string name = null)
-
-
-Get the published and enabled survey forms across any division.
-
-GetQualityPublishedformsSurveysDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* quality:surveyForm:search
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetQualityPublishedformsSurveysDivisionviewsExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new QualityApi();
-            var pageSize = 56;  // int? | Page size (optional)  (default to 25)
-            var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
-            var name = name_example;  // string | Name (optional) 
-
-            try
-            { 
-                // Get the published and enabled survey forms across any division.
-                SurveyFormDivisionViewListing result = apiInstance.GetQualityPublishedformsSurveysDivisionviews(pageSize, pageNumber, name);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling QualityApi.GetQualityPublishedformsSurveysDivisionviews: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **pageSize** | **int?**| Page size | [optional] [default to 25] |
-| **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **name** | **string**| Name | [optional]  |
-
-### Return type
-
-[**SurveyFormDivisionViewListing**](SurveyFormDivisionViewListing)
 
 
 ## GetQualitySurvey
@@ -4576,4 +4308,4 @@ namespace Example
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatform.Client.V2 242.0.0_
+_PureCloudPlatform.Client.V2 250.0.0_

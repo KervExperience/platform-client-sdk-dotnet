@@ -967,7 +967,7 @@ namespace Example
 
 ## GetTaskmanagementWorkitem
 
-> [**Workitem**](Workitem) GetTaskmanagementWorkitem (string workitemId, string expands = null)
+> [**Workitem**](Workitem) GetTaskmanagementWorkitem (string workitemId, List<string> expands = null)
 
 
 Get a workitem
@@ -999,7 +999,7 @@ namespace Example
 
             var apiInstance = new TaskManagementApi();
             var workitemId = workitemId_example;  // string | Workitem ID
-            var expands = expands_example;  // string | Which fields to expand. Comma separated if more than one. (optional) 
+            var expands = new List<string>(); // List<string> | Which fields to expand. Comma separated if more than one. (optional) 
 
             try
             { 
@@ -1022,7 +1022,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **workitemId** | **string**| Workitem ID |  |
-| **expands** | **string**| Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
+| **expands** | [**List<string>**](string)| Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
 
 ### Return type
 
@@ -3209,7 +3209,7 @@ void (empty response body)
 
 ## PatchTaskmanagementWorkitemUserWrapups
 
-> [**WorkitemWrapup**](WorkitemWrapup) PatchTaskmanagementWorkitemUserWrapups (string workitemId, string userId, WorkitemWrapupUpdate body)
+> void PatchTaskmanagementWorkitemUserWrapups (string workitemId, string userId, WorkitemWrapupUpdate body)
 
 
 Add/Remove a wrapup code for a given user in a workitem.
@@ -3247,8 +3247,7 @@ namespace Example
             try
             { 
                 // Add/Remove a wrapup code for a given user in a workitem.
-                WorkitemWrapup result = apiInstance.PatchTaskmanagementWorkitemUserWrapups(workitemId, userId, body);
-                Debug.WriteLine(result);
+                apiInstance.PatchTaskmanagementWorkitemUserWrapups(workitemId, userId, body);
             }
             catch (Exception e)
             {
@@ -3270,12 +3269,12 @@ namespace Example
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+void (empty response body)
 
 
 ## PatchTaskmanagementWorkitemUsersMeWrapups
 
-> [**WorkitemWrapup**](WorkitemWrapup) PatchTaskmanagementWorkitemUsersMeWrapups (string workitemId, WorkitemWrapupUpdate body)
+> void PatchTaskmanagementWorkitemUsersMeWrapups (string workitemId, WorkitemWrapupUpdate body)
 
 
 Add/Remove a wrapup code for the current user in a workitem.
@@ -3312,8 +3311,7 @@ namespace Example
             try
             { 
                 // Add/Remove a wrapup code for the current user in a workitem.
-                WorkitemWrapup result = apiInstance.PatchTaskmanagementWorkitemUsersMeWrapups(workitemId, body);
-                Debug.WriteLine(result);
+                apiInstance.PatchTaskmanagementWorkitemUsersMeWrapups(workitemId, body);
             }
             catch (Exception e)
             {
@@ -3334,7 +3332,7 @@ namespace Example
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+void (empty response body)
 
 
 ## PatchTaskmanagementWorkitemsBulkAddJob
@@ -4925,4 +4923,4 @@ namespace Example
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatform.Client.V2 242.0.0_
+_PureCloudPlatform.Client.V2 250.0.0_

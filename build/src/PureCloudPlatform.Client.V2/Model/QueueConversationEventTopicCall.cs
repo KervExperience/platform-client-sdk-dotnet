@@ -423,7 +423,9 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="AfterCallWorkRequired">Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested..</param>
         /// <param name="AgentAssistantId">UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation..</param>
         /// <param name="QueueMediaSettings">QueueMediaSettings.</param>
-        public QueueConversationEventTopicCall(string Id = null, StateEnum? State = null, InitialStateEnum? InitialState = null, bool? Recording = null, RecordingStateEnum? RecordingState = null, QueueConversationEventTopicRecordersState RecordersState = null, bool? Muted = null, bool? Confined = null, bool? Held = null, bool? SecurePause = null, QueueConversationEventTopicErrorDetails ErrorInfo = null, DisconnectTypeEnum? DisconnectType = null, DateTime? StartHoldTime = null, DirectionEnum? Direction = null, string DocumentId = null, QueueConversationEventTopicAddress Self = null, QueueConversationEventTopicAddress Other = null, string Provider = null, string ScriptId = null, string PeerId = null, DateTime? ConnectedTime = null, DateTime? DisconnectedTime = null, List<QueueConversationEventTopicDisconnectReason> DisconnectReasons = null, QueueConversationEventTopicFaxStatus FaxStatus = null, string UuiData = null, DateTime? BargedTime = null, QueueConversationEventTopicWrapup Wrapup = null, QueueConversationEventTopicAfterCallWork AfterCallWork = null, bool? AfterCallWorkRequired = null, string AgentAssistantId = null, QueueConversationEventTopicQueueMediaSettings QueueMediaSettings = null)
+        /// <param name="Disposition">Disposition.</param>
+        /// <param name="TransferSource">Indicates how call reaches the agent..</param>
+        public QueueConversationEventTopicCall(string Id = null, StateEnum? State = null, InitialStateEnum? InitialState = null, bool? Recording = null, RecordingStateEnum? RecordingState = null, QueueConversationEventTopicRecordersState RecordersState = null, bool? Muted = null, bool? Confined = null, bool? Held = null, bool? SecurePause = null, QueueConversationEventTopicErrorDetails ErrorInfo = null, DisconnectTypeEnum? DisconnectType = null, DateTime? StartHoldTime = null, DirectionEnum? Direction = null, string DocumentId = null, QueueConversationEventTopicAddress Self = null, QueueConversationEventTopicAddress Other = null, string Provider = null, string ScriptId = null, string PeerId = null, DateTime? ConnectedTime = null, DateTime? DisconnectedTime = null, List<QueueConversationEventTopicDisconnectReason> DisconnectReasons = null, QueueConversationEventTopicFaxStatus FaxStatus = null, string UuiData = null, DateTime? BargedTime = null, QueueConversationEventTopicWrapup Wrapup = null, QueueConversationEventTopicAfterCallWork AfterCallWork = null, bool? AfterCallWorkRequired = null, string AgentAssistantId = null, QueueConversationEventTopicQueueMediaSettings QueueMediaSettings = null, QueueConversationEventTopicDisposition Disposition = null, string TransferSource = null)
         {
             this.Id = Id;
             this.State = State;
@@ -456,6 +458,8 @@ namespace PureCloudPlatform.Client.V2.Model
             this.AfterCallWorkRequired = AfterCallWorkRequired;
             this.AgentAssistantId = AgentAssistantId;
             this.QueueMediaSettings = QueueMediaSettings;
+            this.Disposition = Disposition;
+            this.TransferSource = TransferSource;
             
         }
         
@@ -698,6 +702,23 @@ namespace PureCloudPlatform.Client.V2.Model
         public QueueConversationEventTopicQueueMediaSettings QueueMediaSettings { get; set; }
 
 
+
+        /// <summary>
+        /// Gets or Sets Disposition
+        /// </summary>
+        [DataMember(Name="disposition", EmitDefaultValue=false)]
+        public QueueConversationEventTopicDisposition Disposition { get; set; }
+
+
+
+        /// <summary>
+        /// Indicates how call reaches the agent.
+        /// </summary>
+        /// <value>Indicates how call reaches the agent.</value>
+        [DataMember(Name="transferSource", EmitDefaultValue=false)]
+        public string TransferSource { get; set; }
+
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -738,6 +759,8 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  AfterCallWorkRequired: ").Append(AfterCallWorkRequired).Append("\n");
             sb.Append("  AgentAssistantId: ").Append(AgentAssistantId).Append("\n");
             sb.Append("  QueueMediaSettings: ").Append(QueueMediaSettings).Append("\n");
+            sb.Append("  Disposition: ").Append(Disposition).Append("\n");
+            sb.Append("  TransferSource: ").Append(TransferSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -932,6 +955,16 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.QueueMediaSettings == other.QueueMediaSettings ||
                     this.QueueMediaSettings != null &&
                     this.QueueMediaSettings.Equals(other.QueueMediaSettings)
+                ) &&
+                (
+                    this.Disposition == other.Disposition ||
+                    this.Disposition != null &&
+                    this.Disposition.Equals(other.Disposition)
+                ) &&
+                (
+                    this.TransferSource == other.TransferSource ||
+                    this.TransferSource != null &&
+                    this.TransferSource.Equals(other.TransferSource)
                 );
         }
 
@@ -1038,6 +1071,12 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.QueueMediaSettings != null)
                     hash = hash * 59 + this.QueueMediaSettings.GetHashCode();
+
+                if (this.Disposition != null)
+                    hash = hash * 59 + this.Disposition.GetHashCode();
+
+                if (this.TransferSource != null)
+                    hash = hash * 59 + this.TransferSource.GetHashCode();
 
                 return hash;
             }

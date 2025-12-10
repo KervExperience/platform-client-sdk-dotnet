@@ -20,7 +20,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -34,7 +33,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -48,7 +46,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -62,7 +59,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -76,7 +72,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -91,7 +86,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -106,7 +100,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -119,7 +112,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -132,7 +124,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -145,7 +136,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -158,7 +148,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -172,7 +161,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -186,7 +174,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -201,7 +188,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -216,7 +202,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -232,7 +217,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -248,7 +232,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -263,7 +246,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -278,7 +260,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -294,7 +275,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -310,7 +290,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -329,7 +308,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -348,57 +326,52 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>DataSchema</returns>
+        /// <returns>BusinessRulesDataSchema</returns>
         
-        DataSchema GetBusinessrulesSchema (string schemaId);
+        BusinessRulesDataSchema GetBusinessrulesSchema (string schemaId);
 
         /// <summary>
         /// Get a schema
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>ApiResponse of DataSchema</returns>
+        /// <returns>ApiResponse of BusinessRulesDataSchema</returns>
         
-        ApiResponse<DataSchema> GetBusinessrulesSchemaWithHttpInfo (string schemaId);
+        ApiResponse<BusinessRulesDataSchema> GetBusinessrulesSchemaWithHttpInfo (string schemaId);
 
         /// <summary>
         /// Get a list of schemas.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>DataSchemaListing</returns>
+        /// <returns>BusinessRulesDataSchemaListing</returns>
         
-        DataSchemaListing GetBusinessrulesSchemas ();
+        BusinessRulesDataSchemaListing GetBusinessrulesSchemas ();
 
         /// <summary>
         /// Get a list of schemas.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of DataSchemaListing</returns>
+        /// <returns>ApiResponse of BusinessRulesDataSchemaListing</returns>
         
-        ApiResponse<DataSchemaListing> GetBusinessrulesSchemasWithHttpInfo ();
+        ApiResponse<BusinessRulesDataSchemaListing> GetBusinessrulesSchemasWithHttpInfo ();
 
         /// <summary>
         /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -411,7 +384,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -424,7 +396,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>CoretypeListing</returns>
@@ -436,7 +407,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of CoretypeListing</returns>
@@ -448,7 +418,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -462,7 +431,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -476,7 +444,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -491,7 +458,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -506,7 +472,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -520,7 +485,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -534,7 +498,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -549,7 +512,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -564,7 +526,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -579,7 +540,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -594,7 +554,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -609,7 +568,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -624,7 +582,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -641,7 +598,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -658,7 +614,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -672,7 +627,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -686,7 +640,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -699,7 +652,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -712,7 +664,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -725,7 +676,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -738,33 +688,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>DataSchema</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>BusinessRulesDataSchema</returns>
         
-        DataSchema PostBusinessrulesSchemas (DataSchema body);
+        BusinessRulesDataSchema PostBusinessrulesSchemas (BusinessRulesSchemaCreateRequest body);
 
         /// <summary>
         /// Create a schema
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>ApiResponse of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>ApiResponse of BusinessRulesDataSchema</returns>
         
-        ApiResponse<DataSchema> PostBusinessrulesSchemasWithHttpInfo (DataSchema body);
+        ApiResponse<BusinessRulesDataSchema> PostBusinessrulesSchemasWithHttpInfo (BusinessRulesSchemaCreateRequest body);
 
         /// <summary>
         /// Publish a decision table version
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -778,7 +725,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -792,7 +738,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -808,7 +753,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -824,28 +768,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>DataSchema</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>BusinessRulesDataSchema</returns>
         
-        DataSchema PutBusinessrulesSchema (string schemaId, DataSchema body);
+        BusinessRulesDataSchema PutBusinessrulesSchema (string schemaId, BusinessRulesSchemaUpdateRequest body);
 
         /// <summary>
         /// Update a schema
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>ApiResponse of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>ApiResponse of BusinessRulesDataSchema</returns>
         
-        ApiResponse<DataSchema> PutBusinessrulesSchemaWithHttpInfo (string schemaId, DataSchema body);
+        ApiResponse<BusinessRulesDataSchema> PutBusinessrulesSchemaWithHttpInfo (string schemaId, BusinessRulesSchemaUpdateRequest body);
 
         #endregion Synchronous Operations
 
@@ -856,7 +798,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -870,7 +811,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -884,7 +824,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -898,7 +837,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -912,7 +850,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -927,7 +864,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -942,7 +878,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -955,7 +890,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -968,7 +902,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -981,7 +914,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -994,7 +926,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1008,7 +939,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1022,7 +952,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1037,7 +966,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1052,7 +980,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1068,7 +995,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1084,7 +1010,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1099,7 +1024,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1114,7 +1038,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -1130,7 +1053,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -1146,7 +1068,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -1165,7 +1086,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -1184,57 +1104,52 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>Task of DataSchema</returns>
+        /// <returns>Task of BusinessRulesDataSchema</returns>
         
-        System.Threading.Tasks.Task<DataSchema> GetBusinessrulesSchemaAsync (string schemaId);
+        System.Threading.Tasks.Task<BusinessRulesDataSchema> GetBusinessrulesSchemaAsync (string schemaId);
 
         /// <summary>
         /// Get a schema
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>Task of ApiResponse (DataSchema)</returns>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchema)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<DataSchema>> GetBusinessrulesSchemaAsyncWithHttpInfo (string schemaId);
+        System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchema>> GetBusinessrulesSchemaAsyncWithHttpInfo (string schemaId);
 
         /// <summary>
         /// Get a list of schemas.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of DataSchemaListing</returns>
+        /// <returns>Task of BusinessRulesDataSchemaListing</returns>
         
-        System.Threading.Tasks.Task<DataSchemaListing> GetBusinessrulesSchemasAsync ();
+        System.Threading.Tasks.Task<BusinessRulesDataSchemaListing> GetBusinessrulesSchemasAsync ();
 
         /// <summary>
         /// Get a list of schemas.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (DataSchemaListing)</returns>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchemaListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<DataSchemaListing>> GetBusinessrulesSchemasAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchemaListing>> GetBusinessrulesSchemasAsyncWithHttpInfo ();
 
         /// <summary>
         /// Get a specific named core type.
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -1247,7 +1162,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -1260,7 +1174,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of CoretypeListing</returns>
@@ -1272,7 +1185,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (CoretypeListing)</returns>
@@ -1284,7 +1196,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1298,7 +1209,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1312,7 +1222,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1327,7 +1236,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1342,7 +1250,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1356,7 +1263,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1370,7 +1276,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1385,7 +1290,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1400,7 +1304,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1415,7 +1318,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1430,7 +1332,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1445,7 +1346,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1460,7 +1360,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1477,7 +1376,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1494,7 +1392,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1508,7 +1405,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1522,7 +1418,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1535,7 +1430,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1548,7 +1442,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -1561,7 +1454,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -1574,33 +1466,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>Task of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>Task of BusinessRulesDataSchema</returns>
         
-        System.Threading.Tasks.Task<DataSchema> PostBusinessrulesSchemasAsync (DataSchema body);
+        System.Threading.Tasks.Task<BusinessRulesDataSchema> PostBusinessrulesSchemasAsync (BusinessRulesSchemaCreateRequest body);
 
         /// <summary>
         /// Create a schema
         /// </summary>
         /// <remarks>
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>Task of ApiResponse (DataSchema)</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchema)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<DataSchema>> PostBusinessrulesSchemasAsyncWithHttpInfo (DataSchema body);
+        System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchema>> PostBusinessrulesSchemasAsyncWithHttpInfo (BusinessRulesSchemaCreateRequest body);
 
         /// <summary>
         /// Publish a decision table version
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1614,7 +1503,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1628,7 +1516,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1644,7 +1531,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1660,28 +1546,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>Task of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>Task of BusinessRulesDataSchema</returns>
         
-        System.Threading.Tasks.Task<DataSchema> PutBusinessrulesSchemaAsync (string schemaId, DataSchema body);
+        System.Threading.Tasks.Task<BusinessRulesDataSchema> PutBusinessrulesSchemaAsync (string schemaId, BusinessRulesSchemaUpdateRequest body);
 
         /// <summary>
         /// Update a schema
         /// </summary>
         /// <remarks>
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>Task of ApiResponse (DataSchema)</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchema)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<DataSchema>> PutBusinessrulesSchemaAsyncWithHttpInfo (string schemaId, DataSchema body);
+        System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchema>> PutBusinessrulesSchemaAsyncWithHttpInfo (string schemaId, BusinessRulesSchemaUpdateRequest body);
 
         #endregion Asynchronous Operations
 
@@ -1778,7 +1662,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table 
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1793,7 +1676,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table 
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1881,7 +1763,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table 
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1897,7 +1778,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table 
         /// 
-        /// DeleteBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -1987,7 +1867,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table version 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2002,7 +1881,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table version 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2093,7 +1971,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table version 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2109,7 +1986,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table version 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2203,7 +2079,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table row 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2219,7 +2094,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table row 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2315,7 +2189,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table row 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2332,7 +2205,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a decision table row 
         /// 
-        /// DeleteBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2432,7 +2304,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a schema 
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -2446,7 +2317,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a schema 
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -2532,7 +2402,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a schema 
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -2547,7 +2416,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete a schema 
         /// 
-        /// DeleteBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
@@ -2635,7 +2503,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table 
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2650,7 +2517,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table 
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2736,7 +2602,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table 
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2752,7 +2617,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table 
         /// 
-        /// GetBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2840,7 +2704,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table version 
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2856,7 +2719,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table version 
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2947,7 +2809,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table version 
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -2964,7 +2825,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table version 
         /// 
-        /// GetBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3058,7 +2918,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table row 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3075,7 +2934,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table row 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3171,7 +3029,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table row 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3189,7 +3046,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a decision table row 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3289,7 +3145,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table rows. 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3307,7 +3162,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table rows. 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3402,7 +3256,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table rows. 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3421,7 +3274,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table rows. 
         /// 
-        /// GetBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3519,7 +3371,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table versions 
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3536,7 +3387,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table versions 
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3626,7 +3476,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table versions 
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3644,7 +3493,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision table versions 
         /// 
-        /// GetBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -3736,7 +3584,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -3754,7 +3601,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -3843,7 +3689,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -3862,7 +3707,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -3952,7 +3796,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -3973,7 +3816,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -4068,7 +3910,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -4090,7 +3931,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision tables. 
         /// 
-        /// GetBusinessrulesDecisiontablesSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
@@ -4186,28 +4026,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a schema 
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>DataSchema</returns>
+        /// <returns>BusinessRulesDataSchema</returns>
         
-        public DataSchema GetBusinessrulesSchema (string schemaId)
+        public BusinessRulesDataSchema GetBusinessrulesSchema (string schemaId)
         {
-             ApiResponse<DataSchema> localVarResponse = GetBusinessrulesSchemaWithHttpInfo(schemaId);
+             ApiResponse<BusinessRulesDataSchema> localVarResponse = GetBusinessrulesSchemaWithHttpInfo(schemaId);
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a schema 
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>ApiResponse of DataSchema</returns>
+        /// <returns>ApiResponse of BusinessRulesDataSchema</returns>
         
-        public ApiResponse< DataSchema > GetBusinessrulesSchemaWithHttpInfo (string schemaId)
+        public ApiResponse< BusinessRulesDataSchema > GetBusinessrulesSchemaWithHttpInfo (string schemaId)
         { 
             // verify the required parameter 'schemaId' is set
             if (schemaId == null)
@@ -4276,9 +4114,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetBusinessrulesSchema: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchema>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchema>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+                (BusinessRulesDataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchema)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -4287,15 +4125,14 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a schema 
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>Task of DataSchema</returns>
+        /// <returns>Task of BusinessRulesDataSchema</returns>
         
-        public async System.Threading.Tasks.Task<DataSchema> GetBusinessrulesSchemaAsync (string schemaId)
+        public async System.Threading.Tasks.Task<BusinessRulesDataSchema> GetBusinessrulesSchemaAsync (string schemaId)
         {
-             ApiResponse<DataSchema> localVarResponse = await GetBusinessrulesSchemaAsyncWithHttpInfo(schemaId);
+             ApiResponse<BusinessRulesDataSchema> localVarResponse = await GetBusinessrulesSchemaAsyncWithHttpInfo(schemaId);
              return localVarResponse.Data;
 
         }
@@ -4303,13 +4140,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a schema 
         /// 
-        /// GetBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <returns>Task of ApiResponse (DataSchema)</returns>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchema)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<DataSchema>> GetBusinessrulesSchemaAsyncWithHttpInfo (string schemaId)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchema>> GetBusinessrulesSchemaAsyncWithHttpInfo (string schemaId)
         { 
             // verify the required parameter 'schemaId' is set
             if (schemaId == null)
@@ -4379,9 +4215,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetBusinessrulesSchema: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchema>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchema>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+                (BusinessRulesDataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchema)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -4391,26 +4227,24 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of schemas. 
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>DataSchemaListing</returns>
+        /// <returns>BusinessRulesDataSchemaListing</returns>
         
-        public DataSchemaListing GetBusinessrulesSchemas ()
+        public BusinessRulesDataSchemaListing GetBusinessrulesSchemas ()
         {
-             ApiResponse<DataSchemaListing> localVarResponse = GetBusinessrulesSchemasWithHttpInfo();
+             ApiResponse<BusinessRulesDataSchemaListing> localVarResponse = GetBusinessrulesSchemasWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a list of schemas. 
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of DataSchemaListing</returns>
+        /// <returns>ApiResponse of BusinessRulesDataSchemaListing</returns>
         
-        public ApiResponse< DataSchemaListing > GetBusinessrulesSchemasWithHttpInfo ()
+        public ApiResponse< BusinessRulesDataSchemaListing > GetBusinessrulesSchemasWithHttpInfo ()
         { 
 
             var localVarPath = "/api/v2/businessrules/schemas";
@@ -4475,9 +4309,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetBusinessrulesSchemas: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchemaListing>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchemaListing>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchemaListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+                (BusinessRulesDataSchemaListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchemaListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -4486,14 +4320,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of schemas. 
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of DataSchemaListing</returns>
+        /// <returns>Task of BusinessRulesDataSchemaListing</returns>
         
-        public async System.Threading.Tasks.Task<DataSchemaListing> GetBusinessrulesSchemasAsync ()
+        public async System.Threading.Tasks.Task<BusinessRulesDataSchemaListing> GetBusinessrulesSchemasAsync ()
         {
-             ApiResponse<DataSchemaListing> localVarResponse = await GetBusinessrulesSchemasAsyncWithHttpInfo();
+             ApiResponse<BusinessRulesDataSchemaListing> localVarResponse = await GetBusinessrulesSchemasAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -4501,12 +4334,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a list of schemas. 
         /// 
-        /// GetBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (DataSchemaListing)</returns>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchemaListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<DataSchemaListing>> GetBusinessrulesSchemasAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchemaListing>> GetBusinessrulesSchemasAsyncWithHttpInfo ()
         { 
 
             var localVarPath = "/api/v2/businessrules/schemas";
@@ -4571,9 +4403,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetBusinessrulesSchemas: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchemaListing>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchemaListing>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchemaListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchemaListing)),
+                (BusinessRulesDataSchemaListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchemaListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -4583,7 +4415,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a specific named core type. 
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -4598,7 +4429,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a specific named core type. 
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -4684,7 +4514,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a specific named core type. 
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -4700,7 +4529,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a specific named core type. 
         /// 
-        /// GetBusinessrulesSchemasCoretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="coreTypeName">The core type&#39;s name</param>
@@ -4788,7 +4616,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the core types from which all schemas are built. 
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>CoretypeListing</returns>
@@ -4802,7 +4629,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the core types from which all schemas are built. 
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of CoretypeListing</returns>
@@ -4883,7 +4709,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the core types from which all schemas are built. 
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of CoretypeListing</returns>
@@ -4898,7 +4723,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the core types from which all schemas are built. 
         /// 
-        /// GetBusinessrulesSchemasCoretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (CoretypeListing)</returns>
@@ -4980,7 +4804,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table 
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -4996,7 +4819,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table 
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5092,7 +4914,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table 
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5109,7 +4930,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table 
         /// 
-        /// PatchBusinessrulesDecisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5208,7 +5028,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table version 
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5225,7 +5044,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table version 
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5326,7 +5144,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table version 
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5344,7 +5161,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a decision table version 
         /// 
-        /// PatchBusinessrulesDecisiontableVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5449,7 +5265,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a published decision table 
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5465,7 +5280,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a published decision table 
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5561,7 +5375,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a published decision table 
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5578,7 +5391,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a published decision table 
         /// 
-        /// PostBusinessrulesDecisiontableExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5677,7 +5489,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Copy a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5694,7 +5505,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Copy a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5795,7 +5605,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Copy a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5813,7 +5622,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Copy a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionCopy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5918,7 +5726,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -5935,7 +5742,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6036,7 +5842,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6054,7 +5859,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Execute a decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionExecute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6159,7 +5963,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table row 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6176,7 +5979,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table row 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6277,7 +6079,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table row 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6295,7 +6096,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table row 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6400,7 +6200,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision table rows 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6419,7 +6218,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision table rows 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6524,7 +6322,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision table rows 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6544,7 +6341,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Search for decision table rows 
         /// 
-        /// PostBusinessrulesDecisiontableVersionRowsSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6653,7 +6449,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the Business Rules Schema to the latest version for a given decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6669,7 +6464,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the Business Rules Schema to the latest version for a given decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6760,7 +6554,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the Business Rules Schema to the latest version for a given decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6777,7 +6570,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update the Business Rules Schema to the latest version for a given decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersionSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6871,7 +6663,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6886,7 +6677,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6972,7 +6762,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -6988,7 +6777,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new decision table version 
         /// 
-        /// PostBusinessrulesDecisiontableVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7076,7 +6864,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table 
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -7091,7 +6878,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table 
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -7182,7 +6968,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table 
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -7198,7 +6983,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a decision table 
         /// 
-        /// PostBusinessrulesDecisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Decision Table</param>
@@ -7291,28 +7075,26 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a schema 
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>DataSchema</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>BusinessRulesDataSchema</returns>
         
-        public DataSchema PostBusinessrulesSchemas (DataSchema body)
+        public BusinessRulesDataSchema PostBusinessrulesSchemas (BusinessRulesSchemaCreateRequest body)
         {
-             ApiResponse<DataSchema> localVarResponse = PostBusinessrulesSchemasWithHttpInfo(body);
+             ApiResponse<BusinessRulesDataSchema> localVarResponse = PostBusinessrulesSchemasWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Create a schema 
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>ApiResponse of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>ApiResponse of BusinessRulesDataSchema</returns>
         
-        public ApiResponse< DataSchema > PostBusinessrulesSchemasWithHttpInfo (DataSchema body)
+        public ApiResponse< BusinessRulesDataSchema > PostBusinessrulesSchemasWithHttpInfo (BusinessRulesSchemaCreateRequest body)
         { 
             // verify the required parameter 'body' is set
             if (body == null)
@@ -7386,9 +7168,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostBusinessrulesSchemas: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchema>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchema>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+                (BusinessRulesDataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchema)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -7397,15 +7179,14 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a schema 
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>Task of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>Task of BusinessRulesDataSchema</returns>
         
-        public async System.Threading.Tasks.Task<DataSchema> PostBusinessrulesSchemasAsync (DataSchema body)
+        public async System.Threading.Tasks.Task<BusinessRulesDataSchema> PostBusinessrulesSchemasAsync (BusinessRulesSchemaCreateRequest body)
         {
-             ApiResponse<DataSchema> localVarResponse = await PostBusinessrulesSchemasAsyncWithHttpInfo(body);
+             ApiResponse<BusinessRulesDataSchema> localVarResponse = await PostBusinessrulesSchemasAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -7413,13 +7194,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a schema 
         /// 
-        /// PostBusinessrulesSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Schema</param>
-        /// <returns>Task of ApiResponse (DataSchema)</returns>
+        /// <param name="body">Business Rules Schema Create Request</param>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchema)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<DataSchema>> PostBusinessrulesSchemasAsyncWithHttpInfo (DataSchema body)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchema>> PostBusinessrulesSchemasAsyncWithHttpInfo (BusinessRulesSchemaCreateRequest body)
         { 
             // verify the required parameter 'body' is set
             if (body == null)
@@ -7494,9 +7274,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostBusinessrulesSchemas: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchema>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchema>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+                (BusinessRulesDataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchema)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -7506,7 +7286,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Publish a decision table version 
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7522,7 +7301,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Publish a decision table version 
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7613,7 +7391,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Publish a decision table version 
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7630,7 +7407,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Publish a decision table version 
         /// 
-        /// PutBusinessrulesDecisiontableVersionPublish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7724,7 +7500,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Full update a decision table row 
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7742,7 +7517,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Full update a decision table row 
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7848,7 +7622,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Full update a decision table row 
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7867,7 +7640,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Full update a decision table row 
         /// 
-        /// PutBusinessrulesDecisiontableVersionRow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tableId">Table ID</param>
@@ -7978,30 +7750,28 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a schema 
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>DataSchema</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>BusinessRulesDataSchema</returns>
         
-        public DataSchema PutBusinessrulesSchema (string schemaId, DataSchema body)
+        public BusinessRulesDataSchema PutBusinessrulesSchema (string schemaId, BusinessRulesSchemaUpdateRequest body)
         {
-             ApiResponse<DataSchema> localVarResponse = PutBusinessrulesSchemaWithHttpInfo(schemaId, body);
+             ApiResponse<BusinessRulesDataSchema> localVarResponse = PutBusinessrulesSchemaWithHttpInfo(schemaId, body);
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Update a schema 
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>ApiResponse of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>ApiResponse of BusinessRulesDataSchema</returns>
         
-        public ApiResponse< DataSchema > PutBusinessrulesSchemaWithHttpInfo (string schemaId, DataSchema body)
+        public ApiResponse< BusinessRulesDataSchema > PutBusinessrulesSchemaWithHttpInfo (string schemaId, BusinessRulesSchemaUpdateRequest body)
         { 
             // verify the required parameter 'schemaId' is set
             if (schemaId == null)
@@ -8079,9 +7849,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutBusinessrulesSchema: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchema>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchema>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+                (BusinessRulesDataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchema)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -8090,16 +7860,15 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a schema 
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>Task of DataSchema</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>Task of BusinessRulesDataSchema</returns>
         
-        public async System.Threading.Tasks.Task<DataSchema> PutBusinessrulesSchemaAsync (string schemaId, DataSchema body)
+        public async System.Threading.Tasks.Task<BusinessRulesDataSchema> PutBusinessrulesSchemaAsync (string schemaId, BusinessRulesSchemaUpdateRequest body)
         {
-             ApiResponse<DataSchema> localVarResponse = await PutBusinessrulesSchemaAsyncWithHttpInfo(schemaId, body);
+             ApiResponse<BusinessRulesDataSchema> localVarResponse = await PutBusinessrulesSchemaAsyncWithHttpInfo(schemaId, body);
              return localVarResponse.Data;
 
         }
@@ -8107,14 +7876,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update a schema 
         /// 
-        /// PutBusinessrulesSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="schemaId">Schema ID</param>
-        /// <param name="body">Data Schema</param>
-        /// <returns>Task of ApiResponse (DataSchema)</returns>
+        /// <param name="body">Business Rules Schema Update Request</param>
+        /// <returns>Task of ApiResponse (BusinessRulesDataSchema)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<DataSchema>> PutBusinessrulesSchemaAsyncWithHttpInfo (string schemaId, DataSchema body)
+        public async System.Threading.Tasks.Task<ApiResponse<BusinessRulesDataSchema>> PutBusinessrulesSchemaAsyncWithHttpInfo (string schemaId, BusinessRulesSchemaUpdateRequest body)
         { 
             // verify the required parameter 'schemaId' is set
             if (schemaId == null)
@@ -8194,9 +7962,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutBusinessrulesSchema: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<DataSchema>(localVarStatusCode,
+            return new ApiResponse<BusinessRulesDataSchema>(localVarStatusCode,
                 localVarHeaders,
-                (DataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DataSchema)),
+                (BusinessRulesDataSchema) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessRulesDataSchema)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

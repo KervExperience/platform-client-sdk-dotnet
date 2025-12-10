@@ -384,7 +384,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>Workitem</returns>
         
-        Workitem GetTaskmanagementWorkitem (string workitemId, string expands = null);
+        Workitem GetTaskmanagementWorkitem (string workitemId, List<string> expands = null);
 
         /// <summary>
         /// Get a workitem
@@ -397,7 +397,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>ApiResponse of Workitem</returns>
         
-        ApiResponse<Workitem> GetTaskmanagementWorkitemWithHttpInfo (string workitemId, string expands = null);
+        ApiResponse<Workitem> GetTaskmanagementWorkitemWithHttpInfo (string workitemId, List<string> expands = null);
 
         /// <summary>
         /// Get a listing of a workitem&#39;s attribute change history
@@ -1303,9 +1303,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>WorkitemWrapup</returns>
+        /// <returns></returns>
         
-        WorkitemWrapup PatchTaskmanagementWorkitemUserWrapups (string workitemId, string userId, WorkitemWrapupUpdate body);
+        void PatchTaskmanagementWorkitemUserWrapups (string workitemId, string userId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Add/Remove a wrapup code for a given user in a workitem.
@@ -1317,9 +1317,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>ApiResponse of WorkitemWrapup</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         
-        ApiResponse<WorkitemWrapup> PatchTaskmanagementWorkitemUserWrapupsWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body);
+        ApiResponse<Object> PatchTaskmanagementWorkitemUserWrapupsWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Add/Remove a wrapup code for the current user in a workitem.
@@ -1330,9 +1330,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>WorkitemWrapup</returns>
+        /// <returns></returns>
         
-        WorkitemWrapup PatchTaskmanagementWorkitemUsersMeWrapups (string workitemId, WorkitemWrapupUpdate body);
+        void PatchTaskmanagementWorkitemUsersMeWrapups (string workitemId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Add/Remove a wrapup code for the current user in a workitem.
@@ -1343,9 +1343,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>ApiResponse of WorkitemWrapup</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         
-        ApiResponse<WorkitemWrapup> PatchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo (string workitemId, WorkitemWrapupUpdate body);
+        ApiResponse<Object> PatchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo (string workitemId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Update workitem bulk add job.
@@ -2356,7 +2356,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>Task of Workitem</returns>
         
-        System.Threading.Tasks.Task<Workitem> GetTaskmanagementWorkitemAsync (string workitemId, string expands = null);
+        System.Threading.Tasks.Task<Workitem> GetTaskmanagementWorkitemAsync (string workitemId, List<string> expands = null);
 
         /// <summary>
         /// Get a workitem
@@ -2369,7 +2369,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>Task of ApiResponse (Workitem)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<Workitem>> GetTaskmanagementWorkitemAsyncWithHttpInfo (string workitemId, string expands = null);
+        System.Threading.Tasks.Task<ApiResponse<Workitem>> GetTaskmanagementWorkitemAsyncWithHttpInfo (string workitemId, List<string> expands = null);
 
         /// <summary>
         /// Get a listing of a workitem&#39;s attribute change history
@@ -3275,9 +3275,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>Task of WorkitemWrapup</returns>
+        /// <returns>Task of void</returns>
         
-        System.Threading.Tasks.Task<WorkitemWrapup> PatchTaskmanagementWorkitemUserWrapupsAsync (string workitemId, string userId, WorkitemWrapupUpdate body);
+        System.Threading.Tasks.Task PatchTaskmanagementWorkitemUserWrapupsAsync (string workitemId, string userId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Add/Remove a wrapup code for a given user in a workitem.
@@ -3289,9 +3289,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>Task of ApiResponse (WorkitemWrapup)</returns>
+        /// <returns>Task of ApiResponse</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<WorkitemWrapup>> PatchTaskmanagementWorkitemUserWrapupsAsyncWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PatchTaskmanagementWorkitemUserWrapupsAsyncWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Add/Remove a wrapup code for the current user in a workitem.
@@ -3302,9 +3302,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>Task of WorkitemWrapup</returns>
+        /// <returns>Task of void</returns>
         
-        System.Threading.Tasks.Task<WorkitemWrapup> PatchTaskmanagementWorkitemUsersMeWrapupsAsync (string workitemId, WorkitemWrapupUpdate body);
+        System.Threading.Tasks.Task PatchTaskmanagementWorkitemUsersMeWrapupsAsync (string workitemId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Add/Remove a wrapup code for the current user in a workitem.
@@ -3315,9 +3315,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>Task of ApiResponse (WorkitemWrapup)</returns>
+        /// <returns>Task of ApiResponse</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<WorkitemWrapup>> PatchTaskmanagementWorkitemUsersMeWrapupsAsyncWithHttpInfo (string workitemId, WorkitemWrapupUpdate body);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PatchTaskmanagementWorkitemUsersMeWrapupsAsyncWithHttpInfo (string workitemId, WorkitemWrapupUpdate body);
 
         /// <summary>
         /// Update workitem bulk add job.
@@ -6951,7 +6951,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>Workitem</returns>
         
-        public Workitem GetTaskmanagementWorkitem (string workitemId, string expands = null)
+        public Workitem GetTaskmanagementWorkitem (string workitemId, List<string> expands = null)
         {
              ApiResponse<Workitem> localVarResponse = GetTaskmanagementWorkitemWithHttpInfo(workitemId, expands);
              return localVarResponse.Data;
@@ -6966,7 +6966,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>ApiResponse of Workitem</returns>
         
-        public ApiResponse< Workitem > GetTaskmanagementWorkitemWithHttpInfo (string workitemId, string expands = null)
+        public ApiResponse< Workitem > GetTaskmanagementWorkitemWithHttpInfo (string workitemId, List<string> expands = null)
         { 
             // verify the required parameter 'workitemId' is set
             if (workitemId == null)
@@ -7006,7 +7006,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (workitemId != null) localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
 
             // Query params
-            if (expands != null) localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            if (expands != null) expands.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -7053,7 +7053,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>Task of Workitem</returns>
         
-        public async System.Threading.Tasks.Task<Workitem> GetTaskmanagementWorkitemAsync (string workitemId, string expands = null)
+        public async System.Threading.Tasks.Task<Workitem> GetTaskmanagementWorkitemAsync (string workitemId, List<string> expands = null)
         {
              ApiResponse<Workitem> localVarResponse = await GetTaskmanagementWorkitemAsyncWithHttpInfo(workitemId, expands);
              return localVarResponse.Data;
@@ -7069,7 +7069,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="expands">Which fields to expand. Comma separated if more than one. (optional)</param>
         /// <returns>Task of ApiResponse (Workitem)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<Workitem>> GetTaskmanagementWorkitemAsyncWithHttpInfo (string workitemId, string expands = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Workitem>> GetTaskmanagementWorkitemAsyncWithHttpInfo (string workitemId, List<string> expands = null)
         { 
             // verify the required parameter 'workitemId' is set
             if (workitemId == null)
@@ -7110,7 +7110,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (workitemId != null) localVarPathParams.Add("workitemId", this.Configuration.ApiClient.ParameterToString(workitemId));
 
             // Query params
-            if (expands != null) localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(expands)));
+            if (expands != null) expands.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expands", this.Configuration.ApiClient.ParameterToString(obj))); });
 
             // Header params
 
@@ -14302,12 +14302,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>WorkitemWrapup</returns>
+        /// <returns></returns>
         
-        public WorkitemWrapup PatchTaskmanagementWorkitemUserWrapups (string workitemId, string userId, WorkitemWrapupUpdate body)
+        public void PatchTaskmanagementWorkitemUserWrapups (string workitemId, string userId, WorkitemWrapupUpdate body)
         {
-             ApiResponse<WorkitemWrapup> localVarResponse = PatchTaskmanagementWorkitemUserWrapupsWithHttpInfo(workitemId, userId, body);
-             return localVarResponse.Data;
+             PatchTaskmanagementWorkitemUserWrapupsWithHttpInfo(workitemId, userId, body);
         }
 
         /// <summary>
@@ -14318,9 +14317,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>ApiResponse of WorkitemWrapup</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         
-        public ApiResponse< WorkitemWrapup > PatchTaskmanagementWorkitemUserWrapupsWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body)
+        public ApiResponse<Object> PatchTaskmanagementWorkitemUserWrapupsWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body)
         { 
             // verify the required parameter 'workitemId' is set
             if (workitemId == null)
@@ -14402,9 +14401,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchTaskmanagementWorkitemUserWrapups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
-                (WorkitemWrapup) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+                null,
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -14418,12 +14417,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>Task of WorkitemWrapup</returns>
+        /// <returns>Task of void</returns>
         
-        public async System.Threading.Tasks.Task<WorkitemWrapup> PatchTaskmanagementWorkitemUserWrapupsAsync (string workitemId, string userId, WorkitemWrapupUpdate body)
+        public async System.Threading.Tasks.Task PatchTaskmanagementWorkitemUserWrapupsAsync (string workitemId, string userId, WorkitemWrapupUpdate body)
         {
-             ApiResponse<WorkitemWrapup> localVarResponse = await PatchTaskmanagementWorkitemUserWrapupsAsyncWithHttpInfo(workitemId, userId, body);
-             return localVarResponse.Data;
+             await PatchTaskmanagementWorkitemUserWrapupsAsyncWithHttpInfo(workitemId, userId, body);
 
         }
 
@@ -14435,9 +14433,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="userId">The ID of the user</param>
         /// <param name="body">Request body to add/remove a wrapup code for a workitem</param>
-        /// <returns>Task of ApiResponse (WorkitemWrapup)</returns>
+        /// <returns>Task of ApiResponse</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<WorkitemWrapup>> PatchTaskmanagementWorkitemUserWrapupsAsyncWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PatchTaskmanagementWorkitemUserWrapupsAsyncWithHttpInfo (string workitemId, string userId, WorkitemWrapupUpdate body)
         { 
             // verify the required parameter 'workitemId' is set
             if (workitemId == null)
@@ -14522,9 +14520,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchTaskmanagementWorkitemUserWrapups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
-                (WorkitemWrapup) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+                null,
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -14538,12 +14536,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>WorkitemWrapup</returns>
+        /// <returns></returns>
         
-        public WorkitemWrapup PatchTaskmanagementWorkitemUsersMeWrapups (string workitemId, WorkitemWrapupUpdate body)
+        public void PatchTaskmanagementWorkitemUsersMeWrapups (string workitemId, WorkitemWrapupUpdate body)
         {
-             ApiResponse<WorkitemWrapup> localVarResponse = PatchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo(workitemId, body);
-             return localVarResponse.Data;
+             PatchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo(workitemId, body);
         }
 
         /// <summary>
@@ -14553,9 +14550,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>ApiResponse of WorkitemWrapup</returns>
+        /// <returns>ApiResponse of Object(void)</returns>
         
-        public ApiResponse< WorkitemWrapup > PatchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo (string workitemId, WorkitemWrapupUpdate body)
+        public ApiResponse<Object> PatchTaskmanagementWorkitemUsersMeWrapupsWithHttpInfo (string workitemId, WorkitemWrapupUpdate body)
         { 
             // verify the required parameter 'workitemId' is set
             if (workitemId == null)
@@ -14633,9 +14630,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchTaskmanagementWorkitemUsersMeWrapups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
-                (WorkitemWrapup) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+                null,
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -14648,12 +14645,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>Task of WorkitemWrapup</returns>
+        /// <returns>Task of void</returns>
         
-        public async System.Threading.Tasks.Task<WorkitemWrapup> PatchTaskmanagementWorkitemUsersMeWrapupsAsync (string workitemId, WorkitemWrapupUpdate body)
+        public async System.Threading.Tasks.Task PatchTaskmanagementWorkitemUsersMeWrapupsAsync (string workitemId, WorkitemWrapupUpdate body)
         {
-             ApiResponse<WorkitemWrapup> localVarResponse = await PatchTaskmanagementWorkitemUsersMeWrapupsAsyncWithHttpInfo(workitemId, body);
-             return localVarResponse.Data;
+             await PatchTaskmanagementWorkitemUsersMeWrapupsAsyncWithHttpInfo(workitemId, body);
 
         }
 
@@ -14664,9 +14660,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workitemId">The ID of the Workitem.</param>
         /// <param name="body">Request body to add/remove the wrapup code for workitem</param>
-        /// <returns>Task of ApiResponse (WorkitemWrapup)</returns>
+        /// <returns>Task of ApiResponse</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<WorkitemWrapup>> PatchTaskmanagementWorkitemUsersMeWrapupsAsyncWithHttpInfo (string workitemId, WorkitemWrapupUpdate body)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PatchTaskmanagementWorkitemUsersMeWrapupsAsyncWithHttpInfo (string workitemId, WorkitemWrapupUpdate body)
         { 
             // verify the required parameter 'workitemId' is set
             if (workitemId == null)
@@ -14746,9 +14742,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchTaskmanagementWorkitemUsersMeWrapups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<WorkitemWrapup>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
-                (WorkitemWrapup) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkitemWrapup)),
+                null,
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

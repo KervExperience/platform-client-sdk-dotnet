@@ -125,6 +125,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostOutboundCampaignStop**](#PostOutboundCampaignStop) | **Post** /api/v2/outbound/campaigns/{campaignId}/stop | Stop the campaign |
 | [**PostOutboundCampaignrules**](#PostOutboundCampaignrules) | **Post** /api/v2/outbound/campaignrules | Create Campaign Rule |
 | [**PostOutboundCampaigns**](#PostOutboundCampaigns) | **Post** /api/v2/outbound/campaigns | Create a campaign. |
+| [**PostOutboundCampaignsPerformanceQuery**](#PostOutboundCampaignsPerformanceQuery) | **Post** /api/v2/outbound/campaigns/performance/query | Get performance data for a list of campaigns |
 | [**PostOutboundCampaignsProgress**](#PostOutboundCampaignsProgress) | **Post** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns |
 | [**PostOutboundContactlistClear**](#PostOutboundContactlistClear) | **Post** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled. |
 | [**PostOutboundContactlistContacts**](#PostOutboundContactlistContacts) | **Post** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list. |
@@ -5788,7 +5789,7 @@ namespace Example
 
 ## GetOutboundMessagingcampaigns
 
-> [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) GetOutboundMessagingcampaigns (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null)
+> [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) GetOutboundMessagingcampaigns (int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string contactListId = null, List<string> divisionId = null, string type = null, string senderSmsPhoneNumber = null, List<string> id = null, string contentTemplateId = null, string campaignStatus = null, List<string> ruleSetIds = null)
 
 
 Query a list of Messaging Campaigns
@@ -5833,11 +5834,12 @@ namespace Example
             var id = new List<string>(); // List<string> | A list of messaging campaign ids to bulk fetch (optional) 
             var contentTemplateId = contentTemplateId_example;  // string | Content template ID (optional) 
             var campaignStatus = campaignStatus_example;  // string | Campaign Status (optional) 
+            var ruleSetIds = new List<string>(); // List<string> | Ruleset ID(s) (optional) 
 
             try
             { 
                 // Query a list of Messaging Campaigns
-                MessagingCampaignEntityListing result = apiInstance.GetOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus);
+                MessagingCampaignEntityListing result = apiInstance.GetOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus, ruleSetIds);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5866,6 +5868,7 @@ namespace Example
 | **id** | [**List<string>**](string)| A list of messaging campaign ids to bulk fetch | [optional]  |
 | **contentTemplateId** | **string**| Content template ID | [optional]  |
 | **campaignStatus** | **string**| Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
+| **ruleSetIds** | [**List<string>**](string)| Ruleset ID(s) | [optional]  |
 
 ### Return type
 
@@ -7961,6 +7964,69 @@ namespace Example
 ### Return type
 
 [**Campaign**](Campaign)
+
+
+## PostOutboundCampaignsPerformanceQuery
+
+> [**CampaignPerformanceDataListing**](CampaignPerformanceDataListing) PostOutboundCampaignsPerformanceQuery (List<string> body)
+
+
+Get performance data for a list of campaigns
+
+Requires ANY permissions: 
+
+* outbound:performance:view
+* outbound:campaign:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostOutboundCampaignsPerformanceQueryExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new OutboundApi();
+            var body = new List<string>(); // List<string> | Campaign IDs. Maximum of 50 IDs allowed.
+
+            try
+            { 
+                // Get performance data for a list of campaigns
+                CampaignPerformanceDataListing result = apiInstance.PostOutboundCampaignsPerformanceQuery(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OutboundApi.PostOutboundCampaignsPerformanceQuery: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**List<string>**](string)| Campaign IDs. Maximum of 50 IDs allowed. |  |
+
+### Return type
+
+[**CampaignPerformanceDataListing**](CampaignPerformanceDataListing)
 
 
 ## PostOutboundCampaignsProgress
@@ -11347,4 +11413,4 @@ namespace Example
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatform.Client.V2 241.0.0_
+_PureCloudPlatform.Client.V2 250.0.0_

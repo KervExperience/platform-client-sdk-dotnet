@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **EffectivePlatform** | **string** | The effective platform for the data ingestion rule. | |
 | **Id** | **string** | The ID of the data ingestion rule. | |
+| **Name** | **string** | The name of the data ingestion rule. Only populated when expanded. | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 241.0.0_
+_PureCloudPlatform.Client.V2 250.0.0_

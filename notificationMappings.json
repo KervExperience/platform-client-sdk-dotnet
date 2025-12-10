@@ -22,7 +22,7 @@
     },
     {
       "topic": "v2.analytics.queues.{id}.activity",
-      "class": "V2QueueObservationObservationNotification"
+      "class": "V2QueueObservationObservationCountNotification"
     },
     {
       "topic": "v2.analytics.queues.{id}.observations",
@@ -81,8 +81,36 @@
       "class": "ConversationChecklistTopicAgentChecklistRuntimeEventBody"
     },
     {
+      "topic": "v2.conversations.{id}.suggestions.intent",
+      "class": "ConversationIntentSuggestionsTopicIntentSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.knowledge.article",
+      "class": "ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.knowledge.search",
+      "class": "ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.response",
+      "class": "ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.script",
+      "class": "ConversationScriptSuggestionsTopicScriptSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.thirdpartyaction",
+      "class": "ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent"
+    },
+    {
       "topic": "v2.conversations.{id}.transcription",
       "class": "TranscriptionTopicTranscriptionMessage"
+    },
+    {
+      "topic": "v2.detail.events.agent.{id}.state",
+      "class": "AgentStateEventTopicAgentStateEventNotification"
     },
     {
       "topic": "v2.detail.events.collaboratechat.adhoc.{id}.messages",
@@ -233,6 +261,10 @@
       "class": "JourneyWebEventsNotificationWebEventsNotification"
     },
     {
+      "topic": "v2.journey.views.jobs.{id}.notification",
+      "class": "JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2"
+    },
+    {
       "topic": "v2.managementunits.{id}.workforcemanagement.intraday",
       "class": "WfmIntradayDataUpdateTopicIntradayDataUpdate"
     },
@@ -321,6 +353,14 @@
       "class": "OutboundMessagingMessagingCampaignProgressEventCampaignProgress"
     },
     {
+      "topic": "v2.outbound.preview.campaigns.contact.postContact",
+      "class": "OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent"
+    },
+    {
+      "topic": "v2.outbound.preview.campaigns.contact.preContact",
+      "class": "OutboundPreviewCampaignPreContactOutboundPreviewCampaignPreContactEvent"
+    },
+    {
       "topic": "v2.outbound.responsesets.{id}",
       "class": "DialerResponsesetConfigChangeResponseSet"
     },
@@ -343,6 +383,14 @@
     {
       "topic": "v2.outbound.settings",
       "class": "DialerOutboundSettingsConfigChangeOutboundSettings"
+    },
+    {
+      "topic": "v2.outbound.voice.campaigns.contact.postContact",
+      "class": "OutboundVoiceCampaignPostContactOutboundVoiceCampaignPostContactEvent"
+    },
+    {
+      "topic": "v2.outbound.voice.campaigns.contact.preContact",
+      "class": "OutboundVoiceCampaignPreContactOutboundVoiceCampaignPreContactEvent"
     },
     {
       "topic": "v2.outbound.whatsapp.campaigns.contact.postContact",
@@ -425,6 +473,10 @@
       "class": "V2StaTopicsDetectedTopicTopicsDetectedMessage"
     },
     {
+      "topic": "v2.speechandtextanalytics.conversations.{id}.categories",
+      "class": "V2StaConversationCategoriesStaConversationCategoriesMessage"
+    },
+    {
       "topic": "v2.speechandtextanalytics.programs.general.jobs.{id}",
       "class": "CreateGeneralProgramTopicsDefinitionsJob"
     },
@@ -443,6 +495,10 @@
     {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
       "class": "PublishTopicTopicsDefinitionsJob"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.topics.testphrase.jobs.{id}",
+      "class": "TestTopicPhraseTopicsDefinitionsJob"
     },
     {
       "topic": "v2.subscription.updated",
@@ -511,22 +567,6 @@
     {
       "topic": "v2.users.{id}.alerting.alerts",
       "class": "V2MobiusAlertsTopicAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.heartbeat.alerts",
-      "class": "KlaxonHeartBeatAlertsTopicHeartBeatAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.heartbeat.rules",
-      "class": "KlaxonHeartBeatRulesTopicHeartBeatRule"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.interactionstats.alerts",
-      "class": "KlaxonInteractionStatsAlertsTopicInteractionStatAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.interactionstats.rules",
-      "class": "KlaxonInteractionStatsRulesTopicInteractionStatRule"
     },
     {
       "topic": "v2.users.{id}.alerting.rules",
@@ -627,6 +667,10 @@
     {
       "topic": "v2.users.{id}.integrationpresence",
       "class": "V2IntegrationPresenceEventPresenceActivityEvent"
+    },
+    {
+      "topic": "v2.users.{id}.integrations.calendar.teams",
+      "class": "GcuccTeamsCalendarEventsGCUCCTeamsCalendarEventV2"
     },
     {
       "topic": "v2.users.{id}.outbound.contactlists.{id}.export",

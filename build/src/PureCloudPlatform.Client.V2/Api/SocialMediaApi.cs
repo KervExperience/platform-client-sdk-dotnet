@@ -120,6 +120,34 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<Object> DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdWithHttpInfo (string topicId, string facebookIngestionRuleId, bool? hardDelete = null);
 
         /// <summary>
+        /// Delete a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns></returns>
+        
+        void DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, bool? hardDelete = null);
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        ApiResponse<Object> DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? hardDelete = null);
+
+        /// <summary>
         /// Delete a open data ingestion rule.
         /// </summary>
         /// <remarks>
@@ -283,9 +311,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>EscalationRuleResponse</returns>
         
-        EscalationRuleResponse GetSocialmediaEscalationrule (string escalationRuleId);
+        EscalationRuleResponse GetSocialmediaEscalationrule (string escalationRuleId, string expand = null);
 
         /// <summary>
         /// Get a single escalation rule.
@@ -295,9 +324,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of EscalationRuleResponse</returns>
         
-        ApiResponse<EscalationRuleResponse> GetSocialmediaEscalationruleWithHttpInfo (string escalationRuleId);
+        ApiResponse<EscalationRuleResponse> GetSocialmediaEscalationruleWithHttpInfo (string escalationRuleId, string expand = null);
 
         /// <summary>
         /// Retrieve all escalation rules for a division.
@@ -472,6 +502,96 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of FacebookDataIngestionRuleVersionResponseEntityListing</returns>
         
         ApiResponse<FacebookDataIngestionRuleVersionResponseEntityListing> GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsWithHttpInfo (string topicId, string facebookIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        InstagramDataIngestionRuleResponse GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        ApiResponse<InstagramDataIngestionRuleResponse> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>InstagramDataIngestionRuleVersionResponse</returns>
+        
+        InstagramDataIngestionRuleVersionResponse GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleVersionResponse</returns>
+        
+        ApiResponse<InstagramDataIngestionRuleVersionResponse> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionWithHttpInfo (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>InstagramDataIngestionRuleVersionResponseEntityListing</returns>
+        
+        InstagramDataIngestionRuleVersionResponseEntityListing GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleVersionResponseEntityListing</returns>
+        
+        ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsWithHttpInfo (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null);
 
         /// <summary>
         /// Get a single open data ingestion rule.
@@ -738,6 +858,34 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<FacebookDataIngestionRuleResponse> PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdWithHttpInfo (string topicId, string facebookIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null);
 
         /// <summary>
+        /// Update the status of a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        InstagramDataIngestionRuleResponse PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null);
+
+        /// <summary>
+        /// Update the status of a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        ApiResponse<InstagramDataIngestionRuleResponse> PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null);
+
+        /// <summary>
         /// Update the status of a open data ingestion rule.
         /// </summary>
         /// <remarks>
@@ -916,6 +1064,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of FacebookDataIngestionRuleResponse</returns>
         
         ApiResponse<FacebookDataIngestionRuleResponse> PostSocialmediaTopicDataingestionrulesFacebookWithHttpInfo (string topicId, FacebookDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        InstagramDataIngestionRuleResponse PostSocialmediaTopicDataingestionrulesInstagram (string topicId, InstagramDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        ApiResponse<InstagramDataIngestionRuleResponse> PostSocialmediaTopicDataingestionrulesInstagramWithHttpInfo (string topicId, InstagramDataIngestionRuleRequest body = null);
 
         /// <summary>
         /// Create an open data ingestion rule.
@@ -1128,6 +1302,34 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<FacebookDataIngestionRuleResponse> PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdWithHttpInfo (string topicId, string facebookIngestionRuleId, FacebookDataIngestionRuleRequest body = null);
 
         /// <summary>
+        /// Update the Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        InstagramDataIngestionRuleResponse PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        ApiResponse<InstagramDataIngestionRuleResponse> PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null);
+
+        /// <summary>
         /// Update the open data ingestion rule.
         /// </summary>
         /// <remarks>
@@ -1290,6 +1492,34 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse</returns>
         
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdAsyncWithHttpInfo (string topicId, string facebookIngestionRuleId, bool? hardDelete = null);
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns>Task of void</returns>
+        
+        System.Threading.Tasks.Task DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, bool? hardDelete = null);
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? hardDelete = null);
 
         /// <summary>
         /// Delete a open data ingestion rule.
@@ -1455,9 +1685,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>Task of EscalationRuleResponse</returns>
         
-        System.Threading.Tasks.Task<EscalationRuleResponse> GetSocialmediaEscalationruleAsync (string escalationRuleId);
+        System.Threading.Tasks.Task<EscalationRuleResponse> GetSocialmediaEscalationruleAsync (string escalationRuleId, string expand = null);
 
         /// <summary>
         /// Get a single escalation rule.
@@ -1467,9 +1698,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (EscalationRuleResponse)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<EscalationRuleResponse>> GetSocialmediaEscalationruleAsyncWithHttpInfo (string escalationRuleId);
+        System.Threading.Tasks.Task<ApiResponse<EscalationRuleResponse>> GetSocialmediaEscalationruleAsyncWithHttpInfo (string escalationRuleId, string expand = null);
 
         /// <summary>
         /// Retrieve all escalation rules for a division.
@@ -1644,6 +1876,96 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (FacebookDataIngestionRuleVersionResponseEntityListing)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<FacebookDataIngestionRuleVersionResponseEntityListing>> GetSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsAsyncWithHttpInfo (string topicId, string facebookIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleVersionResponse</returns>
+        
+        System.Threading.Tasks.Task<InstagramDataIngestionRuleVersionResponse> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsync (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleVersionResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleVersionResponse>> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleVersionResponseEntityListing</returns>
+        
+        System.Threading.Tasks.Task<InstagramDataIngestionRuleVersionResponseEntityListing> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsync (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null);
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleVersionResponseEntityListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null);
 
         /// <summary>
         /// Get a single open data ingestion rule.
@@ -1910,6 +2232,34 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<FacebookDataIngestionRuleResponse>> PatchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdAsyncWithHttpInfo (string topicId, string facebookIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null);
 
         /// <summary>
+        /// Update the status of a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null);
+
+        /// <summary>
+        /// Update the status of a Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null);
+
+        /// <summary>
         /// Update the status of a open data ingestion rule.
         /// </summary>
         /// <remarks>
@@ -2088,6 +2438,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (FacebookDataIngestionRuleResponse)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<FacebookDataIngestionRuleResponse>> PostSocialmediaTopicDataingestionrulesFacebookAsyncWithHttpInfo (string topicId, FacebookDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> PostSocialmediaTopicDataingestionrulesInstagramAsync (string topicId, InstagramDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> PostSocialmediaTopicDataingestionrulesInstagramAsyncWithHttpInfo (string topicId, InstagramDataIngestionRuleRequest body = null);
 
         /// <summary>
         /// Create an open data ingestion rule.
@@ -2298,6 +2674,34 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (FacebookDataIngestionRuleResponse)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<FacebookDataIngestionRuleResponse>> PutSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdAsyncWithHttpInfo (string topicId, string facebookIngestionRuleId, FacebookDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null);
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null);
 
         /// <summary>
         /// Update the open data ingestion rule.
@@ -3262,6 +3666,224 @@ namespace PureCloudPlatform.Client.V2.Api
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns></returns>
+        
+        public void DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, bool? hardDelete = null)
+        {
+             DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(topicId, instagramIngestionRuleId, hardDelete);
+        }
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        public ApiResponse<Object> DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? hardDelete = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+            if (hardDelete != null) localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns>Task of void</returns>
+        
+        public async System.Threading.Tasks.Task DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, bool? hardDelete = null)
+        {
+             await DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo(topicId, instagramIngestionRuleId, hardDelete);
+
+        }
+
+        /// <summary>
+        /// Delete a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="hardDelete">Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional, default to false)</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? hardDelete = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+            if (hardDelete != null) localVarQueryParams.Add(new Tuple<string, string>("hardDelete", this.Configuration.ApiClient.ParameterToString(hardDelete)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
@@ -4530,11 +5152,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>EscalationRuleResponse</returns>
         
-        public EscalationRuleResponse GetSocialmediaEscalationrule (string escalationRuleId)
+        public EscalationRuleResponse GetSocialmediaEscalationrule (string escalationRuleId, string expand = null)
         {
-             ApiResponse<EscalationRuleResponse> localVarResponse = GetSocialmediaEscalationruleWithHttpInfo(escalationRuleId);
+             ApiResponse<EscalationRuleResponse> localVarResponse = GetSocialmediaEscalationruleWithHttpInfo(escalationRuleId, expand);
              return localVarResponse.Data;
         }
 
@@ -4544,9 +5167,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>ApiResponse of EscalationRuleResponse</returns>
         
-        public ApiResponse< EscalationRuleResponse > GetSocialmediaEscalationruleWithHttpInfo (string escalationRuleId)
+        public ApiResponse< EscalationRuleResponse > GetSocialmediaEscalationruleWithHttpInfo (string escalationRuleId, string expand = null)
         { 
             // verify the required parameter 'escalationRuleId' is set
             if (escalationRuleId == null)
@@ -4586,6 +5210,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (escalationRuleId != null) localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
 
             // Query params
+            if (expand != null) localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
 
             // Header params
 
@@ -4629,11 +5254,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>Task of EscalationRuleResponse</returns>
         
-        public async System.Threading.Tasks.Task<EscalationRuleResponse> GetSocialmediaEscalationruleAsync (string escalationRuleId)
+        public async System.Threading.Tasks.Task<EscalationRuleResponse> GetSocialmediaEscalationruleAsync (string escalationRuleId, string expand = null)
         {
-             ApiResponse<EscalationRuleResponse> localVarResponse = await GetSocialmediaEscalationruleAsyncWithHttpInfo(escalationRuleId);
+             ApiResponse<EscalationRuleResponse> localVarResponse = await GetSocialmediaEscalationruleAsyncWithHttpInfo(escalationRuleId, expand);
              return localVarResponse.Data;
 
         }
@@ -4644,9 +5270,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="escalationRuleId">escalationRuleId</param>
+        /// <param name="expand">which fields, if any, to expand (optional)</param>
         /// <returns>Task of ApiResponse (EscalationRuleResponse)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<EscalationRuleResponse>> GetSocialmediaEscalationruleAsyncWithHttpInfo (string escalationRuleId)
+        public async System.Threading.Tasks.Task<ApiResponse<EscalationRuleResponse>> GetSocialmediaEscalationruleAsyncWithHttpInfo (string escalationRuleId, string expand = null)
         { 
             // verify the required parameter 'escalationRuleId' is set
             if (escalationRuleId == null)
@@ -4687,6 +5314,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (escalationRuleId != null) localVarPathParams.Add("escalationRuleId", this.Configuration.ApiClient.ParameterToString(escalationRuleId));
 
             // Query params
+            if (expand != null) localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
 
             // Header params
 
@@ -6043,6 +6671,691 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<FacebookDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
                 localVarHeaders,
                 (FacebookDataIngestionRuleVersionResponseEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleVersionResponseEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        public InstagramDataIngestionRuleResponse GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(topicId, instagramIngestionRuleId, includeDeleted);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        public ApiResponse< InstagramDataIngestionRuleResponse > GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+            if (includeDeleted != null) localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        public async System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = await GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo(topicId, instagramIngestionRuleId, includeDeleted);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, bool? includeDeleted = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+            if (includeDeleted != null) localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>InstagramDataIngestionRuleVersionResponse</returns>
+        
+        public InstagramDataIngestionRuleVersionResponse GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleVersionResponse> localVarResponse = GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionWithHttpInfo(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, includeDeleted);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleVersionResponse</returns>
+        
+        public ApiResponse< InstagramDataIngestionRuleVersionResponse > GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionWithHttpInfo (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion");
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion");
+            // verify the required parameter 'dataIngestionRuleVersion' is set
+            if (dataIngestionRuleVersion == null)
+                throw new ApiException(400, "Missing required parameter 'dataIngestionRuleVersion' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+            if (dataIngestionRuleVersion != null) localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+
+            // Query params
+            if (includeDeleted != null) localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleVersionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleVersionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleVersionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleVersionResponse</returns>
+        
+        public async System.Threading.Tasks.Task<InstagramDataIngestionRuleVersionResponse> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsync (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleVersionResponse> localVarResponse = await GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsyncWithHttpInfo(topicId, instagramIngestionRuleId, dataIngestionRuleVersion, includeDeleted);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a single Instagram data ingestion rule version. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="dataIngestionRuleVersion">version</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted item in the result. (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleVersionResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleVersionResponse>> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, string dataIngestionRuleVersion, bool? includeDeleted = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion");
+            
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion");
+            
+            // verify the required parameter 'dataIngestionRuleVersion' is set
+            if (dataIngestionRuleVersion == null)
+                throw new ApiException(400, "Missing required parameter 'dataIngestionRuleVersion' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+            if (dataIngestionRuleVersion != null) localVarPathParams.Add("dataIngestionRuleVersion", this.Configuration.ApiClient.ParameterToString(dataIngestionRuleVersion));
+
+            // Query params
+            if (includeDeleted != null) localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersion: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleVersionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleVersionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleVersionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>InstagramDataIngestionRuleVersionResponseEntityListing</returns>
+        
+        public InstagramDataIngestionRuleVersionResponseEntityListing GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> localVarResponse = GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsWithHttpInfo(topicId, instagramIngestionRuleId, pageNumber, pageSize, includeDeleted);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleVersionResponseEntityListing</returns>
+        
+        public ApiResponse< InstagramDataIngestionRuleVersionResponseEntityListing > GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsWithHttpInfo (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions");
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (includeDeleted != null) localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleVersionResponseEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleVersionResponseEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleVersionResponseEntityListing</returns>
+        
+        public async System.Threading.Tasks.Task<InstagramDataIngestionRuleVersionResponseEntityListing> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsync (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing> localVarResponse = await GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsyncWithHttpInfo(topicId, instagramIngestionRuleId, pageNumber, pageSize, includeDeleted);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the Instagram data ingestion rule versions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <param name="includeDeleted">Determines whether to include soft-deleted items in the result. (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleVersionResponseEntityListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>> GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersionsAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, int? pageNumber = null, int? pageSize = null, bool? includeDeleted = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions");
+            
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (includeDeleted != null) localVarQueryParams.Add(new Tuple<string, string>("includeDeleted", this.Configuration.ApiClient.ParameterToString(includeDeleted)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleVersionResponseEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleVersionResponseEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleVersionResponseEntityListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -8079,6 +9392,236 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Update the status of a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        public InstagramDataIngestionRuleResponse PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(topicId, instagramIngestionRuleId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the status of a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        public ApiResponse< InstagramDataIngestionRuleResponse > PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update the status of a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        public async System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = await PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo(topicId, instagramIngestionRuleId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update the status of a Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, DataIngestionRuleStatusPatchRequest body = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Update the status of a open data ingestion rule. 
         /// 
         /// </summary>
@@ -9592,6 +11135,223 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
                 localVarHeaders,
                 (FacebookDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        public InstagramDataIngestionRuleResponse PostSocialmediaTopicDataingestionrulesInstagram (string topicId, InstagramDataIngestionRuleRequest body = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = PostSocialmediaTopicDataingestionrulesInstagramWithHttpInfo(topicId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        public ApiResponse< InstagramDataIngestionRuleResponse > PostSocialmediaTopicDataingestionrulesInstagramWithHttpInfo (string topicId, InstagramDataIngestionRuleRequest body = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->PostSocialmediaTopicDataingestionrulesInstagram");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostSocialmediaTopicDataingestionrulesInstagram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostSocialmediaTopicDataingestionrulesInstagram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        public async System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> PostSocialmediaTopicDataingestionrulesInstagramAsync (string topicId, InstagramDataIngestionRuleRequest body = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = await PostSocialmediaTopicDataingestionrulesInstagramAsyncWithHttpInfo(topicId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create an Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> PostSocialmediaTopicDataingestionrulesInstagramAsyncWithHttpInfo (string topicId, InstagramDataIngestionRuleRequest body = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->PostSocialmediaTopicDataingestionrulesInstagram");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostSocialmediaTopicDataingestionrulesInstagram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostSocialmediaTopicDataingestionrulesInstagram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -11362,6 +13122,236 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<FacebookDataIngestionRuleResponse>(localVarStatusCode,
                 localVarHeaders,
                 (FacebookDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FacebookDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>InstagramDataIngestionRuleResponse</returns>
+        
+        public InstagramDataIngestionRuleResponse PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo(topicId, instagramIngestionRuleId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of InstagramDataIngestionRuleResponse</returns>
+        
+        public ApiResponse< InstagramDataIngestionRuleResponse > PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdWithHttpInfo (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of InstagramDataIngestionRuleResponse</returns>
+        
+        public async System.Threading.Tasks.Task<InstagramDataIngestionRuleResponse> PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsync (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null)
+        {
+             ApiResponse<InstagramDataIngestionRuleResponse> localVarResponse = await PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo(topicId, instagramIngestionRuleId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update the Instagram data ingestion rule. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="topicId">topicId</param>
+        /// <param name="instagramIngestionRuleId">instagramIngestionRuleId</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (InstagramDataIngestionRuleResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<InstagramDataIngestionRuleResponse>> PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleIdAsyncWithHttpInfo (string topicId, string instagramIngestionRuleId, InstagramDataIngestionRuleRequest body = null)
+        { 
+            // verify the required parameter 'topicId' is set
+            if (topicId == null)
+                throw new ApiException(400, "Missing required parameter 'topicId' when calling SocialMediaApi->PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+            // verify the required parameter 'instagramIngestionRuleId' is set
+            if (instagramIngestionRuleId == null)
+                throw new ApiException(400, "Missing required parameter 'instagramIngestionRuleId' when calling SocialMediaApi->PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId");
+            
+
+            var localVarPath = "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (topicId != null) localVarPathParams.Add("topicId", this.Configuration.ApiClient.ParameterToString(topicId));
+            if (instagramIngestionRuleId != null) localVarPathParams.Add("instagramIngestionRuleId", this.Configuration.ApiClient.ParameterToString(instagramIngestionRuleId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutSocialmediaTopicDataingestionrulesInstagramInstagramIngestionRuleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<InstagramDataIngestionRuleResponse>(localVarStatusCode,
+                localVarHeaders,
+                (InstagramDataIngestionRuleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstagramDataIngestionRuleResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

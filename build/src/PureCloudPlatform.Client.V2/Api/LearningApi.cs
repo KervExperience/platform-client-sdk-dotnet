@@ -369,9 +369,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>LearningModulesDomainEntityListing</returns>
+        /// <returns>LearningModuleList</returns>
         
-        LearningModulesDomainEntityListing GetLearningModules (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
+        LearningModuleList GetLearningModules (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
 
         /// <summary>
         /// Get all learning modules of an organization
@@ -391,9 +391,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>ApiResponse of LearningModulesDomainEntityListing</returns>
+        /// <returns>ApiResponse of LearningModuleList</returns>
         
-        ApiResponse<LearningModulesDomainEntityListing> GetLearningModulesWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
+        ApiResponse<LearningModuleList> GetLearningModulesWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
 
         /// <summary>
         /// Get all learning modules of an organization including assignments for a specific user
@@ -454,6 +454,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of LearningModuleCoverArtResponse</returns>
         
         ApiResponse<LearningModuleCoverArtResponse> GetLearningModulesCoverartCoverArtIdWithHttpInfo (string coverArtId);
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>LearningScheduleSlotsJobResponse</returns>
+        
+        LearningScheduleSlotsJobResponse GetLearningScheduleslotsJob (string jobId);
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of LearningScheduleSlotsJobResponse</returns>
+        
+        ApiResponse<LearningScheduleSlotsJobResponse> GetLearningScheduleslotsJobWithHttpInfo (string jobId);
 
         /// <summary>
         /// Get Learning SCORM Result
@@ -808,6 +832,32 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<LearningModulePublishResponse> PostLearningModulePublishWithHttpInfo (string moduleId, LearningModulePublishRequest body = null);
 
         /// <summary>
+        /// Migrate a legacy learning module rule to a users rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>LearningModuleMigrateResponse</returns>
+        
+        LearningModuleMigrateResponse PostLearningModuleRuleMigrate (string moduleId);
+
+        /// <summary>
+        /// Migrate a legacy learning module rule to a users rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>ApiResponse of LearningModuleMigrateResponse</returns>
+        
+        ApiResponse<LearningModuleMigrateResponse> PostLearningModuleRuleMigrateWithHttpInfo (string moduleId);
+
+        /// <summary>
         /// Create a new learning module
         /// </summary>
         /// <remarks>
@@ -858,6 +908,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of LearningAssignmentUserListing</returns>
         
         ApiResponse<LearningAssignmentUserListing> PostLearningRulesQueryWithHttpInfo (int? pageSize, int? pageNumber, LearningAssignmentUserQuery body);
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>LearningScheduleSlotsJobResponse</returns>
+        
+        LearningScheduleSlotsJobResponse PostLearningScheduleslotsJobs (LearningScheduleSlotsJobRequest body);
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>ApiResponse of LearningScheduleSlotsJobResponse</returns>
+        
+        ApiResponse<LearningScheduleSlotsJobResponse> PostLearningScheduleslotsJobsWithHttpInfo (LearningScheduleSlotsJobRequest body);
 
         /// <summary>
         /// Get list of possible slots where a learning activity can be scheduled.
@@ -968,9 +1042,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>LearningModuleRule</returns>
         
-        LearningModuleRule PutLearningModuleRule (string moduleId, LearningModuleRule body);
+        LearningModuleRule PutLearningModuleRule (string moduleId, LearningModuleRule body, bool? assign = null);
 
         /// <summary>
         /// Update a learning module rule
@@ -981,9 +1056,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>ApiResponse of LearningModuleRule</returns>
         
-        ApiResponse<LearningModuleRule> PutLearningModuleRuleWithHttpInfo (string moduleId, LearningModuleRule body);
+        ApiResponse<LearningModuleRule> PutLearningModuleRuleWithHttpInfo (string moduleId, LearningModuleRule body, bool? assign = null);
 
         #endregion Synchronous Operations
 
@@ -1343,9 +1419,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>Task of LearningModulesDomainEntityListing</returns>
+        /// <returns>Task of LearningModuleList</returns>
         
-        System.Threading.Tasks.Task<LearningModulesDomainEntityListing> GetLearningModulesAsync (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
+        System.Threading.Tasks.Task<LearningModuleList> GetLearningModulesAsync (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
 
         /// <summary>
         /// Get all learning modules of an organization
@@ -1365,9 +1441,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>Task of ApiResponse (LearningModulesDomainEntityListing)</returns>
+        /// <returns>Task of ApiResponse (LearningModuleList)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<LearningModulesDomainEntityListing>> GetLearningModulesAsyncWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
+        System.Threading.Tasks.Task<ApiResponse<LearningModuleList>> GetLearningModulesAsyncWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null);
 
         /// <summary>
         /// Get all learning modules of an organization including assignments for a specific user
@@ -1428,6 +1504,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (LearningModuleCoverArtResponse)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<LearningModuleCoverArtResponse>> GetLearningModulesCoverartCoverArtIdAsyncWithHttpInfo (string coverArtId);
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of LearningScheduleSlotsJobResponse</returns>
+        
+        System.Threading.Tasks.Task<LearningScheduleSlotsJobResponse> GetLearningScheduleslotsJobAsync (string jobId);
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (LearningScheduleSlotsJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<LearningScheduleSlotsJobResponse>> GetLearningScheduleslotsJobAsyncWithHttpInfo (string jobId);
 
         /// <summary>
         /// Get Learning SCORM Result
@@ -1782,6 +1882,32 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<LearningModulePublishResponse>> PostLearningModulePublishAsyncWithHttpInfo (string moduleId, LearningModulePublishRequest body = null);
 
         /// <summary>
+        /// Migrate a legacy learning module rule to a users rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>Task of LearningModuleMigrateResponse</returns>
+        
+        System.Threading.Tasks.Task<LearningModuleMigrateResponse> PostLearningModuleRuleMigrateAsync (string moduleId);
+
+        /// <summary>
+        /// Migrate a legacy learning module rule to a users rule.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>Task of ApiResponse (LearningModuleMigrateResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<LearningModuleMigrateResponse>> PostLearningModuleRuleMigrateAsyncWithHttpInfo (string moduleId);
+
+        /// <summary>
         /// Create a new learning module
         /// </summary>
         /// <remarks>
@@ -1832,6 +1958,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (LearningAssignmentUserListing)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<LearningAssignmentUserListing>> PostLearningRulesQueryAsyncWithHttpInfo (int? pageSize, int? pageNumber, LearningAssignmentUserQuery body);
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>Task of LearningScheduleSlotsJobResponse</returns>
+        
+        System.Threading.Tasks.Task<LearningScheduleSlotsJobResponse> PostLearningScheduleslotsJobsAsync (LearningScheduleSlotsJobRequest body);
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>Task of ApiResponse (LearningScheduleSlotsJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<LearningScheduleSlotsJobResponse>> PostLearningScheduleslotsJobsAsyncWithHttpInfo (LearningScheduleSlotsJobRequest body);
 
         /// <summary>
         /// Get list of possible slots where a learning activity can be scheduled.
@@ -1942,9 +2092,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>Task of LearningModuleRule</returns>
         
-        System.Threading.Tasks.Task<LearningModuleRule> PutLearningModuleRuleAsync (string moduleId, LearningModuleRule body);
+        System.Threading.Tasks.Task<LearningModuleRule> PutLearningModuleRuleAsync (string moduleId, LearningModuleRule body, bool? assign = null);
 
         /// <summary>
         /// Update a learning module rule
@@ -1955,9 +2106,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>Task of ApiResponse (LearningModuleRule)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<LearningModuleRule>> PutLearningModuleRuleAsyncWithHttpInfo (string moduleId, LearningModuleRule body);
+        System.Threading.Tasks.Task<ApiResponse<LearningModuleRule>> PutLearningModuleRuleAsyncWithHttpInfo (string moduleId, LearningModuleRule body, bool? assign = null);
 
         #endregion Asynchronous Operations
 
@@ -4497,11 +4649,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>LearningModulesDomainEntityListing</returns>
+        /// <returns>LearningModuleList</returns>
         
-        public LearningModulesDomainEntityListing GetLearningModules (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
+        public LearningModuleList GetLearningModules (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
         {
-             ApiResponse<LearningModulesDomainEntityListing> localVarResponse = GetLearningModulesWithHttpInfo(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
+             ApiResponse<LearningModuleList> localVarResponse = GetLearningModulesWithHttpInfo(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
              return localVarResponse.Data;
         }
 
@@ -4521,9 +4673,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>ApiResponse of LearningModulesDomainEntityListing</returns>
+        /// <returns>ApiResponse of LearningModuleList</returns>
         
-        public ApiResponse< LearningModulesDomainEntityListing > GetLearningModulesWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
+        public ApiResponse< LearningModuleList > GetLearningModulesWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
         { 
 
             var localVarPath = "/api/v2/learning/modules";
@@ -4599,9 +4751,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetLearningModules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<LearningModulesDomainEntityListing>(localVarStatusCode,
+            return new ApiResponse<LearningModuleList>(localVarStatusCode,
                 localVarHeaders,
-                (LearningModulesDomainEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulesDomainEntityListing)),
+                (LearningModuleList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleList)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -4623,11 +4775,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>Task of LearningModulesDomainEntityListing</returns>
+        /// <returns>Task of LearningModuleList</returns>
         
-        public async System.Threading.Tasks.Task<LearningModulesDomainEntityListing> GetLearningModulesAsync (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
+        public async System.Threading.Tasks.Task<LearningModuleList> GetLearningModulesAsync (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
         {
-             ApiResponse<LearningModulesDomainEntityListing> localVarResponse = await GetLearningModulesAsyncWithHttpInfo(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
+             ApiResponse<LearningModuleList> localVarResponse = await GetLearningModulesAsyncWithHttpInfo(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
              return localVarResponse.Data;
 
         }
@@ -4648,9 +4800,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="isPublished">Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)</param>
         /// <param name="statuses">Specifies the module statuses to filter by (optional)</param>
         /// <param name="externalIds">Specifies the module external IDs to filter by. Only one ID is allowed (optional)</param>
-        /// <returns>Task of ApiResponse (LearningModulesDomainEntityListing)</returns>
+        /// <returns>Task of ApiResponse (LearningModuleList)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<LearningModulesDomainEntityListing>> GetLearningModulesAsyncWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LearningModuleList>> GetLearningModulesAsyncWithHttpInfo (bool? isArchived = null, List<string> types = null, int? pageSize = null, int? pageNumber = null, string sortOrder = null, string sortBy = null, string searchTerm = null, List<string> expand = null, string isPublished = null, List<string> statuses = null, List<string> externalIds = null)
         { 
 
             var localVarPath = "/api/v2/learning/modules";
@@ -4726,9 +4878,9 @@ namespace PureCloudPlatform.Client.V2.Api
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetLearningModules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<LearningModulesDomainEntityListing>(localVarStatusCode,
+            return new ApiResponse<LearningModuleList>(localVarStatusCode,
                 localVarHeaders,
-                (LearningModulesDomainEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModulesDomainEntityListing)),
+                (LearningModuleList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleList)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -5167,6 +5319,207 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<LearningModuleCoverArtResponse>(localVarStatusCode,
                 localVarHeaders,
                 (LearningModuleCoverArtResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleCoverArtResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>LearningScheduleSlotsJobResponse</returns>
+        
+        public LearningScheduleSlotsJobResponse GetLearningScheduleslotsJob (string jobId)
+        {
+             ApiResponse<LearningScheduleSlotsJobResponse> localVarResponse = GetLearningScheduleslotsJobWithHttpInfo(jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of LearningScheduleSlotsJobResponse</returns>
+        
+        public ApiResponse< LearningScheduleSlotsJobResponse > GetLearningScheduleslotsJobWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling LearningApi->GetLearningScheduleslotsJob");
+
+            var localVarPath = "/api/v2/learning/scheduleslots/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetLearningScheduleslotsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetLearningScheduleslotsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LearningScheduleSlotsJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (LearningScheduleSlotsJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of LearningScheduleSlotsJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<LearningScheduleSlotsJobResponse> GetLearningScheduleslotsJobAsync (string jobId)
+        {
+             ApiResponse<LearningScheduleSlotsJobResponse> localVarResponse = await GetLearningScheduleslotsJobAsyncWithHttpInfo(jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve the status of the job for the slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (LearningScheduleSlotsJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<LearningScheduleSlotsJobResponse>> GetLearningScheduleslotsJobAsyncWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling LearningApi->GetLearningScheduleslotsJob");
+            
+
+            var localVarPath = "/api/v2/learning/scheduleslots/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetLearningScheduleslotsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetLearningScheduleslotsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LearningScheduleSlotsJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (LearningScheduleSlotsJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -8153,6 +8506,211 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Migrate a legacy learning module rule to a users rule. 
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>LearningModuleMigrateResponse</returns>
+        
+        public LearningModuleMigrateResponse PostLearningModuleRuleMigrate (string moduleId)
+        {
+             ApiResponse<LearningModuleMigrateResponse> localVarResponse = PostLearningModuleRuleMigrateWithHttpInfo(moduleId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Migrate a legacy learning module rule to a users rule. 
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>ApiResponse of LearningModuleMigrateResponse</returns>
+        
+        public ApiResponse< LearningModuleMigrateResponse > PostLearningModuleRuleMigrateWithHttpInfo (string moduleId)
+        { 
+            // verify the required parameter 'moduleId' is set
+            if (moduleId == null)
+                throw new ApiException(400, "Missing required parameter 'moduleId' when calling LearningApi->PostLearningModuleRuleMigrate");
+
+            var localVarPath = "/api/v2/learning/modules/{moduleId}/rule/migrate";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (moduleId != null) localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningModuleRuleMigrate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningModuleRuleMigrate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LearningModuleMigrateResponse>(localVarStatusCode,
+                localVarHeaders,
+                (LearningModuleMigrateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleMigrateResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Migrate a legacy learning module rule to a users rule. 
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>Task of LearningModuleMigrateResponse</returns>
+        
+        public async System.Threading.Tasks.Task<LearningModuleMigrateResponse> PostLearningModuleRuleMigrateAsync (string moduleId)
+        {
+             ApiResponse<LearningModuleMigrateResponse> localVarResponse = await PostLearningModuleRuleMigrateAsyncWithHttpInfo(moduleId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Migrate a legacy learning module rule to a users rule. 
+        /// 
+        /// PostLearningModuleRuleMigrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="moduleId">The ID of the learning module</param>
+        /// <returns>Task of ApiResponse (LearningModuleMigrateResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<LearningModuleMigrateResponse>> PostLearningModuleRuleMigrateAsyncWithHttpInfo (string moduleId)
+        { 
+            // verify the required parameter 'moduleId' is set
+            if (moduleId == null)
+                throw new ApiException(400, "Missing required parameter 'moduleId' when calling LearningApi->PostLearningModuleRuleMigrate");
+            
+
+            var localVarPath = "/api/v2/learning/modules/{moduleId}/rule/migrate";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (moduleId != null) localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningModuleRuleMigrate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningModuleRuleMigrate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LearningModuleMigrateResponse>(localVarStatusCode,
+                localVarHeaders,
+                (LearningModuleMigrateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningModuleMigrateResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Create a new learning module 
         /// This will create a new unpublished learning module with the specified fields.
         /// </summary>
@@ -8594,6 +9152,217 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<LearningAssignmentUserListing>(localVarStatusCode,
                 localVarHeaders,
                 (LearningAssignmentUserListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningAssignmentUserListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>LearningScheduleSlotsJobResponse</returns>
+        
+        public LearningScheduleSlotsJobResponse PostLearningScheduleslotsJobs (LearningScheduleSlotsJobRequest body)
+        {
+             ApiResponse<LearningScheduleSlotsJobResponse> localVarResponse = PostLearningScheduleslotsJobsWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>ApiResponse of LearningScheduleSlotsJobResponse</returns>
+        
+        public ApiResponse< LearningScheduleSlotsJobResponse > PostLearningScheduleslotsJobsWithHttpInfo (LearningScheduleSlotsJobRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling LearningApi->PostLearningScheduleslotsJobs");
+
+            var localVarPath = "/api/v2/learning/scheduleslots/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningScheduleslotsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningScheduleslotsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LearningScheduleSlotsJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (LearningScheduleSlotsJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>Task of LearningScheduleSlotsJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<LearningScheduleSlotsJobResponse> PostLearningScheduleslotsJobsAsync (LearningScheduleSlotsJobRequest body)
+        {
+             ApiResponse<LearningScheduleSlotsJobResponse> localVarResponse = await PostLearningScheduleslotsJobsAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Start job to retrieve slots where a learning activity can be scheduled. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The slots search request</param>
+        /// <returns>Task of ApiResponse (LearningScheduleSlotsJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<LearningScheduleSlotsJobResponse>> PostLearningScheduleslotsJobsAsyncWithHttpInfo (LearningScheduleSlotsJobRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling LearningApi->PostLearningScheduleslotsJobs");
+            
+
+            var localVarPath = "/api/v2/learning/scheduleslots/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningScheduleslotsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostLearningScheduleslotsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LearningScheduleSlotsJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (LearningScheduleSlotsJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LearningScheduleSlotsJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -9470,11 +10239,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>LearningModuleRule</returns>
         
-        public LearningModuleRule PutLearningModuleRule (string moduleId, LearningModuleRule body)
+        public LearningModuleRule PutLearningModuleRule (string moduleId, LearningModuleRule body, bool? assign = null)
         {
-             ApiResponse<LearningModuleRule> localVarResponse = PutLearningModuleRuleWithHttpInfo(moduleId, body);
+             ApiResponse<LearningModuleRule> localVarResponse = PutLearningModuleRuleWithHttpInfo(moduleId, body, assign);
              return localVarResponse.Data;
         }
 
@@ -9485,9 +10255,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>ApiResponse of LearningModuleRule</returns>
         
-        public ApiResponse< LearningModuleRule > PutLearningModuleRuleWithHttpInfo (string moduleId, LearningModuleRule body)
+        public ApiResponse< LearningModuleRule > PutLearningModuleRuleWithHttpInfo (string moduleId, LearningModuleRule body, bool? assign = null)
         { 
             // verify the required parameter 'moduleId' is set
             if (moduleId == null)
@@ -9531,6 +10302,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (moduleId != null) localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
 
             // Query params
+            if (assign != null) localVarQueryParams.Add(new Tuple<string, string>("assign", this.Configuration.ApiClient.ParameterToString(assign)));
 
             // Header params
 
@@ -9580,11 +10352,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>Task of LearningModuleRule</returns>
         
-        public async System.Threading.Tasks.Task<LearningModuleRule> PutLearningModuleRuleAsync (string moduleId, LearningModuleRule body)
+        public async System.Threading.Tasks.Task<LearningModuleRule> PutLearningModuleRuleAsync (string moduleId, LearningModuleRule body, bool? assign = null)
         {
-             ApiResponse<LearningModuleRule> localVarResponse = await PutLearningModuleRuleAsyncWithHttpInfo(moduleId, body);
+             ApiResponse<LearningModuleRule> localVarResponse = await PutLearningModuleRuleAsyncWithHttpInfo(moduleId, body, assign);
              return localVarResponse.Data;
 
         }
@@ -9596,9 +10369,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="moduleId">The ID of the learning module</param>
         /// <param name="body">The learning module rule to be updated</param>
+        /// <param name="assign">Whether to assign the module to users or not (optional, default to true)</param>
         /// <returns>Task of ApiResponse (LearningModuleRule)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<LearningModuleRule>> PutLearningModuleRuleAsyncWithHttpInfo (string moduleId, LearningModuleRule body)
+        public async System.Threading.Tasks.Task<ApiResponse<LearningModuleRule>> PutLearningModuleRuleAsyncWithHttpInfo (string moduleId, LearningModuleRule body, bool? assign = null)
         { 
             // verify the required parameter 'moduleId' is set
             if (moduleId == null)
@@ -9644,6 +10418,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (moduleId != null) localVarPathParams.Add("moduleId", this.Configuration.ApiClient.ParameterToString(moduleId));
 
             // Query params
+            if (assign != null) localVarQueryParams.Add(new Tuple<string, string>("assign", this.Configuration.ApiClient.ParameterToString(assign)));
 
             // Header params
 

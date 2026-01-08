@@ -634,6 +634,90 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<Conversation> GetConversationWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Get checklist info for a single checklist.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>AgentChecklistResponse</returns>
+        
+        AgentChecklistResponse GetConversationCommunicationAgentchecklist (string conversationId, string communicationId, string agentChecklistId);
+
+        /// <summary>
+        /// Get checklist info for a single checklist.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>ApiResponse of AgentChecklistResponse</returns>
+        
+        ApiResponse<AgentChecklistResponse> GetConversationCommunicationAgentchecklistWithHttpInfo (string conversationId, string communicationId, string agentChecklistId);
+
+        /// <summary>
+        /// Get inference job status
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>ChecklistInferenceJobResponse</returns>
+        
+        ChecklistInferenceJobResponse GetConversationCommunicationAgentchecklistJob (string conversationId, string communicationId, string agentChecklistId, string jobId);
+
+        /// <summary>
+        /// Get inference job status
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>ApiResponse of ChecklistInferenceJobResponse</returns>
+        
+        ApiResponse<ChecklistInferenceJobResponse> GetConversationCommunicationAgentchecklistJobWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, string jobId);
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>AgentChecklistResponseList</returns>
+        
+        AgentChecklistResponseList GetConversationCommunicationAgentchecklists (string conversationId, string communicationId);
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>ApiResponse of AgentChecklistResponseList</returns>
+        
+        ApiResponse<AgentChecklistResponseList> GetConversationCommunicationAgentchecklistsWithHttpInfo (string conversationId, string communicationId);
+
+        /// <summary>
         /// Get message
         /// </summary>
         /// <remarks>
@@ -4690,6 +4774,124 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<CobrowseWebMessagingSession> PostConversationCobrowseWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Agent Checklist activation API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>AgentChecklistResponse</returns>
+        
+        AgentChecklistResponse PostConversationCommunicationAgentchecklist (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body);
+
+        /// <summary>
+        /// Agent Checklist activation API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>ApiResponse of AgentChecklistResponse</returns>
+        
+        ApiResponse<AgentChecklistResponse> PostConversationCommunicationAgentchecklistWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body);
+
+        /// <summary>
+        /// API invoked to capture an agent action.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>AgentChecklistResponse</returns>
+        
+        AgentChecklistResponse PostConversationCommunicationAgentchecklistAgentaction (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body);
+
+        /// <summary>
+        /// API invoked to capture an agent action.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>ApiResponse of AgentChecklistResponse</returns>
+        
+        ApiResponse<AgentChecklistResponse> PostConversationCommunicationAgentchecklistAgentactionWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body);
+
+        /// <summary>
+        /// Create inference job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>ChecklistInferenceJobCreationResponse</returns>
+        
+        ChecklistInferenceJobCreationResponse PostConversationCommunicationAgentchecklistJobs (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body);
+
+        /// <summary>
+        /// Create inference job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>ApiResponse of ChecklistInferenceJobCreationResponse</returns>
+        
+        ApiResponse<ChecklistInferenceJobCreationResponse> PostConversationCommunicationAgentchecklistJobsWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body);
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>AgentChecklistResponseList</returns>
+        
+        AgentChecklistResponseList PostConversationCommunicationAgentchecklistsFinalize (string conversationId, string communicationId, ChecklistFinalizePayload body);
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>ApiResponse of AgentChecklistResponseList</returns>
+        
+        ApiResponse<AgentChecklistResponseList> PostConversationCommunicationAgentchecklistsFinalizeWithHttpInfo (string conversationId, string communicationId, ChecklistFinalizePayload body);
+
+        /// <summary>
         /// Send internal message
         /// </summary>
         /// <remarks>
@@ -4826,31 +5028,31 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<MessagingConferResponse> PostConversationParticipantInternalmessagesUsersCommunicationsWithHttpInfo (string conversationId, string participantId, MessagingConferWithUserRequest body);
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address
+        /// Replace this participant (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns></returns>
-        
+        [Obsolete]
         void PostConversationParticipantReplace (string conversationId, string participantId, TransferRequest body);
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address
+        /// Replace this participant (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        
+        [Obsolete]
         ApiResponse<Object> PostConversationParticipantReplaceWithHttpInfo (string conversationId, string participantId, TransferRequest body);
 
         /// <summary>
@@ -4886,7 +5088,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -4901,7 +5102,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -4912,31 +5112,31 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<Object> PostConversationParticipantReplaceContactExternalWithHttpInfo (string conversationId, string participantId, TransferToExternalContactRequest body);
 
         /// <summary>
-        /// Replace this participant with the an external contact
+        /// Replace this participant with the an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns></returns>
-        
+        [Obsolete]
         void PostConversationParticipantReplaceExternal (string conversationId, string participantId, TransferToExternalRequest body);
 
         /// <summary>
-        /// Replace this participant with the an external contact
+        /// Replace this participant with the an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        
+        [Obsolete]
         ApiResponse<Object> PostConversationParticipantReplaceExternalWithHttpInfo (string conversationId, string participantId, TransferToExternalRequest body);
 
         /// <summary>
@@ -5000,7 +5200,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -5015,7 +5214,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -5216,31 +5414,31 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<Object> PostConversationsCallParticipantCommunicationWrapupWithHttpInfo (string conversationId, string participantId, string communicationId, WrapupInput body = null);
 
         /// <summary>
-        /// Initiate and update consult transfer
+        /// Initiate and update consult transfer (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ConsultTransferResponse</returns>
-        
+        [Obsolete]
         ConsultTransferResponse PostConversationsCallParticipantConsult (string conversationId, string participantId, ConsultTransfer body);
 
         /// <summary>
-        /// Initiate and update consult transfer
+        /// Initiate and update consult transfer (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ApiResponse of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         ApiResponse<ConsultTransferResponse> PostConversationsCallParticipantConsultWithHttpInfo (string conversationId, string participantId, ConsultTransfer body);
 
         /// <summary>
@@ -5276,7 +5474,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -5291,7 +5488,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -5302,31 +5498,31 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<ConsultTransferResponse> PostConversationsCallParticipantConsultContactExternalWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternalContact body);
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact
+        /// Initiate a consult transfer to an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ConsultTransferResponse</returns>
-        
+        [Obsolete]
         ConsultTransferResponse PostConversationsCallParticipantConsultExternal (string conversationId, string participantId, ConsultTransferToExternal body);
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact
+        /// Initiate a consult transfer to an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ApiResponse of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         ApiResponse<ConsultTransferResponse> PostConversationsCallParticipantConsultExternalWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternal body);
 
         /// <summary>
@@ -5416,7 +5612,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -5431,7 +5626,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -8206,6 +8400,90 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (Conversation)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<Conversation>> GetConversationAsyncWithHttpInfo (string conversationId);
+
+        /// <summary>
+        /// Get checklist info for a single checklist.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>Task of AgentChecklistResponse</returns>
+        
+        System.Threading.Tasks.Task<AgentChecklistResponse> GetConversationCommunicationAgentchecklistAsync (string conversationId, string communicationId, string agentChecklistId);
+
+        /// <summary>
+        /// Get checklist info for a single checklist.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponse>> GetConversationCommunicationAgentchecklistAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId);
+
+        /// <summary>
+        /// Get inference job status
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>Task of ChecklistInferenceJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ChecklistInferenceJobResponse> GetConversationCommunicationAgentchecklistJobAsync (string conversationId, string communicationId, string agentChecklistId, string jobId);
+
+        /// <summary>
+        /// Get inference job status
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>Task of ApiResponse (ChecklistInferenceJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ChecklistInferenceJobResponse>> GetConversationCommunicationAgentchecklistJobAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, string jobId);
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>Task of AgentChecklistResponseList</returns>
+        
+        System.Threading.Tasks.Task<AgentChecklistResponseList> GetConversationCommunicationAgentchecklistsAsync (string conversationId, string communicationId);
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponseList)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponseList>> GetConversationCommunicationAgentchecklistsAsyncWithHttpInfo (string conversationId, string communicationId);
 
         /// <summary>
         /// Get message
@@ -12264,6 +12542,124 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<CobrowseWebMessagingSession>> PostConversationCobrowseAsyncWithHttpInfo (string conversationId);
 
         /// <summary>
+        /// Agent Checklist activation API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>Task of AgentChecklistResponse</returns>
+        
+        System.Threading.Tasks.Task<AgentChecklistResponse> PostConversationCommunicationAgentchecklistAsync (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body);
+
+        /// <summary>
+        /// Agent Checklist activation API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponse>> PostConversationCommunicationAgentchecklistAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body);
+
+        /// <summary>
+        /// API invoked to capture an agent action.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>Task of AgentChecklistResponse</returns>
+        
+        System.Threading.Tasks.Task<AgentChecklistResponse> PostConversationCommunicationAgentchecklistAgentactionAsync (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body);
+
+        /// <summary>
+        /// API invoked to capture an agent action.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponse>> PostConversationCommunicationAgentchecklistAgentactionAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body);
+
+        /// <summary>
+        /// Create inference job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>Task of ChecklistInferenceJobCreationResponse</returns>
+        
+        System.Threading.Tasks.Task<ChecklistInferenceJobCreationResponse> PostConversationCommunicationAgentchecklistJobsAsync (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body);
+
+        /// <summary>
+        /// Create inference job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>Task of ApiResponse (ChecklistInferenceJobCreationResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ChecklistInferenceJobCreationResponse>> PostConversationCommunicationAgentchecklistJobsAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body);
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>Task of AgentChecklistResponseList</returns>
+        
+        System.Threading.Tasks.Task<AgentChecklistResponseList> PostConversationCommunicationAgentchecklistsFinalizeAsync (string conversationId, string communicationId, ChecklistFinalizePayload body);
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponseList)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponseList>> PostConversationCommunicationAgentchecklistsFinalizeAsyncWithHttpInfo (string conversationId, string communicationId, ChecklistFinalizePayload body);
+
+        /// <summary>
         /// Send internal message
         /// </summary>
         /// <remarks>
@@ -12400,31 +12796,31 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<MessagingConferResponse>> PostConversationParticipantInternalmessagesUsersCommunicationsAsyncWithHttpInfo (string conversationId, string participantId, MessagingConferWithUserRequest body);
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address
+        /// Replace this participant (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of void</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task PostConversationParticipantReplaceAsync (string conversationId, string participantId, TransferRequest body);
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address
+        /// Replace this participant (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of ApiResponse</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceAsyncWithHttpInfo (string conversationId, string participantId, TransferRequest body);
 
         /// <summary>
@@ -12460,7 +12856,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -12475,7 +12870,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -12486,31 +12880,31 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceContactExternalAsyncWithHttpInfo (string conversationId, string participantId, TransferToExternalContactRequest body);
 
         /// <summary>
-        /// Replace this participant with the an external contact
+        /// Replace this participant with the an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of void</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task PostConversationParticipantReplaceExternalAsync (string conversationId, string participantId, TransferToExternalRequest body);
 
         /// <summary>
-        /// Replace this participant with the an external contact
+        /// Replace this participant with the an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of ApiResponse</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceExternalAsyncWithHttpInfo (string conversationId, string participantId, TransferToExternalRequest body);
 
         /// <summary>
@@ -12574,7 +12968,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -12589,7 +12982,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -12790,31 +13182,31 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationsCallParticipantCommunicationWrapupAsyncWithHttpInfo (string conversationId, string participantId, string communicationId, WrapupInput body = null);
 
         /// <summary>
-        /// Initiate and update consult transfer
+        /// Initiate and update consult transfer (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantConsultAsync (string conversationId, string participantId, ConsultTransfer body);
 
         /// <summary>
-        /// Initiate and update consult transfer
+        /// Initiate and update consult transfer (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransfer body);
 
         /// <summary>
@@ -12850,7 +13242,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -12865,7 +13256,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -12876,31 +13266,31 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultContactExternalAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternalContact body);
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact
+        /// Initiate a consult transfer to an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantConsultExternalAsync (string conversationId, string participantId, ConsultTransferToExternal body);
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact
+        /// Initiate a consult transfer to an external contact (Deprecated)
         /// </summary>
         /// <remarks>
-        /// 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
-        
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultExternalAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternal body);
 
         /// <summary>
@@ -12990,7 +13380,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -13005,7 +13394,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -20300,6 +20688,687 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<Conversation>(localVarStatusCode,
                 localVarHeaders,
                 (Conversation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Conversation)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get checklist info for a single checklist. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>AgentChecklistResponse</returns>
+        
+        public AgentChecklistResponse GetConversationCommunicationAgentchecklist (string conversationId, string communicationId, string agentChecklistId)
+        {
+             ApiResponse<AgentChecklistResponse> localVarResponse = GetConversationCommunicationAgentchecklistWithHttpInfo(conversationId, communicationId, agentChecklistId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get checklist info for a single checklist. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>ApiResponse of AgentChecklistResponse</returns>
+        
+        public ApiResponse< AgentChecklistResponse > GetConversationCommunicationAgentchecklistWithHttpInfo (string conversationId, string communicationId, string agentChecklistId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklist");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklist");
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->GetConversationCommunicationAgentchecklist");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklist: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklist: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponse>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get checklist info for a single checklist. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>Task of AgentChecklistResponse</returns>
+        
+        public async System.Threading.Tasks.Task<AgentChecklistResponse> GetConversationCommunicationAgentchecklistAsync (string conversationId, string communicationId, string agentChecklistId)
+        {
+             ApiResponse<AgentChecklistResponse> localVarResponse = await GetConversationCommunicationAgentchecklistAsyncWithHttpInfo(conversationId, communicationId, agentChecklistId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get checklist info for a single checklist. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponse>> GetConversationCommunicationAgentchecklistAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklist");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklist");
+            
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->GetConversationCommunicationAgentchecklist");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklist: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklist: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponse>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get inference job status 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>ChecklistInferenceJobResponse</returns>
+        
+        public ChecklistInferenceJobResponse GetConversationCommunicationAgentchecklistJob (string conversationId, string communicationId, string agentChecklistId, string jobId)
+        {
+             ApiResponse<ChecklistInferenceJobResponse> localVarResponse = GetConversationCommunicationAgentchecklistJobWithHttpInfo(conversationId, communicationId, agentChecklistId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get inference job status 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>ApiResponse of ChecklistInferenceJobResponse</returns>
+        
+        public ApiResponse< ChecklistInferenceJobResponse > GetConversationCommunicationAgentchecklistJobWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, string jobId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklistJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklistJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ChecklistInferenceJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ChecklistInferenceJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChecklistInferenceJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get inference job status 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>Task of ChecklistInferenceJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ChecklistInferenceJobResponse> GetConversationCommunicationAgentchecklistJobAsync (string conversationId, string communicationId, string agentChecklistId, string jobId)
+        {
+             ApiResponse<ChecklistInferenceJobResponse> localVarResponse = await GetConversationCommunicationAgentchecklistJobAsyncWithHttpInfo(conversationId, communicationId, agentChecklistId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get inference job status 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="jobId">Inference Job ID</param>
+        /// <returns>Task of ApiResponse (ChecklistInferenceJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ChecklistInferenceJobResponse>> GetConversationCommunicationAgentchecklistJobAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, string jobId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling ConversationsApi->GetConversationCommunicationAgentchecklistJob");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklistJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklistJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ChecklistInferenceJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ChecklistInferenceJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChecklistInferenceJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>AgentChecklistResponseList</returns>
+        
+        public AgentChecklistResponseList GetConversationCommunicationAgentchecklists (string conversationId, string communicationId)
+        {
+             ApiResponse<AgentChecklistResponseList> localVarResponse = GetConversationCommunicationAgentchecklistsWithHttpInfo(conversationId, communicationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>ApiResponse of AgentChecklistResponseList</returns>
+        
+        public ApiResponse< AgentChecklistResponseList > GetConversationCommunicationAgentchecklistsWithHttpInfo (string conversationId, string communicationId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklists");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklists");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklists: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklists: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponseList>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponseList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponseList)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>Task of AgentChecklistResponseList</returns>
+        
+        public async System.Threading.Tasks.Task<AgentChecklistResponseList> GetConversationCommunicationAgentchecklistsAsync (string conversationId, string communicationId)
+        {
+             ApiResponse<AgentChecklistResponseList> localVarResponse = await GetConversationCommunicationAgentchecklistsAsyncWithHttpInfo(conversationId, communicationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get information of all checklists associated with a conversation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponseList)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponseList>> GetConversationCommunicationAgentchecklistsAsyncWithHttpInfo (string conversationId, string communicationId)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklists");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->GetConversationCommunicationAgentchecklists");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklists: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetConversationCommunicationAgentchecklists: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponseList>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponseList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponseList)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -53363,6 +54432,993 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Agent Checklist activation API 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>AgentChecklistResponse</returns>
+        
+        public AgentChecklistResponse PostConversationCommunicationAgentchecklist (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body)
+        {
+             ApiResponse<AgentChecklistResponse> localVarResponse = PostConversationCommunicationAgentchecklistWithHttpInfo(conversationId, communicationId, agentChecklistId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Agent Checklist activation API 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>ApiResponse of AgentChecklistResponse</returns>
+        
+        public ApiResponse< AgentChecklistResponse > PostConversationCommunicationAgentchecklistWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklist: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklist: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponse>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Agent Checklist activation API 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>Task of AgentChecklistResponse</returns>
+        
+        public async System.Threading.Tasks.Task<AgentChecklistResponse> PostConversationCommunicationAgentchecklistAsync (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body)
+        {
+             ApiResponse<AgentChecklistResponse> localVarResponse = await PostConversationCommunicationAgentchecklistAsyncWithHttpInfo(conversationId, communicationId, agentChecklistId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Agent Checklist activation API 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist activation payload</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponse>> PostConversationCommunicationAgentchecklistAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistActivationPayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklist");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklist: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklist: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponse>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// API invoked to capture an agent action. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>AgentChecklistResponse</returns>
+        
+        public AgentChecklistResponse PostConversationCommunicationAgentchecklistAgentaction (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body)
+        {
+             ApiResponse<AgentChecklistResponse> localVarResponse = PostConversationCommunicationAgentchecklistAgentactionWithHttpInfo(conversationId, communicationId, agentChecklistId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// API invoked to capture an agent action. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>ApiResponse of AgentChecklistResponse</returns>
+        
+        public ApiResponse< AgentChecklistResponse > PostConversationCommunicationAgentchecklistAgentactionWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistAgentaction: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistAgentaction: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponse>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// API invoked to capture an agent action. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>Task of AgentChecklistResponse</returns>
+        
+        public async System.Threading.Tasks.Task<AgentChecklistResponse> PostConversationCommunicationAgentchecklistAgentactionAsync (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body)
+        {
+             ApiResponse<AgentChecklistResponse> localVarResponse = await PostConversationCommunicationAgentchecklistAgentactionAsyncWithHttpInfo(conversationId, communicationId, agentChecklistId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// API invoked to capture an agent action. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent action payload</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponse>> PostConversationCommunicationAgentchecklistAgentactionAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, AgentActionPayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklistAgentaction");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistAgentaction: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistAgentaction: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponse>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create inference job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>ChecklistInferenceJobCreationResponse</returns>
+        
+        public ChecklistInferenceJobCreationResponse PostConversationCommunicationAgentchecklistJobs (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body)
+        {
+             ApiResponse<ChecklistInferenceJobCreationResponse> localVarResponse = PostConversationCommunicationAgentchecklistJobsWithHttpInfo(conversationId, communicationId, agentChecklistId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create inference job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>ApiResponse of ChecklistInferenceJobCreationResponse</returns>
+        
+        public ApiResponse< ChecklistInferenceJobCreationResponse > PostConversationCommunicationAgentchecklistJobsWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ChecklistInferenceJobCreationResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ChecklistInferenceJobCreationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChecklistInferenceJobCreationResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create inference job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>Task of ChecklistInferenceJobCreationResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ChecklistInferenceJobCreationResponse> PostConversationCommunicationAgentchecklistJobsAsync (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body)
+        {
+             ApiResponse<ChecklistInferenceJobCreationResponse> localVarResponse = await PostConversationCommunicationAgentchecklistJobsAsyncWithHttpInfo(conversationId, communicationId, agentChecklistId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create inference job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="agentChecklistId">Agent Checklist ID</param>
+        /// <param name="body">Agent checklist inference job payload</param>
+        /// <returns>Task of ApiResponse (ChecklistInferenceJobCreationResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ChecklistInferenceJobCreationResponse>> PostConversationCommunicationAgentchecklistJobsAsyncWithHttpInfo (string conversationId, string communicationId, string agentChecklistId, ChecklistInferenceJobPayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            
+            // verify the required parameter 'agentChecklistId' is set
+            if (agentChecklistId == null)
+                throw new ApiException(400, "Missing required parameter 'agentChecklistId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklistJobs");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+            if (agentChecklistId != null) localVarPathParams.Add("agentChecklistId", this.Configuration.ApiClient.ParameterToString(agentChecklistId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ChecklistInferenceJobCreationResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ChecklistInferenceJobCreationResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChecklistInferenceJobCreationResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>AgentChecklistResponseList</returns>
+        
+        public AgentChecklistResponseList PostConversationCommunicationAgentchecklistsFinalize (string conversationId, string communicationId, ChecklistFinalizePayload body)
+        {
+             ApiResponse<AgentChecklistResponseList> localVarResponse = PostConversationCommunicationAgentchecklistsFinalizeWithHttpInfo(conversationId, communicationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>ApiResponse of AgentChecklistResponseList</returns>
+        
+        public ApiResponse< AgentChecklistResponseList > PostConversationCommunicationAgentchecklistsFinalizeWithHttpInfo (string conversationId, string communicationId, ChecklistFinalizePayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistsFinalize");
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistsFinalize");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklistsFinalize");
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistsFinalize: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistsFinalize: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponseList>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponseList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponseList)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>Task of AgentChecklistResponseList</returns>
+        
+        public async System.Threading.Tasks.Task<AgentChecklistResponseList> PostConversationCommunicationAgentchecklistsFinalizeAsync (string conversationId, string communicationId, ChecklistFinalizePayload body)
+        {
+             ApiResponse<AgentChecklistResponseList> localVarResponse = await PostConversationCommunicationAgentchecklistsFinalizeAsyncWithHttpInfo(conversationId, communicationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// API invoked to finalize agent checklist evaluation. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="conversationId">Conversation ID</param>
+        /// <param name="communicationId">Communication ID</param>
+        /// <param name="body">Agent checklist finalize payload</param>
+        /// <returns>Task of ApiResponse (AgentChecklistResponseList)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<AgentChecklistResponseList>> PostConversationCommunicationAgentchecklistsFinalizeAsyncWithHttpInfo (string conversationId, string communicationId, ChecklistFinalizePayload body)
+        { 
+            // verify the required parameter 'conversationId' is set
+            if (conversationId == null)
+                throw new ApiException(400, "Missing required parameter 'conversationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistsFinalize");
+            
+            // verify the required parameter 'communicationId' is set
+            if (communicationId == null)
+                throw new ApiException(400, "Missing required parameter 'communicationId' when calling ConversationsApi->PostConversationCommunicationAgentchecklistsFinalize");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ConversationsApi->PostConversationCommunicationAgentchecklistsFinalize");
+            
+
+            var localVarPath = "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (conversationId != null) localVarPathParams.Add("conversationId", this.Configuration.ApiClient.ParameterToString(conversationId));
+            if (communicationId != null) localVarPathParams.Add("communicationId", this.Configuration.ApiClient.ParameterToString(communicationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistsFinalize: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostConversationCommunicationAgentchecklistsFinalize: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<AgentChecklistResponseList>(localVarStatusCode,
+                localVarHeaders,
+                (AgentChecklistResponseList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AgentChecklistResponseList)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Send internal message 
         /// Send a new internal message for an existing communication.
         /// </summary>
@@ -54494,30 +56550,30 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address 
-        /// 
+        /// Replace this participant (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns></returns>
-        
+        [Obsolete]
         public void PostConversationParticipantReplace (string conversationId, string participantId, TransferRequest body)
         {
              PostConversationParticipantReplaceWithHttpInfo(conversationId, participantId, body);
         }
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address 
-        /// 
+        /// Replace this participant (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        
+        [Obsolete]
         public ApiResponse<Object> PostConversationParticipantReplaceWithHttpInfo (string conversationId, string participantId, TransferRequest body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -54609,15 +56665,15 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address 
-        /// 
+        /// Replace this participant (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of void</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task PostConversationParticipantReplaceAsync (string conversationId, string participantId, TransferRequest body)
         {
              await PostConversationParticipantReplaceAsyncWithHttpInfo(conversationId, participantId, body);
@@ -54625,15 +56681,15 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Replace this participant with the specified user and/or address 
-        /// 
+        /// Replace this participant (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of ApiResponse</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceAsyncWithHttpInfo (string conversationId, string participantId, TransferRequest body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -54966,7 +57022,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant with the an external contact 
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -54982,7 +57037,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant with the an external contact 
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -55083,7 +57137,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant with the an external contact 
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -55100,7 +57153,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant with the an external contact 
         /// 
-        /// PostConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -55203,30 +57255,30 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Replace this participant with the an external contact 
-        /// 
+        /// Replace this participant with the an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns></returns>
-        
+        [Obsolete]
         public void PostConversationParticipantReplaceExternal (string conversationId, string participantId, TransferToExternalRequest body)
         {
              PostConversationParticipantReplaceExternalWithHttpInfo(conversationId, participantId, body);
         }
 
         /// <summary>
-        /// Replace this participant with the an external contact 
-        /// 
+        /// Replace this participant with the an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        
+        [Obsolete]
         public ApiResponse<Object> PostConversationParticipantReplaceExternalWithHttpInfo (string conversationId, string participantId, TransferToExternalRequest body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -55318,15 +57370,15 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Replace this participant with the an external contact 
-        /// 
+        /// Replace this participant with the an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of void</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task PostConversationParticipantReplaceExternalAsync (string conversationId, string participantId, TransferToExternalRequest body)
         {
              await PostConversationParticipantReplaceExternalAsyncWithHttpInfo(conversationId, participantId, body);
@@ -55334,15 +57386,15 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Replace this participant with the an external contact 
-        /// 
+        /// Replace this participant with the an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /replace/contact/external endpoint instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
         /// <param name="participantId">participant ID</param>
         /// <param name="body">Transfer request</param>
         /// <returns>Task of ApiResponse</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<Object>> PostConversationParticipantReplaceExternalAsyncWithHttpInfo (string conversationId, string participantId, TransferToExternalRequest body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -55905,7 +57957,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant by another one using the address of the destination. 
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -55921,7 +57972,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant by another one using the address of the destination. 
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -56022,7 +58072,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant by another one using the address of the destination. 
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -56039,7 +58088,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Replace this participant by another one using the address of the destination. 
         /// 
-        /// PostConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversation ID</param>
@@ -57718,15 +59766,15 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Initiate and update consult transfer 
-        /// 
+        /// Initiate and update consult transfer (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ConsultTransferResponse</returns>
-        
+        [Obsolete]
         public ConsultTransferResponse PostConversationsCallParticipantConsult (string conversationId, string participantId, ConsultTransfer body)
         {
              ApiResponse<ConsultTransferResponse> localVarResponse = PostConversationsCallParticipantConsultWithHttpInfo(conversationId, participantId, body);
@@ -57734,15 +59782,15 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Initiate and update consult transfer 
-        /// 
+        /// Initiate and update consult transfer (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ApiResponse of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         public ApiResponse< ConsultTransferResponse > PostConversationsCallParticipantConsultWithHttpInfo (string conversationId, string participantId, ConsultTransfer body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -57834,15 +59882,15 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Initiate and update consult transfer 
-        /// 
+        /// Initiate and update consult transfer (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantConsultAsync (string conversationId, string participantId, ConsultTransfer body)
         {
              ApiResponse<ConsultTransferResponse> localVarResponse = await PostConversationsCallParticipantConsultAsyncWithHttpInfo(conversationId, participantId, body);
@@ -57851,15 +59899,15 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Initiate and update consult transfer 
-        /// 
+        /// Initiate and update consult transfer (Deprecated) 
+        /// This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransfer body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -58194,7 +60242,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate a consult transfer to an external contact 
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -58211,7 +60258,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate a consult transfer to an external contact 
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -58312,7 +60358,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate a consult transfer to an external contact 
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -58330,7 +60375,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate a consult transfer to an external contact 
         /// 
-        /// PostConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -58433,15 +60477,15 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact 
-        /// 
+        /// Initiate a consult transfer to an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ConsultTransferResponse</returns>
-        
+        [Obsolete]
         public ConsultTransferResponse PostConversationsCallParticipantConsultExternal (string conversationId, string participantId, ConsultTransferToExternal body)
         {
              ApiResponse<ConsultTransferResponse> localVarResponse = PostConversationsCallParticipantConsultExternalWithHttpInfo(conversationId, participantId, body);
@@ -58449,15 +60493,15 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact 
-        /// 
+        /// Initiate a consult transfer to an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>ApiResponse of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         public ApiResponse< ConsultTransferResponse > PostConversationsCallParticipantConsultExternalWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternal body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -58549,15 +60593,15 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact 
-        /// 
+        /// Initiate a consult transfer to an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ConsultTransferResponse</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task<ConsultTransferResponse> PostConversationsCallParticipantConsultExternalAsync (string conversationId, string participantId, ConsultTransferToExternal body)
         {
              ApiResponse<ConsultTransferResponse> localVarResponse = await PostConversationsCallParticipantConsultExternalAsyncWithHttpInfo(conversationId, participantId, body);
@@ -58566,15 +60610,15 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Initiate a consult transfer to an external contact 
-        /// 
+        /// Initiate a consult transfer to an external contact (Deprecated) 
+        /// This endpoint is deprecated. Use /consult/contact/external endpoints instead.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="participantId">participantId</param>
         /// <param name="body">Destination address &amp; initial speak to</param>
         /// <returns>Task of ApiResponse (ConsultTransferResponse)</returns>
-        
+        [Obsolete]
         public async System.Threading.Tasks.Task<ApiResponse<ConsultTransferResponse>> PostConversationsCallParticipantConsultExternalAsyncWithHttpInfo (string conversationId, string participantId, ConsultTransferToExternal body)
         { 
             // verify the required parameter 'conversationId' is set
@@ -59356,7 +61400,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate voice consult transfer 
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -59373,7 +61416,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate voice consult transfer 
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -59474,7 +61516,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate voice consult transfer 
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
@@ -59492,7 +61533,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Initiate voice consult transfer 
         /// 
-        /// PostConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>

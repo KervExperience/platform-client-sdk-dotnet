@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCloudPlatform.Client.V2", "src\PureCloudPlatform.Client.V2\PureCloudPlatform.Client.V2.csproj", "{7A09F5D8-9725-45F0-AD17-23AC40F568AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCloudPlatform.Client.V2", "src\PureCloudPlatform.Client.V2\PureCloudPlatform.Client.V2.csproj", "{4D6CCF29-A9F6-4AC0-B2EA-E67D9B9721A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerTester", "LoggerTester\LoggerTester.csproj", "{E29F69C1-C154-48CC-9161-59DD196D5DEF}"
 EndProject

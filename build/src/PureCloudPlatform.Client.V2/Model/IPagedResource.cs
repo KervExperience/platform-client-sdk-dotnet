@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using PureCloudPlatform.Client.V2.Model;
-using WebSocketSharp;
 
 namespace PureCloudPlatform.Client.V2.Model
 {

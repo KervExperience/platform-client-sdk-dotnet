@@ -5,7 +5,6 @@ using PureCloudPlatform.Client.V2.Api;
 using PureCloudPlatform.Client.V2.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using WebSocketSharp;
 
 namespace PureCloudPlatform.Client.V2.Extensions.Notifications
 {
@@ -20,7 +19,7 @@ namespace PureCloudPlatform.Client.V2.Extensions.Notifications
         /// <summary>
         /// The WebSocket object used to receive notifications
         /// </summary>
-        public WebSocket WebSocket { get; private set; }
+        public WebSocketWrapper WebSocket { get; private set; }
 
         /// <summary>
         /// The notification channel object
@@ -136,7 +135,7 @@ namespace PureCloudPlatform.Client.V2.Extensions.Notifications
                     string.Compare(data.TopicName, socketClosingTopic) == 0)
                 {
                     WebSocket.Close();
-                    WebSocket.Connect();
+                    WebSocket.Connect(Channel.ConnectUri);
                 }
             };
         }
@@ -215,9 +214,10 @@ namespace PureCloudPlatform.Client.V2.Extensions.Notifications
 
         private void ConnectSocket(string uri, string proxyURI = null, string proxyUsername = null, string proxyPassword = null)
         {
-            WebSocket = new WebSocket(uri);
-            WebSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
-            WebSocket.OnMessage += (sender, e) =>
+            WebSocket = new WebSocketWrapper();
+            WebSocket.SetSslProtocol(System.Security.Authentication.SslProtocols.Tls12);
+            
+            WebSocket.MessageReceived += (sender, e) =>
             {
                 try
                 {
@@ -245,7 +245,7 @@ namespace PureCloudPlatform.Client.V2.Extensions.Notifications
                 WebSocket.SetProxy(proxyURI, proxyUsername, proxyPassword);
             }
 
-            WebSocket.Connect();
+            WebSocket.Connect(uri);
         }
 
         /// <summary>
@@ -258,6 +258,7 @@ namespace PureCloudPlatform.Client.V2.Extensions.Notifications
                 RemoveAllSubscriptions();
                 if (WebSocket != null && WebSocket.IsAlive)
                     WebSocket.Close();
+                WebSocket?.Dispose();
             }
             catch (Exception ex)
             {

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using PureCloudPlatform.Client.V2.Model;
-using WebSocketSharp;
 
 namespace PureCloudPlatform.Client.V2.Extensions.Notifications
 {
@@ -13,7 +12,7 @@ namespace PureCloudPlatform.Client.V2.Extensions.Notifications
         /// <summary>
         /// The WebSocket object used to receive notifications
         /// </summary>
-        WebSocket WebSocket { get; }
+        WebSocketWrapper WebSocket { get; }
 
         /// <summary>
         /// The notification channel object

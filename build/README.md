@@ -1,692 +1,405 @@
-Platform API Client SDK - .NET
+# Kerv Genesys SDK Fork
+This is a fork of the Genesys PureCloud Platform .NET SDK, maintained by Kerv. It was forked to improve the code quality, modernize the logging framework, and update the SDK to support .NET 8. The fork includes significant changes to enhance maintainability, usability, and performance.
+These changes are not intended to be merged back into the original Genesys repository. They are specific to Kerv's use cases and requirements. The master branch of this fork remains aligned with the upstream Genesys SDK, while the logging-updates branch contains the custom improvements.
+These branches will continue to diverge as Kerv implements further enhancements and customizations to meet their needs but the master branch will track upstream changes from Genesys and be used to merge those changes into the logging-updates branch as needed.
+The following details the changes from the master branch to the logging-updates branch.
 
-[![NuGet Badge](https://img.shields.io/nuget/v/PureCloudPlatform.Client.V2)](https://www.nuget.org/packages/PureCloudPlatform.Client.V2/)
-[![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-dotnet/blob/master/releaseNotes.md)
+# Branch Comparison Summary: logging-updates vs master
 
-Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-dotnet/
+**Repository:** platform-client-sdk-dotnet  
+**Branch:** logging-updates  
+**Comparison Base:** master  
+**Date:** January 2026  
 
-Documentation version PureCloudPlatform.Client.V2 254.0.0
+---
 
-## Install Using nuget
+## Executive Summary
 
-```bash
-install-package PureCloudPlatform.Client.V2
-```
+The `logging-updates` branch contains significant improvements and modernization efforts for the PureCloud Platform .NET SDK. The changes include a major logging framework refactor, .NET 8 migration, WebSocket implementation updates, and various code quality improvements. This branch represents approximately **23 commits** diverging from the master branch, with changes spanning from May 2025 to January 2026.
 
-Package info can be found at [https://www.nuget.org/packages/PureCloudPlatform.Client.V2/](https://www.nuget.org/packages/PureCloudPlatform.Client.V2/)
+---
 
-## Using the Library
+## Major Changes Overview
 
-**Warning:** This library is generated using the Genesys Cloud public API swagger definition. Function parameter ordering can change without notice and cause breaking changes. To avoid this, it is recommended to use [named arguments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments#named-arguments) when making API requests.
+### 1. **Logging Framework Modernization** ? Primary Focus
 
-## Preview APIs
+#### Microsoft.Extensions.Logging Integration
+- **Commit:** `2ca612f` (September 30, 2025)
+- **Impact:** Major architectural change
 
-**Warning:** Preview APIs are included in this SDK. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview APIs see [here](https://developer.genesys.cloud/platform/preview-apis)
+**What Changed:**
+- Replaced custom logging sink architecture with Microsoft.Extensions.Logging framework
+- Removed 5 custom sink classes (~427 lines of code):
+  - `BatchingLogSink.cs` (126 lines)
+  - `ConsoleLogSink.cs` (23 lines)
+  - `DbLogSink.cs` (218 lines)
+  - `FileLogSink.cs` (42 lines)
+  - `ILogSink.cs` (18 lines)
+- Refactored `Logger.cs` from 713 lines to simplified implementation
+- Added `SetExternalLogger(ILogger logger)` method for pluggable logging
+- Updated `LoggerTester` project to demonstrate integration
 
-### Referencing the Library
+**Benefits:**
+- Standard logging interface familiar to .NET developers
+- Better integration with modern .NET applications
+- Simplified maintenance and reduced custom code
+- Flexibility to use any Microsoft.Extensions.Logging-compatible logger
 
-If you've used the [Package Manager Console](https://docs.nuget.org/consume/package-manager-console) to install the package, there are no additional steps.
+**Package Dependencies Added:**
+- `Microsoft.Extensions.Logging`
+- `Microsoft.Extensions.Logging.Console`
 
-If you're building from source or otherwise not using nuget, reference your version of PureCloudPlatform.Client.V2.dll in your project and add references or install packages for [RestSharp](http://www.nuget.org/packages/RestSharp/) and [JSON.NET](http://www.nuget.org/packages/Newtonsoft.Json/).
+---
 
-### Authenticating
+### 2. **Logger Refactoring & Simplification**
 
-#### Implicit Grant
+#### Commit History:
+- `134001a` (October 1, 2025): "Refactor Logger and Simplify Log Level Handling"
+- `1855b5b` (September 19, 2025): "Refactor Logger with Pluggable Sink Architecture"
+- `f68d7ad` (October 1, 2025): "Refactor logging and improve code formatting"
 
-**Use when...** 
+**Key Improvements:**
+- Simplified log level enumeration:
+  - `LogLevel.LTrace` - Full tracing (Method, URL, Request Body, Status, Headers)
+  - `LogLevel.LDebug` - Debug info (Method, URL, Request Body, Status, Request Headers)
+  - `LogLevel.LError` - Error tracking (includes Response Body)
+  - `LogLevel.LNone` - Logging disabled (default)
+- Enhanced log format options (JSON and Text)
+- Improved security: Authorization headers automatically redacted
+- Better control over PII logging (request/response bodies optional)
 
-* The app is authenticating as a human
-* The app is running locally on the user's computer
-* The app has an embedded browser to use for OAuth
-
-If the application will be authenticating as a human, the [Implicit Grant](https://developer.genesys.cloud/authorization/platform-auth/use-implicit-grant) OAuth 2 flow may be used from an embeddable browser. The access token can be retrieved from the querystring of the redirected URL in the browser control. This process is packaged by the [GenesysCloudOAuthWebView](https://github.com/MyPureCloud/oauth-webview-dotnet) project.
-
-See the browser control implemented in a winforms project in the [OAuth With Implicit Grant Login Flow](https://developer.genesys.cloud/authorization/platform-auth/guides/oauth-implicit-guide) tutorial.
-
-#### Authorization Code Grant
-
-**Use when...**
-
-* The app is authenticating as a human
-* The app is served via a web server, such as IIS
-* There is server-side code that will be making API requests
-
-The [Authorization Code Grant](https://developer.genesys.cloud/authorization/platform-auth/use-authorization-code) will return the auth code in the querystring to allow the server-side code to make the request to get an access token with the auth code, and prevent the access token from being known by the client-side. The process for this is:
-
-* Redirect user to OAuth login page
-* When the user is redirected to your URL, retrieve the auth code from the querystring on the server side
-* On the server side, exchange the auth code for an access token
-
-##### ASP.NET tutorial
-
-This is a tutorial of how to use an Authorization Code Grant without using the SDK: [https://developer.genesys.cloud/authorization/platform-auth/guides/oauth-auth-code-guide](https://developer.genesys.cloud/authorization/platform-auth/guides/oauth-auth-code-guide)
-
-##### Example with the SDK
-
-In addition to the process in the tutorial above, swap out the POST to `https://login.<apihost>/oauth/token` with the following:
-
-Use the following namespaces:
-
+**Logger Configuration Example:**
 ```csharp
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Extensions;
+var logger = new Logger(
+    logToConsole: true,
+    logFormat: LogFormat.Text,
+    logLevel: LogLevel.LTrace,
+    logRequestBody: true,
+    logResponseBody: true
+);
+
+// Bridge to Microsoft.Extensions.Logging
+logger.SetExternalLogger(externalLogger);
 ```
 
-Then call the _PostToken_ extension method of _ApiClient_, including the redirect URI and auth code:
+---
 
-```csharp
-var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-  "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-  "http://redirecturi.com/",
-  "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-Console.WriteLine("Access token=" + accessTokenInfo.AccessToken);
+### 3. **.NET 8 Migration**
+
+#### Commits:
+- `659e6c6` (January 8, 2026): "Replace WebSocketSharp with native WebSocketWrapper (.NET 8)"
+- `a9b672c` (May 2, 2025): "Update project to .NET 8.0 and SDK-style format"
+
+**Changes:**
+- Migrated projects from legacy .csproj format to SDK-style
+- Updated target framework to `net8.0`
+- Replaced external WebSocketSharp dependency with native .NET implementation
+- Created custom `WebSocketWrapper.cs` for WebSocket functionality
+- Updated project structure for Visual Studio 2022 compatibility
+
+**Files Updated:**
+- All `.csproj` files migrated to SDK-style format
+- Project GUIDs updated for Visual Studio 18+
+- Solution file updated for modern tooling
+
+---
+
+### 4. **WebSocket Improvements**
+
+#### Commit: `659e6c6` (January 8, 2026)
+
+**What Changed:**
+- Removed dependency on `WebSocketSharp` third-party library
+- Implemented `WebSocketWrapper.cs` using native .NET `System.Net.WebSockets.ClientWebSocket`
+- Updated `NotificationHandler.cs` to use new wrapper
+- Better alignment with .NET platform capabilities
+
+**Benefits:**
+- Reduced external dependencies
+- Better performance with native implementation
+- Improved maintainability
+- Enhanced compatibility with .NET 8+ features
+
+---
+
+### 5. **ApiClient Refactoring**
+
+#### Commit: `dc10e04` (October 1, 2025)
+
+**Changes:**
+- Improved code readability and structure
+- Added `ClientOptions` for better configuration management
+- Enhanced error handling
+- Better separation of concerns
+
+---
+
+### 6. **Testing & Demonstration**
+
+#### LoggerTester Project
+**New Files:**
+- `LoggerTester/Program.cs` - Demonstrates logging integration
+- `LoggerTester/GenesysApiManager.cs` - Example API wrapper class
+- `LoggerTester/LoggerTester.csproj` - Test project configuration
+
+**Purpose:**
+- Provides working examples of the new logging framework
+- Demonstrates synchronous and asynchronous API calls
+- Shows integration with Microsoft.Extensions.Logging
+- Serves as reference implementation for SDK users
+
+**Features Demonstrated:**
+- External logger configuration
+- Console logging with custom formatting
+- User secrets management for credentials
+- Proper logger lifecycle management
+
+---
+
+### 7. **Build & CI/CD Updates**
+
+#### Commits:
+- `78fb49e` (September 11, 2025): "Update NuGet package workflow and project settings"
+
+**Changes:**
+- Updated `.github/workflows/publish-nuget-package.yml`
+- Improved NuGet package generation process
+- Updated assembly versioning
+- Enhanced build automation
+
+---
+
+### 8. **Documentation Updates**
+
+**Files Modified:**
+- `README.md` - Updated logging documentation
+- `build/docs/index.md` - API documentation updates
+
+**New Documentation Sections:**
+- Logging configuration examples
+- Microsoft.Extensions.Logging integration guide
+- Security considerations for logging PII data
+- Log level descriptions and use cases
+
+---
+
+## Code Quality Improvements
+
+### Removed:
+- Unused using directives (Commit `367ccb2`)
+- Legacy custom logging infrastructure
+- Obsolete binary files
+- Outdated project configurations
+
+### Added:
+- `.gitignore` enhancements for Visual Studio artifacts
+- Better code organization
+- Improved inline documentation
+- Modern C# language features (primary constructors, collection expressions)
+
+---
+
+## Breaking Changes
+
+?? **Important for SDK Users:**
+
+1. **Logging Sink Architecture Removed:**
+   - Custom sinks (`ConsoleLogSink`, `FileLogSink`, `DbLogSink`) no longer available
+   - Migration required to Microsoft.Extensions.Logging
+
+2. **Logger Configuration Changes:**
+   - `LogFilePath` property may be deprecated (file logging now through external logger)
+   - Sink registration methods removed
+
+3. **WebSocketSharp Dependency Removed:**
+   - Users relying on WebSocketSharp behavior may need adjustments
+
+4. **.NET 8 Requirement:**
+   - Minimum framework version is now .NET 8.0
+   - Legacy framework support dropped
+
+---
+
+## File Changes Statistics
+
+### Total Modified Files: ~22 core files
+
+**Major File Changes:**
+1. `build/src/PureCloudPlatform.Client.V2/Client/Logger.cs` - Complete refactor (~329 lines reduced)
+2. `build/src/PureCloudPlatform.Client.V2/Client/ApiClient.cs` - Improvements
+3. `build/src/PureCloudPlatform.Client.V2/Client/Configuration.cs` - Updates
+4. `build/LoggerTester/Program.cs` - New demonstration code
+5. `build/src/PureCloudPlatform.Client.V2/Extensions/Notifications/WebSocketWrapper.cs` - New implementation
+
+**Deleted Files:**
+- `BatchingLogSink.cs`
+- `ConsoleLogSink.cs`
+- `DbLogSink.cs`
+- `FileLogSink.cs`
+- `ILogSink.cs`
+
+**New Files:**
+- `LoggerTester/GenesysApiManager.cs`
+- `WebSocketWrapper.cs`
+- Various Copilot snapshot files
+
+---
+
+## Commit Timeline
+
+```
+Jan 19, 2026 - Updated from upstream fork
+Jan 08, 2026 - Replace WebSocketSharp with native WebSocketWrapper (.NET 8)
+Jan 08, 2026 - Updated from upstream fork
+Jan 08, 2026 - Update solution for Visual Studio 18 and fix project GUID
+Dec 10, 2025 - Merged latest changes from upstream
+Oct 01, 2025 - Refactor logging and improve code formatting
+Oct 01, 2025 - Refactor ApiClient for readability and add ClientOptions
+Oct 01, 2025 - Refactor Logger and Simplify Log Level Handling
+Sep 30, 2025 - Switch to Microsoft.Extensions.Logging framework ?
+Sep 30, 2025 - Add /build/.vs to .gitignore
+Sep 29, 2025 - Remove unused using directives in Logger.cs
+Sep 19, 2025 - Refactor Logger with Pluggable Sink Architecture
+Sep 11, 2025 - Update NuGet package workflow and project settings
+Sep 11, 2025 - Add new files and classes for API enhancements
+Sep 11, 2025 - Update API to version 241.0.0 with new features
+Jul 04, 2025 - Remove binary files and update project configurations
+Jul 04, 2025 - Updated to latest from upstream
+May 05, 2025 - Merge branch 'master' into configuration-changes
+May 05, 2025 - Enhance SDK with new models and project updates
+May 02, 2025 - Update project to .NET 8.0 and SDK-style format
+May 02, 2025 - Update .gitignore for Visual Studio build files
 ```
 
-By default, the SDK will transparently request a new access token using the refresh token when the access token expires. If you wish to implement the refresh logic set _ShouldRefreshAccessToken_ to false and store the refresh token from the auth response:
+---
 
-```csharp
-var refreshToken = accessTokenInfo.RefreshToken;
-Configuration.Default.ShouldRefreshAccessToken = false;
-```
+## Migration Guide for SDK Users
 
-You can use the _ExpiresIn_ value to determine how long the token will live and proactively request a new one before it expires.
+### For Applications Using Custom Sinks:
 
-```csharp
-var tokenTimeToLive = authTokenInfo.ExpiresIn;
-```
-
-When the access token expires, refresh it using the _PostToken_ method using the same clientId and clientSecret as used to request it.
-
-```csharp
-var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-  "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-  authorizationCode: refreshToken,
-  isRefreshRequest: true);
-Console.WriteLine("Access token=" + accessTokenInfo.AccessToken);
-refreshToken = accessTokenInfo.RefreshToken;
-```
-
-#### OAuth2 SAML2 Bearer Grant
-
-**Use when...**
-
-* The app is authenticating as a human user, the [OAuth2 SAML2 Bearer](https://developer.genesys.cloud/authorization/platform-auth/use-saml2-bearer) can be used via the AuthExtensions extension methods.
-
-First, use the following namespaces:
-
-```csharp
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Extensions;
-```
-
-Then call the _PostTokenSaml2Bearer_ extension method of _ApiClient_ with your orgName and encodedSamlAssertion
-
-```csharp
-var accessTokenInfo = Configuration.Default.ApiClient.PostTokenSaml2Bearer("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-  "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",orgName, encodedSamlAssertion);
-Console.WriteLine("Access token=" + accessTokenInfo.AccessToken);
-```
-
-#### PKCE Grant
-
-**Use when...**
-
-* The app is authenticating as a human user, the [PKCE Grant](https://developer.genesys.cloud/authorization/platform-auth/use-pkce) can be used via the AuthExtensions extension methods.
-
-First, use the following namespaces:
-
-```csharp
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Extensions;
-```
-
-Then call the _PostTokenPKCE_ extension method of _ApiClient_ with your orgName and encodedSamlAssertion
-
-```csharp
-var accessTokenInfo = Configuration.Default.ApiClient.PostTokenPKCE(clientId, redirectUri, codeVerifier, authCode);
-Console.WriteLine("Access token=" + accessTokenInfo.AccessToken);
-```
-
-The SDK provides methods to generate a PKCE Code Verifier and to compute PKCE Code Challenge.
-
-```csharp
-codeVerifier = Configuration.Default.ApiClient.GeneratePKCECodeVerifier(128);
-codeChallenge = Configuration.Default.ApiClient.ComputePKCECodeChallenge(codeVerifier);
-```
-
-#### Client Credentials Grant
-
-**Use when...**
-
-* The app is authenticating as a non-human (e.g. a service, scheduled task, or other non-UI application)
-
-For headless and non-user applications, the [Client Credentials Grant](https://developer.genesys.cloud/authorization/platform-auth/use-client-credentials) can be used via the AuthExtensions extension methods.
-
-First, use the following namespaces:
-
-```csharp
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Extensions;
-```
-
-Then call the _PostToken_ extension method of _ApiClient_, leaving the redirect URI and auth code blank:
-
-```csharp
-var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-  "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo");
-Console.WriteLine("Access token=" + accessTokenInfo.AccessToken);
-```
-
-### Making Requests
-
-#### Setting the Environment
-
-If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the new base path before constructing any API classes. The new base path should be the base path to the Platform API for your environment.
-
-```csharp
-PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
-Configuration.Default.ApiClient.setBasePath(region);
-```
-
-#### Setting the gateway
-
-The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
-
-This can be achieved setting the gateway on the `ApiClient` instance with *SetGateway*.
-
-```csharp
-Configuration.Default.ApiClient.SetGateway("mygateway.mydomain.myextension", "https", 1443, "myadditionalpathforlogin", "myadditionalpathforapi");
-```
-
-or
-
-```csharp
-ApiClient.GatewayConfiguration gatewayConfiguration = new ApiClient.GatewayConfiguration();
-gatewayConfiguration.Host = "mygateway.mydomain.myextension";
-gatewayConfiguration.Protocol = "https";
-gatewayConfiguration.Port = 1443;
-gatewayConfiguration.PathParamsLogin = "myadditionalpathforlogin";
-gatewayConfiguration.PathParamsApi = "myadditionalpathforapi";
-...
-Configuration.Default.ApiClient.GatewayConfig = gatewayConfiguration;
-```
-
-* "Host" is the address of your gateway.
-* "Protocol" is not mandatory. It will default to "https" if the parameter is not defined or empty.
-* "Port" is not mandatory. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0). Set to -1 to use default port (default unspecified port).
-* "PathParamsLogin" and "PathParamsApi" are not mandatory. They will be appended to the gateway url path if these parameters are defined and non empty (for Login requests and for API requests).
-* "Username" and "Password" are not used at this stage. This is for a possible future use.
-
-With the configuration below, this would result in:
-
-* Login requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/oauth/token")
-* API requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforapi" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/api/v2/users/me")
-
-
-#### Setting the max retry time
-
-By default, the .NET SDK does not automatically retry any failed requests.
-To enable automatic retries, provide a RetryConfiguration object with the maximum number of seconds to retry requests and the max number of retries when building the ApiClient instance.
-
-Building a `RetryConfiguration` instance:
-
-```csharp
-var retryConfig = new ApiClient.RetryConfiguration
-{
-  MaxRetryTimeSec = 10,
-  RetryMax = 5;
-};
-```
-
-Setting `RetryConfiguration` instance to `ApiClient`:
-
-```csharp
-Configuration.Default.ApiClient.RetryConfig = retryConfig;
-```
-
-Set the `MaxRetryTimeSec` to the number of seconds to process retries before returning an error.  
-Set the `RetryMax` to the retries to attempt before returning an error.  
-When the retry time is a positive integer, the SDK will follow the recommended backoff logic using the provided configuration.
-The best practices are documented in the [Rate Limiting](https://developer.genesys.cloud/platform/api/rate-limits) Developer Center article.
-
-#### Management of HTTP Responses with duplicate header names.
-
-When an HTTP Response is received with duplicate header names, the SDK will automatically merge such headers and present them as single entry with a comma separated string value.
-This applies to response headers in the ApiResponse class, or when enabling SDK logging.
-
-e.g. HTTP Response with ("Server": "Google") and ("Server": "FrontEnd") will be made available and logged as: "Server": "Google, FrontEnd"
-
-#### SDK Logging
-
-Logging of API requests and responses can be controlled by several parameters on the `Configuration`'s `Logger` instance.
-
-`LogLevel` values:
-
-1. LogLevel.LTrace (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers, Response Headers)
-2. LogLevel.LDebug (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers)
-3. LogLevel.LError (HTTP Method, URL, Request Body, Response Body, HTTP Status Code, Request Headers, Response Headers)
-4. LogLevel.LNone - default
-
-`LogFormat` values:
-
-1. JSON
-2. Text - default
-
-By default, the request and response bodies are not logged because these can contain PII. Be mindful of this data if choosing to log it.  
-To log to a file, provide a `LogFilePath` value. SDK users are responsible for the rotation of the log file.
-
-Example logging configuration:
-
+**Before (Old Approach):**
 ```csharp
 Configuration.Default.Logger.Level = LogLevel.LTrace;
-Configuration.Default.Logger.Format = LogFormat.JSON;
-Configuration.Default.Logger.LogRequestBody = true;
-Configuration.Default.Logger.LogResponseBody = true;
-Configuration.Default.Logger.LogToConsole = true;
 Configuration.Default.Logger.LogFilePath = "/var/log/dotnetsdk.log";
 ```
 
-#### Configuration file
-
-Several configuration parameters can be applied using a configuration file. There are two sources for this file:
-
-1. The SDK will look for `%HOMEDRIVE%%HOMEPATH%\.genesysclouddotnet\config` on Windows, or `$HOME/.genesysclouddotnet/config` on Unix.
-2. Provide a valid file path to `Configuration.Default.ConfigFilePath`
-
-The SDK will take an event-driven approach to monitor for config file changes and will apply changes in near real-time. To disable this behavior, set `Configuration.Default.AutoReloadConfig` to false.  
-INI and JSON formats are supported. See below for examples of configuration values in both formats:
-
-INI:
-```ini
-[logging]
-log_level = trace
-log_format = text
-log_to_console = false
-log_file_path = /var/log/dotnetsdk.log
-log_response_body = false
-log_request_body = false
-[retry]
-retry_wait_min = 3
-retry_wait_max = 10
-retry_max = 5
-[reauthentication]
-refresh_access_token = true
-refresh_token_wait_max = 10
-[general]
-live_reload_config = true
-host = https://api.mypurecloud.com
-```
-
-JSON:
-```json
+**After (New Approach):**
+```csharp
+// 1. Create Microsoft.Extensions.Logging logger
+using var loggerFactory = LoggerFactory.Create(builder =>
 {
-    "logging": {
-        "log_level": "trace",
-        "log_format": "text",
-        "log_to_console": false,
-        "log_file_path": "/var/log/dotnetsdk.log",
-        "log_response_body": false,
-        "log_request_body": false
-    },
-    "retry": {
-        "retry_wait_min": 3,
-        "retry_wait_max": 10,
-        "retry_max": 5
-    },
-    "reauthentication": {
-        "refresh_access_token": true,
-        "refresh_token_wait_max": 10
-    },
-    "general": {
-        "live_reload_config": true,
-        "host": "https://api.mypurecloud.com"
-    }
-}
+    builder.AddConsole();
+    builder.AddFile("/var/log/dotnetsdk.log"); // Using Serilog or other provider
+    builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+});
+
+var externalLogger = loggerFactory.CreateLogger("GenesysSdk");
+
+// 2. Configure SDK logger
+Configuration.Default.Logger.Level = LogLevel.LTrace;
+Configuration.Default.Logger.SetExternalLogger(externalLogger);
+Configuration.Default.Logger.LogRequestBody = true;
+Configuration.Default.Logger.LogResponseBody = true;
 ```
 
-The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
+### For Applications Using WebSocketSharp:
 
-This can be achieved defining a "gateway" configuration, in the INI or the JSON configuration file.
+- No code changes required if using SDK-provided notification handlers
+- Direct WebSocketSharp usage needs migration to native .NET WebSocket APIs
 
-* "host" is the address of your gateway.
-* "protocol" is not mandatory. It will default to "https" if the parameter is not defined or empty.
-* "port" is not mandatory. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0). Set to -1 to use default port (default unspecified port).
-* "path_params_login" and "path_params_api" are not mandatory. They will be appended to the gateway url path if these parameters are defined and non empty (for Login requests and for API requests).
-* "username" and "password" are not used at this stage. This is for a possible future use.
+---
 
-With the configuration below, this would result in:
+## Testing Recommendations
 
-* Login requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/oauth/token")
-* API requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforapi" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/api/v2/users/me")
+Before merging to master:
 
-INI:
-```ini
-[logging]
-log_level = trace
-log_format = text
-log_to_console = false
-log_file_path = /var/log/dotnetsdk.log
-log_response_body = false
-log_request_body = false
-[retry]
-retry_wait_min = 3
-retry_wait_max = 10
-retry_max = 5
-[reauthentication]
-refresh_access_token = true
-refresh_token_wait_max = 10
-[general]
-live_reload_config = true
-host = https://api.mypurecloud.com
-[gateway]
-host = mygateway.mydomain.myextension
-protocol = https
-port = 1443
-path_params_login = myadditionalpathforlogin
-path_params_api = myadditionalpathforapi
-username = username
-password = password
-```
+1. ? **Unit Tests:** Verify Logger functionality with external loggers
+2. ? **Integration Tests:** Test WebSocket notifications with new wrapper
+3. ? **Performance Tests:** Validate logging overhead is acceptable
+4. ? **Backward Compatibility:** Document breaking changes clearly
+5. ? **Documentation:** Update all examples and guides
+6. ? **NuGet Package:** Test package generation and installation
 
-JSON:
-```json
-{
-    "logging": {
-        "log_level": "trace",
-        "log_format": "text",
-        "log_to_console": false,
-        "log_file_path": "/var/log/dotnetsdk.log",
-        "log_response_body": false,
-        "log_request_body": false
-    },
-    "retry": {
-        "retry_wait_min": 3,
-        "retry_wait_max": 10,
-        "retry_max": 5
-    },
-    "reauthentication": {
-        "refresh_access_token": true,
-        "refresh_token_wait_max": 10
-    },
-    "general": {
-        "live_reload_config": true,
-        "host": "https://api.mypurecloud.com"
-    },
-    "gateway": {
-        "host": "mygateway.mydomain.myextension",
-        "protocol": "https",
-        "port": 1443,
-        "path_params_login": "myadditionalpathforlogin",
-        "path_params_api": "myadditionalpathforapi",
-        "username": "username",
-        "password": "password"
-    }
-}
-```
+---
 
-#### Invoking the API
+## Security Considerations
 
-There are two steps to making requests:
+### Improvements:
+- Authorization headers automatically redacted in logs
+- PII logging is opt-in (disabled by default for request/response bodies)
+- Better control over sensitive data exposure
 
-1. Instantiate one of the API classes in the PureCloudPlatform.Client.V2.Api namespace
-2. Call the methods on the API object
-
-Example of getting the authenticated user's information:
-
+### Best Practices for Users:
 ```csharp
-// Instantiate instance of the Users API
-var usersApi = new UsersApi();
-
-// Get the logged in user
-var me = usersApi.GetMe();
-Console.WriteLine($"Hello, {me.DisplayName}");
+// Only enable body logging in development/debugging
+logger.LogRequestBody = false;  // Default - no PII in logs
+logger.LogResponseBody = false; // Default - no PII in logs
 ```
 
-#### Using multiple ApiClients
+---
 
-Applications which need to create and to maintain distinct Configuration and ApiClient instances (i.e. distinct instances to different Genesys Cloud regions or to the same region, with distinct access tokens), can use the optional `useDefaultApiClient` parameter (set to: false - default: true), of the `Configuration` constructor.
+## Performance Impact
 
-When the `useDefaultApiClient` optional parameter is not specified or is set to true (`useDefaultApiClient` default value is true), the SDK sets or uses the ApiClient of the Default Configuration (static single instance).
+### Positive:
+- Reduced code complexity (713 lines ? simplified implementation)
+- Native WebSocket implementation should be faster
+- Better async/await patterns
 
-**To create and to use distinct Configuration.ApiClient instances, set the `useDefaultApiClient` optional parameter to false.**
+### Neutral:
+- Microsoft.Extensions.Logging overhead is minimal
+- External logger configuration adds slight initialization cost
 
-```csharp
-        Configuration configuration = new Configuration(useDefaultApiClient: false);
-        ApiClient client =  configuration.ApiClient;
-        PureCloudRegionHosts region = PureCloudRegionHosts.eu_west_1;
-        client.setBasePath(region);
+---
 
-        var apiInstance = new UsersApi(configuration);
-        var userId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";  // string | User ID
-        User resultUser = apiInstance.GetUser(userId, null, null, null);
-```
+## Dependencies Added
 
-#### Managing updates in Platform API Enumerations
+**LoggerTester Project:**
+- Microsoft.Extensions.Configuration (9.0.9)
+- Microsoft.Extensions.Configuration.UserSecrets (9.0.9)
+- Microsoft.Extensions.Logging (9.0.9)
+- Microsoft.Extensions.Logging.Console (9.0.9)
 
-The Platform API Client SDKs (Java, Javascript/NodeJs, Python, Go, .Net, iOS/Swift) are automatically generated using the Platform API OpenAPI v2 definition.
-The Platform API definition file is downloaded at the time of the SDK build and is used to generate operations (i.e. API methods) and definitions (i.e. classes for the different models, enumerations, ...) in the different SDK languages.
+**SDK Project:**
+- Microsoft.Extensions.Logging (version to be specified)
 
-The .Net Platform API Client SDK implements the following strategy to manage the introduction of new enumeration values in the Platform API (i.e. in a version of the SDK which doesn't include these changes):
-* Each enumeration, generated from the Platform API OpenAPI v2 definition, always contains the following enumeration value: `[EnumMember(Value = "OUTDATED_SDK_VERSION")] OutdatedSdkVersion`
-* If an unknown enumeration value is received (i.e. a new enumeration value, introduced in Platform API, after the SDK version you are using was built), the SDK will map it to the `[EnumMember(Value = "OUTDATED_SDK_VERSION")] OutdatedSdkVersion` enumeration value. This is to prevent errors during deserialization when an unknown enumeration value is received from Genesys Cloud.
+---
 
-## NotificationHandler Helper Class
+## Recommendations
 
-The .NET SDK includes a helper class `NotificationHandler` to assist in managing GenesysCloud notifications. The class will create a single notification channel, or use an existing one, and provides methods to add and remove subscriptions and raises an event with a deserialized notification object whenever one is received.
+### For Merging:
+1. ? **Thoroughly test** the new logging implementation
+2. ? **Update release notes** with breaking changes
+3. ? **Increment major version** (breaking changes present)
+4. ? **Provide migration guide** for existing users
+5. ? **Update all documentation** and samples
 
-**WARNING**
+### For SDK Users:
+1. Review and plan migration from custom sinks
+2. Test thoroughly in development environment
+3. Update to .NET 8 if not already done
+4. Review logging configuration for PII concerns
+5. Update CI/CD pipelines for new package dependencies
 
-The helper uses [WebSocketSharp](https://www.nuget.org/packages/WebSocketSharp)'s websocket implementation. Unfortunately, the package is pre-release only and therefore cannot be included as a dependency in a release package. The dependency must be resolved manually. The nuget page for the package contains instructions for installing the pre-release pacakge.
+---
 
-### Using NotificationHandler
+## Conclusion
 
-Create a new instance:
+The `logging-updates` branch represents a significant modernization effort for the PureCloud Platform .NET SDK. The primary focus on integrating Microsoft.Extensions.Logging provides a more maintainable, standard, and flexible logging solution while reducing custom code by ~427 lines. Combined with .NET 8 migration and WebSocket improvements, this branch positions the SDK for better long-term support and developer experience.
 
-```csharp
-var handler = new NotificationHandler();
-```
+**Overall Impact:** ????? High Value
+- Major architectural improvements
+- Better alignment with .NET ecosystem
+- Enhanced developer experience
+- Reduced maintenance burden
 
-If you're using a proxy server, use the following constructor:
+**Risk Level:** ?? Medium
+- Breaking changes require user migration
+- Thorough testing recommended before production release
+- Clear communication and documentation essential
 
-```csharp
-var handler = new NotificationHandler("YOUR_PROXY_URL");
-```
+---
 
-If your proxy server requires authentication, use the following constructor:
-
-```csharp
-var handler = new NotificationHandler("YOUR_PROXY_URL", "YOUR_PROXY_USERNAME", "YOUR_PROXY_PASSWORD");
-```
-
-Add a subscription:
-
-```csharp
-// Single
-handler.AddSubscription($"v2.users.{_me.Id}.presence", typeof(PresenceEventUserPresence));
-
-// Multiple
-var subscriptions = new List<Tuple<string, Type>>();
-subscriptions.Add(new Tuple($"v2.users.{_me.Id}.presence", typeof(PresenceEventUserPresence)));
-subscriptions.Add(new Tuple($"v2.users.{_me.Id}.routingStatus", typeof(UserRoutingStatusNotification)));
-handler.AddSubscriptions(subscriptions);
-```
-
-Remove a subscription:
-
-```csharp
-handler.RemoveSubscription($"v2.users.{_me.Id}.conversations");
-```
-
-Handle incoming notification:
-
-```csharp
-handler.NotificationReceived += (data) =>
-{
-    Console.WriteLine(JsonConvert.SerializeObject(data, Formatting.Indented));
-
-    if (data.GetType() == typeof (NotificationData<PresenceEventUserPresence>))
-    {
-        var presence = (NotificationData<PresenceEventUserPresence>) data;
-        Console.WriteLine($"New presence: {presence.EventBody.PresenceDefinition.SystemPresence}");
-    }
-};
-```
-
-Full example:
-
-```csharp
-var handler = new NotificationHandler();
-handler.AddSubscription($"v2.users.{_me.Id}.presence", typeof(PresenceEventUserPresence));
-handler.AddSubscription($"v2.users.{_me.Id}.conversations", typeof(ConversationEventTopicConversation));
-handler.NotificationReceived += (data) =>
-{
-    Console.WriteLine(JsonConvert.SerializeObject(data, Formatting.Indented));
-
-    if (data.GetType() == typeof (NotificationData<PresenceEventUserPresence>))
-    {
-        var presence = (NotificationData<PresenceEventUserPresence>) data;
-        Console.WriteLine($"New presence: {presence.EventBody.PresenceDefinition.SystemPresence}");
-    }
-    else if (data.GetType() == typeof (NotificationData<ConversationEventTopicConversation>))
-    {
-        var conversation = (NotificationData<ConversationEventTopicConversation>) data;
-        Console.WriteLine($"Conversation: {conversation.EventBody.Id}");
-    }
-};
-
-Console.WriteLine("Websocket connected, awaiting messages...");
-Console.WriteLine("Press any key to remove conversations subscription.");
-Console.ReadKey(true);
-
-handler.RemoveSubscription($"v2.users.{_me.Id}.conversations");
-
-Console.WriteLine("Conversations subscription removed, awaiting messages...");
-Console.ReadKey(true);
-```
-
-### Notification Topics and Classes for Deserialization
-
-The SDK contains a static class, [NotificationTopics](https://github.com/MyPureCloud/platform-client-sdk-dotnet/tree/master/build/src/PureCloudPlatform.Client.V2/Client/NotificationTopics.cs), that contains a dictionary of all of the known topics and the types that should be used for deserialization. This class exists to allow an application to dynamically see the defined topics and programatically specify the defined type for a known topic. This class also serves as a reference to the developer to know which classes go with which topics.
-
-_Note that the deserializer does not use this mapping; it uses the type provided to it when adding a topic subscription._
-
-## SDK Information
-
-### REST Requests
-
-The SDK library uses [RestSharp](http://restsharp.org/) by default to make the REST requests. The majority of this work is done in [DefaultHttpClient.cs](https://github.com/MyPureCloud/platform-client-sdk-dotnet/blob/master/build/src/PureCloudPlatform.Client.V2/Client/ApiClient.cs)
-
-### Inject a custom Http Client
-
-By default the SDK will use RestSharp's RestClient as the default http client.
-If you want to inject a new third party/custom implementation of client , you set the httpclient instance
-
-The CustomHttpClient should be an instance of AbstractHttpClient defined in the SDK. Which will implement the 'Execute' and 'ExecuteAsync' methods.
-Please find an example here.
-
-```csharp
-
-public class CustomHttpClient : AbstractHttpClient
-{
-    private HttpClient httpClient;
-
-    public CustomHttpClient() : base()
-    {
-        httpClient = new HttpClient();
-    }
-
-    public override IHttpRequest Execute(IHttpRequest request)
-    {
-        return httpClient.SendAsync(request).GetAwaiter().GetResult();
-    }
-
-    public override async Task<IHttpRequest> ExecuteAync(IHttpRequest request, CancellationToken cancellationToken = default(CancellationToken))
-    {
-        return await httpClient.SendAsync(request, cancellationToken);
-    }
-}
-
-Configuration.Default.ApiClient.HttpClient = new CustomHttpClient();
-```
-
-### Using MTLS authentication via a Gateway
-
-If there is MTLS authentication that needs to be set for a gateway server (i.e. if the Genesys Cloud requests must be sent through an intermediate API gateway or equivalent, with MTLS enabled), you can use SetMTLSCertificates to set the clients certificate.
-
-An example using `SetMTLSCertificates` to setup MTLS for gateway is shown below
-
-```csharp
-ApiClient.GatewayConfiguration gatewayConfiguration = new ApiClient.GatewayConfiguration();
-gatewayConfiguration.Host = "mygateway.mydomain.myextension";
-gatewayConfiguration.Protocol = "https";
-gatewayConfiguration.Port = 1443;
-gatewayConfiguration.PathParamsLogin = "myadditionalpathforlogin";
-gatewayConfiguration.PathParamsApi = "myadditionalpathforapi";
-Configuration.Default.ApiClient.GatewayConfig = gatewayConfiguration;
-
-var certPath = "path/to/cert.pfx";
-var certPass = "x509Password";
-Configuration.Default.ApiClient.SetMTLSCertificates(certPath, certPass);
-```
-
-### Using Pre Commit and Post Commit Hooks
-
-For any custom requirements like pre validations or post cleanups (for ex: OCSP and CRL validation), we can inject the prehook and posthook functions.
-The SDK's default client will make sure the injected hook functions are executed.
-
-The Pre/Post Hook functions must have the following method signature shown below
-
-```csharp
-IHttpRequest preHook(IHttpRequest request)
-IHttpResponse postHook(IHttpRepsonse response)
-```
-
-Here is an example of using a Pre Hook function:
-
-```csharp
-private IHttpRequest preHook(IHttpRequest request)
-{
-    try {
-        Console.WriteLine("Running PreHook: Certificate Validation Checks");
-
-        // custom validation here
-
-        Console.WriteLine("Certificate Validation Complete");
-    } catch (Exception ex) {
-        Console.WriteLine($"Error in prehook validation: {ex.Message}");
-        throw ex; // Reject request if validation fails
-    }
-}
-
-Configuration.Default.ApiClient.HttpClient.SetPreRequestHook(preHook);
-
-```
-
-### Building from Source
-
-If you're working inside Visual Studio, adding the files to your project allows you to edit and build inside an IDE.
-
-1. Clone the repo
-2. Open the solution file: [PureCloudPlatform.Client.V2.sln](https://github.com/MyPureCloud/platform-client-sdk-dotnet/blob/master/build/PureCloudPlatform.Client.V2.sln)
-3. Resolve/restore dependencies (`Update-Package –reinstall` in the _Package Manager Console_)
-4. Build the project in Visual Studio
-
-Alternatively, the code can be compiled via the command line. The official builds do this using cross-platform tools: [compile.sh](https://github.com/MyPureCloud/platform-client-sdk-common/blob/master/resources/sdk/pureclouddotnet/scripts/compile.sh)
-
-## SDK Source Code Generation
-
-The SDK is automatically regenerated and published from the API's definition after each API release. For more information on the build process, see the [platform-client-sdk-common](https://github.com/MyPureCloud/platform-client-sdk-common) project.
-
-## Versioning
-
-The SDK's version is incremented according to the [Semantic Versioning Specification](https://semver.org/). The decision to increment version numbers is determined by [diffing the Platform API's swagger](https://github.com/purecloudlabs/platform-client-sdk-common/blob/master/modules/swaggerDiff.js) for automated builds, and optionally forcing a version bump when a build is triggered manually (e.g. releasing a bugfix).
-
-## Support
-
-This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
-
-For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Community](https://community.genesys.com/communities/community-home1/digestviewer?CommunityKey=a39cc4d6-857e-43cb-be7b-019581ab9f38).
+*Document generated: January 2026*  
+*Branch: logging-updates*  
+*Base: master*  
+*Total Commits: 23*

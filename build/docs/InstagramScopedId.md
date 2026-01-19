@@ -6,8 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **ScopedId** | **string** | The unique page/app-specific scopedId for the user | [optional] |
+| **ScopedId** | **string** | The unique page/app-specific scopedId for the user. Max: 255 characters. Leading and trailing whitespace stripped. | |
 
 
 
-_PureCloudPlatform.Client.V2 252.1.0_
+_PureCloudPlatform.Client.V2 254.0.0_

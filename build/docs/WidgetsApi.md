@@ -350,4 +350,4 @@ namespace Example
 [**WidgetDeployment**](WidgetDeployment)
 
 
-_PureCloudPlatform.Client.V2 252.1.0_
+_PureCloudPlatform.Client.V2 254.0.0_

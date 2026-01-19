@@ -74,6 +74,12 @@ namespace PureCloudPlatform.Client.V2.Model
         [DataMember(Name="callerId", EmitDefaultValue=false)]
         public string CallerId { get; set; }
 
+        /// <summary>
+        /// The session type for this outbound call
+        /// </summary>
+        /// <value>The session type for this outbound call.</value>
+        [DataMember(Name = "sessionType", EmitDefaultValue = false)]
+        public string SessionType { get; set; }
 
 
         /// <summary>
@@ -216,6 +222,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  UuiData: ").Append(UuiData).Append("\n");
             sb.Append("  ExternalContactId: ").Append(ExternalContactId).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  SessionType: ").Append(SessionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

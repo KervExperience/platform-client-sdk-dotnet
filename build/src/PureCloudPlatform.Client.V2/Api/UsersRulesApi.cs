@@ -20,7 +20,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -33,7 +32,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -46,7 +44,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -59,7 +56,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -72,7 +68,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -87,7 +82,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -102,7 +96,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -118,7 +111,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -134,43 +126,42 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>UsersRulesRuleList</returns>
         
-        UsersRulesRuleList GetUsersRules (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null);
+        UsersRulesRuleList GetUsersRules (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null);
 
         /// <summary>
         /// Get the list of users rules
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>ApiResponse of UsersRulesRuleList</returns>
         
-        ApiResponse<UsersRulesRuleList> GetUsersRulesWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null);
+        ApiResponse<UsersRulesRuleList> GetUsersRulesWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null);
 
         /// <summary>
         /// Get the settings for a specific users rule type
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -183,7 +174,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -196,7 +186,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -210,7 +199,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -224,7 +212,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -237,7 +224,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -250,7 +236,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -265,7 +250,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -284,7 +268,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -297,7 +280,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -310,7 +292,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -323,7 +304,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -336,7 +316,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -351,7 +330,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -366,7 +344,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -382,7 +359,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -398,43 +374,42 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>Task of UsersRulesRuleList</returns>
         
-        System.Threading.Tasks.Task<UsersRulesRuleList> GetUsersRulesAsync (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null);
+        System.Threading.Tasks.Task<UsersRulesRuleList> GetUsersRulesAsync (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null);
 
         /// <summary>
         /// Get the list of users rules
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>Task of ApiResponse (UsersRulesRuleList)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<UsersRulesRuleList>> GetUsersRulesAsyncWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null);
+        System.Threading.Tasks.Task<ApiResponse<UsersRulesRuleList>> GetUsersRulesAsyncWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null);
 
         /// <summary>
         /// Get the settings for a specific users rule type
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -447,7 +422,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -460,7 +434,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -474,7 +447,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -488,7 +460,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -501,7 +472,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -514,7 +484,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -529,7 +498,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <remarks>
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -634,7 +602,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete an existing users rule 
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -648,7 +615,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete an existing users rule 
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -720,6 +686,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUsersRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -734,7 +702,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete an existing users rule 
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -749,7 +716,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Delete an existing users rule 
         /// 
-        /// DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The id of the rule</param>
@@ -822,6 +788,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUsersRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -837,7 +805,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a users rule 
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -852,7 +819,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a users rule 
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -924,6 +890,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -938,7 +906,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a users rule 
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -954,7 +921,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get a users rule 
         /// 
-        /// GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to retrieve</param>
@@ -1027,6 +993,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1042,7 +1010,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependent of a users rule 
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1059,7 +1026,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependent of a users rule 
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1141,6 +1107,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependentTypeId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRuleDependentTypeId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependentTypeId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1155,7 +1123,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependent of a users rule 
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1173,7 +1140,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependent of a users rule 
         /// 
-        /// GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1258,6 +1224,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependentTypeId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRuleDependentTypeId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependentTypeId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1273,7 +1241,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependents for a users rule 
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1291,7 +1258,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependents for a users rule 
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1369,6 +1335,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRuleDependents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1383,7 +1351,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependents for a users rule 
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1402,7 +1369,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get dependents for a users rule 
         /// 
-        /// GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule for which to retrieve dependents</param>
@@ -1481,6 +1447,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRuleDependents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRuleDependents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1496,38 +1464,38 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the list of users rules 
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>UsersRulesRuleList</returns>
         
-        public UsersRulesRuleList GetUsersRules (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null)
+        public UsersRulesRuleList GetUsersRules (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null)
         {
-             ApiResponse<UsersRulesRuleList> localVarResponse = GetUsersRulesWithHttpInfo(types, pageNumber, pageSize, expand, searchTerm, sortOrder);
+             ApiResponse<UsersRulesRuleList> localVarResponse = GetUsersRulesWithHttpInfo(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder);
              return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get the list of users rules 
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>ApiResponse of UsersRulesRuleList</returns>
         
-        public ApiResponse< UsersRulesRuleList > GetUsersRulesWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null)
+        public ApiResponse< UsersRulesRuleList > GetUsersRulesWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null)
         { 
             // verify the required parameter 'types' is set
             if (types == null)
@@ -1570,6 +1538,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (types != null) types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (enabled != null) localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
             if (searchTerm != null) localVarQueryParams.Add(new Tuple<string, string>("searchTerm", this.Configuration.ApiClient.ParameterToString(searchTerm)));
             if (sortOrder != null) localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
 
@@ -1598,6 +1567,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1612,20 +1583,20 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the list of users rules 
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>Task of UsersRulesRuleList</returns>
         
-        public async System.Threading.Tasks.Task<UsersRulesRuleList> GetUsersRulesAsync (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null)
+        public async System.Threading.Tasks.Task<UsersRulesRuleList> GetUsersRulesAsync (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null)
         {
-             ApiResponse<UsersRulesRuleList> localVarResponse = await GetUsersRulesAsyncWithHttpInfo(types, pageNumber, pageSize, expand, searchTerm, sortOrder);
+             ApiResponse<UsersRulesRuleList> localVarResponse = await GetUsersRulesAsyncWithHttpInfo(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder);
              return localVarResponse.Data;
 
         }
@@ -1633,18 +1604,18 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the list of users rules 
         /// 
-        /// GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="types">The types of the rule</param>
         /// <param name="pageNumber">Page number (optional, default to 1)</param>
         /// <param name="pageSize">Number of results per page (optional, default to 25)</param>
         /// <param name="expand">Fields to expand in response (optional)</param>
+        /// <param name="enabled">Whether to list enabled or disabled rules (optional)</param>
         /// <param name="searchTerm">a search term for finding a rule by name (optional)</param>
         /// <param name="sortOrder">sort rules by name, ascending, descending (optional, default to ascending)</param>
         /// <returns>Task of ApiResponse (UsersRulesRuleList)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<UsersRulesRuleList>> GetUsersRulesAsyncWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersRulesRuleList>> GetUsersRulesAsyncWithHttpInfo (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null)
         { 
             // verify the required parameter 'types' is set
             if (types == null)
@@ -1688,6 +1659,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (types != null) types.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("types", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (enabled != null) localVarQueryParams.Add(new Tuple<string, string>("enabled", this.Configuration.ApiClient.ParameterToString(enabled)));
             if (searchTerm != null) localVarQueryParams.Add(new Tuple<string, string>("searchTerm", this.Configuration.ApiClient.ParameterToString(searchTerm)));
             if (sortOrder != null) localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
 
@@ -1716,6 +1688,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1731,7 +1705,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the settings for a specific users rule type 
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -1746,7 +1719,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the settings for a specific users rule type 
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -1818,6 +1790,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRulesSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRulesSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRulesSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1832,7 +1806,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the settings for a specific users rule type 
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -1848,7 +1821,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Get the settings for a specific users rule type 
         /// 
-        /// GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleType">The type of the rule</param>
@@ -1921,6 +1893,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRulesSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUsersRulesSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUsersRulesSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1936,7 +1910,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an existing users rule 
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -1952,7 +1925,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an existing users rule 
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -2034,6 +2006,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUsersRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2048,7 +2022,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an existing users rule 
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -2065,7 +2038,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Update an existing users rule 
         /// This will update an existing users rule with the specified fields.
-        /// PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ruleId">The ID of the rule to update</param>
@@ -2149,6 +2121,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUsersRule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUsersRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2164,7 +2138,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new rule 
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -2179,7 +2152,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new rule 
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -2256,6 +2228,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2270,7 +2244,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new rule 
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -2286,7 +2259,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Create a new rule 
         /// This will create a new rule with the specified fields.
-        /// PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesCreateRuleRequest</param>
@@ -2364,6 +2336,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUsersRules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2379,7 +2353,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Query the result of a users rule 
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -2396,7 +2369,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Query the result of a users rule 
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -2477,6 +2449,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUsersRulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRulesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2491,7 +2465,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Query the result of a users rule 
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -2509,7 +2482,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <summary>
         /// Query the result of a users rule 
         /// This will query the result of a rule.
-        /// PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">usersRulesQueryRuleRequest</param>
@@ -2591,6 +2563,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUsersRulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUsersRulesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

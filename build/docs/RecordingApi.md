@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationRecordingAnnotation**](#GetConversationRecordingAnnotation) | **Get** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation |
 | [**GetConversationRecordingAnnotations**](#GetConversationRecordingAnnotations) | **Get** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording |
 | [**GetConversationRecordingmetadata**](#GetConversationRecordingmetadata) | **Get** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing. |
-| [**GetConversationRecordingmetadataRecordingId**](#GetConversationRecordingmetadataRecordingId) | **Get** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media. |
+| [**GetConversationRecordingmetadataRecordingId**](#GetConversationRecordingmetadataRecordingId) | **Get** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing. |
 | [**GetConversationRecordings**](#GetConversationRecordings) | **Get** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation&#39;s Recordings. |
 | [**GetOrphanrecording**](#GetOrphanrecording) | **Get** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording |
 | [**GetOrphanrecordingMedia**](#GetOrphanrecordingMedia) | **Get** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording |
@@ -41,7 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchRecordingCrossplatformMediaretentionpolicy**](#PatchRecordingCrossplatformMediaretentionpolicy) | **Patch** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy |
 | [**PatchRecordingMediaretentionpolicy**](#PatchRecordingMediaretentionpolicy) | **Patch** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy |
 | [**PostConversationRecordingAnnotations**](#PostConversationRecordingAnnotations) | **Post** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation |
-| [**PostRecordingBatchrequests**](#PostRecordingBatchrequests) | **Post** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. |
+| [**PostRecordingBatchrequests**](#PostRecordingBatchrequests) | **Post** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download. |
 | [**PostRecordingCrossplatformMediaretentionpolicies**](#PostRecordingCrossplatformMediaretentionpolicies) | **Post** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy |
 | [**PostRecordingJobs**](#PostRecordingJobs) | **Post** /api/v2/recording/jobs | Create a recording bulk job. |
 | [**PostRecordingKeyconfigurations**](#PostRecordingKeyconfigurations) | **Post** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation |
@@ -79,6 +79,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -512,11 +513,14 @@ void (empty response body)
 
 Gets a specific recording.
 
+Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
+
 Requires ANY permissions: 
 
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -600,6 +604,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -669,6 +674,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -735,6 +741,7 @@ Requires ANY permissions:
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -792,13 +799,14 @@ namespace Example
 > [**RecordingMetadata**](RecordingMetadata) GetConversationRecordingmetadataRecordingId (string conversationId, string recordingId)
 
 
-Get metadata for a specific recording. Does not return playable media.
+Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 Requires ANY permissions: 
 
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -827,7 +835,7 @@ namespace Example
 
             try
             { 
-                // Get metadata for a specific recording. Does not return playable media.
+                // Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
                 RecordingMetadata result = apiInstance.GetConversationRecordingmetadataRecordingId(conversationId, recordingId);
                 Debug.WriteLine(result);
             }
@@ -860,11 +868,14 @@ namespace Example
 
 Get all of a Conversation's Recordings.
 
+Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
+
 Requires ANY permissions: 
 
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -2327,12 +2338,16 @@ namespace Example
 
 Create annotation
 
+If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
+
 Requires ANY permissions: 
 
 * recording:annotation:add
+* recording:annotation:edit
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -2394,13 +2409,14 @@ namespace Example
 > [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult) PostRecordingBatchrequests (BatchDownloadJobSubmission body)
 
 
-Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 
 Requires ANY permissions: 
 
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -2428,7 +2444,7 @@ namespace Example
 
             try
             { 
-                // Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+                // Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
                 BatchDownloadJobSubmissionResult result = apiInstance.PostRecordingBatchrequests(body);
                 Debug.WriteLine(result);
             }
@@ -3138,15 +3154,19 @@ void (empty response body)
 
 Updates the retention records on a recording.
 
-Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
 
 Requires ANY permissions: 
 
 * recording:recording:view
 * recording:recording:editRetention
+* recording:recording:restore
+* recording:screenRecording:view
 * recording:screenRecording:editRetention
+* recording:screenRecording:restore
 * recording:snippetRecording:view
 * recording:snippetRecording:editRetention
+* recording:snippetRecording:restore
 
 ### Example
 ```{"language":"csharp"}
@@ -3212,12 +3232,16 @@ namespace Example
 
 Update annotation
 
+If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
+
 Requires ANY permissions: 
 
 * recording:annotation:edit
+* recording:annotation:add
 * recording:recording:view
 * recording:recordingSegment:view
 * recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example
 ```{"language":"csharp"}
@@ -3681,6 +3705,7 @@ Requires ANY permissions:
 * recording:settings:editScreenRecordings
 * recording:settings:editRegionalStorage
 * recording:settings:editUrlExpiration
+* recording:settings:editConferenceRecording
 
 ### Example
 ```{"language":"csharp"}
@@ -3797,4 +3822,4 @@ namespace Example
 void (empty response body)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

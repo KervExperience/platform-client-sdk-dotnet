@@ -13,12 +13,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteRoutingUserDirectroutingbackupSettings**](#DeleteRoutingUserDirectroutingbackupSettings) | **Delete** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default. |
 | [**DeleteRoutingUserUtilization**](#DeleteRoutingUserUtilization) | **Delete** /api/v2/routing/users/{userId}/utilization | Delete the user&#39;s max utilization settings and revert to the organization-wide default. |
 | [**DeleteUser**](#DeleteUser) | **Delete** /api/v2/users/{userId} | Delete user |
+| [**DeleteUserCustomattribute**](#DeleteUserCustomattribute) | **Delete** /api/v2/users/{userId}/customattributes/{schemaId} | Delete a custom attributes record. |
 | [**DeleteUserExternalidAuthorityNameExternalKey**](#DeleteUserExternalidAuthorityNameExternalKey) | **Delete** /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} | Delete the external identifier for user. |
 | [**DeleteUserRoutinglanguage**](#DeleteUserRoutinglanguage) | **Delete** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove a routing language from a user |
 | [**DeleteUserRoutingskill**](#DeleteUserRoutingskill) | **Delete** /api/v2/users/{userId}/routingskills/{skillId} | Remove a routing skill from a user |
 | [**DeleteUserStationAssociatedstation**](#DeleteUserStationAssociatedstation) | **Delete** /api/v2/users/{userId}/station/associatedstation | Clear associated station |
 | [**DeleteUserStationDefaultstation**](#DeleteUserStationDefaultstation) | **Delete** /api/v2/users/{userId}/station/defaultstation | Clear default station |
 | [**DeleteUserVerifier**](#DeleteUserVerifier) | **Delete** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier |
+| [**DeleteUsersCustomattributesSchema**](#DeleteUsersCustomattributesSchema) | **Delete** /api/v2/users/customattributes/schemas/{schemaId} | Delete a schema |
+| [**DeleteUsersStationsMeAssociatedstation**](#DeleteUsersStationsMeAssociatedstation) | **Delete** /api/v2/users/stations/me/associatedstation | Clear self associated station |
 | [**GetAnalyticsUsersAggregatesJob**](#GetAnalyticsUsersAggregatesJob) | **Get** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates |
 | [**GetAnalyticsUsersAggregatesJobResults**](#GetAnalyticsUsersAggregatesJobResults) | **Get** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query |
 | [**GetAnalyticsUsersDetailsJob**](#GetAnalyticsUsersDetailsJob) | **Get** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details |
@@ -37,6 +40,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetUser**](#GetUser) | **Get** /api/v2/users/{userId} | Get user. |
 | [**GetUserAdjacents**](#GetUserAdjacents) | **Get** /api/v2/users/{userId}/adjacents | Get adjacents |
 | [**GetUserCallforwarding**](#GetUserCallforwarding) | **Get** /api/v2/users/{userId}/callforwarding | Get a user&#39;s CallForwarding |
+| [**GetUserCustomattribute**](#GetUserCustomattribute) | **Get** /api/v2/users/{userId}/customattributes/{schemaId} | Get custom attributes by schema id |
+| [**GetUserCustomattributesBulk**](#GetUserCustomattributesBulk) | **Get** /api/v2/users/{userId}/customattributes/bulk | Get multiple custom attributes records by schema ids |
 | [**GetUserDirectreports**](#GetUserDirectreports) | **Get** /api/v2/users/{userId}/directreports | Get direct reports |
 | [**GetUserExternalid**](#GetUserExternalid) | **Get** /api/v2/users/{userId}/externalid | Get the external identifiers for a user. |
 | [**GetUserExternalidAuthorityName**](#GetUserExternalidAuthorityName) | **Get** /api/v2/users/{userId}/externalid/{authorityName} | Get the external identifier of user for an authority. |
@@ -58,6 +63,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetUserVerifiers**](#GetUserVerifiers) | **Get** /api/v2/users/{userId}/verifiers | Get a list of verifiers |
 | [**GetUsers**](#GetUsers) | **Get** /api/v2/users | Get the list of available users. |
 | [**GetUsersChatsMe**](#GetUsersChatsMe) | **Get** /api/v2/users/chats/me | Get chats for a user |
+| [**GetUsersCustomattributesSchema**](#GetUsersCustomattributesSchema) | **Get** /api/v2/users/customattributes/schemas/{schemaId} | Get a schema |
+| [**GetUsersCustomattributesSchemaVersion**](#GetUsersCustomattributesSchemaVersion) | **Get** /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
+| [**GetUsersCustomattributesSchemaVersions**](#GetUsersCustomattributesSchemaVersions) | **Get** /api/v2/users/customattributes/schemas/{schemaId}/versions | Get all versions of a user schema |
+| [**GetUsersCustomattributesSchemas**](#GetUsersCustomattributesSchemas) | **Get** /api/v2/users/customattributes/schemas | Get a list of schemas. |
+| [**GetUsersCustomattributesSchemasCoretype**](#GetUsersCustomattributesSchemasCoretype) | **Get** /api/v2/users/customattributes/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built. |
+| [**GetUsersCustomattributesSchemasCoretypes**](#GetUsersCustomattributesSchemasCoretypes) | **Get** /api/v2/users/customattributes/schemas/coretypes | Get the list of core types enabled for a specific namespace. |
+| [**GetUsersCustomattributesSchemasLimits**](#GetUsersCustomattributesSchemasLimits) | **Get** /api/v2/users/customattributes/schemas/limits | Get quantitative limits on schemas |
 | [**GetUsersDevelopmentActivities**](#GetUsersDevelopmentActivities) | **Get** /api/v2/users/development/activities | Get list of Development Activities |
 | [**GetUsersDevelopmentActivitiesMe**](#GetUsersDevelopmentActivitiesMe) | **Get** /api/v2/users/development/activities/me | Get list of Development Activities for current user |
 | [**GetUsersDevelopmentActivity**](#GetUsersDevelopmentActivity) | **Get** /api/v2/users/development/activities/{activityId} | Get a Development Activity |
@@ -65,8 +77,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetUsersMe**](#GetUsersMe) | **Get** /api/v2/users/me | Get current user details. |
 | [**GetUsersQuery**](#GetUsersQuery) | **Get** /api/v2/users/query | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required |
 | [**GetUsersSearch**](#GetUsersSearch) | **Get** /api/v2/users/search | Search users using the q64 value returned from a previous search |
+| [**GetUsersStationsMe**](#GetUsersStationsMe) | **Get** /api/v2/users/stations/me | Get station information for self |
 | [**PatchUser**](#PatchUser) | **Patch** /api/v2/users/{userId} | Update user |
 | [**PatchUserCallforwarding**](#PatchUserCallforwarding) | **Patch** /api/v2/users/{userId}/callforwarding | Patch a user&#39;s CallForwarding |
+| [**PatchUserCustomattributes**](#PatchUserCustomattributes) | **Patch** /api/v2/users/{userId}/customattributes | Update a single custom attributes record by amending the data with only the provided fields. |
+| [**PatchUserCustomattributesBulk**](#PatchUserCustomattributesBulk) | **Patch** /api/v2/users/{userId}/customattributes/bulk | Update multiple custom attributes records by amending the data with only the provided fields. |
 | [**PatchUserGeolocation**](#PatchUserGeolocation) | **Patch** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user&#39;s Geolocation |
 | [**PatchUserQueue**](#PatchUserQueue) | **Patch** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user |
 | [**PatchUserQueues**](#PatchUserQueues) | **Patch** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user |
@@ -90,6 +105,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostUserRoutinglanguages**](#PostUserRoutinglanguages) | **Post** /api/v2/users/{userId}/routinglanguages | Assign a routing language to a user |
 | [**PostUserRoutingskills**](#PostUserRoutingskills) | **Post** /api/v2/users/{userId}/routingskills | Assign a routing skill to a user |
 | [**PostUsers**](#PostUsers) | **Post** /api/v2/users | Create user |
+| [**PostUsersCustomattributesSchemas**](#PostUsersCustomattributesSchemas) | **Post** /api/v2/users/customattributes/schemas | Create a schema |
 | [**PostUsersDevelopmentActivitiesAggregatesQuery**](#PostUsersDevelopmentActivitiesAggregatesQuery) | **Post** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data |
 | [**PostUsersMePassword**](#PostUsersMePassword) | **Post** /api/v2/users/me/password | Change your password |
 | [**PostUsersSearch**](#PostUsersSearch) | **Post** /api/v2/users/search | Search users |
@@ -98,8 +114,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostUsersSearchTeamsAssign**](#PostUsersSearchTeamsAssign) | **Post** /api/v2/users/search/teams/assign | Search users assigned to teams |
 | [**PutRoutingDirectroutingbackupSettingsMe**](#PutRoutingDirectroutingbackupSettingsMe) | **Put** /api/v2/routing/directroutingbackup/settings/me | Update the user&#39;s Direct Routing Backup settings. |
 | [**PutRoutingUserDirectroutingbackupSettings**](#PutRoutingUserDirectroutingbackupSettings) | **Put** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user&#39;s Direct Routing Backup settings. |
-| [**PutRoutingUserUtilization**](#PutRoutingUserUtilization) | **Put** /api/v2/routing/users/{userId}/utilization | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. |
+| [**PutRoutingUserUtilization**](#PutRoutingUserUtilization) | **Put** /api/v2/routing/users/{userId}/utilization | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values. |
 | [**PutUserCallforwarding**](#PutUserCallforwarding) | **Put** /api/v2/users/{userId}/callforwarding | Update a user&#39;s CallForwarding |
+| [**PutUserCustomattributes**](#PutUserCustomattributes) | **Put** /api/v2/users/{userId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields. |
 | [**PutUserOutofoffice**](#PutUserOutofoffice) | **Put** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice |
 | [**PutUserProfileskills**](#PutUserProfileskills) | **Put** /api/v2/users/{userId}/profileskills | Update profile skills for a user |
 | [**PutUserRoles**](#PutUserRoles) | **Put** /api/v2/users/{subjectId}/roles | Sets the user&#39;s roles |
@@ -110,6 +127,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PutUserStationAssociatedstationStationId**](#PutUserStationAssociatedstationStationId) | **Put** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station |
 | [**PutUserStationDefaultstationStationId**](#PutUserStationDefaultstationStationId) | **Put** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station |
 | [**PutUserVerifier**](#PutUserVerifier) | **Put** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier |
+| [**PutUsersCustomattributesSchema**](#PutUsersCustomattributesSchema) | **Put** /api/v2/users/customattributes/schemas/{schemaId} | Update a schema |
+| [**PutUsersStationsMeAssociatedstationStationId**](#PutUsersStationsMeAssociatedstationStationId) | **Put** /api/v2/users/stations/me/associatedstation/{stationId} | Set self associated station |
 
 
 
@@ -544,6 +563,69 @@ namespace Example
 **Object**
 
 
+## DeleteUserCustomattribute
+
+> void DeleteUserCustomattribute (string userId, string schemaId)
+
+
+Delete a custom attributes record.
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteUserCustomattributeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | user ID
+            var schemaId = schemaId_example;  // string | schemaId
+
+            try
+            { 
+                // Delete a custom attributes record.
+                apiInstance.DeleteUserCustomattribute(userId, schemaId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.DeleteUserCustomattribute: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **string**| user ID |  |
+| **schemaId** | **string**| schemaId |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## DeleteUserExternalidAuthorityNameExternalKey
 
 > void DeleteUserExternalidAuthorityNameExternalKey (string userId, string authorityName, string externalKey)
@@ -743,8 +825,9 @@ void (empty response body)
 
 Clear associated station
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* telephony:station:disassociate
 
 ### Example
 ```{"language":"csharp"}
@@ -915,6 +998,123 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **string**| User ID |  |
 | **verifierId** | **string**| Verifier ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteUsersCustomattributesSchema
+
+> void DeleteUsersCustomattributesSchema (string schemaId)
+
+
+Delete a schema
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteUsersCustomattributesSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Delete a schema
+                apiInstance.DeleteUsersCustomattributesSchema(schemaId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.DeleteUsersCustomattributesSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteUsersStationsMeAssociatedstation
+
+> void DeleteUsersStationsMeAssociatedstation ()
+
+
+Clear self associated station
+
+Requires ANY permissions: 
+
+* telephony:station:disassociateSelf
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteUsersStationsMeAssociatedstationExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+
+            try
+            { 
+                // Clear self associated station
+                apiInstance.DeleteUsersStationsMeAssociatedstation();
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.DeleteUsersStationsMeAssociatedstation: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
 
 ### Return type
 
@@ -1892,7 +2092,7 @@ namespace Example
 
 ## GetUser
 
-> [**User**](User) GetUser (string userId, List<string> expand = null, string integrationPresenceSource = null, string state = null)
+> [**User**](User) GetUser (string userId, List<string> expand = null, string integrationPresenceSource = null, List<string> userCustomAttributeSchemaIds = null, string state = null)
 
 
 Get user.
@@ -1925,12 +2125,13 @@ namespace Example
             var userId = userId_example;  // string | User ID
             var expand = new List<string>(); // List<string> | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional) 
             var integrationPresenceSource = integrationPresenceSource_example;  // string | Gets an integration presence for a user instead of their default. (optional) 
+            var userCustomAttributeSchemaIds = new List<string>(); // List<string> | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional) 
             var state = state_example;  // string | Search for a user with this state (optional)  (default to active)
 
             try
             { 
                 // Get user.
-                User result = apiInstance.GetUser(userId, expand, integrationPresenceSource, state);
+                User result = apiInstance.GetUser(userId, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1950,6 +2151,7 @@ namespace Example
 | **userId** | **string**| User ID |  |
 | **expand** | [**List<string>**](string)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integrationPresenceSource** | **string**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **userCustomAttributeSchemaIds** | [**List<string>**](string)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 100 | [optional]  |
 | **state** | **string**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 
 ### Return type
@@ -2027,8 +2229,9 @@ namespace Example
 
 Get a user's CallForwarding
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:callForwarding:view
 
 ### Example
 ```{"language":"csharp"}
@@ -2079,6 +2282,134 @@ namespace Example
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+## GetUserCustomattribute
+
+> [**UserCustomAttributes**](UserCustomAttributes) GetUserCustomattribute (string userId, string schemaId)
+
+
+Get custom attributes by schema id
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUserCustomattributeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | user ID
+            var schemaId = schemaId_example;  // string | schemaId
+
+            try
+            { 
+                // Get custom attributes by schema id
+                UserCustomAttributes result = apiInstance.GetUserCustomattribute(userId, schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUserCustomattribute: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **string**| user ID |  |
+| **schemaId** | **string**| schemaId |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
+## GetUserCustomattributesBulk
+
+> **List&lt;Object&gt;** GetUserCustomattributesBulk (string userId, List<string> schemaIds)
+
+
+Get multiple custom attributes records by schema ids
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUserCustomattributesBulkExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | user ID
+            var schemaIds = new List<string>(); // List<string> | 
+
+            try
+            { 
+                // Get multiple custom attributes records by schema ids
+                List<Object> result = apiInstance.GetUserCustomattributesBulk(userId, schemaIds);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUserCustomattributesBulk: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **string**| user ID |  |
+| **schemaIds** | [**List<string>**](string)|  |  |
+
+### Return type
+
+**List<Object>**
 
 
 ## GetUserDirectreports
@@ -3062,8 +3393,9 @@ namespace Example
 
 Get station information for user
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* telephony:otherStationAssociation:view
 
 ### Example
 ```{"language":"csharp"}
@@ -3309,7 +3641,7 @@ namespace Example
 
 ## GetUsers
 
-> [**UserEntityListing**](UserEntityListing) GetUsers (int? pageSize = null, int? pageNumber = null, List<string> id = null, List<string> jabberId = null, string sortOrder = null, List<string> expand = null, string integrationPresenceSource = null, string state = null)
+> [**UserEntityListing**](UserEntityListing) GetUsers (int? pageSize = null, int? pageNumber = null, List<string> id = null, List<string> jabberId = null, string sortOrder = null, List<string> expand = null, string integrationPresenceSource = null, List<string> userCustomAttributeSchemaIds = null, string state = null)
 
 
 Get the list of available users.
@@ -3346,12 +3678,13 @@ namespace Example
             var sortOrder = sortOrder_example;  // string | Ascending or descending sort order (optional)  (default to ASC)
             var expand = new List<string>(); // List<string> | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional) 
             var integrationPresenceSource = integrationPresenceSource_example;  // string | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional) 
+            var userCustomAttributeSchemaIds = new List<string>(); // List<string> | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional) 
             var state = state_example;  // string | Only list users of this state (optional)  (default to active)
 
             try
             { 
                 // Get the list of available users.
-                UserEntityListing result = apiInstance.GetUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state);
+                UserEntityListing result = apiInstance.GetUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3375,6 +3708,7 @@ namespace Example
 | **sortOrder** | **string**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**List<string>**](string)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integrationPresenceSource** | **string**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **userCustomAttributeSchemaIds** | [**List<string>**](string)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 5 | [optional]  |
 | **state** | **string**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 
 ### Return type
@@ -3384,7 +3718,7 @@ namespace Example
 
 ## GetUsersChatsMe
 
-> [**ChatItemCursorListing**](ChatItemCursorListing) GetUsersChatsMe (bool? excludeClosed = null, bool? includePresence = null, string after = null)
+> [**ChatItemCursorListing**](ChatItemCursorListing) GetUsersChatsMe (bool? excludeClosed = null, bool? includePresence = null, bool? includeRoomOwners = null, string after = null)
 
 
 Get chats for a user
@@ -3418,12 +3752,13 @@ namespace Example
             var apiInstance = new UsersApi();
             var excludeClosed = true;  // bool? | Whether or not to exclude closed chats (optional) 
             var includePresence = true;  // bool? | Whether or not to include user presence (optional) 
+            var includeRoomOwners = true;  // bool? | Whether or not to include room owners (optional) 
             var after = after_example;  // string | The key to start after (optional) 
 
             try
             { 
                 // Get chats for a user
-                ChatItemCursorListing result = apiInstance.GetUsersChatsMe(excludeClosed, includePresence, after);
+                ChatItemCursorListing result = apiInstance.GetUsersChatsMe(excludeClosed, includePresence, includeRoomOwners, after);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3442,11 +3777,433 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **excludeClosed** | **bool?**| Whether or not to exclude closed chats | [optional]  |
 | **includePresence** | **bool?**| Whether or not to include user presence | [optional]  |
+| **includeRoomOwners** | **bool?**| Whether or not to include room owners | [optional]  |
 | **after** | **string**| The key to start after | [optional]  |
 
 ### Return type
 
 [**ChatItemCursorListing**](ChatItemCursorListing)
+
+
+## GetUsersCustomattributesSchema
+
+> [**DataSchema**](DataSchema) GetUsersCustomattributesSchema (string schemaId)
+
+
+Get a schema
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Get a schema
+                DataSchema result = apiInstance.GetUsersCustomattributesSchema(schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+## GetUsersCustomattributesSchemaVersion
+
+> [**DataSchema**](DataSchema) GetUsersCustomattributesSchemaVersion (string schemaId, string versionId)
+
+
+Get a specific version of a schema
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemaVersionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+            var versionId = versionId_example;  // string | Schema version
+
+            try
+            { 
+                // Get a specific version of a schema
+                DataSchema result = apiInstance.GetUsersCustomattributesSchemaVersion(schemaId, versionId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchemaVersion: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+| **versionId** | **string**| Schema version |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+## GetUsersCustomattributesSchemaVersions
+
+> [**DataSchemaListing**](DataSchemaListing) GetUsersCustomattributesSchemaVersions (string schemaId)
+
+
+Get all versions of a user schema
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemaVersionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Get all versions of a user schema
+                DataSchemaListing result = apiInstance.GetUsersCustomattributesSchemaVersions(schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchemaVersions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing)
+
+
+## GetUsersCustomattributesSchemas
+
+> [**DataSchemaListing**](DataSchemaListing) GetUsersCustomattributesSchemas ()
+
+
+Get a list of schemas.
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemasExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+
+            try
+            { 
+                // Get a list of schemas.
+                DataSchemaListing result = apiInstance.GetUsersCustomattributesSchemas();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchemas: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing)
+
+
+## GetUsersCustomattributesSchemasCoretype
+
+> [**Coretype**](Coretype) GetUsersCustomattributesSchemasCoretype (string coreTypeName)
+
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemasCoretypeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var coreTypeName = coreTypeName_example;  // string | Name of the core type
+
+            try
+            { 
+                // Get the core types from which all schemas are built.
+                Coretype result = apiInstance.GetUsersCustomattributesSchemasCoretype(coreTypeName);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchemasCoretype: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **coreTypeName** | **string**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## GetUsersCustomattributesSchemasCoretypes
+
+> [**CoretypeListing**](CoretypeListing) GetUsersCustomattributesSchemasCoretypes ()
+
+
+Get the list of core types enabled for a specific namespace.
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemasCoretypesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+
+            try
+            { 
+                // Get the list of core types enabled for a specific namespace.
+                CoretypeListing result = apiInstance.GetUsersCustomattributesSchemasCoretypes();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchemasCoretypes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+## GetUsersCustomattributesSchemasLimits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) GetUsersCustomattributesSchemasLimits ()
+
+
+Get quantitative limits on schemas
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersCustomattributesSchemasLimitsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+
+            try
+            { 
+                // Get quantitative limits on schemas
+                SchemaQuantityLimits result = apiInstance.GetUsersCustomattributesSchemasLimits();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersCustomattributesSchemasLimits: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 ## GetUsersDevelopmentActivities
@@ -3755,7 +4512,7 @@ namespace Example
 
 ## GetUsersMe
 
-> [**UserMe**](UserMe) GetUsersMe (List<string> expand = null, string integrationPresenceSource = null)
+> [**UserMe**](UserMe) GetUsersMe (List<string> expand = null, string integrationPresenceSource = null, List<string> userCustomAttributeSchemaIds = null)
 
 
 Get current user details.
@@ -3789,11 +4546,12 @@ namespace Example
             var apiInstance = new UsersApi();
             var expand = new List<string>(); // List<string> | Which fields, if any, to expand. (optional) 
             var integrationPresenceSource = integrationPresenceSource_example;  // string | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\". (optional) 
+            var userCustomAttributeSchemaIds = new List<string>(); // List<string> | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional) 
 
             try
             { 
                 // Get current user details.
-                UserMe result = apiInstance.GetUsersMe(expand, integrationPresenceSource);
+                UserMe result = apiInstance.GetUsersMe(expand, integrationPresenceSource, userCustomAttributeSchemaIds);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3812,6 +4570,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**List<string>**](string)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
 | **integrationPresenceSource** | **string**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **userCustomAttributeSchemaIds** | [**List<string>**](string)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 100 | [optional]  |
 
 ### Return type
 
@@ -3820,12 +4579,10 @@ namespace Example
 
 ## GetUsersQuery
 
-> [**UserCursorEntityListing**](UserCursorEntityListing) GetUsersQuery (string cursor = null, int? pageSize = null, string sortOrder = null, List<string> expand = null, string integrationPresenceSource = null, string state = null)
+> [**UserCursorEntityListing**](UserCursorEntityListing) GetUsersQuery (string cursor = null, int? pageSize = null, string sortOrder = null, List<string> expand = null, string integrationPresenceSource = null, List<string> userCustomAttributeSchemaIds = null, string state = null)
 
 
 Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
-
-GetUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -3858,12 +4615,13 @@ namespace Example
             var sortOrder = sortOrder_example;  // string | Ascending or descending sort order (optional)  (default to ASC)
             var expand = new List<string>(); // List<string> | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional) 
             var integrationPresenceSource = integrationPresenceSource_example;  // string | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional) 
+            var userCustomAttributeSchemaIds = new List<string>(); // List<string> | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional) 
             var state = state_example;  // string | Only list users of this state (optional)  (default to active)
 
             try
             { 
                 // Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
-                UserCursorEntityListing result = apiInstance.GetUsersQuery(cursor, pageSize, sortOrder, expand, integrationPresenceSource, state);
+                UserCursorEntityListing result = apiInstance.GetUsersQuery(cursor, pageSize, sortOrder, expand, integrationPresenceSource, userCustomAttributeSchemaIds, state);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3885,6 +4643,7 @@ namespace Example
 | **sortOrder** | **string**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ASC, DESC |
 | **expand** | [**List<string>**](string)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integrationPresenceSource** | **string**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **userCustomAttributeSchemaIds** | [**List<string>**](string)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 5 | [optional]  |
 | **state** | **string**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 
 ### Return type
@@ -3956,6 +4715,63 @@ namespace Example
 ### Return type
 
 [**UsersSearchResponse**](UsersSearchResponse)
+
+
+## GetUsersStationsMe
+
+> [**UserStations**](UserStations) GetUsersStationsMe ()
+
+
+Get station information for self
+
+Requires ANY permissions: 
+
+* telephony:selfStationAssociation:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetUsersStationsMeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+
+            try
+            { 
+                // Get station information for self
+                UserStations result = apiInstance.GetUsersStationsMe();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetUsersStationsMe: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**UserStations**](UserStations)
 
 
 ## PatchUser
@@ -4086,6 +4902,134 @@ namespace Example
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+## PatchUserCustomattributes
+
+> [**UserCustomAttributes**](UserCustomAttributes) PatchUserCustomattributes (string userId, UserCustomAttributesUpdateRequest userCustomAttributes)
+
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchUserCustomattributesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | user ID
+            var userCustomAttributes = new UserCustomAttributesUpdateRequest(); // UserCustomAttributesUpdateRequest | 
+
+            try
+            { 
+                // Update a single custom attributes record by amending the data with only the provided fields.
+                UserCustomAttributes result = apiInstance.PatchUserCustomattributes(userId, userCustomAttributes);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PatchUserCustomattributes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **string**| user ID |  |
+| **userCustomAttributes** | [**UserCustomAttributesUpdateRequest**](UserCustomAttributesUpdateRequest)|  |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
+## PatchUserCustomattributesBulk
+
+> [**UserCustomAttributes**](UserCustomAttributes) PatchUserCustomattributesBulk (string userId, List<UserCustomAttributesUpdateRequest> userCustomAttributesList)
+
+
+Update multiple custom attributes records by amending the data with only the provided fields.
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchUserCustomattributesBulkExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | user ID
+            var userCustomAttributesList = new List<UserCustomAttributesUpdateRequest>(); // List<UserCustomAttributesUpdateRequest> | 
+
+            try
+            { 
+                // Update multiple custom attributes records by amending the data with only the provided fields.
+                UserCustomAttributes result = apiInstance.PatchUserCustomattributesBulk(userId, userCustomAttributesList);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PatchUserCustomattributesBulk: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **string**| user ID |  |
+| **userCustomAttributesList** | [**List<UserCustomAttributesUpdateRequest>**](UserCustomAttributesUpdateRequest)|  |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
 
 
 ## PatchUserGeolocation
@@ -4228,6 +5172,8 @@ namespace Example
 
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Requires ANY permissions: 
 
@@ -5576,6 +6522,68 @@ namespace Example
 [**User**](User)
 
 
+## PostUsersCustomattributesSchemas
+
+> [**DataSchema**](DataSchema) PostUsersCustomattributesSchemas (DataSchema body)
+
+
+Create a schema
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostUsersCustomattributesSchemasExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var body = new DataSchema(); // DataSchema | Schema
+
+            try
+            { 
+                // Create a schema
+                DataSchema result = apiInstance.PostUsersCustomattributesSchemas(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PostUsersCustomattributesSchemas: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DataSchema**](DataSchema)| Schema |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
 ## PostUsersDevelopmentActivitiesAggregatesQuery
 
 > [**DevelopmentActivityAggregateResponse**](DevelopmentActivityAggregateResponse) PostUsersDevelopmentActivitiesAggregatesQuery (DevelopmentActivityAggregateParam body)
@@ -6085,7 +7093,7 @@ namespace Example
 > [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) PutRoutingUserUtilization (string userId, UtilizationRequest body)
 
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Requires ANY permissions: 
 
@@ -6118,7 +7126,7 @@ namespace Example
 
             try
             { 
-                // Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+                // Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
                 AgentMaxUtilizationResponse result = apiInstance.PutRoutingUserUtilization(userId, body);
                 Debug.WriteLine(result);
             }
@@ -6206,6 +7214,70 @@ namespace Example
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+## PutUserCustomattributes
+
+> [**UserCustomAttributes**](UserCustomAttributes) PutUserCustomattributes (string userId, UserCustomAttributesUpdateRequest userCustomAttributes)
+
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutUserCustomattributesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | user ID
+            var userCustomAttributes = new UserCustomAttributesUpdateRequest(); // UserCustomAttributesUpdateRequest | 
+
+            try
+            { 
+                // Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+                UserCustomAttributes result = apiInstance.PutUserCustomattributes(userId, userCustomAttributes);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PutUserCustomattributes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userId** | **string**| user ID |  |
+| **userCustomAttributes** | [**UserCustomAttributesUpdateRequest**](UserCustomAttributesUpdateRequest)|  |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
 
 
 ## PutUserOutofoffice
@@ -6663,8 +7735,9 @@ namespace Example
 
 Set associated station
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* telephony:otherStationAssociation:edit
 
 ### Example
 ```{"language":"csharp"}
@@ -6848,4 +7921,129 @@ namespace Example
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+## PutUsersCustomattributesSchema
+
+> [**DataSchema**](DataSchema) PutUsersCustomattributesSchema (string schemaId, DataSchema body)
+
+
+Update a schema
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutUsersCustomattributesSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+            var body = new DataSchema(); // DataSchema | Data Schema
+
+            try
+            { 
+                // Update a schema
+                DataSchema result = apiInstance.PutUsersCustomattributesSchema(schemaId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PutUsersCustomattributesSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+| **body** | [**DataSchema**](DataSchema)| Data Schema |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+## PutUsersStationsMeAssociatedstationStationId
+
+> void PutUsersStationsMeAssociatedstationStationId (string stationId)
+
+
+Set self associated station
+
+Requires ANY permissions: 
+
+* telephony:selfStationAssociation:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutUsersStationsMeAssociatedstationStationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new UsersApi();
+            var stationId = stationId_example;  // string | stationId
+
+            try
+            { 
+                // Set self associated station
+                apiInstance.PutUsersStationsMeAssociatedstationStationId(stationId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PutUsersStationsMeAssociatedstationStationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **stationId** | **string**| stationId |  |
+
+### Return type
+
+void (empty response body)
+
+
+_PureCloudPlatform.Client.V2 263.0.0_

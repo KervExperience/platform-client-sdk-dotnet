@@ -90,7 +90,49 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Moderationflag for "moderationFlag"
             /// </summary>
             [EnumMember(Value = "moderationFlag")]
-            Moderationflag
+            Moderationflag,
+            
+            /// <summary>
+            /// Enum Sourcetype for "sourceType"
+            /// </summary>
+            [EnumMember(Value = "sourceType")]
+            Sourcetype,
+            
+            /// <summary>
+            /// Enum Verifieduser for "verifiedUser"
+            /// </summary>
+            [EnumMember(Value = "verifiedUser")]
+            Verifieduser,
+            
+            /// <summary>
+            /// Enum Followercount for "followerCount"
+            /// </summary>
+            [EnumMember(Value = "followerCount")]
+            Followercount,
+            
+            /// <summary>
+            /// Enum Likes for "likes"
+            /// </summary>
+            [EnumMember(Value = "likes")]
+            Likes,
+            
+            /// <summary>
+            /// Enum Shares for "shares"
+            /// </summary>
+            [EnumMember(Value = "shares")]
+            Shares,
+            
+            /// <summary>
+            /// Enum Comments for "comments"
+            /// </summary>
+            [EnumMember(Value = "comments")]
+            Comments,
+            
+            /// <summary>
+            /// Enum Views for "views"
+            /// </summary>
+            [EnumMember(Value = "views")]
+            Views
         }
         /// <summary>
         /// Gets or Sets Metrics

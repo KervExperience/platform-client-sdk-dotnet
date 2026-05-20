@@ -9,14 +9,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteAnalyticsConversationsAggregatesJob**](#DeleteAnalyticsConversationsAggregatesJob) | **Delete** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates |
 | [**DeleteAnalyticsConversationsDetailsJob**](#DeleteAnalyticsConversationsDetailsJob) | **Delete** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job |
 | [**DeleteConversation**](#DeleteConversation) | **Delete** /api/v2/conversations/{conversationId} | Update a conversation by disconnecting all of the participants |
+| [**DeleteConversationCustomattribute**](#DeleteConversationCustomattribute) | **Delete** /api/v2/conversations/{conversationId}/customattributes/{attributesId} | Delete a custom attributes record. |
 | [**DeleteConversationParticipantCode**](#DeleteConversationParticipantCode) | **Delete** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant |
 | [**DeleteConversationParticipantFlaggedreason**](#DeleteConversationParticipantFlaggedreason) | **Delete** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant. |
+| [**DeleteConversationsCallParticipantCommunicationPostflowaction**](#DeleteConversationsCallParticipantCommunicationPostflowaction) | **Delete** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Remove mandatory post call actions. |
 | [**DeleteConversationsCallParticipantConsult**](#DeleteConversationsCallParticipantConsult) | **Delete** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer |
 | [**DeleteConversationsEmailMessagesDraftAttachment**](#DeleteConversationsEmailMessagesDraftAttachment) | **Delete** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft |
 | [**DeleteConversationsMessagesCachedmediaCachedMediaItemId**](#DeleteConversationsMessagesCachedmediaCachedMediaItemId) | **Delete** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously |
 | [**DeleteConversationsMessagingIntegrationsAppleIntegrationId**](#DeleteConversationsMessagingIntegrationsAppleIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Delete an Apple messaging integration |
 | [**DeleteConversationsMessagingIntegrationsFacebookIntegrationId**](#DeleteConversationsMessagingIntegrationsFacebookIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration |
 | [**DeleteConversationsMessagingIntegrationsInstagramIntegrationId**](#DeleteConversationsMessagingIntegrationsInstagramIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration |
+| [**DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](#DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Delete an Open messaging integration with the Google Business Profile extension |
 | [**DeleteConversationsMessagingIntegrationsOpenIntegrationId**](#DeleteConversationsMessagingIntegrationsOpenIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration |
 | [**DeleteConversationsMessagingIntegrationsTwitterIntegrationId**](#DeleteConversationsMessagingIntegrationsTwitterIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete Twitter messaging integration |
 | [**DeleteConversationsMessagingIntegrationsWhatsappIntegrationId**](#DeleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **Delete** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration |
@@ -31,11 +34,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetAnalyticsConversationsDetailsJobResults**](#GetAnalyticsConversationsDetailsJobResults) | **Get** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job |
 | [**GetAnalyticsConversationsDetailsJobsAvailability**](#GetAnalyticsConversationsDetailsJobsAvailability) | **Get** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time |
 | [**GetConversation**](#GetConversation) | **Get** /api/v2/conversations/{conversationId} | Get conversation |
+| [**GetConversationAssistantCopilotcontext**](#GetConversationAssistantCopilotcontext) | **Get** /api/v2/conversations/{conversationId}/assistant/copilotcontext | Get copilot context values for a conversation. |
 | [**GetConversationCommunicationAgentchecklist**](#GetConversationCommunicationAgentchecklist) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Get checklist info for a single checklist. |
 | [**GetConversationCommunicationAgentchecklistJob**](#GetConversationCommunicationAgentchecklistJob) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId} | Get inference job status |
 | [**GetConversationCommunicationAgentchecklists**](#GetConversationCommunicationAgentchecklists) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists | Get information of all checklists associated with a conversation. |
 | [**GetConversationCommunicationInternalmessage**](#GetConversationCommunicationInternalmessage) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message |
 | [**GetConversationCommunicationInternalmessages**](#GetConversationCommunicationInternalmessages) | **Get** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication |
+| [**GetConversationCustomattribute**](#GetConversationCustomattribute) | **Get** /api/v2/conversations/{conversationId}/customattributes/{attributesId} | Get custom attributes by id |
+| [**GetConversationCustomattributes**](#GetConversationCustomattributes) | **Get** /api/v2/conversations/{conversationId}/customattributes | Get a list of custom attributes for a conversation. |
 | [**GetConversationParticipantSecureivrsession**](#GetConversationParticipantSecureivrsession) | **Get** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session |
 | [**GetConversationParticipantSecureivrsessions**](#GetConversationParticipantSecureivrsessions) | **Get** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant. |
 | [**GetConversationParticipantWrapup**](#GetConversationParticipantWrapup) | **Get** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant.  |
@@ -53,8 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsCallbackParticipantCommunicationWrapup**](#GetConversationsCallbackParticipantCommunicationWrapup) | **Get** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication.  |
 | [**GetConversationsCallbackParticipantWrapup**](#GetConversationsCallbackParticipantWrapup) | **Get** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant.  |
 | [**GetConversationsCallbackParticipantWrapupcodes**](#GetConversationsCallbackParticipantWrapupcodes) | **Get** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant |
-| [**GetConversationsCallbacks**](#GetConversationsCallbacks) | **Get** /api/v2/conversations/callbacks | Get active callback conversations for the logged in user |
-| [**GetConversationsCalls**](#GetConversationsCalls) | **Get** /api/v2/conversations/calls | Get active call conversations for the logged in user |
+| [**GetConversationsCallbacks**](#GetConversationsCallbacks) | **Get** /api/v2/conversations/callbacks | Get the logged-in user&#39;s active conversations and their Callback participants state. |
+| [**GetConversationsCalls**](#GetConversationsCalls) | **Get** /api/v2/conversations/calls | Get the logged-in user&#39;s active conversations and their Call participants state. |
 | [**GetConversationsCallsHistory**](#GetConversationsCallsHistory) | **Get** /api/v2/conversations/calls/history | Get call history |
 | [**GetConversationsCallsMaximumconferenceparties**](#GetConversationsCallsMaximumconferenceparties) | **Get** /api/v2/conversations/calls/maximumconferenceparties | Get the maximum number of participants that this user can have on a conference |
 | [**GetConversationsChat**](#GetConversationsChat) | **Get** /api/v2/conversations/chats/{conversationId} | Get chat conversation |
@@ -69,6 +75,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsCobrowsesessionParticipantWrapup**](#GetConversationsCobrowsesessionParticipantWrapup) | **Get** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant.  |
 | [**GetConversationsCobrowsesessionParticipantWrapupcodes**](#GetConversationsCobrowsesessionParticipantWrapupcodes) | **Get** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant |
 | [**GetConversationsCobrowsesessions**](#GetConversationsCobrowsesessions) | **Get** /api/v2/conversations/cobrowsesessions | Get active cobrowse conversations for the logged in user |
+| [**GetConversationsCustomattributesSchema**](#GetConversationsCustomattributesSchema) | **Get** /api/v2/conversations/customattributes/schemas/{schemaId} | Get a schema |
+| [**GetConversationsCustomattributesSchemaVersion**](#GetConversationsCustomattributesSchemaVersion) | **Get** /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
+| [**GetConversationsCustomattributesSchemaVersions**](#GetConversationsCustomattributesSchemaVersions) | **Get** /api/v2/conversations/customattributes/schemas/{schemaId}/versions | Get all versions of a CCA schema |
+| [**GetConversationsCustomattributesSchemas**](#GetConversationsCustomattributesSchemas) | **Get** /api/v2/conversations/customattributes/schemas | Get a list of schemas. |
+| [**GetConversationsCustomattributesSchemasCoretype**](#GetConversationsCustomattributesSchemasCoretype) | **Get** /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built. |
+| [**GetConversationsCustomattributesSchemasCoretypes**](#GetConversationsCustomattributesSchemasCoretypes) | **Get** /api/v2/conversations/customattributes/schemas/coretypes | Get the list of core types enabled for a specific namespace. |
+| [**GetConversationsCustomattributesSchemasLimits**](#GetConversationsCustomattributesSchemasLimits) | **Get** /api/v2/conversations/customattributes/schemas/limits | Get quantitative limits on schemas |
 | [**GetConversationsEmail**](#GetConversationsEmail) | **Get** /api/v2/conversations/emails/{conversationId} | Get email conversation |
 | [**GetConversationsEmailMessage**](#GetConversationsEmailMessage) | **Get** /api/v2/conversations/emails/{conversationId}/messages/{messageId} | Get conversation message |
 | [**GetConversationsEmailMessages**](#GetConversationsEmailMessages) | **Get** /api/v2/conversations/emails/{conversationId}/messages | Get conversation messages |
@@ -77,9 +90,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsEmailParticipantWrapup**](#GetConversationsEmailParticipantWrapup) | **Get** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant.  |
 | [**GetConversationsEmailParticipantWrapupcodes**](#GetConversationsEmailParticipantWrapupcodes) | **Get** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant |
 | [**GetConversationsEmailSettings**](#GetConversationsEmailSettings) | **Get** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation |
-| [**GetConversationsEmails**](#GetConversationsEmails) | **Get** /api/v2/conversations/emails | Get active email conversations for the logged in user |
+| [**GetConversationsEmails**](#GetConversationsEmails) | **Get** /api/v2/conversations/emails | Get the logged-in user&#39;s active conversations and their Email participants state. |
 | [**GetConversationsInternalmessage**](#GetConversationsInternalmessage) | **Get** /api/v2/conversations/internalmessages/{conversationId} | Get internal message conversation |
-| [**GetConversationsInternalmessages**](#GetConversationsInternalmessages) | **Get** /api/v2/conversations/internalmessages | Get active internal message conversations for the logged in user |
+| [**GetConversationsInternalmessages**](#GetConversationsInternalmessages) | **Get** /api/v2/conversations/internalmessages | Get the logged-in user&#39;s active conversations and their InternalMessage participants state. |
 | [**GetConversationsKeyconfiguration**](#GetConversationsKeyconfiguration) | **Get** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations |
 | [**GetConversationsKeyconfigurations**](#GetConversationsKeyconfigurations) | **Get** /api/v2/conversations/keyconfigurations | Get a list of key configurations data |
 | [**GetConversationsMessage**](#GetConversationsMessage) | **Get** /api/v2/conversations/messages/{conversationId} | Get message conversation |
@@ -90,7 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsMessageParticipantCommunicationWrapup**](#GetConversationsMessageParticipantCommunicationWrapup) | **Get** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication.  |
 | [**GetConversationsMessageParticipantWrapup**](#GetConversationsMessageParticipantWrapup) | **Get** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant.  |
 | [**GetConversationsMessageParticipantWrapupcodes**](#GetConversationsMessageParticipantWrapupcodes) | **Get** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant |
-| [**GetConversationsMessages**](#GetConversationsMessages) | **Get** /api/v2/conversations/messages | Get active message conversations for the logged in user |
+| [**GetConversationsMessages**](#GetConversationsMessages) | **Get** /api/v2/conversations/messages | Get the logged-in user&#39;s active conversations and their Message participants state. |
 | [**GetConversationsMessagesCachedmedia**](#GetConversationsMessagesCachedmedia) | **Get** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items |
 | [**GetConversationsMessagesCachedmediaCachedMediaItemId**](#GetConversationsMessagesCachedmediaCachedMediaItemId) | **Get** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item |
 | [**GetConversationsMessagingFacebookApp**](#GetConversationsMessagingFacebookApp) | **Get** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id |
@@ -110,6 +123,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsMessagingIntegrationsInstagram**](#GetConversationsMessagingIntegrationsInstagram) | **Get** /api/v2/conversations/messaging/integrations/instagram | Get a list of Instagram Integrations |
 | [**GetConversationsMessagingIntegrationsInstagramIntegrationId**](#GetConversationsMessagingIntegrationsInstagramIntegrationId) | **Get** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration |
 | [**GetConversationsMessagingIntegrationsOpen**](#GetConversationsMessagingIntegrationsOpen) | **Get** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations |
+| [**GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](#GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **Get** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Get an Open messaging integration with the Google Business Profile extension |
+| [**GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings**](#GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings) | **Get** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings | Get Google Business Profile OAuth 2 settings |
+| [**GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken**](#GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken) | **Get** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId} | Get a Google Auth Token |
+| [**GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts**](#GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts) | **Get** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts | Get Google Business Profile accounts |
 | [**GetConversationsMessagingIntegrationsOpenIntegrationId**](#GetConversationsMessagingIntegrationsOpenIntegrationId) | **Get** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration |
 | [**GetConversationsMessagingIntegrationsTwitter**](#GetConversationsMessagingIntegrationsTwitter) | **Get** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations |
 | [**GetConversationsMessagingIntegrationsTwitterIntegrationId**](#GetConversationsMessagingIntegrationsTwitterIntegrationId) | **Get** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get Twitter messaging integration |
@@ -130,6 +147,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetConversationsVideoDetails**](#GetConversationsVideoDetails) | **Get** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants). |
 | [**GetConversationsVideoParticipantCommunicationWrapup**](#GetConversationsVideoParticipantCommunicationWrapup) | **Get** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication.  |
 | [**GetConversationsVideosMeeting**](#GetConversationsVideosMeeting) | **Get** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId |
+| [**PatchConversationCustomattributes**](#PatchConversationCustomattributes) | **Patch** /api/v2/conversations/{conversationId}/customattributes | Update a single custom attributes record by amending the data with only the provided fields. |
+| [**PatchConversationCustomattributesBulk**](#PatchConversationCustomattributesBulk) | **Patch** /api/v2/conversations/{conversationId}/customattributes/bulk | Update a list of custom attributes record by amending the data with only the provided fields. |
 | [**PatchConversationParticipant**](#PatchConversationParticipant) | **Patch** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant. |
 | [**PatchConversationParticipantAttributes**](#PatchConversationParticipantAttributes) | **Patch** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant. |
 | [**PatchConversationRecordingstate**](#PatchConversationRecordingstate) | **Patch** /api/v2/conversations/{conversationId}/recordingstate | Update a conversation by setting its recording state |
@@ -143,6 +162,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchConversationsCallParticipant**](#PatchConversationsCallParticipant) | **Patch** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant |
 | [**PatchConversationsCallParticipantAttributes**](#PatchConversationsCallParticipantAttributes) | **Patch** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant. |
 | [**PatchConversationsCallParticipantCommunication**](#PatchConversationsCallParticipantCommunication) | **Patch** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it. This endpoint does not update wrapup. |
+| [**PatchConversationsCallParticipantCommunicationPostflowaction**](#PatchConversationsCallParticipantCommunicationPostflowaction) | **Patch** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Set mandatory post call actions.  If both values are null or blank error will occur. |
 | [**PatchConversationsCallParticipantConsult**](#PatchConversationsCallParticipantConsult) | **Patch** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak |
 | [**PatchConversationsCallParticipantUserUserId**](#PatchConversationsCallParticipantUserUserId) | **Patch** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId} | Update conversation participant on behalf of a user |
 | [**PatchConversationsCallback**](#PatchConversationsCallback) | **Patch** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants |
@@ -168,9 +188,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchConversationsMessageParticipant**](#PatchConversationsMessageParticipant) | **Patch** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant |
 | [**PatchConversationsMessageParticipantAttributes**](#PatchConversationsMessageParticipantAttributes) | **Patch** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant. |
 | [**PatchConversationsMessageParticipantCommunication**](#PatchConversationsMessageParticipantCommunication) | **Patch** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it. This endpoint does not update wrapup. |
+| [**PatchConversationsMessageParticipantParkingstate**](#PatchConversationsMessageParticipantParkingstate) | **Patch** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate | Update conversation by setting its parking state |
 | [**PatchConversationsMessagingIntegrationsAppleIntegrationId**](#PatchConversationsMessagingIntegrationsAppleIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Update an Apple messaging integration |
 | [**PatchConversationsMessagingIntegrationsFacebookIntegrationId**](#PatchConversationsMessagingIntegrationsFacebookIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration |
 | [**PatchConversationsMessagingIntegrationsInstagramIntegrationId**](#PatchConversationsMessagingIntegrationsInstagramIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration |
+| [**PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](#PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Update an Open messaging integration with the Google Business Profile extension |
 | [**PatchConversationsMessagingIntegrationsOpenIntegrationId**](#PatchConversationsMessagingIntegrationsOpenIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration |
 | [**PatchConversationsMessagingIntegrationsTwitterIntegrationId**](#PatchConversationsMessagingIntegrationsTwitterIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update a Twitter messaging integration |
 | [**PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](#PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | **Patch** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow |
@@ -217,6 +239,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationsCallParticipantConsultQueue**](#PostConversationsCallParticipantConsultQueue) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue |
 | [**PostConversationsCallParticipantMonitor**](#PostConversationsCallParticipantMonitor) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant. |
 | [**PostConversationsCallParticipantReplace**](#PostConversationsCallParticipantReplace) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address |
+| [**PostConversationsCallParticipantSnippetRecord**](#PostConversationsCallParticipantSnippetRecord) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record | Start/stop the snippet recording for a participant |
 | [**PostConversationsCallParticipantVoiceConsult**](#PostConversationsCallParticipantVoiceConsult) | **Post** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer |
 | [**PostConversationsCallParticipants**](#PostConversationsCallParticipants) | **Post** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation |
 | [**PostConversationsCallParticipantsUserUserId**](#PostConversationsCallParticipantsUserUserId) | **Post** /api/v2/conversations/calls/{conversationId}/participants/user/{userId} | Add participants to a conversation on behalf of a user |
@@ -234,6 +257,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationsChats**](#PostConversationsChats) | **Post** /api/v2/conversations/chats | Create a web chat conversation |
 | [**PostConversationsCobrowsesessionParticipantCommunicationWrapup**](#PostConversationsCobrowsesessionParticipantCommunicationWrapup) | **Post** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication |
 | [**PostConversationsCobrowsesessionParticipantReplace**](#PostConversationsCobrowsesessionParticipantReplace) | **Post** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address |
+| [**PostConversationsCustomattributesSchemas**](#PostConversationsCustomattributesSchemas) | **Post** /api/v2/conversations/customattributes/schemas | Create a schema |
+| [**PostConversationsCustomattributesSearch**](#PostConversationsCustomattributesSearch) | **Post** /api/v2/conversations/customattributes/search | Search resources. |
 | [**PostConversationsEmailInboundmessages**](#PostConversationsEmailInboundmessages) | **Post** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it. |
 | [**PostConversationsEmailMessages**](#PostConversationsEmailMessages) | **Post** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply |
 | [**PostConversationsEmailMessagesDraftAttachmentsCopy**](#PostConversationsEmailMessagesDraftAttachmentsCopy) | **Post** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft. |
@@ -265,6 +290,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationsMessagingIntegrationsFacebook**](#PostConversationsMessagingIntegrationsFacebook) | **Post** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration |
 | [**PostConversationsMessagingIntegrationsInstagram**](#PostConversationsMessagingIntegrationsInstagram) | **Post** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration |
 | [**PostConversationsMessagingIntegrationsOpen**](#PostConversationsMessagingIntegrationsOpen) | **Post** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration |
+| [**PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile**](#PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile) | **Post** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile | Create an Open messaging integration with the Google Business Profile extension |
+| [**PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens**](#PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens) | **Post** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens | Create a Google Auth Token by exchanging the one-time auth code retrieved from Google |
 | [**PostConversationsMessagingIntegrationsTwitter**](#PostConversationsMessagingIntegrationsTwitter) | **Post** /api/v2/conversations/messaging/integrations/twitter | Create Twitter Integration |
 | [**PostConversationsMessagingIntegrationsWhatsapp**](#PostConversationsMessagingIntegrationsWhatsapp) | **Post** /api/v2/conversations/messaging/integrations/whatsapp | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration |
 | [**PostConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](#PostConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | **Post** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup | Create a WhatsApp Integration using the WhatsApp embedded signup flow |
@@ -276,6 +303,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostConversationsVideoAgentconferenceCommunication**](#PostConversationsVideoAgentconferenceCommunication) | **Post** /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} | Create an Agent-Type video conference and assign an agent to it |
 | [**PostConversationsVideoParticipantCommunicationWrapup**](#PostConversationsVideoParticipantCommunicationWrapup) | **Post** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication |
 | [**PostConversationsVideosMeetings**](#PostConversationsVideosMeetings) | **Post** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId |
+| [**PutConversationCustomattributes**](#PutConversationCustomattributes) | **Put** /api/v2/conversations/{conversationId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields. |
+| [**PutConversationCustomattributesBulk**](#PutConversationCustomattributesBulk) | **Put** /api/v2/conversations/{conversationId}/customattributes/bulk | Create or update a list of custom attributes records. Updating replaces all data with the provided fields. |
 | [**PutConversationParticipantFlaggedreason**](#PutConversationParticipantFlaggedreason) | **Put** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**PutConversationSecureattributes**](#PutConversationSecureattributes) | **Put** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation. |
 | [**PutConversationTags**](#PutConversationTags) | **Put** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation. |
@@ -284,6 +313,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PutConversationsCallbackRecordingstate**](#PutConversationsCallbackRecordingstate) | **Put** /api/v2/conversations/callbacks/{conversationId}/recordingstate | Update a conversation by setting its recording state |
 | [**PutConversationsChatRecordingstate**](#PutConversationsChatRecordingstate) | **Put** /api/v2/conversations/chats/{conversationId}/recordingstate | Update a conversation by setting its recording state |
 | [**PutConversationsCobrowsesessionRecordingstate**](#PutConversationsCobrowsesessionRecordingstate) | **Put** /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate | Update a conversation by setting its recording state |
+| [**PutConversationsCustomattributesSchema**](#PutConversationsCustomattributesSchema) | **Put** /api/v2/conversations/customattributes/schemas/{schemaId} | Update a schema |
 | [**PutConversationsEmailMessagesDraft**](#PutConversationsEmailMessagesDraft) | **Put** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply |
 | [**PutConversationsEmailRecordingstate**](#PutConversationsEmailRecordingstate) | **Put** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state |
 | [**PutConversationsKeyconfiguration**](#PutConversationsKeyconfiguration) | **Put** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations |
@@ -489,6 +519,69 @@ namespace Example
 void (empty response body)
 
 
+## DeleteConversationCustomattribute
+
+> void DeleteConversationCustomattribute (string conversationId, string attributesId)
+
+
+Delete a custom attributes record.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteConversationCustomattributeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var attributesId = attributesId_example;  // string | attributesId
+
+            try
+            { 
+                // Delete a custom attributes record.
+                apiInstance.DeleteConversationCustomattribute(conversationId, attributesId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.DeleteConversationCustomattribute: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **attributesId** | **string**| attributesId |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## DeleteConversationParticipantCode
 
 > void DeleteConversationParticipantCode (string conversationId, string participantId, string addCommunicationCode)
@@ -609,6 +702,71 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversation ID |  |
 | **participantId** | **string**| participant ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteConversationsCallParticipantCommunicationPostflowaction
+
+> void DeleteConversationsCallParticipantCommunicationPostflowaction (string conversationId, string participantId, string communicationId)
+
+
+Remove mandatory post call actions.
+
+Requires ANY permissions: 
+
+* conversation:call:deleteMandatoryPostFlowAction
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteConversationsCallParticipantCommunicationPostflowactionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var participantId = participantId_example;  // string | participantId
+            var communicationId = communicationId_example;  // string | communicationId
+
+            try
+            { 
+                // Remove mandatory post call actions.
+                apiInstance.DeleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.DeleteConversationsCallParticipantCommunicationPostflowaction: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **participantId** | **string**| participantId |  |
+| **communicationId** | **string**| communicationId |  |
 
 ### Return type
 
@@ -965,6 +1123,71 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling ConversationsApi.DeleteConversationsMessagingIntegrationsInstagramIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> void DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId (string integrationId)
+
+
+Delete an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+
+            try
+            { 
+                // Delete an Open messaging integration with the Google Business Profile extension
+                apiInstance.DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.DeleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId: " + e.Message );
             }
         }
     }
@@ -1854,6 +2077,70 @@ namespace Example
 [**Conversation**](Conversation)
 
 
+## GetConversationAssistantCopilotcontext
+
+> [**CopilotContextValues**](CopilotContextValues) GetConversationAssistantCopilotcontext (string conversationId)
+
+
+Get copilot context values for a conversation.
+
+GetConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* conversation:assistantCopilotContext:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationAssistantCopilotcontextExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | Conversation ID.
+
+            try
+            { 
+                // Get copilot context values for a conversation.
+                CopilotContextValues result = apiInstance.GetConversationAssistantCopilotcontext(conversationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationAssistantCopilotcontext: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| Conversation ID. |  |
+
+### Return type
+
+[**CopilotContextValues**](CopilotContextValues)
+
+
 ## GetConversationCommunicationAgentchecklist
 
 > [**AgentChecklistResponse**](AgentChecklistResponse) GetConversationCommunicationAgentchecklist (string conversationId, string communicationId, string agentChecklistId)
@@ -2184,6 +2471,132 @@ namespace Example
 ### Return type
 
 [**InternalMessageDataEntityListing**](InternalMessageDataEntityListing)
+
+
+## GetConversationCustomattribute
+
+> [**CustomAttributes**](CustomAttributes) GetConversationCustomattribute (string conversationId, string attributesId)
+
+
+Get custom attributes by id
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationCustomattributeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var attributesId = attributesId_example;  // string | attributesId
+
+            try
+            { 
+                // Get custom attributes by id
+                CustomAttributes result = apiInstance.GetConversationCustomattribute(conversationId, attributesId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationCustomattribute: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **attributesId** | **string**| attributesId |  |
+
+### Return type
+
+[**CustomAttributes**](CustomAttributes)
+
+
+## GetConversationCustomattributes
+
+> [**CustomAttributesListing**](CustomAttributesListing) GetConversationCustomattributes (string conversationId)
+
+
+Get a list of custom attributes for a conversation.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationCustomattributesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+
+            try
+            { 
+                // Get a list of custom attributes for a conversation.
+                CustomAttributesListing result = apiInstance.GetConversationCustomattributes(conversationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationCustomattributes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+
+### Return type
+
+[**CustomAttributesListing**](CustomAttributesListing)
 
 
 ## GetConversationParticipantSecureivrsession
@@ -2632,7 +3045,7 @@ namespace Example
 | **before** | **string**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **string**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **pageSize** | **string**| Number of entities to return. Maximum of 200. | [optional]  |
-| **type** | **string**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer |
+| **type** | **string**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer, ThirdPartySuggestion |
 | **state** | **string**| Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
 
 ### Return type
@@ -3280,7 +3693,9 @@ namespace Example
 > [**CallbackConversationEntityListing**](CallbackConversationEntityListing) GetConversationsCallbacks ()
 
 
-Get active callback conversations for the logged in user
+Get the logged-in user's active conversations and their Callback participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
 
 Requires NO permissions: 
 
@@ -3310,7 +3725,7 @@ namespace Example
 
             try
             { 
-                // Get active callback conversations for the logged in user
+                // Get the logged-in user's active conversations and their Callback participants state.
                 CallbackConversationEntityListing result = apiInstance.GetConversationsCallbacks();
                 Debug.WriteLine(result);
             }
@@ -3336,7 +3751,9 @@ This endpoint does require any parameters.
 > [**CallConversationEntityListing**](CallConversationEntityListing) GetConversationsCalls ()
 
 
-Get active call conversations for the logged in user
+Get the logged-in user's active conversations and their Call participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
 
 Requires NO permissions: 
 
@@ -3366,7 +3783,7 @@ namespace Example
 
             try
             { 
-                // Get active call conversations for the logged in user
+                // Get the logged-in user's active conversations and their Call participants state.
                 CallConversationEntityListing result = apiInstance.GetConversationsCalls();
                 Debug.WriteLine(result);
             }
@@ -4316,6 +4733,427 @@ This endpoint does require any parameters.
 [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing)
 
 
+## GetConversationsCustomattributesSchema
+
+> [**ConversationDataSchema**](ConversationDataSchema) GetConversationsCustomattributesSchema (string schemaId)
+
+
+Get a schema
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Get a schema
+                ConversationDataSchema result = apiInstance.GetConversationsCustomattributesSchema(schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+## GetConversationsCustomattributesSchemaVersion
+
+> [**ConversationDataSchema**](ConversationDataSchema) GetConversationsCustomattributesSchemaVersion (string schemaId, string versionId)
+
+
+Get a specific version of a schema
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemaVersionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+            var versionId = versionId_example;  // string | Schema version
+
+            try
+            { 
+                // Get a specific version of a schema
+                ConversationDataSchema result = apiInstance.GetConversationsCustomattributesSchemaVersion(schemaId, versionId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchemaVersion: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+| **versionId** | **string**| Schema version |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+## GetConversationsCustomattributesSchemaVersions
+
+> [**ConversationDataSchemaListing**](ConversationDataSchemaListing) GetConversationsCustomattributesSchemaVersions (string schemaId)
+
+
+Get all versions of a CCA schema
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemaVersionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Get all versions of a CCA schema
+                ConversationDataSchemaListing result = apiInstance.GetConversationsCustomattributesSchemaVersions(schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchemaVersions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+[**ConversationDataSchemaListing**](ConversationDataSchemaListing)
+
+
+## GetConversationsCustomattributesSchemas
+
+> [**ConversationDataSchemaListing**](ConversationDataSchemaListing) GetConversationsCustomattributesSchemas ()
+
+
+Get a list of schemas.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemasExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+
+            try
+            { 
+                // Get a list of schemas.
+                ConversationDataSchemaListing result = apiInstance.GetConversationsCustomattributesSchemas();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchemas: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**ConversationDataSchemaListing**](ConversationDataSchemaListing)
+
+
+## GetConversationsCustomattributesSchemasCoretype
+
+> [**Coretype**](Coretype) GetConversationsCustomattributesSchemasCoretype (string coreTypeName)
+
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemasCoretypeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var coreTypeName = coreTypeName_example;  // string | Name of the core type
+
+            try
+            { 
+                // Get the core types from which all schemas are built.
+                Coretype result = apiInstance.GetConversationsCustomattributesSchemasCoretype(coreTypeName);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchemasCoretype: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **coreTypeName** | **string**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## GetConversationsCustomattributesSchemasCoretypes
+
+> [**CoretypeListing**](CoretypeListing) GetConversationsCustomattributesSchemasCoretypes ()
+
+
+Get the list of core types enabled for a specific namespace.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemasCoretypesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+
+            try
+            { 
+                // Get the list of core types enabled for a specific namespace.
+                CoretypeListing result = apiInstance.GetConversationsCustomattributesSchemasCoretypes();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchemasCoretypes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+## GetConversationsCustomattributesSchemasLimits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) GetConversationsCustomattributesSchemasLimits ()
+
+
+Get quantitative limits on schemas
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsCustomattributesSchemasLimitsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+
+            try
+            { 
+                // Get quantitative limits on schemas
+                SchemaQuantityLimits result = apiInstance.GetConversationsCustomattributesSchemasLimits();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsCustomattributesSchemasLimits: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 ## GetConversationsEmail
 
 > [**EmailConversation**](EmailConversation) GetConversationsEmail (string conversationId)
@@ -4442,7 +5280,7 @@ namespace Example
 
 ## GetConversationsEmailMessages
 
-> [**EmailMessagePreviewListing**](EmailMessagePreviewListing) GetConversationsEmailMessages (string conversationId)
+> [**EmailMessagePreviewListing**](EmailMessagePreviewListing) GetConversationsEmailMessages (string conversationId, bool? includeAgentlessStitchedMessages = null)
 
 
 Get conversation messages
@@ -4473,11 +5311,12 @@ namespace Example
 
             var apiInstance = new ConversationsApi();
             var conversationId = conversationId_example;  // string | conversationId
+            var includeAgentlessStitchedMessages = true;  // bool? | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. (optional)  (default to false)
 
             try
             { 
                 // Get conversation messages
-                EmailMessagePreviewListing result = apiInstance.GetConversationsEmailMessages(conversationId);
+                EmailMessagePreviewListing result = apiInstance.GetConversationsEmailMessages(conversationId, includeAgentlessStitchedMessages);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -4495,6 +5334,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **conversationId** | **string**| conversationId |  |
+| **includeAgentlessStitchedMessages** | **bool?**| Whether to include Agentless &#39;api&#39; type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that&#39;s a stitched agentless message. | [optional] [default to false] |
 
 ### Return type
 
@@ -4823,7 +5663,9 @@ namespace Example
 > [**EmailConversationEntityListing**](EmailConversationEntityListing) GetConversationsEmails ()
 
 
-Get active email conversations for the logged in user
+Get the logged-in user's active conversations and their Email participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
 
 Requires NO permissions: 
 
@@ -4853,7 +5695,7 @@ namespace Example
 
             try
             { 
-                // Get active email conversations for the logged in user
+                // Get the logged-in user's active conversations and their Email participants state.
                 EmailConversationEntityListing result = apiInstance.GetConversationsEmails();
                 Debug.WriteLine(result);
             }
@@ -4941,7 +5783,9 @@ namespace Example
 > [**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing) GetConversationsInternalmessages ()
 
 
-Get active internal message conversations for the logged in user
+Get the logged-in user's active conversations and their InternalMessage participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
 
 Requires ANY permissions: 
 
@@ -4972,7 +5816,7 @@ namespace Example
 
             try
             { 
-                // Get active internal message conversations for the logged in user
+                // Get the logged-in user's active conversations and their InternalMessage participants state.
                 InternalMessageConversationEntityListing result = apiInstance.GetConversationsInternalmessages();
                 Debug.WriteLine(result);
             }
@@ -5250,7 +6094,7 @@ namespace Example
 
 Get media
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Requires ANY permissions: 
 
@@ -5644,7 +6488,9 @@ namespace Example
 > [**MessageConversationEntityListing**](MessageConversationEntityListing) GetConversationsMessages ()
 
 
-Get active message conversations for the logged in user
+Get the logged-in user's active conversations and their Message participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
 
 Requires NO permissions: 
 
@@ -5674,7 +6520,7 @@ namespace Example
 
             try
             { 
-                // Get active message conversations for the logged in user
+                // Get the logged-in user's active conversations and their Message participants state.
                 MessageConversationEntityListing result = apiInstance.GetConversationsMessages();
                 Debug.WriteLine(result);
             }
@@ -6921,6 +7767,267 @@ namespace Example
 ### Return type
 
 [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing)
+
+
+## GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> [**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration) GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId (string integrationId, string expand = null)
+
+
+Get an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+            var expand = expand_example;  // string | Expand instructions for the return value. (optional) 
+
+            try
+            { 
+                // Get an Open messaging integration with the Google Business Profile extension
+                GoogleBusinessProfileOpenIntegration result = apiInstance.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, expand);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+| **expand** | **string**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
+
+
+## GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings
+
+> [**GoogleOAuthSettingsResponse**](GoogleOAuthSettingsResponse) GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings ()
+
+
+Get Google Business Profile OAuth 2 settings
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileOAuthSettings:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+
+            try
+            { 
+                // Get Google Business Profile OAuth 2 settings
+                GoogleOAuthSettingsResponse result = apiInstance.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**GoogleOAuthSettingsResponse**](GoogleOAuthSettingsResponse)
+
+
+## GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken
+
+> [**GoogleAuthToken**](GoogleAuthToken) GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken (string tokenId)
+
+
+Get a Google Auth Token
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileToken:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var tokenId = tokenId_example;  // string | Token ID
+
+            try
+            { 
+                // Get a Google Auth Token
+                GoogleAuthToken result = apiInstance.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tokenId** | **string**| Token ID |  |
+
+### Return type
+
+[**GoogleAuthToken**](GoogleAuthToken)
+
+
+## GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts
+
+> [**GoogleBusinessProfileAccountListing**](GoogleBusinessProfileAccountListing) GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts (string tokenId)
+
+
+Get Google Business Profile accounts
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileAccount:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccountsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var tokenId = tokenId_example;  // string | Token ID
+
+            try
+            { 
+                // Get Google Business Profile accounts
+                GoogleBusinessProfileAccountListing result = apiInstance.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.GetConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tokenId** | **string**| Token ID |  |
+
+### Return type
+
+[**GoogleBusinessProfileAccountListing**](GoogleBusinessProfileAccountListing)
 
 
 ## GetConversationsMessagingIntegrationsOpenIntegrationId
@@ -8191,6 +9298,133 @@ namespace Example
 [**MeetingIdRecord**](MeetingIdRecord)
 
 
+## PatchConversationCustomattributes
+
+> void PatchConversationCustomattributes (string conversationId, CustomAttributesPatchRequest body = null)
+
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchConversationCustomattributesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var body = new CustomAttributesPatchRequest(); // CustomAttributesPatchRequest |  (optional) 
+
+            try
+            { 
+                // Update a single custom attributes record by amending the data with only the provided fields.
+                apiInstance.PatchConversationCustomattributes(conversationId, body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PatchConversationCustomattributes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **body** | [**CustomAttributesPatchRequest**](CustomAttributesPatchRequest)|  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
+## PatchConversationCustomattributesBulk
+
+> [**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap) PatchConversationCustomattributesBulk (string conversationId, List<CustomAttributesPatchRequest> body = null)
+
+
+Update a list of custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchConversationCustomattributesBulkExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var body = new List<CustomAttributesPatchRequest>(); // List<CustomAttributesPatchRequest> |  (optional) 
+
+            try
+            { 
+                // Update a list of custom attributes record by amending the data with only the provided fields.
+                CustomAttributesBulkUpdateResponseMap result = apiInstance.PatchConversationCustomattributesBulk(conversationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PatchConversationCustomattributesBulk: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **body** | [**List<CustomAttributesPatchRequest>**](CustomAttributesPatchRequest)|  | [optional]  |
+
+### Return type
+
+[**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap)
+
+
 ## PatchConversationParticipant
 
 > void PatchConversationParticipant (string conversationId, string participantId, MediaParticipantRequest body)
@@ -9037,6 +10271,73 @@ namespace Example
 ### Return type
 
 **Object**
+
+
+## PatchConversationsCallParticipantCommunicationPostflowaction
+
+> void PatchConversationsCallParticipantCommunicationPostflowaction (string conversationId, string participantId, string communicationId, MandatoryPostCallActionInput body = null)
+
+
+Set mandatory post call actions.  If both values are null or blank error will occur.
+
+Requires ANY permissions: 
+
+* conversation:call:setMandatoryPostFlowAction
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchConversationsCallParticipantCommunicationPostflowactionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var participantId = participantId_example;  // string | participantId
+            var communicationId = communicationId_example;  // string | communicationId
+            var body = new MandatoryPostCallActionInput(); // MandatoryPostCallActionInput | Action (optional) 
+
+            try
+            { 
+                // Set mandatory post call actions.  If both values are null or blank error will occur.
+                apiInstance.PatchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PatchConversationsCallParticipantCommunicationPostflowaction: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **participantId** | **string**| participantId |  |
+| **communicationId** | **string**| communicationId |  |
+| **body** | [**MandatoryPostCallActionInput**](MandatoryPostCallActionInput)| Action | [optional]  |
+
+### Return type
+
+void (empty response body)
 
 
 ## PatchConversationsCallParticipantConsult
@@ -10725,6 +12026,71 @@ namespace Example
 **Object**
 
 
+## PatchConversationsMessageParticipantParkingstate
+
+> void PatchConversationsMessageParticipantParkingstate (string conversationId, string participantId, ParkingStateRequest body)
+
+
+Update conversation by setting its parking state
+
+Requires ANY permissions: 
+
+* conversation:message:park
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchConversationsMessageParticipantParkingstateExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var participantId = participantId_example;  // string | participantId
+            var body = new ParkingStateRequest(); // ParkingStateRequest | Parking update request
+
+            try
+            { 
+                // Update conversation by setting its parking state
+                apiInstance.PatchConversationsMessageParticipantParkingstate(conversationId, participantId, body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PatchConversationsMessageParticipantParkingstate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **participantId** | **string**| participantId |  |
+| **body** | [**ParkingStateRequest**](ParkingStateRequest)| Parking update request |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## PatchConversationsMessagingIntegrationsAppleIntegrationId
 
 > [**AppleIntegration**](AppleIntegration) PatchConversationsMessagingIntegrationsAppleIntegrationId (string integrationId, AppleIntegrationUpdateRequest body)
@@ -10915,6 +12281,74 @@ namespace Example
 ### Return type
 
 [**InstagramIntegration**](InstagramIntegration)
+
+
+## PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> [**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration) PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId (string integrationId, GoogleBusinessProfileOpenIntegrationUpdateRequest body)
+
+
+Update an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* messaging:googleBusinessProfileIntegration:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var integrationId = integrationId_example;  // string | Integration ID
+            var body = new GoogleBusinessProfileOpenIntegrationUpdateRequest(); // GoogleBusinessProfileOpenIntegrationUpdateRequest | GoogleBusinessProfileOpenIntegrationUpdateRequest
+
+            try
+            { 
+                // Update an Open messaging integration with the Google Business Profile extension
+                GoogleBusinessProfileOpenIntegration result = apiInstance.PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PatchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationId** | **string**| Integration ID |  |
+| **body** | [**GoogleBusinessProfileOpenIntegrationUpdateRequest**](GoogleBusinessProfileOpenIntegrationUpdateRequest)| GoogleBusinessProfileOpenIntegrationUpdateRequest |  |
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
 
 
 ## PatchConversationsMessagingIntegrationsOpenIntegrationId
@@ -13938,6 +15372,72 @@ namespace Example
 void (empty response body)
 
 
+## PostConversationsCallParticipantSnippetRecord
+
+> **string** PostConversationsCallParticipantSnippetRecord (string conversationId, string participantId, SnippetRecordingRequest body)
+
+
+Start/stop the snippet recording for a participant
+
+Requires ANY permissions: 
+
+* conversation:recording:snippetRecord
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsCallParticipantSnippetRecordExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversationId
+            var participantId = participantId_example;  // string | participantId
+            var body = new SnippetRecordingRequest(); // SnippetRecordingRequest | snippetRecordingRequest
+
+            try
+            { 
+                // Start/stop the snippet recording for a participant
+                string result = apiInstance.PostConversationsCallParticipantSnippetRecord(conversationId, participantId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsCallParticipantSnippetRecord: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversationId |  |
+| **participantId** | **string**| participantId |  |
+| **body** | [**SnippetRecordingRequest**](SnippetRecordingRequest)| snippetRecordingRequest |  |
+
+### Return type
+
+**string**
+
+
 ## PostConversationsCallParticipantVoiceConsult
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) PostConversationsCallParticipantVoiceConsult (string conversationId, string participantId, ConsultTransferToAddress body)
@@ -15066,6 +16566,130 @@ namespace Example
 void (empty response body)
 
 
+## PostConversationsCustomattributesSchemas
+
+> [**ConversationDataSchema**](ConversationDataSchema) PostConversationsCustomattributesSchemas (ConversationJsonSchemaRequest body)
+
+
+Create a schema
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaAdd
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsCustomattributesSchemasExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var body = new ConversationJsonSchemaRequest(); // ConversationJsonSchemaRequest | Schema create request body
+
+            try
+            { 
+                // Create a schema
+                ConversationDataSchema result = apiInstance.PostConversationsCustomattributesSchemas(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsCustomattributesSchemas: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationJsonSchemaRequest**](ConversationJsonSchemaRequest)| Schema create request body |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+## PostConversationsCustomattributesSearch
+
+> [**JsonSearchResponse**](JsonSearchResponse) PostConversationsCustomattributesSearch (ConversationCustomAttributesSearchRequest body)
+
+
+Search resources.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsCustomattributesSearchExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var body = new ConversationCustomAttributesSearchRequest(); // ConversationCustomAttributesSearchRequest | Search request options
+
+            try
+            { 
+                // Search resources.
+                JsonSearchResponse result = apiInstance.PostConversationsCustomattributesSearch(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsCustomattributesSearch: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationCustomAttributesSearchRequest**](ConversationCustomAttributesSearchRequest)| Search request options |  |
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse)
+
+
 ## PostConversationsEmailInboundmessages
 
 > [**EmailConversation**](EmailConversation) PostConversationsEmailInboundmessages (string conversationId, InboundMessageRequest body)
@@ -15912,7 +17536,7 @@ namespace Example
 
 Create a URL to upload a message media file
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Requires ANY permissions: 
 
@@ -17088,6 +18712,138 @@ namespace Example
 [**OpenIntegration**](OpenIntegration)
 
 
+## PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile
+
+> [**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration) PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile (GoogleBusinessProfileOpenIntegrationRequest body)
+
+
+Create an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions: 
+
+* messaging:googleBusinessProfileIntegration:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var body = new GoogleBusinessProfileOpenIntegrationRequest(); // GoogleBusinessProfileOpenIntegrationRequest | GoogleBusinessProfileOpenIntegrationRequest
+
+            try
+            { 
+                // Create an Open messaging integration with the Google Business Profile extension
+                GoogleBusinessProfileOpenIntegration result = apiInstance.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GoogleBusinessProfileOpenIntegrationRequest**](GoogleBusinessProfileOpenIntegrationRequest)| GoogleBusinessProfileOpenIntegrationRequest |  |
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
+
+
+## PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens
+
+> [**GoogleAuthToken**](GoogleAuthToken) PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens (GoogleAuthTokenRequest body)
+
+
+Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileToken:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokensExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var body = new GoogleAuthTokenRequest(); // GoogleAuthTokenRequest | GoogleAuthTokenRequest
+
+            try
+            { 
+                // Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+                GoogleAuthToken result = apiInstance.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PostConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GoogleAuthTokenRequest**](GoogleAuthTokenRequest)| GoogleAuthTokenRequest |  |
+
+### Return type
+
+[**GoogleAuthToken**](GoogleAuthToken)
+
+
 ## PostConversationsMessagingIntegrationsTwitter
 
 > [**TwitterIntegration**](TwitterIntegration) PostConversationsMessagingIntegrationsTwitter (TwitterIntegrationRequest body)
@@ -17801,6 +19557,134 @@ namespace Example
 [**MeetingIdRecord**](MeetingIdRecord)
 
 
+## PutConversationCustomattributes
+
+> [**CustomAttributesIdResponse**](CustomAttributesIdResponse) PutConversationCustomattributes (string conversationId, CustomAttributesUpdateRequest body = null)
+
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutConversationCustomattributesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var body = new CustomAttributesUpdateRequest(); // CustomAttributesUpdateRequest |  (optional) 
+
+            try
+            { 
+                // Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+                CustomAttributesIdResponse result = apiInstance.PutConversationCustomattributes(conversationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PutConversationCustomattributes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **body** | [**CustomAttributesUpdateRequest**](CustomAttributesUpdateRequest)|  | [optional]  |
+
+### Return type
+
+[**CustomAttributesIdResponse**](CustomAttributesIdResponse)
+
+
+## PutConversationCustomattributesBulk
+
+> [**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap) PutConversationCustomattributesBulk (string conversationId, List<CustomAttributesUpdateRequest> body = null)
+
+
+Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutConversationCustomattributesBulkExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var conversationId = conversationId_example;  // string | conversation ID
+            var body = new List<CustomAttributesUpdateRequest>(); // List<CustomAttributesUpdateRequest> |  (optional) 
+
+            try
+            { 
+                // Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+                CustomAttributesBulkUpdateResponseMap result = apiInstance.PutConversationCustomattributesBulk(conversationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PutConversationCustomattributesBulk: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **conversationId** | **string**| conversation ID |  |
+| **body** | [**List<CustomAttributesUpdateRequest>**](CustomAttributesUpdateRequest)|  | [optional]  |
+
+### Return type
+
+[**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap)
+
+
 ## PutConversationParticipantFlaggedreason
 
 > void PutConversationParticipantFlaggedreason (string conversationId, string participantId)
@@ -18322,6 +20206,70 @@ namespace Example
 ### Return type
 
 **string**
+
+
+## PutConversationsCustomattributesSchema
+
+> [**ConversationDataSchema**](ConversationDataSchema) PutConversationsCustomattributesSchema (string schemaId, ConversationSchemaUpdateRequest body)
+
+
+Update a schema
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaEdit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutConversationsCustomattributesSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ConversationsApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+            var body = new ConversationSchemaUpdateRequest(); // ConversationSchemaUpdateRequest | Schema update request body
+
+            try
+            { 
+                // Update a schema
+                ConversationDataSchema result = apiInstance.PutConversationsCustomattributesSchema(schemaId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConversationsApi.PutConversationsCustomattributesSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+| **body** | [**ConversationSchemaUpdateRequest**](ConversationSchemaUpdateRequest)| Schema update request body |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
 
 
 ## PutConversationsEmailMessagesDraft
@@ -19068,7 +21016,7 @@ namespace Example
                 "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
 
             var apiInstance = new ConversationsApi();
-            var body = new SupportedContentReference(); // SupportedContentReference | SupportedContent
+            var body = new SupportedContentReference(); // SupportedContentReference | Reference to supported content profile
 
             try
             { 
@@ -19090,7 +21038,7 @@ namespace Example
 
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContentReference**](SupportedContentReference)| SupportedContent |  |
+| **body** | [**SupportedContentReference**](SupportedContentReference)| Reference to supported content profile |  |
 
 ### Return type
 
@@ -19358,4 +21306,4 @@ namespace Example
 **string**
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

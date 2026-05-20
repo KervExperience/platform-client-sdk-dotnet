@@ -10,8 +10,7 @@
 | **StopTime** | **string** | The stop time of this time slot | [optional] |
 | **Day** | **long?** | The day this time slot applies | [optional] |
 | **AdditionalProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] |
-| **GetAdditionalProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

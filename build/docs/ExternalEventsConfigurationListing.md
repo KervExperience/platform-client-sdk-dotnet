@@ -1,0 +1,22 @@
+# ExternalEventsConfigurationListing
+
+## ININ.PureCloudApi.Model.ExternalEventsConfigurationListing
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **Entities** | [**List&lt;ExternalEventsConfiguration&gt;**](ExternalEventsConfiguration) |  | [optional] |
+| **PageSize** | **int?** |  | [optional] |
+| **PageNumber** | **int?** |  | [optional] |
+| **Total** | **long?** |  | [optional] |
+| **FirstUri** | **string** |  | [optional] |
+| **NextUri** | **string** |  | [optional] |
+| **PreviousUri** | **string** |  | [optional] |
+| **LastUri** | **string** |  | [optional] |
+| **SelfUri** | **string** |  | [optional] |
+| **PageCount** | **int?** |  | [optional] |
+
+
+
+_PureCloudPlatform.Client.V2 263.0.0_

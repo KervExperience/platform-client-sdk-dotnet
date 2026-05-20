@@ -69,6 +69,10 @@
       "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
     },
     {
+      "topic": "v2.coaching.scheduleslots.jobs.{id}",
+      "class": "WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobComplete"
+    },
+    {
       "topic": "v2.contentmanagement.documents.{id}",
       "class": "ContentManagementSingleDocumentTopicDocumentDataV2"
     },
@@ -293,6 +297,10 @@
       "class": "DialerCampaignProgressEventCampaignProgress"
     },
     {
+      "topic": "v2.outbound.campaigns.{id}.skillstats",
+      "class": "DialerCampaignSkillCombinationStatsEventCampaignSkillCombinationStats"
+    },
+    {
       "topic": "v2.outbound.campaigns.{id}.stats",
       "class": "StatEventCampaignTopicStatsNotification"
     },
@@ -373,8 +381,20 @@
       "class": "DialerCampaignScheduleConfigChangeCampaignSchedule"
     },
     {
+      "topic": "v2.outbound.schedules.emailcampaigns.{id}",
+      "class": "EmailCampaignScheduleConfigChangeEmailCampaignSchedule"
+    },
+    {
+      "topic": "v2.outbound.schedules.messagingcampaigns.{id}",
+      "class": "MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule"
+    },
+    {
       "topic": "v2.outbound.schedules.sequences.{id}",
       "class": "DialerSequenceScheduleConfigChangeSequenceSchedule"
+    },
+    {
+      "topic": "v2.outbound.schedules.whatsappcampaigns.{id}",
+      "class": "WhatsappCampaignScheduleConfigChangeWhatsAppCampaignSchedule"
     },
     {
       "topic": "v2.outbound.sequences.{id}",
@@ -491,6 +511,10 @@
     {
       "topic": "v2.speechandtextanalytics.reprocessing.jobs.{id}",
       "class": "V2ReprocessJobStateChangedTopicJobStateChanged"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.topics.generatedphrases.jobs.{id}",
+      "class": "GenAiPhrasesTopicsDefinitionsJob"
     },
     {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
@@ -741,6 +765,10 @@
       "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.agentschedules.managementunit.search.complete",
+      "class": "WfmAgentMuScheduleSearchCompleteTopicAgentMuScheduleSearchCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.alternative.shift.jobs",
       "class": "WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification"
     },
@@ -763,6 +791,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
       "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shift.trading.jobs",
+      "class": "WfmShiftTradingJobCompleteEventShiftTradingJobCompleteNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
@@ -810,11 +842,11 @@
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.jobs",
-      "class": "WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification"
+      "class": "WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.runs.jobs",
-      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification"
+      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.adherence.explanations",
@@ -827,6 +859,18 @@
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.forecasts.staffingrequirement",
       "class": "WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.forecast",
+      "class": "V2WfmMainForecastExportForecastEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.historical",
+      "class": "V2WfmMainForecastExportHistoricalEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.snapshot",
+      "class": "V2WfmMainForecastExportSnapshotEventMainForecastExportNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.schedules",

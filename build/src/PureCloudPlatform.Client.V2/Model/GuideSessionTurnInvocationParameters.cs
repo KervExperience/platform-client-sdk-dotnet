@@ -55,7 +55,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Boolean for "Boolean"
             /// </summary>
             [EnumMember(Value = "Boolean")]
-            Boolean
+            Boolean,
+            
+            /// <summary>
+            /// Enum Date for "Date"
+            /// </summary>
+            [EnumMember(Value = "Date")]
+            Date,
+            
+            /// <summary>
+            /// Enum List for "List"
+            /// </summary>
+            [EnumMember(Value = "List")]
+            List
         }
         /// <summary>
         /// The type of the parameter.

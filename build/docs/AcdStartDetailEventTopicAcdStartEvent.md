@@ -29,7 +29,8 @@
 | **UtilizationLabel** | **string** |  | [optional] |
 | **RoutingPriority** | **long?** |  | [optional] |
 | **RequestedRoutingSkillIds** | **List&lt;Guid?&gt;** |  | [optional] |
+| **SkillExpressionApplied** | **bool?** |  | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

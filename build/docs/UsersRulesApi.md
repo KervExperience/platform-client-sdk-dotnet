@@ -25,8 +25,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an existing users rule
 
-DeleteUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * users:rules:delete
@@ -87,8 +85,6 @@ void (empty response body)
 
 
 Get a users rule
-
-GetUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -152,8 +148,6 @@ namespace Example
 
 Get dependent of a users rule
 
-GetUsersRuleDependentTypeId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * users:ruleDependents:view
@@ -205,7 +199,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ruleId** | **string**| The ID of the rule for which to retrieve dependents |  |
-| **ruleType** | **string**| The type of the dependent | <br />**Values**: learning |
+| **ruleType** | **string**| The type of the dependent | <br />**Values**: learning, activityplan |
 | **typeId** | **string**| The type ID of the dependent |  |
 
 ### Return type
@@ -219,8 +213,6 @@ namespace Example
 
 
 Get dependents for a users rule
-
-GetUsersRuleDependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -285,12 +277,10 @@ namespace Example
 
 ## GetUsersRules
 
-> [**UsersRulesRuleList**](UsersRulesRuleList) GetUsersRules (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, string searchTerm = null, string sortOrder = null)
+> [**UsersRulesRuleList**](UsersRulesRuleList) GetUsersRules (List<string> types, int? pageNumber = null, int? pageSize = null, List<string> expand = null, bool? enabled = null, string searchTerm = null, string sortOrder = null)
 
 
 Get the list of users rules
-
-GetUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -322,13 +312,14 @@ namespace Example
             var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
             var pageSize = 56;  // int? | Number of results per page (optional)  (default to 25)
             var expand = new List<string>(); // List<string> | Fields to expand in response (optional) 
+            var enabled = true;  // bool? | Whether to list enabled or disabled rules (optional) 
             var searchTerm = searchTerm_example;  // string | a search term for finding a rule by name (optional) 
             var sortOrder = sortOrder_example;  // string | sort rules by name, ascending, descending (optional)  (default to ascending)
 
             try
             { 
                 // Get the list of users rules
-                UsersRulesRuleList result = apiInstance.GetUsersRules(types, pageNumber, pageSize, expand, searchTerm, sortOrder);
+                UsersRulesRuleList result = apiInstance.GetUsersRules(types, pageNumber, pageSize, expand, enabled, searchTerm, sortOrder);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -349,6 +340,7 @@ namespace Example
 | **pageNumber** | **int?**| Page number | [optional] [default to 1] |
 | **pageSize** | **int?**| Number of results per page | [optional] [default to 25] |
 | **expand** | [**List<string>**](string)| Fields to expand in response | [optional] <br />**Values**: criteria |
+| **enabled** | **bool?**| Whether to list enabled or disabled rules | [optional]  |
 | **searchTerm** | **string**| a search term for finding a rule by name | [optional]  |
 | **sortOrder** | **string**| sort rules by name, ascending, descending | [optional] [default to ascending]<br />**Values**: ascending, descending |
 
@@ -363,8 +355,6 @@ namespace Example
 
 
 Get the settings for a specific users rule type
-
-GetUsersRulesSetting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -429,8 +419,6 @@ namespace Example
 Update an existing users rule
 
 This will update an existing users rule with the specified fields.
-
-PatchUsersRule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions: 
 
@@ -498,8 +486,6 @@ Create a new rule
 
 This will create a new rule with the specified fields.
 
-PostUsersRules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * users:rules:add
@@ -564,8 +550,6 @@ Query the result of a users rule
 
 This will query the result of a rule.
 
-PostUsersRulesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions: 
 
 * users:ruleUsers:view
@@ -625,4 +609,4 @@ namespace Example
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

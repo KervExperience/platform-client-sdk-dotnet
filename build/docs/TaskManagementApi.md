@@ -4296,9 +4296,7 @@ namespace Example
 
 Query for workitems
 
-This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-
-PostTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
 
 Requires ANY permissions: 
 
@@ -4804,6 +4802,8 @@ namespace Example
 
 Query for worktypes
 
+Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
+
 Requires ALL permissions: 
 
 * workitems:worktype:view
@@ -4923,4 +4923,4 @@ namespace Example
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetSpeechandtextanalyticsProgramsMappings**](#GetSpeechandtextanalyticsProgramsMappings) | **Get** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows |
 | [**GetSpeechandtextanalyticsProgramsPublishjob**](#GetSpeechandtextanalyticsProgramsPublishjob) | **Get** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech &amp; Text Analytics publish programs job by id |
 | [**GetSpeechandtextanalyticsProgramsSettingsInsights**](#GetSpeechandtextanalyticsProgramsSettingsInsights) | **Get** /api/v2/speechandtextanalytics/programs/settings/insights | Get the list of program AI Insights settings for the organization |
+| [**GetSpeechandtextanalyticsProgramsTopiclinksJob**](#GetSpeechandtextanalyticsProgramsTopiclinksJob) | **Get** /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId} | Get a Speech &amp; Text Analytics program-topic links job by id |
 | [**GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](#GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | **Get** /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects | Get supported dialects for each transcription engine |
 | [**GetSpeechandtextanalyticsProgramsUnpublished**](#GetSpeechandtextanalyticsProgramsUnpublished) | **Get** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech &amp; Text Analytics unpublished programs |
 | [**GetSpeechandtextanalyticsReprocessingJob**](#GetSpeechandtextanalyticsReprocessingJob) | **Get** /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId} | Get a Speech &amp; Text Analytics reprocess job by id |
@@ -902,9 +903,6 @@ Get sentiment data
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:sentimentData:view
-* speechAndTextAnalytics:data:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example
 ```{"language":"csharp"}
@@ -967,8 +965,6 @@ Get conversation summaries by conversation id.
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:aiSummary:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example
 ```{"language":"csharp"}
@@ -1023,7 +1019,7 @@ namespace Example
 
 ## GetSpeechandtextanalyticsDictionaryfeedback
 
-> [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing) GetSpeechandtextanalyticsDictionaryfeedback (string dialect = null, string nextPage = null, int? pageSize = null)
+> [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing) GetSpeechandtextanalyticsDictionaryfeedback (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null)
 
 
 Get the list of Speech & Text Analytics dictionary feedbacks
@@ -1055,13 +1051,14 @@ namespace Example
 
             var apiInstance = new SpeechTextAnalyticsApi();
             var dialect = en-US;  // string | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional) 
+            var transcriptionEngine = transcriptionEngine_example;  // string | Filter by transcription engine, If not provided, all transcription engines will be considered (optional) 
             var nextPage = nextPage_example;  // string | The key for listing the next page (optional) 
             var pageSize = 56;  // int? | The page size for the listing (optional)  (default to 500)
 
             try
             { 
                 // Get the list of Speech & Text Analytics dictionary feedbacks
-                DictionaryFeedbackEntityListing result = apiInstance.GetSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize);
+                DictionaryFeedbackEntityListing result = apiInstance.GetSpeechandtextanalyticsDictionaryfeedback(dialect, transcriptionEngine, nextPage, pageSize);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1079,6 +1076,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dialect** | **string**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
+| **transcriptionEngine** | **string**| Filter by transcription engine, If not provided, all transcription engines will be considered | [optional] <br />**Values**: Genesys, GenesysExtended |
 | **nextPage** | **string**| The key for listing the next page | [optional]  |
 | **pageSize** | **int?**| The page size for the listing | [optional] [default to 500] |
 
@@ -1400,7 +1398,7 @@ namespace Example
 
 ## GetSpeechandtextanalyticsPrograms
 
-> [**ProgramsEntityListing**](ProgramsEntityListing) GetSpeechandtextanalyticsPrograms (string nextPage = null, int? pageSize = null, string state = null)
+> [**ProgramsEntityListing**](ProgramsEntityListing) GetSpeechandtextanalyticsPrograms (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null)
 
 
 Get the list of Speech & Text Analytics programs
@@ -1434,11 +1432,15 @@ namespace Example
             var nextPage = nextPage_example;  // string | The key for listing the next page (optional) 
             var pageSize = 56;  // int? | The page size for the listing (optional)  (default to 20)
             var state = state_example;  // string | Program state. Defaults to Latest (optional) 
+            var name = name_example;  // string | Case insensitive partial name to filter by (optional) 
+            var ids = new List<string>(); // List<string> | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional) 
+            var sortBy = sortBy_example;  // string | Sort results by. Defaults to name (optional) 
+            var sortOrder = sortOrder_example;  // string | Sort order. Defaults to asc (optional) 
 
             try
             { 
                 // Get the list of Speech & Text Analytics programs
-                ProgramsEntityListing result = apiInstance.GetSpeechandtextanalyticsPrograms(nextPage, pageSize, state);
+                ProgramsEntityListing result = apiInstance.GetSpeechandtextanalyticsPrograms(nextPage, pageSize, state, name, ids, sortBy, sortOrder);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1458,6 +1460,10 @@ namespace Example
 | **nextPage** | **string**| The key for listing the next page | [optional]  |
 | **pageSize** | **int?**| The page size for the listing | [optional] [default to 20] |
 | **state** | **string**| Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
+| **name** | **string**| Case insensitive partial name to filter by | [optional]  |
+| **ids** | [**List<string>**](string)| Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. | [optional]  |
+| **sortBy** | **string**| Sort results by. Defaults to name | [optional] <br />**Values**: name |
+| **sortOrder** | **string**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 
 ### Return type
 
@@ -1720,6 +1726,68 @@ namespace Example
 ### Return type
 
 [**ProgramInsightsSettingsEntityListing**](ProgramInsightsSettingsEntityListing)
+
+
+## GetSpeechandtextanalyticsProgramsTopiclinksJob
+
+> [**ProgramTopicLinksJob**](ProgramTopicLinksJob) GetSpeechandtextanalyticsProgramsTopiclinksJob (string jobId)
+
+
+Get a Speech & Text Analytics program-topic links job by id
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetSpeechandtextanalyticsProgramsTopiclinksJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new SpeechTextAnalyticsApi();
+            var jobId = jobId_example;  // string | The id of the program-topic links job
+
+            try
+            { 
+                // Get a Speech & Text Analytics program-topic links job by id
+                ProgramTopicLinksJob result = apiInstance.GetSpeechandtextanalyticsProgramsTopiclinksJob(jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SpeechTextAnalyticsApi.GetSpeechandtextanalyticsProgramsTopiclinksJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **jobId** | **string**| The id of the program-topic links job |  |
+
+### Return type
+
+[**ProgramTopicLinksJob**](ProgramTopicLinksJob)
 
 
 ## GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects
@@ -4046,4 +4114,4 @@ namespace Example
 [**Topic**](Topic)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

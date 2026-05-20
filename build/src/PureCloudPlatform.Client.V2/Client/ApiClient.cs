@@ -24,6 +24,13 @@ namespace PureCloudPlatform.Client.V2.Client
             MetadataPropertyHandling = MetadataPropertyHandling.Ignore
         };
 
+        // Future - To enable for serialization (currently unused)
+        // private JsonSerializerSettings apiSerializerSettings = new JsonSerializerSettings
+        // {
+        //     ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+        //     MetadataPropertyHandling = MetadataPropertyHandling.Ignore
+        // };
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
         /// with default configuration and base path (https://api.mypurecloud.com).
@@ -90,6 +97,9 @@ namespace PureCloudPlatform.Client.V2.Client
         {
             serializerSettings.Converters.Add(new Iso8601DateTimeConverter());
             serializerSettings.Converters.Add(new UpgradeSdkEnumConverter());
+            serializerSettings.Converters.Add(new YearMonthConverter());
+            // Future - To enable for serialization (currently unused)
+            // apiSerializerSettings.Converters.Add(new YearMonthConverter());
         }
 
         /// <summary>
@@ -350,7 +360,7 @@ namespace PureCloudPlatform.Client.V2.Client
             );
 
             // Set SDK version
-            requestOptions.AddHeaderParam("purecloud-sdk", "254.0.0");
+            requestOptions.AddHeaderParam("purecloud-sdk", "263.0.0");
 
             Retry retry = new Retry(this.RetryConfig);
 
@@ -486,6 +496,11 @@ namespace PureCloudPlatform.Client.V2.Client
             {
                 return Convert.ToString(obj).ToLower();
             }
+            else if (obj is YearMonth)
+            {
+                YearMonth ym = (YearMonth) obj;
+                return String.Format("{0:0000}", ym.Year) + "-" + String.Format("{0:00}", ym.Month);
+            }
             else
                 return Convert.ToString(obj);
         }
@@ -584,9 +599,9 @@ namespace PureCloudPlatform.Client.V2.Client
                 if (obj != null)
                 {
                     return obj is string str ? str : JsonConvert.SerializeObject(obj);
-                }
-                else
-                {
+                    // Future - To enable for serialization (currently unused)
+                    // return obj is string str ? str : JsonConvert.SerializeObject(obj, apiSerializerSettings);
+                } else {
                     return null;
                 }
             }

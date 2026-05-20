@@ -109,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchRoutingConversation**](#PatchRoutingConversation) | **Patch** /api/v2/routing/conversations/{conversationId} | Update attributes of an in-queue conversation |
 | [**PatchRoutingEmailDomain**](#PatchRoutingEmailDomain) | **Patch** /api/v2/routing/email/domains/{domainId} | Update domain settings |
 | [**PatchRoutingEmailDomainValidate**](#PatchRoutingEmailDomainValidate) | **Patch** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings |
+| [**PatchRoutingEmailOutboundDomain**](#PatchRoutingEmailOutboundDomain) | **Patch** /api/v2/routing/email/outbound/domains/{domainId} | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). |
 | [**PatchRoutingPredictor**](#PatchRoutingPredictor) | **Patch** /api/v2/routing/predictors/{predictorId} | Update single predictor. |
 | [**PatchRoutingPredictorsKeyperformanceindicator**](#PatchRoutingPredictorsKeyperformanceindicator) | **Patch** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Update a custom Key Performance Indicator. |
 | [**PatchRoutingQueueMember**](#PatchRoutingQueueMember) | **Patch** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member. |
@@ -117,6 +118,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchRoutingQueueUsers**](#PatchRoutingQueueUsers) | **Patch** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
 | [**PatchRoutingSettingsContactcenter**](#PatchRoutingSettingsContactcenter) | **Patch** /api/v2/routing/settings/contactcenter | Update Contact Center Settings |
 | [**PatchRoutingSettingsTranscription**](#PatchRoutingSettingsTranscription) | **Patch** /api/v2/routing/settings/transcription | Patch Transcription Settings |
+| [**PatchRoutingSkill**](#PatchRoutingSkill) | **Patch** /api/v2/routing/skills/{skillId} | Update Routing Skill Division |
 | [**PatchRoutingSkillgroup**](#PatchRoutingSkillgroup) | **Patch** /api/v2/routing/skillgroups/{skillGroupId} | Update skill group definition |
 | [**PatchRoutingSmsPhonenumber**](#PatchRoutingSmsPhonenumber) | **Patch** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Update a phone number provisioned for SMS. |
 | [**PatchUserQueue**](#PatchUserQueue) | **Patch** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user |
@@ -134,6 +136,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostRoutingEmailDomainTestconnection**](#PostRoutingEmailDomainTestconnection) | **Post** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this ACD domain |
 | [**PostRoutingEmailDomainVerification**](#PostRoutingEmailDomainVerification) | **Post** /api/v2/routing/email/domains/{domainId}/verification | Restart domain verification |
 | [**PostRoutingEmailDomains**](#PostRoutingEmailDomains) | **Post** /api/v2/routing/email/domains | Create a domain |
+| [**PostRoutingEmailOutboundDomainTestconnection**](#PostRoutingEmailOutboundDomainTestconnection) | **Post** /api/v2/routing/email/outbound/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this outbound domain |
 | [**PostRoutingEmailOutboundDomains**](#PostRoutingEmailOutboundDomains) | **Post** /api/v2/routing/email/outbound/domains | Create a domain |
 | [**PostRoutingEmailOutboundDomainsSimulated**](#PostRoutingEmailOutboundDomainsSimulated) | **Post** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain |
 | [**PostRoutingLanguages**](#PostRoutingLanguages) | **Post** /api/v2/routing/languages | Create Language |
@@ -166,8 +169,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PutRoutingSettingsTranscription**](#PutRoutingSettingsTranscription) | **Put** /api/v2/routing/settings/transcription | Update Transcription Settings |
 | [**PutRoutingSmsIdentityresolutionPhonenumber**](#PutRoutingSmsIdentityresolutionPhonenumber) | **Put** /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} | Update an SMS identity resolution settings. |
 | [**PutRoutingUserDirectroutingbackupSettings**](#PutRoutingUserDirectroutingbackupSettings) | **Put** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user&#39;s Direct Routing Backup settings. |
-| [**PutRoutingUserUtilization**](#PutRoutingUserUtilization) | **Put** /api/v2/routing/users/{userId}/utilization | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. |
-| [**PutRoutingUtilization**](#PutRoutingUtilization) | **Put** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
+| [**PutRoutingUserUtilization**](#PutRoutingUserUtilization) | **Put** /api/v2/routing/users/{userId}/utilization | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values. |
+| [**PutRoutingUtilization**](#PutRoutingUtilization) | **Put** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values. |
 | [**PutRoutingUtilizationLabel**](#PutRoutingUtilizationLabel) | **Put** /api/v2/routing/utilization/labels/{labelId} | Update a utilization label |
 | [**PutRoutingWrapupcode**](#PutRoutingWrapupcode) | **Put** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code |
 | [**PutUserRoutingskill**](#PutUserRoutingskill) | **Put** /api/v2/users/{userId}/routingskills/{skillId} | Update an assigned routing skill&#39;s proficiency |
@@ -983,9 +986,10 @@ void (empty response body)
 
 Delete Routing Skill
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:skill:manage
+* routing:skill:delete
 
 ### Example
 ```{"language":"csharp"}
@@ -2280,8 +2284,9 @@ namespace Example
 
 Get a route
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
+* routing:email:view
 * routing:email:manage
 
 ### Example
@@ -2411,8 +2416,9 @@ namespace Example
 
 Get routes
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
+* routing:email:view
 * routing:email:manage
 
 ### Example
@@ -3636,7 +3642,7 @@ namespace Example
 
 ## GetRoutingQueueAssistant
 
-> [**AssistantQueue**](AssistantQueue) GetRoutingQueueAssistant (string queueId, List<string> expand = null)
+> [**AssistantQueue**](AssistantQueue) GetRoutingQueueAssistant (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null)
 
 
 Get an assistant associated with a queue.
@@ -3669,11 +3675,13 @@ namespace Example
             var apiInstance = new RoutingApi();
             var queueId = queueId_example;  // string | Queue ID
             var expand = new List<string>(); // List<string> | Which fields, if any, to expand. (optional) 
+            var languageVariation = languageVariation_example;  // string | Language variation (optional) 
+            var fallbackToPrimaryAssistant = true;  // bool? | Fall back to primary assistant if specified variation is not found (optional) 
 
             try
             { 
                 // Get an assistant associated with a queue.
-                AssistantQueue result = apiInstance.GetRoutingQueueAssistant(queueId, expand);
+                AssistantQueue result = apiInstance.GetRoutingQueueAssistant(queueId, expand, languageVariation, fallbackToPrimaryAssistant);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3692,6 +3700,8 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **queueId** | **string**| Queue ID |  |
 | **expand** | [**List<string>**](string)| Which fields, if any, to expand. | [optional] <br />**Values**: assistant, copilot |
+| **languageVariation** | **string**| Language variation | [optional]  |
+| **fallbackToPrimaryAssistant** | **bool?**| Fall back to primary assistant if specified variation is not found | [optional]  |
 
 ### Return type
 
@@ -4727,8 +4737,9 @@ This endpoint does require any parameters.
 
 Get Routing Skill
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:skill:view
 
 ### Example
 ```{"language":"csharp"}
@@ -5052,8 +5063,9 @@ namespace Example
 
 Get the list of routing skills.
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:skill:view
 
 ### Example
 ```{"language":"csharp"}
@@ -5384,6 +5396,8 @@ namespace Example
 
 Get a phone number provisioned for SMS.
 
+When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
+
 Requires ALL permissions: 
 
 * sms:phoneNumber:view
@@ -5447,6 +5461,8 @@ namespace Example
 
 
 Get a list of provisioned phone numbers.
+
+When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
 
 Requires ALL permissions: 
 
@@ -6649,7 +6665,7 @@ namespace Example
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 
 Requires ANY permissions: 
 
@@ -6834,6 +6850,70 @@ namespace Example
 ### Return type
 
 [**InboundDomain**](InboundDomain)
+
+
+## PatchRoutingEmailOutboundDomain
+
+> [**OutboundDomain**](OutboundDomain) PatchRoutingEmailOutboundDomain (string domainId, OutboundDomainPatchRequest body)
+
+
+Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchRoutingEmailOutboundDomainExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var domainId = domainId_example;  // string | domain ID
+            var body = new OutboundDomainPatchRequest(); // OutboundDomainPatchRequest | Domain settings
+
+            try
+            { 
+                // Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+                OutboundDomain result = apiInstance.PatchRoutingEmailOutboundDomain(domainId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PatchRoutingEmailOutboundDomain: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domainId** | **string**| domain ID |  |
+| **body** | [**OutboundDomainPatchRequest**](OutboundDomainPatchRequest)| Domain settings |  |
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain)
 
 
 ## PatchRoutingPredictor
@@ -7039,6 +7119,8 @@ void (empty response body)
 
 
 Join or unjoin a set of up to 100 users for a queue
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Requires ANY permissions: 
 
@@ -7358,6 +7440,70 @@ namespace Example
 [**TranscriptionSettings**](TranscriptionSettings)
 
 
+## PatchRoutingSkill
+
+> [**RoutingSkill**](RoutingSkill) PatchRoutingSkill (string skillId, UpdateSkillDivisionRequest body)
+
+
+Update Routing Skill Division
+
+Requires ANY permissions: 
+
+* routing:skill:update
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchRoutingSkillExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var skillId = skillId_example;  // string | Skill ID
+            var body = new UpdateSkillDivisionRequest(); // UpdateSkillDivisionRequest | updateSkillDivisionRequest
+
+            try
+            { 
+                // Update Routing Skill Division
+                RoutingSkill result = apiInstance.PatchRoutingSkill(skillId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PatchRoutingSkill: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **skillId** | **string**| Skill ID |  |
+| **body** | [**UpdateSkillDivisionRequest**](UpdateSkillDivisionRequest)| updateSkillDivisionRequest |  |
+
+### Return type
+
+[**RoutingSkill**](RoutingSkill)
+
+
 ## PatchRoutingSkillgroup
 
 > [**SkillGroup**](SkillGroup) PatchRoutingSkillgroup (string skillGroupId, SkillGroup body)
@@ -7428,6 +7574,8 @@ namespace Example
 
 
 Update a phone number provisioned for SMS.
+
+Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
 
 Requires ALL permissions: 
 
@@ -7559,6 +7707,8 @@ namespace Example
 
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Requires ANY permissions: 
 
@@ -8449,6 +8599,72 @@ namespace Example
 [**InboundDomain**](InboundDomain)
 
 
+## PostRoutingEmailOutboundDomainTestconnection
+
+> [**TestMessage**](TestMessage) PostRoutingEmailOutboundDomainTestconnection (string domainId, TestMessage body = null)
+
+
+Tests the custom SMTP server integration connection set on this outbound domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostRoutingEmailOutboundDomainTestconnectionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var domainId = domainId_example;  // string | domain ID
+            var body = new TestMessage(); // TestMessage | TestMessage (optional) 
+
+            try
+            { 
+                // Tests the custom SMTP server integration connection set on this outbound domain
+                TestMessage result = apiInstance.PostRoutingEmailOutboundDomainTestconnection(domainId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PostRoutingEmailOutboundDomainTestconnection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domainId** | **string**| domain ID |  |
+| **body** | [**TestMessage**](TestMessage)| TestMessage | [optional]  |
+
+### Return type
+
+[**TestMessage**](TestMessage)
+
+
 ## PostRoutingEmailOutboundDomains
 
 > [**EmailOutboundDomainResult**](EmailOutboundDomainResult) PostRoutingEmailOutboundDomains (OutboundDomainCreateRequest body)
@@ -9150,7 +9366,7 @@ namespace Example
 
 ## PostRoutingSkills
 
-> [**RoutingSkill**](RoutingSkill) PostRoutingSkills (RoutingSkill body)
+> [**RoutingSkill**](RoutingSkill) PostRoutingSkills (CreateRoutingSkill body)
 
 
 Create Skill
@@ -9158,6 +9374,7 @@ Create Skill
 Requires ANY permissions: 
 
 * routing:skill:manage
+* routing:skill:create
 
 ### Example
 ```{"language":"csharp"}
@@ -9181,7 +9398,7 @@ namespace Example
                 "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
 
             var apiInstance = new RoutingApi();
-            var body = new RoutingSkill(); // RoutingSkill | Skill
+            var body = new CreateRoutingSkill(); // CreateRoutingSkill | Skill
 
             try
             { 
@@ -9203,7 +9420,7 @@ namespace Example
 
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingSkill**](RoutingSkill)| Skill |  |
+| **body** | [**CreateRoutingSkill**](CreateRoutingSkill)| Skill |  |
 
 ### Return type
 
@@ -9278,6 +9495,8 @@ namespace Example
 
 
 Provision a phone number for SMS
+
+When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
 
 Requires ALL permissions: 
 
@@ -10485,7 +10704,7 @@ namespace Example
 > [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) PutRoutingUserUtilization (string userId, UtilizationRequest body)
 
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Requires ANY permissions: 
 
@@ -10518,7 +10737,7 @@ namespace Example
 
             try
             { 
-                // Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+                // Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
                 AgentMaxUtilizationResponse result = apiInstance.PutRoutingUserUtilization(userId, body);
                 Debug.WriteLine(result);
             }
@@ -10549,7 +10768,7 @@ namespace Example
 > [**UtilizationResponse**](UtilizationResponse) PutRoutingUtilization (UtilizationRequest body)
 
 
-Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 
 Requires ALL permissions: 
 
@@ -10581,7 +10800,7 @@ namespace Example
 
             try
             { 
-                // Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+                // Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
                 UtilizationResponse result = apiInstance.PutRoutingUtilization(body);
                 Debug.WriteLine(result);
             }
@@ -10864,4 +11083,4 @@ namespace Example
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

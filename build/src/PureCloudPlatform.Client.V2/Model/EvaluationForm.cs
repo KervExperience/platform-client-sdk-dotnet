@@ -34,7 +34,9 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="QuestionGroups">A list of question groups (required).</param>
         /// <param name="PublishedVersions">A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the &#39;expand&#x3D;publishHistory&#39; query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable)..</param>
         /// <param name="EvaluationSettings">Settings for evaluations associated with this form.</param>
-        public EvaluationForm(string Name = null, DateTime? ModifiedDate = null, bool? Published = null, string ContextId = null, List<EvaluationQuestionGroup> QuestionGroups = null, DomainEntityListingEvaluationForm PublishedVersions = null, EvaluationSettings EvaluationSettings = null)
+        /// <param name="LatestVersionFormName">The name of the form&#39;s most recently published version.</param>
+        /// <param name="Dialect">The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW.</param>
+        public EvaluationForm(string Name = null, DateTime? ModifiedDate = null, bool? Published = null, string ContextId = null, List<EvaluationQuestionGroup> QuestionGroups = null, DomainEntityListingEvaluationForm PublishedVersions = null, EvaluationSettings EvaluationSettings = null, string LatestVersionFormName = null, string Dialect = null)
         {
             this.Name = Name;
             this.ModifiedDate = ModifiedDate;
@@ -43,6 +45,8 @@ namespace PureCloudPlatform.Client.V2.Model
             this.QuestionGroups = QuestionGroups;
             this.PublishedVersions = PublishedVersions;
             this.EvaluationSettings = EvaluationSettings;
+            this.LatestVersionFormName = LatestVersionFormName;
+            this.Dialect = Dialect;
             
         }
         
@@ -119,11 +123,29 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
+        /// The name of the form&#39;s most recently published version
+        /// </summary>
+        /// <value>The name of the form&#39;s most recently published version</value>
+        [DataMember(Name="latestVersionFormName", EmitDefaultValue=false)]
+        public string LatestVersionFormName { get; set; }
+
+
+
+        /// <summary>
         /// AI scoring settings for the evaluation form.
         /// </summary>
         /// <value>AI scoring settings for the evaluation form.</value>
         [DataMember(Name="aiScoring", EmitDefaultValue=false)]
         public AiScoringSettings AiScoring { get; private set; }
+
+
+
+        /// <summary>
+        /// The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
+        /// </summary>
+        /// <value>The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW</value>
+        [DataMember(Name="dialect", EmitDefaultValue=false)]
+        public string Dialect { get; set; }
 
 
 
@@ -152,7 +174,9 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  QuestionGroups: ").Append(QuestionGroups).Append("\n");
             sb.Append("  PublishedVersions: ").Append(PublishedVersions).Append("\n");
             sb.Append("  EvaluationSettings: ").Append(EvaluationSettings).Append("\n");
+            sb.Append("  LatestVersionFormName: ").Append(LatestVersionFormName).Append("\n");
             sb.Append("  AiScoring: ").Append(AiScoring).Append("\n");
+            sb.Append("  Dialect: ").Append(Dialect).Append("\n");
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -235,9 +259,19 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.EvaluationSettings.Equals(other.EvaluationSettings)
                 ) &&
                 (
+                    this.LatestVersionFormName == other.LatestVersionFormName ||
+                    this.LatestVersionFormName != null &&
+                    this.LatestVersionFormName.Equals(other.LatestVersionFormName)
+                ) &&
+                (
                     this.AiScoring == other.AiScoring ||
                     this.AiScoring != null &&
                     this.AiScoring.Equals(other.AiScoring)
+                ) &&
+                (
+                    this.Dialect == other.Dialect ||
+                    this.Dialect != null &&
+                    this.Dialect.Equals(other.Dialect)
                 ) &&
                 (
                     this.SelfUri == other.SelfUri ||
@@ -281,8 +315,14 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.EvaluationSettings != null)
                     hash = hash * 59 + this.EvaluationSettings.GetHashCode();
 
+                if (this.LatestVersionFormName != null)
+                    hash = hash * 59 + this.LatestVersionFormName.GetHashCode();
+
                 if (this.AiScoring != null)
                     hash = hash * 59 + this.AiScoring.GetHashCode();
+
+                if (this.Dialect != null)
+                    hash = hash * 59 + this.Dialect.GetHashCode();
 
                 if (this.SelfUri != null)
                     hash = hash * 59 + this.SelfUri.GetHashCode();

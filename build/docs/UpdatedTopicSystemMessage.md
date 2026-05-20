@@ -12,10 +12,11 @@
 | **OrganizationId** | **string** |  | [optional] |
 | **UserId** | **string** |  | [optional] |
 | **OauthClientId** | **string** |  | [optional] |
+| **OauthClientOrgId** | **string** |  | [optional] |
 | **Reason** | **string** |  | [optional] |
 | **Message** | **string** |  | [optional] |
 | **Data** | **Dictionary&lt;string, Object&gt;** |  | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

@@ -1007,9 +1007,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>ActivityPlanRunJobResponse</returns>
+        /// <returns>ActivityPlanJobResponse</returns>
         
-        ActivityPlanRunJobResponse GetWorkforcemanagementBusinessunitActivityplanRunsJob (string businessUnitId, string activityPlanId, string jobId);
+        ActivityPlanJobResponse GetWorkforcemanagementBusinessunitActivityplanRunsJob (string businessUnitId, string activityPlanId, string jobId);
 
         /// <summary>
         /// Gets an activity plan run job
@@ -1021,9 +1021,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>ApiResponse of ActivityPlanRunJobResponse</returns>
+        /// <returns>ApiResponse of ActivityPlanJobResponse</returns>
         
-        ApiResponse<ActivityPlanRunJobResponse> GetWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo (string businessUnitId, string activityPlanId, string jobId);
+        ApiResponse<ActivityPlanJobResponse> GetWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo (string businessUnitId, string activityPlanId, string jobId);
 
         /// <summary>
         /// Get activity plans
@@ -1186,9 +1186,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>CapacityPlanStaffingGroupAllocationsResponse</returns>
         
-        CapacityPlanStaffingGroupAllocationsResponse GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations (string businessUnitId, string capacityPlanId);
+        CapacityPlanStaffingGroupAllocationsResponse GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations (string businessUnitId, string capacityPlanId, string granularity = null);
 
         /// <summary>
         /// Get a capacity plan&#39;s staffing group allocations
@@ -1199,9 +1200,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>ApiResponse of CapacityPlanStaffingGroupAllocationsResponse</returns>
         
-        ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo (string businessUnitId, string capacityPlanId);
+        ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo (string businessUnitId, string capacityPlanId, string granularity = null);
 
         /// <summary>
         /// Get a capacity plan&#39;s staffing requirements
@@ -1239,9 +1241,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>LongTermRequirementsResponse</returns>
         
-        LongTermRequirementsResponse GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast (string businessUnitId, String weekDateId, string forecastId);
+        LongTermRequirementsResponse GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast (string businessUnitId, String weekDateId, string forecastId, string granularity = null);
 
         /// <summary>
         /// Get the latest long term staffing requirements for a business unit
@@ -1253,9 +1256,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>ApiResponse of LongTermRequirementsResponse</returns>
         
-        ApiResponse<LongTermRequirementsResponse> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo (string businessUnitId, String weekDateId, string forecastId);
+        ApiResponse<LongTermRequirementsResponse> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo (string businessUnitId, String weekDateId, string forecastId, string granularity = null);
 
         /// <summary>
         /// Get list of capacity plans for a business unit
@@ -1420,6 +1424,30 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<ManagementUnitListing> GetWorkforcemanagementBusinessunitManagementunitsWithHttpInfo (string businessUnitId, string feature = null, string divisionId = null);
 
         /// <summary>
+        /// Get minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>MinimumStaffingResponse</returns>
+        
+        MinimumStaffingResponse GetWorkforcemanagementBusinessunitMinimumstaffingSettings (string businessUnitId);
+
+        /// <summary>
+        /// Get minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>ApiResponse of MinimumStaffingResponse</returns>
+        
+        ApiResponse<MinimumStaffingResponse> GetWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo (string businessUnitId);
+
+        /// <summary>
         /// Get a planning group
         /// </summary>
         /// <remarks>
@@ -1468,6 +1496,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of PlanningGroupList</returns>
         
         ApiResponse<PlanningGroupList> GetWorkforcemanagementBusinessunitPlanninggroupsWithHttpInfo (string businessUnitId);
+
+        /// <summary>
+        /// Get scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>BuSchedulerSettingsResponse</returns>
+        
+        BuSchedulerSettingsResponse GetWorkforcemanagementBusinessunitSchedulerSettings (string businessUnitId);
+
+        /// <summary>
+        /// Get scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>ApiResponse of BuSchedulerSettingsResponse</returns>
+        
+        ApiResponse<BuSchedulerSettingsResponse> GetWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo (string businessUnitId);
 
         /// <summary>
         /// Get a scheduling run
@@ -1602,6 +1654,136 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of ServiceGoalTemplateList</returns>
         
         ApiResponse<ServiceGoalTemplateList> GetWorkforcemanagementBusinessunitServicegoaltemplatesWithHttpInfo (string businessUnitId, List<string> expand = null);
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        ShiftTradeEvaluateTradesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        ShiftTradeQueryTradesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeQueryTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        ShiftTradeBulkUpdateTradeStateBuJobResponse GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        ShiftTradeSearchUnmatchedTradesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        ShiftTradeQueryWeekSummariesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobWithHttpInfo (string businessUnitId, string jobId);
 
         /// <summary>
         /// Gets a staffing group
@@ -1762,6 +1944,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of BuTimeOffPlanListing</returns>
         
         ApiResponse<BuTimeOffPlanListing> GetWorkforcemanagementBusinessunitTimeoffplansWithHttpInfo (string businessUnitId, string managementUnitId = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Get users in the business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>BuUserListing</returns>
+        
+        BuUserListing GetWorkforcemanagementBusinessunitUsers (string businessUnitId, List<string> managementUnitIds = null);
+
+        /// <summary>
+        /// Get users in the business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>ApiResponse of BuUserListing</returns>
+        
+        ApiResponse<BuUserListing> GetWorkforcemanagementBusinessunitUsersWithHttpInfo (string businessUnitId, List<string> managementUnitIds = null);
 
         /// <summary>
         /// Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
@@ -1943,7 +2151,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get the list of week schedules for the specified week
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -1958,7 +2166,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get the list of week schedules for the specified week
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -2153,7 +2361,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get short term forecasts
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -2166,7 +2374,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get short term forecasts
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -3256,6 +3464,132 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<ShiftTradeListResponse> GetWorkforcemanagementShifttradesWithHttpInfo ();
 
         /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeUpdateTradeJobResponse</returns>
+        
+        ShiftTradeUpdateTradeJobResponse GetWorkforcemanagementShifttradingTradeJob (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        ApiResponse<ShiftTradeUpdateTradeJobResponse> GetWorkforcemanagementShifttradingTradeJobWithHttpInfo (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeMatchTradeJobResponse</returns>
+        
+        ShiftTradeMatchTradeJobResponse GetWorkforcemanagementShifttradingTradeMatchJob (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeMatchTradeJobResponse</returns>
+        
+        ApiResponse<ShiftTradeMatchTradeJobResponse> GetWorkforcemanagementShifttradingTradeMatchJobWithHttpInfo (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        ShiftTradeUpdateTradeStateJobResponse GetWorkforcemanagementShifttradingTradeStateJob (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        ApiResponse<ShiftTradeUpdateTradeStateJobResponse> GetWorkforcemanagementShifttradingTradeStateJobWithHttpInfo (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeAddTradeJobResponse</returns>
+        
+        ShiftTradeAddTradeJobResponse GetWorkforcemanagementShifttradingTradesJob (string jobId);
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeAddTradeJobResponse</returns>
+        
+        ApiResponse<ShiftTradeAddTradeJobResponse> GetWorkforcemanagementShifttradingTradesJobWithHttpInfo (string jobId);
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        ShiftTradeQueryAgentTradesJobResponse GetWorkforcemanagementShifttradingTradesMineQueryJob (string jobId);
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        ApiResponse<ShiftTradeQueryAgentTradesJobResponse> GetWorkforcemanagementShifttradingTradesMineQueryJobWithHttpInfo (string jobId);
+
+        /// <summary>
         /// Request to fetch the status of the historical shrinkage query
         /// </summary>
         /// <remarks>
@@ -3754,6 +4088,32 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<CapacityPlanResponse> PatchWorkforcemanagementBusinessunitCapacityplanWithHttpInfo (string businessUnitId, string capacityPlanId, UpdateCapacityPlanRequest body);
 
         /// <summary>
+        /// Update minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>MinimumStaffingResponse</returns>
+        
+        MinimumStaffingResponse PatchWorkforcemanagementBusinessunitMinimumstaffingSettings (string businessUnitId, MinimumStaffingRequest body);
+
+        /// <summary>
+        /// Update minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>ApiResponse of MinimumStaffingResponse</returns>
+        
+        ApiResponse<MinimumStaffingResponse> PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo (string businessUnitId, MinimumStaffingRequest body);
+
+        /// <summary>
         /// Updates the planning group
         /// </summary>
         /// <remarks>
@@ -3780,6 +4140,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of PlanningGroup</returns>
         
         ApiResponse<PlanningGroup> PatchWorkforcemanagementBusinessunitPlanninggroupWithHttpInfo (string businessUnitId, string planningGroupId, UpdatePlanningGroupRequest body);
+
+        /// <summary>
+        /// Update scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>BuSchedulerSettingsResponse</returns>
+        
+        BuSchedulerSettingsResponse PatchWorkforcemanagementBusinessunitSchedulerSettings (string businessUnitId, BuSchedulerSettingsRequest body);
+
+        /// <summary>
+        /// Update scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>ApiResponse of BuSchedulerSettingsResponse</returns>
+        
+        ApiResponse<BuSchedulerSettingsResponse> PatchWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo (string businessUnitId, BuSchedulerSettingsRequest body);
 
         /// <summary>
         /// Mark a schedule run as applied
@@ -4854,9 +5240,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>ActivityPlanJobResponse</returns>
+        /// <returns>ActivityPlanRunJobResponse</returns>
         
-        ActivityPlanJobResponse PostWorkforcemanagementBusinessunitActivityplanRunsJobs (string businessUnitId, string activityPlanId);
+        ActivityPlanRunJobResponse PostWorkforcemanagementBusinessunitActivityplanRunsJobs (string businessUnitId, string activityPlanId);
 
         /// <summary>
         /// Run an activity plan manually
@@ -4867,9 +5253,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>ApiResponse of ActivityPlanJobResponse</returns>
+        /// <returns>ApiResponse of ActivityPlanRunJobResponse</returns>
         
-        ApiResponse<ActivityPlanJobResponse> PostWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo (string businessUnitId, string activityPlanId);
+        ApiResponse<ActivityPlanRunJobResponse> PostWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo (string businessUnitId, string activityPlanId);
 
         /// <summary>
         /// Create an activity plan
@@ -5254,6 +5640,154 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of ServiceGoalTemplate</returns>
         
         ApiResponse<ServiceGoalTemplate> PostWorkforcemanagementBusinessunitServicegoaltemplatesWithHttpInfo (string businessUnitId, CreateServiceGoalTemplate body);
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        ShiftTradeEvaluateTradesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsWithHttpInfo (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        ShiftTradeQueryTradesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeQueryTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsWithHttpInfo (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        ShiftTradeBulkUpdateTradeStateBuJobResponse PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsWithHttpInfo (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        ShiftTradeSearchUnmatchedTradesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsWithHttpInfo (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        ShiftTradeQueryWeekSummariesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsWithHttpInfo (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null);
 
         /// <summary>
         /// Creates a new staffing group
@@ -6409,7 +6943,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Fetches time off requests matching the conditions specified in the request body
         /// </summary>
         /// <remarks>
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -6423,7 +6957,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Fetches time off requests matching the conditions specified in the request body
         /// </summary>
         /// <remarks>
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -6872,6 +7406,144 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of UserScheduleContainer</returns>
         [Obsolete]
         ApiResponse<UserScheduleContainer> PostWorkforcemanagementSchedulesWithHttpInfo (CurrentUserScheduleRequestBody body = null);
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeUpdateTradeJobResponse</returns>
+        
+        ShiftTradeUpdateTradeJobResponse PostWorkforcemanagementShifttradingTradeJobs (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        ApiResponse<ShiftTradeUpdateTradeJobResponse> PostWorkforcemanagementShifttradingTradeJobsWithHttpInfo (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeMatchTradeJobResponse</returns>
+        
+        ShiftTradeMatchTradeJobResponse PostWorkforcemanagementShifttradingTradeMatchJobs (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeMatchTradeJobResponse</returns>
+        
+        ApiResponse<ShiftTradeMatchTradeJobResponse> PostWorkforcemanagementShifttradingTradeMatchJobsWithHttpInfo (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Update trade state by a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        ShiftTradeUpdateTradeStateJobResponse PostWorkforcemanagementShifttradingTradeStateJobs (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Update trade state by a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        ApiResponse<ShiftTradeUpdateTradeStateJobResponse> PostWorkforcemanagementShifttradingTradeStateJobsWithHttpInfo (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Add a shift trade job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeAddTradeJobResponse</returns>
+        
+        ShiftTradeAddTradeJobResponse PostWorkforcemanagementShifttradingTradesJobs (AddShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Add a shift trade job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeAddTradeJobResponse</returns>
+        
+        ApiResponse<ShiftTradeAddTradeJobResponse> PostWorkforcemanagementShifttradingTradesJobsWithHttpInfo (AddShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        ShiftTradeQueryAgentTradesJobResponse PostWorkforcemanagementShifttradingTradesMineQueryJobs (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        ApiResponse<ShiftTradeQueryAgentTradesJobResponse> PostWorkforcemanagementShifttradingTradesMineQueryJobsWithHttpInfo (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
 
         /// <summary>
         /// Request a teams historical adherence report
@@ -8171,9 +8843,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>Task of ActivityPlanRunJobResponse</returns>
+        /// <returns>Task of ActivityPlanJobResponse</returns>
         
-        System.Threading.Tasks.Task<ActivityPlanRunJobResponse> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsync (string businessUnitId, string activityPlanId, string jobId);
+        System.Threading.Tasks.Task<ActivityPlanJobResponse> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsync (string businessUnitId, string activityPlanId, string jobId);
 
         /// <summary>
         /// Gets an activity plan run job
@@ -8185,9 +8857,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>Task of ApiResponse (ActivityPlanRunJobResponse)</returns>
+        /// <returns>Task of ApiResponse (ActivityPlanJobResponse)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<ActivityPlanRunJobResponse>> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsyncWithHttpInfo (string businessUnitId, string activityPlanId, string jobId);
+        System.Threading.Tasks.Task<ApiResponse<ActivityPlanJobResponse>> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsyncWithHttpInfo (string businessUnitId, string activityPlanId, string jobId);
 
         /// <summary>
         /// Get activity plans
@@ -8350,9 +9022,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>Task of CapacityPlanStaffingGroupAllocationsResponse</returns>
         
-        System.Threading.Tasks.Task<CapacityPlanStaffingGroupAllocationsResponse> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsync (string businessUnitId, string capacityPlanId);
+        System.Threading.Tasks.Task<CapacityPlanStaffingGroupAllocationsResponse> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsync (string businessUnitId, string capacityPlanId, string granularity = null);
 
         /// <summary>
         /// Get a capacity plan&#39;s staffing group allocations
@@ -8363,9 +9036,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>Task of ApiResponse (CapacityPlanStaffingGroupAllocationsResponse)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<CapacityPlanStaffingGroupAllocationsResponse>> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsyncWithHttpInfo (string businessUnitId, string capacityPlanId);
+        System.Threading.Tasks.Task<ApiResponse<CapacityPlanStaffingGroupAllocationsResponse>> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsyncWithHttpInfo (string businessUnitId, string capacityPlanId, string granularity = null);
 
         /// <summary>
         /// Get a capacity plan&#39;s staffing requirements
@@ -8403,9 +9077,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>Task of LongTermRequirementsResponse</returns>
         
-        System.Threading.Tasks.Task<LongTermRequirementsResponse> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsync (string businessUnitId, String weekDateId, string forecastId);
+        System.Threading.Tasks.Task<LongTermRequirementsResponse> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsync (string businessUnitId, String weekDateId, string forecastId, string granularity = null);
 
         /// <summary>
         /// Get the latest long term staffing requirements for a business unit
@@ -8417,9 +9092,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>Task of ApiResponse (LongTermRequirementsResponse)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<LongTermRequirementsResponse>> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsyncWithHttpInfo (string businessUnitId, String weekDateId, string forecastId);
+        System.Threading.Tasks.Task<ApiResponse<LongTermRequirementsResponse>> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsyncWithHttpInfo (string businessUnitId, String weekDateId, string forecastId, string granularity = null);
 
         /// <summary>
         /// Get list of capacity plans for a business unit
@@ -8584,6 +9260,30 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<ManagementUnitListing>> GetWorkforcemanagementBusinessunitManagementunitsAsyncWithHttpInfo (string businessUnitId, string feature = null, string divisionId = null);
 
         /// <summary>
+        /// Get minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of MinimumStaffingResponse</returns>
+        
+        System.Threading.Tasks.Task<MinimumStaffingResponse> GetWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync (string businessUnitId);
+
+        /// <summary>
+        /// Get minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of ApiResponse (MinimumStaffingResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<MinimumStaffingResponse>> GetWorkforcemanagementBusinessunitMinimumstaffingSettingsAsyncWithHttpInfo (string businessUnitId);
+
+        /// <summary>
         /// Get a planning group
         /// </summary>
         /// <remarks>
@@ -8632,6 +9332,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (PlanningGroupList)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<PlanningGroupList>> GetWorkforcemanagementBusinessunitPlanninggroupsAsyncWithHttpInfo (string businessUnitId);
+
+        /// <summary>
+        /// Get scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of BuSchedulerSettingsResponse</returns>
+        
+        System.Threading.Tasks.Task<BuSchedulerSettingsResponse> GetWorkforcemanagementBusinessunitSchedulerSettingsAsync (string businessUnitId);
+
+        /// <summary>
+        /// Get scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of ApiResponse (BuSchedulerSettingsResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<BuSchedulerSettingsResponse>> GetWorkforcemanagementBusinessunitSchedulerSettingsAsyncWithHttpInfo (string businessUnitId);
 
         /// <summary>
         /// Get a scheduling run
@@ -8766,6 +9490,136 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (ServiceGoalTemplateList)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<ServiceGoalTemplateList>> GetWorkforcemanagementBusinessunitServicegoaltemplatesAsyncWithHttpInfo (string businessUnitId, List<string> expand = null);
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeEvaluateTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsync (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeEvaluateTradesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsyncWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeQueryTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsync (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryTradesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsyncWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeBulkUpdateTradeStateBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsync (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeBulkUpdateTradeStateBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsyncWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeSearchUnmatchedTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsync (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeSearchUnmatchedTradesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsyncWithHttpInfo (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeQueryWeekSummariesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsync (string businessUnitId, string jobId);
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryWeekSummariesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsyncWithHttpInfo (string businessUnitId, string jobId);
 
         /// <summary>
         /// Gets a staffing group
@@ -8926,6 +9780,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (BuTimeOffPlanListing)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<BuTimeOffPlanListing>> GetWorkforcemanagementBusinessunitTimeoffplansAsyncWithHttpInfo (string businessUnitId, string managementUnitId = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Get users in the business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>Task of BuUserListing</returns>
+        
+        System.Threading.Tasks.Task<BuUserListing> GetWorkforcemanagementBusinessunitUsersAsync (string businessUnitId, List<string> managementUnitIds = null);
+
+        /// <summary>
+        /// Get users in the business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>Task of ApiResponse (BuUserListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<BuUserListing>> GetWorkforcemanagementBusinessunitUsersAsyncWithHttpInfo (string businessUnitId, List<string> managementUnitIds = null);
 
         /// <summary>
         /// Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
@@ -9107,7 +9987,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get the list of week schedules for the specified week
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -9122,7 +10002,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get the list of week schedules for the specified week
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -9317,7 +10197,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get short term forecasts
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -9330,7 +10210,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get short term forecasts
         /// </summary>
         /// <remarks>
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -10420,6 +11300,132 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<ShiftTradeListResponse>> GetWorkforcemanagementShifttradesAsyncWithHttpInfo ();
 
         /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeUpdateTradeJobResponse> GetWorkforcemanagementShifttradingTradeJobAsync (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeJobResponse>> GetWorkforcemanagementShifttradingTradeJobAsyncWithHttpInfo (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeMatchTradeJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeMatchTradeJobResponse> GetWorkforcemanagementShifttradingTradeMatchJobAsync (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeMatchTradeJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeMatchTradeJobResponse>> GetWorkforcemanagementShifttradingTradeMatchJobAsyncWithHttpInfo (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeUpdateTradeStateJobResponse> GetWorkforcemanagementShifttradingTradeStateJobAsync (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status.
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeStateJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> GetWorkforcemanagementShifttradingTradeStateJobAsyncWithHttpInfo (string tradeId, string jobId);
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeAddTradeJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeAddTradeJobResponse> GetWorkforcemanagementShifttradingTradesJobAsync (string jobId);
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeAddTradeJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeAddTradeJobResponse>> GetWorkforcemanagementShifttradingTradesJobAsyncWithHttpInfo (string jobId);
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeQueryAgentTradesJobResponse> GetWorkforcemanagementShifttradingTradesMineQueryJobAsync (string jobId);
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+        /// </summary>
+        /// <remarks>
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryAgentTradesJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> GetWorkforcemanagementShifttradingTradesMineQueryJobAsyncWithHttpInfo (string jobId);
+
+        /// <summary>
         /// Request to fetch the status of the historical shrinkage query
         /// </summary>
         /// <remarks>
@@ -10918,6 +11924,32 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<CapacityPlanResponse>> PatchWorkforcemanagementBusinessunitCapacityplanAsyncWithHttpInfo (string businessUnitId, string capacityPlanId, UpdateCapacityPlanRequest body);
 
         /// <summary>
+        /// Update minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of MinimumStaffingResponse</returns>
+        
+        System.Threading.Tasks.Task<MinimumStaffingResponse> PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync (string businessUnitId, MinimumStaffingRequest body);
+
+        /// <summary>
+        /// Update minimum staffing settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of ApiResponse (MinimumStaffingResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<MinimumStaffingResponse>> PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsyncWithHttpInfo (string businessUnitId, MinimumStaffingRequest body);
+
+        /// <summary>
         /// Updates the planning group
         /// </summary>
         /// <remarks>
@@ -10944,6 +11976,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (PlanningGroup)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<PlanningGroup>> PatchWorkforcemanagementBusinessunitPlanninggroupAsyncWithHttpInfo (string businessUnitId, string planningGroupId, UpdatePlanningGroupRequest body);
+
+        /// <summary>
+        /// Update scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of BuSchedulerSettingsResponse</returns>
+        
+        System.Threading.Tasks.Task<BuSchedulerSettingsResponse> PatchWorkforcemanagementBusinessunitSchedulerSettingsAsync (string businessUnitId, BuSchedulerSettingsRequest body);
+
+        /// <summary>
+        /// Update scheduler settings for a business unit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of ApiResponse (BuSchedulerSettingsResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<BuSchedulerSettingsResponse>> PatchWorkforcemanagementBusinessunitSchedulerSettingsAsyncWithHttpInfo (string businessUnitId, BuSchedulerSettingsRequest body);
 
         /// <summary>
         /// Mark a schedule run as applied
@@ -12018,9 +13076,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>Task of ActivityPlanJobResponse</returns>
+        /// <returns>Task of ActivityPlanRunJobResponse</returns>
         
-        System.Threading.Tasks.Task<ActivityPlanJobResponse> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsync (string businessUnitId, string activityPlanId);
+        System.Threading.Tasks.Task<ActivityPlanRunJobResponse> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsync (string businessUnitId, string activityPlanId);
 
         /// <summary>
         /// Run an activity plan manually
@@ -12031,9 +13089,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>Task of ApiResponse (ActivityPlanJobResponse)</returns>
+        /// <returns>Task of ApiResponse (ActivityPlanRunJobResponse)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<ActivityPlanJobResponse>> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsyncWithHttpInfo (string businessUnitId, string activityPlanId);
+        System.Threading.Tasks.Task<ApiResponse<ActivityPlanRunJobResponse>> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsyncWithHttpInfo (string businessUnitId, string activityPlanId);
 
         /// <summary>
         /// Create an activity plan
@@ -12418,6 +13476,154 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (ServiceGoalTemplate)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<ServiceGoalTemplate>> PostWorkforcemanagementBusinessunitServicegoaltemplatesAsyncWithHttpInfo (string businessUnitId, CreateServiceGoalTemplate body);
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeEvaluateTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsync (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeEvaluateTradesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsyncWithHttpInfo (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeQueryTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsync (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryTradesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsyncWithHttpInfo (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeBulkUpdateTradeStateBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsync (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeBulkUpdateTradeStateBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsyncWithHttpInfo (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeSearchUnmatchedTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsync (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeSearchUnmatchedTradesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsyncWithHttpInfo (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeQueryWeekSummariesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsync (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryWeekSummariesBuJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsyncWithHttpInfo (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null);
 
         /// <summary>
         /// Creates a new staffing group
@@ -13573,7 +14779,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Fetches time off requests matching the conditions specified in the request body
         /// </summary>
         /// <remarks>
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -13587,7 +14793,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Fetches time off requests matching the conditions specified in the request body
         /// </summary>
         /// <remarks>
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -14036,6 +15242,144 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (UserScheduleContainer)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<UserScheduleContainer>> PostWorkforcemanagementSchedulesAsyncWithHttpInfo (CurrentUserScheduleRequestBody body = null);
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeUpdateTradeJobResponse> PostWorkforcemanagementShifttradingTradeJobsAsync (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeJobResponse>> PostWorkforcemanagementShifttradingTradeJobsAsyncWithHttpInfo (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeMatchTradeJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeMatchTradeJobResponse> PostWorkforcemanagementShifttradingTradeMatchJobsAsync (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeMatchTradeJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeMatchTradeJobResponse>> PostWorkforcemanagementShifttradingTradeMatchJobsAsyncWithHttpInfo (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Update trade state by a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeUpdateTradeStateJobResponse> PostWorkforcemanagementShifttradingTradeStateJobsAsync (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Update trade state by a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeStateJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> PostWorkforcemanagementShifttradingTradeStateJobsAsyncWithHttpInfo (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Add a shift trade job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeAddTradeJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeAddTradeJobResponse> PostWorkforcemanagementShifttradingTradesJobsAsync (AddShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Add a shift trade job
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeAddTradeJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeAddTradeJobResponse>> PostWorkforcemanagementShifttradingTradesJobsAsyncWithHttpInfo (AddShiftTradeJobRequest body, bool? forceAsync = null);
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        System.Threading.Tasks.Task<ShiftTradeQueryAgentTradesJobResponse> PostWorkforcemanagementShifttradingTradesMineQueryJobsAsync (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryAgentTradesJobResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> PostWorkforcemanagementShifttradingTradesMineQueryJobsAsyncWithHttpInfo (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null);
 
         /// <summary>
         /// Request a teams historical adherence report
@@ -14518,6 +15862,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14618,6 +15964,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14723,6 +16071,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14830,6 +16180,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14938,6 +16290,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15048,6 +16402,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15153,6 +16509,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15260,6 +16618,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15365,6 +16725,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15472,6 +16834,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15577,6 +16941,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15684,6 +17050,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15789,6 +17157,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15896,6 +17266,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16001,6 +17373,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16108,6 +17482,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16213,6 +17589,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16320,6 +17698,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16432,6 +17812,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16547,6 +17929,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16658,6 +18042,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16772,6 +18158,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16877,6 +18265,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16984,6 +18374,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17095,6 +18487,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17209,6 +18603,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17302,6 +18698,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementCalendarUrlIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17395,6 +18793,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementCalendarUrlIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17494,6 +18894,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17594,6 +18996,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17699,6 +19103,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17806,6 +19212,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17911,6 +19319,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18018,6 +19428,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18123,6 +19535,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18230,6 +19644,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18335,6 +19751,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18442,6 +19860,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18542,6 +19962,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18643,6 +20065,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18743,6 +20167,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18844,6 +20270,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18944,6 +20372,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanationsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceExplanationsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanationsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19045,6 +20475,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanationsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceExplanationsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceExplanationsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19145,6 +20577,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceHistoricalBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalBulkJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19246,6 +20680,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceHistoricalBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalBulkJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19346,6 +20782,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19447,6 +20885,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAdherenceHistoricalJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19553,6 +20993,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19661,6 +21103,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19761,6 +21205,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19862,6 +21308,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19962,6 +21410,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentsMeAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeAdherenceHistoricalJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20063,6 +21513,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentsMeAdherenceHistoricalJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeAdherenceHistoricalJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20157,6 +21609,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentsMeManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20251,6 +21705,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAgentsMeManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAgentsMeManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20351,6 +21807,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsOffersJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20452,6 +21910,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsOffersJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20552,6 +22012,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsOffersSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersSearchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20653,6 +22115,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsOffersSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsOffersSearchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20747,6 +22211,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20841,6 +22307,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20941,6 +22409,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21042,6 +22512,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21139,6 +22611,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21236,6 +22710,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21336,6 +22812,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21437,6 +22915,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21537,6 +23017,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTradesStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesStateJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21638,6 +23120,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementAlternativeshiftsTradesStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementAlternativeshiftsTradesStateJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21744,6 +23228,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21851,6 +23337,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21957,6 +23445,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22065,6 +23555,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22168,6 +23660,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22272,6 +23766,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22378,6 +23874,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22486,6 +23984,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22506,11 +24006,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>ActivityPlanRunJobResponse</returns>
+        /// <returns>ActivityPlanJobResponse</returns>
         
-        public ActivityPlanRunJobResponse GetWorkforcemanagementBusinessunitActivityplanRunsJob (string businessUnitId, string activityPlanId, string jobId)
+        public ActivityPlanJobResponse GetWorkforcemanagementBusinessunitActivityplanRunsJob (string businessUnitId, string activityPlanId, string jobId)
         {
-             ApiResponse<ActivityPlanRunJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo(businessUnitId, activityPlanId, jobId);
+             ApiResponse<ActivityPlanJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo(businessUnitId, activityPlanId, jobId);
              return localVarResponse.Data;
         }
 
@@ -22522,9 +24022,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>ApiResponse of ActivityPlanRunJobResponse</returns>
+        /// <returns>ApiResponse of ActivityPlanJobResponse</returns>
         
-        public ApiResponse< ActivityPlanRunJobResponse > GetWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo (string businessUnitId, string activityPlanId, string jobId)
+        public ApiResponse< ActivityPlanJobResponse > GetWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo (string businessUnitId, string activityPlanId, string jobId)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -22598,12 +24098,14 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplanRunsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplanRunsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplanRunsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ActivityPlanRunJobResponse>(localVarStatusCode,
+            return new ApiResponse<ActivityPlanJobResponse>(localVarStatusCode,
                 localVarHeaders,
-                (ActivityPlanRunJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanRunJobResponse)),
+                (ActivityPlanJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -22617,11 +24119,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>Task of ActivityPlanRunJobResponse</returns>
+        /// <returns>Task of ActivityPlanJobResponse</returns>
         
-        public async System.Threading.Tasks.Task<ActivityPlanRunJobResponse> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsync (string businessUnitId, string activityPlanId, string jobId)
+        public async System.Threading.Tasks.Task<ActivityPlanJobResponse> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsync (string businessUnitId, string activityPlanId, string jobId)
         {
-             ApiResponse<ActivityPlanRunJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitActivityplanRunsJobAsyncWithHttpInfo(businessUnitId, activityPlanId, jobId);
+             ApiResponse<ActivityPlanJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitActivityplanRunsJobAsyncWithHttpInfo(businessUnitId, activityPlanId, jobId);
              return localVarResponse.Data;
 
         }
@@ -22634,9 +24136,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan associated with the run job</param>
         /// <param name="jobId">The ID of the activity plan run job</param>
-        /// <returns>Task of ApiResponse (ActivityPlanRunJobResponse)</returns>
+        /// <returns>Task of ApiResponse (ActivityPlanJobResponse)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<ActivityPlanRunJobResponse>> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsyncWithHttpInfo (string businessUnitId, string activityPlanId, string jobId)
+        public async System.Threading.Tasks.Task<ApiResponse<ActivityPlanJobResponse>> GetWorkforcemanagementBusinessunitActivityplanRunsJobAsyncWithHttpInfo (string businessUnitId, string activityPlanId, string jobId)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -22713,12 +24215,14 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplanRunsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplanRunsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplanRunsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ActivityPlanRunJobResponse>(localVarStatusCode,
+            return new ApiResponse<ActivityPlanJobResponse>(localVarStatusCode,
                 localVarHeaders,
-                (ActivityPlanRunJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanRunJobResponse)),
+                (ActivityPlanJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -22816,6 +24320,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22920,6 +24426,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23020,6 +24528,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplansJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplansJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplansJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23121,6 +24631,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplansJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitActivityplansJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitActivityplansJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23221,6 +24733,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23322,6 +24836,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23428,6 +24944,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23536,6 +25054,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23642,6 +25162,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23750,6 +25272,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23856,6 +25380,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23964,6 +25490,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23983,11 +25511,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>CapacityPlanStaffingGroupAllocationsResponse</returns>
         
-        public CapacityPlanStaffingGroupAllocationsResponse GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations (string businessUnitId, string capacityPlanId)
+        public CapacityPlanStaffingGroupAllocationsResponse GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations (string businessUnitId, string capacityPlanId, string granularity = null)
         {
-             ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> localVarResponse = GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo(businessUnitId, capacityPlanId);
+             ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> localVarResponse = GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo(businessUnitId, capacityPlanId, granularity);
              return localVarResponse.Data;
         }
 
@@ -23998,9 +25527,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>ApiResponse of CapacityPlanStaffingGroupAllocationsResponse</returns>
         
-        public ApiResponse< CapacityPlanStaffingGroupAllocationsResponse > GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo (string businessUnitId, string capacityPlanId)
+        public ApiResponse< CapacityPlanStaffingGroupAllocationsResponse > GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsWithHttpInfo (string businessUnitId, string capacityPlanId, string granularity = null)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -24044,6 +25574,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (capacityPlanId != null) localVarPathParams.Add("capacityPlanId", this.Configuration.ApiClient.ParameterToString(capacityPlanId));
 
             // Query params
+            if (granularity != null) localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
 
             // Header params
 
@@ -24070,6 +25601,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24088,11 +25621,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>Task of CapacityPlanStaffingGroupAllocationsResponse</returns>
         
-        public async System.Threading.Tasks.Task<CapacityPlanStaffingGroupAllocationsResponse> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsync (string businessUnitId, string capacityPlanId)
+        public async System.Threading.Tasks.Task<CapacityPlanStaffingGroupAllocationsResponse> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsync (string businessUnitId, string capacityPlanId, string granularity = null)
         {
-             ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> localVarResponse = await GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsyncWithHttpInfo(businessUnitId, capacityPlanId);
+             ApiResponse<CapacityPlanStaffingGroupAllocationsResponse> localVarResponse = await GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsyncWithHttpInfo(businessUnitId, capacityPlanId, granularity);
              return localVarResponse.Data;
 
         }
@@ -24104,9 +25638,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="capacityPlanId">The ID of the capacity plan</param>
+        /// <param name="granularity">Granularity to access staffing group data, defaults to weekly (optional)</param>
         /// <returns>Task of ApiResponse (CapacityPlanStaffingGroupAllocationsResponse)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<CapacityPlanStaffingGroupAllocationsResponse>> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsyncWithHttpInfo (string businessUnitId, string capacityPlanId)
+        public async System.Threading.Tasks.Task<ApiResponse<CapacityPlanStaffingGroupAllocationsResponse>> GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationsAsyncWithHttpInfo (string businessUnitId, string capacityPlanId, string granularity = null)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -24152,6 +25687,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (capacityPlanId != null) localVarPathParams.Add("capacityPlanId", this.Configuration.ApiClient.ParameterToString(capacityPlanId));
 
             // Query params
+            if (granularity != null) localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
 
             // Header params
 
@@ -24178,6 +25714,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24284,6 +25822,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirements: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirements: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirements: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24392,6 +25932,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirements: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirements: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanStaffingrequirements: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24412,11 +25954,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>LongTermRequirementsResponse</returns>
         
-        public LongTermRequirementsResponse GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast (string businessUnitId, String weekDateId, string forecastId)
+        public LongTermRequirementsResponse GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast (string businessUnitId, String weekDateId, string forecastId, string granularity = null)
         {
-             ApiResponse<LongTermRequirementsResponse> localVarResponse = GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo(businessUnitId, weekDateId, forecastId);
+             ApiResponse<LongTermRequirementsResponse> localVarResponse = GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo(businessUnitId, weekDateId, forecastId, granularity);
              return localVarResponse.Data;
         }
 
@@ -24428,9 +25971,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>ApiResponse of LongTermRequirementsResponse</returns>
         
-        public ApiResponse< LongTermRequirementsResponse > GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo (string businessUnitId, String weekDateId, string forecastId)
+        public ApiResponse< LongTermRequirementsResponse > GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastWithHttpInfo (string businessUnitId, String weekDateId, string forecastId, string granularity = null)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -24478,6 +26022,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (forecastId != null) localVarPathParams.Add("forecastId", this.Configuration.ApiClient.ParameterToString(forecastId));
 
             // Query params
+            if (granularity != null) localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
 
             // Header params
 
@@ -24504,6 +26049,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24523,11 +26070,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>Task of LongTermRequirementsResponse</returns>
         
-        public async System.Threading.Tasks.Task<LongTermRequirementsResponse> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsync (string businessUnitId, String weekDateId, string forecastId)
+        public async System.Threading.Tasks.Task<LongTermRequirementsResponse> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsync (string businessUnitId, String weekDateId, string forecastId, string granularity = null)
         {
-             ApiResponse<LongTermRequirementsResponse> localVarResponse = await GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsyncWithHttpInfo(businessUnitId, weekDateId, forecastId);
+             ApiResponse<LongTermRequirementsResponse> localVarResponse = await GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsyncWithHttpInfo(businessUnitId, weekDateId, forecastId, granularity);
              return localVarResponse.Data;
 
         }
@@ -24540,9 +26088,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="businessUnitId"></param>
         /// <param name="weekDateId">weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
         /// <param name="forecastId">forecastId of forecast</param>
+        /// <param name="granularity">Granularity to access staffing requirements data, defaults to weekly (optional)</param>
         /// <returns>Task of ApiResponse (LongTermRequirementsResponse)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<LongTermRequirementsResponse>> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsyncWithHttpInfo (string businessUnitId, String weekDateId, string forecastId)
+        public async System.Threading.Tasks.Task<ApiResponse<LongTermRequirementsResponse>> GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastAsyncWithHttpInfo (string businessUnitId, String weekDateId, string forecastId, string granularity = null)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -24593,6 +26142,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (forecastId != null) localVarPathParams.Add("forecastId", this.Configuration.ApiClient.ParameterToString(forecastId));
 
             // Query params
+            if (granularity != null) localVarQueryParams.Add(new Tuple<string, string>("granularity", this.Configuration.ApiClient.ParameterToString(granularity)));
 
             // Header params
 
@@ -24619,6 +26169,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24719,6 +26271,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24820,6 +26374,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24926,6 +26482,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitIntradayPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitIntradayPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitIntradayPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25034,6 +26592,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitIntradayPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitIntradayPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitIntradayPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25136,6 +26696,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSession: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSession: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSession: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25239,6 +26801,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSession: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSession: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSession: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25347,6 +26911,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25457,6 +27023,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25571,6 +27139,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25688,6 +27258,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25794,6 +27366,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitManagementunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25901,12 +27475,219 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitManagementunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<ManagementUnitListing>(localVarStatusCode,
                 localVarHeaders,
                 (ManagementUnitListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ManagementUnitListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>MinimumStaffingResponse</returns>
+        
+        public MinimumStaffingResponse GetWorkforcemanagementBusinessunitMinimumstaffingSettings (string businessUnitId)
+        {
+             ApiResponse<MinimumStaffingResponse> localVarResponse = GetWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo(businessUnitId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>ApiResponse of MinimumStaffingResponse</returns>
+        
+        public ApiResponse< MinimumStaffingResponse > GetWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo (string businessUnitId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitMinimumstaffingSettings");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<MinimumStaffingResponse>(localVarStatusCode,
+                localVarHeaders,
+                (MinimumStaffingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinimumStaffingResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of MinimumStaffingResponse</returns>
+        
+        public async System.Threading.Tasks.Task<MinimumStaffingResponse> GetWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync (string businessUnitId)
+        {
+             ApiResponse<MinimumStaffingResponse> localVarResponse = await GetWorkforcemanagementBusinessunitMinimumstaffingSettingsAsyncWithHttpInfo(businessUnitId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of ApiResponse (MinimumStaffingResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<MinimumStaffingResponse>> GetWorkforcemanagementBusinessunitMinimumstaffingSettingsAsyncWithHttpInfo (string businessUnitId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitMinimumstaffingSettings");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<MinimumStaffingResponse>(localVarStatusCode,
+                localVarHeaders,
+                (MinimumStaffingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinimumStaffingResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -26007,6 +27788,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26115,6 +27898,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26215,6 +28000,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26316,12 +28103,219 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<PlanningGroupList>(localVarStatusCode,
                 localVarHeaders,
                 (PlanningGroupList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PlanningGroupList)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>BuSchedulerSettingsResponse</returns>
+        
+        public BuSchedulerSettingsResponse GetWorkforcemanagementBusinessunitSchedulerSettings (string businessUnitId)
+        {
+             ApiResponse<BuSchedulerSettingsResponse> localVarResponse = GetWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo(businessUnitId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>ApiResponse of BuSchedulerSettingsResponse</returns>
+        
+        public ApiResponse< BuSchedulerSettingsResponse > GetWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo (string businessUnitId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitSchedulerSettings");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<BuSchedulerSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (BuSchedulerSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuSchedulerSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of BuSchedulerSettingsResponse</returns>
+        
+        public async System.Threading.Tasks.Task<BuSchedulerSettingsResponse> GetWorkforcemanagementBusinessunitSchedulerSettingsAsync (string businessUnitId)
+        {
+             ApiResponse<BuSchedulerSettingsResponse> localVarResponse = await GetWorkforcemanagementBusinessunitSchedulerSettingsAsyncWithHttpInfo(businessUnitId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <returns>Task of ApiResponse (BuSchedulerSettingsResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<BuSchedulerSettingsResponse>> GetWorkforcemanagementBusinessunitSchedulerSettingsAsyncWithHttpInfo (string businessUnitId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitSchedulerSettings");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<BuSchedulerSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (BuSchedulerSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuSchedulerSettingsResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -26422,6 +28416,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26530,6 +28526,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26648,6 +28646,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRunResult: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulingRunResult: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRunResult: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26770,6 +28770,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRunResult: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulingRunResult: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRunResult: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26870,6 +28872,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRuns: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulingRuns: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRuns: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26971,6 +28975,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRuns: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitSchedulingRuns: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitSchedulingRuns: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27080,6 +29086,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27191,6 +29199,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27294,6 +29304,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27398,12 +29410,1104 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<ServiceGoalTemplateList>(localVarStatusCode,
                 localVarHeaders,
                 (ServiceGoalTemplateList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceGoalTemplateList)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        public ShiftTradeEvaluateTradesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeEvaluateTradesBuJobResponse > GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeEvaluateTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeEvaluateTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeEvaluateTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsync (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsyncWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeEvaluateTradesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobAsyncWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeEvaluateTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeEvaluateTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        public ShiftTradeQueryTradesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeQueryTradesBuJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeQueryTradesBuJobResponse > GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeQueryTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsync (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeQueryTradesBuJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsyncWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryTradesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobAsyncWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        public ShiftTradeBulkUpdateTradeStateBuJobResponse GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeBulkUpdateTradeStateBuJobResponse > GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeBulkUpdateTradeStateBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeBulkUpdateTradeStateBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeBulkUpdateTradeStateBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsync (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsyncWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View results of bulk update trades states operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeBulkUpdateTradeStateBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobAsyncWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeBulkUpdateTradeStateBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeBulkUpdateTradeStateBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        public ShiftTradeSearchUnmatchedTradesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeSearchUnmatchedTradesBuJobResponse > GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeSearchUnmatchedTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeSearchUnmatchedTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeSearchUnmatchedTradesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsync (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsyncWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View result of potential shift trade matches for the current user. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeSearchUnmatchedTradesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobAsyncWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeSearchUnmatchedTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeSearchUnmatchedTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        public ShiftTradeQueryWeekSummariesBuJobResponse GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> localVarResponse = GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeQueryWeekSummariesBuJobResponse > GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryWeekSummariesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryWeekSummariesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeQueryWeekSummariesBuJobResponse> GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsync (string businessUnitId, string jobId)
+        {
+             ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> localVarResponse = await GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsyncWithHttpInfo(businessUnitId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryWeekSummariesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobAsyncWithHttpInfo (string businessUnitId, string jobId)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryWeekSummariesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryWeekSummariesBuJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -27504,6 +30608,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27612,6 +30718,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27718,6 +30826,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27825,6 +30935,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27931,6 +31043,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28039,6 +31153,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28142,6 +31258,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28246,6 +31364,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28352,6 +31472,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28460,6 +31582,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28566,6 +31690,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28673,12 +31799,225 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<BuTimeOffPlanListing>(localVarStatusCode,
                 localVarHeaders,
                 (BuTimeOffPlanListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuTimeOffPlanListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get users in the business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>BuUserListing</returns>
+        
+        public BuUserListing GetWorkforcemanagementBusinessunitUsers (string businessUnitId, List<string> managementUnitIds = null)
+        {
+             ApiResponse<BuUserListing> localVarResponse = GetWorkforcemanagementBusinessunitUsersWithHttpInfo(businessUnitId, managementUnitIds);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get users in the business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>ApiResponse of BuUserListing</returns>
+        
+        public ApiResponse< BuUserListing > GetWorkforcemanagementBusinessunitUsersWithHttpInfo (string businessUnitId, List<string> managementUnitIds = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitUsers");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/users";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (managementUnitIds != null) managementUnitIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("managementUnitIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<BuUserListing>(localVarStatusCode,
+                localVarHeaders,
+                (BuUserListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuUserListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get users in the business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>Task of BuUserListing</returns>
+        
+        public async System.Threading.Tasks.Task<BuUserListing> GetWorkforcemanagementBusinessunitUsersAsync (string businessUnitId, List<string> managementUnitIds = null)
+        {
+             ApiResponse<BuUserListing> localVarResponse = await GetWorkforcemanagementBusinessunitUsersAsyncWithHttpInfo(businessUnitId, managementUnitIds);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get users in the business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="managementUnitIds">The IDs of the management units for which to retrieve users (optional)</param>
+        /// <returns>Task of ApiResponse (BuUserListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<BuUserListing>> GetWorkforcemanagementBusinessunitUsersAsyncWithHttpInfo (string businessUnitId, List<string> managementUnitIds = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->GetWorkforcemanagementBusinessunitUsers");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/users";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (managementUnitIds != null) managementUnitIds.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("managementUnitIds", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<BuUserListing>(localVarStatusCode,
+                localVarHeaders,
+                (BuUserListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuUserListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -28788,6 +32127,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28906,6 +32247,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29018,6 +32361,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29133,6 +32478,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29248,6 +32595,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29366,6 +32715,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29484,6 +32835,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29606,6 +32959,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29718,6 +33073,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29833,6 +33190,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29951,6 +33310,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30073,6 +33434,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30087,7 +33450,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get the list of week schedules for the specified week 
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -30104,7 +33467,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get the list of week schedules for the specified week 
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -30185,6 +33548,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30198,7 +33563,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get the list of week schedules for the specified week 
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -30216,7 +33581,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get the list of week schedules for the specified week 
-        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
@@ -30299,6 +33664,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30414,6 +33781,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30532,6 +33901,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecast: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30650,6 +34021,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastData: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastData: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastData: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30771,6 +34144,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastData: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastData: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastData: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30883,6 +34258,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30998,6 +34375,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31113,6 +34492,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31231,6 +34612,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31343,6 +34726,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31458,6 +34843,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31576,6 +34963,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31697,6 +35086,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31711,7 +35102,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get short term forecasts 
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -31726,7 +35117,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get short term forecasts 
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -31803,6 +35194,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecasts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecasts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecasts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31816,7 +35209,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get short term forecasts 
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -31832,7 +35225,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get short term forecasts 
-        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        /// Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit to which the forecast belongs</param>
@@ -31911,6 +35304,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecasts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWeekShorttermforecasts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWeekShorttermforecasts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32017,6 +35412,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32125,6 +35522,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32237,6 +35636,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32352,6 +35753,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32464,6 +35867,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32579,6 +35984,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32685,6 +36092,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32793,6 +36202,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32893,6 +36304,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32994,6 +36407,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33094,6 +36509,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33194,6 +36611,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33291,6 +36710,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitsDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33388,6 +36809,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementBusinessunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementBusinessunitsDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33481,6 +36904,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarDataIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementCalendarDataIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarDataIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33575,6 +37000,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarDataIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementCalendarDataIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarDataIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33669,6 +37096,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarUrlIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33763,6 +37192,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementCalendarUrlIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33863,6 +37294,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataBulkRemoveJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33964,6 +37397,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataBulkRemoveJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34058,6 +37493,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34152,6 +37589,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34246,6 +37685,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataImportstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34340,6 +37781,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataImportstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34440,6 +37883,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatusJobId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataImportstatusJobId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatusJobId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34541,6 +37986,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatusJobId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementHistoricaldataImportstatusJobId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementHistoricaldataImportstatusJobId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34635,6 +38082,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHris: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34729,6 +38178,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHris: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34829,6 +38280,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHrisTimeofftypesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementIntegrationsHrisTimeofftypesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHrisTimeofftypesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34930,6 +38383,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHrisTimeofftypesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementIntegrationsHrisTimeofftypesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementIntegrationsHrisTimeofftypesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35033,6 +38488,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35137,6 +38594,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35237,6 +38696,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitActivitycodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35338,6 +38799,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitActivitycodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35441,6 +38904,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAdherence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35545,6 +39010,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAdherence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35657,6 +39124,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35771,6 +39240,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitAgent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35877,6 +39348,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgentShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitAgentShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgentShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35985,6 +39458,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgentShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitAgentShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitAgentShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36085,6 +39560,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesMatched: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitShifttradesMatched: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesMatched: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36186,6 +39663,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesMatched: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitShifttradesMatched: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesMatched: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36286,6 +39765,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitShifttradesUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36387,6 +39868,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitShifttradesUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitShifttradesUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36493,6 +39976,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36601,6 +40086,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36701,6 +40188,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36802,6 +40291,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36908,6 +40399,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37016,6 +40509,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37116,6 +40611,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37217,6 +40714,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37329,6 +40828,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37444,6 +40945,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37556,6 +41059,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37671,6 +41176,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37777,6 +41284,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUserTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37885,6 +41394,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUserTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUserTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37985,6 +41496,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38086,6 +41599,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38204,6 +41719,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38325,6 +41842,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWeekSchedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38440,6 +41959,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38557,6 +42078,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38672,6 +42195,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38789,6 +42314,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38898,6 +42425,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39009,6 +42538,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39115,6 +42646,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39223,6 +42756,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39326,6 +42861,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39430,6 +42967,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39536,6 +43075,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39643,6 +43184,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitWorkplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39752,6 +43295,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39861,6 +43406,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39958,6 +43505,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitsDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40055,6 +43604,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementManagementunitsDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementManagementunitsDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40149,6 +43700,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementNotifications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementNotifications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementNotifications: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40243,6 +43796,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementNotifications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementNotifications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementNotifications: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40343,6 +43898,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementSchedulingjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementSchedulingjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementSchedulingjob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40444,6 +44001,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementSchedulingjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementSchedulingjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementSchedulingjob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40538,6 +44097,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40632,12 +44193,1078 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<ShiftTradeListResponse>(localVarStatusCode,
                 localVarHeaders,
                 (ShiftTradeListResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeListResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeUpdateTradeJobResponse</returns>
+        
+        public ShiftTradeUpdateTradeJobResponse GetWorkforcemanagementShifttradingTradeJob (string tradeId, string jobId)
+        {
+             ApiResponse<ShiftTradeUpdateTradeJobResponse> localVarResponse = GetWorkforcemanagementShifttradingTradeJobWithHttpInfo(tradeId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeUpdateTradeJobResponse > GetWorkforcemanagementShifttradingTradeJobWithHttpInfo (string tradeId, string jobId)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeUpdateTradeJobResponse> GetWorkforcemanagementShifttradingTradeJobAsync (string tradeId, string jobId)
+        {
+             ApiResponse<ShiftTradeUpdateTradeJobResponse> localVarResponse = await GetWorkforcemanagementShifttradingTradeJobAsyncWithHttpInfo(tradeId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View result of update trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeJobResponse>> GetWorkforcemanagementShifttradingTradeJobAsyncWithHttpInfo (string tradeId, string jobId)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeMatchTradeJobResponse</returns>
+        
+        public ShiftTradeMatchTradeJobResponse GetWorkforcemanagementShifttradingTradeMatchJob (string tradeId, string jobId)
+        {
+             ApiResponse<ShiftTradeMatchTradeJobResponse> localVarResponse = GetWorkforcemanagementShifttradingTradeMatchJobWithHttpInfo(tradeId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeMatchTradeJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeMatchTradeJobResponse > GetWorkforcemanagementShifttradingTradeMatchJobWithHttpInfo (string tradeId, string jobId)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeMatchJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeMatchJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeMatchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradeMatchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeMatchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeMatchTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeMatchTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeMatchTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeMatchTradeJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeMatchTradeJobResponse> GetWorkforcemanagementShifttradingTradeMatchJobAsync (string tradeId, string jobId)
+        {
+             ApiResponse<ShiftTradeMatchTradeJobResponse> localVarResponse = await GetWorkforcemanagementShifttradingTradeMatchJobAsyncWithHttpInfo(tradeId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View result of match shift trade operation. Only the receiving user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeMatchTradeJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeMatchTradeJobResponse>> GetWorkforcemanagementShifttradingTradeMatchJobAsyncWithHttpInfo (string tradeId, string jobId)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeMatchJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeMatchJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeMatchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradeMatchJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeMatchJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeMatchTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeMatchTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeMatchTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        public ShiftTradeUpdateTradeStateJobResponse GetWorkforcemanagementShifttradingTradeStateJob (string tradeId, string jobId)
+        {
+             ApiResponse<ShiftTradeUpdateTradeStateJobResponse> localVarResponse = GetWorkforcemanagementShifttradingTradeStateJobWithHttpInfo(tradeId, jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeUpdateTradeStateJobResponse > GetWorkforcemanagementShifttradingTradeStateJobWithHttpInfo (string tradeId, string jobId)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeStateJob");
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeStateJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradeStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeStateJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeStateJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeStateJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeStateJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeUpdateTradeStateJobResponse> GetWorkforcemanagementShifttradingTradeStateJobAsync (string tradeId, string jobId)
+        {
+             ApiResponse<ShiftTradeUpdateTradeStateJobResponse> localVarResponse = await GetWorkforcemanagementShifttradingTradeStateJobAsyncWithHttpInfo(tradeId, jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View result of update trade state operation. Only the user who started the operation can query the status. 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeStateJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> GetWorkforcemanagementShifttradingTradeStateJobAsyncWithHttpInfo (string tradeId, string jobId)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeStateJob");
+            
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradeStateJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradeStateJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradeStateJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeStateJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeStateJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeStateJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeAddTradeJobResponse</returns>
+        
+        public ShiftTradeAddTradeJobResponse GetWorkforcemanagementShifttradingTradesJob (string jobId)
+        {
+             ApiResponse<ShiftTradeAddTradeJobResponse> localVarResponse = GetWorkforcemanagementShifttradingTradesJobWithHttpInfo(jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeAddTradeJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeAddTradeJobResponse > GetWorkforcemanagementShifttradingTradesJobWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradesJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeAddTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeAddTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeAddTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeAddTradeJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeAddTradeJobResponse> GetWorkforcemanagementShifttradingTradesJobAsync (string jobId)
+        {
+             ApiResponse<ShiftTradeAddTradeJobResponse> localVarResponse = await GetWorkforcemanagementShifttradingTradesJobAsyncWithHttpInfo(jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View result of create trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeAddTradeJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeAddTradeJobResponse>> GetWorkforcemanagementShifttradingTradesJobAsyncWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradesJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeAddTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeAddTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeAddTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        public ShiftTradeQueryAgentTradesJobResponse GetWorkforcemanagementShifttradingTradesMineQueryJob (string jobId)
+        {
+             ApiResponse<ShiftTradeQueryAgentTradesJobResponse> localVarResponse = GetWorkforcemanagementShifttradingTradesMineQueryJobWithHttpInfo(jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>ApiResponse of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeQueryAgentTradesJobResponse > GetWorkforcemanagementShifttradingTradesMineQueryJobWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradesMineQueryJob");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesMineQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradesMineQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesMineQueryJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryAgentTradesJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryAgentTradesJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryAgentTradesJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeQueryAgentTradesJobResponse> GetWorkforcemanagementShifttradingTradesMineQueryJobAsync (string jobId)
+        {
+             ApiResponse<ShiftTradeQueryAgentTradesJobResponse> localVarResponse = await GetWorkforcemanagementShifttradingTradesMineQueryJobAsyncWithHttpInfo(jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// View results of retrieve all my shift trade operation. Only the user who started the operation can query the status 
+        /// Job details are only retained if the initial request returned a 202 ACCEPTED response
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The ID of the job</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryAgentTradesJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> GetWorkforcemanagementShifttradingTradesMineQueryJobAsyncWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling WorkforceManagementApi->GetWorkforcemanagementShifttradingTradesMineQueryJob");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesMineQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShifttradingTradesMineQueryJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShifttradingTradesMineQueryJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryAgentTradesJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryAgentTradesJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryAgentTradesJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -40732,6 +45359,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShrinkageJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShrinkageJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShrinkageJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40833,6 +45462,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShrinkageJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementShrinkageJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementShrinkageJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40933,6 +45564,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTeamAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTeamAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTeamAdherence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41034,6 +45667,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTeamAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTeamAdherence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTeamAdherence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41134,6 +45769,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffbalanceJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffbalanceJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffbalanceJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41235,6 +45872,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffbalanceJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffbalanceJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffbalanceJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41335,6 +45974,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41436,6 +46077,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41536,6 +46179,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequestWaitlistpositions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffrequestWaitlistpositions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequestWaitlistpositions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41637,6 +46282,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequestWaitlistpositions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffrequestWaitlistpositions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequestWaitlistpositions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41731,6 +46378,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41825,6 +46474,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41919,6 +46570,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42013,6 +46666,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42113,6 +46768,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesValidationJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementUnavailabletimesValidationJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesValidationJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42214,6 +46871,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesValidationJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementUnavailabletimesValidationJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUnavailabletimesValidationJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42314,6 +46973,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42415,6 +47076,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42515,6 +47178,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42616,6 +47281,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42716,6 +47383,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementWorkplanbidWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidWorkplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42817,6 +47486,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementWorkplanbidWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbidWorkplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42911,6 +47582,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbids: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43005,6 +47678,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetWorkforcemanagementWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetWorkforcemanagementWorkplanbids: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43122,6 +47797,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43242,6 +47919,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAgentAdherenceExplanation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43353,6 +48032,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43466,6 +48147,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43571,6 +48254,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTradesStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementAlternativeshiftsTradesStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTradesStateJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43677,6 +48362,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTradesStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementAlternativeshiftsTradesStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementAlternativeshiftsTradesStateJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43791,6 +48478,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43907,6 +48596,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44024,6 +48715,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44144,6 +48837,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivitycode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44261,6 +48956,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44381,6 +49078,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitActivityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44492,6 +49191,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44605,6 +49306,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44722,6 +49425,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44842,12 +49547,242 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitCapacityplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<CapacityPlanResponse>(localVarStatusCode,
                 localVarHeaders,
                 (CapacityPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CapacityPlanResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>MinimumStaffingResponse</returns>
+        
+        public MinimumStaffingResponse PatchWorkforcemanagementBusinessunitMinimumstaffingSettings (string businessUnitId, MinimumStaffingRequest body)
+        {
+             ApiResponse<MinimumStaffingResponse> localVarResponse = PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo(businessUnitId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>ApiResponse of MinimumStaffingResponse</returns>
+        
+        public ApiResponse< MinimumStaffingResponse > PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsWithHttpInfo (string businessUnitId, MinimumStaffingRequest body)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitMinimumstaffingSettings");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitMinimumstaffingSettings");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<MinimumStaffingResponse>(localVarStatusCode,
+                localVarHeaders,
+                (MinimumStaffingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinimumStaffingResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of MinimumStaffingResponse</returns>
+        
+        public async System.Threading.Tasks.Task<MinimumStaffingResponse> PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsync (string businessUnitId, MinimumStaffingRequest body)
+        {
+             ApiResponse<MinimumStaffingResponse> localVarResponse = await PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsyncWithHttpInfo(businessUnitId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update minimum staffing settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of ApiResponse (MinimumStaffingResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<MinimumStaffingResponse>> PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsAsyncWithHttpInfo (string businessUnitId, MinimumStaffingRequest body)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitMinimumstaffingSettings");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitMinimumstaffingSettings");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<MinimumStaffingResponse>(localVarStatusCode,
+                localVarHeaders,
+                (MinimumStaffingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MinimumStaffingResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -44959,6 +49894,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45079,12 +50016,242 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitPlanninggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<PlanningGroup>(localVarStatusCode,
                 localVarHeaders,
                 (PlanningGroup) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PlanningGroup)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>BuSchedulerSettingsResponse</returns>
+        
+        public BuSchedulerSettingsResponse PatchWorkforcemanagementBusinessunitSchedulerSettings (string businessUnitId, BuSchedulerSettingsRequest body)
+        {
+             ApiResponse<BuSchedulerSettingsResponse> localVarResponse = PatchWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo(businessUnitId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>ApiResponse of BuSchedulerSettingsResponse</returns>
+        
+        public ApiResponse< BuSchedulerSettingsResponse > PatchWorkforcemanagementBusinessunitSchedulerSettingsWithHttpInfo (string businessUnitId, BuSchedulerSettingsRequest body)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitSchedulerSettings");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitSchedulerSettings");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<BuSchedulerSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (BuSchedulerSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuSchedulerSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of BuSchedulerSettingsResponse</returns>
+        
+        public async System.Threading.Tasks.Task<BuSchedulerSettingsResponse> PatchWorkforcemanagementBusinessunitSchedulerSettingsAsync (string businessUnitId, BuSchedulerSettingsRequest body)
+        {
+             ApiResponse<BuSchedulerSettingsResponse> localVarResponse = await PatchWorkforcemanagementBusinessunitSchedulerSettingsAsyncWithHttpInfo(businessUnitId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update scheduler settings for a business unit 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">body</param>
+        /// <returns>Task of ApiResponse (BuSchedulerSettingsResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<BuSchedulerSettingsResponse>> PatchWorkforcemanagementBusinessunitSchedulerSettingsAsyncWithHttpInfo (string businessUnitId, BuSchedulerSettingsRequest body)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitSchedulerSettings");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PatchWorkforcemanagementBusinessunitSchedulerSettings");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulerSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<BuSchedulerSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (BuSchedulerSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BuSchedulerSettingsResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -45195,6 +50362,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45314,6 +50483,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitSchedulingRun: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45431,6 +50602,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45551,6 +50724,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitServicegoaltemplate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45668,6 +50843,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45788,6 +50965,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitStaffinggroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -45905,6 +51084,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46025,6 +51206,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46142,6 +51325,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46262,6 +51447,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbid: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46385,6 +51572,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46512,6 +51701,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46635,6 +51826,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46762,6 +51955,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46873,6 +52068,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -46986,6 +52183,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47096,6 +52295,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47208,6 +52409,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47319,6 +52522,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgentsWorkplansBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitAgentsWorkplansBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgentsWorkplansBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47432,6 +52637,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgentsWorkplansBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitAgentsWorkplansBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitAgentsWorkplansBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47549,6 +52756,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47669,6 +52878,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeofflimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47786,6 +52997,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -47906,6 +53119,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48029,6 +53244,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48156,6 +53373,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48267,6 +53486,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUnavailabletimesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48380,6 +53601,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitUnavailabletimesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUnavailabletimesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48503,6 +53726,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48630,6 +53855,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitUserTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48753,6 +53980,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWeekShifttrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitWeekShifttrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWeekShifttrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -48880,6 +54109,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWeekShifttrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitWeekShifttrade: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWeekShifttrade: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49000,6 +54231,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49123,6 +54356,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitWorkplan: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplan: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49240,6 +54475,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49360,6 +54597,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementManagementunitWorkplanrotation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49471,6 +54710,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49584,6 +54825,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementTimeoffrequest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementTimeoffrequest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49689,6 +54932,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUnavailabletimes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementUnavailabletimes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUnavailabletimes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49795,6 +55040,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUnavailabletimes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementUnavailabletimes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUnavailabletimes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -49906,6 +55153,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50019,6 +55268,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUserWorkplanbidranks: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50124,6 +55375,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUsersWorkplanbidranksBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementUsersWorkplanbidranksBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUsersWorkplanbidranksBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50230,6 +55483,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUsersWorkplanbidranksBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementUsersWorkplanbidranksBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementUsersWorkplanbidranksBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50341,6 +55596,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50454,6 +55711,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchWorkforcemanagementWorkplanbidPreferences: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50559,6 +55818,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50665,6 +55926,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50776,6 +56039,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50888,6 +56153,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceExplanationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -50990,6 +56257,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistorical: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51092,6 +56361,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistorical: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51197,6 +56468,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistoricalBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceHistoricalBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistoricalBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51303,6 +56576,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistoricalBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAdherenceHistoricalBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAdherenceHistoricalBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51414,6 +56689,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51527,6 +56804,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentAdherenceExplanations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51644,6 +56923,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51763,6 +57044,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentAdherenceExplanationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51874,6 +57157,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentUnavailabletimesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -51987,6 +57272,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentUnavailabletimesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52092,6 +57379,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52198,6 +57487,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52303,6 +57594,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsIntegrationsHrisQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentsIntegrationsHrisQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsIntegrationsHrisQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52409,6 +57702,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsIntegrationsHrisQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentsIntegrationsHrisQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsIntegrationsHrisQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52514,6 +57809,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMeAdherenceHistoricalJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentsMeAdherenceHistoricalJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMeAdherenceHistoricalJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52619,6 +57916,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMeAdherenceHistoricalJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentsMeAdherenceHistoricalJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMeAdherenceHistoricalJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52724,6 +58023,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMePossibleworkshifts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentsMePossibleworkshifts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMePossibleworkshifts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52830,6 +58131,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMePossibleworkshifts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentsMePossibleworkshifts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentsMePossibleworkshifts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -52941,6 +58244,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesManagementunitsMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentschedulesManagementunitsMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesManagementunitsMine: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53053,6 +58358,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesManagementunitsMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentschedulesManagementunitsMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesManagementunitsMine: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53158,6 +58465,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentschedulesMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesMine: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53264,6 +58573,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAgentschedulesMine: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAgentschedulesMine: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53369,6 +58680,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAlternativeshiftsOffersJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53475,6 +58788,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAlternativeshiftsOffersJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53580,6 +58895,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAlternativeshiftsOffersSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersSearchJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53686,6 +59003,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAlternativeshiftsOffersSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsOffersSearchJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53791,6 +59110,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -53897,6 +59218,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementAlternativeshiftsTrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54008,6 +59331,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54121,6 +59446,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivitycodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54140,11 +59467,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>ActivityPlanJobResponse</returns>
+        /// <returns>ActivityPlanRunJobResponse</returns>
         
-        public ActivityPlanJobResponse PostWorkforcemanagementBusinessunitActivityplanRunsJobs (string businessUnitId, string activityPlanId)
+        public ActivityPlanRunJobResponse PostWorkforcemanagementBusinessunitActivityplanRunsJobs (string businessUnitId, string activityPlanId)
         {
-             ApiResponse<ActivityPlanJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo(businessUnitId, activityPlanId);
+             ApiResponse<ActivityPlanRunJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo(businessUnitId, activityPlanId);
              return localVarResponse.Data;
         }
 
@@ -54155,9 +59482,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>ApiResponse of ActivityPlanJobResponse</returns>
+        /// <returns>ApiResponse of ActivityPlanRunJobResponse</returns>
         
-        public ApiResponse< ActivityPlanJobResponse > PostWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo (string businessUnitId, string activityPlanId)
+        public ApiResponse< ActivityPlanRunJobResponse > PostWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo (string businessUnitId, string activityPlanId)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -54227,12 +59554,14 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplanRunsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitActivityplanRunsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplanRunsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ActivityPlanJobResponse>(localVarStatusCode,
+            return new ApiResponse<ActivityPlanRunJobResponse>(localVarStatusCode,
                 localVarHeaders,
-                (ActivityPlanJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanJobResponse)),
+                (ActivityPlanRunJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanRunJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -54245,11 +59574,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>Task of ActivityPlanJobResponse</returns>
+        /// <returns>Task of ActivityPlanRunJobResponse</returns>
         
-        public async System.Threading.Tasks.Task<ActivityPlanJobResponse> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsync (string businessUnitId, string activityPlanId)
+        public async System.Threading.Tasks.Task<ActivityPlanRunJobResponse> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsync (string businessUnitId, string activityPlanId)
         {
-             ApiResponse<ActivityPlanJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsyncWithHttpInfo(businessUnitId, activityPlanId);
+             ApiResponse<ActivityPlanRunJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsyncWithHttpInfo(businessUnitId, activityPlanId);
              return localVarResponse.Data;
 
         }
@@ -54261,9 +59590,9 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="businessUnitId">The ID of the business unit</param>
         /// <param name="activityPlanId">The ID of the activity plan to run</param>
-        /// <returns>Task of ApiResponse (ActivityPlanJobResponse)</returns>
+        /// <returns>Task of ApiResponse (ActivityPlanRunJobResponse)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<ActivityPlanJobResponse>> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsyncWithHttpInfo (string businessUnitId, string activityPlanId)
+        public async System.Threading.Tasks.Task<ApiResponse<ActivityPlanRunJobResponse>> PostWorkforcemanagementBusinessunitActivityplanRunsJobsAsyncWithHttpInfo (string businessUnitId, string activityPlanId)
         { 
             // verify the required parameter 'businessUnitId' is set
             if (businessUnitId == null)
@@ -54335,12 +59664,14 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplanRunsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitActivityplanRunsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplanRunsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
-            return new ApiResponse<ActivityPlanJobResponse>(localVarStatusCode,
+            return new ApiResponse<ActivityPlanRunJobResponse>(localVarStatusCode,
                 localVarHeaders,
-                (ActivityPlanJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanJobResponse)),
+                (ActivityPlanRunJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ActivityPlanRunJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -54446,6 +59777,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54559,6 +59892,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitActivityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54676,6 +60011,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54795,6 +60132,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAdherenceExplanationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -54912,6 +60251,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAgentschedulesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55031,6 +60372,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAgentschedulesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55145,6 +60488,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55261,6 +60606,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55378,6 +60725,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55498,6 +60847,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55604,6 +60955,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55712,6 +61065,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanRequirementGenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55829,6 +61184,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -55949,6 +61306,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56066,6 +61425,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56186,6 +61547,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56298,6 +61661,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56413,6 +61778,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56524,6 +61891,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56637,6 +62006,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56747,6 +62118,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplansBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplansBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplansBulkRemove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56859,6 +62232,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplansBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitCapacityplansBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitCapacityplansBulkRemove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -56973,6 +62348,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitIntraday: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitIntraday: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitIntraday: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57089,6 +62466,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitIntraday: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitIntraday: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitIntraday: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57200,6 +62579,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57313,6 +62694,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitPlanninggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57424,6 +62807,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57537,12 +62922,1208 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitServicegoaltemplates: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<ServiceGoalTemplate>(localVarStatusCode,
                 localVarHeaders,
                 (ServiceGoalTemplate) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceGoalTemplate)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        public ShiftTradeEvaluateTradesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeEvaluateTradesBuJobResponse > PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsWithHttpInfo (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeEvaluateTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeEvaluateTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeEvaluateTradesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeEvaluateTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsync (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeEvaluateTradesBuJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsyncWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Queries and evaluates against shift trade configuration shift trades in a management unit per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeEvaluateTradesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsAsyncWithHttpInfo (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeEvaluateTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeEvaluateTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeEvaluateTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        public ShiftTradeQueryTradesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeQueryTradesBuJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeQueryTradesBuJobResponse > PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsWithHttpInfo (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeQueryTradesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeQueryTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsync (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeQueryTradesBuJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsyncWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Queries shift trades in a management unit per user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryTradesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryTradesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsAsyncWithHttpInfo (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        public ShiftTradeBulkUpdateTradeStateBuJobResponse PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeBulkUpdateTradeStateBuJobResponse > PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsWithHttpInfo (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeBulkUpdateTradeStateBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeBulkUpdateTradeStateBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeBulkUpdateTradeStateBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeBulkUpdateTradeStateBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsync (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsyncWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeBulkUpdateTradeStateBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsAsyncWithHttpInfo (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeBulkUpdateTradeStateBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeBulkUpdateTradeStateBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeBulkUpdateTradeStateBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        public ShiftTradeSearchUnmatchedTradesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeSearchUnmatchedTradesBuJobResponse > PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsWithHttpInfo (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeSearchUnmatchedTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeSearchUnmatchedTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeSearchUnmatchedTradesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeSearchUnmatchedTradesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsync (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsyncWithHttpInfo(businessUnitId, body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Start an async job to find potential shift trade matches for the current receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeSearchUnmatchedTradesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsAsyncWithHttpInfo (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeSearchUnmatchedTradesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeSearchUnmatchedTradesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeSearchUnmatchedTradesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        public ShiftTradeQueryWeekSummariesBuJobResponse PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> localVarResponse = PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsWithHttpInfo(businessUnitId, body, forceAsync);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeQueryWeekSummariesBuJobResponse > PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsWithHttpInfo (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryWeekSummariesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryWeekSummariesBuJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeQueryWeekSummariesBuJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeQueryWeekSummariesBuJobResponse> PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsync (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse> localVarResponse = await PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsyncWithHttpInfo(businessUnitId, body, forceAsync);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieves the summary of shift trades in a matched state per week 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="businessUnitId">The ID of the business unit</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryWeekSummariesBuJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>> PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsAsyncWithHttpInfo (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'businessUnitId' is set
+            if (businessUnitId == null)
+                throw new ApiException(400, "Missing required parameter 'businessUnitId' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (businessUnitId != null) localVarPathParams.Add("businessUnitId", this.Configuration.ApiClient.ParameterToString(businessUnitId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryWeekSummariesBuJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryWeekSummariesBuJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryWeekSummariesBuJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -57648,6 +64229,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57761,6 +64344,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57872,6 +64457,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -57985,6 +64572,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58099,6 +64688,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitStaffinggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58215,6 +64806,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitStaffinggroupsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitStaffinggroupsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58326,6 +64919,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58439,6 +65034,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58550,6 +65147,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimitsValuesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58663,6 +65262,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeofflimitsValuesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58774,6 +65375,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58887,6 +65490,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -58998,6 +65603,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59111,6 +65718,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSchedulesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59222,6 +65831,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59335,6 +65946,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitUnavailabletimesSettingsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59464,6 +66077,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59597,6 +66212,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59720,6 +66337,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59847,6 +66466,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -59970,6 +66591,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60097,6 +66720,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60220,6 +66845,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60347,6 +66974,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60470,6 +67099,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleReschedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleReschedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleReschedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60597,6 +67228,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleReschedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleReschedule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleReschedule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60720,6 +67353,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60847,6 +67482,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -60970,6 +67607,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61097,6 +67736,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61214,6 +67855,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61334,6 +67977,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61451,6 +68096,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61571,6 +68218,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61688,6 +68337,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulesImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61808,6 +68459,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulesImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -61925,6 +68578,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62045,6 +68700,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62171,6 +68828,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62301,6 +68960,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62421,6 +69082,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62544,6 +69207,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62661,6 +69326,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62781,6 +69448,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -62898,6 +69567,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63018,6 +69689,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63135,6 +69808,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWorkplanbidCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63255,6 +69930,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWorkplanbidCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63372,6 +70049,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWorkplanbidGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidGroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63492,6 +70171,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWorkplanbidGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbidGroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63603,6 +70284,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63716,6 +70399,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunitWorkplanbids: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63824,6 +70509,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -63933,6 +70620,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementBusinessunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementBusinessunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64030,6 +70719,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementCalendarUrlIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64127,6 +70818,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementCalendarUrlIcs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementCalendarUrlIcs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64232,6 +70925,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64338,6 +71033,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataBulkRemoveJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64443,6 +71140,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementHistoricaldataValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64549,6 +71248,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementHistoricaldataValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementHistoricaldataValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64649,6 +71350,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementIntegrationsHriTimeofftypesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementIntegrationsHriTimeofftypesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementIntegrationsHriTimeofftypesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64750,6 +71453,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementIntegrationsHriTimeofftypesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementIntegrationsHriTimeofftypesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementIntegrationsHriTimeofftypesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64864,6 +71569,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentsWorkplansQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitAgentsWorkplansQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentsWorkplansQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -64980,6 +71687,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentsWorkplansQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitAgentsWorkplansQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentsWorkplansQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65097,6 +71806,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentschedulesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65216,6 +71927,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitAgentschedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitAgentschedulesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65327,6 +72040,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitHistoricaladherencequery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitHistoricaladherencequery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitHistoricaladherencequery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65440,6 +72155,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitHistoricaladherencequery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitHistoricaladherencequery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitHistoricaladherencequery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65551,6 +72268,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitMove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitMove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitMove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65664,6 +72383,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitMove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitMove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitMove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65775,6 +72496,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitSchedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitSchedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitSchedulesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65888,6 +72611,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitSchedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitSchedulesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitSchedulesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -65999,6 +72724,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitShrinkageJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66112,6 +72839,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitShrinkageJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66223,6 +72952,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66336,6 +73067,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66447,6 +73180,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimitsValuesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66560,6 +73295,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeofflimitsValuesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeofflimitsValuesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66671,6 +73408,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66784,6 +73523,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -66895,6 +73636,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67008,6 +73751,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67119,6 +73864,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67232,6 +73979,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67246,7 +73995,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Fetches time off requests matching the conditions specified in the request body 
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -67262,7 +74011,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Fetches time off requests matching the conditions specified in the request body 
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -67346,6 +74095,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequestsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67359,7 +74110,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Fetches time off requests matching the conditions specified in the request body 
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -67376,7 +74127,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Fetches time off requests matching the conditions specified in the request body 
-        /// Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        /// Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="managementUnitId">The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.</param>
@@ -67462,6 +74213,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequestsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67573,6 +74326,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67686,6 +74441,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67803,6 +74560,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitUserTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffbalanceJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -67923,6 +74682,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitUserTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffbalanceJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68035,6 +74796,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68150,6 +74913,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68267,6 +75032,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68387,6 +75154,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitUserTimeoffrequestsEstimate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68510,6 +75279,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradeMatch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttradeMatch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradeMatch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68637,6 +75408,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradeMatch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttradeMatch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradeMatch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68754,6 +75527,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68874,6 +75649,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttrades: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -68994,6 +75771,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69117,6 +75896,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttradesSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69237,6 +76018,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesStateBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttradesStateBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesStateBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69360,6 +76143,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesStateBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWeekShifttradesStateBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWeekShifttradesStateBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69477,6 +76262,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69597,6 +76384,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69717,6 +76506,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69840,6 +76631,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -69957,6 +76750,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotationCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanrotationCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotationCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70077,6 +76872,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotationCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanrotationCopy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotationCopy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70188,6 +76985,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70301,6 +77100,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplanrotations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70415,6 +77216,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70531,6 +77334,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunitWorkplans: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunitWorkplans: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70636,6 +77441,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70742,6 +77549,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementManagementunits: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementManagementunits: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70847,6 +77656,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementNotificationsUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementNotificationsUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementNotificationsUpdate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -70953,6 +77764,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementNotificationsUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementNotificationsUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementNotificationsUpdate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71055,6 +77868,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71157,12 +77972,1164 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementSchedules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementSchedules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<UserScheduleContainer>(localVarStatusCode,
                 localVarHeaders,
                 (UserScheduleContainer) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserScheduleContainer)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeUpdateTradeJobResponse</returns>
+        
+        public ShiftTradeUpdateTradeJobResponse PostWorkforcemanagementShifttradingTradeJobs (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeUpdateTradeJobResponse> localVarResponse = PostWorkforcemanagementShifttradingTradeJobsWithHttpInfo(tradeId, body, forceAsync);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeUpdateTradeJobResponse > PostWorkforcemanagementShifttradingTradeJobsWithHttpInfo (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeUpdateTradeJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeUpdateTradeJobResponse> PostWorkforcemanagementShifttradingTradeJobsAsync (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeUpdateTradeJobResponse> localVarResponse = await PostWorkforcemanagementShifttradingTradeJobsAsyncWithHttpInfo(tradeId, body, forceAsync);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Updates a shift trade. This route can only be called by the initiating user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeJobResponse>> PostWorkforcemanagementShifttradingTradeJobsAsyncWithHttpInfo (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeMatchTradeJobResponse</returns>
+        
+        public ShiftTradeMatchTradeJobResponse PostWorkforcemanagementShifttradingTradeMatchJobs (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeMatchTradeJobResponse> localVarResponse = PostWorkforcemanagementShifttradingTradeMatchJobsWithHttpInfo(tradeId, body, forceAsync);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeMatchTradeJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeMatchTradeJobResponse > PostWorkforcemanagementShifttradingTradeMatchJobsWithHttpInfo (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeMatchJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeMatchJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeMatchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradeMatchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeMatchJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeMatchTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeMatchTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeMatchTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeMatchTradeJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeMatchTradeJobResponse> PostWorkforcemanagementShifttradingTradeMatchJobsAsync (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeMatchTradeJobResponse> localVarResponse = await PostWorkforcemanagementShifttradingTradeMatchJobsAsyncWithHttpInfo(tradeId, body, forceAsync);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Matches a shift trade. This route can only be called by the receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to match</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeMatchTradeJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeMatchTradeJobResponse>> PostWorkforcemanagementShifttradingTradeMatchJobsAsyncWithHttpInfo (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeMatchJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeMatchJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeMatchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradeMatchJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeMatchJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeMatchTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeMatchTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeMatchTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update trade state by a user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        public ShiftTradeUpdateTradeStateJobResponse PostWorkforcemanagementShifttradingTradeStateJobs (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeUpdateTradeStateJobResponse> localVarResponse = PostWorkforcemanagementShifttradingTradeStateJobsWithHttpInfo(tradeId, body, forceAsync);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update trade state by a user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeUpdateTradeStateJobResponse > PostWorkforcemanagementShifttradingTradeStateJobsWithHttpInfo (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeStateJobs");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeStateJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradeStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeStateJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeStateJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeStateJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeStateJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update trade state by a user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeUpdateTradeStateJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeUpdateTradeStateJobResponse> PostWorkforcemanagementShifttradingTradeStateJobsAsync (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeUpdateTradeStateJobResponse> localVarResponse = await PostWorkforcemanagementShifttradingTradeStateJobsAsyncWithHttpInfo(tradeId, body, forceAsync);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update trade state by a user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tradeId">The ID of the shift trade to update state</param>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeUpdateTradeStateJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeUpdateTradeStateJobResponse>> PostWorkforcemanagementShifttradingTradeStateJobsAsyncWithHttpInfo (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'tradeId' is set
+            if (tradeId == null)
+                throw new ApiException(400, "Missing required parameter 'tradeId' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeStateJobs");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradeStateJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (tradeId != null) localVarPathParams.Add("tradeId", this.Configuration.ApiClient.ParameterToString(tradeId));
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradeStateJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradeStateJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeUpdateTradeStateJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeUpdateTradeStateJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeUpdateTradeStateJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Add a shift trade job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeAddTradeJobResponse</returns>
+        
+        public ShiftTradeAddTradeJobResponse PostWorkforcemanagementShifttradingTradesJobs (AddShiftTradeJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeAddTradeJobResponse> localVarResponse = PostWorkforcemanagementShifttradingTradesJobsWithHttpInfo(body, forceAsync);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add a shift trade job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeAddTradeJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeAddTradeJobResponse > PostWorkforcemanagementShifttradingTradesJobsWithHttpInfo (AddShiftTradeJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradesJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeAddTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeAddTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeAddTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Add a shift trade job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeAddTradeJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeAddTradeJobResponse> PostWorkforcemanagementShifttradingTradesJobsAsync (AddShiftTradeJobRequest body, bool? forceAsync = null)
+        {
+             ApiResponse<ShiftTradeAddTradeJobResponse> localVarResponse = await PostWorkforcemanagementShifttradingTradesJobsAsyncWithHttpInfo(body, forceAsync);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Add a shift trade job 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeAddTradeJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeAddTradeJobResponse>> PostWorkforcemanagementShifttradingTradesJobsAsyncWithHttpInfo (AddShiftTradeJobRequest body, bool? forceAsync = null)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradesJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeAddTradeJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeAddTradeJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeAddTradeJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        public ShiftTradeQueryAgentTradesJobResponse PostWorkforcemanagementShifttradingTradesMineQueryJobs (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeQueryAgentTradesJobResponse> localVarResponse = PostWorkforcemanagementShifttradingTradesMineQueryJobsWithHttpInfo(body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>ApiResponse of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        public ApiResponse< ShiftTradeQueryAgentTradesJobResponse > PostWorkforcemanagementShifttradingTradesMineQueryJobsWithHttpInfo (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradesMineQueryJobs");
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryAgentTradesJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryAgentTradesJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryAgentTradesJobResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ShiftTradeQueryAgentTradesJobResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ShiftTradeQueryAgentTradesJobResponse> PostWorkforcemanagementShifttradingTradesMineQueryJobsAsync (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        {
+             ApiResponse<ShiftTradeQueryAgentTradesJobResponse> localVarResponse = await PostWorkforcemanagementShifttradingTradesMineQueryJobsAsyncWithHttpInfo(body, forceAsync, forceDownloadService);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve all my shift trades where I am either the initiating or receiving user 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">The request body</param>
+        /// <param name="forceAsync">Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)</param>
+        /// <param name="forceDownloadService">Force the result of this operation to be sent via download service. For testing/app development purposes (optional)</param>
+        /// <returns>Task of ApiResponse (ShiftTradeQueryAgentTradesJobResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ShiftTradeQueryAgentTradesJobResponse>> PostWorkforcemanagementShifttradingTradesMineQueryJobsAsyncWithHttpInfo (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling WorkforceManagementApi->PostWorkforcemanagementShifttradingTradesMineQueryJobs");
+            
+
+            var localVarPath = "/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (forceAsync != null) localVarQueryParams.Add(new Tuple<string, string>("forceAsync", this.Configuration.ApiClient.ParameterToString(forceAsync)));
+            if (forceDownloadService != null) localVarQueryParams.Add(new Tuple<string, string>("forceDownloadService", this.Configuration.ApiClient.ParameterToString(forceDownloadService)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ShiftTradeQueryAgentTradesJobResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ShiftTradeQueryAgentTradesJobResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShiftTradeQueryAgentTradesJobResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -71268,6 +79235,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTeamAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamAdherenceHistorical: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71381,6 +79350,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTeamAdherenceHistorical: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamAdherenceHistorical: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71492,6 +79463,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTeamShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamShrinkageJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71605,6 +79578,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTeamShrinkageJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTeamShrinkageJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71710,6 +79685,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffbalanceJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71816,6 +79793,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffbalanceJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffbalanceJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -71921,6 +79900,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeofflimitsAvailableQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeofflimitsAvailableQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeofflimitsAvailableQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72027,6 +80008,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeofflimitsAvailableQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeofflimitsAvailableQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeofflimitsAvailableQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72132,6 +80115,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72238,6 +80223,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffrequests: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequests: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72343,6 +80330,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsEstimate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72449,6 +80438,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffrequestsEstimate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsEstimate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72554,6 +80545,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72660,6 +80653,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementTimeoffrequestsIntegrationstatusQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72765,6 +80760,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72871,6 +80868,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementUnavailabletimesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -72976,6 +80975,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesValidationJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementUnavailabletimesValidationJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesValidationJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73082,6 +81083,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesValidationJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostWorkforcemanagementUnavailabletimesValidationJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostWorkforcemanagementUnavailabletimesValidationJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73193,6 +81196,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementAgentIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutWorkforcemanagementAgentIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementAgentIntegrationsHris: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73306,6 +81311,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementAgentIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutWorkforcemanagementAgentIntegrationsHris: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementAgentIntegrationsHris: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73423,6 +81430,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementBusinessunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutWorkforcemanagementBusinessunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementBusinessunitTimeofflimitValues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73543,6 +81552,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementBusinessunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutWorkforcemanagementBusinessunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementBusinessunitTimeofflimitValues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73660,6 +81671,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementManagementunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutWorkforcemanagementManagementunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementManagementunitTimeofflimitValues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -73780,6 +81793,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementManagementunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutWorkforcemanagementManagementunitTimeofflimitValues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutWorkforcemanagementManagementunitTimeofflimitValues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

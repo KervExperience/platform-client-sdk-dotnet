@@ -14,7 +14,7 @@
 | **ExternalId** | **string** | Unique identifier in the external system where the events for the session originate from. | [optional] |
 | **ExternalUrl** | **string** | A URL that identifies an external system-of-record resource that may have more detailed information on the session. | [optional] |
 | **ShortId** | **string** | Shortened numeric identifier of 4-6 digits. | [optional] |
-| **OutcomeAchievements** | [**List&lt;OutcomeAchievement&gt;**](OutcomeAchievement) | List of the outcome achievements by the customer in this session. | [optional] |
+| **OutcomeAchievements** | [**List&lt;OutcomeAchievement&gt;**](OutcomeAchievement) | Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/ | [optional] |
 | **SegmentAssignments** | [**List&lt;SessionSegmentAssignment&gt;**](SessionSegmentAssignment) | List of the segment assignments to the customer in this session. | [optional] |
 | **Attributes** | [**Dictionary&lt;string, CustomEventAttribute&gt;**](CustomEventAttribute) | Attributes projected from the session&#39;s event stream. | [optional] |
 | **AttributeLists** | [**Dictionary&lt;string, CustomEventAttributeList&gt;**](CustomEventAttributeList) | List-type attributes projected from the session&#39;s event stream. | [optional] |
@@ -48,6 +48,10 @@
 | **Authenticated** | **bool?** | Indicates whether or not the session is authenticated. | |
 | **DivisionIds** | **List&lt;string&gt;** | List of division IDs associated with the session. | [optional] |
 | **LastScreen** | **string** | The app screen name where the customer&#39;s last app interaction occurred. | [optional] |
+| **CaseAssociations** | [**List&lt;JourneyCaseAssociation&gt;**](JourneyCaseAssociation) | Cases associated with the session - conversation only. | [optional] |
+| **CaseEntity** | [**AddressableEntityRef**](AddressableEntityRef) | The case this session refers to. | [optional] |
+| **CaseReference** | **string** | The reference for this case. | [optional] |
+| **CaseStatus** | **string** | The status of this case. | [optional] |
 | **SelfUri** | **string** | The URI for this object | [optional] |
 | **CreatedDate** | **DateTime?** | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **EndedDate** | **DateTime?** | Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -56,4 +60,4 @@
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

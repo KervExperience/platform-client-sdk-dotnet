@@ -1070,9 +1070,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>AuthorizationPolicy</returns>
         
-        AuthorizationPolicy PostAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body);
+        AuthorizationPolicy PostAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Add an access control policy for a specified resource target and subject
@@ -1083,9 +1084,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>ApiResponse of AuthorizationPolicy</returns>
         
-        ApiResponse<AuthorizationPolicy> PostAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body);
+        ApiResponse<AuthorizationPolicy> PostAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Validate the conditions and attributes of an access control policy for a specified resource target
@@ -1390,9 +1392,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>AuthorizationPolicy</returns>
         
-        AuthorizationPolicy PutAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body);
+        AuthorizationPolicy PutAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Add an access control policy for a specified resource target and subject, overwriting any existing policy
@@ -1403,9 +1406,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>ApiResponse of AuthorizationPolicy</returns>
         
-        ApiResponse<AuthorizationPolicy> PutAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body);
+        ApiResponse<AuthorizationPolicy> PutAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Update an access control policy with a given ID
@@ -1416,9 +1420,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>AuthorizationPolicy</returns>
         
-        AuthorizationPolicy PutAuthorizationPolicy (string policyId, AuthorizationPolicy body);
+        AuthorizationPolicy PutAuthorizationPolicy (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Update an access control policy with a given ID
@@ -1429,9 +1434,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>ApiResponse of AuthorizationPolicy</returns>
         
-        ApiResponse<AuthorizationPolicy> PutAuthorizationPolicyWithHttpInfo (string policyId, AuthorizationPolicy body);
+        ApiResponse<AuthorizationPolicy> PutAuthorizationPolicyWithHttpInfo (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Update an organization role.
@@ -2644,9 +2650,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of AuthorizationPolicy</returns>
         
-        System.Threading.Tasks.Task<AuthorizationPolicy> PostAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body);
+        System.Threading.Tasks.Task<AuthorizationPolicy> PostAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Add an access control policy for a specified resource target and subject
@@ -2657,9 +2664,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AuthorizationPolicy)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PostAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body);
+        System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PostAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Validate the conditions and attributes of an access control policy for a specified resource target
@@ -2964,9 +2972,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of AuthorizationPolicy</returns>
         
-        System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body);
+        System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Add an access control policy for a specified resource target and subject, overwriting any existing policy
@@ -2977,9 +2986,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AuthorizationPolicy)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body);
+        System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Update an access control policy with a given ID
@@ -2990,9 +3000,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of AuthorizationPolicy</returns>
         
-        System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPolicyAsync (string policyId, AuthorizationPolicy body);
+        System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPolicyAsync (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Update an access control policy with a given ID
@@ -3003,9 +3014,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AuthorizationPolicy)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPolicyAsyncWithHttpInfo (string policyId, AuthorizationPolicy body);
+        System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPolicyAsyncWithHttpInfo (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null);
 
         /// <summary>
         /// Update an organization role.
@@ -3341,6 +3353,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationDivision: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3444,6 +3458,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationDivision: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3549,6 +3565,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3656,6 +3674,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3755,6 +3775,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3855,6 +3877,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3966,6 +3990,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationSubjectDivisionRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4080,6 +4106,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAuthorizationSubjectDivisionRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4183,6 +4211,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivision: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4287,6 +4317,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivision: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4393,6 +4425,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionGrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionGrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionGrants: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4500,6 +4534,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionGrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionGrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionGrants: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4621,6 +4657,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4742,6 +4780,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4842,6 +4882,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsDeleted: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsDeleted: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsDeleted: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4942,6 +4984,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsDeleted: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsDeleted: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsDeleted: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5036,6 +5080,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsHome: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsHome: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsHome: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5130,6 +5176,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsHome: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsHome: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsHome: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5224,6 +5272,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsLimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsLimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsLimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5318,6 +5368,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsLimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsLimit: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsLimit: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5427,6 +5479,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5536,6 +5590,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5639,6 +5695,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionspermittedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5743,6 +5801,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionspermittedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5849,6 +5909,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionspermittedPagedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5956,6 +6018,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionspermittedPagedMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6068,6 +6132,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionspermittedPagedSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6182,6 +6248,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationDivisionspermittedPagedSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationDivisionspermittedPagedSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6288,6 +6356,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPermissions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPermissions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPermissions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6394,6 +6464,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPermissions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPermissions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPermissions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6494,6 +6566,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPolicies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicies: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6594,6 +6668,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPolicies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicies: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6700,6 +6776,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesSubjectSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6807,6 +6885,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesSubjectSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6913,6 +6993,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTarget: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7020,6 +7102,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTarget: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7126,6 +7210,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7234,6 +7320,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargetSubjectSubjectId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7328,6 +7416,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargets: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesTargets: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargets: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7422,6 +7512,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargets: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPoliciesTargets: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPoliciesTargets: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7522,6 +7614,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7623,6 +7717,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7723,6 +7819,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicyAttributes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPolicyAttributes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicyAttributes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7824,6 +7922,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicyAttributes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationPolicyAttributes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationPolicyAttributes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7918,6 +8018,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationProducts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationProducts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationProducts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8012,6 +8114,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationProducts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationProducts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationProducts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8118,6 +8222,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8225,6 +8331,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8331,6 +8439,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8439,6 +8549,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8557,6 +8669,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleSubjectgrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoleSubjectgrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleSubjectgrants: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8676,6 +8790,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleSubjectgrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoleSubjectgrants: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleSubjectgrants: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8782,6 +8898,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoleUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8889,6 +9007,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoleUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoleUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9016,6 +9136,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9143,6 +9265,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9237,6 +9361,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRolesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9331,6 +9457,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationRolesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9425,6 +9553,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9519,6 +9649,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9622,6 +9754,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSubject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubject: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9726,6 +9860,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSubject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubject: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9823,6 +9959,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSubjectsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9920,6 +10058,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSubjectsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10017,6 +10157,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsRolecounts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSubjectsRolecounts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsRolecounts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10114,6 +10256,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsRolecounts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAuthorizationSubjectsRolecounts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAuthorizationSubjectsRolecounts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10214,6 +10358,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10315,6 +10461,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10426,6 +10574,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10539,6 +10689,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10644,6 +10796,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10750,6 +10904,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchAuthorizationSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchAuthorizationSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10866,6 +11022,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionObject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationDivisionObject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionObject: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10985,6 +11143,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionObject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationDivisionObject: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionObject: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11096,6 +11256,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionRestore: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationDivisionRestore: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionRestore: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11209,6 +11371,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionRestore: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationDivisionRestore: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisionRestore: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11314,6 +11478,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11420,6 +11586,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11439,11 +11607,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>AuthorizationPolicy</returns>
         
-        public AuthorizationPolicy PostAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body)
+        public AuthorizationPolicy PostAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         {
-             ApiResponse<AuthorizationPolicy> localVarResponse = PostAuthorizationPoliciesTargetWithHttpInfo(targetName, body);
+             ApiResponse<AuthorizationPolicy> localVarResponse = PostAuthorizationPoliciesTargetWithHttpInfo(targetName, body, skipLockoutCheck);
              return localVarResponse.Data;
         }
 
@@ -11454,9 +11623,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>ApiResponse of AuthorizationPolicy</returns>
         
-        public ApiResponse< AuthorizationPolicy > PostAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body)
+        public ApiResponse< AuthorizationPolicy > PostAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         { 
             // verify the required parameter 'targetName' is set
             if (targetName == null)
@@ -11500,6 +11670,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (targetName != null) localVarPathParams.Add("targetName", this.Configuration.ApiClient.ParameterToString(targetName));
 
             // Query params
+            if (skipLockoutCheck != null) localVarQueryParams.Add(new Tuple<string, string>("skipLockoutCheck", this.Configuration.ApiClient.ParameterToString(skipLockoutCheck)));
 
             // Header params
 
@@ -11531,6 +11702,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTarget: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11549,11 +11722,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of AuthorizationPolicy</returns>
         
-        public async System.Threading.Tasks.Task<AuthorizationPolicy> PostAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body)
+        public async System.Threading.Tasks.Task<AuthorizationPolicy> PostAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         {
-             ApiResponse<AuthorizationPolicy> localVarResponse = await PostAuthorizationPoliciesTargetAsyncWithHttpInfo(targetName, body);
+             ApiResponse<AuthorizationPolicy> localVarResponse = await PostAuthorizationPoliciesTargetAsyncWithHttpInfo(targetName, body, skipLockoutCheck);
              return localVarResponse.Data;
 
         }
@@ -11565,9 +11739,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AuthorizationPolicy)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PostAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body)
+        public async System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PostAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         { 
             // verify the required parameter 'targetName' is set
             if (targetName == null)
@@ -11613,6 +11788,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (targetName != null) localVarPathParams.Add("targetName", this.Configuration.ApiClient.ParameterToString(targetName));
 
             // Query params
+            if (skipLockoutCheck != null) localVarQueryParams.Add(new Tuple<string, string>("skipLockoutCheck", this.Configuration.ApiClient.ParameterToString(skipLockoutCheck)));
 
             // Header params
 
@@ -11644,6 +11820,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTarget: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11755,6 +11933,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTargetValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationPoliciesTargetValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTargetValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11868,6 +12048,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTargetValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationPoliciesTargetValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPoliciesTargetValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11979,6 +12161,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPolicySimulate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationPolicySimulate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPolicySimulate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12092,6 +12276,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPolicySimulate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationPolicySimulate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationPolicySimulate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12205,6 +12391,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12320,6 +12508,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12437,6 +12627,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12557,6 +12749,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoleComparedefaultRightRoleId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12662,6 +12856,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12768,6 +12964,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12865,6 +13063,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRolesDefault: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12962,6 +13162,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationRolesDefault: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13075,6 +13277,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkadd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectBulkadd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkadd: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13190,6 +13394,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkadd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectBulkadd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkadd: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13300,6 +13506,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkremove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectBulkremove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkremove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13412,6 +13620,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkremove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectBulkremove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkremove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13525,6 +13735,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkreplace: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectBulkreplace: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkreplace: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13640,6 +13852,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkreplace: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectBulkreplace: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectBulkreplace: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13754,6 +13968,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectDivisionRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13871,6 +14087,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAuthorizationSubjectDivisionRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAuthorizationSubjectDivisionRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13982,6 +14200,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationDivision: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14095,6 +14315,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationDivision: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationDivision: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14114,11 +14336,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>AuthorizationPolicy</returns>
         
-        public AuthorizationPolicy PutAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body)
+        public AuthorizationPolicy PutAuthorizationPoliciesTarget (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         {
-             ApiResponse<AuthorizationPolicy> localVarResponse = PutAuthorizationPoliciesTargetWithHttpInfo(targetName, body);
+             ApiResponse<AuthorizationPolicy> localVarResponse = PutAuthorizationPoliciesTargetWithHttpInfo(targetName, body, skipLockoutCheck);
              return localVarResponse.Data;
         }
 
@@ -14129,9 +14352,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>ApiResponse of AuthorizationPolicy</returns>
         
-        public ApiResponse< AuthorizationPolicy > PutAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body)
+        public ApiResponse< AuthorizationPolicy > PutAuthorizationPoliciesTargetWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         { 
             // verify the required parameter 'targetName' is set
             if (targetName == null)
@@ -14175,6 +14399,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (targetName != null) localVarPathParams.Add("targetName", this.Configuration.ApiClient.ParameterToString(targetName));
 
             // Query params
+            if (skipLockoutCheck != null) localVarQueryParams.Add(new Tuple<string, string>("skipLockoutCheck", this.Configuration.ApiClient.ParameterToString(skipLockoutCheck)));
 
             // Header params
 
@@ -14206,6 +14431,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPoliciesTarget: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14224,11 +14451,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of AuthorizationPolicy</returns>
         
-        public async System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body)
+        public async System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPoliciesTargetAsync (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         {
-             ApiResponse<AuthorizationPolicy> localVarResponse = await PutAuthorizationPoliciesTargetAsyncWithHttpInfo(targetName, body);
+             ApiResponse<AuthorizationPolicy> localVarResponse = await PutAuthorizationPoliciesTargetAsyncWithHttpInfo(targetName, body, skipLockoutCheck);
              return localVarResponse.Data;
 
         }
@@ -14240,9 +14468,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="targetName">The domain:entity:action target to which the policy will be applied</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AuthorizationPolicy)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body)
+        public async System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPoliciesTargetAsyncWithHttpInfo (string targetName, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         { 
             // verify the required parameter 'targetName' is set
             if (targetName == null)
@@ -14288,6 +14517,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (targetName != null) localVarPathParams.Add("targetName", this.Configuration.ApiClient.ParameterToString(targetName));
 
             // Query params
+            if (skipLockoutCheck != null) localVarQueryParams.Add(new Tuple<string, string>("skipLockoutCheck", this.Configuration.ApiClient.ParameterToString(skipLockoutCheck)));
 
             // Header params
 
@@ -14319,6 +14549,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationPoliciesTarget: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPoliciesTarget: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14338,11 +14570,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>AuthorizationPolicy</returns>
         
-        public AuthorizationPolicy PutAuthorizationPolicy (string policyId, AuthorizationPolicy body)
+        public AuthorizationPolicy PutAuthorizationPolicy (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         {
-             ApiResponse<AuthorizationPolicy> localVarResponse = PutAuthorizationPolicyWithHttpInfo(policyId, body);
+             ApiResponse<AuthorizationPolicy> localVarResponse = PutAuthorizationPolicyWithHttpInfo(policyId, body, skipLockoutCheck);
              return localVarResponse.Data;
         }
 
@@ -14353,9 +14586,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>ApiResponse of AuthorizationPolicy</returns>
         
-        public ApiResponse< AuthorizationPolicy > PutAuthorizationPolicyWithHttpInfo (string policyId, AuthorizationPolicy body)
+        public ApiResponse< AuthorizationPolicy > PutAuthorizationPolicyWithHttpInfo (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         { 
             // verify the required parameter 'policyId' is set
             if (policyId == null)
@@ -14399,6 +14633,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (policyId != null) localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
 
             // Query params
+            if (skipLockoutCheck != null) localVarQueryParams.Add(new Tuple<string, string>("skipLockoutCheck", this.Configuration.ApiClient.ParameterToString(skipLockoutCheck)));
 
             // Header params
 
@@ -14430,6 +14665,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPolicy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14448,11 +14685,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of AuthorizationPolicy</returns>
         
-        public async System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPolicyAsync (string policyId, AuthorizationPolicy body)
+        public async System.Threading.Tasks.Task<AuthorizationPolicy> PutAuthorizationPolicyAsync (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         {
-             ApiResponse<AuthorizationPolicy> localVarResponse = await PutAuthorizationPolicyAsyncWithHttpInfo(policyId, body);
+             ApiResponse<AuthorizationPolicy> localVarResponse = await PutAuthorizationPolicyAsyncWithHttpInfo(policyId, body, skipLockoutCheck);
              return localVarResponse.Data;
 
         }
@@ -14464,9 +14702,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="policyId">The ID of the policy to update</param>
         /// <param name="body">Access control policy</param>
+        /// <param name="skipLockoutCheck">Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional, default to false)</param>
         /// <returns>Task of ApiResponse (AuthorizationPolicy)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPolicyAsyncWithHttpInfo (string policyId, AuthorizationPolicy body)
+        public async System.Threading.Tasks.Task<ApiResponse<AuthorizationPolicy>> PutAuthorizationPolicyAsyncWithHttpInfo (string policyId, AuthorizationPolicy body, bool? skipLockoutCheck = null)
         { 
             // verify the required parameter 'policyId' is set
             if (policyId == null)
@@ -14512,6 +14751,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (policyId != null) localVarPathParams.Add("policyId", this.Configuration.ApiClient.ParameterToString(policyId));
 
             // Query params
+            if (skipLockoutCheck != null) localVarQueryParams.Add(new Tuple<string, string>("skipLockoutCheck", this.Configuration.ApiClient.ParameterToString(skipLockoutCheck)));
 
             // Header params
 
@@ -14543,6 +14783,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationPolicy: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationPolicy: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14654,6 +14896,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14767,6 +15011,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRole: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRole: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14878,6 +15124,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRoleUsersAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersAdd: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14991,6 +15239,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRoleUsersAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersAdd: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15102,6 +15352,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRoleUsersRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersRemove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15215,6 +15467,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRoleUsersRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRoleUsersRemove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15320,6 +15574,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesDefault: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15426,6 +15682,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRolesDefault: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesDefault: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15531,6 +15789,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15637,6 +15897,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutAuthorizationRolesSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutAuthorizationRolesSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15748,6 +16010,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15861,6 +16125,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutUserRoles: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoles: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

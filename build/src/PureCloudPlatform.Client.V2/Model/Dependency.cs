@@ -117,6 +117,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Conversationcustomattributeschema,
             
             /// <summary>
+            /// Enum Conversationsummarysetting for "CONVERSATIONSUMMARYSETTING"
+            /// </summary>
+            [EnumMember(Value = "CONVERSATIONSUMMARYSETTING")]
+            Conversationsummarysetting,
+            
+            /// <summary>
             /// Enum Dataaction for "DATAACTION"
             /// </summary>
             [EnumMember(Value = "DATAACTION")]
@@ -193,6 +199,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "EMAILROUTE")]
             Emailroute,
+            
+            /// <summary>
+            /// Enum Emailsendflow for "EMAILSENDFLOW"
+            /// </summary>
+            [EnumMember(Value = "EMAILSENDFLOW")]
+            Emailsendflow,
             
             /// <summary>
             /// Enum Emergencygroup for "EMERGENCYGROUP"

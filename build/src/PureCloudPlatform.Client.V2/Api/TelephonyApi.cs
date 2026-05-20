@@ -62,6 +62,30 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<SelfAgentGreeting> GetTelephonyAgentsGreetingsMeWithHttpInfo ();
 
         /// <summary>
+        /// Get the concurrent call metrics for a given organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>OrganizationCallMetrics</returns>
+        
+        OrganizationCallMetrics GetTelephonyCallsMetrics (string metricType = null);
+
+        /// <summary>
+        /// Get the concurrent call metrics for a given organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>ApiResponse of OrganizationCallMetrics</returns>
+        
+        ApiResponse<OrganizationCallMetrics> GetTelephonyCallsMetricsWithHttpInfo (string metricType = null);
+
+        /// <summary>
         /// Retrieve the list of AWS regions media can stream through.
         /// </summary>
         /// <remarks>
@@ -82,6 +106,28 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of MediaRegions</returns>
         
         ApiResponse<MediaRegions> GetTelephonyMediaregionsWithHttpInfo ();
+
+        /// <summary>
+        /// Get the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>TelephonySettings</returns>
+        
+        TelephonySettings GetTelephonySettings ();
+
+        /// <summary>
+        /// Get the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of TelephonySettings</returns>
+        
+        ApiResponse<TelephonySettings> GetTelephonySettingsWithHttpInfo ();
 
         /// <summary>
         /// Get a SIP message.
@@ -265,6 +311,30 @@ namespace PureCloudPlatform.Client.V2.Api
         
         ApiResponse<SelfAgentGreeting> PutTelephonyAgentsGreetingsMeWithHttpInfo (SelfAgentGreeting body);
 
+        /// <summary>
+        /// Update the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>TelephonySettings</returns>
+        
+        TelephonySettings PutTelephonySettings (TelephonySettings body);
+
+        /// <summary>
+        /// Update the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>ApiResponse of TelephonySettings</returns>
+        
+        ApiResponse<TelephonySettings> PutTelephonySettingsWithHttpInfo (TelephonySettings body);
+
         #endregion Synchronous Operations
 
         #region Asynchronous Operations
@@ -316,6 +386,30 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<SelfAgentGreeting>> GetTelephonyAgentsGreetingsMeAsyncWithHttpInfo ();
 
         /// <summary>
+        /// Get the concurrent call metrics for a given organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>Task of OrganizationCallMetrics</returns>
+        
+        System.Threading.Tasks.Task<OrganizationCallMetrics> GetTelephonyCallsMetricsAsync (string metricType = null);
+
+        /// <summary>
+        /// Get the concurrent call metrics for a given organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>Task of ApiResponse (OrganizationCallMetrics)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<OrganizationCallMetrics>> GetTelephonyCallsMetricsAsyncWithHttpInfo (string metricType = null);
+
+        /// <summary>
         /// Retrieve the list of AWS regions media can stream through.
         /// </summary>
         /// <remarks>
@@ -336,6 +430,28 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (MediaRegions)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<MediaRegions>> GetTelephonyMediaregionsAsyncWithHttpInfo ();
+
+        /// <summary>
+        /// Get the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of TelephonySettings</returns>
+        
+        System.Threading.Tasks.Task<TelephonySettings> GetTelephonySettingsAsync ();
+
+        /// <summary>
+        /// Get the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (TelephonySettings)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<TelephonySettings>> GetTelephonySettingsAsyncWithHttpInfo ();
 
         /// <summary>
         /// Get a SIP message.
@@ -519,6 +635,30 @@ namespace PureCloudPlatform.Client.V2.Api
         
         System.Threading.Tasks.Task<ApiResponse<SelfAgentGreeting>> PutTelephonyAgentsGreetingsMeAsyncWithHttpInfo (SelfAgentGreeting body);
 
+        /// <summary>
+        /// Update the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>Task of TelephonySettings</returns>
+        
+        System.Threading.Tasks.Task<TelephonySettings> PutTelephonySettingsAsync (TelephonySettings body);
+
+        /// <summary>
+        /// Update the global telephony configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>Task of ApiResponse (TelephonySettings)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<TelephonySettings>> PutTelephonySettingsAsyncWithHttpInfo (TelephonySettings body);
+
         #endregion Asynchronous Operations
 
     }
@@ -699,6 +839,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentGreetings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -800,6 +942,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentGreetings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -894,6 +1038,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentsGreetingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -988,12 +1134,212 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyAgentsGreetingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<SelfAgentGreeting>(localVarStatusCode,
                 localVarHeaders,
                 (SelfAgentGreeting) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SelfAgentGreeting)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get the concurrent call metrics for a given organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>OrganizationCallMetrics</returns>
+        
+        public OrganizationCallMetrics GetTelephonyCallsMetrics (string metricType = null)
+        {
+             ApiResponse<OrganizationCallMetrics> localVarResponse = GetTelephonyCallsMetricsWithHttpInfo(metricType);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the concurrent call metrics for a given organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>ApiResponse of OrganizationCallMetrics</returns>
+        
+        public ApiResponse< OrganizationCallMetrics > GetTelephonyCallsMetricsWithHttpInfo (string metricType = null)
+        { 
+
+            var localVarPath = "/api/v2/telephony/calls/metrics";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (metricType != null) localVarQueryParams.Add(new Tuple<string, string>("metricType", this.Configuration.ApiClient.ParameterToString(metricType)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonyCallsMetrics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyCallsMetrics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonyCallsMetrics: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<OrganizationCallMetrics>(localVarStatusCode,
+                localVarHeaders,
+                (OrganizationCallMetrics) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationCallMetrics)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get the concurrent call metrics for a given organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>Task of OrganizationCallMetrics</returns>
+        
+        public async System.Threading.Tasks.Task<OrganizationCallMetrics> GetTelephonyCallsMetricsAsync (string metricType = null)
+        {
+             ApiResponse<OrganizationCallMetrics> localVarResponse = await GetTelephonyCallsMetricsAsyncWithHttpInfo(metricType);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the concurrent call metrics for a given organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="metricType">Flag to indicate metric type to fetch. (optional, default to cloud)</param>
+        /// <returns>Task of ApiResponse (OrganizationCallMetrics)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationCallMetrics>> GetTelephonyCallsMetricsAsyncWithHttpInfo (string metricType = null)
+        { 
+
+            var localVarPath = "/api/v2/telephony/calls/metrics";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (metricType != null) localVarQueryParams.Add(new Tuple<string, string>("metricType", this.Configuration.ApiClient.ParameterToString(metricType)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonyCallsMetrics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyCallsMetrics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonyCallsMetrics: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<OrganizationCallMetrics>(localVarStatusCode,
+                localVarHeaders,
+                (OrganizationCallMetrics) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationCallMetrics)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -1082,6 +1428,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyMediaregions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyMediaregions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyMediaregions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1176,12 +1524,206 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyMediaregions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonyMediaregions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonyMediaregions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<MediaRegions>(localVarStatusCode,
                 localVarHeaders,
                 (MediaRegions) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MediaRegions)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>TelephonySettings</returns>
+        
+        public TelephonySettings GetTelephonySettings ()
+        {
+             ApiResponse<TelephonySettings> localVarResponse = GetTelephonySettingsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of TelephonySettings</returns>
+        
+        public ApiResponse< TelephonySettings > GetTelephonySettingsWithHttpInfo ()
+        { 
+
+            var localVarPath = "/api/v2/telephony/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonySettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<TelephonySettings>(localVarStatusCode,
+                localVarHeaders,
+                (TelephonySettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TelephonySettings)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of TelephonySettings</returns>
+        
+        public async System.Threading.Tasks.Task<TelephonySettings> GetTelephonySettingsAsync ()
+        {
+             ApiResponse<TelephonySettings> localVarResponse = await GetTelephonySettingsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (TelephonySettings)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<TelephonySettings>> GetTelephonySettingsAsyncWithHttpInfo ()
+        { 
+
+            var localVarPath = "/api/v2/telephony/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetTelephonySettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<TelephonySettings>(localVarStatusCode,
+                localVarHeaders,
+                (TelephonySettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TelephonySettings)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -1276,6 +1818,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySipmessagesConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1377,6 +1921,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySipmessagesConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1480,6 +2026,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversationHeaders: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySipmessagesConversationHeaders: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversationHeaders: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1584,6 +2132,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversationHeaders: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySipmessagesConversationHeaders: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySipmessagesConversationHeaders: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1702,6 +2252,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptraces: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySiptraces: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptraces: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1822,6 +2374,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptraces: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySiptraces: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptraces: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1922,6 +2476,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptracesDownloadDownloadId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySiptracesDownloadDownloadId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptracesDownloadDownloadId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2023,6 +2579,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptracesDownloadDownloadId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetTelephonySiptracesDownloadDownloadId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetTelephonySiptracesDownloadDownloadId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2128,6 +2686,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostTelephonySiptracesDownload: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostTelephonySiptracesDownload: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostTelephonySiptracesDownload: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2234,6 +2794,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostTelephonySiptracesDownload: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostTelephonySiptracesDownload: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostTelephonySiptracesDownload: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2345,6 +2907,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentGreetings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2458,6 +3022,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutTelephonyAgentGreetings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentGreetings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2563,6 +3129,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentsGreetingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2669,12 +3237,229 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutTelephonyAgentsGreetingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutTelephonyAgentsGreetingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<SelfAgentGreeting>(localVarStatusCode,
                 localVarHeaders,
                 (SelfAgentGreeting) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SelfAgentGreeting)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>TelephonySettings</returns>
+        
+        public TelephonySettings PutTelephonySettings (TelephonySettings body)
+        {
+             ApiResponse<TelephonySettings> localVarResponse = PutTelephonySettingsWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>ApiResponse of TelephonySettings</returns>
+        
+        public ApiResponse< TelephonySettings > PutTelephonySettingsWithHttpInfo (TelephonySettings body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling TelephonyApi->PutTelephonySettings");
+
+            var localVarPath = "/api/v2/telephony/settings";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutTelephonySettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<TelephonySettings>(localVarStatusCode,
+                localVarHeaders,
+                (TelephonySettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TelephonySettings)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>Task of TelephonySettings</returns>
+        
+        public async System.Threading.Tasks.Task<TelephonySettings> PutTelephonySettingsAsync (TelephonySettings body)
+        {
+             ApiResponse<TelephonySettings> localVarResponse = await PutTelephonySettingsAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update the global telephony configuration. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Telephony</param>
+        /// <returns>Task of ApiResponse (TelephonySettings)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<TelephonySettings>> PutTelephonySettingsAsyncWithHttpInfo (TelephonySettings body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling TelephonyApi->PutTelephonySettings");
+            
+
+            var localVarPath = "/api/v2/telephony/settings";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutTelephonySettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutTelephonySettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<TelephonySettings>(localVarStatusCode,
+                localVarHeaders,
+                (TelephonySettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TelephonySettings)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

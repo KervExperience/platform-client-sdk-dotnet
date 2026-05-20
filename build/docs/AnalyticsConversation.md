@@ -6,7 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **AccessAttributes** | **List&lt;string&gt;** | Set of attributes that limit which users can access the conversation | [optional] |
+| **AssociatedConversationId** | **string** | ID of the conversation the initiator is signaling this new conversation is associated with | [optional] |
 | **ConferenceStart** | **DateTime?** | The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **ConsultationConversationIds** | **List&lt;string&gt;** | Set of conversationIds the initiator has signaled this conversation is associated with | [optional] |
 | **ConversationEnd** | **DateTime?** | The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **ConversationId** | **string** | Unique identifier for the conversation | [optional] |
 | **ConversationInitiator** | **string** | Indicates the participant purpose of the participant initiating a message conversation | [optional] |
@@ -28,4 +31,4 @@
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

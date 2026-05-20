@@ -294,6 +294,58 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<LibraryEntityListing> PostResponsemanagementLibrariesBulkWithHttpInfo (LibraryBatchRequest body);
 
         /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>LibraryEntityListing</returns>
+        
+        LibraryEntityListing PostResponsemanagementLibrariesQuery (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null);
+
+        /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>ApiResponse of LibraryEntityListing</returns>
+        
+        ApiResponse<LibraryEntityListing> PostResponsemanagementLibrariesQueryWithHttpInfo (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null);
+
+        /// <summary>
+        /// Get response assets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>ResponseAssetEntityListing</returns>
+        
+        ResponseAssetEntityListing PostResponsemanagementResponseassetsBulk (ResponseAssetBulkRequest body);
+
+        /// <summary>
+        /// Get response assets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>ApiResponse of ResponseAssetEntityListing</returns>
+        
+        ApiResponse<ResponseAssetEntityListing> PostResponsemanagementResponseassetsBulkWithHttpInfo (ResponseAssetBulkRequest body);
+
+        /// <summary>
         /// Search response assets
         /// </summary>
         /// <remarks>
@@ -756,6 +808,58 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<LibraryEntityListing>> PostResponsemanagementLibrariesBulkAsyncWithHttpInfo (LibraryBatchRequest body);
 
         /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>Task of LibraryEntityListing</returns>
+        
+        System.Threading.Tasks.Task<LibraryEntityListing> PostResponsemanagementLibrariesQueryAsync (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null);
+
+        /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>Task of ApiResponse (LibraryEntityListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<LibraryEntityListing>> PostResponsemanagementLibrariesQueryAsyncWithHttpInfo (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null);
+
+        /// <summary>
+        /// Get response assets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>Task of ResponseAssetEntityListing</returns>
+        
+        System.Threading.Tasks.Task<ResponseAssetEntityListing> PostResponsemanagementResponseassetsBulkAsync (ResponseAssetBulkRequest body);
+
+        /// <summary>
+        /// Get response assets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>Task of ApiResponse (ResponseAssetEntityListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ResponseAssetEntityListing>> PostResponsemanagementResponseassetsBulkAsyncWithHttpInfo (ResponseAssetBulkRequest body);
+
+        /// <summary>
         /// Search response assets
         /// </summary>
         /// <remarks>
@@ -1114,6 +1218,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementLibrary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1214,6 +1320,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementLibrary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1313,6 +1421,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1413,6 +1523,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1512,6 +1624,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponseasset: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1612,6 +1726,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteResponsemanagementResponseasset: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1718,6 +1834,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibraries: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1824,6 +1942,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibraries: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -1924,6 +2044,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibrary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2025,6 +2147,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementLibrary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2128,6 +2252,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2232,6 +2358,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2332,6 +2460,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseasset: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2433,6 +2563,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseasset: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2533,6 +2665,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseassetsStatusStatusId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponseassetsStatusStatusId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseassetsStatusStatusId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2634,6 +2768,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseassetsStatusStatusId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponseassetsStatusStatusId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponseassetsStatusStatusId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2743,6 +2879,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2853,6 +2991,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetResponsemanagementResponses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -2958,6 +3098,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibraries: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3064,6 +3206,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementLibraries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibraries: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3169,6 +3313,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementLibrariesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3275,12 +3421,456 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementLibrariesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
                 localVarHeaders,
                 (LibraryEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>LibraryEntityListing</returns>
+        
+        public LibraryEntityListing PostResponsemanagementLibrariesQuery (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null)
+        {
+             ApiResponse<LibraryEntityListing> localVarResponse = PostResponsemanagementLibrariesQueryWithHttpInfo(body, pageNumber, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>ApiResponse of LibraryEntityListing</returns>
+        
+        public ApiResponse< LibraryEntityListing > PostResponsemanagementLibrariesQueryWithHttpInfo (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ResponseManagementApi->PostResponsemanagementLibrariesQuery");
+
+            var localVarPath = "/api/v2/responsemanagement/libraries/query";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementLibrariesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (LibraryEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>Task of LibraryEntityListing</returns>
+        
+        public async System.Threading.Tasks.Task<LibraryEntityListing> PostResponsemanagementLibrariesQueryAsync (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null)
+        {
+             ApiResponse<LibraryEntityListing> localVarResponse = await PostResponsemanagementLibrariesQueryAsyncWithHttpInfo(body, pageNumber, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Query criteria</param>
+        /// <param name="pageNumber">Page number (optional, default to 1)</param>
+        /// <param name="pageSize">Page size (optional, default to 25)</param>
+        /// <returns>Task of ApiResponse (LibraryEntityListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<LibraryEntityListing>> PostResponsemanagementLibrariesQueryAsyncWithHttpInfo (QueryCriteriaQuery body, int? pageNumber = null, int? pageSize = null)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ResponseManagementApi->PostResponsemanagementLibrariesQuery");
+            
+
+            var localVarPath = "/api/v2/responsemanagement/libraries/query";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementLibrariesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementLibrariesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<LibraryEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (LibraryEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LibraryEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get response assets. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>ResponseAssetEntityListing</returns>
+        
+        public ResponseAssetEntityListing PostResponsemanagementResponseassetsBulk (ResponseAssetBulkRequest body)
+        {
+             ApiResponse<ResponseAssetEntityListing> localVarResponse = PostResponsemanagementResponseassetsBulkWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get response assets. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>ApiResponse of ResponseAssetEntityListing</returns>
+        
+        public ApiResponse< ResponseAssetEntityListing > PostResponsemanagementResponseassetsBulkWithHttpInfo (ResponseAssetBulkRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ResponseManagementApi->PostResponsemanagementResponseassetsBulk");
+
+            var localVarPath = "/api/v2/responsemanagement/responseassets/bulk";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponseassetsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ResponseAssetEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (ResponseAssetEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get response assets. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>Task of ResponseAssetEntityListing</returns>
+        
+        public async System.Threading.Tasks.Task<ResponseAssetEntityListing> PostResponsemanagementResponseassetsBulkAsync (ResponseAssetBulkRequest body)
+        {
+             ApiResponse<ResponseAssetEntityListing> localVarResponse = await PostResponsemanagementResponseassetsBulkAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get response assets. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Asset IDs (max allowed 50)</param>
+        /// <returns>Task of ApiResponse (ResponseAssetEntityListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ResponseAssetEntityListing>> PostResponsemanagementResponseassetsBulkAsyncWithHttpInfo (ResponseAssetBulkRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling ResponseManagementApi->PostResponsemanagementResponseassetsBulk");
+            
+
+            var localVarPath = "/api/v2/responsemanagement/responseassets/bulk";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponseassetsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ResponseAssetEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (ResponseAssetEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseAssetEntityListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -3383,6 +3973,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponseassetsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3492,6 +4084,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponseassetsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3597,6 +4191,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponseassetsUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsUploads: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3703,6 +4299,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponseassetsUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponseassetsUploads: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3811,6 +4409,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3920,6 +4520,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4025,6 +4627,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponsesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponsesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponsesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4131,6 +4735,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponsesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostResponsemanagementResponsesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostResponsemanagementResponsesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4242,6 +4848,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementLibrary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4355,6 +4963,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutResponsemanagementLibrary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementLibrary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4469,6 +5079,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4585,6 +5197,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutResponsemanagementResponse: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponse: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4696,6 +5310,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponseasset: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4809,6 +5425,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutResponsemanagementResponseasset: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutResponsemanagementResponseasset: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

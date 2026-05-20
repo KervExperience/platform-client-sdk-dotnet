@@ -16,6 +16,30 @@ namespace PureCloudPlatform.Client.V2.Api
         #region Synchronous Operations
 
         /// <summary>
+        /// Delete connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>ConnectionResponse</returns>
+        
+        ConnectionResponse DeleteKnowledgeConnection (string connectionId);
+
+        /// <summary>
+        /// Delete connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>ApiResponse of ConnectionResponse</returns>
+        
+        ApiResponse<ConnectionResponse> DeleteKnowledgeConnectionWithHttpInfo (string connectionId);
+
+        /// <summary>
         /// Delete knowledge base
         /// </summary>
         /// <remarks>
@@ -274,6 +298,132 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of Object(void)</returns>
         
         ApiResponse<Object> DeleteKnowledgeKnowledgebaseSynchronizeJobWithHttpInfo (string knowledgeBaseId, string syncJobId);
+
+        /// <summary>
+        /// Delete Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns></returns>
+        
+        void DeleteKnowledgeSetting (string knowledgeSettingId);
+
+        /// <summary>
+        /// Delete Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        ApiResponse<Object> DeleteKnowledgeSettingWithHttpInfo (string knowledgeSettingId);
+
+        /// <summary>
+        /// Delete source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns></returns>
+        
+        void DeleteKnowledgeSource (string sourceId);
+
+        /// <summary>
+        /// Delete source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        ApiResponse<Object> DeleteKnowledgeSourceWithHttpInfo (string sourceId);
+
+        /// <summary>
+        /// Get connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>ConnectionResponse</returns>
+        
+        ConnectionResponse GetKnowledgeConnection (string connectionId, List<string> expand = null);
+
+        /// <summary>
+        /// Get connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>ApiResponse of ConnectionResponse</returns>
+        
+        ApiResponse<ConnectionResponse> GetKnowledgeConnectionWithHttpInfo (string connectionId, List<string> expand = null);
+
+        /// <summary>
+        /// Get connection options
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>ConnectionOptionListing</returns>
+        
+        ConnectionOptionListing GetKnowledgeConnectionOptions (string connectionId, string after = null, string pageSize = null, string parentId = null);
+
+        /// <summary>
+        /// Get connection options
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>ApiResponse of ConnectionOptionListing</returns>
+        
+        ApiResponse<ConnectionOptionListing> GetKnowledgeConnectionOptionsWithHttpInfo (string connectionId, string after = null, string pageSize = null, string parentId = null);
+
+        /// <summary>
+        /// Get connections
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ConnectionListing</returns>
+        
+        ConnectionListing GetKnowledgeConnections ();
+
+        /// <summary>
+        /// Get connections
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ConnectionListing</returns>
+        
+        ApiResponse<ConnectionListing> GetKnowledgeConnectionsWithHttpInfo ();
 
         /// <summary>
         /// Get categories
@@ -1318,6 +1468,226 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<KnowledgeBaseListing> GetKnowledgeKnowledgebasesWithHttpInfo (string before = null, string after = null, string limit = null, string pageSize = null, string name = null, string coreLanguage = null, bool? published = null, string sortBy = null, string sortOrder = null);
 
         /// <summary>
+        /// Get Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>KnowledgeSettingsResponse</returns>
+        
+        KnowledgeSettingsResponse GetKnowledgeSetting (string knowledgeSettingId);
+
+        /// <summary>
+        /// Get Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>ApiResponse of KnowledgeSettingsResponse</returns>
+        
+        ApiResponse<KnowledgeSettingsResponse> GetKnowledgeSettingWithHttpInfo (string knowledgeSettingId);
+
+        /// <summary>
+        /// Get Knowledge settings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>KnowledgeSettingListing</returns>
+        
+        KnowledgeSettingListing GetKnowledgeSettings (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null);
+
+        /// <summary>
+        /// Get Knowledge settings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSettingListing</returns>
+        
+        ApiResponse<KnowledgeSettingListing> GetKnowledgeSettingsWithHttpInfo (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null);
+
+        /// <summary>
+        /// Get source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>V3SourceExpandableResponse</returns>
+        
+        V3SourceExpandableResponse GetKnowledgeSource (string sourceId, List<string> expand = null);
+
+        /// <summary>
+        /// Get source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>ApiResponse of V3SourceExpandableResponse</returns>
+        
+        ApiResponse<V3SourceExpandableResponse> GetKnowledgeSourceWithHttpInfo (string sourceId, List<string> expand = null);
+
+        /// <summary>
+        /// Get a specific synchronization of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>V3Synchronization</returns>
+        
+        V3Synchronization GetKnowledgeSourceSynchronization (string sourceId, string synchronizationId);
+
+        /// <summary>
+        /// Get a specific synchronization of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>ApiResponse of V3Synchronization</returns>
+        
+        ApiResponse<V3Synchronization> GetKnowledgeSourceSynchronizationWithHttpInfo (string sourceId, string synchronizationId);
+
+        /// <summary>
+        /// Get synchronizations of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>V3SynchronizationListing</returns>
+        
+        V3SynchronizationListing GetKnowledgeSourceSynchronizations (string sourceId, string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// Get synchronizations of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>ApiResponse of V3SynchronizationListing</returns>
+        
+        ApiResponse<V3SynchronizationListing> GetKnowledgeSourceSynchronizationsWithHttpInfo (string sourceId, string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// List sources
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>V3SourceExpandableListing</returns>
+        
+        V3SourceExpandableListing GetKnowledgeSources (List<string> expand = null);
+
+        /// <summary>
+        /// List sources
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>ApiResponse of V3SourceExpandableListing</returns>
+        
+        ApiResponse<V3SourceExpandableListing> GetKnowledgeSourcesWithHttpInfo (List<string> expand = null);
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>V3SynchronizationListing</returns>
+        
+        V3SynchronizationListing GetKnowledgeSourcesSynchronizations (string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>ApiResponse of V3SynchronizationListing</returns>
+        
+        ApiResponse<V3SynchronizationListing> GetKnowledgeSourcesSynchronizationsWithHttpInfo (string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// Update connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ConnectionResponse</returns>
+        
+        ConnectionResponse PatchKnowledgeConnection (string connectionId, ConnectionUpdateRequest body = null);
+
+        /// <summary>
+        /// Update connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of ConnectionResponse</returns>
+        
+        ApiResponse<ConnectionResponse> PatchKnowledgeConnectionWithHttpInfo (string connectionId, ConnectionUpdateRequest body = null);
+
+        /// <summary>
         /// Update search result.
         /// </summary>
         /// <remarks>
@@ -1684,6 +2054,84 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of UnansweredPhraseGroupUpdateResponse</returns>
         
         ApiResponse<UnansweredPhraseGroupUpdateResponse> PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupWithHttpInfo (string knowledgeBaseId, string groupId, string phraseGroupId, UnansweredPhraseGroupPatchRequestBody body);
+
+        /// <summary>
+        /// Update Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>KnowledgeSettingsResponse</returns>
+        
+        KnowledgeSettingsResponse PatchKnowledgeSetting (string knowledgeSettingId, KnowledgeSettingsRequest body);
+
+        /// <summary>
+        /// Update Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of KnowledgeSettingsResponse</returns>
+        
+        ApiResponse<KnowledgeSettingsResponse> PatchKnowledgeSettingWithHttpInfo (string knowledgeSettingId, KnowledgeSettingsRequest body);
+
+        /// <summary>
+        /// Update synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>V3Synchronization</returns>
+        
+        V3Synchronization PatchKnowledgeSourceSynchronization (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body);
+
+        /// <summary>
+        /// Update synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3Synchronization</returns>
+        
+        ApiResponse<V3Synchronization> PatchKnowledgeSourceSynchronizationWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body);
+
+        /// <summary>
+        /// Create new connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ConnectionCreateResponse</returns>
+        
+        ConnectionCreateResponse PostKnowledgeConnections (ConnectionCreateRequest body);
+
+        /// <summary>
+        /// Create new connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of ConnectionCreateResponse</returns>
+        
+        ApiResponse<ConnectionCreateResponse> PostKnowledgeConnectionsWithHttpInfo (ConnectionCreateRequest body);
 
         /// <summary>
         /// Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -2670,6 +3118,156 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<KnowledgeBase> PostKnowledgeKnowledgebasesWithHttpInfo (KnowledgeBaseCreateRequest body);
 
         /// <summary>
+        /// Get Knowledge Search
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>KnowledgeSourcesSearchResponse</returns>
+        
+        KnowledgeSourcesSearchResponse PostKnowledgeSearch (KnowledgeSourcesSearchRequest body = null);
+
+        /// <summary>
+        /// Get Knowledge Search
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSourcesSearchResponse</returns>
+        
+        ApiResponse<KnowledgeSourcesSearchResponse> PostKnowledgeSearchWithHttpInfo (KnowledgeSourcesSearchRequest body = null);
+
+        /// <summary>
+        /// Get Knowledge Search Preview
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>KnowledgeSearchPreviewResponse</returns>
+        
+        KnowledgeSearchPreviewResponse PostKnowledgeSearchPreview (KnowledgeSearchPreviewRequest body = null);
+
+        /// <summary>
+        /// Get Knowledge Search Preview
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSearchPreviewResponse</returns>
+        
+        ApiResponse<KnowledgeSearchPreviewResponse> PostKnowledgeSearchPreviewWithHttpInfo (KnowledgeSearchPreviewRequest body = null);
+
+        /// <summary>
+        /// Create Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>KnowledgeSettingsResponse</returns>
+        
+        KnowledgeSettingsResponse PostKnowledgeSettings (KnowledgeSettingsRequest body = null);
+
+        /// <summary>
+        /// Create Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSettingsResponse</returns>
+        
+        ApiResponse<KnowledgeSettingsResponse> PostKnowledgeSettingsWithHttpInfo (KnowledgeSettingsRequest body = null);
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>V3SynchronizationUploadUrlResponse</returns>
+        
+        V3SynchronizationUploadUrlResponse PostKnowledgeSourceSynchronizationUploads (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body);
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3SynchronizationUploadUrlResponse</returns>
+        
+        ApiResponse<V3SynchronizationUploadUrlResponse> PostKnowledgeSourceSynchronizationUploadsWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body);
+
+        /// <summary>
+        /// Start a manual synchronization from a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>V3Synchronization</returns>
+        
+        V3Synchronization PostKnowledgeSourceSynchronizations (string sourceId, V3StartManualSyncRequest body = null);
+
+        /// <summary>
+        /// Start a manual synchronization from a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of V3Synchronization</returns>
+        
+        ApiResponse<V3Synchronization> PostKnowledgeSourceSynchronizationsWithHttpInfo (string sourceId, V3StartManualSyncRequest body = null);
+
+        /// <summary>
+        /// Create a new source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>V3SourceDetailedResponse</returns>
+        
+        V3SourceDetailedResponse PostKnowledgeSources (V3SourceCreateRequest body);
+
+        /// <summary>
+        /// Create a new source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3SourceDetailedResponse</returns>
+        
+        ApiResponse<V3SourceDetailedResponse> PostKnowledgeSourcesWithHttpInfo (V3SourceCreateRequest body);
+
+        /// <summary>
         /// Update Salesforce Knowledge integration source
         /// </summary>
         /// <remarks>
@@ -2725,9 +3323,59 @@ namespace PureCloudPlatform.Client.V2.Api
         
         ApiResponse<ServiceNowSourceResponse> PutKnowledgeKnowledgebaseSourcesServicenowSourceIdWithHttpInfo (string knowledgeBaseId, string sourceId, ServiceNowSourceRequest body);
 
+        /// <summary>
+        /// Update the source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>V3SourceDetailedResponse</returns>
+        
+        V3SourceDetailedResponse PutKnowledgeSource (string sourceId, V3SourceUpdateRequest body);
+
+        /// <summary>
+        /// Update the source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3SourceDetailedResponse</returns>
+        
+        ApiResponse<V3SourceDetailedResponse> PutKnowledgeSourceWithHttpInfo (string sourceId, V3SourceUpdateRequest body);
+
         #endregion Synchronous Operations
 
         #region Asynchronous Operations
+
+        /// <summary>
+        /// Delete connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>Task of ConnectionResponse</returns>
+        
+        System.Threading.Tasks.Task<ConnectionResponse> DeleteKnowledgeConnectionAsync (string connectionId);
+
+        /// <summary>
+        /// Delete connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>Task of ApiResponse (ConnectionResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConnectionResponse>> DeleteKnowledgeConnectionAsyncWithHttpInfo (string connectionId);
 
         /// <summary>
         /// Delete knowledge base
@@ -2988,6 +3636,132 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse</returns>
         
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteKnowledgeKnowledgebaseSynchronizeJobAsyncWithHttpInfo (string knowledgeBaseId, string syncJobId);
+
+        /// <summary>
+        /// Delete Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of void</returns>
+        
+        System.Threading.Tasks.Task DeleteKnowledgeSettingAsync (string knowledgeSettingId);
+
+        /// <summary>
+        /// Delete Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteKnowledgeSettingAsyncWithHttpInfo (string knowledgeSettingId);
+
+        /// <summary>
+        /// Delete source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns>Task of void</returns>
+        
+        System.Threading.Tasks.Task DeleteKnowledgeSourceAsync (string sourceId);
+
+        /// <summary>
+        /// Delete source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteKnowledgeSourceAsyncWithHttpInfo (string sourceId);
+
+        /// <summary>
+        /// Get connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>Task of ConnectionResponse</returns>
+        
+        System.Threading.Tasks.Task<ConnectionResponse> GetKnowledgeConnectionAsync (string connectionId, List<string> expand = null);
+
+        /// <summary>
+        /// Get connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectionResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConnectionResponse>> GetKnowledgeConnectionAsyncWithHttpInfo (string connectionId, List<string> expand = null);
+
+        /// <summary>
+        /// Get connection options
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>Task of ConnectionOptionListing</returns>
+        
+        System.Threading.Tasks.Task<ConnectionOptionListing> GetKnowledgeConnectionOptionsAsync (string connectionId, string after = null, string pageSize = null, string parentId = null);
+
+        /// <summary>
+        /// Get connection options
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectionOptionListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConnectionOptionListing>> GetKnowledgeConnectionOptionsAsyncWithHttpInfo (string connectionId, string after = null, string pageSize = null, string parentId = null);
+
+        /// <summary>
+        /// Get connections
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ConnectionListing</returns>
+        
+        System.Threading.Tasks.Task<ConnectionListing> GetKnowledgeConnectionsAsync ();
+
+        /// <summary>
+        /// Get connections
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ConnectionListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConnectionListing>> GetKnowledgeConnectionsAsyncWithHttpInfo ();
 
         /// <summary>
         /// Get categories
@@ -4032,6 +4806,226 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<KnowledgeBaseListing>> GetKnowledgeKnowledgebasesAsyncWithHttpInfo (string before = null, string after = null, string limit = null, string pageSize = null, string name = null, string coreLanguage = null, bool? published = null, string sortBy = null, string sortOrder = null);
 
         /// <summary>
+        /// Get Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of KnowledgeSettingsResponse</returns>
+        
+        System.Threading.Tasks.Task<KnowledgeSettingsResponse> GetKnowledgeSettingAsync (string knowledgeSettingId);
+
+        /// <summary>
+        /// Get Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingsResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingsResponse>> GetKnowledgeSettingAsyncWithHttpInfo (string knowledgeSettingId);
+
+        /// <summary>
+        /// Get Knowledge settings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>Task of KnowledgeSettingListing</returns>
+        
+        System.Threading.Tasks.Task<KnowledgeSettingListing> GetKnowledgeSettingsAsync (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null);
+
+        /// <summary>
+        /// Get Knowledge settings.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingListing>> GetKnowledgeSettingsAsyncWithHttpInfo (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null);
+
+        /// <summary>
+        /// Get source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of V3SourceExpandableResponse</returns>
+        
+        System.Threading.Tasks.Task<V3SourceExpandableResponse> GetKnowledgeSourceAsync (string sourceId, List<string> expand = null);
+
+        /// <summary>
+        /// Get source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SourceExpandableResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SourceExpandableResponse>> GetKnowledgeSourceAsyncWithHttpInfo (string sourceId, List<string> expand = null);
+
+        /// <summary>
+        /// Get a specific synchronization of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>Task of V3Synchronization</returns>
+        
+        System.Threading.Tasks.Task<V3Synchronization> GetKnowledgeSourceSynchronizationAsync (string sourceId, string synchronizationId);
+
+        /// <summary>
+        /// Get a specific synchronization of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>Task of ApiResponse (V3Synchronization)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3Synchronization>> GetKnowledgeSourceSynchronizationAsyncWithHttpInfo (string sourceId, string synchronizationId);
+
+        /// <summary>
+        /// Get synchronizations of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of V3SynchronizationListing</returns>
+        
+        System.Threading.Tasks.Task<V3SynchronizationListing> GetKnowledgeSourceSynchronizationsAsync (string sourceId, string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// Get synchronizations of a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SynchronizationListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SynchronizationListing>> GetKnowledgeSourceSynchronizationsAsyncWithHttpInfo (string sourceId, string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// List sources
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of V3SourceExpandableListing</returns>
+        
+        System.Threading.Tasks.Task<V3SourceExpandableListing> GetKnowledgeSourcesAsync (List<string> expand = null);
+
+        /// <summary>
+        /// List sources
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SourceExpandableListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SourceExpandableListing>> GetKnowledgeSourcesAsyncWithHttpInfo (List<string> expand = null);
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of V3SynchronizationListing</returns>
+        
+        System.Threading.Tasks.Task<V3SynchronizationListing> GetKnowledgeSourcesSynchronizationsAsync (string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SynchronizationListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SynchronizationListing>> GetKnowledgeSourcesSynchronizationsAsyncWithHttpInfo (string before = null, string after = null, string pageSize = null);
+
+        /// <summary>
+        /// Update connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ConnectionResponse</returns>
+        
+        System.Threading.Tasks.Task<ConnectionResponse> PatchKnowledgeConnectionAsync (string connectionId, ConnectionUpdateRequest body = null);
+
+        /// <summary>
+        /// Update connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectionResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConnectionResponse>> PatchKnowledgeConnectionAsyncWithHttpInfo (string connectionId, ConnectionUpdateRequest body = null);
+
+        /// <summary>
         /// Update search result.
         /// </summary>
         /// <remarks>
@@ -4398,6 +5392,84 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (UnansweredPhraseGroupUpdateResponse)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<UnansweredPhraseGroupUpdateResponse>> PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupAsyncWithHttpInfo (string knowledgeBaseId, string groupId, string phraseGroupId, UnansweredPhraseGroupPatchRequestBody body);
+
+        /// <summary>
+        /// Update Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>Task of KnowledgeSettingsResponse</returns>
+        
+        System.Threading.Tasks.Task<KnowledgeSettingsResponse> PatchKnowledgeSettingAsync (string knowledgeSettingId, KnowledgeSettingsRequest body);
+
+        /// <summary>
+        /// Update Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingsResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingsResponse>> PatchKnowledgeSettingAsyncWithHttpInfo (string knowledgeSettingId, KnowledgeSettingsRequest body);
+
+        /// <summary>
+        /// Update synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of V3Synchronization</returns>
+        
+        System.Threading.Tasks.Task<V3Synchronization> PatchKnowledgeSourceSynchronizationAsync (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body);
+
+        /// <summary>
+        /// Update synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3Synchronization)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3Synchronization>> PatchKnowledgeSourceSynchronizationAsyncWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body);
+
+        /// <summary>
+        /// Create new connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ConnectionCreateResponse</returns>
+        
+        System.Threading.Tasks.Task<ConnectionCreateResponse> PostKnowledgeConnectionsAsync (ConnectionCreateRequest body);
+
+        /// <summary>
+        /// Create new connection
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (ConnectionCreateResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ConnectionCreateResponse>> PostKnowledgeConnectionsAsyncWithHttpInfo (ConnectionCreateRequest body);
 
         /// <summary>
         /// Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -5384,6 +6456,156 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<KnowledgeBase>> PostKnowledgeKnowledgebasesAsyncWithHttpInfo (KnowledgeBaseCreateRequest body);
 
         /// <summary>
+        /// Get Knowledge Search
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of KnowledgeSourcesSearchResponse</returns>
+        
+        System.Threading.Tasks.Task<KnowledgeSourcesSearchResponse> PostKnowledgeSearchAsync (KnowledgeSourcesSearchRequest body = null);
+
+        /// <summary>
+        /// Get Knowledge Search
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSourcesSearchResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<KnowledgeSourcesSearchResponse>> PostKnowledgeSearchAsyncWithHttpInfo (KnowledgeSourcesSearchRequest body = null);
+
+        /// <summary>
+        /// Get Knowledge Search Preview
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of KnowledgeSearchPreviewResponse</returns>
+        
+        System.Threading.Tasks.Task<KnowledgeSearchPreviewResponse> PostKnowledgeSearchPreviewAsync (KnowledgeSearchPreviewRequest body = null);
+
+        /// <summary>
+        /// Get Knowledge Search Preview
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSearchPreviewResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<KnowledgeSearchPreviewResponse>> PostKnowledgeSearchPreviewAsyncWithHttpInfo (KnowledgeSearchPreviewRequest body = null);
+
+        /// <summary>
+        /// Create Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of KnowledgeSettingsResponse</returns>
+        
+        System.Threading.Tasks.Task<KnowledgeSettingsResponse> PostKnowledgeSettingsAsync (KnowledgeSettingsRequest body = null);
+
+        /// <summary>
+        /// Create Knowledge setting.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingsResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingsResponse>> PostKnowledgeSettingsAsyncWithHttpInfo (KnowledgeSettingsRequest body = null);
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of V3SynchronizationUploadUrlResponse</returns>
+        
+        System.Threading.Tasks.Task<V3SynchronizationUploadUrlResponse> PostKnowledgeSourceSynchronizationUploadsAsync (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body);
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3SynchronizationUploadUrlResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SynchronizationUploadUrlResponse>> PostKnowledgeSourceSynchronizationUploadsAsyncWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body);
+
+        /// <summary>
+        /// Start a manual synchronization from a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of V3Synchronization</returns>
+        
+        System.Threading.Tasks.Task<V3Synchronization> PostKnowledgeSourceSynchronizationsAsync (string sourceId, V3StartManualSyncRequest body = null);
+
+        /// <summary>
+        /// Start a manual synchronization from a source.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (V3Synchronization)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3Synchronization>> PostKnowledgeSourceSynchronizationsAsyncWithHttpInfo (string sourceId, V3StartManualSyncRequest body = null);
+
+        /// <summary>
+        /// Create a new source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of V3SourceDetailedResponse</returns>
+        
+        System.Threading.Tasks.Task<V3SourceDetailedResponse> PostKnowledgeSourcesAsync (V3SourceCreateRequest body);
+
+        /// <summary>
+        /// Create a new source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3SourceDetailedResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SourceDetailedResponse>> PostKnowledgeSourcesAsyncWithHttpInfo (V3SourceCreateRequest body);
+
+        /// <summary>
         /// Update Salesforce Knowledge integration source
         /// </summary>
         /// <remarks>
@@ -5438,6 +6660,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (ServiceNowSourceResponse)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<ServiceNowSourceResponse>> PutKnowledgeKnowledgebaseSourcesServicenowSourceIdAsyncWithHttpInfo (string knowledgeBaseId, string sourceId, ServiceNowSourceRequest body);
+
+        /// <summary>
+        /// Update the source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of V3SourceDetailedResponse</returns>
+        
+        System.Threading.Tasks.Task<V3SourceDetailedResponse> PutKnowledgeSourceAsync (string sourceId, V3SourceUpdateRequest body);
+
+        /// <summary>
+        /// Update the source
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3SourceDetailedResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<V3SourceDetailedResponse>> PutKnowledgeSourceAsyncWithHttpInfo (string sourceId, V3SourceUpdateRequest body);
 
         #endregion Asynchronous Operations
 
@@ -5532,6 +6780,211 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
+        /// Delete connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>ConnectionResponse</returns>
+        
+        public ConnectionResponse DeleteKnowledgeConnection (string connectionId)
+        {
+             ApiResponse<ConnectionResponse> localVarResponse = DeleteKnowledgeConnectionWithHttpInfo(connectionId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>ApiResponse of ConnectionResponse</returns>
+        
+        public ApiResponse< ConnectionResponse > DeleteKnowledgeConnectionWithHttpInfo (string connectionId)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->DeleteKnowledgeConnection");
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeConnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Delete connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>Task of ConnectionResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ConnectionResponse> DeleteKnowledgeConnectionAsync (string connectionId)
+        {
+             ApiResponse<ConnectionResponse> localVarResponse = await DeleteKnowledgeConnectionAsyncWithHttpInfo(connectionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Delete connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <returns>Task of ApiResponse (ConnectionResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectionResponse>> DeleteKnowledgeConnectionAsyncWithHttpInfo (string connectionId)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->DeleteKnowledgeConnection");
+            
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeConnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
         /// Delete knowledge base 
         /// 
         /// </summary>
@@ -5619,6 +7072,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebase: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5720,6 +7175,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebase: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5826,6 +7283,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5934,6 +7393,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6039,6 +7500,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6146,6 +7609,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6257,6 +7722,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6371,6 +7838,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6476,6 +7945,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseExportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6583,6 +8054,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseExportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6688,6 +8161,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseImportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6795,6 +8270,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseImportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6901,6 +8378,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7009,6 +8488,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7114,6 +8595,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7221,6 +8704,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7326,6 +8811,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7433,6 +8920,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7538,6 +9027,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7645,12 +9136,1046 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarHeaders,
                 null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Delete Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns></returns>
+        
+        public void DeleteKnowledgeSetting (string knowledgeSettingId)
+        {
+             DeleteKnowledgeSettingWithHttpInfo(knowledgeSettingId);
+        }
+
+        /// <summary>
+        /// Delete Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        public ApiResponse<Object> DeleteKnowledgeSettingWithHttpInfo (string knowledgeSettingId)
+        { 
+            // verify the required parameter 'knowledgeSettingId' is set
+            if (knowledgeSettingId == null)
+                throw new ApiException(400, "Missing required parameter 'knowledgeSettingId' when calling KnowledgeApi->DeleteKnowledgeSetting");
+
+            var localVarPath = "/api/v2/knowledge/settings/{knowledgeSettingId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (knowledgeSettingId != null) localVarPathParams.Add("knowledgeSettingId", this.Configuration.ApiClient.ParameterToString(knowledgeSettingId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Delete Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of void</returns>
+        
+        public async System.Threading.Tasks.Task DeleteKnowledgeSettingAsync (string knowledgeSettingId)
+        {
+             await DeleteKnowledgeSettingAsyncWithHttpInfo(knowledgeSettingId);
+
+        }
+
+        /// <summary>
+        /// Delete Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteKnowledgeSettingAsyncWithHttpInfo (string knowledgeSettingId)
+        { 
+            // verify the required parameter 'knowledgeSettingId' is set
+            if (knowledgeSettingId == null)
+                throw new ApiException(400, "Missing required parameter 'knowledgeSettingId' when calling KnowledgeApi->DeleteKnowledgeSetting");
+            
+
+            var localVarPath = "/api/v2/knowledge/settings/{knowledgeSettingId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (knowledgeSettingId != null) localVarPathParams.Add("knowledgeSettingId", this.Configuration.ApiClient.ParameterToString(knowledgeSettingId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Delete source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns></returns>
+        
+        public void DeleteKnowledgeSource (string sourceId)
+        {
+             DeleteKnowledgeSourceWithHttpInfo(sourceId);
+        }
+
+        /// <summary>
+        /// Delete source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        
+        public ApiResponse<Object> DeleteKnowledgeSourceWithHttpInfo (string sourceId)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->DeleteKnowledgeSource");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSource: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Delete source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns>Task of void</returns>
+        
+        public async System.Threading.Tasks.Task DeleteKnowledgeSourceAsync (string sourceId)
+        {
+             await DeleteKnowledgeSourceAsyncWithHttpInfo(sourceId);
+
+        }
+
+        /// <summary>
+        /// Delete source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <returns>Task of ApiResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteKnowledgeSourceAsyncWithHttpInfo (string sourceId)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->DeleteKnowledgeSource");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}";
+            var localVarHttpMethod = "Delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling DeleteKnowledgeSource: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarHeaders,
+                null,
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>ConnectionResponse</returns>
+        
+        public ConnectionResponse GetKnowledgeConnection (string connectionId, List<string> expand = null)
+        {
+             ApiResponse<ConnectionResponse> localVarResponse = GetKnowledgeConnectionWithHttpInfo(connectionId, expand);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>ApiResponse of ConnectionResponse</returns>
+        
+        public ApiResponse< ConnectionResponse > GetKnowledgeConnectionWithHttpInfo (string connectionId, List<string> expand = null)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->GetKnowledgeConnection");
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>Task of ConnectionResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ConnectionResponse> GetKnowledgeConnectionAsync (string connectionId, List<string> expand = null)
+        {
+             ApiResponse<ConnectionResponse> localVarResponse = await GetKnowledgeConnectionAsyncWithHttpInfo(connectionId, expand);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="expand">The specified entity attributes will be filled. Comma separated values expected. (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectionResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectionResponse>> GetKnowledgeConnectionAsyncWithHttpInfo (string connectionId, List<string> expand = null)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->GetKnowledgeConnection");
+            
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get connection options 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>ConnectionOptionListing</returns>
+        
+        public ConnectionOptionListing GetKnowledgeConnectionOptions (string connectionId, string after = null, string pageSize = null, string parentId = null)
+        {
+             ApiResponse<ConnectionOptionListing> localVarResponse = GetKnowledgeConnectionOptionsWithHttpInfo(connectionId, after, pageSize, parentId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get connection options 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>ApiResponse of ConnectionOptionListing</returns>
+        
+        public ApiResponse< ConnectionOptionListing > GetKnowledgeConnectionOptionsWithHttpInfo (string connectionId, string after = null, string pageSize = null, string parentId = null)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->GetKnowledgeConnectionOptions");
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}/options";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (parentId != null) localVarQueryParams.Add(new Tuple<string, string>("parentId", this.Configuration.ApiClient.ParameterToString(parentId)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnectionOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeConnectionOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnectionOptions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionOptionListing>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionOptionListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionOptionListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get connection options 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>Task of ConnectionOptionListing</returns>
+        
+        public async System.Threading.Tasks.Task<ConnectionOptionListing> GetKnowledgeConnectionOptionsAsync (string connectionId, string after = null, string pageSize = null, string parentId = null)
+        {
+             ApiResponse<ConnectionOptionListing> localVarResponse = await GetKnowledgeConnectionOptionsAsyncWithHttpInfo(connectionId, after, pageSize, parentId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get connection options 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of results per page. Minimum: 25, Maximum: 500. (optional, default to "200")</param>
+        /// <param name="parentId">The id of the parent option whose children to be listed. (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectionOptionListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectionOptionListing>> GetKnowledgeConnectionOptionsAsyncWithHttpInfo (string connectionId, string after = null, string pageSize = null, string parentId = null)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->GetKnowledgeConnectionOptions");
+            
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}/options";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (parentId != null) localVarQueryParams.Add(new Tuple<string, string>("parentId", this.Configuration.ApiClient.ParameterToString(parentId)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnectionOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeConnectionOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnectionOptions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionOptionListing>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionOptionListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionOptionListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get connections 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ConnectionListing</returns>
+        
+        public ConnectionListing GetKnowledgeConnections ()
+        {
+             ApiResponse<ConnectionListing> localVarResponse = GetKnowledgeConnectionsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get connections 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ConnectionListing</returns>
+        
+        public ApiResponse< ConnectionListing > GetKnowledgeConnectionsWithHttpInfo ()
+        { 
+
+            var localVarPath = "/api/v2/knowledge/connections";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnections: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionListing>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get connections 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ConnectionListing</returns>
+        
+        public async System.Threading.Tasks.Task<ConnectionListing> GetKnowledgeConnectionsAsync ()
+        {
+             ApiResponse<ConnectionListing> localVarResponse = await GetKnowledgeConnectionsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get connections 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ConnectionListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectionListing>> GetKnowledgeConnectionsAsyncWithHttpInfo ()
+        { 
+
+            var localVarPath = "/api/v2/knowledge/connections";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeConnections: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionListing>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -7765,6 +10290,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeGuestSessionCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7886,6 +10413,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeGuestSessionCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7985,6 +10514,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeGuestSessionDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8086,6 +10617,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeGuestSessionDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8185,6 +10718,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeGuestSessionDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8285,6 +10820,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeGuestSessionDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeGuestSessionDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8388,6 +10925,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeIntegrationOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeIntegrationOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeIntegrationOptions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8492,6 +11031,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeIntegrationOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeIntegrationOptions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeIntegrationOptions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8592,6 +11133,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebase: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8693,6 +11236,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebase: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8820,6 +11365,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8948,6 +11495,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9054,6 +11603,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9162,6 +11713,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9274,6 +11827,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9388,6 +11943,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9527,6 +12084,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9668,6 +12227,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9780,6 +12341,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9895,6 +12458,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10013,6 +12578,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10134,6 +12701,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10255,6 +12824,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10378,6 +12949,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10493,6 +13066,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersion: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersion: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersion: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10611,6 +13186,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersion: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersion: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersion: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10729,6 +13306,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersionVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10851,6 +13430,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersionVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10972,6 +13553,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersionVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11096,6 +13679,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersionVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersionVariations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11214,6 +13799,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11334,6 +13921,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11467,6 +14056,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11601,6 +14192,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11707,6 +14300,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseExportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11815,6 +14410,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseExportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseExportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11924,6 +14521,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseImportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12035,6 +14634,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseImportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12141,6 +14742,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12249,6 +14852,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12364,6 +14969,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12480,6 +15087,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12604,6 +15213,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseOperations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12729,6 +15340,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseOperations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12829,6 +15442,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperationsUsersQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseOperationsUsersQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperationsUsersQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12930,6 +15545,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperationsUsersQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseOperationsUsersQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseOperationsUsersQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13039,6 +15656,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseParseJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13150,6 +15769,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseParseJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13259,6 +15880,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSources: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13369,6 +15992,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSources: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13478,6 +16103,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13589,6 +16216,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13698,6 +16327,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13809,6 +16440,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13915,6 +16548,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14023,6 +16658,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14138,6 +16775,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUnansweredGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14255,6 +16894,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUnansweredGroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14376,6 +17017,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14500,6 +17143,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14609,6 +17254,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUnansweredGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14719,6 +17366,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUnansweredGroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUnansweredGroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14825,6 +17474,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUploadsUrlsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUploadsUrlsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUploadsUrlsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14933,6 +17584,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUploadsUrlsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebaseUploadsUrlsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebaseUploadsUrlsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15054,6 +17707,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebases: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15175,12 +17830,1734 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeKnowledgebases: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<KnowledgeBaseListing>(localVarStatusCode,
                 localVarHeaders,
                 (KnowledgeBaseListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBaseListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>KnowledgeSettingsResponse</returns>
+        
+        public KnowledgeSettingsResponse GetKnowledgeSetting (string knowledgeSettingId)
+        {
+             ApiResponse<KnowledgeSettingsResponse> localVarResponse = GetKnowledgeSettingWithHttpInfo(knowledgeSettingId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>ApiResponse of KnowledgeSettingsResponse</returns>
+        
+        public ApiResponse< KnowledgeSettingsResponse > GetKnowledgeSettingWithHttpInfo (string knowledgeSettingId)
+        { 
+            // verify the required parameter 'knowledgeSettingId' is set
+            if (knowledgeSettingId == null)
+                throw new ApiException(400, "Missing required parameter 'knowledgeSettingId' when calling KnowledgeApi->GetKnowledgeSetting");
+
+            var localVarPath = "/api/v2/knowledge/settings/{knowledgeSettingId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (knowledgeSettingId != null) localVarPathParams.Add("knowledgeSettingId", this.Configuration.ApiClient.ParameterToString(knowledgeSettingId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of KnowledgeSettingsResponse</returns>
+        
+        public async System.Threading.Tasks.Task<KnowledgeSettingsResponse> GetKnowledgeSettingAsync (string knowledgeSettingId)
+        {
+             ApiResponse<KnowledgeSettingsResponse> localVarResponse = await GetKnowledgeSettingAsyncWithHttpInfo(knowledgeSettingId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingsResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingsResponse>> GetKnowledgeSettingAsyncWithHttpInfo (string knowledgeSettingId)
+        { 
+            // verify the required parameter 'knowledgeSettingId' is set
+            if (knowledgeSettingId == null)
+                throw new ApiException(400, "Missing required parameter 'knowledgeSettingId' when calling KnowledgeApi->GetKnowledgeSetting");
+            
+
+            var localVarPath = "/api/v2/knowledge/settings/{knowledgeSettingId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (knowledgeSettingId != null) localVarPathParams.Add("knowledgeSettingId", this.Configuration.ApiClient.ParameterToString(knowledgeSettingId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get Knowledge settings. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>KnowledgeSettingListing</returns>
+        
+        public KnowledgeSettingListing GetKnowledgeSettings (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null)
+        {
+             ApiResponse<KnowledgeSettingListing> localVarResponse = GetKnowledgeSettingsWithHttpInfo(before, after, pageSize, name, sourceId, sortBy, sortOrder);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Knowledge settings. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSettingListing</returns>
+        
+        public ApiResponse< KnowledgeSettingListing > GetKnowledgeSettingsWithHttpInfo (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (before != null) localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            if (sourceId != null) localVarQueryParams.Add(new Tuple<string, string>("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId)));
+            if (sortBy != null) localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            if (sortOrder != null) localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingListing>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get Knowledge settings. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>Task of KnowledgeSettingListing</returns>
+        
+        public async System.Threading.Tasks.Task<KnowledgeSettingListing> GetKnowledgeSettingsAsync (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null)
+        {
+             ApiResponse<KnowledgeSettingListing> localVarResponse = await GetKnowledgeSettingsAsyncWithHttpInfo(before, after, pageSize, name, sourceId, sortBy, sortOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Knowledge settings. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <param name="name">Knowledge setting name to search upon. (optional)</param>
+        /// <param name="sourceId">Source ID to filter knowledge settings by. (optional)</param>
+        /// <param name="sortBy">Field to sort the knowledge settings on. (optional)</param>
+        /// <param name="sortOrder">Sorting order for knowledge settings. (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingListing>> GetKnowledgeSettingsAsyncWithHttpInfo (string before = null, string after = null, string pageSize = null, string name = null, string sourceId = null, string sortBy = null, string sortOrder = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/settings";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (before != null) localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+            if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            if (sourceId != null) localVarQueryParams.Add(new Tuple<string, string>("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId)));
+            if (sortBy != null) localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            if (sortOrder != null) localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingListing>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>V3SourceExpandableResponse</returns>
+        
+        public V3SourceExpandableResponse GetKnowledgeSource (string sourceId, List<string> expand = null)
+        {
+             ApiResponse<V3SourceExpandableResponse> localVarResponse = GetKnowledgeSourceWithHttpInfo(sourceId, expand);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>ApiResponse of V3SourceExpandableResponse</returns>
+        
+        public ApiResponse< V3SourceExpandableResponse > GetKnowledgeSourceWithHttpInfo (string sourceId, List<string> expand = null)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->GetKnowledgeSource");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSource: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceExpandableResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceExpandableResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceExpandableResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of V3SourceExpandableResponse</returns>
+        
+        public async System.Threading.Tasks.Task<V3SourceExpandableResponse> GetKnowledgeSourceAsync (string sourceId, List<string> expand = null)
+        {
+             ApiResponse<V3SourceExpandableResponse> localVarResponse = await GetKnowledgeSourceAsyncWithHttpInfo(sourceId, expand);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SourceExpandableResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SourceExpandableResponse>> GetKnowledgeSourceAsyncWithHttpInfo (string sourceId, List<string> expand = null)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->GetKnowledgeSource");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSource: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceExpandableResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceExpandableResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceExpandableResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get a specific synchronization of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>V3Synchronization</returns>
+        
+        public V3Synchronization GetKnowledgeSourceSynchronization (string sourceId, string synchronizationId)
+        {
+             ApiResponse<V3Synchronization> localVarResponse = GetKnowledgeSourceSynchronizationWithHttpInfo(sourceId, synchronizationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a specific synchronization of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>ApiResponse of V3Synchronization</returns>
+        
+        public ApiResponse< V3Synchronization > GetKnowledgeSourceSynchronizationWithHttpInfo (string sourceId, string synchronizationId)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->GetKnowledgeSourceSynchronization");
+            // verify the required parameter 'synchronizationId' is set
+            if (synchronizationId == null)
+                throw new ApiException(400, "Missing required parameter 'synchronizationId' when calling KnowledgeApi->GetKnowledgeSourceSynchronization");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            if (synchronizationId != null) localVarPathParams.Add("synchronizationId", this.Configuration.ApiClient.ParameterToString(synchronizationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3Synchronization>(localVarStatusCode,
+                localVarHeaders,
+                (V3Synchronization) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3Synchronization)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get a specific synchronization of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>Task of V3Synchronization</returns>
+        
+        public async System.Threading.Tasks.Task<V3Synchronization> GetKnowledgeSourceSynchronizationAsync (string sourceId, string synchronizationId)
+        {
+             ApiResponse<V3Synchronization> localVarResponse = await GetKnowledgeSourceSynchronizationAsyncWithHttpInfo(sourceId, synchronizationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a specific synchronization of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <returns>Task of ApiResponse (V3Synchronization)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3Synchronization>> GetKnowledgeSourceSynchronizationAsyncWithHttpInfo (string sourceId, string synchronizationId)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->GetKnowledgeSourceSynchronization");
+            
+            // verify the required parameter 'synchronizationId' is set
+            if (synchronizationId == null)
+                throw new ApiException(400, "Missing required parameter 'synchronizationId' when calling KnowledgeApi->GetKnowledgeSourceSynchronization");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            if (synchronizationId != null) localVarPathParams.Add("synchronizationId", this.Configuration.ApiClient.ParameterToString(synchronizationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3Synchronization>(localVarStatusCode,
+                localVarHeaders,
+                (V3Synchronization) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3Synchronization)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get synchronizations of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>V3SynchronizationListing</returns>
+        
+        public V3SynchronizationListing GetKnowledgeSourceSynchronizations (string sourceId, string before = null, string after = null, string pageSize = null)
+        {
+             ApiResponse<V3SynchronizationListing> localVarResponse = GetKnowledgeSourceSynchronizationsWithHttpInfo(sourceId, before, after, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get synchronizations of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>ApiResponse of V3SynchronizationListing</returns>
+        
+        public ApiResponse< V3SynchronizationListing > GetKnowledgeSourceSynchronizationsWithHttpInfo (string sourceId, string before = null, string after = null, string pageSize = null)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->GetKnowledgeSourceSynchronizations");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+            if (before != null) localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronizations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SynchronizationListing>(localVarStatusCode,
+                localVarHeaders,
+                (V3SynchronizationListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SynchronizationListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get synchronizations of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of V3SynchronizationListing</returns>
+        
+        public async System.Threading.Tasks.Task<V3SynchronizationListing> GetKnowledgeSourceSynchronizationsAsync (string sourceId, string before = null, string after = null, string pageSize = null)
+        {
+             ApiResponse<V3SynchronizationListing> localVarResponse = await GetKnowledgeSourceSynchronizationsAsyncWithHttpInfo(sourceId, before, after, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get synchronizations of a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SynchronizationListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SynchronizationListing>> GetKnowledgeSourceSynchronizationsAsyncWithHttpInfo (string sourceId, string before = null, string after = null, string pageSize = null)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->GetKnowledgeSourceSynchronizations");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+            if (before != null) localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourceSynchronizations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SynchronizationListing>(localVarStatusCode,
+                localVarHeaders,
+                (V3SynchronizationListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SynchronizationListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// List sources 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>V3SourceExpandableListing</returns>
+        
+        public V3SourceExpandableListing GetKnowledgeSources (List<string> expand = null)
+        {
+             ApiResponse<V3SourceExpandableListing> localVarResponse = GetKnowledgeSourcesWithHttpInfo(expand);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List sources 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>ApiResponse of V3SourceExpandableListing</returns>
+        
+        public ApiResponse< V3SourceExpandableListing > GetKnowledgeSourcesWithHttpInfo (List<string> expand = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/sources";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSources: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceExpandableListing>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceExpandableListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceExpandableListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// List sources 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of V3SourceExpandableListing</returns>
+        
+        public async System.Threading.Tasks.Task<V3SourceExpandableListing> GetKnowledgeSourcesAsync (List<string> expand = null)
+        {
+             ApiResponse<V3SourceExpandableListing> localVarResponse = await GetKnowledgeSourcesAsyncWithHttpInfo(expand);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List sources 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="expand">Optional fields to expand for the Source. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SourceExpandableListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SourceExpandableListing>> GetKnowledgeSourcesAsyncWithHttpInfo (List<string> expand = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/sources";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSources: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceExpandableListing>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceExpandableListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceExpandableListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>V3SynchronizationListing</returns>
+        
+        public V3SynchronizationListing GetKnowledgeSourcesSynchronizations (string before = null, string after = null, string pageSize = null)
+        {
+             ApiResponse<V3SynchronizationListing> localVarResponse = GetKnowledgeSourcesSynchronizationsWithHttpInfo(before, after, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>ApiResponse of V3SynchronizationListing</returns>
+        
+        public ApiResponse< V3SynchronizationListing > GetKnowledgeSourcesSynchronizationsWithHttpInfo (string before = null, string after = null, string pageSize = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/sources/synchronizations";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (before != null) localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourcesSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSourcesSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourcesSynchronizations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SynchronizationListing>(localVarStatusCode,
+                localVarHeaders,
+                (V3SynchronizationListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SynchronizationListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of V3SynchronizationListing</returns>
+        
+        public async System.Threading.Tasks.Task<V3SynchronizationListing> GetKnowledgeSourcesSynchronizationsAsync (string before = null, string after = null, string pageSize = null)
+        {
+             ApiResponse<V3SynchronizationListing> localVarResponse = await GetKnowledgeSourcesSynchronizationsAsyncWithHttpInfo(before, after, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get synchronizations of all sources of the organization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="before">The cursor that points to the start of the set of entities that has been returned. (optional)</param>
+        /// <param name="after">The cursor that points to the end of the set of entities that has been returned. (optional)</param>
+        /// <param name="pageSize">Number of entities to return. Maximum of 200. (optional)</param>
+        /// <returns>Task of ApiResponse (V3SynchronizationListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SynchronizationListing>> GetKnowledgeSourcesSynchronizationsAsyncWithHttpInfo (string before = null, string after = null, string pageSize = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/sources/synchronizations";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (before != null) localVarQueryParams.Add(new Tuple<string, string>("before", this.Configuration.ApiClient.ParameterToString(before)));
+            if (after != null) localVarQueryParams.Add(new Tuple<string, string>("after", this.Configuration.ApiClient.ParameterToString(after)));
+            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourcesSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetKnowledgeSourcesSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetKnowledgeSourcesSynchronizations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SynchronizationListing>(localVarStatusCode,
+                localVarHeaders,
+                (V3SynchronizationListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SynchronizationListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ConnectionResponse</returns>
+        
+        public ConnectionResponse PatchKnowledgeConnection (string connectionId, ConnectionUpdateRequest body = null)
+        {
+             ApiResponse<ConnectionResponse> localVarResponse = PatchKnowledgeConnectionWithHttpInfo(connectionId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of ConnectionResponse</returns>
+        
+        public ApiResponse< ConnectionResponse > PatchKnowledgeConnectionWithHttpInfo (string connectionId, ConnectionUpdateRequest body = null)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->PatchKnowledgeConnection");
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeConnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ConnectionResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ConnectionResponse> PatchKnowledgeConnectionAsync (string connectionId, ConnectionUpdateRequest body = null)
+        {
+             ApiResponse<ConnectionResponse> localVarResponse = await PatchKnowledgeConnectionAsyncWithHttpInfo(connectionId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId">Connection ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectionResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectionResponse>> PatchKnowledgeConnectionAsyncWithHttpInfo (string connectionId, ConnectionUpdateRequest body = null)
+        { 
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling KnowledgeApi->PatchKnowledgeConnection");
+            
+
+            var localVarPath = "/api/v2/knowledge/connections/{connectionId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeConnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeConnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -15284,6 +19661,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeGuestSessionDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeGuestSessionDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeGuestSessionDocumentsSearchSearchId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15396,6 +19775,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeGuestSessionDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeGuestSessionDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeGuestSessionDocumentsSearchSearchId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15507,6 +19888,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebase: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15620,6 +20003,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebase: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebase: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15737,6 +20122,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15857,6 +20244,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15970,6 +20359,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseChunksSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseChunksSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseChunksSearchSearchId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16085,6 +20476,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseChunksSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseChunksSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseChunksSearchSearchId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16202,6 +20595,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16322,6 +20717,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16442,6 +20839,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16565,6 +20964,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16688,6 +21089,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16815,6 +21218,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentVariation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16928,6 +21333,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentsSearchSearchId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17043,6 +21450,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseDocumentsSearchSearchId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseDocumentsSearchSearchId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17160,6 +21569,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseImportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17280,6 +21691,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseImportJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseImportJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17397,6 +21810,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17517,6 +21932,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17633,6 +22050,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseParseJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17752,6 +22171,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseParseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseParseJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17869,6 +22290,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17989,6 +22412,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseSynchronizeJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18112,6 +22537,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18239,12 +22666,698 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<UnansweredPhraseGroupUpdateResponse>(localVarStatusCode,
                 localVarHeaders,
                 (UnansweredPhraseGroupUpdateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UnansweredPhraseGroupUpdateResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>KnowledgeSettingsResponse</returns>
+        
+        public KnowledgeSettingsResponse PatchKnowledgeSetting (string knowledgeSettingId, KnowledgeSettingsRequest body)
+        {
+             ApiResponse<KnowledgeSettingsResponse> localVarResponse = PatchKnowledgeSettingWithHttpInfo(knowledgeSettingId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of KnowledgeSettingsResponse</returns>
+        
+        public ApiResponse< KnowledgeSettingsResponse > PatchKnowledgeSettingWithHttpInfo (string knowledgeSettingId, KnowledgeSettingsRequest body)
+        { 
+            // verify the required parameter 'knowledgeSettingId' is set
+            if (knowledgeSettingId == null)
+                throw new ApiException(400, "Missing required parameter 'knowledgeSettingId' when calling KnowledgeApi->PatchKnowledgeSetting");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PatchKnowledgeSetting");
+
+            var localVarPath = "/api/v2/knowledge/settings/{knowledgeSettingId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (knowledgeSettingId != null) localVarPathParams.Add("knowledgeSettingId", this.Configuration.ApiClient.ParameterToString(knowledgeSettingId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>Task of KnowledgeSettingsResponse</returns>
+        
+        public async System.Threading.Tasks.Task<KnowledgeSettingsResponse> PatchKnowledgeSettingAsync (string knowledgeSettingId, KnowledgeSettingsRequest body)
+        {
+             ApiResponse<KnowledgeSettingsResponse> localVarResponse = await PatchKnowledgeSettingAsyncWithHttpInfo(knowledgeSettingId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="knowledgeSettingId">Knowledge Setting ID.</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingsResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingsResponse>> PatchKnowledgeSettingAsyncWithHttpInfo (string knowledgeSettingId, KnowledgeSettingsRequest body)
+        { 
+            // verify the required parameter 'knowledgeSettingId' is set
+            if (knowledgeSettingId == null)
+                throw new ApiException(400, "Missing required parameter 'knowledgeSettingId' when calling KnowledgeApi->PatchKnowledgeSetting");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PatchKnowledgeSetting");
+            
+
+            var localVarPath = "/api/v2/knowledge/settings/{knowledgeSettingId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (knowledgeSettingId != null) localVarPathParams.Add("knowledgeSettingId", this.Configuration.ApiClient.ParameterToString(knowledgeSettingId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeSetting: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSetting: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>V3Synchronization</returns>
+        
+        public V3Synchronization PatchKnowledgeSourceSynchronization (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body)
+        {
+             ApiResponse<V3Synchronization> localVarResponse = PatchKnowledgeSourceSynchronizationWithHttpInfo(sourceId, synchronizationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3Synchronization</returns>
+        
+        public ApiResponse< V3Synchronization > PatchKnowledgeSourceSynchronizationWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PatchKnowledgeSourceSynchronization");
+            // verify the required parameter 'synchronizationId' is set
+            if (synchronizationId == null)
+                throw new ApiException(400, "Missing required parameter 'synchronizationId' when calling KnowledgeApi->PatchKnowledgeSourceSynchronization");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PatchKnowledgeSourceSynchronization");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            if (synchronizationId != null) localVarPathParams.Add("synchronizationId", this.Configuration.ApiClient.ParameterToString(synchronizationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSourceSynchronization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3Synchronization>(localVarStatusCode,
+                localVarHeaders,
+                (V3Synchronization) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3Synchronization)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of V3Synchronization</returns>
+        
+        public async System.Threading.Tasks.Task<V3Synchronization> PatchKnowledgeSourceSynchronizationAsync (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body)
+        {
+             ApiResponse<V3Synchronization> localVarResponse = await PatchKnowledgeSourceSynchronizationAsyncWithHttpInfo(sourceId, synchronizationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3Synchronization)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3Synchronization>> PatchKnowledgeSourceSynchronizationAsyncWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUpdateRequest body)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PatchKnowledgeSourceSynchronization");
+            
+            // verify the required parameter 'synchronizationId' is set
+            if (synchronizationId == null)
+                throw new ApiException(400, "Missing required parameter 'synchronizationId' when calling KnowledgeApi->PatchKnowledgeSourceSynchronization");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PatchKnowledgeSourceSynchronization");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            if (synchronizationId != null) localVarPathParams.Add("synchronizationId", this.Configuration.ApiClient.ParameterToString(synchronizationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchKnowledgeSourceSynchronization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchKnowledgeSourceSynchronization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3Synchronization>(localVarStatusCode,
+                localVarHeaders,
+                (V3Synchronization) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3Synchronization)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create new connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ConnectionCreateResponse</returns>
+        
+        public ConnectionCreateResponse PostKnowledgeConnections (ConnectionCreateRequest body)
+        {
+             ApiResponse<ConnectionCreateResponse> localVarResponse = PostKnowledgeConnectionsWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create new connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of ConnectionCreateResponse</returns>
+        
+        public ApiResponse< ConnectionCreateResponse > PostKnowledgeConnectionsWithHttpInfo (ConnectionCreateRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PostKnowledgeConnections");
+
+            var localVarPath = "/api/v2/knowledge/connections";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeConnections: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionCreateResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionCreateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionCreateResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create new connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ConnectionCreateResponse</returns>
+        
+        public async System.Threading.Tasks.Task<ConnectionCreateResponse> PostKnowledgeConnectionsAsync (ConnectionCreateRequest body)
+        {
+             ApiResponse<ConnectionCreateResponse> localVarResponse = await PostKnowledgeConnectionsAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create new connection 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (ConnectionCreateResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectionCreateResponse>> PostKnowledgeConnectionsAsyncWithHttpInfo (ConnectionCreateRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PostKnowledgeConnections");
+            
+
+            var localVarPath = "/api/v2/knowledge/connections";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeConnections: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeConnections: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ConnectionCreateResponse>(localVarStatusCode,
+                localVarHeaders,
+                (ConnectionCreateResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectionCreateResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -18344,6 +23457,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeDocumentuploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeDocumentuploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeDocumentuploads: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18450,6 +23565,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeDocumentuploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeDocumentuploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeDocumentuploads: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18556,6 +23673,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentCopies: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18664,6 +23783,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentCopies: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18771,6 +23892,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentFeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18880,6 +24003,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentFeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18986,6 +24111,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentViews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19094,6 +24221,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentViews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19198,6 +24327,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsAnswers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19304,6 +24435,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsAnswers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19404,6 +24537,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsPresentations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19505,6 +24640,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsPresentations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19609,6 +24746,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19714,6 +24853,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19815,6 +24956,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearchSuggestions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19917,6 +25060,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessionDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessionDocumentsSearchSuggestions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20015,6 +25160,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20114,6 +25261,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeGuestSessions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeGuestSessions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20225,6 +25374,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20338,6 +25489,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20446,6 +25599,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseChunksSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseChunksSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseChunksSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20555,6 +25710,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseChunksSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseChunksSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseChunksSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20668,6 +25825,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentCopies: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20783,6 +25942,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentCopies: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentCopies: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20897,6 +26058,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21013,6 +26176,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentFeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21130,6 +26295,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21250,6 +26417,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVariations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21367,6 +26536,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21487,6 +26658,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21600,6 +26773,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentViews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21715,6 +26890,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentViews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentViews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21826,6 +27003,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21939,6 +27118,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22050,6 +27231,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsAnswers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22163,6 +27346,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsAnswers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsAnswers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22274,6 +27459,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkRemove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22387,6 +27574,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsBulkRemove: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkRemove: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22498,6 +27687,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsBulkUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkUpdate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22611,6 +27802,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsBulkUpdate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsBulkUpdate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22718,6 +27911,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsPresentations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22826,6 +28021,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsPresentations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsPresentations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22937,6 +28134,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23049,6 +28248,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23160,6 +28361,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23272,6 +28475,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23380,6 +28585,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearchSuggestions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23489,6 +28696,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsSearchSuggestions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsSearchSuggestions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23600,6 +28809,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsVersionsBulkAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsVersionsBulkAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsVersionsBulkAdd: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23713,6 +28924,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsVersionsBulkAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseDocumentsVersionsBulkAdd: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseDocumentsVersionsBulkAdd: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23824,6 +29037,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseExportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseExportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseExportJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23937,6 +29152,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseExportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseExportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseExportJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24048,6 +29265,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseImportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseImportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseImportJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24161,6 +29380,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseImportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseImportJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseImportJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24272,6 +29493,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24385,6 +29608,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24501,6 +29726,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseParseJobImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24620,6 +29847,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseParseJobImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24731,6 +29960,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseParseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24844,6 +30075,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseParseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseParseJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24955,6 +30188,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforce: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesSalesforce: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforce: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25068,6 +30303,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforce: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesSalesforce: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforce: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25182,6 +30419,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25298,6 +30537,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25409,6 +30650,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenow: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesServicenow: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenow: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25522,6 +30765,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenow: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesServicenow: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenow: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25636,6 +30881,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSync: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25752,6 +30999,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSync: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSync: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25863,6 +31112,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSynchronizeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSynchronizeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSynchronizeJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25976,6 +31227,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSynchronizeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseSynchronizeJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseSynchronizeJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26087,6 +31340,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseUploadsUrlsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseUploadsUrlsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseUploadsUrlsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26200,6 +31455,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseUploadsUrlsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebaseUploadsUrlsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebaseUploadsUrlsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26305,6 +31562,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebases: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26411,12 +31670,1315 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeKnowledgebases: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeKnowledgebases: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<KnowledgeBase>(localVarStatusCode,
                 localVarHeaders,
                 (KnowledgeBase) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeBase)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get Knowledge Search 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>KnowledgeSourcesSearchResponse</returns>
+        
+        public KnowledgeSourcesSearchResponse PostKnowledgeSearch (KnowledgeSourcesSearchRequest body = null)
+        {
+             ApiResponse<KnowledgeSourcesSearchResponse> localVarResponse = PostKnowledgeSearchWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Knowledge Search 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSourcesSearchResponse</returns>
+        
+        public ApiResponse< KnowledgeSourcesSearchResponse > PostKnowledgeSearchWithHttpInfo (KnowledgeSourcesSearchRequest body = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/search";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSourcesSearchResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSourcesSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSourcesSearchResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get Knowledge Search 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of KnowledgeSourcesSearchResponse</returns>
+        
+        public async System.Threading.Tasks.Task<KnowledgeSourcesSearchResponse> PostKnowledgeSearchAsync (KnowledgeSourcesSearchRequest body = null)
+        {
+             ApiResponse<KnowledgeSourcesSearchResponse> localVarResponse = await PostKnowledgeSearchAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Knowledge Search 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSourcesSearchResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<KnowledgeSourcesSearchResponse>> PostKnowledgeSearchAsyncWithHttpInfo (KnowledgeSourcesSearchRequest body = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/search";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSourcesSearchResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSourcesSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSourcesSearchResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get Knowledge Search Preview 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>KnowledgeSearchPreviewResponse</returns>
+        
+        public KnowledgeSearchPreviewResponse PostKnowledgeSearchPreview (KnowledgeSearchPreviewRequest body = null)
+        {
+             ApiResponse<KnowledgeSearchPreviewResponse> localVarResponse = PostKnowledgeSearchPreviewWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Knowledge Search Preview 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSearchPreviewResponse</returns>
+        
+        public ApiResponse< KnowledgeSearchPreviewResponse > PostKnowledgeSearchPreviewWithHttpInfo (KnowledgeSearchPreviewRequest body = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/search/preview";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearchPreview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSearchPreview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearchPreview: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSearchPreviewResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSearchPreviewResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchPreviewResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get Knowledge Search Preview 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of KnowledgeSearchPreviewResponse</returns>
+        
+        public async System.Threading.Tasks.Task<KnowledgeSearchPreviewResponse> PostKnowledgeSearchPreviewAsync (KnowledgeSearchPreviewRequest body = null)
+        {
+             ApiResponse<KnowledgeSearchPreviewResponse> localVarResponse = await PostKnowledgeSearchPreviewAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Knowledge Search Preview 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSearchPreviewResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<KnowledgeSearchPreviewResponse>> PostKnowledgeSearchPreviewAsyncWithHttpInfo (KnowledgeSearchPreviewRequest body = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/search/preview";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearchPreview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSearchPreview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSearchPreview: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSearchPreviewResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSearchPreviewResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSearchPreviewResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>KnowledgeSettingsResponse</returns>
+        
+        public KnowledgeSettingsResponse PostKnowledgeSettings (KnowledgeSettingsRequest body = null)
+        {
+             ApiResponse<KnowledgeSettingsResponse> localVarResponse = PostKnowledgeSettingsWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of KnowledgeSettingsResponse</returns>
+        
+        public ApiResponse< KnowledgeSettingsResponse > PostKnowledgeSettingsWithHttpInfo (KnowledgeSettingsRequest body = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/settings";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of KnowledgeSettingsResponse</returns>
+        
+        public async System.Threading.Tasks.Task<KnowledgeSettingsResponse> PostKnowledgeSettingsAsync (KnowledgeSettingsRequest body = null)
+        {
+             ApiResponse<KnowledgeSettingsResponse> localVarResponse = await PostKnowledgeSettingsAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create Knowledge setting. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (KnowledgeSettingsResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<KnowledgeSettingsResponse>> PostKnowledgeSettingsAsyncWithHttpInfo (KnowledgeSettingsRequest body = null)
+        { 
+
+            var localVarPath = "/api/v2/knowledge/settings";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<KnowledgeSettingsResponse>(localVarStatusCode,
+                localVarHeaders,
+                (KnowledgeSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(KnowledgeSettingsResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>V3SynchronizationUploadUrlResponse</returns>
+        
+        public V3SynchronizationUploadUrlResponse PostKnowledgeSourceSynchronizationUploads (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body)
+        {
+             ApiResponse<V3SynchronizationUploadUrlResponse> localVarResponse = PostKnowledgeSourceSynchronizationUploadsWithHttpInfo(sourceId, synchronizationId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3SynchronizationUploadUrlResponse</returns>
+        
+        public ApiResponse< V3SynchronizationUploadUrlResponse > PostKnowledgeSourceSynchronizationUploadsWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PostKnowledgeSourceSynchronizationUploads");
+            // verify the required parameter 'synchronizationId' is set
+            if (synchronizationId == null)
+                throw new ApiException(400, "Missing required parameter 'synchronizationId' when calling KnowledgeApi->PostKnowledgeSourceSynchronizationUploads");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PostKnowledgeSourceSynchronizationUploads");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            if (synchronizationId != null) localVarPathParams.Add("synchronizationId", this.Configuration.ApiClient.ParameterToString(synchronizationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizationUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSourceSynchronizationUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizationUploads: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SynchronizationUploadUrlResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SynchronizationUploadUrlResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SynchronizationUploadUrlResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of V3SynchronizationUploadUrlResponse</returns>
+        
+        public async System.Threading.Tasks.Task<V3SynchronizationUploadUrlResponse> PostKnowledgeSourceSynchronizationUploadsAsync (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body)
+        {
+             ApiResponse<V3SynchronizationUploadUrlResponse> localVarResponse = await PostKnowledgeSourceSynchronizationUploadsAsyncWithHttpInfo(sourceId, synchronizationId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create presigned URL for uploading a file in the synchronization. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="synchronizationId">Synchronization ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3SynchronizationUploadUrlResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SynchronizationUploadUrlResponse>> PostKnowledgeSourceSynchronizationUploadsAsyncWithHttpInfo (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PostKnowledgeSourceSynchronizationUploads");
+            
+            // verify the required parameter 'synchronizationId' is set
+            if (synchronizationId == null)
+                throw new ApiException(400, "Missing required parameter 'synchronizationId' when calling KnowledgeApi->PostKnowledgeSourceSynchronizationUploads");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PostKnowledgeSourceSynchronizationUploads");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+            if (synchronizationId != null) localVarPathParams.Add("synchronizationId", this.Configuration.ApiClient.ParameterToString(synchronizationId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizationUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSourceSynchronizationUploads: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizationUploads: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SynchronizationUploadUrlResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SynchronizationUploadUrlResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SynchronizationUploadUrlResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Start a manual synchronization from a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>V3Synchronization</returns>
+        
+        public V3Synchronization PostKnowledgeSourceSynchronizations (string sourceId, V3StartManualSyncRequest body = null)
+        {
+             ApiResponse<V3Synchronization> localVarResponse = PostKnowledgeSourceSynchronizationsWithHttpInfo(sourceId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Start a manual synchronization from a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of V3Synchronization</returns>
+        
+        public ApiResponse< V3Synchronization > PostKnowledgeSourceSynchronizationsWithHttpInfo (string sourceId, V3StartManualSyncRequest body = null)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PostKnowledgeSourceSynchronizations");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3Synchronization>(localVarStatusCode,
+                localVarHeaders,
+                (V3Synchronization) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3Synchronization)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Start a manual synchronization from a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of V3Synchronization</returns>
+        
+        public async System.Threading.Tasks.Task<V3Synchronization> PostKnowledgeSourceSynchronizationsAsync (string sourceId, V3StartManualSyncRequest body = null)
+        {
+             ApiResponse<V3Synchronization> localVarResponse = await PostKnowledgeSourceSynchronizationsAsyncWithHttpInfo(sourceId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Start a manual synchronization from a source. 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (V3Synchronization)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3Synchronization>> PostKnowledgeSourceSynchronizationsAsyncWithHttpInfo (string sourceId, V3StartManualSyncRequest body = null)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PostKnowledgeSourceSynchronizations");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}/synchronizations";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSourceSynchronizations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSourceSynchronizations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3Synchronization>(localVarStatusCode,
+                localVarHeaders,
+                (V3Synchronization) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3Synchronization)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create a new source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>V3SourceDetailedResponse</returns>
+        
+        public V3SourceDetailedResponse PostKnowledgeSources (V3SourceCreateRequest body)
+        {
+             ApiResponse<V3SourceDetailedResponse> localVarResponse = PostKnowledgeSourcesWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a new source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3SourceDetailedResponse</returns>
+        
+        public ApiResponse< V3SourceDetailedResponse > PostKnowledgeSourcesWithHttpInfo (V3SourceCreateRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PostKnowledgeSources");
+
+            var localVarPath = "/api/v2/knowledge/sources";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSources: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceDetailedResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceDetailedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceDetailedResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create a new source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of V3SourceDetailedResponse</returns>
+        
+        public async System.Threading.Tasks.Task<V3SourceDetailedResponse> PostKnowledgeSourcesAsync (V3SourceCreateRequest body)
+        {
+             ApiResponse<V3SourceDetailedResponse> localVarResponse = await PostKnowledgeSourcesAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create a new source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3SourceDetailedResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SourceDetailedResponse>> PostKnowledgeSourcesAsyncWithHttpInfo (V3SourceCreateRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PostKnowledgeSources");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostKnowledgeSources: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostKnowledgeSources: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceDetailedResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceDetailedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceDetailedResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -26528,6 +33090,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26648,6 +33212,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesSalesforceSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26765,6 +33331,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26885,12 +33453,242 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeKnowledgebaseSourcesServicenowSourceId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<ServiceNowSourceResponse>(localVarStatusCode,
                 localVarHeaders,
                 (ServiceNowSourceResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServiceNowSourceResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update the source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>V3SourceDetailedResponse</returns>
+        
+        public V3SourceDetailedResponse PutKnowledgeSource (string sourceId, V3SourceUpdateRequest body)
+        {
+             ApiResponse<V3SourceDetailedResponse> localVarResponse = PutKnowledgeSourceWithHttpInfo(sourceId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of V3SourceDetailedResponse</returns>
+        
+        public ApiResponse< V3SourceDetailedResponse > PutKnowledgeSourceWithHttpInfo (string sourceId, V3SourceUpdateRequest body)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PutKnowledgeSource");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PutKnowledgeSource");
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeSource: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceDetailedResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceDetailedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceDetailedResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update the source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of V3SourceDetailedResponse</returns>
+        
+        public async System.Threading.Tasks.Task<V3SourceDetailedResponse> PutKnowledgeSourceAsync (string sourceId, V3SourceUpdateRequest body)
+        {
+             ApiResponse<V3SourceDetailedResponse> localVarResponse = await PutKnowledgeSourceAsyncWithHttpInfo(sourceId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update the source 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">Source ID</param>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (V3SourceDetailedResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<V3SourceDetailedResponse>> PutKnowledgeSourceAsyncWithHttpInfo (string sourceId, V3SourceUpdateRequest body)
+        { 
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+                throw new ApiException(400, "Missing required parameter 'sourceId' when calling KnowledgeApi->PutKnowledgeSource");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling KnowledgeApi->PutKnowledgeSource");
+            
+
+            var localVarPath = "/api/v2/knowledge/sources/{sourceId}";
+            var localVarHttpMethod = "Put";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (sourceId != null) localVarPathParams.Add("sourceId", this.Configuration.ApiClient.ParameterToString(sourceId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutKnowledgeSource: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PutKnowledgeSource: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<V3SourceDetailedResponse>(localVarStatusCode,
+                localVarHeaders,
+                (V3SourceDetailedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(V3SourceDetailedResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

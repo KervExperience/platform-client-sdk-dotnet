@@ -30,6 +30,7 @@
 | **ConversationRoutingData** | [**QueueConversationVideoEventTopicConversationRoutingData**](QueueConversationVideoEventTopicConversationRoutingData) |  | [optional] |
 | **AlertingTimeoutMs** | **long?** | Specifies how long the agent has to answer an interaction before being marked as not responding. | [optional] |
 | **MonitoredParticipantId** | **string** | If this participant is a monitor, then this will be the id of the participant that is being monitored. | [optional] |
+| **ScreenMonitoredParticipantId** | **string** | If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored. | [optional] |
 | **CoachedParticipantId** | **string** | If this participant is a coach, then this will be the id of the participant that is being coached. | [optional] |
 | **BargedParticipantId** | **string** | If this participant created a barge in conference, then this will be the id of the participant that is barged in. | [optional] |
 | **MediaRoles** | **List&lt;string&gt;** | List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc. | [optional] |
@@ -43,6 +44,7 @@
 | **Emails** | [**List&lt;QueueConversationVideoEventTopicEmail&gt;**](QueueConversationVideoEventTopicEmail) |  | [optional] |
 | **Messages** | [**List&lt;QueueConversationVideoEventTopicMessage&gt;**](QueueConversationVideoEventTopicMessage) |  | [optional] |
 | **InternalMessages** | [**List&lt;QueueConversationVideoEventTopicInternalMessage&gt;**](QueueConversationVideoEventTopicInternalMessage) |  | [optional] |
+| **ScreenMonitorings** | [**List&lt;QueueConversationVideoEventTopicScreenMonitoring&gt;**](QueueConversationVideoEventTopicScreenMonitoring) |  | [optional] |
 | **Screenshares** | [**List&lt;QueueConversationVideoEventTopicScreenShare&gt;**](QueueConversationVideoEventTopicScreenShare) |  | [optional] |
 | **SocialExpressions** | [**List&lt;QueueConversationVideoEventTopicSocialExpression&gt;**](QueueConversationVideoEventTopicSocialExpression) |  | [optional] |
 | **Videos** | [**List&lt;QueueConversationVideoEventTopicVideo&gt;**](QueueConversationVideoEventTopicVideo) |  | [optional] |
@@ -50,4 +52,4 @@
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

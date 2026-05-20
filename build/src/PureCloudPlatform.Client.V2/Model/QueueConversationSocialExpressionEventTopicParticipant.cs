@@ -102,6 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="ConversationRoutingData">ConversationRoutingData.</param>
         /// <param name="AlertingTimeoutMs">Specifies how long the agent has to answer an interaction before being marked as not responding..</param>
         /// <param name="MonitoredParticipantId">If this participant is a monitor, then this will be the id of the participant that is being monitored..</param>
+        /// <param name="ScreenMonitoredParticipantId">If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored..</param>
         /// <param name="CoachedParticipantId">If this participant is a coach, then this will be the id of the participant that is being coached..</param>
         /// <param name="BargedParticipantId">If this participant created a barge in conference, then this will be the id of the participant that is barged in..</param>
         /// <param name="MediaRoles">List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc..</param>
@@ -115,11 +116,12 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="Emails">Emails.</param>
         /// <param name="Messages">Messages.</param>
         /// <param name="InternalMessages">InternalMessages.</param>
+        /// <param name="ScreenMonitorings">ScreenMonitorings.</param>
         /// <param name="Screenshares">Screenshares.</param>
         /// <param name="SocialExpressions">SocialExpressions.</param>
         /// <param name="Videos">Videos.</param>
         /// <param name="Workflow">Workflow.</param>
-        public QueueConversationSocialExpressionEventTopicParticipant(string Id = null, DateTime? ConnectedTime = null, DateTime? EndTime = null, string UserId = null, string ExternalContactId = null, string ExternalContactInitialDivisionId = null, string ExternalOrganizationId = null, string Name = null, string QueueId = null, string GroupId = null, string TeamId = null, string Purpose = null, string ConsultParticipantId = null, string Address = null, bool? WrapupRequired = null, bool? WrapupExpected = null, string WrapupPrompt = null, long? WrapupTimeoutMs = null, QueueConversationSocialExpressionEventTopicWrapup Wrapup = null, DateTime? StartAcwTime = null, DateTime? EndAcwTime = null, QueueConversationSocialExpressionEventTopicConversationRoutingData ConversationRoutingData = null, long? AlertingTimeoutMs = null, string MonitoredParticipantId = null, string CoachedParticipantId = null, string BargedParticipantId = null, List<string> MediaRoles = null, ScreenRecordingStateEnum? ScreenRecordingState = null, string FlaggedReason = null, Dictionary<string, string> Attributes = null, List<QueueConversationSocialExpressionEventTopicCall> Calls = null, List<QueueConversationSocialExpressionEventTopicCallback> Callbacks = null, List<QueueConversationSocialExpressionEventTopicChat> Chats = null, List<QueueConversationSocialExpressionEventTopicCobrowse> Cobrowsesessions = null, List<QueueConversationSocialExpressionEventTopicEmail> Emails = null, List<QueueConversationSocialExpressionEventTopicMessage> Messages = null, List<QueueConversationSocialExpressionEventTopicInternalMessage> InternalMessages = null, List<QueueConversationSocialExpressionEventTopicScreenShare> Screenshares = null, List<QueueConversationSocialExpressionEventTopicSocialExpression> SocialExpressions = null, List<QueueConversationSocialExpressionEventTopicVideo> Videos = null, QueueConversationSocialExpressionEventTopicWorkflow Workflow = null)
+        public QueueConversationSocialExpressionEventTopicParticipant(string Id = null, DateTime? ConnectedTime = null, DateTime? EndTime = null, string UserId = null, string ExternalContactId = null, string ExternalContactInitialDivisionId = null, string ExternalOrganizationId = null, string Name = null, string QueueId = null, string GroupId = null, string TeamId = null, string Purpose = null, string ConsultParticipantId = null, string Address = null, bool? WrapupRequired = null, bool? WrapupExpected = null, string WrapupPrompt = null, long? WrapupTimeoutMs = null, QueueConversationSocialExpressionEventTopicWrapup Wrapup = null, DateTime? StartAcwTime = null, DateTime? EndAcwTime = null, QueueConversationSocialExpressionEventTopicConversationRoutingData ConversationRoutingData = null, long? AlertingTimeoutMs = null, string MonitoredParticipantId = null, string ScreenMonitoredParticipantId = null, string CoachedParticipantId = null, string BargedParticipantId = null, List<string> MediaRoles = null, ScreenRecordingStateEnum? ScreenRecordingState = null, string FlaggedReason = null, Dictionary<string, string> Attributes = null, List<QueueConversationSocialExpressionEventTopicCall> Calls = null, List<QueueConversationSocialExpressionEventTopicCallback> Callbacks = null, List<QueueConversationSocialExpressionEventTopicChat> Chats = null, List<QueueConversationSocialExpressionEventTopicCobrowse> Cobrowsesessions = null, List<QueueConversationSocialExpressionEventTopicEmail> Emails = null, List<QueueConversationSocialExpressionEventTopicMessage> Messages = null, List<QueueConversationSocialExpressionEventTopicInternalMessage> InternalMessages = null, List<QueueConversationSocialExpressionEventTopicScreenMonitoring> ScreenMonitorings = null, List<QueueConversationSocialExpressionEventTopicScreenShare> Screenshares = null, List<QueueConversationSocialExpressionEventTopicSocialExpression> SocialExpressions = null, List<QueueConversationSocialExpressionEventTopicVideo> Videos = null, QueueConversationSocialExpressionEventTopicWorkflow Workflow = null)
         {
             this.Id = Id;
             this.ConnectedTime = ConnectedTime;
@@ -145,6 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ConversationRoutingData = ConversationRoutingData;
             this.AlertingTimeoutMs = AlertingTimeoutMs;
             this.MonitoredParticipantId = MonitoredParticipantId;
+            this.ScreenMonitoredParticipantId = ScreenMonitoredParticipantId;
             this.CoachedParticipantId = CoachedParticipantId;
             this.BargedParticipantId = BargedParticipantId;
             this.MediaRoles = MediaRoles;
@@ -158,6 +161,7 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Emails = Emails;
             this.Messages = Messages;
             this.InternalMessages = InternalMessages;
+            this.ScreenMonitorings = ScreenMonitorings;
             this.Screenshares = Screenshares;
             this.SocialExpressions = SocialExpressions;
             this.Videos = Videos;
@@ -382,6 +386,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
+        /// If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored.
+        /// </summary>
+        /// <value>If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored.</value>
+        [DataMember(Name="screenMonitoredParticipantId", EmitDefaultValue=false)]
+        public string ScreenMonitoredParticipantId { get; set; }
+
+
+
+        /// <summary>
         /// If this participant is a coach, then this will be the id of the participant that is being coached.
         /// </summary>
         /// <value>If this participant is a coach, then this will be the id of the participant that is being coached.</value>
@@ -485,6 +498,14 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
+        /// Gets or Sets ScreenMonitorings
+        /// </summary>
+        [DataMember(Name="screenMonitorings", EmitDefaultValue=false)]
+        public List<QueueConversationSocialExpressionEventTopicScreenMonitoring> ScreenMonitorings { get; set; }
+
+
+
+        /// <summary>
         /// Gets or Sets Screenshares
         /// </summary>
         [DataMember(Name="screenshares", EmitDefaultValue=false)]
@@ -548,6 +569,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ConversationRoutingData: ").Append(ConversationRoutingData).Append("\n");
             sb.Append("  AlertingTimeoutMs: ").Append(AlertingTimeoutMs).Append("\n");
             sb.Append("  MonitoredParticipantId: ").Append(MonitoredParticipantId).Append("\n");
+            sb.Append("  ScreenMonitoredParticipantId: ").Append(ScreenMonitoredParticipantId).Append("\n");
             sb.Append("  CoachedParticipantId: ").Append(CoachedParticipantId).Append("\n");
             sb.Append("  BargedParticipantId: ").Append(BargedParticipantId).Append("\n");
             sb.Append("  MediaRoles: ").Append(MediaRoles).Append("\n");
@@ -561,6 +583,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Emails: ").Append(Emails).Append("\n");
             sb.Append("  Messages: ").Append(Messages).Append("\n");
             sb.Append("  InternalMessages: ").Append(InternalMessages).Append("\n");
+            sb.Append("  ScreenMonitorings: ").Append(ScreenMonitorings).Append("\n");
             sb.Append("  Screenshares: ").Append(Screenshares).Append("\n");
             sb.Append("  SocialExpressions: ").Append(SocialExpressions).Append("\n");
             sb.Append("  Videos: ").Append(Videos).Append("\n");
@@ -726,6 +749,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.MonitoredParticipantId.Equals(other.MonitoredParticipantId)
                 ) &&
                 (
+                    this.ScreenMonitoredParticipantId == other.ScreenMonitoredParticipantId ||
+                    this.ScreenMonitoredParticipantId != null &&
+                    this.ScreenMonitoredParticipantId.Equals(other.ScreenMonitoredParticipantId)
+                ) &&
+                (
                     this.CoachedParticipantId == other.CoachedParticipantId ||
                     this.CoachedParticipantId != null &&
                     this.CoachedParticipantId.Equals(other.CoachedParticipantId)
@@ -789,6 +817,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.InternalMessages == other.InternalMessages ||
                     this.InternalMessages != null &&
                     this.InternalMessages.SequenceEqual(other.InternalMessages)
+                ) &&
+                (
+                    this.ScreenMonitorings == other.ScreenMonitorings ||
+                    this.ScreenMonitorings != null &&
+                    this.ScreenMonitorings.SequenceEqual(other.ScreenMonitorings)
                 ) &&
                 (
                     this.Screenshares == other.Screenshares ||
@@ -895,6 +928,9 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.MonitoredParticipantId != null)
                     hash = hash * 59 + this.MonitoredParticipantId.GetHashCode();
 
+                if (this.ScreenMonitoredParticipantId != null)
+                    hash = hash * 59 + this.ScreenMonitoredParticipantId.GetHashCode();
+
                 if (this.CoachedParticipantId != null)
                     hash = hash * 59 + this.CoachedParticipantId.GetHashCode();
 
@@ -933,6 +969,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.InternalMessages != null)
                     hash = hash * 59 + this.InternalMessages.GetHashCode();
+
+                if (this.ScreenMonitorings != null)
+                    hash = hash * 59 + this.ScreenMonitorings.GetHashCode();
 
                 if (this.Screenshares != null)
                     hash = hash * 59 + this.Screenshares.GetHashCode();

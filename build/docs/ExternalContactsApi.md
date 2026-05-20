@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsScanOrganizationsDivisionviewsAll**](#GetExternalcontactsScanOrganizationsDivisionviewsAll) | **Get** /api/v2/externalcontacts/scan/organizations/divisionviews/all | Scan for external organizations using paging |
 | [**GetExternalcontactsScanRelationships**](#GetExternalcontactsScanRelationships) | **Get** /api/v2/externalcontacts/scan/relationships | Scan for relationships |
 | [**GetExternalcontactsScanRelationshipsDivisionviewsAll**](#GetExternalcontactsScanRelationshipsDivisionviewsAll) | **Get** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships |
+| [**PatchExternalcontactsContact**](#PatchExternalcontactsContact) | **Patch** /api/v2/externalcontacts/contacts/{contactId} | Update specific fields of an external contact |
 | [**PatchExternalcontactsContactIdentifiers**](#PatchExternalcontactsContactIdentifiers) | **Patch** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact |
 | [**PatchExternalcontactsOrganizationIdentifiers**](#PatchExternalcontactsOrganizationIdentifiers) | **Patch** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | Claim or release identifiers for an external organization |
 | [**PostExternalcontactsBulkContacts**](#PostExternalcontactsBulkContacts) | **Post** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts |
@@ -1120,7 +1121,7 @@ namespace Example
             var pageSize = 56;  // int? | Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) (optional)  (default to 20)
             var pageNumber = 56;  // int? | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional)  (default to 1)
             var sortOrder = sortOrder_example;  // string | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\" (optional) 
-            var expand = new List<string>(); // List<string> | which fields, if any, to expand (optional) 
+            var expand = new List<string>(); // List<string> | which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one. (optional) 
 
             try
             { 
@@ -1146,7 +1147,7 @@ namespace Example
 | **pageSize** | **int?**| Page size (limited to fetching first 1,000 records; pageSize &lt;&#x3D; 100; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **pageNumber** | **int?**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sortOrder** | **string**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
-| **expand** | [**List<string>**](string)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
+| **expand** | [**List<string>**](string)| which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one. | [optional] <br />**Values**: author, externalDataSources, division, mergeset |
 
 ### Return type
 
@@ -4053,6 +4054,70 @@ namespace Example
 ### Return type
 
 [**CursorRelationshipListing**](CursorRelationshipListing)
+
+
+## PatchExternalcontactsContact
+
+> [**ExternalContact**](ExternalContact) PatchExternalcontactsContact (string contactId, ExternalContactsPatchRequest body)
+
+
+Update specific fields of an external contact
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchExternalcontactsContactExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var contactId = contactId_example;  // string | ExternalContact ID
+            var body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Contact fields to update
+
+            try
+            { 
+                // Update specific fields of an external contact
+                ExternalContact result = apiInstance.PatchExternalcontactsContact(contactId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PatchExternalcontactsContact: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **contactId** | **string**| ExternalContact ID |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Contact fields to update |  |
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
 
 
 ## PatchExternalcontactsContactIdentifiers
@@ -7814,4 +7879,4 @@ namespace Example
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

@@ -9,8 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteAnalyticsJourneysAggregatesJob**](#DeleteAnalyticsJourneysAggregatesJob) | **Delete** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Delete/cancel an async request for journey aggregates |
 | [**DeleteJourneyActionmap**](#DeleteJourneyActionmap) | **Delete** /api/v2/journey/actionmaps/{actionMapId} | Delete single action map. |
 | [**DeleteJourneyActiontemplate**](#DeleteJourneyActiontemplate) | **Delete** /api/v2/journey/actiontemplates/{actionTemplateId} | Delete a single action template. |
-| [**DeleteJourneyOutcome**](#DeleteJourneyOutcome) | **Delete** /api/v2/journey/outcomes/{outcomeId} | Delete an outcome. |
-| [**DeleteJourneyOutcomesPredictor**](#DeleteJourneyOutcomesPredictor) | **Delete** /api/v2/journey/outcomes/predictors/{predictorId} | Delete an outcome predictor. |
+| [**DeleteJourneyExternaleventsConfiguration**](#DeleteJourneyExternaleventsConfiguration) | **Delete** /api/v2/journey/externalevents/configurations/{configId} | Delete an external events configuration. |
+| [**DeleteJourneyExternaleventsSchema**](#DeleteJourneyExternaleventsSchema) | **Delete** /api/v2/journey/externalevents/schemas/{schemaId} | Delete a schema |
+| [**DeleteJourneyOutcome**](#DeleteJourneyOutcome) | **Delete** /api/v2/journey/outcomes/{outcomeId} | Deprecated. Delete an outcome. |
+| [**DeleteJourneyOutcomesPredictor**](#DeleteJourneyOutcomesPredictor) | **Delete** /api/v2/journey/outcomes/predictors/{predictorId} | Deprecated. Delete an outcome predictor. |
 | [**DeleteJourneySegment**](#DeleteJourneySegment) | **Delete** /api/v2/journey/segments/{segmentId} | Delete a segment. |
 | [**DeleteJourneyView**](#DeleteJourneyView) | **Delete** /api/v2/journey/views/{viewId} | Delete a Journey View by ID |
 | [**DeleteJourneyViewSchedules**](#DeleteJourneyViewSchedules) | **Delete** /api/v2/journey/views/{viewId}/schedules | Delete the Schedule of a JourneyView |
@@ -20,24 +22,33 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsContactJourneySessions**](#GetExternalcontactsContactJourneySessions) | **Get** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact. |
 | [**GetJourneyActionmap**](#GetJourneyActionmap) | **Get** /api/v2/journey/actionmaps/{actionMapId} | Retrieve a single action map. |
 | [**GetJourneyActionmaps**](#GetJourneyActionmaps) | **Get** /api/v2/journey/actionmaps | Retrieve all action maps. |
-| [**GetJourneyActionmapsEstimatesJob**](#GetJourneyActionmapsEstimatesJob) | **Get** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Get status of job. |
-| [**GetJourneyActionmapsEstimatesJobResults**](#GetJourneyActionmapsEstimatesJobResults) | **Get** /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results | Get estimates from completed job. |
+| [**GetJourneyActionmapsEstimatesJob**](#GetJourneyActionmapsEstimatesJob) | **Get** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Deprecated. Get status of job. |
+| [**GetJourneyActionmapsEstimatesJobResults**](#GetJourneyActionmapsEstimatesJobResults) | **Get** /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results | Deprecated. Get estimates from completed job. |
 | [**GetJourneyActiontarget**](#GetJourneyActiontarget) | **Get** /api/v2/journey/actiontargets/{actionTargetId} | Retrieve a single action target. |
 | [**GetJourneyActiontargets**](#GetJourneyActiontargets) | **Get** /api/v2/journey/actiontargets | Retrieve all action targets. |
 | [**GetJourneyActiontemplate**](#GetJourneyActiontemplate) | **Get** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template. |
 | [**GetJourneyActiontemplates**](#GetJourneyActiontemplates) | **Get** /api/v2/journey/actiontemplates | Retrieve all action templates. |
 | [**GetJourneyDeploymentCustomerPing**](#GetJourneyDeploymentCustomerPing) | **Get** /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping | Send a ping. |
-| [**GetJourneyOutcome**](#GetJourneyOutcome) | **Get** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome. |
-| [**GetJourneyOutcomes**](#GetJourneyOutcomes) | **Get** /api/v2/journey/outcomes | Retrieve all outcomes. |
-| [**GetJourneyOutcomesAttributionsJob**](#GetJourneyOutcomesAttributionsJob) | **Get** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status. |
-| [**GetJourneyOutcomesAttributionsJobResults**](#GetJourneyOutcomesAttributionsJobResults) | **Get** /api/v2/journey/outcomes/attributions/jobs/{jobId}/results | Get outcome attribution entities from completed job. |
-| [**GetJourneyOutcomesPredictor**](#GetJourneyOutcomesPredictor) | **Get** /api/v2/journey/outcomes/predictors/{predictorId} | Retrieve a single outcome predictor. |
-| [**GetJourneyOutcomesPredictors**](#GetJourneyOutcomesPredictors) | **Get** /api/v2/journey/outcomes/predictors | Retrieve all outcome predictors. |
+| [**GetJourneyExternaleventsConfiguration**](#GetJourneyExternaleventsConfiguration) | **Get** /api/v2/journey/externalevents/configurations/{configId} | Get an external events configuration |
+| [**GetJourneyExternaleventsConfigurations**](#GetJourneyExternaleventsConfigurations) | **Get** /api/v2/journey/externalevents/configurations | Get all external event configurations. |
+| [**GetJourneyExternaleventsSchema**](#GetJourneyExternaleventsSchema) | **Get** /api/v2/journey/externalevents/schemas/{schemaId} | Get a schema |
+| [**GetJourneyExternaleventsSchemaVersion**](#GetJourneyExternaleventsSchemaVersion) | **Get** /api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
+| [**GetJourneyExternaleventsSchemaVersions**](#GetJourneyExternaleventsSchemaVersions) | **Get** /api/v2/journey/externalevents/schemas/{schemaId}/versions | Get all versions of a External Events schema |
+| [**GetJourneyExternaleventsSchemas**](#GetJourneyExternaleventsSchemas) | **Get** /api/v2/journey/externalevents/schemas | Get a list of schemas. |
+| [**GetJourneyExternaleventsSchemasCoretype**](#GetJourneyExternaleventsSchemasCoretype) | **Get** /api/v2/journey/externalevents/schemas/coretypes/{coreTypeName} | Get a core type from which all schemas are built |
+| [**GetJourneyExternaleventsSchemasCoretypes**](#GetJourneyExternaleventsSchemasCoretypes) | **Get** /api/v2/journey/externalevents/schemas/coretypes | Get the list of core types enabled for a specific namespace. |
+| [**GetJourneyExternaleventsSchemasLimits**](#GetJourneyExternaleventsSchemasLimits) | **Get** /api/v2/journey/externalevents/schemas/limits | Get quantitative limits on schemas |
+| [**GetJourneyOutcome**](#GetJourneyOutcome) | **Get** /api/v2/journey/outcomes/{outcomeId} | Deprecated. Retrieve a single outcome. |
+| [**GetJourneyOutcomes**](#GetJourneyOutcomes) | **Get** /api/v2/journey/outcomes | Deprecated. Retrieve all outcomes. |
+| [**GetJourneyOutcomesAttributionsJob**](#GetJourneyOutcomesAttributionsJob) | **Get** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Deprecated. Get job status. |
+| [**GetJourneyOutcomesAttributionsJobResults**](#GetJourneyOutcomesAttributionsJobResults) | **Get** /api/v2/journey/outcomes/attributions/jobs/{jobId}/results | Deprecated. Get outcome attribution entities from completed job. |
+| [**GetJourneyOutcomesPredictor**](#GetJourneyOutcomesPredictor) | **Get** /api/v2/journey/outcomes/predictors/{predictorId} | Deprecated. Retrieve a single outcome predictor. |
+| [**GetJourneyOutcomesPredictors**](#GetJourneyOutcomesPredictors) | **Get** /api/v2/journey/outcomes/predictors | Deprecated. Retrieve all outcome predictors. |
 | [**GetJourneySegment**](#GetJourneySegment) | **Get** /api/v2/journey/segments/{segmentId} | Retrieve a single segment. |
 | [**GetJourneySegments**](#GetJourneySegments) | **Get** /api/v2/journey/segments | Retrieve all segments. |
 | [**GetJourneySession**](#GetJourneySession) | **Get** /api/v2/journey/sessions/{sessionId} | Retrieve a single session. |
 | [**GetJourneySessionEvents**](#GetJourneySessionEvents) | **Get** /api/v2/journey/sessions/{sessionId}/events | Retrieve all events for a given session. |
-| [**GetJourneySessionOutcomescores**](#GetJourneySessionOutcomescores) | **Get** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes. |
+| [**GetJourneySessionOutcomescores**](#GetJourneySessionOutcomescores) | **Get** /api/v2/journey/sessions/{sessionId}/outcomescores | Deprecated. Retrieve latest outcome score associated with a session for all outcomes. |
 | [**GetJourneyView**](#GetJourneyView) | **Get** /api/v2/journey/views/{viewId} | Get a Journey View by ID |
 | [**GetJourneyViewSchedules**](#GetJourneyViewSchedules) | **Get** /api/v2/journey/views/{viewId}/schedules | Get the Schedule for a JourneyView |
 | [**GetJourneyViewVersion**](#GetJourneyViewVersion) | **Get** /api/v2/journey/views/{viewId}/versions/{versionId} | Get a Journey View by ID and version |
@@ -57,28 +68,33 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchJourneyActionmap**](#PatchJourneyActionmap) | **Patch** /api/v2/journey/actionmaps/{actionMapId} | Update single action map. |
 | [**PatchJourneyActiontarget**](#PatchJourneyActiontarget) | **Patch** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target. |
 | [**PatchJourneyActiontemplate**](#PatchJourneyActiontemplate) | **Patch** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template. |
-| [**PatchJourneyOutcome**](#PatchJourneyOutcome) | **Patch** /api/v2/journey/outcomes/{outcomeId} | Update an outcome. |
+| [**PatchJourneyExternaleventsConfiguration**](#PatchJourneyExternaleventsConfiguration) | **Patch** /api/v2/journey/externalevents/configurations/{configId} | Update an external events configuration. |
+| [**PatchJourneyOutcome**](#PatchJourneyOutcome) | **Patch** /api/v2/journey/outcomes/{outcomeId} | Deprecated. Update an outcome. |
 | [**PatchJourneySegment**](#PatchJourneySegment) | **Patch** /api/v2/journey/segments/{segmentId} | Update a segment. |
 | [**PatchJourneyViewVersionJob**](#PatchJourneyViewVersionJob) | **Patch** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} | Update the job for a journey view version. Only the status can be changed and only to Cancelled |
 | [**PostAnalyticsJourneysAggregatesJobs**](#PostAnalyticsJourneysAggregatesJobs) | **Post** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously |
 | [**PostAnalyticsJourneysAggregatesQuery**](#PostAnalyticsJourneysAggregatesQuery) | **Post** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates |
 | [**PostExternalcontactsContactJourneySegments**](#PostExternalcontactsContactJourneySegments) | **Post** /api/v2/externalcontacts/contacts/{contactId}/journey/segments | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success. |
 | [**PostJourneyActionmaps**](#PostJourneyActionmaps) | **Post** /api/v2/journey/actionmaps | Create an action map. |
-| [**PostJourneyActionmapsEstimatesJobs**](#PostJourneyActionmapsEstimatesJobs) | **Post** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates |
+| [**PostJourneyActionmapsEstimatesJobs**](#PostJourneyActionmapsEstimatesJobs) | **Post** /api/v2/journey/actionmaps/estimates/jobs | Deprecated. Query for estimates |
 | [**PostJourneyActiontemplates**](#PostJourneyActiontemplates) | **Post** /api/v2/journey/actiontemplates | Create a single action template. |
 | [**PostJourneyDeploymentActionevent**](#PostJourneyDeploymentActionevent) | **Post** /api/v2/journey/deployments/{deploymentId}/actionevent | Sends an action event, which is used for changing the state of actions that have been offered to the user. |
 | [**PostJourneyDeploymentAppevents**](#PostJourneyDeploymentAppevents) | **Post** /api/v2/journey/deployments/{deploymentId}/appevents | Send a journey app event, used for tracking customer activity on an application. |
 | [**PostJourneyDeploymentWebevents**](#PostJourneyDeploymentWebevents) | **Post** /api/v2/journey/deployments/{deploymentId}/webevents | Send a journey web event, used for tracking customer activity on a website. |
+| [**PostJourneyExternaleventsConfigurationEvents**](#PostJourneyExternaleventsConfigurationEvents) | **Post** /api/v2/journey/externalevents/configurations/{configurationId}/events | Create external events |
+| [**PostJourneyExternaleventsConfigurations**](#PostJourneyExternaleventsConfigurations) | **Post** /api/v2/journey/externalevents/configurations | Create an external events configuration. |
+| [**PostJourneyExternaleventsSchemas**](#PostJourneyExternaleventsSchemas) | **Post** /api/v2/journey/externalevents/schemas | Create a schema |
 | [**PostJourneyFlowsPathsQuery**](#PostJourneyFlowsPathsQuery) | **Post** /api/v2/journey/flows/paths/query | Query for flow paths. |
-| [**PostJourneyOutcomes**](#PostJourneyOutcomes) | **Post** /api/v2/journey/outcomes | Create an outcome. |
-| [**PostJourneyOutcomesAttributionsJobs**](#PostJourneyOutcomesAttributionsJobs) | **Post** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions |
-| [**PostJourneyOutcomesPredictors**](#PostJourneyOutcomesPredictors) | **Post** /api/v2/journey/outcomes/predictors | Create an outcome predictor. |
+| [**PostJourneyOutcomes**](#PostJourneyOutcomes) | **Post** /api/v2/journey/outcomes | Deprecated. Create an outcome. |
+| [**PostJourneyOutcomesAttributionsJobs**](#PostJourneyOutcomesAttributionsJobs) | **Post** /api/v2/journey/outcomes/attributions/jobs | Deprecated. Create Outcome Attributions |
+| [**PostJourneyOutcomesPredictors**](#PostJourneyOutcomesPredictors) | **Post** /api/v2/journey/outcomes/predictors | Deprecated. Create an outcome predictor. |
 | [**PostJourneySegments**](#PostJourneySegments) | **Post** /api/v2/journey/segments | Create a segment. |
 | [**PostJourneyViewSchedules**](#PostJourneyViewSchedules) | **Post** /api/v2/journey/views/{viewId}/schedules | Add a new Schedule to a JourneyView |
 | [**PostJourneyViewVersionJobs**](#PostJourneyViewVersionJobs) | **Post** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs | Submit a job request for a journey view version. |
 | [**PostJourneyViewVersions**](#PostJourneyViewVersions) | **Post** /api/v2/journey/views/{viewId}/versions | Update a Journey View by ID |
 | [**PostJourneyViews**](#PostJourneyViews) | **Post** /api/v2/journey/views | Create a new Journey View |
 | [**PostJourneyViewsEncodingsValidate**](#PostJourneyViewsEncodingsValidate) | **Post** /api/v2/journey/views/encodings/validate | Validate whether an encoding exist for a label/value combination. |
+| [**PutJourneyExternaleventsSchema**](#PutJourneyExternaleventsSchema) | **Put** /api/v2/journey/externalevents/schemas/{schemaId} | Update a schema |
 | [**PutJourneyViewSchedules**](#PutJourneyViewSchedules) | **Put** /api/v2/journey/views/{viewId}/schedules | Update the Schedule for a JourneyView |
 | [**PutJourneyViewVersion**](#PutJourneyViewVersion) | **Put** /api/v2/journey/views/{viewId}/versions/{versionId} | Update a Journey View by ID and version |
 
@@ -271,12 +287,139 @@ namespace Example
 void (empty response body)
 
 
+## DeleteJourneyExternaleventsConfiguration
+
+> void DeleteJourneyExternaleventsConfiguration (string configId)
+
+
+Delete an external events configuration.
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteJourneyExternaleventsConfigurationExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var configId = configId_example;  // string | The ID of the external event configuration.
+
+            try
+            { 
+                // Delete an external events configuration.
+                apiInstance.DeleteJourneyExternaleventsConfiguration(configId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.DeleteJourneyExternaleventsConfiguration: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **configId** | **string**| The ID of the external event configuration. |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteJourneyExternaleventsSchema
+
+> void DeleteJourneyExternaleventsSchema (string schemaId)
+
+
+Delete a schema
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteJourneyExternaleventsSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Delete a schema
+                apiInstance.DeleteJourneyExternaleventsSchema(schemaId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.DeleteJourneyExternaleventsSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## DeleteJourneyOutcome
 
 > void DeleteJourneyOutcome (string outcomeId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Delete an outcome.
+Deprecated. Delete an outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -308,7 +451,7 @@ namespace Example
 
             try
             { 
-                // Delete an outcome.
+                // Deprecated. Delete an outcome.
                 apiInstance.DeleteJourneyOutcome(outcomeId);
             }
             catch (Exception e)
@@ -336,8 +479,13 @@ void (empty response body)
 
 > void DeleteJourneyOutcomesPredictor (string predictorId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Delete an outcome predictor.
+Deprecated. Delete an outcome predictor.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -369,7 +517,7 @@ namespace Example
 
             try
             { 
-                // Delete an outcome predictor.
+                // Deprecated. Delete an outcome predictor.
                 apiInstance.DeleteJourneyOutcomesPredictor(predictorId);
             }
             catch (Exception e)
@@ -985,8 +1133,13 @@ namespace Example
 
 > **string** GetJourneyActionmapsEstimatesJob (string jobId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get status of job.
+Deprecated. Get status of job.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ALL permissions: 
 
@@ -1018,7 +1171,7 @@ namespace Example
 
             try
             { 
-                // Get status of job.
+                // Deprecated. Get status of job.
                 string result = apiInstance.GetJourneyActionmapsEstimatesJob(jobId);
                 Debug.WriteLine(result);
             }
@@ -1047,8 +1200,13 @@ namespace Example
 
 > [**ActionMapEstimateResult**](ActionMapEstimateResult) GetJourneyActionmapsEstimatesJobResults (string jobId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get estimates from completed job.
+Deprecated. Get estimates from completed job.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ALL permissions: 
 
@@ -1080,7 +1238,7 @@ namespace Example
 
             try
             { 
-                // Get estimates from completed job.
+                // Deprecated. Get estimates from completed job.
                 ActionMapEstimateResult result = apiInstance.GetJourneyActionmapsEstimatesJobResults(jobId);
                 Debug.WriteLine(result);
             }
@@ -1434,12 +1592,564 @@ namespace Example
 [**DeploymentPing**](DeploymentPing)
 
 
+## GetJourneyExternaleventsConfiguration
+
+> [**ExternalEventsConfiguration**](ExternalEventsConfiguration) GetJourneyExternaleventsConfiguration (string configId)
+
+
+Get an external events configuration
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsConfigurationExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var configId = configId_example;  // string | The ID of the external event configuration.
+
+            try
+            { 
+                // Get an external events configuration
+                ExternalEventsConfiguration result = apiInstance.GetJourneyExternaleventsConfiguration(configId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsConfiguration: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **configId** | **string**| The ID of the external event configuration. |  |
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
+## GetJourneyExternaleventsConfigurations
+
+> [**ExternalEventsConfigurationListing**](ExternalEventsConfigurationListing) GetJourneyExternaleventsConfigurations (int? pageSize = null, int? pageNumber = null)
+
+
+Get all external event configurations.
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsConfigurationsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var pageSize = 56;  // int? | Page size (optional)  (default to 20)
+            var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
+
+            try
+            { 
+                // Get all external event configurations.
+                ExternalEventsConfigurationListing result = apiInstance.GetJourneyExternaleventsConfigurations(pageSize, pageNumber);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsConfigurations: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pageSize** | **int?**| Page size | [optional] [default to 20] |
+| **pageNumber** | **int?**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**ExternalEventsConfigurationListing**](ExternalEventsConfigurationListing)
+
+
+## GetJourneyExternaleventsSchema
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) GetJourneyExternaleventsSchema (string schemaId)
+
+
+Get a schema
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Get a schema
+                JourneyExternalEventsSchema result = apiInstance.GetJourneyExternaleventsSchema(schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
+## GetJourneyExternaleventsSchemaVersion
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) GetJourneyExternaleventsSchemaVersion (string schemaId, string versionId)
+
+
+Get a specific version of a schema
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemaVersionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+            var versionId = versionId_example;  // string | Schema version
+
+            try
+            { 
+                // Get a specific version of a schema
+                JourneyExternalEventsSchema result = apiInstance.GetJourneyExternaleventsSchemaVersion(schemaId, versionId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchemaVersion: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+| **versionId** | **string**| Schema version |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
+## GetJourneyExternaleventsSchemaVersions
+
+> [**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing) GetJourneyExternaleventsSchemaVersions (string schemaId)
+
+
+Get all versions of a External Events schema
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemaVersionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+
+            try
+            { 
+                // Get all versions of a External Events schema
+                JourneyExternalEventsSchemaListing result = apiInstance.GetJourneyExternaleventsSchemaVersions(schemaId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchemaVersions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+
+### Return type
+
+[**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing)
+
+
+## GetJourneyExternaleventsSchemas
+
+> [**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing) GetJourneyExternaleventsSchemas ()
+
+
+Get a list of schemas.
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemasExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+
+            try
+            { 
+                // Get a list of schemas.
+                JourneyExternalEventsSchemaListing result = apiInstance.GetJourneyExternaleventsSchemas();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchemas: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing)
+
+
+## GetJourneyExternaleventsSchemasCoretype
+
+> [**Coretype**](Coretype) GetJourneyExternaleventsSchemasCoretype (string coreTypeName)
+
+
+Get a core type from which all schemas are built
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemasCoretypeExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var coreTypeName = coreTypeName_example;  // string | Name of core type
+
+            try
+            { 
+                // Get a core type from which all schemas are built
+                Coretype result = apiInstance.GetJourneyExternaleventsSchemasCoretype(coreTypeName);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchemasCoretype: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **coreTypeName** | **string**| Name of core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## GetJourneyExternaleventsSchemasCoretypes
+
+> [**CoretypeListing**](CoretypeListing) GetJourneyExternaleventsSchemasCoretypes ()
+
+
+Get the list of core types enabled for a specific namespace.
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemasCoretypesExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+
+            try
+            { 
+                // Get the list of core types enabled for a specific namespace.
+                CoretypeListing result = apiInstance.GetJourneyExternaleventsSchemasCoretypes();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchemasCoretypes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+## GetJourneyExternaleventsSchemasLimits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) GetJourneyExternaleventsSchemasLimits ()
+
+
+Get quantitative limits on schemas
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetJourneyExternaleventsSchemasLimitsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+
+            try
+            { 
+                // Get quantitative limits on schemas
+                SchemaQuantityLimits result = apiInstance.GetJourneyExternaleventsSchemasLimits();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.GetJourneyExternaleventsSchemasLimits: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 ## GetJourneyOutcome
 
 > [**Outcome**](Outcome) GetJourneyOutcome (string outcomeId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve a single outcome.
+Deprecated. Retrieve a single outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -1471,7 +2181,7 @@ namespace Example
 
             try
             { 
-                // Retrieve a single outcome.
+                // Deprecated. Retrieve a single outcome.
                 Outcome result = apiInstance.GetJourneyOutcome(outcomeId);
                 Debug.WriteLine(result);
             }
@@ -1500,8 +2210,13 @@ namespace Example
 
 > [**OutcomeListing**](OutcomeListing) GetJourneyOutcomes (int? pageNumber = null, int? pageSize = null, string sortBy = null, List<string> outcomeIds = null, List<string> queryFields = null, string queryValue = null)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve all outcomes.
+Deprecated. Retrieve all outcomes.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -1538,7 +2253,7 @@ namespace Example
 
             try
             { 
-                // Retrieve all outcomes.
+                // Deprecated. Retrieve all outcomes.
                 OutcomeListing result = apiInstance.GetJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue);
                 Debug.WriteLine(result);
             }
@@ -1572,8 +2287,13 @@ namespace Example
 
 > [**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse) GetJourneyOutcomesAttributionsJob (string jobId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get job status.
+Deprecated. Get job status.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 GetJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -1607,7 +2327,7 @@ namespace Example
 
             try
             { 
-                // Get job status.
+                // Deprecated. Get job status.
                 OutcomeAttributionJobStateResponse result = apiInstance.GetJourneyOutcomesAttributionsJob(jobId);
                 Debug.WriteLine(result);
             }
@@ -1636,8 +2356,13 @@ namespace Example
 
 > [**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing) GetJourneyOutcomesAttributionsJobResults (string jobId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get outcome attribution entities from completed job.
+Deprecated. Get outcome attribution entities from completed job.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 GetJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -1671,7 +2396,7 @@ namespace Example
 
             try
             { 
-                // Get outcome attribution entities from completed job.
+                // Deprecated. Get outcome attribution entities from completed job.
                 OutcomeAttributionResponseListing result = apiInstance.GetJourneyOutcomesAttributionsJobResults(jobId);
                 Debug.WriteLine(result);
             }
@@ -1700,8 +2425,13 @@ namespace Example
 
 > [**OutcomePredictor**](OutcomePredictor) GetJourneyOutcomesPredictor (string predictorId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve a single outcome predictor.
+Deprecated. Retrieve a single outcome predictor.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -1733,7 +2463,7 @@ namespace Example
 
             try
             { 
-                // Retrieve a single outcome predictor.
+                // Deprecated. Retrieve a single outcome predictor.
                 OutcomePredictor result = apiInstance.GetJourneyOutcomesPredictor(predictorId);
                 Debug.WriteLine(result);
             }
@@ -1762,8 +2492,13 @@ namespace Example
 
 > [**OutcomePredictorListing**](OutcomePredictorListing) GetJourneyOutcomesPredictors ()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve all outcome predictors.
+Deprecated. Retrieve all outcome predictors.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -1794,7 +2529,7 @@ namespace Example
 
             try
             { 
-                // Retrieve all outcome predictors.
+                // Deprecated. Retrieve all outcome predictors.
                 OutcomePredictorListing result = apiInstance.GetJourneyOutcomesPredictors();
                 Debug.WriteLine(result);
             }
@@ -2086,8 +2821,13 @@ namespace Example
 
 > [**OutcomeScoresResult**](OutcomeScoresResult) GetJourneySessionOutcomescores (string sessionId)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve latest outcome score associated with a session for all outcomes.
+Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -2119,7 +2859,7 @@ namespace Example
 
             try
             { 
-                // Retrieve latest outcome score associated with a session for all outcomes.
+                // Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
                 OutcomeScoresResult result = apiInstance.GetJourneySessionOutcomescores(sessionId);
                 Debug.WriteLine(result);
             }
@@ -3372,12 +4112,81 @@ namespace Example
 [**ActionTemplate**](ActionTemplate)
 
 
+## PatchJourneyExternaleventsConfiguration
+
+> [**ExternalEventsConfiguration**](ExternalEventsConfiguration) PatchJourneyExternaleventsConfiguration (string configId, UpdateExternalEventsConfigurationRequest body = null)
+
+
+Update an external events configuration.
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchJourneyExternaleventsConfigurationExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var configId = configId_example;  // string | The ID of the external event configuration.
+            var body = new UpdateExternalEventsConfigurationRequest(); // UpdateExternalEventsConfigurationRequest |  (optional) 
+
+            try
+            { 
+                // Update an external events configuration.
+                ExternalEventsConfiguration result = apiInstance.PatchJourneyExternaleventsConfiguration(configId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.PatchJourneyExternaleventsConfiguration: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **configId** | **string**| The ID of the external event configuration. |  |
+| **body** | [**UpdateExternalEventsConfigurationRequest**](UpdateExternalEventsConfigurationRequest)|  | [optional]  |
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
 ## PatchJourneyOutcome
 
 > [**Outcome**](Outcome) PatchJourneyOutcome (string outcomeId, PatchOutcome body = null)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Update an outcome.
+Deprecated. Update an outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -3410,7 +4219,7 @@ namespace Example
 
             try
             { 
-                // Update an outcome.
+                // Deprecated. Update an outcome.
                 Outcome result = apiInstance.PatchJourneyOutcome(outcomeId, body);
                 Debug.WriteLine(result);
             }
@@ -3825,8 +4634,13 @@ namespace Example
 
 > [**EstimateJobAsyncResponse**](EstimateJobAsyncResponse) PostJourneyActionmapsEstimatesJobs (ActionMapEstimateRequest body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Query for estimates
+Deprecated. Query for estimates
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -3858,7 +4672,7 @@ namespace Example
 
             try
             { 
-                // Query for estimates
+                // Deprecated. Query for estimates
                 EstimateJobAsyncResponse result = apiInstance.PostJourneyActionmapsEstimatesJobs(body);
                 Debug.WriteLine(result);
             }
@@ -4115,6 +4929,194 @@ namespace Example
 [**WebEventResponse**](WebEventResponse)
 
 
+## PostJourneyExternaleventsConfigurationEvents
+
+> [**ExternalEventsResponse**](ExternalEventsResponse) PostJourneyExternaleventsConfigurationEvents (string configurationId, ExternalEventsRequest body = null)
+
+
+Create external events
+
+Requires ANY permissions: 
+
+* journey:externalEventsEvent:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostJourneyExternaleventsConfigurationEventsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var configurationId = configurationId_example;  // string | The ID of the external event configuration.
+            var body = new ExternalEventsRequest(); // ExternalEventsRequest |  (optional) 
+
+            try
+            { 
+                // Create external events
+                ExternalEventsResponse result = apiInstance.PostJourneyExternaleventsConfigurationEvents(configurationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.PostJourneyExternaleventsConfigurationEvents: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **configurationId** | **string**| The ID of the external event configuration. |  |
+| **body** | [**ExternalEventsRequest**](ExternalEventsRequest)|  | [optional]  |
+
+### Return type
+
+[**ExternalEventsResponse**](ExternalEventsResponse)
+
+
+## PostJourneyExternaleventsConfigurations
+
+> [**ExternalEventsConfiguration**](ExternalEventsConfiguration) PostJourneyExternaleventsConfigurations (CreateExternalEventsConfigurationRequest body = null)
+
+
+Create an external events configuration.
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostJourneyExternaleventsConfigurationsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var body = new CreateExternalEventsConfigurationRequest(); // CreateExternalEventsConfigurationRequest |  (optional) 
+
+            try
+            { 
+                // Create an external events configuration.
+                ExternalEventsConfiguration result = apiInstance.PostJourneyExternaleventsConfigurations(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.PostJourneyExternaleventsConfigurations: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateExternalEventsConfigurationRequest**](CreateExternalEventsConfigurationRequest)|  | [optional]  |
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
+## PostJourneyExternaleventsSchemas
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) PostJourneyExternaleventsSchemas (JourneyJsonSchemaRequest body)
+
+
+Create a schema
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostJourneyExternaleventsSchemasExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var body = new JourneyJsonSchemaRequest(); // JourneyJsonSchemaRequest | Schema create request body
+
+            try
+            { 
+                // Create a schema
+                JourneyExternalEventsSchema result = apiInstance.PostJourneyExternaleventsSchemas(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.PostJourneyExternaleventsSchemas: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**JourneyJsonSchemaRequest**](JourneyJsonSchemaRequest)| Schema create request body |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
 ## PostJourneyFlowsPathsQuery
 
 > [**FlowPaths**](FlowPaths) PostJourneyFlowsPathsQuery (FlowPathsQuery body = null)
@@ -4181,8 +5183,13 @@ namespace Example
 
 > [**Outcome**](Outcome) PostJourneyOutcomes (OutcomeRequest body = null)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Create an outcome.
+Deprecated. Create an outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -4214,7 +5221,7 @@ namespace Example
 
             try
             { 
-                // Create an outcome.
+                // Deprecated. Create an outcome.
                 Outcome result = apiInstance.PostJourneyOutcomes(body);
                 Debug.WriteLine(result);
             }
@@ -4243,8 +5250,13 @@ namespace Example
 
 > [**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse) PostJourneyOutcomesAttributionsJobs (OutcomeAttributionListing body = null)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Create Outcome Attributions
+Deprecated. Create Outcome Attributions
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 PostJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -4278,7 +5290,7 @@ namespace Example
 
             try
             { 
-                // Create Outcome Attributions
+                // Deprecated. Create Outcome Attributions
                 OutcomeAttributionAsyncResponse result = apiInstance.PostJourneyOutcomesAttributionsJobs(body);
                 Debug.WriteLine(result);
             }
@@ -4307,8 +5319,13 @@ namespace Example
 
 > [**OutcomePredictor**](OutcomePredictor) PostJourneyOutcomesPredictors (OutcomePredictorRequest body = null)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Create an outcome predictor.
+Deprecated. Create an outcome predictor.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Requires ANY permissions: 
 
@@ -4340,7 +5357,7 @@ namespace Example
 
             try
             { 
-                // Create an outcome predictor.
+                // Deprecated. Create an outcome predictor.
                 OutcomePredictor result = apiInstance.PostJourneyOutcomesPredictors(body);
                 Debug.WriteLine(result);
             }
@@ -4747,6 +5764,70 @@ namespace Example
 [**EntityListing**](EntityListing)
 
 
+## PutJourneyExternaleventsSchema
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) PutJourneyExternaleventsSchema (string schemaId, JourneySchemaUpdateRequest body)
+
+
+Update a schema
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutJourneyExternaleventsSchemaExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new JourneyApi();
+            var schemaId = schemaId_example;  // string | Schema ID
+            var body = new JourneySchemaUpdateRequest(); // JourneySchemaUpdateRequest | Schema update request body
+
+            try
+            { 
+                // Update a schema
+                JourneyExternalEventsSchema result = apiInstance.PutJourneyExternaleventsSchema(schemaId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling JourneyApi.PutJourneyExternaleventsSchema: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **schemaId** | **string**| Schema ID |  |
+| **body** | [**JourneySchemaUpdateRequest**](JourneySchemaUpdateRequest)| Schema update request body |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
 ## PutJourneyViewSchedules
 
 > [**JourneyViewSchedule**](JourneyViewSchedule) PutJourneyViewSchedules (string viewId, JourneyViewSchedule body)
@@ -4879,4 +5960,4 @@ namespace Example
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

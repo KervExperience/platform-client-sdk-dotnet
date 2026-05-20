@@ -184,7 +184,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Sessionexpired for "SessionExpired"
             /// </summary>
             [EnumMember(Value = "SessionExpired")]
-            Sessionexpired
+            Sessionexpired,
+            
+            /// <summary>
+            /// Enum Takeover for "Takeover"
+            /// </summary>
+            [EnumMember(Value = "Takeover")]
+            Takeover
         }
         /// <summary>
         /// Last ACD outcome for the conversation.
@@ -226,6 +232,51 @@ namespace PureCloudPlatform.Client.V2.Model
             Flowout
         }
         /// <summary>
+        /// The status of this case.
+        /// </summary>
+        /// <value>The status of this case.</value>
+        [JsonConverter(typeof(UpgradeSdkEnumConverter))]
+        public enum CaseStatusEnum
+        {
+            /// <summary>
+            /// Your SDK version is out of date and an unknown enum value was encountered. 
+            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+            /// in the Package Manager Console
+            /// </summary>
+            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+            OutdatedSdkVersion,
+            
+            /// <summary>
+            /// Enum Unknown for "Unknown"
+            /// </summary>
+            [EnumMember(Value = "Unknown")]
+            Unknown,
+            
+            /// <summary>
+            /// Enum Open for "Open"
+            /// </summary>
+            [EnumMember(Value = "Open")]
+            Open,
+            
+            /// <summary>
+            /// Enum Inprogress for "InProgress"
+            /// </summary>
+            [EnumMember(Value = "InProgress")]
+            Inprogress,
+            
+            /// <summary>
+            /// Enum Terminated for "Terminated"
+            /// </summary>
+            [EnumMember(Value = "Terminated")]
+            Terminated,
+            
+            /// <summary>
+            /// Enum Closed for "Closed"
+            /// </summary>
+            [EnumMember(Value = "Closed")]
+            Closed
+        }
+        /// <summary>
         /// The original direction of the conversation.
         /// </summary>
         /// <value>The original direction of the conversation.</value>
@@ -243,6 +294,12 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <value>Last ACD outcome for the conversation.</value>
         [DataMember(Name="lastAcdOutcome", EmitDefaultValue=false)]
         public LastAcdOutcomeEnum? LastAcdOutcome { get; set; }
+        /// <summary>
+        /// The status of this case.
+        /// </summary>
+        /// <value>The status of this case.</value>
+        [DataMember(Name="caseStatus", EmitDefaultValue=false)]
+        public CaseStatusEnum? CaseStatus { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Session" /> class.
@@ -260,7 +317,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="ExternalId">Unique identifier in the external system where the events for the session originate from..</param>
         /// <param name="ExternalUrl">A URL that identifies an external system-of-record resource that may have more detailed information on the session..</param>
         /// <param name="ShortId">Shortened numeric identifier of 4-6 digits..</param>
-        /// <param name="OutcomeAchievements">List of the outcome achievements by the customer in this session..</param>
+        /// <param name="OutcomeAchievements">Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/.</param>
         /// <param name="SegmentAssignments">List of the segment assignments to the customer in this session..</param>
         /// <param name="Attributes">Attributes projected from the session&#39;s event stream..</param>
         /// <param name="AttributeLists">List-type attributes projected from the session&#39;s event stream..</param>
@@ -294,11 +351,15 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="Authenticated">Indicates whether or not the session is authenticated. (required).</param>
         /// <param name="DivisionIds">List of division IDs associated with the session..</param>
         /// <param name="LastScreen">The app screen name where the customer&#39;s last app interaction occurred..</param>
+        /// <param name="CaseAssociations">Cases associated with the session - conversation only..</param>
+        /// <param name="CaseEntity">The case this session refers to..</param>
+        /// <param name="CaseReference">The reference for this case..</param>
+        /// <param name="CaseStatus">The status of this case..</param>
         /// <param name="CreatedDate">Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required).</param>
         /// <param name="EndedDate">Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
         /// <param name="AwayDate">Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
         /// <param name="IdleDate">Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
-        public Session(string Id = null, AddressableEntityRef ExternalContact = null, string CustomerId = null, string CustomerIdType = null, string Type = null, string ExternalId = null, string ExternalUrl = null, string ShortId = null, List<OutcomeAchievement> OutcomeAchievements = null, List<SessionSegmentAssignment> SegmentAssignments = null, Dictionary<string, CustomEventAttribute> Attributes = null, Dictionary<string, CustomEventAttributeList> AttributeLists = null, Browser Browser = null, Device Device = null, JourneyGeolocation Geolocation = null, string IpAddress = null, string IpOrganization = null, JourneyPage LastPage = null, JourneyCampaign MktCampaign = null, Referrer Referrer = null, JourneyApp App = null, SdkLibrary SdkLibrary = null, NetworkConnectivity NetworkConnectivity = null, List<string> SearchTerms = null, string UserAgentString = null, int? DurationInSeconds = null, int? EventCount = null, int? PageviewCount = null, int? ScreenviewCount = null, SessionLastEvent LastEvent = null, AddressableEntityRef Conversation = null, ConnectedQueue LastConnectedQueue = null, ConnectedUser LastConnectedUser = null, ConversationUserDisposition LastUserDisposition = null, List<ConversationChannel> ConversationChannels = null, OriginatingDirectionEnum? OriginatingDirection = null, string ConversationSubject = null, LastUserDisconnectTypeEnum? LastUserDisconnectType = null, LastAcdOutcomeEnum? LastAcdOutcome = null, bool? Authenticated = null, List<string> DivisionIds = null, string LastScreen = null, DateTime? CreatedDate = null, DateTime? EndedDate = null, DateTime? AwayDate = null, DateTime? IdleDate = null)
+        public Session(string Id = null, AddressableEntityRef ExternalContact = null, string CustomerId = null, string CustomerIdType = null, string Type = null, string ExternalId = null, string ExternalUrl = null, string ShortId = null, List<OutcomeAchievement> OutcomeAchievements = null, List<SessionSegmentAssignment> SegmentAssignments = null, Dictionary<string, CustomEventAttribute> Attributes = null, Dictionary<string, CustomEventAttributeList> AttributeLists = null, Browser Browser = null, Device Device = null, JourneyGeolocation Geolocation = null, string IpAddress = null, string IpOrganization = null, JourneyPage LastPage = null, JourneyCampaign MktCampaign = null, Referrer Referrer = null, JourneyApp App = null, SdkLibrary SdkLibrary = null, NetworkConnectivity NetworkConnectivity = null, List<string> SearchTerms = null, string UserAgentString = null, int? DurationInSeconds = null, int? EventCount = null, int? PageviewCount = null, int? ScreenviewCount = null, SessionLastEvent LastEvent = null, AddressableEntityRef Conversation = null, ConnectedQueue LastConnectedQueue = null, ConnectedUser LastConnectedUser = null, ConversationUserDisposition LastUserDisposition = null, List<ConversationChannel> ConversationChannels = null, OriginatingDirectionEnum? OriginatingDirection = null, string ConversationSubject = null, LastUserDisconnectTypeEnum? LastUserDisconnectType = null, LastAcdOutcomeEnum? LastAcdOutcome = null, bool? Authenticated = null, List<string> DivisionIds = null, string LastScreen = null, List<JourneyCaseAssociation> CaseAssociations = null, AddressableEntityRef CaseEntity = null, string CaseReference = null, CaseStatusEnum? CaseStatus = null, DateTime? CreatedDate = null, DateTime? EndedDate = null, DateTime? AwayDate = null, DateTime? IdleDate = null)
         {
             this.Id = Id;
             this.ExternalContact = ExternalContact;
@@ -342,6 +403,10 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Authenticated = Authenticated;
             this.DivisionIds = DivisionIds;
             this.LastScreen = LastScreen;
+            this.CaseAssociations = CaseAssociations;
+            this.CaseEntity = CaseEntity;
+            this.CaseReference = CaseReference;
+            this.CaseStatus = CaseStatus;
             this.CreatedDate = CreatedDate;
             this.EndedDate = EndedDate;
             this.AwayDate = AwayDate;
@@ -424,9 +489,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// List of the outcome achievements by the customer in this session.
+        /// Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
         /// </summary>
-        /// <value>List of the outcome achievements by the customer in this session.</value>
+        /// <value>Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/</value>
         [DataMember(Name="outcomeAchievements", EmitDefaultValue=false)]
         public List<OutcomeAchievement> OutcomeAchievements { get; set; }
 
@@ -709,6 +774,35 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
+        /// Cases associated with the session - conversation only.
+        /// </summary>
+        /// <value>Cases associated with the session - conversation only.</value>
+        [DataMember(Name="caseAssociations", EmitDefaultValue=false)]
+        public List<JourneyCaseAssociation> CaseAssociations { get; set; }
+
+
+
+        /// <summary>
+        /// The case this session refers to.
+        /// </summary>
+        /// <value>The case this session refers to.</value>
+        [DataMember(Name="caseEntity", EmitDefaultValue=false)]
+        public AddressableEntityRef CaseEntity { get; set; }
+
+
+
+        /// <summary>
+        /// The reference for this case.
+        /// </summary>
+        /// <value>The reference for this case.</value>
+        [DataMember(Name="caseReference", EmitDefaultValue=false)]
+        public string CaseReference { get; set; }
+
+
+
+
+
+        /// <summary>
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
@@ -803,6 +897,10 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Authenticated: ").Append(Authenticated).Append("\n");
             sb.Append("  DivisionIds: ").Append(DivisionIds).Append("\n");
             sb.Append("  LastScreen: ").Append(LastScreen).Append("\n");
+            sb.Append("  CaseAssociations: ").Append(CaseAssociations).Append("\n");
+            sb.Append("  CaseEntity: ").Append(CaseEntity).Append("\n");
+            sb.Append("  CaseReference: ").Append(CaseReference).Append("\n");
+            sb.Append("  CaseStatus: ").Append(CaseStatus).Append("\n");
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  EndedDate: ").Append(EndedDate).Append("\n");
@@ -1059,6 +1157,26 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.LastScreen.Equals(other.LastScreen)
                 ) &&
                 (
+                    this.CaseAssociations == other.CaseAssociations ||
+                    this.CaseAssociations != null &&
+                    this.CaseAssociations.SequenceEqual(other.CaseAssociations)
+                ) &&
+                (
+                    this.CaseEntity == other.CaseEntity ||
+                    this.CaseEntity != null &&
+                    this.CaseEntity.Equals(other.CaseEntity)
+                ) &&
+                (
+                    this.CaseReference == other.CaseReference ||
+                    this.CaseReference != null &&
+                    this.CaseReference.Equals(other.CaseReference)
+                ) &&
+                (
+                    this.CaseStatus == other.CaseStatus ||
+                    this.CaseStatus != null &&
+                    this.CaseStatus.Equals(other.CaseStatus)
+                ) &&
+                (
                     this.SelfUri == other.SelfUri ||
                     this.SelfUri != null &&
                     this.SelfUri.Equals(other.SelfUri)
@@ -1221,6 +1339,18 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.LastScreen != null)
                     hash = hash * 59 + this.LastScreen.GetHashCode();
+
+                if (this.CaseAssociations != null)
+                    hash = hash * 59 + this.CaseAssociations.GetHashCode();
+
+                if (this.CaseEntity != null)
+                    hash = hash * 59 + this.CaseEntity.GetHashCode();
+
+                if (this.CaseReference != null)
+                    hash = hash * 59 + this.CaseReference.GetHashCode();
+
+                if (this.CaseStatus != null)
+                    hash = hash * 59 + this.CaseStatus.GetHashCode();
 
                 if (this.SelfUri != null)
                     hash = hash * 59 + this.SelfUri.GetHashCode();

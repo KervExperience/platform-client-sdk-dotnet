@@ -46,6 +46,24 @@ namespace PureCloudPlatform.Client.V2.Model
             Nbotinteractions,
             
             /// <summary>
+            /// Enum Ncallbackattempts for "nCallbackAttempts"
+            /// </summary>
+            [EnumMember(Value = "nCallbackAttempts")]
+            Ncallbackattempts,
+            
+            /// <summary>
+            /// Enum Ncallbackoversla for "nCallbackOverSla"
+            /// </summary>
+            [EnumMember(Value = "nCallbackOverSla")]
+            Ncallbackoversla,
+            
+            /// <summary>
+            /// Enum Ncallbackscheduled for "nCallbackScheduled"
+            /// </summary>
+            [EnumMember(Value = "nCallbackScheduled")]
+            Ncallbackscheduled,
+            
+            /// <summary>
             /// Enum Ncobrowsesessions for "nCobrowseSessions"
             /// </summary>
             [EnumMember(Value = "nCobrowseSessions")]
@@ -124,6 +142,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Nstatetransitionerror,
             
             /// <summary>
+            /// Enum Ntakeover for "nTakeover"
+            /// </summary>
+            [EnumMember(Value = "nTakeover")]
+            Ntakeover,
+            
+            /// <summary>
             /// Enum Ntransferred for "nTransferred"
             /// </summary>
             [EnumMember(Value = "nTransferred")]
@@ -176,6 +200,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "oServiceTarget")]
             Oservicetarget,
+            
+            /// <summary>
+            /// Enum Oskillexpressionapplications for "oSkillExpressionApplications"
+            /// </summary>
+            [EnumMember(Value = "oSkillExpressionApplications")]
+            Oskillexpressionapplications,
             
             /// <summary>
             /// Enum Tabandon for "tAbandon"
@@ -248,6 +278,24 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "tBarging")]
             Tbarging,
+            
+            /// <summary>
+            /// Enum Tcallbackabandon for "tCallbackAbandon"
+            /// </summary>
+            [EnumMember(Value = "tCallbackAbandon")]
+            Tcallbackabandon,
+            
+            /// <summary>
+            /// Enum Tcallbackconnect for "tCallbackConnect"
+            /// </summary>
+            [EnumMember(Value = "tCallbackConnect")]
+            Tcallbackconnect,
+            
+            /// <summary>
+            /// Enum Tcallbacknotreached for "tCallbackNotReached"
+            /// </summary>
+            [EnumMember(Value = "tCallbackNotReached")]
+            Tcallbacknotreached,
             
             /// <summary>
             /// Enum Tcoaching for "tCoaching"
@@ -386,6 +434,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "tTalkComplete")]
             Ttalkcomplete,
+            
+            /// <summary>
+            /// Enum Ttransmitting for "tTransmitting"
+            /// </summary>
+            [EnumMember(Value = "tTransmitting")]
+            Ttransmitting,
             
             /// <summary>
             /// Enum Tuserresponsetime for "tUserResponseTime"

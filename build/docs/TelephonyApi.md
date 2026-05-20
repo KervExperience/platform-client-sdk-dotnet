@@ -8,7 +8,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 | [**GetTelephonyAgentGreetings**](#GetTelephonyAgentGreetings) | **Get** /api/v2/telephony/agents/{agentId}/greetings | Get an agent&#39;s greetings. |
 | [**GetTelephonyAgentsGreetingsMe**](#GetTelephonyAgentsGreetingsMe) | **Get** /api/v2/telephony/agents/greetings/me | Get the agent&#39;s own greetings. |
+| [**GetTelephonyCallsMetrics**](#GetTelephonyCallsMetrics) | **Get** /api/v2/telephony/calls/metrics | Get the concurrent call metrics for a given organization. |
 | [**GetTelephonyMediaregions**](#GetTelephonyMediaregions) | **Get** /api/v2/telephony/mediaregions | Retrieve the list of AWS regions media can stream through. |
+| [**GetTelephonySettings**](#GetTelephonySettings) | **Get** /api/v2/telephony/settings | Get the global telephony configuration. |
 | [**GetTelephonySipmessagesConversation**](#GetTelephonySipmessagesConversation) | **Get** /api/v2/telephony/sipmessages/conversations/{conversationId} | Get a SIP message. |
 | [**GetTelephonySipmessagesConversationHeaders**](#GetTelephonySipmessagesConversationHeaders) | **Get** /api/v2/telephony/sipmessages/conversations/{conversationId}/headers | Get SIP headers. |
 | [**GetTelephonySiptraces**](#GetTelephonySiptraces) | **Get** /api/v2/telephony/siptraces | Fetch SIP metadata |
@@ -16,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostTelephonySiptracesDownload**](#PostTelephonySiptracesDownload) | **Post** /api/v2/telephony/siptraces/download | Request a download of a pcap file to S3 |
 | [**PutTelephonyAgentGreetings**](#PutTelephonyAgentGreetings) | **Put** /api/v2/telephony/agents/{agentId}/greetings | Updates an agent&#39;s greetings. |
 | [**PutTelephonyAgentsGreetingsMe**](#PutTelephonyAgentsGreetingsMe) | **Put** /api/v2/telephony/agents/greetings/me | Updates the agent&#39;s own greetings. |
+| [**PutTelephonySettings**](#PutTelephonySettings) | **Put** /api/v2/telephony/settings | Update the global telephony configuration. |
 
 
 
@@ -138,6 +141,68 @@ This endpoint does require any parameters.
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
+## GetTelephonyCallsMetrics
+
+> [**OrganizationCallMetrics**](OrganizationCallMetrics) GetTelephonyCallsMetrics (string metricType = null)
+
+
+Get the concurrent call metrics for a given organization.
+
+Requires ANY permissions: 
+
+* telephony:callMetrics:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetTelephonyCallsMetricsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new TelephonyApi();
+            var metricType = metricType_example;  // string | Flag to indicate metric type to fetch. (optional)  (default to cloud)
+
+            try
+            { 
+                // Get the concurrent call metrics for a given organization.
+                OrganizationCallMetrics result = apiInstance.GetTelephonyCallsMetrics(metricType);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TelephonyApi.GetTelephonyCallsMetrics: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **metricType** | **string**| Flag to indicate metric type to fetch. | [optional] [default to cloud]<br />**Values**: cloud, premises |
+
+### Return type
+
+[**OrganizationCallMetrics**](OrganizationCallMetrics)
+
+
 ## GetTelephonyMediaregions
 
 > [**MediaRegions**](MediaRegions) GetTelephonyMediaregions ()
@@ -193,6 +258,63 @@ This endpoint does require any parameters.
 ### Return type
 
 [**MediaRegions**](MediaRegions)
+
+
+## GetTelephonySettings
+
+> [**TelephonySettings**](TelephonySettings) GetTelephonySettings ()
+
+
+Get the global telephony configuration.
+
+Requires ANY permissions: 
+
+* telephony:settings:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetTelephonySettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new TelephonyApi();
+
+            try
+            { 
+                // Get the global telephony configuration.
+                TelephonySettings result = apiInstance.GetTelephonySettings();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TelephonyApi.GetTelephonySettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does require any parameters.
+
+### Return type
+
+[**TelephonySettings**](TelephonySettings)
 
 
 ## GetTelephonySipmessagesConversation
@@ -649,4 +771,66 @@ namespace Example
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+## PutTelephonySettings
+
+> [**TelephonySettings**](TelephonySettings) PutTelephonySettings (TelephonySettings body)
+
+
+Update the global telephony configuration.
+
+Requires ANY permissions: 
+
+* telephony:settings:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PutTelephonySettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new TelephonyApi();
+            var body = new TelephonySettings(); // TelephonySettings | Telephony
+
+            try
+            { 
+                // Update the global telephony configuration.
+                TelephonySettings result = apiInstance.PutTelephonySettings(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TelephonyApi.PutTelephonySettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TelephonySettings**](TelephonySettings)| Telephony |  |
+
+### Return type
+
+[**TelephonySettings**](TelephonySettings)
+
+
+_PureCloudPlatform.Client.V2 263.0.0_

@@ -403,11 +403,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>DictionaryFeedbackEntityListing</returns>
         
-        DictionaryFeedbackEntityListing GetSpeechandtextanalyticsDictionaryfeedback (string dialect = null, string nextPage = null, int? pageSize = null);
+        DictionaryFeedbackEntityListing GetSpeechandtextanalyticsDictionaryfeedback (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null);
 
         /// <summary>
         /// Get the list of Speech &amp; Text Analytics dictionary feedbacks
@@ -417,11 +418,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>ApiResponse of DictionaryFeedbackEntityListing</returns>
         
-        ApiResponse<DictionaryFeedbackEntityListing> GetSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo (string dialect = null, string nextPage = null, int? pageSize = null);
+        ApiResponse<DictionaryFeedbackEntityListing> GetSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null);
 
         /// <summary>
         /// Get a Speech &amp; Text Analytics dictionary feedback by id
@@ -553,9 +555,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>ProgramsEntityListing</returns>
         
-        ProgramsEntityListing GetSpeechandtextanalyticsPrograms (string nextPage = null, int? pageSize = null, string state = null);
+        ProgramsEntityListing GetSpeechandtextanalyticsPrograms (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null);
 
         /// <summary>
         /// Get the list of Speech &amp; Text Analytics programs
@@ -567,9 +573,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>ApiResponse of ProgramsEntityListing</returns>
         
-        ApiResponse<ProgramsEntityListing> GetSpeechandtextanalyticsProgramsWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null);
+        ApiResponse<ProgramsEntityListing> GetSpeechandtextanalyticsProgramsWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null);
 
         /// <summary>
         /// Get a Speech &amp; Text Analytics general program job by id
@@ -672,6 +682,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of ProgramInsightsSettingsEntityListing</returns>
         
         ApiResponse<ProgramInsightsSettingsEntityListing> GetSpeechandtextanalyticsProgramsSettingsInsightsWithHttpInfo (int? pageSize = null, int? pageNumber = null, List<string> programIds = null);
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>ProgramTopicLinksJob</returns>
+        
+        ProgramTopicLinksJob GetSpeechandtextanalyticsProgramsTopiclinksJob (string jobId);
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>ApiResponse of ProgramTopicLinksJob</returns>
+        
+        ApiResponse<ProgramTopicLinksJob> GetSpeechandtextanalyticsProgramsTopiclinksJobWithHttpInfo (string jobId);
 
         /// <summary>
         /// Get supported dialects for each transcription engine
@@ -1995,11 +2029,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>Task of DictionaryFeedbackEntityListing</returns>
         
-        System.Threading.Tasks.Task<DictionaryFeedbackEntityListing> GetSpeechandtextanalyticsDictionaryfeedbackAsync (string dialect = null, string nextPage = null, int? pageSize = null);
+        System.Threading.Tasks.Task<DictionaryFeedbackEntityListing> GetSpeechandtextanalyticsDictionaryfeedbackAsync (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null);
 
         /// <summary>
         /// Get the list of Speech &amp; Text Analytics dictionary feedbacks
@@ -2009,11 +2044,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>Task of ApiResponse (DictionaryFeedbackEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<DictionaryFeedbackEntityListing>> GetSpeechandtextanalyticsDictionaryfeedbackAsyncWithHttpInfo (string dialect = null, string nextPage = null, int? pageSize = null);
+        System.Threading.Tasks.Task<ApiResponse<DictionaryFeedbackEntityListing>> GetSpeechandtextanalyticsDictionaryfeedbackAsyncWithHttpInfo (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null);
 
         /// <summary>
         /// Get a Speech &amp; Text Analytics dictionary feedback by id
@@ -2145,9 +2181,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>Task of ProgramsEntityListing</returns>
         
-        System.Threading.Tasks.Task<ProgramsEntityListing> GetSpeechandtextanalyticsProgramsAsync (string nextPage = null, int? pageSize = null, string state = null);
+        System.Threading.Tasks.Task<ProgramsEntityListing> GetSpeechandtextanalyticsProgramsAsync (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null);
 
         /// <summary>
         /// Get the list of Speech &amp; Text Analytics programs
@@ -2159,9 +2199,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>Task of ApiResponse (ProgramsEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<ProgramsEntityListing>> GetSpeechandtextanalyticsProgramsAsyncWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null);
+        System.Threading.Tasks.Task<ApiResponse<ProgramsEntityListing>> GetSpeechandtextanalyticsProgramsAsyncWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null);
 
         /// <summary>
         /// Get a Speech &amp; Text Analytics general program job by id
@@ -2264,6 +2308,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (ProgramInsightsSettingsEntityListing)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<ProgramInsightsSettingsEntityListing>> GetSpeechandtextanalyticsProgramsSettingsInsightsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, List<string> programIds = null);
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>Task of ProgramTopicLinksJob</returns>
+        
+        System.Threading.Tasks.Task<ProgramTopicLinksJob> GetSpeechandtextanalyticsProgramsTopiclinksJobAsync (string jobId);
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>Task of ApiResponse (ProgramTopicLinksJob)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<ProgramTopicLinksJob>> GetSpeechandtextanalyticsProgramsTopiclinksJobAsyncWithHttpInfo (string jobId);
 
         /// <summary>
         /// Get supported dialects for each transcription engine
@@ -3374,6 +3442,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3474,6 +3544,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3573,6 +3645,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3673,6 +3747,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3776,6 +3852,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsProgram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3880,6 +3958,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsProgram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -3981,6 +4061,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsReprocessingJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4083,6 +4165,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsReprocessingJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4176,6 +4260,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4269,6 +4355,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4368,6 +4456,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4468,6 +4558,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4567,6 +4659,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsTopic: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4667,6 +4761,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteSpeechandtextanalyticsTopic: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4779,6 +4875,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4891,6 +4989,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4991,6 +5091,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5092,6 +5194,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5192,6 +5296,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5293,6 +5399,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5399,6 +5507,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5506,6 +5616,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5612,6 +5724,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationCommunicationTranscripturl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5720,6 +5834,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationCommunicationTranscripturl: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturl: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5826,6 +5942,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturls: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationCommunicationTranscripturls: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturls: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5934,6 +6052,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturls: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationCommunicationTranscripturls: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationCommunicationTranscripturls: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6034,6 +6154,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSentiments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationSentiments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSentiments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6135,6 +6257,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSentiments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationSentiments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSentiments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6235,6 +6359,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSummaries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationSummaries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSummaries: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6336,6 +6462,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSummaries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsConversationSummaries: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsConversationSummaries: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6354,13 +6482,14 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>DictionaryFeedbackEntityListing</returns>
         
-        public DictionaryFeedbackEntityListing GetSpeechandtextanalyticsDictionaryfeedback (string dialect = null, string nextPage = null, int? pageSize = null)
+        public DictionaryFeedbackEntityListing GetSpeechandtextanalyticsDictionaryfeedback (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null)
         {
-             ApiResponse<DictionaryFeedbackEntityListing> localVarResponse = GetSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo(dialect, nextPage, pageSize);
+             ApiResponse<DictionaryFeedbackEntityListing> localVarResponse = GetSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo(dialect, transcriptionEngine, nextPage, pageSize);
              return localVarResponse.Data;
         }
 
@@ -6370,11 +6499,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>ApiResponse of DictionaryFeedbackEntityListing</returns>
         
-        public ApiResponse< DictionaryFeedbackEntityListing > GetSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo (string dialect = null, string nextPage = null, int? pageSize = null)
+        public ApiResponse< DictionaryFeedbackEntityListing > GetSpeechandtextanalyticsDictionaryfeedbackWithHttpInfo (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null)
         { 
 
             var localVarPath = "/api/v2/speechandtextanalytics/dictionaryfeedback";
@@ -6411,6 +6541,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
             // Query params
             if (dialect != null) localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            if (transcriptionEngine != null) localVarQueryParams.Add(new Tuple<string, string>("transcriptionEngine", this.Configuration.ApiClient.ParameterToString(transcriptionEngine)));
             if (nextPage != null) localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
 
@@ -6439,6 +6570,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6456,13 +6589,14 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>Task of DictionaryFeedbackEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<DictionaryFeedbackEntityListing> GetSpeechandtextanalyticsDictionaryfeedbackAsync (string dialect = null, string nextPage = null, int? pageSize = null)
+        public async System.Threading.Tasks.Task<DictionaryFeedbackEntityListing> GetSpeechandtextanalyticsDictionaryfeedbackAsync (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null)
         {
-             ApiResponse<DictionaryFeedbackEntityListing> localVarResponse = await GetSpeechandtextanalyticsDictionaryfeedbackAsyncWithHttpInfo(dialect, nextPage, pageSize);
+             ApiResponse<DictionaryFeedbackEntityListing> localVarResponse = await GetSpeechandtextanalyticsDictionaryfeedbackAsyncWithHttpInfo(dialect, transcriptionEngine, nextPage, pageSize);
              return localVarResponse.Data;
 
         }
@@ -6473,11 +6607,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dialect">The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)</param>
+        /// <param name="transcriptionEngine">Filter by transcription engine, If not provided, all transcription engines will be considered (optional)</param>
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 500)</param>
         /// <returns>Task of ApiResponse (DictionaryFeedbackEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<DictionaryFeedbackEntityListing>> GetSpeechandtextanalyticsDictionaryfeedbackAsyncWithHttpInfo (string dialect = null, string nextPage = null, int? pageSize = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DictionaryFeedbackEntityListing>> GetSpeechandtextanalyticsDictionaryfeedbackAsyncWithHttpInfo (string dialect = null, string transcriptionEngine = null, string nextPage = null, int? pageSize = null)
         { 
 
             var localVarPath = "/api/v2/speechandtextanalytics/dictionaryfeedback";
@@ -6514,6 +6649,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
             // Query params
             if (dialect != null) localVarQueryParams.Add(new Tuple<string, string>("dialect", this.Configuration.ApiClient.ParameterToString(dialect)));
+            if (transcriptionEngine != null) localVarQueryParams.Add(new Tuple<string, string>("transcriptionEngine", this.Configuration.ApiClient.ParameterToString(transcriptionEngine)));
             if (nextPage != null) localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
 
@@ -6542,6 +6678,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6642,6 +6780,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6743,6 +6883,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6843,6 +6985,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6944,6 +7088,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7044,6 +7190,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramMappings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7145,6 +7293,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramMappings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7245,6 +7395,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7346,6 +7498,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7446,6 +7600,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7547,6 +7703,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7567,11 +7725,15 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>ProgramsEntityListing</returns>
         
-        public ProgramsEntityListing GetSpeechandtextanalyticsPrograms (string nextPage = null, int? pageSize = null, string state = null)
+        public ProgramsEntityListing GetSpeechandtextanalyticsPrograms (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null)
         {
-             ApiResponse<ProgramsEntityListing> localVarResponse = GetSpeechandtextanalyticsProgramsWithHttpInfo(nextPage, pageSize, state);
+             ApiResponse<ProgramsEntityListing> localVarResponse = GetSpeechandtextanalyticsProgramsWithHttpInfo(nextPage, pageSize, state, name, ids, sortBy, sortOrder);
              return localVarResponse.Data;
         }
 
@@ -7583,9 +7745,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>ApiResponse of ProgramsEntityListing</returns>
         
-        public ApiResponse< ProgramsEntityListing > GetSpeechandtextanalyticsProgramsWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null)
+        public ApiResponse< ProgramsEntityListing > GetSpeechandtextanalyticsProgramsWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null)
         { 
 
             var localVarPath = "/api/v2/speechandtextanalytics/programs";
@@ -7624,6 +7790,10 @@ namespace PureCloudPlatform.Client.V2.Api
             if (nextPage != null) localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (state != null) localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            if (ids != null) ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (sortBy != null) localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            if (sortOrder != null) localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
 
             // Header params
 
@@ -7650,6 +7820,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsPrograms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7669,11 +7841,15 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>Task of ProgramsEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<ProgramsEntityListing> GetSpeechandtextanalyticsProgramsAsync (string nextPage = null, int? pageSize = null, string state = null)
+        public async System.Threading.Tasks.Task<ProgramsEntityListing> GetSpeechandtextanalyticsProgramsAsync (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null)
         {
-             ApiResponse<ProgramsEntityListing> localVarResponse = await GetSpeechandtextanalyticsProgramsAsyncWithHttpInfo(nextPage, pageSize, state);
+             ApiResponse<ProgramsEntityListing> localVarResponse = await GetSpeechandtextanalyticsProgramsAsyncWithHttpInfo(nextPage, pageSize, state, name, ids, sortBy, sortOrder);
              return localVarResponse.Data;
 
         }
@@ -7686,9 +7862,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="nextPage">The key for listing the next page (optional)</param>
         /// <param name="pageSize">The page size for the listing (optional, default to 20)</param>
         /// <param name="state">Program state. Defaults to Latest (optional)</param>
+        /// <param name="name">Case insensitive partial name to filter by (optional)</param>
+        /// <param name="ids">Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)</param>
+        /// <param name="sortBy">Sort results by. Defaults to name (optional)</param>
+        /// <param name="sortOrder">Sort order. Defaults to asc (optional)</param>
         /// <returns>Task of ApiResponse (ProgramsEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<ProgramsEntityListing>> GetSpeechandtextanalyticsProgramsAsyncWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ProgramsEntityListing>> GetSpeechandtextanalyticsProgramsAsyncWithHttpInfo (string nextPage = null, int? pageSize = null, string state = null, string name = null, List<string> ids = null, string sortBy = null, string sortOrder = null)
         { 
 
             var localVarPath = "/api/v2/speechandtextanalytics/programs";
@@ -7727,6 +7907,10 @@ namespace PureCloudPlatform.Client.V2.Api
             if (nextPage != null) localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
             if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
             if (state != null) localVarQueryParams.Add(new Tuple<string, string>("state", this.Configuration.ApiClient.ParameterToString(state)));
+            if (name != null) localVarQueryParams.Add(new Tuple<string, string>("name", this.Configuration.ApiClient.ParameterToString(name)));
+            if (ids != null) ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (sortBy != null) localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
+            if (sortOrder != null) localVarQueryParams.Add(new Tuple<string, string>("sortOrder", this.Configuration.ApiClient.ParameterToString(sortOrder)));
 
             // Header params
 
@@ -7753,6 +7937,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsPrograms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7853,6 +8039,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsGeneralJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsGeneralJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsGeneralJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7954,6 +8142,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsGeneralJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsGeneralJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsGeneralJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8054,6 +8244,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsMappings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8154,6 +8346,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsMappings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8254,6 +8448,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsPublishjob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8355,6 +8551,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsPublishjob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8458,6 +8656,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsSettingsInsights: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8561,12 +8761,219 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsSettingsInsights: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<ProgramInsightsSettingsEntityListing>(localVarStatusCode,
                 localVarHeaders,
                 (ProgramInsightsSettingsEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramInsightsSettingsEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>ProgramTopicLinksJob</returns>
+        
+        public ProgramTopicLinksJob GetSpeechandtextanalyticsProgramsTopiclinksJob (string jobId)
+        {
+             ApiResponse<ProgramTopicLinksJob> localVarResponse = GetSpeechandtextanalyticsProgramsTopiclinksJobWithHttpInfo(jobId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>ApiResponse of ProgramTopicLinksJob</returns>
+        
+        public ApiResponse< ProgramTopicLinksJob > GetSpeechandtextanalyticsProgramsTopiclinksJobWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling SpeechTextAnalyticsApi->GetSpeechandtextanalyticsProgramsTopiclinksJob");
+
+            var localVarPath = "/api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTopiclinksJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsTopiclinksJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTopiclinksJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ProgramTopicLinksJob>(localVarStatusCode,
+                localVarHeaders,
+                (ProgramTopicLinksJob) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTopicLinksJob)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>Task of ProgramTopicLinksJob</returns>
+        
+        public async System.Threading.Tasks.Task<ProgramTopicLinksJob> GetSpeechandtextanalyticsProgramsTopiclinksJobAsync (string jobId)
+        {
+             ApiResponse<ProgramTopicLinksJob> localVarResponse = await GetSpeechandtextanalyticsProgramsTopiclinksJobAsyncWithHttpInfo(jobId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get a Speech &amp; Text Analytics program-topic links job by id 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jobId">The id of the program-topic links job</param>
+        /// <returns>Task of ApiResponse (ProgramTopicLinksJob)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<ProgramTopicLinksJob>> GetSpeechandtextanalyticsProgramsTopiclinksJobAsyncWithHttpInfo (string jobId)
+        { 
+            // verify the required parameter 'jobId' is set
+            if (jobId == null)
+                throw new ApiException(400, "Missing required parameter 'jobId' when calling SpeechTextAnalyticsApi->GetSpeechandtextanalyticsProgramsTopiclinksJob");
+            
+
+            var localVarPath = "/api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTopiclinksJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsTopiclinksJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTopiclinksJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<ProgramTopicLinksJob>(localVarStatusCode,
+                localVarHeaders,
+                (ProgramTopicLinksJob) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProgramTopicLinksJob)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -8655,6 +9062,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8749,6 +9158,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsTranscriptionenginesDialects: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8849,6 +9260,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsUnpublished: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsUnpublished: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsUnpublished: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8949,6 +9362,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsUnpublished: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsProgramsUnpublished: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsProgramsUnpublished: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9051,6 +9466,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9154,6 +9571,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsReprocessingJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9256,6 +9675,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobInteractions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsReprocessingJobInteractions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobInteractions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9359,6 +9780,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobInteractions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsReprocessingJobInteractions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobInteractions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9467,6 +9890,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9575,6 +10000,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9669,6 +10096,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsSentimentDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentDialects: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9763,6 +10192,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsSentimentDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentDialects: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9860,6 +10291,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9957,6 +10390,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10051,6 +10486,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10145,6 +10582,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10245,6 +10684,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopic: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10346,6 +10787,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopic: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10467,6 +10910,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopics: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10588,6 +11033,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopics: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10682,6 +11129,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsDialects: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10776,6 +11225,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsDialects: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsDialects: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10873,6 +11324,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneral: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsGeneral: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneral: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10970,6 +11423,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneral: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsGeneral: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneral: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11067,6 +11522,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneralStatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsGeneralStatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneralStatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11164,6 +11621,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneralStatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsGeneralStatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsGeneralStatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11264,6 +11723,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsPublishjob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11365,6 +11826,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsPublishjob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsPublishjob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11465,6 +11928,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsTestphraseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsTestphraseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsTestphraseJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11566,6 +12031,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsTestphraseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTopicsTestphraseJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTopicsTestphraseJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11678,6 +12145,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguageConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTranslationsLanguageConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguageConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11792,6 +12261,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguageConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTranslationsLanguageConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguageConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11886,6 +12357,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTranslationsLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11980,6 +12453,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetSpeechandtextanalyticsTranslationsLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetSpeechandtextanalyticsTranslationsLanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12085,6 +12560,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchSpeechandtextanalyticsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12191,6 +12668,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchSpeechandtextanalyticsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12296,6 +12775,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12402,6 +12883,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsCategories: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsCategories: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12507,6 +12990,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12613,6 +13098,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsDictionaryfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12718,6 +13205,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsPrograms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12824,6 +13313,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsPrograms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsPrograms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12929,6 +13420,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsGeneralJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsProgramsGeneralJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsGeneralJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13035,6 +13528,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsGeneralJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsProgramsGeneralJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsGeneralJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13140,6 +13635,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsProgramsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsPublishjobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13246,6 +13743,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsProgramsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsProgramsPublishjobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13353,6 +13852,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13461,6 +13962,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsReprocessingJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13566,6 +14069,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13672,6 +14177,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsSentimentfeedback: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13777,6 +14284,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopics: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13883,6 +14392,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTopics: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopics: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13988,6 +14499,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTopicsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsPublishjobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14094,6 +14607,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTopicsPublishjobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsPublishjobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14199,6 +14714,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsTestphraseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTopicsTestphraseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsTestphraseJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14305,6 +14822,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsTestphraseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTopicsTestphraseJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTopicsTestphraseJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14410,6 +14929,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTranscriptsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTranscriptsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTranscriptsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14516,6 +15037,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTranscriptsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostSpeechandtextanalyticsTranscriptsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostSpeechandtextanalyticsTranscriptsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14627,6 +15150,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14740,6 +15265,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsCategory: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsCategory: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14848,6 +15375,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14957,6 +15486,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15068,6 +15599,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15181,6 +15714,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgram: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgram: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15292,6 +15827,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramMappings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15405,6 +15942,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgramMappings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramMappings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15516,6 +16055,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15629,6 +16170,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramSettingsInsights: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15740,6 +16283,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15853,6 +16398,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsProgramTranscriptionengines: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15958,6 +16505,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16064,6 +16613,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16175,6 +16726,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsTopic: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16288,6 +16841,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutSpeechandtextanalyticsTopic: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutSpeechandtextanalyticsTopic: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

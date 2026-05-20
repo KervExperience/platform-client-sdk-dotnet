@@ -848,6 +848,32 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null);
 
         /// <summary>
+        /// Retrieve a list of evaluation forms by their ids
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>EvaluationFormResponseEntityListing</returns>
+        
+        EvaluationFormResponseEntityListing GetQualityFormsEvaluationsBulk (List<string> id, bool? includeLatestVersionFormName = null);
+
+        /// <summary>
+        /// Retrieve a list of evaluation forms by their ids
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>ApiResponse of EvaluationFormResponseEntityListing</returns>
+        
+        ApiResponse<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationsBulkWithHttpInfo (List<string> id, bool? includeLatestVersionFormName = null);
+
+        /// <summary>
         /// Retrieve a list of the latest published evaluation form versions by context ids
         /// </summary>
         /// <remarks>
@@ -1432,10 +1458,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>Evaluation</returns>
         
-        Evaluation PostQualityConversationEvaluations (string conversationId, EvaluationCreateBody body, string expand = null);
+        Evaluation PostQualityConversationEvaluations (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null);
 
         /// <summary>
         /// Create an evaluation
@@ -1446,10 +1473,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>ApiResponse of Evaluation</returns>
         
-        ApiResponse<Evaluation> PostQualityConversationEvaluationsWithHttpInfo (string conversationId, EvaluationCreateBody body, string expand = null);
+        ApiResponse<Evaluation> PostQualityConversationEvaluationsWithHttpInfo (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null);
 
         /// <summary>
         /// Create audit query execution
@@ -1522,6 +1550,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of EvaluationScoringSet</returns>
         
         ApiResponse<EvaluationScoringSet> PostQualityEvaluationsScoringWithHttpInfo (EvaluationFormAndScoringSet body);
+
+        /// <summary>
+        /// Search evaluations based along specified criteria
+        /// </summary>
+        /// <remarks>
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>EvaluationSearchResponse</returns>
+        
+        EvaluationSearchResponse PostQualityEvaluationsSearch (EvaluationSearchRequestDTO body);
+
+        /// <summary>
+        /// Search evaluations based along specified criteria
+        /// </summary>
+        /// <remarks>
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>ApiResponse of EvaluationSearchResponse</returns>
+        
+        ApiResponse<EvaluationSearchResponse> PostQualityEvaluationsSearchWithHttpInfo (EvaluationSearchRequestDTO body);
 
         /// <summary>
         /// Create an evaluation form.
@@ -1692,6 +1744,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of SurveyForm</returns>
         
         ApiResponse<SurveyForm> PostQualityPublishedformsSurveysWithHttpInfo (PublishForm body);
+
+        /// <summary>
+        /// Create a survey for a conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>CreateSurveyResponse</returns>
+        
+        CreateSurveyResponse PostQualitySurveys (CreateSurveyRequest body);
+
+        /// <summary>
+        /// Create a survey for a conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>ApiResponse of CreateSurveyResponse</returns>
+        
+        ApiResponse<CreateSurveyResponse> PostQualitySurveysWithHttpInfo (CreateSurveyRequest body);
 
         /// <summary>
         /// Score survey
@@ -2768,6 +2844,32 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<EvaluationFormResponseEntityListing>> GetQualityFormsEvaluationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, string nextPage = null, string previousPage = null, string expand = null, string name = null, string sortOrder = null);
 
         /// <summary>
+        /// Retrieve a list of evaluation forms by their ids
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>Task of EvaluationFormResponseEntityListing</returns>
+        
+        System.Threading.Tasks.Task<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationsBulkAsync (List<string> id, bool? includeLatestVersionFormName = null);
+
+        /// <summary>
+        /// Retrieve a list of evaluation forms by their ids
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>Task of ApiResponse (EvaluationFormResponseEntityListing)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<EvaluationFormResponseEntityListing>> GetQualityFormsEvaluationsBulkAsyncWithHttpInfo (List<string> id, bool? includeLatestVersionFormName = null);
+
+        /// <summary>
         /// Retrieve a list of the latest published evaluation form versions by context ids
         /// </summary>
         /// <remarks>
@@ -3352,10 +3454,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>Task of Evaluation</returns>
         
-        System.Threading.Tasks.Task<Evaluation> PostQualityConversationEvaluationsAsync (string conversationId, EvaluationCreateBody body, string expand = null);
+        System.Threading.Tasks.Task<Evaluation> PostQualityConversationEvaluationsAsync (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null);
 
         /// <summary>
         /// Create an evaluation
@@ -3366,10 +3469,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>Task of ApiResponse (Evaluation)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<Evaluation>> PostQualityConversationEvaluationsAsyncWithHttpInfo (string conversationId, EvaluationCreateBody body, string expand = null);
+        System.Threading.Tasks.Task<ApiResponse<Evaluation>> PostQualityConversationEvaluationsAsyncWithHttpInfo (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null);
 
         /// <summary>
         /// Create audit query execution
@@ -3442,6 +3546,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (EvaluationScoringSet)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<EvaluationScoringSet>> PostQualityEvaluationsScoringAsyncWithHttpInfo (EvaluationFormAndScoringSet body);
+
+        /// <summary>
+        /// Search evaluations based along specified criteria
+        /// </summary>
+        /// <remarks>
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>Task of EvaluationSearchResponse</returns>
+        
+        System.Threading.Tasks.Task<EvaluationSearchResponse> PostQualityEvaluationsSearchAsync (EvaluationSearchRequestDTO body);
+
+        /// <summary>
+        /// Search evaluations based along specified criteria
+        /// </summary>
+        /// <remarks>
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>Task of ApiResponse (EvaluationSearchResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<EvaluationSearchResponse>> PostQualityEvaluationsSearchAsyncWithHttpInfo (EvaluationSearchRequestDTO body);
 
         /// <summary>
         /// Create an evaluation form.
@@ -3612,6 +3740,30 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (SurveyForm)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<SurveyForm>> PostQualityPublishedformsSurveysAsyncWithHttpInfo (PublishForm body);
+
+        /// <summary>
+        /// Create a survey for a conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>Task of CreateSurveyResponse</returns>
+        
+        System.Threading.Tasks.Task<CreateSurveyResponse> PostQualitySurveysAsync (CreateSurveyRequest body);
+
+        /// <summary>
+        /// Create a survey for a conversation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>Task of ApiResponse (CreateSurveyResponse)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<CreateSurveyResponse>> PostQualitySurveysAsyncWithHttpInfo (CreateSurveyRequest body);
 
         /// <summary>
         /// Score survey
@@ -4032,6 +4184,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsEvaluationsAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4134,6 +4288,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsEvaluationsAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4235,6 +4391,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsSurveysAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4337,6 +4495,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteAnalyticsSurveysAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4443,6 +4603,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityCalibration: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4551,6 +4713,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityCalibration: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4660,6 +4824,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityConversationEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4771,6 +4937,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityConversationEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4870,6 +5038,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityForm: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -4970,6 +5140,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityForm: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5069,6 +5241,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5169,6 +5343,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5268,6 +5444,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5368,6 +5546,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5473,6 +5653,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityProgramAgentscoringrule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5580,6 +5762,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteQualityProgramAgentscoringrule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5682,6 +5866,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5785,6 +5971,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsEvaluationsAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5890,6 +6078,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsEvaluationsAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJobResults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -5996,6 +6186,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsEvaluationsAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsEvaluationsAggregatesJobResults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6098,6 +6290,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6201,6 +6395,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsSurveysAggregatesJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6306,6 +6502,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsSurveysAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJobResults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6412,6 +6610,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetAnalyticsSurveysAggregatesJobResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetAnalyticsSurveysAggregatesJobResults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6551,6 +6751,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityAgentsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityAgentsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityAgentsActivity: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6690,6 +6892,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityAgentsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityAgentsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityAgentsActivity: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6796,6 +7000,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibration: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -6903,6 +7109,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibration: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7030,6 +7238,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibrations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7158,6 +7368,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityCalibrations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7267,6 +7479,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7378,6 +7592,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7478,6 +7694,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7579,6 +7797,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7679,6 +7899,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationsAuditsQueryTransactionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7780,6 +8002,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationsAuditsQueryTransactionId: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionId: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7889,6 +8113,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionIdResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationsAuditsQueryTransactionIdResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionIdResults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -7999,6 +8225,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionIdResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityConversationsAuditsQueryTransactionIdResults: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityConversationsAuditsQueryTransactionIdResults: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8153,6 +8381,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityEvaluationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8307,6 +8537,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityEvaluationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8437,6 +8669,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluatorsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityEvaluatorsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluatorsActivity: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8567,6 +8801,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluatorsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityEvaluatorsActivity: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityEvaluatorsActivity: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8667,6 +8903,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForm: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8768,6 +9006,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForm: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8877,6 +9117,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -8987,6 +9229,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9105,6 +9349,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9223,6 +9469,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityForms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9323,6 +9571,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9424,6 +9674,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9533,6 +9785,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluationVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9643,6 +9897,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluationVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9761,6 +10017,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9879,8 +10137,221 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<EvaluationFormResponseEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (EvaluationFormResponseEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EvaluationFormResponseEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a list of evaluation forms by their ids 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>EvaluationFormResponseEntityListing</returns>
+        
+        public EvaluationFormResponseEntityListing GetQualityFormsEvaluationsBulk (List<string> id, bool? includeLatestVersionFormName = null)
+        {
+             ApiResponse<EvaluationFormResponseEntityListing> localVarResponse = GetQualityFormsEvaluationsBulkWithHttpInfo(id, includeLatestVersionFormName);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve a list of evaluation forms by their ids 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>ApiResponse of EvaluationFormResponseEntityListing</returns>
+        
+        public ApiResponse< EvaluationFormResponseEntityListing > GetQualityFormsEvaluationsBulkWithHttpInfo (List<string> id, bool? includeLatestVersionFormName = null)
+        { 
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling QualityApi->GetQualityFormsEvaluationsBulk");
+
+            var localVarPath = "/api/v2/quality/forms/evaluations/bulk";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (id != null) id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (includeLatestVersionFormName != null) localVarQueryParams.Add(new Tuple<string, string>("includeLatestVersionFormName", this.Configuration.ApiClient.ParameterToString(includeLatestVersionFormName)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluationsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<EvaluationFormResponseEntityListing>(localVarStatusCode,
+                localVarHeaders,
+                (EvaluationFormResponseEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EvaluationFormResponseEntityListing)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Retrieve a list of evaluation forms by their ids 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>Task of EvaluationFormResponseEntityListing</returns>
+        
+        public async System.Threading.Tasks.Task<EvaluationFormResponseEntityListing> GetQualityFormsEvaluationsBulkAsync (List<string> id, bool? includeLatestVersionFormName = null)
+        {
+             ApiResponse<EvaluationFormResponseEntityListing> localVarResponse = await GetQualityFormsEvaluationsBulkAsyncWithHttpInfo(id, includeLatestVersionFormName);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieve a list of evaluation forms by their ids 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100</param>
+        /// <param name="includeLatestVersionFormName">Whether to include the name of the form&#39;s most recently published version (optional, default to false)</param>
+        /// <returns>Task of ApiResponse (EvaluationFormResponseEntityListing)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<EvaluationFormResponseEntityListing>> GetQualityFormsEvaluationsBulkAsyncWithHttpInfo (List<string> id, bool? includeLatestVersionFormName = null)
+        { 
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling QualityApi->GetQualityFormsEvaluationsBulk");
+            
+
+            var localVarPath = "/api/v2/quality/forms/evaluations/bulk";
+            var localVarHttpMethod = "Get";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+            if (id != null) id.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("id", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (includeLatestVersionFormName != null) localVarQueryParams.Add(new Tuple<string, string>("includeLatestVersionFormName", this.Configuration.ApiClient.ParameterToString(includeLatestVersionFormName)));
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluationsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<EvaluationFormResponseEntityListing>(localVarStatusCode,
                 localVarHeaders,
@@ -9979,6 +10450,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluationsBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulkContexts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10080,6 +10553,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsEvaluationsBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsEvaluationsBulkContexts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10180,6 +10655,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10281,6 +10758,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10387,6 +10866,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveyVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveyVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveyVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10494,6 +10975,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveyVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveyVersions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveyVersions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10612,6 +11095,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10730,6 +11215,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10830,6 +11317,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveysBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10931,6 +11420,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveysBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11034,6 +11525,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveysBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulkContexts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11138,6 +11631,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityFormsSurveysBulkContexts: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityFormsSurveysBulkContexts: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11244,6 +11739,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11352,6 +11849,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11452,6 +11951,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11553,6 +12054,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityProgramAgentscoringrules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11653,6 +12156,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedform: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedform: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedform: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11754,6 +12259,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedform: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedform: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedform: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11860,6 +12367,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedforms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11966,6 +12475,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedforms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12066,6 +12577,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12167,6 +12680,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12273,6 +12788,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12379,6 +12896,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12479,6 +12998,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12580,6 +13101,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12686,6 +13209,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12792,6 +13317,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualityPublishedformsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12892,6 +13419,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualitySurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12993,6 +13522,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualitySurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13086,6 +13617,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurveysScorable: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13180,6 +13713,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetQualitySurveysScorable: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13291,6 +13826,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13404,6 +13941,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13511,6 +14050,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsEvaluationsAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13619,6 +14160,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsEvaluationsAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13724,6 +14267,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsEvaluationsAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13830,6 +14375,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsEvaluationsAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsEvaluationsAggregatesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13937,6 +14484,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsSurveysAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14045,6 +14594,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsSurveysAggregatesJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14150,6 +14701,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsSurveysAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14256,6 +14809,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsSurveysAggregatesQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsSurveysAggregatesQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14364,6 +14919,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityCalibrations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14473,6 +15030,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityCalibrations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityCalibrations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14492,12 +15051,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>Evaluation</returns>
         
-        public Evaluation PostQualityConversationEvaluations (string conversationId, EvaluationCreateBody body, string expand = null)
+        public Evaluation PostQualityConversationEvaluations (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null)
         {
-             ApiResponse<Evaluation> localVarResponse = PostQualityConversationEvaluationsWithHttpInfo(conversationId, body, expand);
+             ApiResponse<Evaluation> localVarResponse = PostQualityConversationEvaluationsWithHttpInfo(conversationId, body, idempotencyKey, expand);
              return localVarResponse.Data;
         }
 
@@ -14508,10 +15068,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>ApiResponse of Evaluation</returns>
         
-        public ApiResponse< Evaluation > PostQualityConversationEvaluationsWithHttpInfo (string conversationId, EvaluationCreateBody body, string expand = null)
+        public ApiResponse< Evaluation > PostQualityConversationEvaluationsWithHttpInfo (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null)
         { 
             // verify the required parameter 'conversationId' is set
             if (conversationId == null)
@@ -14558,6 +15119,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (expand != null) localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
 
             // Header params
+            if (idempotencyKey != null) localVarHeaderParams.Add("Idempotency-Key", this.Configuration.ApiClient.ParameterToString(idempotencyKey)); // header parameter
 
             // Form params
             
@@ -14587,6 +15149,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityConversationEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14605,12 +15169,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>Task of Evaluation</returns>
         
-        public async System.Threading.Tasks.Task<Evaluation> PostQualityConversationEvaluationsAsync (string conversationId, EvaluationCreateBody body, string expand = null)
+        public async System.Threading.Tasks.Task<Evaluation> PostQualityConversationEvaluationsAsync (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null)
         {
-             ApiResponse<Evaluation> localVarResponse = await PostQualityConversationEvaluationsAsyncWithHttpInfo(conversationId, body, expand);
+             ApiResponse<Evaluation> localVarResponse = await PostQualityConversationEvaluationsAsyncWithHttpInfo(conversationId, body, idempotencyKey, expand);
              return localVarResponse.Data;
 
         }
@@ -14622,10 +15187,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">conversationId</param>
         /// <param name="body">evaluation</param>
+        /// <param name="idempotencyKey">Idempotency key for request deduplication (optional)</param>
         /// <param name="expand">evaluatorId (optional)</param>
         /// <returns>Task of ApiResponse (Evaluation)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<Evaluation>> PostQualityConversationEvaluationsAsyncWithHttpInfo (string conversationId, EvaluationCreateBody body, string expand = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Evaluation>> PostQualityConversationEvaluationsAsyncWithHttpInfo (string conversationId, EvaluationCreateBody body, string idempotencyKey = null, string expand = null)
         { 
             // verify the required parameter 'conversationId' is set
             if (conversationId == null)
@@ -14674,6 +15240,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (expand != null) localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(expand)));
 
             // Header params
+            if (idempotencyKey != null) localVarHeaderParams.Add("Idempotency-Key", this.Configuration.ApiClient.ParameterToString(idempotencyKey)); // header parameter
 
             // Form params
             
@@ -14703,6 +15270,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityConversationEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14808,6 +15377,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationsAuditsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityConversationsAuditsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationsAuditsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14914,6 +15485,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationsAuditsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityConversationsAuditsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityConversationsAuditsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15019,6 +15592,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsAggregatesQueryMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityEvaluationsAggregatesQueryMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsAggregatesQueryMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15125,6 +15700,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsAggregatesQueryMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityEvaluationsAggregatesQueryMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsAggregatesQueryMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15230,6 +15807,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityEvaluationsScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsScoring: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15336,12 +15915,229 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityEvaluationsScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsScoring: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<EvaluationScoringSet>(localVarStatusCode,
                 localVarHeaders,
                 (EvaluationScoringSet) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EvaluationScoringSet)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Search evaluations based along specified criteria 
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>EvaluationSearchResponse</returns>
+        
+        public EvaluationSearchResponse PostQualityEvaluationsSearch (EvaluationSearchRequestDTO body)
+        {
+             ApiResponse<EvaluationSearchResponse> localVarResponse = PostQualityEvaluationsSearchWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search evaluations based along specified criteria 
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>ApiResponse of EvaluationSearchResponse</returns>
+        
+        public ApiResponse< EvaluationSearchResponse > PostQualityEvaluationsSearchWithHttpInfo (EvaluationSearchRequestDTO body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling QualityApi->PostQualityEvaluationsSearch");
+
+            var localVarPath = "/api/v2/quality/evaluations/search";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityEvaluationsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<EvaluationSearchResponse>(localVarStatusCode,
+                localVarHeaders,
+                (EvaluationSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EvaluationSearchResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Search evaluations based along specified criteria 
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>Task of EvaluationSearchResponse</returns>
+        
+        public async System.Threading.Tasks.Task<EvaluationSearchResponse> PostQualityEvaluationsSearchAsync (EvaluationSearchRequestDTO body)
+        {
+             ApiResponse<EvaluationSearchResponse> localVarResponse = await PostQualityEvaluationsSearchAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Search evaluations based along specified criteria 
+        /// Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Evaluation search request</param>
+        /// <returns>Task of ApiResponse (EvaluationSearchResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<EvaluationSearchResponse>> PostQualityEvaluationsSearchAsyncWithHttpInfo (EvaluationSearchRequestDTO body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling QualityApi->PostQualityEvaluationsSearch");
+            
+
+            var localVarPath = "/api/v2/quality/evaluations/search";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityEvaluationsSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualityEvaluationsSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<EvaluationSearchResponse>(localVarStatusCode,
+                localVarHeaders,
+                (EvaluationSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EvaluationSearchResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -15441,6 +16237,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityForms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15547,6 +16345,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityForms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityForms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15652,6 +16452,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15758,6 +16560,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityFormsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15863,6 +16667,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15969,6 +16775,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityFormsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityFormsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16080,6 +16888,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityProgramAgentscoringrules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16193,6 +17003,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityProgramAgentscoringrules: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityProgramAgentscoringrules: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16298,6 +17110,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedforms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16404,6 +17218,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityPublishedforms: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedforms: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16509,6 +17325,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16615,6 +17433,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityPublishedformsEvaluations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsEvaluations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16720,6 +17540,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16826,12 +17648,229 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualityPublishedformsSurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualityPublishedformsSurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<SurveyForm>(localVarStatusCode,
                 localVarHeaders,
                 (SurveyForm) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SurveyForm)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Create a survey for a conversation 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>CreateSurveyResponse</returns>
+        
+        public CreateSurveyResponse PostQualitySurveys (CreateSurveyRequest body)
+        {
+             ApiResponse<CreateSurveyResponse> localVarResponse = PostQualitySurveysWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a survey for a conversation 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>ApiResponse of CreateSurveyResponse</returns>
+        
+        public ApiResponse< CreateSurveyResponse > PostQualitySurveysWithHttpInfo (CreateSurveyRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling QualityApi->PostQualitySurveys");
+
+            var localVarPath = "/api/v2/quality/surveys";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualitySurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<CreateSurveyResponse>(localVarStatusCode,
+                localVarHeaders,
+                (CreateSurveyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSurveyResponse)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Create a survey for a conversation 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>Task of CreateSurveyResponse</returns>
+        
+        public async System.Threading.Tasks.Task<CreateSurveyResponse> PostQualitySurveysAsync (CreateSurveyRequest body)
+        {
+             ApiResponse<CreateSurveyResponse> localVarResponse = await PostQualitySurveysAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create a survey for a conversation 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">Survey creation request</param>
+        /// <returns>Task of ApiResponse (CreateSurveyResponse)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<CreateSurveyResponse>> PostQualitySurveysAsyncWithHttpInfo (CreateSurveyRequest body)
+        { 
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling QualityApi->PostQualitySurveys");
+            
+
+            var localVarPath = "/api/v2/quality/surveys";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualitySurveys: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveys: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<CreateSurveyResponse>(localVarStatusCode,
+                localVarHeaders,
+                (CreateSurveyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateSurveyResponse)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -16931,6 +17970,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveysScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualitySurveysScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveysScoring: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17037,6 +18078,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveysScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostQualitySurveysScoring: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostQualitySurveysScoring: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17148,6 +18191,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityCalibration: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17261,6 +18306,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityCalibration: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityCalibration: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17381,6 +18428,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityConversationEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17504,6 +18553,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityConversationEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityConversationEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17615,6 +18666,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityForm: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17728,6 +18781,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityForm: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityForm: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17839,6 +18894,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17952,6 +19009,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityFormsEvaluation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18063,6 +19122,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluationAiscoringSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityFormsEvaluationAiscoringSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluationAiscoringSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18176,6 +19237,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluationAiscoringSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityFormsEvaluationAiscoringSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsEvaluationAiscoringSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18287,6 +19350,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18400,6 +19465,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityFormsSurvey: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityFormsSurvey: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18517,6 +19584,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityProgramAgentscoringrule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18637,6 +19706,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualityProgramAgentscoringrule: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualityProgramAgentscoringrule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18741,6 +19812,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualitySurveysScorable: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18847,6 +19920,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutQualitySurveysScorable: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutQualitySurveysScorable: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

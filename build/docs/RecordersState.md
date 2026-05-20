@@ -9,7 +9,8 @@
 | **AdhocState** | **string** | Indicates the state of the adhoc recorder. | [optional] |
 | **CustomerExperienceState** | **string** | Indicates the state of the customer experience recorder. | [optional] |
 | **AgentExperienceState** | **string** | Indicates the state of the agent experience recorder. | [optional] |
+| **SnippetState** | **string** | Indicates the state of the snippet recording. | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

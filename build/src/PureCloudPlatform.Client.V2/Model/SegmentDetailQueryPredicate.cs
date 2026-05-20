@@ -439,6 +439,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Scoredagentid,
             
             /// <summary>
+            /// Enum Screenmonitoreduserid for "screenMonitoredUserId"
+            /// </summary>
+            [EnumMember(Value = "screenMonitoredUserId")]
+            Screenmonitoreduserid,
+            
+            /// <summary>
             /// Enum Screenrecording for "screenRecording"
             /// </summary>
             [EnumMember(Value = "screenRecording")]
@@ -473,6 +479,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "sipResponseCode")]
             Sipresponsecode,
+            
+            /// <summary>
+            /// Enum Skillexpressionid for "skillExpressionId"
+            /// </summary>
+            [EnumMember(Value = "skillExpressionId")]
+            Skillexpressionid,
             
             /// <summary>
             /// Enum Snippetrecording for "snippetRecording"

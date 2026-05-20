@@ -67,6 +67,12 @@ namespace PureCloudPlatform.Client.V2.Model
             OutdatedSdkVersion,
             
             /// <summary>
+            /// Enum Accessattribute for "accessAttribute"
+            /// </summary>
+            [EnumMember(Value = "accessAttribute")]
+            Accessattribute,
+            
+            /// <summary>
             /// Enum Conversationend for "conversationEnd"
             /// </summary>
             [EnumMember(Value = "conversationEnd")]
@@ -152,6 +158,24 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "nBotInteractions")]
             Nbotinteractions,
+            
+            /// <summary>
+            /// Enum Ncallbackattempts for "nCallbackAttempts"
+            /// </summary>
+            [EnumMember(Value = "nCallbackAttempts")]
+            Ncallbackattempts,
+            
+            /// <summary>
+            /// Enum Ncallbackoversla for "nCallbackOverSla"
+            /// </summary>
+            [EnumMember(Value = "nCallbackOverSla")]
+            Ncallbackoversla,
+            
+            /// <summary>
+            /// Enum Ncallbackscheduled for "nCallbackScheduled"
+            /// </summary>
+            [EnumMember(Value = "nCallbackScheduled")]
+            Ncallbackscheduled,
             
             /// <summary>
             /// Enum Ncobrowsesessions for "nCobrowseSessions"
@@ -256,6 +280,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Nstatetransitionerror,
             
             /// <summary>
+            /// Enum Ntakeover for "nTakeover"
+            /// </summary>
+            [EnumMember(Value = "nTakeover")]
+            Ntakeover,
+            
+            /// <summary>
             /// Enum Ntransferred for "nTransferred"
             /// </summary>
             [EnumMember(Value = "nTransferred")]
@@ -308,6 +338,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "oMessageTurn")]
             Omessageturn,
+            
+            /// <summary>
+            /// Enum Oskillexpressionapplications for "oSkillExpressionApplications"
+            /// </summary>
+            [EnumMember(Value = "oSkillExpressionApplications")]
+            Oskillexpressionapplications,
             
             /// <summary>
             /// Enum Tabandon for "tAbandon"
@@ -554,6 +590,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "tTalkComplete")]
             Ttalkcomplete,
+            
+            /// <summary>
+            /// Enum Ttransmitting for "tTransmitting"
+            /// </summary>
+            [EnumMember(Value = "tTransmitting")]
+            Ttransmitting,
             
             /// <summary>
             /// Enum Tuserresponsetime for "tUserResponseTime"

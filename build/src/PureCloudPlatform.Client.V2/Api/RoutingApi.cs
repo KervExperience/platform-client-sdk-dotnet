@@ -1430,9 +1430,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>AssistantQueue</returns>
         
-        AssistantQueue GetRoutingQueueAssistant (string queueId, List<string> expand = null);
+        AssistantQueue GetRoutingQueueAssistant (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null);
 
         /// <summary>
         /// Get an assistant associated with a queue.
@@ -1443,9 +1445,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>ApiResponse of AssistantQueue</returns>
         
-        ApiResponse<AssistantQueue> GetRoutingQueueAssistantWithHttpInfo (string queueId, List<string> expand = null);
+        ApiResponse<AssistantQueue> GetRoutingQueueAssistantWithHttpInfo (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null);
 
         /// <summary>
         /// Get a Comparison Period.
@@ -2181,7 +2185,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -2194,7 +2198,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -2207,7 +2211,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a list of provisioned phone numbers.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -2230,7 +2234,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a list of provisioned phone numbers.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -2725,7 +2729,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update attributes of an in-queue conversation
         /// </summary>
         /// <remarks>
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -2738,7 +2742,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update attributes of an in-queue conversation
         /// </summary>
         /// <remarks>
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -2798,6 +2802,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of InboundDomain</returns>
         
         ApiResponse<InboundDomain> PatchRoutingEmailDomainValidateWithHttpInfo (string domainId, InboundDomainPatchRequest body);
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>OutboundDomain</returns>
+        
+        OutboundDomain PatchRoutingEmailOutboundDomain (string domainId, OutboundDomainPatchRequest body);
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>ApiResponse of OutboundDomain</returns>
+        
+        ApiResponse<OutboundDomain> PatchRoutingEmailOutboundDomainWithHttpInfo (string domainId, OutboundDomainPatchRequest body);
 
         /// <summary>
         /// Update single predictor.
@@ -2885,7 +2915,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of up to 100 users for a queue
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -2898,7 +2928,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of up to 100 users for a queue
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -3010,6 +3040,32 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<TranscriptionSettings> PatchRoutingSettingsTranscriptionWithHttpInfo (TranscriptionSettings body);
 
         /// <summary>
+        /// Update Routing Skill Division
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>RoutingSkill</returns>
+        
+        RoutingSkill PatchRoutingSkill (string skillId, UpdateSkillDivisionRequest body);
+
+        /// <summary>
+        /// Update Routing Skill Division
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>ApiResponse of RoutingSkill</returns>
+        
+        ApiResponse<RoutingSkill> PatchRoutingSkillWithHttpInfo (string skillId, UpdateSkillDivisionRequest body);
+
+        /// <summary>
         /// Update skill group definition
         /// </summary>
         /// <remarks>
@@ -3039,7 +3095,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -3052,7 +3108,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -3093,7 +3149,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of queues for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -3107,7 +3163,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of queues for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -3448,6 +3504,32 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<InboundDomain> PostRoutingEmailDomainsWithHttpInfo (InboundDomainCreateRequest body);
 
         /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain
+        /// </summary>
+        /// <remarks>
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>TestMessage</returns>
+        
+        TestMessage PostRoutingEmailOutboundDomainTestconnection (string domainId, TestMessage body = null);
+
+        /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain
+        /// </summary>
+        /// <remarks>
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>ApiResponse of TestMessage</returns>
+        
+        ApiResponse<TestMessage> PostRoutingEmailOutboundDomainTestconnectionWithHttpInfo (string domainId, TestMessage body = null);
+
+        /// <summary>
         /// Create a domain
         /// </summary>
         /// <remarks>
@@ -3735,7 +3817,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>RoutingSkill</returns>
         
-        RoutingSkill PostRoutingSkills (RoutingSkill body);
+        RoutingSkill PostRoutingSkills (CreateRoutingSkill body);
 
         /// <summary>
         /// Create Skill
@@ -3747,7 +3829,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>ApiResponse of RoutingSkill</returns>
         
-        ApiResponse<RoutingSkill> PostRoutingSkillsWithHttpInfo (RoutingSkill body);
+        ApiResponse<RoutingSkill> PostRoutingSkillsWithHttpInfo (CreateRoutingSkill body);
 
         /// <summary>
         /// Provision an Address for SMS
@@ -3777,7 +3859,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Provision a phone number for SMS
         /// </summary>
         /// <remarks>
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -3789,7 +3871,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Provision a phone number for SMS
         /// </summary>
         /// <remarks>
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -4256,7 +4338,7 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<AgentDirectRoutingBackupSettings> PutRoutingUserDirectroutingbackupSettingsWithHttpInfo (string userId, AgentDirectRoutingBackupSettings body);
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -4269,7 +4351,7 @@ namespace PureCloudPlatform.Client.V2.Api
         AgentMaxUtilizationResponse PutRoutingUserUtilization (string userId, UtilizationRequest body);
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -4282,7 +4364,7 @@ namespace PureCloudPlatform.Client.V2.Api
         ApiResponse<AgentMaxUtilizationResponse> PutRoutingUserUtilizationWithHttpInfo (string userId, UtilizationRequest body);
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -4294,7 +4376,7 @@ namespace PureCloudPlatform.Client.V2.Api
         UtilizationResponse PutRoutingUtilization (UtilizationRequest body);
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -5830,9 +5912,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>Task of AssistantQueue</returns>
         
-        System.Threading.Tasks.Task<AssistantQueue> GetRoutingQueueAssistantAsync (string queueId, List<string> expand = null);
+        System.Threading.Tasks.Task<AssistantQueue> GetRoutingQueueAssistantAsync (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null);
 
         /// <summary>
         /// Get an assistant associated with a queue.
@@ -5843,9 +5927,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>Task of ApiResponse (AssistantQueue)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<AssistantQueue>> GetRoutingQueueAssistantAsyncWithHttpInfo (string queueId, List<string> expand = null);
+        System.Threading.Tasks.Task<ApiResponse<AssistantQueue>> GetRoutingQueueAssistantAsyncWithHttpInfo (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null);
 
         /// <summary>
         /// Get a Comparison Period.
@@ -6581,7 +6667,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -6594,7 +6680,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -6607,7 +6693,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a list of provisioned phone numbers.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -6630,7 +6716,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Get a list of provisioned phone numbers.
         /// </summary>
         /// <remarks>
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -7125,7 +7211,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update attributes of an in-queue conversation
         /// </summary>
         /// <remarks>
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -7138,7 +7224,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update attributes of an in-queue conversation
         /// </summary>
         /// <remarks>
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -7198,6 +7284,32 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (InboundDomain)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<InboundDomain>> PatchRoutingEmailDomainValidateAsyncWithHttpInfo (string domainId, InboundDomainPatchRequest body);
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>Task of OutboundDomain</returns>
+        
+        System.Threading.Tasks.Task<OutboundDomain> PatchRoutingEmailOutboundDomainAsync (string domainId, OutboundDomainPatchRequest body);
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>Task of ApiResponse (OutboundDomain)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<OutboundDomain>> PatchRoutingEmailOutboundDomainAsyncWithHttpInfo (string domainId, OutboundDomainPatchRequest body);
 
         /// <summary>
         /// Update single predictor.
@@ -7285,7 +7397,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of up to 100 users for a queue
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -7298,7 +7410,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of up to 100 users for a queue
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -7410,6 +7522,32 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<TranscriptionSettings>> PatchRoutingSettingsTranscriptionAsyncWithHttpInfo (TranscriptionSettings body);
 
         /// <summary>
+        /// Update Routing Skill Division
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>Task of RoutingSkill</returns>
+        
+        System.Threading.Tasks.Task<RoutingSkill> PatchRoutingSkillAsync (string skillId, UpdateSkillDivisionRequest body);
+
+        /// <summary>
+        /// Update Routing Skill Division
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>Task of ApiResponse (RoutingSkill)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<RoutingSkill>> PatchRoutingSkillAsyncWithHttpInfo (string skillId, UpdateSkillDivisionRequest body);
+
+        /// <summary>
         /// Update skill group definition
         /// </summary>
         /// <remarks>
@@ -7439,7 +7577,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -7452,7 +7590,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Update a phone number provisioned for SMS.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -7493,7 +7631,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of queues for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -7507,7 +7645,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Join or unjoin a set of queues for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -7848,6 +7986,32 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<InboundDomain>> PostRoutingEmailDomainsAsyncWithHttpInfo (InboundDomainCreateRequest body);
 
         /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain
+        /// </summary>
+        /// <remarks>
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>Task of TestMessage</returns>
+        
+        System.Threading.Tasks.Task<TestMessage> PostRoutingEmailOutboundDomainTestconnectionAsync (string domainId, TestMessage body = null);
+
+        /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain
+        /// </summary>
+        /// <remarks>
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </remarks>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>Task of ApiResponse (TestMessage)</returns>
+        
+        System.Threading.Tasks.Task<ApiResponse<TestMessage>> PostRoutingEmailOutboundDomainTestconnectionAsyncWithHttpInfo (string domainId, TestMessage body = null);
+
+        /// <summary>
         /// Create a domain
         /// </summary>
         /// <remarks>
@@ -8135,7 +8299,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>Task of RoutingSkill</returns>
         
-        System.Threading.Tasks.Task<RoutingSkill> PostRoutingSkillsAsync (RoutingSkill body);
+        System.Threading.Tasks.Task<RoutingSkill> PostRoutingSkillsAsync (CreateRoutingSkill body);
 
         /// <summary>
         /// Create Skill
@@ -8147,7 +8311,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>Task of ApiResponse (RoutingSkill)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<RoutingSkill>> PostRoutingSkillsAsyncWithHttpInfo (RoutingSkill body);
+        System.Threading.Tasks.Task<ApiResponse<RoutingSkill>> PostRoutingSkillsAsyncWithHttpInfo (CreateRoutingSkill body);
 
         /// <summary>
         /// Provision an Address for SMS
@@ -8177,7 +8341,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Provision a phone number for SMS
         /// </summary>
         /// <remarks>
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -8189,7 +8353,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// Provision a phone number for SMS
         /// </summary>
         /// <remarks>
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </remarks>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -8656,7 +8820,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<AgentDirectRoutingBackupSettings>> PutRoutingUserDirectroutingbackupSettingsAsyncWithHttpInfo (string userId, AgentDirectRoutingBackupSettings body);
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -8669,7 +8833,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<AgentMaxUtilizationResponse> PutRoutingUserUtilizationAsync (string userId, UtilizationRequest body);
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -8682,7 +8846,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<ApiResponse<AgentMaxUtilizationResponse>> PutRoutingUserUtilizationAsyncWithHttpInfo (string userId, UtilizationRequest body);
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -8694,7 +8858,7 @@ namespace PureCloudPlatform.Client.V2.Api
         System.Threading.Tasks.Task<UtilizationResponse> PutRoutingUtilizationAsync (UtilizationRequest body);
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
         /// </summary>
         /// <remarks>
         /// 
@@ -8990,6 +9154,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingAssessment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9090,6 +9256,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingAssessment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9183,6 +9351,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingDirectroutingbackupSettingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9276,6 +9446,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingDirectroutingbackupSettingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9375,6 +9547,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9475,6 +9649,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9580,6 +9756,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomainRoute: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9687,6 +9865,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailDomainRoute: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9786,6 +9966,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailOutboundDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9886,6 +10068,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingEmailOutboundDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -9985,6 +10169,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingLanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10085,6 +10271,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingLanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10184,6 +10372,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictor: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10284,6 +10474,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictor: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10385,6 +10577,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictorsKeyperformanceindicator: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10487,6 +10681,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingPredictorsKeyperformanceindicator: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10589,6 +10785,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10692,6 +10890,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10797,6 +10997,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueMember: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -10904,6 +11106,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueMember: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11009,6 +11213,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11116,6 +11322,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11221,6 +11429,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueueWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11328,6 +11538,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingQueueWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingQueueWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11421,6 +11633,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11514,6 +11728,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11613,6 +11829,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11713,6 +11931,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11812,6 +12032,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkillgroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -11912,6 +12134,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSkillgroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12011,6 +12235,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsAddress: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12111,6 +12337,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsAddress: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12210,6 +12438,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12310,6 +12540,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12409,6 +12641,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserDirectroutingbackupSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12509,6 +12743,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserDirectroutingbackupSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12608,6 +12844,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12708,6 +12946,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUserUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12801,6 +13041,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12894,6 +13136,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -12996,6 +13240,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13099,6 +13345,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13203,6 +13451,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationTag: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13308,6 +13558,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingUtilizationTag: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13407,6 +13659,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13507,6 +13761,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteRoutingWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13612,6 +13868,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutinglanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13719,6 +13977,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutinglanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13824,6 +14084,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutingskill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -13931,6 +14193,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling DeleteUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling DeleteUserRoutingskill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14031,6 +14295,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14132,6 +14398,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14241,6 +14509,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14350,6 +14620,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14450,6 +14722,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessmentsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14551,6 +14825,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessmentsJob: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJob: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14648,6 +14924,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14745,6 +15023,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAssessmentsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14839,6 +15119,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAvailablemediatypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAvailablemediatypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAvailablemediatypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -14933,6 +15215,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAvailablemediatypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingAvailablemediatypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingAvailablemediatypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15027,6 +15311,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingDirectroutingbackupSettingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15121,6 +15407,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingDirectroutingbackupSettingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15224,6 +15512,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15328,6 +15618,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15428,6 +15720,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainDkim: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15529,6 +15823,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainDkim: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15629,6 +15925,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainMailfrom: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15730,6 +16028,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainMailfrom: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15839,6 +16139,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoute: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -15950,6 +16252,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoute: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16056,6 +16360,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16164,6 +16470,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16276,6 +16584,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoutes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16389,6 +16699,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainRoutes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16489,6 +16801,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainVerification: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16590,6 +16904,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomainVerification: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16699,6 +17015,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16808,6 +17126,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -16911,6 +17231,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17015,6 +17337,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17115,6 +17439,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomainActivation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17216,6 +17542,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomainActivation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17322,6 +17650,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17428,6 +17758,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailOutboundDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17522,6 +17854,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailSetup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailSetup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailSetup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17616,6 +17950,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailSetup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingEmailSetup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingEmailSetup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17716,6 +18052,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17817,6 +18155,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingLanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -17926,6 +18266,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18035,6 +18377,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingLanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18135,6 +18479,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipient: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18236,6 +18582,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipient: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18342,6 +18690,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipients: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingMessageRecipients: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipients: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18448,6 +18798,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipients: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingMessageRecipients: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingMessageRecipients: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18548,6 +18900,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictor: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18649,6 +19003,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictor: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18755,6 +19111,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModelFeatures: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorModelFeatures: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModelFeatures: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18863,6 +19221,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModelFeatures: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorModelFeatures: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModelFeatures: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -18963,6 +19323,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorModels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19064,6 +19426,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorModels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorModels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19179,6 +19543,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictors: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19294,6 +19660,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictors: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19399,6 +19767,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicator: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19505,6 +19875,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicator: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19605,6 +19977,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicators: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19705,6 +20079,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicators: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19801,6 +20177,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicatortypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorsKeyperformanceindicatortypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicatortypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -19897,6 +20275,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicatortypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingPredictorsKeyperformanceindicatortypes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingPredictorsKeyperformanceindicatortypes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20000,6 +20380,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20104,6 +20486,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20123,11 +20507,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>AssistantQueue</returns>
         
-        public AssistantQueue GetRoutingQueueAssistant (string queueId, List<string> expand = null)
+        public AssistantQueue GetRoutingQueueAssistant (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null)
         {
-             ApiResponse<AssistantQueue> localVarResponse = GetRoutingQueueAssistantWithHttpInfo(queueId, expand);
+             ApiResponse<AssistantQueue> localVarResponse = GetRoutingQueueAssistantWithHttpInfo(queueId, expand, languageVariation, fallbackToPrimaryAssistant);
              return localVarResponse.Data;
         }
 
@@ -20138,9 +20524,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>ApiResponse of AssistantQueue</returns>
         
-        public ApiResponse< AssistantQueue > GetRoutingQueueAssistantWithHttpInfo (string queueId, List<string> expand = null)
+        public ApiResponse< AssistantQueue > GetRoutingQueueAssistantWithHttpInfo (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null)
         { 
             // verify the required parameter 'queueId' is set
             if (queueId == null)
@@ -20181,6 +20569,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             // Query params
             if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (languageVariation != null) localVarQueryParams.Add(new Tuple<string, string>("languageVariation", this.Configuration.ApiClient.ParameterToString(languageVariation)));
+            if (fallbackToPrimaryAssistant != null) localVarQueryParams.Add(new Tuple<string, string>("fallbackToPrimaryAssistant", this.Configuration.ApiClient.ParameterToString(fallbackToPrimaryAssistant)));
 
             // Header params
 
@@ -20207,6 +20597,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueAssistant: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueAssistant: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueAssistant: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20225,11 +20617,13 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>Task of AssistantQueue</returns>
         
-        public async System.Threading.Tasks.Task<AssistantQueue> GetRoutingQueueAssistantAsync (string queueId, List<string> expand = null)
+        public async System.Threading.Tasks.Task<AssistantQueue> GetRoutingQueueAssistantAsync (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null)
         {
-             ApiResponse<AssistantQueue> localVarResponse = await GetRoutingQueueAssistantAsyncWithHttpInfo(queueId, expand);
+             ApiResponse<AssistantQueue> localVarResponse = await GetRoutingQueueAssistantAsyncWithHttpInfo(queueId, expand, languageVariation, fallbackToPrimaryAssistant);
              return localVarResponse.Data;
 
         }
@@ -20241,9 +20635,11 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
         /// <param name="expand">Which fields, if any, to expand. (optional)</param>
+        /// <param name="languageVariation">Language variation (optional)</param>
+        /// <param name="fallbackToPrimaryAssistant">Fall back to primary assistant if specified variation is not found (optional)</param>
         /// <returns>Task of ApiResponse (AssistantQueue)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<AssistantQueue>> GetRoutingQueueAssistantAsyncWithHttpInfo (string queueId, List<string> expand = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AssistantQueue>> GetRoutingQueueAssistantAsyncWithHttpInfo (string queueId, List<string> expand = null, string languageVariation = null, bool? fallbackToPrimaryAssistant = null)
         { 
             // verify the required parameter 'queueId' is set
             if (queueId == null)
@@ -20285,6 +20681,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             // Query params
             if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+            if (languageVariation != null) localVarQueryParams.Add(new Tuple<string, string>("languageVariation", this.Configuration.ApiClient.ParameterToString(languageVariation)));
+            if (fallbackToPrimaryAssistant != null) localVarQueryParams.Add(new Tuple<string, string>("fallbackToPrimaryAssistant", this.Configuration.ApiClient.ParameterToString(fallbackToPrimaryAssistant)));
 
             // Header params
 
@@ -20311,6 +20709,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueAssistant: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueAssistant: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueAssistant: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20417,6 +20817,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiod: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueComparisonperiod: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiod: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20525,6 +20927,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiod: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueComparisonperiod: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiod: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20625,6 +21029,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiods: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueComparisonperiods: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiods: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20726,6 +21132,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiods: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueComparisonperiods: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueComparisonperiods: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20829,6 +21237,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueEstimatedwaittime: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -20933,6 +21343,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueEstimatedwaittime: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21033,6 +21445,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21134,6 +21548,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21243,6 +21659,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMediatypeEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueMediatypeEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMediatypeEstimatedwaittime: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21354,6 +21772,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMediatypeEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueMediatypeEstimatedwaittime: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMediatypeEstimatedwaittime: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21490,6 +21910,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21627,6 +22049,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21760,6 +22184,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -21894,6 +22320,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22003,6 +22431,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22113,6 +22543,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueueWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22237,6 +22669,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22361,6 +22795,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22476,6 +22912,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueuesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22591,6 +23029,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueuesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22694,6 +23134,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviewsAll: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueuesDivisionviewsAll: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviewsAll: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22797,6 +23239,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviewsAll: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueuesDivisionviewsAll: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesDivisionviewsAll: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -22903,6 +23347,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueuesMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23009,6 +23455,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingQueuesMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingQueuesMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23103,6 +23551,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23197,6 +23647,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23291,6 +23743,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsContactcenter: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23385,6 +23839,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsContactcenter: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23479,6 +23935,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsTranscription: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23573,6 +24031,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSettingsTranscription: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23673,6 +24133,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23774,6 +24236,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23874,6 +24338,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -23975,6 +24441,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24087,6 +24555,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroupMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24200,6 +24670,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroupMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24303,6 +24775,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembersDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24407,6 +24881,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroupMembersDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24513,6 +24989,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24619,6 +25097,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkillgroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24725,6 +25205,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24831,6 +25313,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSkills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -24931,6 +25415,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddress: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25032,6 +25518,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsAddress: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddress: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25132,6 +25620,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddresses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25232,6 +25722,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAddresses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25353,6 +25845,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAvailablephonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsAvailablephonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAvailablephonenumbers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25476,6 +25970,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAvailablephonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsAvailablephonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsAvailablephonenumbers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25576,6 +26072,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25677,6 +26175,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25691,7 +26191,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a phone number provisioned for SMS. 
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -25706,7 +26206,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a phone number provisioned for SMS. 
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -25780,6 +26280,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25793,7 +26295,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a phone number provisioned for SMS. 
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -25809,7 +26311,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a phone number provisioned for SMS. 
-        /// 
+        /// When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -25884,6 +26386,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -25898,7 +26402,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a list of provisioned phone numbers. 
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -25923,7 +26427,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a list of provisioned phone numbers. 
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -26014,6 +26518,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumbers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26027,7 +26533,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a list of provisioned phone numbers. 
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -26053,7 +26559,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Get a list of provisioned phone numbers. 
-        /// 
+        /// When no supported content profile is explicitly set, the system uses the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The \"SMS Default\" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumber">Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)</param>
@@ -26144,6 +26650,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingSmsPhonenumbers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26244,6 +26752,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserDirectroutingbackupSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26345,6 +26855,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserDirectroutingbackupSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26445,6 +26957,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26546,6 +27060,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUserUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26640,6 +27156,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26734,6 +27252,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26834,6 +27354,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -26935,6 +27457,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27035,6 +27559,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabelAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationLabelAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabelAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27136,6 +27662,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabelAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationLabelAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabelAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27242,6 +27770,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27348,6 +27878,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27450,6 +27982,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTag: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27553,6 +28087,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationTag: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTag: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27655,6 +28191,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTagAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationTagAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTagAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27758,6 +28296,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTagAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationTagAgents: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTagAgents: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27866,6 +28406,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTags: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -27974,6 +28516,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingUtilizationTags: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28074,6 +28618,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28175,6 +28721,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28290,6 +28838,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28405,6 +28955,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28505,6 +29057,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcodesDivisionview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionview: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28606,6 +29160,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcodesDivisionview: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionview: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28718,6 +29274,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcodesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28830,6 +29388,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetRoutingWrapupcodesDivisionviews: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetRoutingWrapupcodesDivisionviews: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -28942,6 +29502,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29055,6 +29617,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29164,6 +29728,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutinglanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29274,6 +29840,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutinglanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29383,6 +29951,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutingskills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29493,6 +30063,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserRoutingskills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29602,6 +30174,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserSkillgroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29712,6 +30286,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetUserSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling GetUserSkillgroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29726,7 +30302,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update attributes of an in-queue conversation 
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -29741,7 +30317,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update attributes of an in-queue conversation 
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -29823,6 +30399,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -29836,7 +30414,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update attributes of an in-queue conversation 
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -29852,7 +30430,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update attributes of an in-queue conversation 
-        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        /// Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">Conversation ID</param>
@@ -29936,6 +30514,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingConversation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingConversation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30047,6 +30627,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30160,6 +30742,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingEmailDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30271,6 +30855,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomainValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingEmailDomainValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomainValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30384,12 +30970,242 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomainValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingEmailDomainValidate: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailDomainValidate: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<InboundDomain>(localVarStatusCode,
                 localVarHeaders,
                 (InboundDomain) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InboundDomain)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>OutboundDomain</returns>
+        
+        public OutboundDomain PatchRoutingEmailOutboundDomain (string domainId, OutboundDomainPatchRequest body)
+        {
+             ApiResponse<OutboundDomain> localVarResponse = PatchRoutingEmailOutboundDomainWithHttpInfo(domainId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>ApiResponse of OutboundDomain</returns>
+        
+        public ApiResponse< OutboundDomain > PatchRoutingEmailOutboundDomainWithHttpInfo (string domainId, OutboundDomainPatchRequest body)
+        { 
+            // verify the required parameter 'domainId' is set
+            if (domainId == null)
+                throw new ApiException(400, "Missing required parameter 'domainId' when calling RoutingApi->PatchRoutingEmailOutboundDomain");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling RoutingApi->PatchRoutingEmailOutboundDomain");
+
+            var localVarPath = "/api/v2/routing/email/outbound/domains/{domainId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (domainId != null) localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailOutboundDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<OutboundDomain>(localVarStatusCode,
+                localVarHeaders,
+                (OutboundDomain) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundDomain)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>Task of OutboundDomain</returns>
+        
+        public async System.Threading.Tasks.Task<OutboundDomain> PatchRoutingEmailOutboundDomainAsync (string domainId, OutboundDomainPatchRequest body)
+        {
+             ApiResponse<OutboundDomain> localVarResponse = await PatchRoutingEmailOutboundDomainAsyncWithHttpInfo(domainId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">Domain settings</param>
+        /// <returns>Task of ApiResponse (OutboundDomain)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<OutboundDomain>> PatchRoutingEmailOutboundDomainAsyncWithHttpInfo (string domainId, OutboundDomainPatchRequest body)
+        { 
+            // verify the required parameter 'domainId' is set
+            if (domainId == null)
+                throw new ApiException(400, "Missing required parameter 'domainId' when calling RoutingApi->PatchRoutingEmailOutboundDomain");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling RoutingApi->PatchRoutingEmailOutboundDomain");
+            
+
+            var localVarPath = "/api/v2/routing/email/outbound/domains/{domainId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (domainId != null) localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingEmailOutboundDomain: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingEmailOutboundDomain: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<OutboundDomain>(localVarStatusCode,
+                localVarHeaders,
+                (OutboundDomain) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OutboundDomain)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -30492,6 +31308,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictor: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30601,6 +31419,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingPredictor: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictor: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30711,6 +31531,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictorsKeyperformanceindicator: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30822,6 +31644,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingPredictorsKeyperformanceindicator: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingPredictorsKeyperformanceindicator: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -30938,6 +31762,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMember: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31057,6 +31883,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueMember: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMember: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31071,7 +31899,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of up to 100 users for a queue 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -31086,7 +31914,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of up to 100 users for a queue 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -31168,6 +31996,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31181,7 +32011,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of up to 100 users for a queue 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -31197,7 +32027,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of up to 100 users for a queue 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="queueId">Queue ID</param>
@@ -31281,6 +32111,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31397,6 +32229,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31516,6 +32350,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueUser: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31627,6 +32463,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31740,6 +32578,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingQueueUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31844,6 +32684,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsContactcenter: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -31949,6 +32791,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSettingsContactcenter: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsContactcenter: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32054,6 +32898,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsTranscription: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32160,12 +33006,242 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSettingsTranscription: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<TranscriptionSettings>(localVarStatusCode,
                 localVarHeaders,
                 (TranscriptionSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TranscriptionSettings)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Update Routing Skill Division 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>RoutingSkill</returns>
+        
+        public RoutingSkill PatchRoutingSkill (string skillId, UpdateSkillDivisionRequest body)
+        {
+             ApiResponse<RoutingSkill> localVarResponse = PatchRoutingSkillWithHttpInfo(skillId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Routing Skill Division 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>ApiResponse of RoutingSkill</returns>
+        
+        public ApiResponse< RoutingSkill > PatchRoutingSkillWithHttpInfo (string skillId, UpdateSkillDivisionRequest body)
+        { 
+            // verify the required parameter 'skillId' is set
+            if (skillId == null)
+                throw new ApiException(400, "Missing required parameter 'skillId' when calling RoutingApi->PatchRoutingSkill");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling RoutingApi->PatchRoutingSkill");
+
+            var localVarPath = "/api/v2/routing/skills/{skillId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (skillId != null) localVarPathParams.Add("skillId", this.Configuration.ApiClient.ParameterToString(skillId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<RoutingSkill>(localVarStatusCode,
+                localVarHeaders,
+                (RoutingSkill) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoutingSkill)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Update Routing Skill Division 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>Task of RoutingSkill</returns>
+        
+        public async System.Threading.Tasks.Task<RoutingSkill> PatchRoutingSkillAsync (string skillId, UpdateSkillDivisionRequest body)
+        {
+             ApiResponse<RoutingSkill> localVarResponse = await PatchRoutingSkillAsyncWithHttpInfo(skillId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update Routing Skill Division 
+        /// 
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="skillId">Skill ID</param>
+        /// <param name="body">updateSkillDivisionRequest</param>
+        /// <returns>Task of ApiResponse (RoutingSkill)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<RoutingSkill>> PatchRoutingSkillAsyncWithHttpInfo (string skillId, UpdateSkillDivisionRequest body)
+        { 
+            // verify the required parameter 'skillId' is set
+            if (skillId == null)
+                throw new ApiException(400, "Missing required parameter 'skillId' when calling RoutingApi->PatchRoutingSkill");
+            
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling RoutingApi->PatchRoutingSkill");
+            
+
+            var localVarPath = "/api/v2/routing/skills/{skillId}";
+            var localVarHttpMethod = "Patch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (skillId != null) localVarPathParams.Add("skillId", this.Configuration.ApiClient.ParameterToString(skillId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSkill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<RoutingSkill>(localVarStatusCode,
+                localVarHeaders,
+                (RoutingSkill) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoutingSkill)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -32271,6 +33347,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkillgroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32384,6 +33462,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSkillgroup: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSkillgroup: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32398,7 +33478,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update a phone number provisioned for SMS. 
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -32413,7 +33493,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update a phone number provisioned for SMS. 
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -32495,6 +33575,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32508,7 +33590,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update a phone number provisioned for SMS. 
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -32524,7 +33606,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Update a phone number provisioned for SMS. 
-        /// 
+        /// Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the \"SMS Default\" profile, which allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phoneNumberId">phone number</param>
@@ -32608,6 +33690,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchRoutingSmsPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchRoutingSmsPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32725,6 +33809,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32845,6 +33931,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32859,7 +33947,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of queues for a user 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -32875,7 +33963,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of queues for a user 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -32959,6 +34047,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -32972,7 +34062,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of queues for a user 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -32989,7 +34079,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Join or unjoin a set of queues for a user 
-        /// 
+        /// Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User ID</param>
@@ -33075,6 +34165,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33192,6 +34284,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33312,6 +34406,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserRoutinglanguage: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33423,6 +34519,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguagesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserRoutinglanguagesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguagesBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33536,6 +34634,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguagesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserRoutinglanguagesBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutinglanguagesBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33647,6 +34747,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutingskillsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33760,6 +34862,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PatchUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PatchUserRoutingskillsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33865,6 +34969,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsQueuesObservationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsQueuesObservationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsQueuesObservationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -33971,6 +35077,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsQueuesObservationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsQueuesObservationsQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsQueuesObservationsQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34082,6 +35190,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsRoutingActivityQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsRoutingActivityQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsRoutingActivityQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34194,6 +35304,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsRoutingActivityQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostAnalyticsRoutingActivityQuery: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostAnalyticsRoutingActivityQuery: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34296,6 +35408,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34398,6 +35512,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingAssessments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34500,6 +35616,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessmentsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34602,6 +35720,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingAssessmentsJobs: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingAssessmentsJobs: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34702,6 +35822,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainDkim: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34803,6 +35925,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainDkim: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainDkim: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -34914,6 +36038,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainMailfrom: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35027,6 +36153,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainMailfrom: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainMailfrom: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35138,6 +36266,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainRoutes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35251,6 +36381,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainRoutes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainRoutes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35359,6 +36491,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainTestconnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35468,6 +36602,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainTestconnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35568,6 +36704,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainVerification: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35669,6 +36807,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomainVerification: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomainVerification: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35774,6 +36914,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -35880,12 +37022,235 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
             return new ApiResponse<InboundDomain>(localVarStatusCode,
                 localVarHeaders,
                 (InboundDomain) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InboundDomain)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+
+        /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain 
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>TestMessage</returns>
+        
+        public TestMessage PostRoutingEmailOutboundDomainTestconnection (string domainId, TestMessage body = null)
+        {
+             ApiResponse<TestMessage> localVarResponse = PostRoutingEmailOutboundDomainTestconnectionWithHttpInfo(domainId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain 
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>ApiResponse of TestMessage</returns>
+        
+        public ApiResponse< TestMessage > PostRoutingEmailOutboundDomainTestconnectionWithHttpInfo (string domainId, TestMessage body = null)
+        { 
+            // verify the required parameter 'domainId' is set
+            if (domainId == null)
+                throw new ApiException(400, "Missing required parameter 'domainId' when calling RoutingApi->PostRoutingEmailOutboundDomainTestconnection");
+
+            var localVarPath = "/api/v2/routing/email/outbound/domains/{domainId}/testconnection";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+                
+
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (domainId != null) localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailOutboundDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainTestconnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<TestMessage>(localVarStatusCode,
+                localVarHeaders,
+                (TestMessage) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestMessage)),
+                localVarResponse.Content,
+                localVarResponse.StatusDescription);
+        }
+
+
+        /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain 
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>Task of TestMessage</returns>
+        
+        public async System.Threading.Tasks.Task<TestMessage> PostRoutingEmailOutboundDomainTestconnectionAsync (string domainId, TestMessage body = null)
+        {
+             ApiResponse<TestMessage> localVarResponse = await PostRoutingEmailOutboundDomainTestconnectionAsyncWithHttpInfo(domainId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Tests the custom SMTP server integration connection set on this outbound domain 
+        /// The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+        /// </summary>
+        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="domainId">domain ID</param>
+        /// <param name="body">TestMessage (optional)</param>
+        /// <returns>Task of ApiResponse (TestMessage)</returns>
+        
+        public async System.Threading.Tasks.Task<ApiResponse<TestMessage>> PostRoutingEmailOutboundDomainTestconnectionAsyncWithHttpInfo (string domainId, TestMessage body = null)
+        { 
+            // verify the required parameter 'domainId' is set
+            if (domainId == null)
+                throw new ApiException(400, "Missing required parameter 'domainId' when calling RoutingApi->PostRoutingEmailOutboundDomainTestconnection");
+            
+
+            var localVarPath = "/api/v2/routing/email/outbound/domains/{domainId}/testconnection";
+            var localVarHttpMethod = "Post";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<Tuple<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, IFileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+                
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+
+                "application/json"
+
+                
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // Path params
+            if (domainId != null) localVarPathParams.Add("domainId", this.Configuration.ApiClient.ParameterToString(domainId));
+
+            // Query params
+
+            // Header params
+
+            // Form params
+            
+            // Body param
+            if (body != null && body.GetType() != typeof(byte[]))
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            else
+                localVarPostBody = body; // byte array
+
+
+
+            // authentication (PureCloud OAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType) as IHttpResponse;
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
+
+            if (localVarStatusCode >= 400)
+                throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailOutboundDomainTestconnection: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode == 0)
+                throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainTestconnection: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+
+            return new ApiResponse<TestMessage>(localVarStatusCode,
+                localVarHeaders,
+                (TestMessage) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestMessage)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }
@@ -35985,6 +37350,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36091,6 +37458,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailOutboundDomains: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomains: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36196,6 +37565,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainsSimulated: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailOutboundDomainsSimulated: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainsSimulated: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36302,6 +37673,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainsSimulated: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingEmailOutboundDomainsSimulated: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingEmailOutboundDomainsSimulated: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36407,6 +37780,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingLanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36513,6 +37888,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingLanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingLanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36615,6 +37992,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictors: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36717,6 +38096,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingPredictors: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictors: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36824,6 +38205,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictorsKeyperformanceindicators: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -36932,6 +38315,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingPredictorsKeyperformanceindicators: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingPredictorsKeyperformanceindicators: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37045,6 +38430,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37160,6 +38547,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueueMembers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueMembers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37273,6 +38662,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37388,6 +38779,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueueUsers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueUsers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37499,6 +38892,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37612,6 +39007,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueueWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueueWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37717,6 +39114,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37823,6 +39222,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingQueues: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingQueues: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -37930,6 +39331,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroupMembersDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38038,6 +39441,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSkillgroupMembersDivisions: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroupMembersDivisions: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38143,6 +39548,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38249,6 +39656,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSkillgroups: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkillgroups: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38269,7 +39678,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>RoutingSkill</returns>
         
-        public RoutingSkill PostRoutingSkills (RoutingSkill body)
+        public RoutingSkill PostRoutingSkills (CreateRoutingSkill body)
         {
              ApiResponse<RoutingSkill> localVarResponse = PostRoutingSkillsWithHttpInfo(body);
              return localVarResponse.Data;
@@ -38283,7 +39692,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>ApiResponse of RoutingSkill</returns>
         
-        public ApiResponse< RoutingSkill > PostRoutingSkillsWithHttpInfo (RoutingSkill body)
+        public ApiResponse< RoutingSkill > PostRoutingSkillsWithHttpInfo (CreateRoutingSkill body)
         { 
             // verify the required parameter 'body' is set
             if (body == null)
@@ -38354,6 +39763,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38373,7 +39784,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>Task of RoutingSkill</returns>
         
-        public async System.Threading.Tasks.Task<RoutingSkill> PostRoutingSkillsAsync (RoutingSkill body)
+        public async System.Threading.Tasks.Task<RoutingSkill> PostRoutingSkillsAsync (CreateRoutingSkill body)
         {
              ApiResponse<RoutingSkill> localVarResponse = await PostRoutingSkillsAsyncWithHttpInfo(body);
              return localVarResponse.Data;
@@ -38388,7 +39799,7 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="body">Skill</param>
         /// <returns>Task of ApiResponse (RoutingSkill)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<RoutingSkill>> PostRoutingSkillsAsyncWithHttpInfo (RoutingSkill body)
+        public async System.Threading.Tasks.Task<ApiResponse<RoutingSkill>> PostRoutingSkillsAsyncWithHttpInfo (CreateRoutingSkill body)
         { 
             // verify the required parameter 'body' is set
             if (body == null)
@@ -38460,6 +39871,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSkills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSkills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38565,6 +39978,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsAddresses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38671,6 +40086,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsAddresses: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsAddresses: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38685,7 +40102,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Provision a phone number for SMS 
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -38699,7 +40116,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Provision a phone number for SMS 
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -38776,6 +40193,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38789,7 +40208,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Provision a phone number for SMS 
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -38804,7 +40223,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
         /// <summary>
         /// Provision a phone number for SMS 
-        /// 
+        /// When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the \"SMS Default\" profile. This default profile allows all media types (*_/_*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">SmsPhoneNumber</param>
@@ -38882,6 +40301,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsPhonenumbers: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbers: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -38989,6 +40410,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersAlphanumeric: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsPhonenumbersAlphanumeric: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersAlphanumeric: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39097,6 +40520,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersAlphanumeric: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsPhonenumbersAlphanumeric: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersAlphanumeric: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39202,6 +40627,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsPhonenumbersImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39308,6 +40735,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingSmsPhonenumbersImport: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingSmsPhonenumbersImport: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39413,6 +40842,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39519,6 +40950,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingUtilizationLabels: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationLabels: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39626,6 +41059,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationTags: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39734,6 +41169,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingUtilizationTags: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingUtilizationTags: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39839,6 +41276,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -39945,6 +41384,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostRoutingWrapupcodes: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostRoutingWrapupcodes: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40056,6 +41497,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutinglanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40169,6 +41612,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUserRoutinglanguages: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutinglanguages: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40280,6 +41725,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutingskills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40393,6 +41840,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PostUserRoutingskills: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PostUserRoutingskills: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40498,6 +41947,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingDirectroutingbackupSettingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40604,6 +42055,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingDirectroutingbackupSettingsMe: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingDirectroutingbackupSettingsMe: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40721,6 +42174,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRoute: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40841,6 +42296,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingEmailDomainRoute: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRoute: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -40958,6 +42415,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41078,6 +42537,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailDomainRouteIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41178,6 +42639,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailOutboundDomainActivation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41279,6 +42742,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingEmailOutboundDomainActivation: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingEmailOutboundDomainActivation: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41390,6 +42855,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingMessageRecipient: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41503,6 +42970,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingMessageRecipient: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingMessageRecipient: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41614,6 +43083,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41727,6 +43198,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingQueue: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueue: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41838,6 +43311,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueueIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -41951,6 +43426,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingQueueIdentityresolution: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingQueueIdentityresolution: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42056,6 +43533,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42162,6 +43641,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42267,6 +43748,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettingsTranscription: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42373,6 +43856,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingSettingsTranscription: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSettingsTranscription: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42484,6 +43969,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42597,6 +44084,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingSmsIdentityresolutionPhonenumber: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42708,6 +44197,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserDirectroutingbackupSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42821,6 +44312,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUserDirectroutingbackupSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserDirectroutingbackupSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42834,7 +44327,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -42849,7 +44342,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -42932,6 +44425,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -42944,7 +44439,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -42960,7 +44455,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -43045,6 +44540,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUserUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUserUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43058,7 +44555,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -43072,7 +44569,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -43150,6 +44647,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43162,7 +44661,7 @@ namespace PureCloudPlatform.Client.V2.Api
 
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -43177,7 +44676,7 @@ namespace PureCloudPlatform.Client.V2.Api
         }
 
         /// <summary>
-        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. 
+        /// Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values. 
         /// 
         /// </summary>
         /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -43256,6 +44755,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUtilization: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43367,6 +44868,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilizationLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43480,6 +44983,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingUtilizationLabel: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingUtilizationLabel: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43591,6 +45096,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43704,6 +45211,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutRoutingWrapupcode: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutRoutingWrapupcode: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43821,6 +45330,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -43941,6 +45452,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutUserRoutingskill: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskill: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44052,6 +45565,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskillsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 
@@ -44165,6 +45680,8 @@ namespace PureCloudPlatform.Client.V2.Api
 
             if (localVarStatusCode >= 400)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
+                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling PutUserRoutingskillsBulk: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
             else if (localVarStatusCode == 0)
                 throw new ApiException (localVarStatusCode, "Error calling PutUserRoutingskillsBulk: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
 

@@ -61,19 +61,27 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](#GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId} | Get the session details for the session ID |
 | [**GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId**](#GetWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId} | Get the snapshot details for the snapshot ID |
 | [**GetWorkforcemanagementBusinessunitManagementunits**](#GetWorkforcemanagementBusinessunitManagementunits) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits | Get all authorized management units in the business unit |
+| [**GetWorkforcemanagementBusinessunitMinimumstaffingSettings**](#GetWorkforcemanagementBusinessunitMinimumstaffingSettings) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings | Get minimum staffing settings for a business unit |
 | [**GetWorkforcemanagementBusinessunitPlanninggroup**](#GetWorkforcemanagementBusinessunitPlanninggroup) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Get a planning group |
 | [**GetWorkforcemanagementBusinessunitPlanninggroups**](#GetWorkforcemanagementBusinessunitPlanninggroups) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Gets list of planning groups |
+| [**GetWorkforcemanagementBusinessunitSchedulerSettings**](#GetWorkforcemanagementBusinessunitSchedulerSettings) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings | Get scheduler settings for a business unit |
 | [**GetWorkforcemanagementBusinessunitSchedulingRun**](#GetWorkforcemanagementBusinessunitSchedulingRun) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Get a scheduling run |
 | [**GetWorkforcemanagementBusinessunitSchedulingRunResult**](#GetWorkforcemanagementBusinessunitSchedulingRunResult) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result | Get the result of a rescheduling operation |
 | [**GetWorkforcemanagementBusinessunitSchedulingRuns**](#GetWorkforcemanagementBusinessunitSchedulingRuns) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs | Get the list of scheduling runs |
 | [**GetWorkforcemanagementBusinessunitServicegoaltemplate**](#GetWorkforcemanagementBusinessunitServicegoaltemplate) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Get a service goal template |
 | [**GetWorkforcemanagementBusinessunitServicegoaltemplates**](#GetWorkforcemanagementBusinessunitServicegoaltemplates) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Gets list of service goal templates |
+| [**GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob**](#GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId} | View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status |
+| [**GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob**](#GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId} | View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status |
+| [**GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob**](#GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId} | View results of bulk update trades states operation. Only the user who started the operation can query the status. |
+| [**GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob**](#GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId} | View result of potential shift trade matches for the current user. Only the user who started the operation can query the status |
+| [**GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob**](#GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId} | View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status |
 | [**GetWorkforcemanagementBusinessunitStaffinggroup**](#GetWorkforcemanagementBusinessunitStaffinggroup) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Gets a staffing group |
 | [**GetWorkforcemanagementBusinessunitStaffinggroups**](#GetWorkforcemanagementBusinessunitStaffinggroups) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Gets a list of staffing groups |
 | [**GetWorkforcemanagementBusinessunitTimeofflimit**](#GetWorkforcemanagementBusinessunitTimeofflimit) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} | Gets a time-off limit object |
 | [**GetWorkforcemanagementBusinessunitTimeofflimits**](#GetWorkforcemanagementBusinessunitTimeofflimits) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Gets a list of time-off limit objects |
 | [**GetWorkforcemanagementBusinessunitTimeoffplan**](#GetWorkforcemanagementBusinessunitTimeoffplan) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Gets a time-off plan |
 | [**GetWorkforcemanagementBusinessunitTimeoffplans**](#GetWorkforcemanagementBusinessunitTimeoffplans) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans | Gets a list of time-off plans |
+| [**GetWorkforcemanagementBusinessunitUsers**](#GetWorkforcemanagementBusinessunitUsers) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/users | Get users in the business unit |
 | [**GetWorkforcemanagementBusinessunitWeekSchedule**](#GetWorkforcemanagementBusinessunitWeekSchedule) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route |
 | [**GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](#GetWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults | Get the generation results for a generated schedule |
 | [**GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](#GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | **Get** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast | Get the headcount forecast by planning group for the schedule |
@@ -130,6 +138,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetWorkforcemanagementNotifications**](#GetWorkforcemanagementNotifications) | **Get** /api/v2/workforcemanagement/notifications | Get a list of notifications for the current user |
 | [**GetWorkforcemanagementSchedulingjob**](#GetWorkforcemanagementSchedulingjob) | **Get** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job |
 | [**GetWorkforcemanagementShifttrades**](#GetWorkforcemanagementShifttrades) | **Get** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades |
+| [**GetWorkforcemanagementShifttradingTradeJob**](#GetWorkforcemanagementShifttradingTradeJob) | **Get** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId} | View result of update trade operation. Only the user who started the operation can query the status |
+| [**GetWorkforcemanagementShifttradingTradeMatchJob**](#GetWorkforcemanagementShifttradingTradeMatchJob) | **Get** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId} | View result of match shift trade operation. Only the receiving user who started the operation can query the status. |
+| [**GetWorkforcemanagementShifttradingTradeStateJob**](#GetWorkforcemanagementShifttradingTradeStateJob) | **Get** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId} | View result of update trade state operation. Only the user who started the operation can query the status. |
+| [**GetWorkforcemanagementShifttradingTradesJob**](#GetWorkforcemanagementShifttradingTradesJob) | **Get** /api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId} | View result of create trade operation. Only the user who started the operation can query the status |
+| [**GetWorkforcemanagementShifttradingTradesMineQueryJob**](#GetWorkforcemanagementShifttradingTradesMineQueryJob) | **Get** /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId} | View results of retrieve all my shift trade operation. Only the user who started the operation can query the status |
 | [**GetWorkforcemanagementShrinkageJob**](#GetWorkforcemanagementShrinkageJob) | **Get** /api/v2/workforcemanagement/shrinkage/jobs/{jobId} | Request to fetch the status of the historical shrinkage query |
 | [**GetWorkforcemanagementTeamAdherence**](#GetWorkforcemanagementTeamAdherence) | **Get** /api/v2/workforcemanagement/teams/{teamId}/adherence | Get a list of user schedule adherence records for the requested team |
 | [**GetWorkforcemanagementTimeoffbalanceJob**](#GetWorkforcemanagementTimeoffbalanceJob) | **Get** /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId} | Query the results of time off types job |
@@ -150,7 +163,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchWorkforcemanagementBusinessunitActivityplan**](#PatchWorkforcemanagementBusinessunitActivityplan) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Update an activity plan |
 | [**PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](#PatchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Update alternative shifts settings for a business unit |
 | [**PatchWorkforcemanagementBusinessunitCapacityplan**](#PatchWorkforcemanagementBusinessunitCapacityplan) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} | Update a capacity plan configuration |
+| [**PatchWorkforcemanagementBusinessunitMinimumstaffingSettings**](#PatchWorkforcemanagementBusinessunitMinimumstaffingSettings) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings | Update minimum staffing settings for a business unit |
 | [**PatchWorkforcemanagementBusinessunitPlanninggroup**](#PatchWorkforcemanagementBusinessunitPlanninggroup) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group |
+| [**PatchWorkforcemanagementBusinessunitSchedulerSettings**](#PatchWorkforcemanagementBusinessunitSchedulerSettings) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings | Update scheduler settings for a business unit |
 | [**PatchWorkforcemanagementBusinessunitSchedulingRun**](#PatchWorkforcemanagementBusinessunitSchedulingRun) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied |
 | [**PatchWorkforcemanagementBusinessunitServicegoaltemplate**](#PatchWorkforcemanagementBusinessunitServicegoaltemplate) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template |
 | [**PatchWorkforcemanagementBusinessunitStaffinggroup**](#PatchWorkforcemanagementBusinessunitStaffinggroup) | **Patch** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Updates a staffing group |
@@ -206,6 +221,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostWorkforcemanagementBusinessunitIntraday**](#PostWorkforcemanagementBusinessunitIntraday) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds |
 | [**PostWorkforcemanagementBusinessunitPlanninggroups**](#PostWorkforcemanagementBusinessunitPlanninggroups) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group |
 | [**PostWorkforcemanagementBusinessunitServicegoaltemplates**](#PostWorkforcemanagementBusinessunitServicegoaltemplates) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Adds a new service goal template |
+| [**PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs**](#PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs | Queries and evaluates against shift trade configuration shift trades in a management unit per week |
+| [**PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs**](#PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs | Queries shift trades in a management unit per user |
+| [**PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs**](#PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs | Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades. |
+| [**PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs**](#PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs | Start an async job to find potential shift trade matches for the current receiving user |
+| [**PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs**](#PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs | Retrieves the summary of shift trades in a matched state per week |
 | [**PostWorkforcemanagementBusinessunitStaffinggroups**](#PostWorkforcemanagementBusinessunitStaffinggroups) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Creates a new staffing group |
 | [**PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**](#PostWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query | Gets a list of planning group to staffing groups list association |
 | [**PostWorkforcemanagementBusinessunitStaffinggroupsQuery**](#PostWorkforcemanagementBusinessunitStaffinggroupsQuery) | **Post** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query | Gets staffing group associations for a list of user IDs |
@@ -265,6 +285,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostWorkforcemanagementManagementunits**](#PostWorkforcemanagementManagementunits) | **Post** /api/v2/workforcemanagement/managementunits | Add a management unit |
 | [**PostWorkforcemanagementNotificationsUpdate**](#PostWorkforcemanagementNotificationsUpdate) | **Post** /api/v2/workforcemanagement/notifications/update | Mark a list of notifications as read or unread |
 | [**PostWorkforcemanagementSchedules**](#PostWorkforcemanagementSchedules) | **Post** /api/v2/workforcemanagement/schedules | Get published schedule for the current user |
+| [**PostWorkforcemanagementShifttradingTradeJobs**](#PostWorkforcemanagementShifttradingTradeJobs) | **Post** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs | Updates a shift trade. This route can only be called by the initiating user |
+| [**PostWorkforcemanagementShifttradingTradeMatchJobs**](#PostWorkforcemanagementShifttradingTradeMatchJobs) | **Post** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs | Matches a shift trade. This route can only be called by the receiving user |
+| [**PostWorkforcemanagementShifttradingTradeStateJobs**](#PostWorkforcemanagementShifttradingTradeStateJobs) | **Post** /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs | Update trade state by a user |
+| [**PostWorkforcemanagementShifttradingTradesJobs**](#PostWorkforcemanagementShifttradingTradesJobs) | **Post** /api/v2/workforcemanagement/shifttrading/trades/jobs | Add a shift trade job |
+| [**PostWorkforcemanagementShifttradingTradesMineQueryJobs**](#PostWorkforcemanagementShifttradingTradesMineQueryJobs) | **Post** /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs | Retrieve all my shift trades where I am either the initiating or receiving user |
 | [**PostWorkforcemanagementTeamAdherenceHistorical**](#PostWorkforcemanagementTeamAdherenceHistorical) | **Post** /api/v2/workforcemanagement/teams/{teamId}/adherence/historical | Request a teams historical adherence report |
 | [**PostWorkforcemanagementTeamShrinkageJobs**](#PostWorkforcemanagementTeamShrinkageJobs) | **Post** /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs | Request a historical shrinkage report |
 | [**PostWorkforcemanagementTimeoffbalanceJobs**](#PostWorkforcemanagementTimeoffbalanceJobs) | **Post** /api/v2/workforcemanagement/timeoffbalance/jobs | Query time off balances for the current user for specified activity code and dates |
@@ -2929,7 +2954,7 @@ namespace Example
 
 ## GetWorkforcemanagementBusinessunitActivityplanRunsJob
 
-> [**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse) GetWorkforcemanagementBusinessunitActivityplanRunsJob (string businessUnitId, string activityPlanId, string jobId)
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) GetWorkforcemanagementBusinessunitActivityplanRunsJob (string businessUnitId, string activityPlanId, string jobId)
 
 
 Gets an activity plan run job
@@ -2967,7 +2992,7 @@ namespace Example
             try
             { 
                 // Gets an activity plan run job
-                ActivityPlanRunJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId);
+                ActivityPlanJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2990,7 +3015,7 @@ namespace Example
 
 ### Return type
 
-[**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse)
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
 
 
 ## GetWorkforcemanagementBusinessunitActivityplans
@@ -3377,7 +3402,7 @@ namespace Example
 
 ## GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
 
-> [**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse) GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations (string businessUnitId, string capacityPlanId)
+> [**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse) GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations (string businessUnitId, string capacityPlanId, string granularity = null)
 
 
 Get a capacity plan's staffing group allocations
@@ -3410,11 +3435,12 @@ namespace Example
             var apiInstance = new WorkforceManagementApi();
             var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
             var capacityPlanId = capacityPlanId_example;  // string | The ID of the capacity plan
+            var granularity = granularity_example;  // string | Granularity to access staffing group data, defaults to weekly (optional) 
 
             try
             { 
                 // Get a capacity plan's staffing group allocations
-                CapacityPlanStaffingGroupAllocationsResponse result = apiInstance.GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId);
+                CapacityPlanStaffingGroupAllocationsResponse result = apiInstance.GetWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, granularity);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3433,6 +3459,7 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **businessUnitId** | **string**| The ID of the business unit |  |
 | **capacityPlanId** | **string**| The ID of the capacity plan |  |
+| **granularity** | **string**| Granularity to access staffing group data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
 
 ### Return type
 
@@ -3505,7 +3532,7 @@ namespace Example
 
 ## GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast
 
-> [**LongTermRequirementsResponse**](LongTermRequirementsResponse) GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast (string businessUnitId, String weekDateId, string forecastId)
+> [**LongTermRequirementsResponse**](LongTermRequirementsResponse) GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast (string businessUnitId, String weekDateId, string forecastId, string granularity = null)
 
 
 Get the latest long term staffing requirements for a business unit
@@ -3539,11 +3566,12 @@ namespace Example
             var businessUnitId = businessUnitId_example;  // string | 
             var weekDateId = 2013-10-20;  // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
             var forecastId = forecastId_example;  // string | forecastId of forecast
+            var granularity = granularity_example;  // string | Granularity to access staffing requirements data, defaults to weekly (optional) 
 
             try
             { 
                 // Get the latest long term staffing requirements for a business unit
-                LongTermRequirementsResponse result = apiInstance.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId);
+                LongTermRequirementsResponse result = apiInstance.GetWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId, granularity);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3563,6 +3591,7 @@ namespace Example
 | **businessUnitId** | **string**|  |  |
 | **weekDateId** | **String**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecastId** | **string**| forecastId of forecast |  |
+| **granularity** | **string**| Granularity to access staffing requirements data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
 
 ### Return type
 
@@ -3950,12 +3979,74 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **businessUnitId** | **string**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **string**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup |
+| **feature** | **string**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
 | **divisionId** | **string**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
 
 [**ManagementUnitListing**](ManagementUnitListing)
+
+
+## GetWorkforcemanagementBusinessunitMinimumstaffingSettings
+
+> [**MinimumStaffingResponse**](MinimumStaffingResponse) GetWorkforcemanagementBusinessunitMinimumstaffingSettings (string businessUnitId)
+
+
+Get minimum staffing settings for a business unit
+
+Requires ANY permissions: 
+
+* wfm:minimumStaffingSettings:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitMinimumstaffingSettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+
+            try
+            { 
+                // Get minimum staffing settings for a business unit
+                MinimumStaffingResponse result = apiInstance.GetWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitMinimumstaffingSettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+
+### Return type
+
+[**MinimumStaffingResponse**](MinimumStaffingResponse)
 
 
 ## GetWorkforcemanagementBusinessunitPlanninggroup
@@ -4087,6 +4178,68 @@ namespace Example
 ### Return type
 
 [**PlanningGroupList**](PlanningGroupList)
+
+
+## GetWorkforcemanagementBusinessunitSchedulerSettings
+
+> [**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse) GetWorkforcemanagementBusinessunitSchedulerSettings (string businessUnitId)
+
+
+Get scheduler settings for a business unit
+
+Requires ANY permissions: 
+
+* wfm:schedulerSettings:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitSchedulerSettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+
+            try
+            { 
+                // Get scheduler settings for a business unit
+                BuSchedulerSettingsResponse result = apiInstance.GetWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitSchedulerSettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+
+### Return type
+
+[**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse)
 
 
 ## GetWorkforcemanagementBusinessunitSchedulingRun
@@ -4416,6 +4569,339 @@ namespace Example
 ### Return type
 
 [**ServiceGoalTemplateList**](ServiceGoalTemplateList)
+
+
+## GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob
+
+> [**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse) GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob (string businessUnitId, string jobId)
+
+
+View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+                ShiftTradeEvaluateTradesBuJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob(businessUnitId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse)
+
+
+## GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob
+
+> [**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse) GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob (string businessUnitId, string jobId)
+
+
+View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitShifttradingTradesQueryJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+                ShiftTradeQueryTradesBuJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob(businessUnitId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitShifttradingTradesQueryJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse)
+
+
+## GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob
+
+> [**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse) GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob (string businessUnitId, string jobId)
+
+
+View results of bulk update trades states operation. Only the user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View results of bulk update trades states operation. Only the user who started the operation can query the status.
+                ShiftTradeBulkUpdateTradeStateBuJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob(businessUnitId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitShifttradingTradesStateBulkJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse)
+
+
+## GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob
+
+> [**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse) GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob (string businessUnitId, string jobId)
+
+
+View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+                ShiftTradeSearchUnmatchedTradesBuJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob(businessUnitId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse)
+
+
+## GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob
+
+> [**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse) GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob (string businessUnitId, string jobId)
+
+
+View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+                ShiftTradeQueryWeekSummariesBuJobResponse result = apiInstance.GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob(businessUnitId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitShifttradingWeeksSummaryJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse)
 
 
 ## GetWorkforcemanagementBusinessunitStaffinggroup
@@ -4807,6 +5293,70 @@ namespace Example
 ### Return type
 
 [**BuTimeOffPlanListing**](BuTimeOffPlanListing)
+
+
+## GetWorkforcemanagementBusinessunitUsers
+
+> [**BuUserListing**](BuUserListing) GetWorkforcemanagementBusinessunitUsers (string businessUnitId, List<string> managementUnitIds = null)
+
+
+Get users in the business unit
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementBusinessunitUsersExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var managementUnitIds = new List<string>(); // List<string> | The IDs of the management units for which to retrieve users (optional) 
+
+            try
+            { 
+                // Get users in the business unit
+                BuUserListing result = apiInstance.GetWorkforcemanagementBusinessunitUsers(businessUnitId, managementUnitIds);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementBusinessunitUsers: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **managementUnitIds** | [**List<string>**](string)| The IDs of the management units for which to retrieve users | [optional]  |
+
+### Return type
+
+[**BuUserListing**](BuUserListing)
 
 
 ## GetWorkforcemanagementBusinessunitWeekSchedule
@@ -5226,7 +5776,7 @@ namespace Example
 
 Get the list of week schedules for the specified week
 
-Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
 Requires ANY permissions: 
 
@@ -5711,7 +6261,7 @@ namespace Example
 
 Get short term forecasts
 
-Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
 Requires ANY permissions: 
 
@@ -6148,7 +6698,7 @@ namespace Example
 
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **string**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup |
+| **feature** | **string**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
 | **divisionId** | **string**| If specified, the list of business units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -8316,7 +8866,7 @@ namespace Example
 | **pageSize** | **int?**| Deprecated, paging is not supported | [optional]  |
 | **pageNumber** | **int?**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **string**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **string**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup |
+| **feature** | **string**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
 | **divisionId** | **string**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -8563,6 +9113,332 @@ This endpoint does require any parameters.
 ### Return type
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse)
+
+
+## GetWorkforcemanagementShifttradingTradeJob
+
+> [**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse) GetWorkforcemanagementShifttradingTradeJob (string tradeId, string jobId)
+
+
+View result of update trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementShifttradingTradeJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var tradeId = tradeId_example;  // string | The ID of the shift trade to update
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View result of update trade operation. Only the user who started the operation can query the status
+                ShiftTradeUpdateTradeJobResponse result = apiInstance.GetWorkforcemanagementShifttradingTradeJob(tradeId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementShifttradingTradeJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tradeId** | **string**| The ID of the shift trade to update |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse)
+
+
+## GetWorkforcemanagementShifttradingTradeMatchJob
+
+> [**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse) GetWorkforcemanagementShifttradingTradeMatchJob (string tradeId, string jobId)
+
+
+View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementShifttradingTradeMatchJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var tradeId = tradeId_example;  // string | The ID of the shift trade to update
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+                ShiftTradeMatchTradeJobResponse result = apiInstance.GetWorkforcemanagementShifttradingTradeMatchJob(tradeId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementShifttradingTradeMatchJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tradeId** | **string**| The ID of the shift trade to update |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse)
+
+
+## GetWorkforcemanagementShifttradingTradeStateJob
+
+> [**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse) GetWorkforcemanagementShifttradingTradeStateJob (string tradeId, string jobId)
+
+
+View result of update trade state operation. Only the user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementShifttradingTradeStateJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var tradeId = tradeId_example;  // string | The ID of the shift trade to update
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View result of update trade state operation. Only the user who started the operation can query the status.
+                ShiftTradeUpdateTradeStateJobResponse result = apiInstance.GetWorkforcemanagementShifttradingTradeStateJob(tradeId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementShifttradingTradeStateJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tradeId** | **string**| The ID of the shift trade to update |  |
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse)
+
+
+## GetWorkforcemanagementShifttradingTradesJob
+
+> [**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse) GetWorkforcemanagementShifttradingTradesJob (string jobId)
+
+
+View result of create trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementShifttradingTradesJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View result of create trade operation. Only the user who started the operation can query the status
+                ShiftTradeAddTradeJobResponse result = apiInstance.GetWorkforcemanagementShifttradingTradesJob(jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementShifttradingTradesJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse)
+
+
+## GetWorkforcemanagementShifttradingTradesMineQueryJob
+
+> [**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse) GetWorkforcemanagementShifttradingTradesMineQueryJob (string jobId)
+
+
+View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetWorkforcemanagementShifttradingTradesMineQueryJobExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var jobId = jobId_example;  // string | The ID of the job
+
+            try
+            { 
+                // View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+                ShiftTradeQueryAgentTradesJobResponse result = apiInstance.GetWorkforcemanagementShifttradingTradesMineQueryJob(jobId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.GetWorkforcemanagementShifttradingTradesMineQueryJob: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **jobId** | **string**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse)
 
 
 ## GetWorkforcemanagementShrinkageJob
@@ -9816,6 +10692,70 @@ namespace Example
 [**CapacityPlanResponse**](CapacityPlanResponse)
 
 
+## PatchWorkforcemanagementBusinessunitMinimumstaffingSettings
+
+> [**MinimumStaffingResponse**](MinimumStaffingResponse) PatchWorkforcemanagementBusinessunitMinimumstaffingSettings (string businessUnitId, MinimumStaffingRequest body)
+
+
+Update minimum staffing settings for a business unit
+
+Requires ANY permissions: 
+
+* wfm:minimumStaffingSettings:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new MinimumStaffingRequest(); // MinimumStaffingRequest | body
+
+            try
+            { 
+                // Update minimum staffing settings for a business unit
+                MinimumStaffingResponse result = apiInstance.PatchWorkforcemanagementBusinessunitMinimumstaffingSettings(businessUnitId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PatchWorkforcemanagementBusinessunitMinimumstaffingSettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**MinimumStaffingRequest**](MinimumStaffingRequest)| body |  |
+
+### Return type
+
+[**MinimumStaffingResponse**](MinimumStaffingResponse)
+
+
 ## PatchWorkforcemanagementBusinessunitPlanninggroup
 
 > [**PlanningGroup**](PlanningGroup) PatchWorkforcemanagementBusinessunitPlanninggroup (string businessUnitId, string planningGroupId, UpdatePlanningGroupRequest body)
@@ -9880,6 +10820,70 @@ namespace Example
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+## PatchWorkforcemanagementBusinessunitSchedulerSettings
+
+> [**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse) PatchWorkforcemanagementBusinessunitSchedulerSettings (string businessUnitId, BuSchedulerSettingsRequest body)
+
+
+Update scheduler settings for a business unit
+
+Requires ANY permissions: 
+
+* wfm:schedulerSettings:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchWorkforcemanagementBusinessunitSchedulerSettingsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new BuSchedulerSettingsRequest(); // BuSchedulerSettingsRequest | body
+
+            try
+            { 
+                // Update scheduler settings for a business unit
+                BuSchedulerSettingsResponse result = apiInstance.PatchWorkforcemanagementBusinessunitSchedulerSettings(businessUnitId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PatchWorkforcemanagementBusinessunitSchedulerSettings: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**BuSchedulerSettingsRequest**](BuSchedulerSettingsRequest)| body |  |
+
+### Return type
+
+[**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse)
 
 
 ## PatchWorkforcemanagementBusinessunitSchedulingRun
@@ -12474,7 +13478,7 @@ namespace Example
 
 ## PostWorkforcemanagementBusinessunitActivityplanRunsJobs
 
-> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) PostWorkforcemanagementBusinessunitActivityplanRunsJobs (string businessUnitId, string activityPlanId)
+> [**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse) PostWorkforcemanagementBusinessunitActivityplanRunsJobs (string businessUnitId, string activityPlanId)
 
 
 Run an activity plan manually
@@ -12513,7 +13517,7 @@ namespace Example
             try
             { 
                 // Run an activity plan manually
-                ActivityPlanJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId);
+                ActivityPlanRunJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -12535,7 +13539,7 @@ namespace Example
 
 ### Return type
 
-[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+[**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse)
 
 
 ## PostWorkforcemanagementBusinessunitActivityplans
@@ -13452,6 +14456,347 @@ namespace Example
 ### Return type
 
 [**ServiceGoalTemplate**](ServiceGoalTemplate)
+
+
+## PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs
+
+> [**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse) PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs (string businessUnitId, EvaluateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+
+
+Queries and evaluates against shift trade configuration shift trades in a management unit per week
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new EvaluateShiftTradeListJobRequest(); // EvaluateShiftTradeListJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+            var forceDownloadService = true;  // bool? | Force the result of this operation to be sent via download service. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Queries and evaluates against shift trade configuration shift trades in a management unit per week
+                ShiftTradeEvaluateTradesBuJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs(businessUnitId, body, forceAsync, forceDownloadService);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**EvaluateShiftTradeListJobRequest**](EvaluateShiftTradeListJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **forceDownloadService** | **bool?**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse)
+
+
+## PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs
+
+> [**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse) PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs (string businessUnitId, QueryShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+
+
+Queries shift trades in a management unit per user
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new QueryShiftTradeListJobRequest(); // QueryShiftTradeListJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+            var forceDownloadService = true;  // bool? | Force the result of this operation to be sent via download service. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Queries shift trades in a management unit per user
+                ShiftTradeQueryTradesBuJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs(businessUnitId, body, forceAsync, forceDownloadService);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementBusinessunitShifttradingTradesQueryJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**QueryShiftTradeListJobRequest**](QueryShiftTradeListJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **forceDownloadService** | **bool?**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse)
+
+
+## PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs
+
+> [**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse) PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs (string businessUnitId, BulkUpdateShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+
+
+Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new BulkUpdateShiftTradeListJobRequest(); // BulkUpdateShiftTradeListJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+            var forceDownloadService = true;  // bool? | Force the result of this operation to be sent via download service. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+                ShiftTradeBulkUpdateTradeStateBuJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs(businessUnitId, body, forceAsync, forceDownloadService);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementBusinessunitShifttradingTradesStateBulkJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**BulkUpdateShiftTradeListJobRequest**](BulkUpdateShiftTradeListJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **forceDownloadService** | **bool?**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse)
+
+
+## PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs
+
+> [**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse) PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs (string businessUnitId, SearchUnmatchedShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+
+
+Start an async job to find potential shift trade matches for the current receiving user
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new SearchUnmatchedShiftTradeListJobRequest(); // SearchUnmatchedShiftTradeListJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+            var forceDownloadService = true;  // bool? | Force the result of this operation to be sent via download service. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Start an async job to find potential shift trade matches for the current receiving user
+                ShiftTradeSearchUnmatchedTradesBuJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs(businessUnitId, body, forceAsync, forceDownloadService);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementBusinessunitShifttradingUnmatchedSearchJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**SearchUnmatchedShiftTradeListJobRequest**](SearchUnmatchedShiftTradeListJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **forceDownloadService** | **bool?**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse)
+
+
+## PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs
+
+> [**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse) PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs (string businessUnitId, QueryWeekSummaryListJobRequest body, bool? forceAsync = null)
+
+
+Retrieves the summary of shift trades in a matched state per week
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var businessUnitId = businessUnitId_example;  // string | The ID of the business unit
+            var body = new QueryWeekSummaryListJobRequest(); // QueryWeekSummaryListJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Retrieves the summary of shift trades in a matched state per week
+                ShiftTradeQueryWeekSummariesBuJobResponse result = apiInstance.PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs(businessUnitId, body, forceAsync);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementBusinessunitShifttradingWeeksSummaryJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **businessUnitId** | **string**| The ID of the business unit |  |
+| **body** | [**QueryWeekSummaryListJobRequest**](QueryWeekSummaryListJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse)
 
 
 ## PostWorkforcemanagementBusinessunitStaffinggroups
@@ -16236,7 +17581,7 @@ namespace Example
 
 Fetches time off requests matching the conditions specified in the request body
 
-Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
 
 Requires ANY permissions: 
 
@@ -17353,6 +18698,334 @@ namespace Example
 [**UserScheduleContainer**](UserScheduleContainer)
 
 
+## PostWorkforcemanagementShifttradingTradeJobs
+
+> [**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse) PostWorkforcemanagementShifttradingTradeJobs (string tradeId, UpdateShiftTradeJobRequest body, bool? forceAsync = null)
+
+
+Updates a shift trade. This route can only be called by the initiating user
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementShifttradingTradeJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var tradeId = tradeId_example;  // string | The ID of the shift trade to update
+            var body = new UpdateShiftTradeJobRequest(); // UpdateShiftTradeJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Updates a shift trade. This route can only be called by the initiating user
+                ShiftTradeUpdateTradeJobResponse result = apiInstance.PostWorkforcemanagementShifttradingTradeJobs(tradeId, body, forceAsync);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementShifttradingTradeJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tradeId** | **string**| The ID of the shift trade to update |  |
+| **body** | [**UpdateShiftTradeJobRequest**](UpdateShiftTradeJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse)
+
+
+## PostWorkforcemanagementShifttradingTradeMatchJobs
+
+> [**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse) PostWorkforcemanagementShifttradingTradeMatchJobs (string tradeId, MatchShiftTradeJobRequest body, bool? forceAsync = null)
+
+
+Matches a shift trade. This route can only be called by the receiving user
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementShifttradingTradeMatchJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var tradeId = tradeId_example;  // string | The ID of the shift trade to match
+            var body = new MatchShiftTradeJobRequest(); // MatchShiftTradeJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Matches a shift trade. This route can only be called by the receiving user
+                ShiftTradeMatchTradeJobResponse result = apiInstance.PostWorkforcemanagementShifttradingTradeMatchJobs(tradeId, body, forceAsync);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementShifttradingTradeMatchJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tradeId** | **string**| The ID of the shift trade to match |  |
+| **body** | [**MatchShiftTradeJobRequest**](MatchShiftTradeJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse)
+
+
+## PostWorkforcemanagementShifttradingTradeStateJobs
+
+> [**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse) PostWorkforcemanagementShifttradingTradeStateJobs (string tradeId, UpdateShiftTradeStateJobRequest body, bool? forceAsync = null)
+
+
+Update trade state by a user
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementShifttradingTradeStateJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var tradeId = tradeId_example;  // string | The ID of the shift trade to update state
+            var body = new UpdateShiftTradeStateJobRequest(); // UpdateShiftTradeStateJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Update trade state by a user
+                ShiftTradeUpdateTradeStateJobResponse result = apiInstance.PostWorkforcemanagementShifttradingTradeStateJobs(tradeId, body, forceAsync);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementShifttradingTradeStateJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tradeId** | **string**| The ID of the shift trade to update state |  |
+| **body** | [**UpdateShiftTradeStateJobRequest**](UpdateShiftTradeStateJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse)
+
+
+## PostWorkforcemanagementShifttradingTradesJobs
+
+> [**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse) PostWorkforcemanagementShifttradingTradesJobs (AddShiftTradeJobRequest body, bool? forceAsync = null)
+
+
+Add a shift trade job
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementShifttradingTradesJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var body = new AddShiftTradeJobRequest(); // AddShiftTradeJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Add a shift trade job
+                ShiftTradeAddTradeJobResponse result = apiInstance.PostWorkforcemanagementShifttradingTradesJobs(body, forceAsync);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementShifttradingTradesJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AddShiftTradeJobRequest**](AddShiftTradeJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse)
+
+
+## PostWorkforcemanagementShifttradingTradesMineQueryJobs
+
+> [**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse) PostWorkforcemanagementShifttradingTradesMineQueryJobs (QueryAgentShiftTradeListJobRequest body, bool? forceAsync = null, bool? forceDownloadService = null)
+
+
+Retrieve all my shift trades where I am either the initiating or receiving user
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostWorkforcemanagementShifttradingTradesMineQueryJobsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new WorkforceManagementApi();
+            var body = new QueryAgentShiftTradeListJobRequest(); // QueryAgentShiftTradeListJobRequest | The request body
+            var forceAsync = true;  // bool? | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional) 
+            var forceDownloadService = true;  // bool? | Force the result of this operation to be sent via download service. For testing/app development purposes (optional) 
+
+            try
+            { 
+                // Retrieve all my shift trades where I am either the initiating or receiving user
+                ShiftTradeQueryAgentTradesJobResponse result = apiInstance.PostWorkforcemanagementShifttradingTradesMineQueryJobs(body, forceAsync, forceDownloadService);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WorkforceManagementApi.PostWorkforcemanagementShifttradingTradesMineQueryJobs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryAgentShiftTradeListJobRequest**](QueryAgentShiftTradeListJobRequest)| The request body |  |
+| **forceAsync** | **bool?**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **forceDownloadService** | **bool?**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse)
+
+
 ## PostWorkforcemanagementTeamAdherenceHistorical
 
 > [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) PostWorkforcemanagementTeamAdherenceHistorical (string teamId, WfmHistoricalAdherenceQueryForTeams body)
@@ -18119,4 +19792,4 @@ namespace Example
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatform.Client.V2 254.0.0_
+_PureCloudPlatform.Client.V2 263.0.0_

@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteKnowledgeKnowledgebaseSynchronizeJob**](#DeleteKnowledgeKnowledgebaseSynchronizeJob) | **Delete** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Delete synchronization job |
 | [**DeleteKnowledgeSetting**](#DeleteKnowledgeSetting) | **Delete** /api/v2/knowledge/settings/{knowledgeSettingId} | Delete Knowledge setting. |
 | [**DeleteKnowledgeSource**](#DeleteKnowledgeSource) | **Delete** /api/v2/knowledge/sources/{sourceId} | Delete source |
+| [**DeleteKnowledgeSourceSynchronizationDeletion**](#DeleteKnowledgeSourceSynchronizationDeletion) | **Delete** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId} | Remove a deletion entry associated with the synchronization |
+| [**DeleteKnowledgeSourceSynchronizationUpload**](#DeleteKnowledgeSourceSynchronizationUpload) | **Delete** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId} | Remove a file upload entry associated with the synchronization |
 | [**GetKnowledgeConnection**](#GetKnowledgeConnection) | **Get** /api/v2/knowledge/connections/{connectionId} | Get connection |
 | [**GetKnowledgeConnectionOptions**](#GetKnowledgeConnectionOptions) | **Get** /api/v2/knowledge/connections/{connectionId}/options | Get connection options |
 | [**GetKnowledgeConnections**](#GetKnowledgeConnections) | **Get** /api/v2/knowledge/connections | Get connections |
@@ -39,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetKnowledgeKnowledgebaseDocumentVersionVariations**](#GetKnowledgeKnowledgebaseDocumentVersionVariations) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations | Get variations for the given document version. |
 | [**GetKnowledgeKnowledgebaseDocumentVersions**](#GetKnowledgeKnowledgebaseDocumentVersions) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions | Get document versions. |
 | [**GetKnowledgeKnowledgebaseDocuments**](#GetKnowledgeKnowledgebaseDocuments) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents | Get documents. |
+| [**GetKnowledgeKnowledgebaseDocumentsFeedback**](#GetKnowledgeKnowledgebaseDocumentsFeedback) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback | Get a list of feedback records given on documents in a knowledge base |
 | [**GetKnowledgeKnowledgebaseExportJob**](#GetKnowledgeKnowledgebaseExportJob) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId} | Get export job report |
 | [**GetKnowledgeKnowledgebaseImportJob**](#GetKnowledgeKnowledgebaseImportJob) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} | Get import job report |
 | [**GetKnowledgeKnowledgebaseLabel**](#GetKnowledgeKnowledgebaseLabel) | **Get** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} | Get label |
@@ -59,6 +62,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetKnowledgeSettings**](#GetKnowledgeSettings) | **Get** /api/v2/knowledge/settings | Get Knowledge settings. |
 | [**GetKnowledgeSource**](#GetKnowledgeSource) | **Get** /api/v2/knowledge/sources/{sourceId} | Get source |
 | [**GetKnowledgeSourceSynchronization**](#GetKnowledgeSourceSynchronization) | **Get** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId} | Get a specific synchronization of a source. |
+| [**GetKnowledgeSourceSynchronizationDeletion**](#GetKnowledgeSourceSynchronizationDeletion) | **Get** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId} | Get a deletion entry associated with the synchronization |
+| [**GetKnowledgeSourceSynchronizationDeletions**](#GetKnowledgeSourceSynchronizationDeletions) | **Get** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions | Get deletion entries associated with the synchronization. |
+| [**GetKnowledgeSourceSynchronizationUpload**](#GetKnowledgeSourceSynchronizationUpload) | **Get** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId} | Get a file upload entry associated with the synchronization |
+| [**GetKnowledgeSourceSynchronizationUploads**](#GetKnowledgeSourceSynchronizationUploads) | **Get** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads | Get file upload entries associated with the synchronization |
 | [**GetKnowledgeSourceSynchronizations**](#GetKnowledgeSourceSynchronizations) | **Get** /api/v2/knowledge/sources/{sourceId}/synchronizations | Get synchronizations of a source. |
 | [**GetKnowledgeSources**](#GetKnowledgeSources) | **Get** /api/v2/knowledge/sources | List sources |
 | [**GetKnowledgeSourcesSynchronizations**](#GetKnowledgeSourcesSynchronizations) | **Get** /api/v2/knowledge/sources/synchronizations | Get synchronizations of all sources of the organization. |
@@ -119,6 +126,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostKnowledgeSearch**](#PostKnowledgeSearch) | **Post** /api/v2/knowledge/search | Get Knowledge Search |
 | [**PostKnowledgeSearchPreview**](#PostKnowledgeSearchPreview) | **Post** /api/v2/knowledge/search/preview | Get Knowledge Search Preview |
 | [**PostKnowledgeSettings**](#PostKnowledgeSettings) | **Post** /api/v2/knowledge/settings | Create Knowledge setting. |
+| [**PostKnowledgeSourceSynchronizationDeletions**](#PostKnowledgeSourceSynchronizationDeletions) | **Post** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions | Mark a previously synced file for deletion in the synchronization. |
 | [**PostKnowledgeSourceSynchronizationUploads**](#PostKnowledgeSourceSynchronizationUploads) | **Post** /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads | Create presigned URL for uploading a file in the synchronization. |
 | [**PostKnowledgeSourceSynchronizations**](#PostKnowledgeSourceSynchronizations) | **Post** /api/v2/knowledge/sources/{sourceId}/synchronizations | Start a manual synchronization from a source. |
 | [**PostKnowledgeSources**](#PostKnowledgeSources) | **Post** /api/v2/knowledge/sources | Create a new source |
@@ -940,6 +948,136 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **sourceId** | **string**| Source ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteKnowledgeSourceSynchronizationDeletion
+
+> void DeleteKnowledgeSourceSynchronizationDeletion (string sourceId, string synchronizationId, string fileId)
+
+
+Remove a deletion entry associated with the synchronization
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteKnowledgeSourceSynchronizationDeletionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var fileId = fileId_example;  // string | File ID
+
+            try
+            { 
+                // Remove a deletion entry associated with the synchronization
+                apiInstance.DeleteKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.DeleteKnowledgeSourceSynchronizationDeletion: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **fileId** | **string**| File ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteKnowledgeSourceSynchronizationUpload
+
+> void DeleteKnowledgeSourceSynchronizationUpload (string sourceId, string synchronizationId, string fileId)
+
+
+Remove a file upload entry associated with the synchronization
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteKnowledgeSourceSynchronizationUploadExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var fileId = fileId_example;  // string | File ID
+
+            try
+            { 
+                // Remove a file upload entry associated with the synchronization
+                apiInstance.DeleteKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.DeleteKnowledgeSourceSynchronizationUpload: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **fileId** | **string**| File ID |  |
 
 ### Return type
 
@@ -2322,6 +2460,90 @@ namespace Example
 [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing)
 
 
+## GetKnowledgeKnowledgebaseDocumentsFeedback
+
+> [**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing) GetKnowledgeKnowledgebaseDocumentsFeedback (string knowledgeBaseId, string before = null, string after = null, string pageSize = null, bool? onlyCommented = null, string documentVersionId = null, string documentVariationId = null, string appType = null, string queryType = null, string userId = null, string queueId = null, string state = null)
+
+
+Get a list of feedback records given on documents in a knowledge base
+
+Requires ANY permissions: 
+
+* knowledge:feedback:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetKnowledgeKnowledgebaseDocumentsFeedbackExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var knowledgeBaseId = knowledgeBaseId_example;  // string | Knowledge base ID.
+            var before = before_example;  // string | The cursor that points to the start of the set of entities that has been returned. (optional) 
+            var after = after_example;  // string | The cursor that points to the end of the set of entities that has been returned. (optional) 
+            var pageSize = pageSize_example;  // string | Number of entities to return. Maximum of 200. (optional) 
+            var onlyCommented = true;  // bool? | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional) 
+            var documentVersionId = documentVersionId_example;  // string | Document version ID to filter by. Supported only if onlyCommented=true is set. (optional) 
+            var documentVariationId = documentVariationId_example;  // string | Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional) 
+            var appType = appType_example;  // string | Application type to filter by. Supported only if onlyCommented=true is set. (optional) 
+            var queryType = queryType_example;  // string | Query type to filter by. Supported only if onlyCommented=true is set. (optional) 
+            var userId = userId_example;  // string | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional) 
+            var queueId = queueId_example;  // string | Queue ID to filter by. Supported only if onlyCommented=true is set. (optional) 
+            var state = state_example;  // string | State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional) 
+
+            try
+            { 
+                // Get a list of feedback records given on documents in a knowledge base
+                KnowledgeDocumentFeedbackResponseListing result = apiInstance.GetKnowledgeKnowledgebaseDocumentsFeedback(knowledgeBaseId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.GetKnowledgeKnowledgebaseDocumentsFeedback: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **knowledgeBaseId** | **string**| Knowledge base ID. |  |
+| **before** | **string**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **string**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **pageSize** | **string**| Number of entities to return. Maximum of 200. | [optional]  |
+| **onlyCommented** | **bool?**| If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. | [optional]  |
+| **documentVersionId** | **string**| Document version ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **documentVariationId** | **string**| Document variation ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **appType** | **string**| Application type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] <br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter |
+| **queryType** | **string**| Query type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] <br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle |
+| **userId** | **string**| The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **queueId** | **string**| Queue ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **state** | **string**| State to filter by. Supported only if onlyCommented&#x3D;true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing)
+
+
 ## GetKnowledgeKnowledgebaseExportJob
 
 > [**KnowledgeExportJobResponse**](KnowledgeExportJobResponse) GetKnowledgeKnowledgebaseExportJob (string knowledgeBaseId, string exportJobId)
@@ -3672,6 +3894,278 @@ namespace Example
 ### Return type
 
 [**V3Synchronization**](V3Synchronization)
+
+
+## GetKnowledgeSourceSynchronizationDeletion
+
+> [**V3SynchronizationDeletion**](V3SynchronizationDeletion) GetKnowledgeSourceSynchronizationDeletion (string sourceId, string synchronizationId, string fileId)
+
+
+Get a deletion entry associated with the synchronization
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetKnowledgeSourceSynchronizationDeletionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var fileId = fileId_example;  // string | File ID
+
+            try
+            { 
+                // Get a deletion entry associated with the synchronization
+                V3SynchronizationDeletion result = apiInstance.GetKnowledgeSourceSynchronizationDeletion(sourceId, synchronizationId, fileId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.GetKnowledgeSourceSynchronizationDeletion: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **fileId** | **string**| File ID |  |
+
+### Return type
+
+[**V3SynchronizationDeletion**](V3SynchronizationDeletion)
+
+
+## GetKnowledgeSourceSynchronizationDeletions
+
+> [**V3SynchronizationDeletionListing**](V3SynchronizationDeletionListing) GetKnowledgeSourceSynchronizationDeletions (string sourceId, string synchronizationId, string before = null, string after = null, string pageSize = null)
+
+
+Get deletion entries associated with the synchronization.
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetKnowledgeSourceSynchronizationDeletionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var before = before_example;  // string | The cursor that points to the start of the set of entities that has been returned. (optional) 
+            var after = after_example;  // string | The cursor that points to the end of the set of entities that has been returned. (optional) 
+            var pageSize = pageSize_example;  // string | Number of entities to return. Maximum of 200. (optional) 
+
+            try
+            { 
+                // Get deletion entries associated with the synchronization.
+                V3SynchronizationDeletionListing result = apiInstance.GetKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, before, after, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.GetKnowledgeSourceSynchronizationDeletions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **before** | **string**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **string**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **pageSize** | **string**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**V3SynchronizationDeletionListing**](V3SynchronizationDeletionListing)
+
+
+## GetKnowledgeSourceSynchronizationUpload
+
+> [**V3SynchronizationUpload**](V3SynchronizationUpload) GetKnowledgeSourceSynchronizationUpload (string sourceId, string synchronizationId, string fileId)
+
+
+Get a file upload entry associated with the synchronization
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetKnowledgeSourceSynchronizationUploadExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var fileId = fileId_example;  // string | File ID
+
+            try
+            { 
+                // Get a file upload entry associated with the synchronization
+                V3SynchronizationUpload result = apiInstance.GetKnowledgeSourceSynchronizationUpload(sourceId, synchronizationId, fileId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.GetKnowledgeSourceSynchronizationUpload: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **fileId** | **string**| File ID |  |
+
+### Return type
+
+[**V3SynchronizationUpload**](V3SynchronizationUpload)
+
+
+## GetKnowledgeSourceSynchronizationUploads
+
+> [**V3SynchronizationUploadListing**](V3SynchronizationUploadListing) GetKnowledgeSourceSynchronizationUploads (string sourceId, string synchronizationId, string before = null, string after = null, string pageSize = null)
+
+
+Get file upload entries associated with the synchronization
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetKnowledgeSourceSynchronizationUploadsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var before = before_example;  // string | The cursor that points to the start of the set of entities that has been returned. (optional) 
+            var after = after_example;  // string | The cursor that points to the end of the set of entities that has been returned. (optional) 
+            var pageSize = pageSize_example;  // string | Number of entities to return. Maximum of 200. (optional) 
+
+            try
+            { 
+                // Get file upload entries associated with the synchronization
+                V3SynchronizationUploadListing result = apiInstance.GetKnowledgeSourceSynchronizationUploads(sourceId, synchronizationId, before, after, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.GetKnowledgeSourceSynchronizationUploads: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **before** | **string**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **string**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **pageSize** | **string**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**V3SynchronizationUploadListing**](V3SynchronizationUploadListing)
 
 
 ## GetKnowledgeSourceSynchronizations
@@ -5958,7 +6452,7 @@ void (empty response body)
 
 ## PostKnowledgeKnowledgebaseDocuments
 
-> [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse) PostKnowledgeKnowledgebaseDocuments (string knowledgeBaseId, KnowledgeDocumentCreateRequest body)
+> [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse) PostKnowledgeKnowledgebaseDocuments (string knowledgeBaseId, KnowledgeDocumentReq body)
 
 
 Create document.
@@ -5990,7 +6484,7 @@ namespace Example
 
             var apiInstance = new KnowledgeApi();
             var knowledgeBaseId = knowledgeBaseId_example;  // string | Knowledge base ID
-            var body = new KnowledgeDocumentCreateRequest(); // KnowledgeDocumentCreateRequest | 
+            var body = new KnowledgeDocumentReq(); // KnowledgeDocumentReq | 
 
             try
             { 
@@ -6013,7 +6507,7 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **knowledgeBaseId** | **string**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentCreateRequest**](KnowledgeDocumentCreateRequest)|  |  |
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  |  |
 
 ### Return type
 
@@ -7493,6 +7987,72 @@ namespace Example
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
+## PostKnowledgeSourceSynchronizationDeletions
+
+> [**V3SynchronizationDeletion**](V3SynchronizationDeletion) PostKnowledgeSourceSynchronizationDeletions (string sourceId, string synchronizationId, V3SynchronizationFileDeletionRequest body)
+
+
+Mark a previously synced file for deletion in the synchronization.
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:deleteFile
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostKnowledgeSourceSynchronizationDeletionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new KnowledgeApi();
+            var sourceId = sourceId_example;  // string | Source ID
+            var synchronizationId = synchronizationId_example;  // string | Synchronization ID
+            var body = new V3SynchronizationFileDeletionRequest(); // V3SynchronizationFileDeletionRequest | 
+
+            try
+            { 
+                // Mark a previously synced file for deletion in the synchronization.
+                V3SynchronizationDeletion result = apiInstance.PostKnowledgeSourceSynchronizationDeletions(sourceId, synchronizationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.PostKnowledgeSourceSynchronizationDeletions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceId** | **string**| Source ID |  |
+| **synchronizationId** | **string**| Synchronization ID |  |
+| **body** | [**V3SynchronizationFileDeletionRequest**](V3SynchronizationFileDeletionRequest)|  |  |
+
+### Return type
+
+[**V3SynchronizationDeletion**](V3SynchronizationDeletion)
+
+
 ## PostKnowledgeSourceSynchronizationUploads
 
 > [**V3SynchronizationUploadUrlResponse**](V3SynchronizationUploadUrlResponse) PostKnowledgeSourceSynchronizationUploads (string sourceId, string synchronizationId, V3SynchronizationUploadUrlRequest body)
@@ -7881,4 +8441,4 @@ namespace Example
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

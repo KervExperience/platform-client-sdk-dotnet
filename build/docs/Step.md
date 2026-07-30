@@ -16,10 +16,11 @@
 | **ModifiedBy** | [**UserReference**](UserReference) | The ID of the User who modified the Step. | [optional] |
 | **Version** | **int?** | The version of the Step. | [optional] |
 | **Status** | **string** | The Status of the Step. | [optional] |
-| **Stage** | [**StageReference**](StageReference) | The parent stage of the step. | [optional] |
+| **Stage** | [**StageReference**](StageReference) | The parent Stage of the Step. | [optional] |
+| **WorkitemActivity** | [**WorkitemActivityReference**](WorkitemActivityReference) | The workitem activity linked to this step. Present only for workitem-type steps that have been activated. | [optional] |
 | **SelfUri** | **string** | The URI for this object | [optional] |
-| **Case** | [**CaseReference**](CaseReference) | The parent case of the step. | [optional] |
+| **Case** | [**CaseReference**](CaseReference) | The parent Case of the Step. | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

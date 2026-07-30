@@ -49,7 +49,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// Enum Open for "open"
             /// </summary>
             [EnumMember(Value = "open")]
-            Open
+            Open,
+            
+            /// <summary>
+            /// Enum Webmessaging for "webmessaging"
+            /// </summary>
+            [EnumMember(Value = "webmessaging")]
+            Webmessaging,
+            
+            /// <summary>
+            /// Enum Apple for "apple"
+            /// </summary>
+            [EnumMember(Value = "apple")]
+            Apple
         }
         /// <summary>
         /// Type of messenger.

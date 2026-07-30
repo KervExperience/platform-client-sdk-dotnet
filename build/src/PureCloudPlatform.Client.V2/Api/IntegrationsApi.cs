@@ -187,9 +187,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>IntegrationEntityListing</returns>
         
-        IntegrationEntityListing GetIntegrations (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null);
+        IntegrationEntityListing GetIntegrations (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null);
 
         /// <summary>
         /// List integrations
@@ -207,9 +208,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>ApiResponse of IntegrationEntityListing</returns>
         
-        ApiResponse<IntegrationEntityListing> GetIntegrationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null);
+        ApiResponse<IntegrationEntityListing> GetIntegrationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null);
 
         /// <summary>
         /// Retrieves a single Action matching id.
@@ -882,40 +884,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>ApiResponse of ClientAppEntityListing</returns>
         
         ApiResponse<ClientAppEntityListing> GetIntegrationsClientappsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null);
-
-        /// <summary>
-        /// UC integration client application configuration.
-        /// </summary>
-        /// <remarks>
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>UCIntegrationListing</returns>
-        [Obsolete]
-        UCIntegrationListing GetIntegrationsClientappsUnifiedcommunications (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null);
-
-        /// <summary>
-        /// UC integration client application configuration.
-        /// </summary>
-        /// <remarks>
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>ApiResponse of UCIntegrationListing</returns>
-        [Obsolete]
-        ApiResponse<UCIntegrationListing> GetIntegrationsClientappsUnifiedcommunicationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null);
 
         /// <summary>
         /// Get a single credential with sensitive fields redacted
@@ -2737,9 +2705,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>Task of IntegrationEntityListing</returns>
         
-        System.Threading.Tasks.Task<IntegrationEntityListing> GetIntegrationsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null);
+        System.Threading.Tasks.Task<IntegrationEntityListing> GetIntegrationsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null);
 
         /// <summary>
         /// List integrations
@@ -2757,9 +2726,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>Task of ApiResponse (IntegrationEntityListing)</returns>
         
-        System.Threading.Tasks.Task<ApiResponse<IntegrationEntityListing>> GetIntegrationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null);
+        System.Threading.Tasks.Task<ApiResponse<IntegrationEntityListing>> GetIntegrationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null);
 
         /// <summary>
         /// Retrieves a single Action matching id.
@@ -3432,40 +3402,6 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <returns>Task of ApiResponse (ClientAppEntityListing)</returns>
         
         System.Threading.Tasks.Task<ApiResponse<ClientAppEntityListing>> GetIntegrationsClientappsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null);
-
-        /// <summary>
-        /// UC integration client application configuration.
-        /// </summary>
-        /// <remarks>
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>Task of UCIntegrationListing</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<UCIntegrationListing> GetIntegrationsClientappsUnifiedcommunicationsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null);
-
-        /// <summary>
-        /// UC integration client application configuration.
-        /// </summary>
-        /// <remarks>
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>Task of ApiResponse (UCIntegrationListing)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<UCIntegrationListing>> GetIntegrationsClientappsUnifiedcommunicationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null);
 
         /// <summary>
         /// Get a single credential with sensitive fields redacted
@@ -6477,11 +6413,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>IntegrationEntityListing</returns>
         
-        public IntegrationEntityListing GetIntegrations (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null)
+        public IntegrationEntityListing GetIntegrations (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null)
         {
-             ApiResponse<IntegrationEntityListing> localVarResponse = GetIntegrationsWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState);
+             ApiResponse<IntegrationEntityListing> localVarResponse = GetIntegrationsWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState, credentialId);
              return localVarResponse.Data;
         }
 
@@ -6499,9 +6436,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>ApiResponse of IntegrationEntityListing</returns>
         
-        public ApiResponse< IntegrationEntityListing > GetIntegrationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null)
+        public ApiResponse< IntegrationEntityListing > GetIntegrationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null)
         { 
 
             var localVarPath = "/api/v2/integrations";
@@ -6546,6 +6484,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (ids != null) ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (integrationType != null) localVarQueryParams.Add(new Tuple<string, string>("integrationType", this.Configuration.ApiClient.ParameterToString(integrationType)));
             if (reportedState != null) localVarQueryParams.Add(new Tuple<string, string>("reportedState", this.Configuration.ApiClient.ParameterToString(reportedState)));
+            if (credentialId != null) localVarQueryParams.Add(new Tuple<string, string>("credentialId", this.Configuration.ApiClient.ParameterToString(credentialId)));
 
             // Header params
 
@@ -6599,11 +6538,12 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>Task of IntegrationEntityListing</returns>
         
-        public async System.Threading.Tasks.Task<IntegrationEntityListing> GetIntegrationsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null)
+        public async System.Threading.Tasks.Task<IntegrationEntityListing> GetIntegrationsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null)
         {
-             ApiResponse<IntegrationEntityListing> localVarResponse = await GetIntegrationsAsyncWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState);
+             ApiResponse<IntegrationEntityListing> localVarResponse = await GetIntegrationsAsyncWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState, credentialId);
              return localVarResponse.Data;
 
         }
@@ -6622,9 +6562,10 @@ namespace PureCloudPlatform.Client.V2.Api
         /// <param name="ids">Comma-separated list of integration IDs to filter by (max 100) (optional)</param>
         /// <param name="integrationType">Filter integrations by integration type ID (optional)</param>
         /// <param name="reportedState">Filter integrations by reported state (case-insensitive) (optional)</param>
+        /// <param name="credentialId">Filter integrations by credential ID (optional)</param>
         /// <returns>Task of ApiResponse (IntegrationEntityListing)</returns>
         
-        public async System.Threading.Tasks.Task<ApiResponse<IntegrationEntityListing>> GetIntegrationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null)
+        public async System.Threading.Tasks.Task<ApiResponse<IntegrationEntityListing>> GetIntegrationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null)
         { 
 
             var localVarPath = "/api/v2/integrations";
@@ -6669,6 +6610,7 @@ namespace PureCloudPlatform.Client.V2.Api
             if (ids != null) ids.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("ids", this.Configuration.ApiClient.ParameterToString(obj))); });
             if (integrationType != null) localVarQueryParams.Add(new Tuple<string, string>("integrationType", this.Configuration.ApiClient.ParameterToString(integrationType)));
             if (reportedState != null) localVarQueryParams.Add(new Tuple<string, string>("reportedState", this.Configuration.ApiClient.ParameterToString(reportedState)));
+            if (credentialId != null) localVarQueryParams.Add(new Tuple<string, string>("credentialId", this.Configuration.ApiClient.ParameterToString(credentialId)));
 
             // Header params
 
@@ -11772,234 +11714,6 @@ namespace PureCloudPlatform.Client.V2.Api
             return new ApiResponse<ClientAppEntityListing>(localVarStatusCode,
                 localVarHeaders,
                 (ClientAppEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ClientAppEntityListing)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// UC integration client application configuration. 
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>UCIntegrationListing</returns>
-        [Obsolete]
-        public UCIntegrationListing GetIntegrationsClientappsUnifiedcommunications (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null)
-        {
-             ApiResponse<UCIntegrationListing> localVarResponse = GetIntegrationsClientappsUnifiedcommunicationsWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// UC integration client application configuration. 
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>ApiResponse of UCIntegrationListing</returns>
-        [Obsolete]
-        public ApiResponse< UCIntegrationListing > GetIntegrationsClientappsUnifiedcommunicationsWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null)
-        { 
-
-            var localVarPath = "/api/v2/integrations/clientapps/unifiedcommunications";
-            var localVarHttpMethod = "Get";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, IFileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
-            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
-            if (sortBy != null) localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
-            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
-            if (nextPage != null) localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
-            if (previousPage != null) localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IHttpResponse localVarResponse = this.Configuration.ApiClient.CallApi(localVarPath,
-                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType) as IHttpResponse;
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetIntegrationsClientappsUnifiedcommunications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
-                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetIntegrationsClientappsUnifiedcommunications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetIntegrationsClientappsUnifiedcommunications: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<UCIntegrationListing>(localVarStatusCode,
-                localVarHeaders,
-                (UCIntegrationListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UCIntegrationListing)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// UC integration client application configuration. 
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>Task of UCIntegrationListing</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<UCIntegrationListing> GetIntegrationsClientappsUnifiedcommunicationsAsync (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null)
-        {
-             ApiResponse<UCIntegrationListing> localVarResponse = await GetIntegrationsClientappsUnifiedcommunicationsAsyncWithHttpInfo(pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// UC integration client application configuration. 
-        /// Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">The total page size requested (optional, default to 25)</param>
-        /// <param name="pageNumber">The page number requested (optional, default to 1)</param>
-        /// <param name="sortBy">variable name requested to sort by (optional)</param>
-        /// <param name="expand">variable name requested by expand list (optional)</param>
-        /// <param name="nextPage">next page token (optional)</param>
-        /// <param name="previousPage">Previous page token (optional)</param>
-        /// <returns>Task of ApiResponse (UCIntegrationListing)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ApiResponse<UCIntegrationListing>> GetIntegrationsClientappsUnifiedcommunicationsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null)
-        { 
-
-            var localVarPath = "/api/v2/integrations/clientapps/unifiedcommunications";
-            var localVarHttpMethod = "Get";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, IFileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
-            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
-            if (sortBy != null) localVarQueryParams.Add(new Tuple<string, string>("sortBy", this.Configuration.ApiClient.ParameterToString(sortBy)));
-            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
-            if (nextPage != null) localVarQueryParams.Add(new Tuple<string, string>("nextPage", this.Configuration.ApiClient.ParameterToString(nextPage)));
-            if (previousPage != null) localVarQueryParams.Add(new Tuple<string, string>("previousPage", this.Configuration.ApiClient.ParameterToString(previousPage)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IHttpResponse localVarResponse = await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                localVarHttpMethod, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType) as IHttpResponse;
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetIntegrationsClientappsUnifiedcommunications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode >= 300 && localVarStatusCode < 400)
-                throw new ApiException.RedirectException (localVarStatusCode, "HTTP Redirect received calling GetIntegrationsClientappsUnifiedcommunications: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetIntegrationsClientappsUnifiedcommunications: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<UCIntegrationListing>(localVarStatusCode,
-                localVarHeaders,
-                (UCIntegrationListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UCIntegrationListing)),
                 localVarResponse.Content,
                 localVarResponse.StatusDescription);
         }

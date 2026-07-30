@@ -126,6 +126,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ActivityPlanListItem" /> class.
         /// </summary>
+        /// <param name="Id">The globally unique identifier for the object. (required).</param>
         /// <param name="Name">The name of the activity plan (required).</param>
         /// <param name="ManagementUnits">The management units to which this activity plan applies. Empty list or null means this activity plan applies to all management units in the business unit.</param>
         /// <param name="Description">The description of this activity plan (required).</param>
@@ -140,8 +141,10 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="CreatedBy">The user who created this activity plan (required).</param>
         /// <param name="ModifiedDate">The date the activity plan was modified, in ISO-8601 format (required).</param>
         /// <param name="ModifiedBy">The last user to modify this activity plan. The id may be &#39;System&#39; if it was an automated process (required).</param>
-        public ActivityPlanListItem(string Name = null, List<ManagementUnitReference> ManagementUnits = null, string Description = null, ActivityCodeReference ActivityCode = null, TypeEnum? Type = null, OptimizationObjectiveEnum? OptimizationObjective = null, RecurrenceSettings RecurrenceSettings = null, StateEnum? State = null, DateTime? LastRunDate = null, UserReference LastRunBy = null, DateTime? CreatedDate = null, UserReference CreatedBy = null, DateTime? ModifiedDate = null, UserReference ModifiedBy = null)
+        /// <param name="InitialSchedulePeriod">The initial schedule period of the activity plan.</param>
+        public ActivityPlanListItem(string Id = null, string Name = null, List<ManagementUnitReference> ManagementUnits = null, string Description = null, ActivityCodeReference ActivityCode = null, TypeEnum? Type = null, OptimizationObjectiveEnum? OptimizationObjective = null, RecurrenceSettings RecurrenceSettings = null, StateEnum? State = null, DateTime? LastRunDate = null, UserReference LastRunBy = null, DateTime? CreatedDate = null, UserReference CreatedBy = null, DateTime? ModifiedDate = null, UserReference ModifiedBy = null, SchedulingPeriodBase InitialSchedulePeriod = null)
         {
+            this.Id = Id;
             this.Name = Name;
             this.ManagementUnits = ManagementUnits;
             this.Description = Description;
@@ -156,6 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
             this.CreatedBy = CreatedBy;
             this.ModifiedDate = ModifiedDate;
             this.ModifiedBy = ModifiedBy;
+            this.InitialSchedulePeriod = InitialSchedulePeriod;
             
         }
         
@@ -166,7 +170,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; private set; }
+        public string Id { get; set; }
 
 
 
@@ -276,6 +280,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
+        /// The initial schedule period of the activity plan
+        /// </summary>
+        /// <value>The initial schedule period of the activity plan</value>
+        [DataMember(Name="initialSchedulePeriod", EmitDefaultValue=false)]
+        public SchedulingPeriodBase InitialSchedulePeriod { get; set; }
+
+
+
+        /// <summary>
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
@@ -307,6 +320,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  InitialSchedulePeriod: ").Append(InitialSchedulePeriod).Append("\n");
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -424,6 +438,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.ModifiedBy.Equals(other.ModifiedBy)
                 ) &&
                 (
+                    this.InitialSchedulePeriod == other.InitialSchedulePeriod ||
+                    this.InitialSchedulePeriod != null &&
+                    this.InitialSchedulePeriod.Equals(other.InitialSchedulePeriod)
+                ) &&
+                (
                     this.SelfUri == other.SelfUri ||
                     this.SelfUri != null &&
                     this.SelfUri.Equals(other.SelfUri)
@@ -485,6 +504,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.ModifiedBy != null)
                     hash = hash * 59 + this.ModifiedBy.GetHashCode();
+
+                if (this.InitialSchedulePeriod != null)
+                    hash = hash * 59 + this.InitialSchedulePeriod.GetHashCode();
 
                 if (this.SelfUri != null)
                     hash = hash * 59 + this.SelfUri.GetHashCode();

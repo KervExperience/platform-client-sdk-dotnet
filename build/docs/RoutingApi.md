@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteRoutingEmailDomain**](#DeleteRoutingEmailDomain) | **Delete** /api/v2/routing/email/domains/{domainId} | Delete a domain |
 | [**DeleteRoutingEmailDomainRoute**](#DeleteRoutingEmailDomainRoute) | **Delete** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route |
 | [**DeleteRoutingEmailOutboundDomain**](#DeleteRoutingEmailOutboundDomain) | **Delete** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain |
+| [**DeleteRoutingEmailSettingEmailSettingId**](#DeleteRoutingEmailSettingEmailSettingId) | **Delete** /api/v2/routing/email/setting/{emailSettingId} | Delete an email setting. Removes the email setting and its associated settings |
 | [**DeleteRoutingLanguage**](#DeleteRoutingLanguage) | **Delete** /api/v2/routing/languages/{languageId} | Delete a routing language |
 | [**DeleteRoutingPredictor**](#DeleteRoutingPredictor) | **Delete** /api/v2/routing/predictors/{predictorId} | Delete single predictor. |
 | [**DeleteRoutingPredictorsKeyperformanceindicator**](#DeleteRoutingPredictorsKeyperformanceindicator) | **Delete** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Delete a custom Key Performance Indicator. |
@@ -20,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteRoutingQueueWrapupcode**](#DeleteRoutingQueueWrapupcode) | **Delete** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue |
 | [**DeleteRoutingSettings**](#DeleteRoutingSettings) | **Delete** /api/v2/routing/settings | Delete an organization&#39;s routing settings |
 | [**DeleteRoutingSkill**](#DeleteRoutingSkill) | **Delete** /api/v2/routing/skills/{skillId} | Delete Routing Skill |
+| [**DeleteRoutingSkillexpression**](#DeleteRoutingSkillexpression) | **Delete** /api/v2/routing/skillexpressions/{expressionId} | Archive a skill expression to remove it from the set of active expressions |
+| [**DeleteRoutingSkillexpressions**](#DeleteRoutingSkillexpressions) | **Delete** /api/v2/routing/skillexpressions | Archive a set of skill expressions to remove them from the set of active expressions |
 | [**DeleteRoutingSkillgroup**](#DeleteRoutingSkillgroup) | **Delete** /api/v2/routing/skillgroups/{skillGroupId} | Remove skill group definition |
 | [**DeleteRoutingSmsAddress**](#DeleteRoutingSmsAddress) | **Delete** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS |
 | [**DeleteRoutingSmsPhonenumber**](#DeleteRoutingSmsPhonenumber) | **Delete** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Delete a phone number provisioned for SMS. |
@@ -27,7 +30,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**DeleteRoutingUserUtilization**](#DeleteRoutingUserUtilization) | **Delete** /api/v2/routing/users/{userId}/utilization | Delete the user&#39;s max utilization settings and revert to the organization-wide default. |
 | [**DeleteRoutingUtilization**](#DeleteRoutingUtilization) | **Delete** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default. |
 | [**DeleteRoutingUtilizationLabel**](#DeleteRoutingUtilizationLabel) | **Delete** /api/v2/routing/utilization/labels/{labelId} | Delete a utilization label |
-| [**DeleteRoutingUtilizationTag**](#DeleteRoutingUtilizationTag) | **Delete** /api/v2/routing/utilization/tags/{tagId} | Delete an utilization tag |
 | [**DeleteRoutingWrapupcode**](#DeleteRoutingWrapupcode) | **Delete** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code |
 | [**DeleteUserRoutinglanguage**](#DeleteUserRoutinglanguage) | **Delete** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove a routing language from a user |
 | [**DeleteUserRoutingskill**](#DeleteUserRoutingskill) | **Delete** /api/v2/users/{userId}/routingskills/{skillId} | Remove a routing skill from a user |
@@ -48,6 +50,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetRoutingEmailOutboundDomain**](#GetRoutingEmailOutboundDomain) | **Get** /api/v2/routing/email/outbound/domains/{domainId} | Get domain |
 | [**GetRoutingEmailOutboundDomainActivation**](#GetRoutingEmailOutboundDomainActivation) | **Get** /api/v2/routing/email/outbound/domains/{domainId}/activation | Get activation status (cname + dkim) of an outbound domain |
 | [**GetRoutingEmailOutboundDomains**](#GetRoutingEmailOutboundDomains) | **Get** /api/v2/routing/email/outbound/domains | Get outbound domains |
+| [**GetRoutingEmailSetting**](#GetRoutingEmailSetting) | **Get** /api/v2/routing/email/setting | Get a paged list of email routing settings. |
+| [**GetRoutingEmailSettingEmailSettingId**](#GetRoutingEmailSettingEmailSettingId) | **Get** /api/v2/routing/email/setting/{emailSettingId} | Get email setting. Returns the specified email setting that defines settings for email |
 | [**GetRoutingEmailSetup**](#GetRoutingEmailSetup) | **Get** /api/v2/routing/email/setup | Get email setup |
 | [**GetRoutingLanguage**](#GetRoutingLanguage) | **Get** /api/v2/routing/languages/{languageId} | Get a routing language |
 | [**GetRoutingLanguages**](#GetRoutingLanguages) | **Get** /api/v2/routing/languages | Get the list of supported languages. |
@@ -78,11 +82,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetRoutingSettingsContactcenter**](#GetRoutingSettingsContactcenter) | **Get** /api/v2/routing/settings/contactcenter | Get Contact Center Settings |
 | [**GetRoutingSettingsTranscription**](#GetRoutingSettingsTranscription) | **Get** /api/v2/routing/settings/transcription | Get Transcription Settings |
 | [**GetRoutingSkill**](#GetRoutingSkill) | **Get** /api/v2/routing/skills/{skillId} | Get Routing Skill |
+| [**GetRoutingSkillexpression**](#GetRoutingSkillexpression) | **Get** /api/v2/routing/skillexpressions/{expressionId} | Get a skill expression by ID |
+| [**GetRoutingSkillexpressions**](#GetRoutingSkillexpressions) | **Get** /api/v2/routing/skillexpressions | Get skill expressions |
+| [**GetRoutingSkillexpressionsQueueQueueId**](#GetRoutingSkillexpressionsQueueQueueId) | **Get** /api/v2/routing/skillexpressions/queue/{queueId} | Get skill expressions associated with a queue |
 | [**GetRoutingSkillgroup**](#GetRoutingSkillgroup) | **Get** /api/v2/routing/skillgroups/{skillGroupId} | Get skill group |
 | [**GetRoutingSkillgroupMembers**](#GetRoutingSkillgroupMembers) | **Get** /api/v2/routing/skillgroups/{skillGroupId}/members | Get skill group members |
 | [**GetRoutingSkillgroupMembersDivisions**](#GetRoutingSkillgroupMembersDivisions) | **Get** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Get list of member divisions for this skill group. |
 | [**GetRoutingSkillgroups**](#GetRoutingSkillgroups) | **Get** /api/v2/routing/skillgroups | Get skill group listing |
-| [**GetRoutingSkills**](#GetRoutingSkills) | **Get** /api/v2/routing/skills | Get the list of routing skills. |
+| [**GetRoutingSkills**](#GetRoutingSkills) | **Get** /api/v2/routing/skills | Get the list of routing skills. View permission enforcement only applies to skills assigned to a division. |
 | [**GetRoutingSmsAddress**](#GetRoutingSmsAddress) | **Get** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS |
 | [**GetRoutingSmsAddresses**](#GetRoutingSmsAddresses) | **Get** /api/v2/routing/sms/addresses | Get a list of Addresses for SMS |
 | [**GetRoutingSmsAvailablephonenumbers**](#GetRoutingSmsAvailablephonenumbers) | **Get** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning. |
@@ -95,9 +102,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetRoutingUtilizationLabel**](#GetRoutingUtilizationLabel) | **Get** /api/v2/routing/utilization/labels/{labelId} | Get details about this utilization label |
 | [**GetRoutingUtilizationLabelAgents**](#GetRoutingUtilizationLabelAgents) | **Get** /api/v2/routing/utilization/labels/{labelId}/agents | Get list of agent ids associated with a utilization label |
 | [**GetRoutingUtilizationLabels**](#GetRoutingUtilizationLabels) | **Get** /api/v2/routing/utilization/labels | Get list of utilization labels |
-| [**GetRoutingUtilizationTag**](#GetRoutingUtilizationTag) | **Get** /api/v2/routing/utilization/tags/{tagId} | Get details about this utilization tag |
-| [**GetRoutingUtilizationTagAgents**](#GetRoutingUtilizationTagAgents) | **Get** /api/v2/routing/utilization/tags/{tagId}/agents | Get list of agent ids associated with a utilization tag |
-| [**GetRoutingUtilizationTags**](#GetRoutingUtilizationTags) | **Get** /api/v2/routing/utilization/tags | Get list of utilization tags |
 | [**GetRoutingWrapupcode**](#GetRoutingWrapupcode) | **Get** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code. |
 | [**GetRoutingWrapupcodes**](#GetRoutingWrapupcodes) | **Get** /api/v2/routing/wrapupcodes | Get list of wrapup codes. |
 | [**GetRoutingWrapupcodesDivisionview**](#GetRoutingWrapupcodesDivisionview) | **Get** /api/v2/routing/wrapupcodes/divisionviews/{codeId} | Get a simplified wrap-up code. |
@@ -110,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PatchRoutingEmailDomain**](#PatchRoutingEmailDomain) | **Patch** /api/v2/routing/email/domains/{domainId} | Update domain settings |
 | [**PatchRoutingEmailDomainValidate**](#PatchRoutingEmailDomainValidate) | **Patch** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings |
 | [**PatchRoutingEmailOutboundDomain**](#PatchRoutingEmailOutboundDomain) | **Patch** /api/v2/routing/email/outbound/domains/{domainId} | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP). |
+| [**PatchRoutingEmailSettingEmailSettingId**](#PatchRoutingEmailSettingEmailSettingId) | **Patch** /api/v2/routing/email/setting/{emailSettingId} | Update an email setting. Modifies the settings for email setting |
 | [**PatchRoutingPredictor**](#PatchRoutingPredictor) | **Patch** /api/v2/routing/predictors/{predictorId} | Update single predictor. |
 | [**PatchRoutingPredictorsKeyperformanceindicator**](#PatchRoutingPredictorsKeyperformanceindicator) | **Patch** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Update a custom Key Performance Indicator. |
 | [**PatchRoutingQueueMember**](#PatchRoutingQueueMember) | **Patch** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member. |
@@ -139,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostRoutingEmailOutboundDomainTestconnection**](#PostRoutingEmailOutboundDomainTestconnection) | **Post** /api/v2/routing/email/outbound/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this outbound domain |
 | [**PostRoutingEmailOutboundDomains**](#PostRoutingEmailOutboundDomains) | **Post** /api/v2/routing/email/outbound/domains | Create a domain |
 | [**PostRoutingEmailOutboundDomainsSimulated**](#PostRoutingEmailOutboundDomainsSimulated) | **Post** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain |
+| [**PostRoutingEmailSetting**](#PostRoutingEmailSetting) | **Post** /api/v2/routing/email/setting | Create a new email setting. Used to define various settings, that can then be associated with email domains |
 | [**PostRoutingLanguages**](#PostRoutingLanguages) | **Post** /api/v2/routing/languages | Create Language |
 | [**PostRoutingPredictors**](#PostRoutingPredictors) | **Post** /api/v2/routing/predictors | Create a predictor. |
 | [**PostRoutingPredictorsKeyperformanceindicators**](#PostRoutingPredictorsKeyperformanceindicators) | **Post** /api/v2/routing/predictors/keyperformanceindicators | Create a custom Key Performance Indicator. |
@@ -146,6 +152,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostRoutingQueueUsers**](#PostRoutingQueueUsers) | **Post** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
 | [**PostRoutingQueueWrapupcodes**](#PostRoutingQueueWrapupcodes) | **Post** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue |
 | [**PostRoutingQueues**](#PostRoutingQueues) | **Post** /api/v2/routing/queues | Create a queue |
+| [**PostRoutingSkillexpressionsValidate**](#PostRoutingSkillexpressionsValidate) | **Post** /api/v2/routing/skillexpressions/validate | Validate and normalize a skill expression |
 | [**PostRoutingSkillgroupMembersDivisions**](#PostRoutingSkillgroupMembersDivisions) | **Post** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Add or remove member divisions for this skill group. |
 | [**PostRoutingSkillgroups**](#PostRoutingSkillgroups) | **Post** /api/v2/routing/skillgroups | Create a skill group |
 | [**PostRoutingSkills**](#PostRoutingSkills) | **Post** /api/v2/routing/skills | Create Skill |
@@ -154,7 +161,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostRoutingSmsPhonenumbersAlphanumeric**](#PostRoutingSmsPhonenumbersAlphanumeric) | **Post** /api/v2/routing/sms/phonenumbers/alphanumeric | Provision an alphanumeric number for SMS |
 | [**PostRoutingSmsPhonenumbersImport**](#PostRoutingSmsPhonenumbersImport) | **Post** /api/v2/routing/sms/phonenumbers/import | Imports a phone number for SMS |
 | [**PostRoutingUtilizationLabels**](#PostRoutingUtilizationLabels) | **Post** /api/v2/routing/utilization/labels | Create a utilization label |
-| [**PostRoutingUtilizationTags**](#PostRoutingUtilizationTags) | **Post** /api/v2/routing/utilization/tags | Create an utilization tag |
 | [**PostRoutingWrapupcodes**](#PostRoutingWrapupcodes) | **Post** /api/v2/routing/wrapupcodes | Create a wrap-up code |
 | [**PostUserRoutinglanguages**](#PostUserRoutinglanguages) | **Post** /api/v2/users/{userId}/routinglanguages | Assign a routing language to a user |
 | [**PostUserRoutingskills**](#PostUserRoutingskills) | **Post** /api/v2/users/{userId}/routingskills | Assign a routing skill to a user |
@@ -474,6 +480,67 @@ namespace Example
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **domainId** | **string**| domain ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteRoutingEmailSettingEmailSettingId
+
+> void DeleteRoutingEmailSettingEmailSettingId (string emailSettingId)
+
+
+Delete an email setting. Removes the email setting and its associated settings
+
+Requires ALL permissions: 
+
+* email:settings:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteRoutingEmailSettingEmailSettingIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var emailSettingId = emailSettingId_example;  // string | Email Setting ID
+
+            try
+            { 
+                // Delete an email setting. Removes the email setting and its associated settings
+                apiInstance.DeleteRoutingEmailSettingEmailSettingId(emailSettingId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.DeleteRoutingEmailSettingEmailSettingId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **emailSettingId** | **string**| Email Setting ID |  |
 
 ### Return type
 
@@ -1041,6 +1108,128 @@ namespace Example
 void (empty response body)
 
 
+## DeleteRoutingSkillexpression
+
+> void DeleteRoutingSkillexpression (string expressionId)
+
+
+Archive a skill expression to remove it from the set of active expressions
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteRoutingSkillexpressionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var expressionId = expressionId_example;  // string | Expression ID
+
+            try
+            { 
+                // Archive a skill expression to remove it from the set of active expressions
+                apiInstance.DeleteRoutingSkillexpression(expressionId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.DeleteRoutingSkillexpression: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **expressionId** | **string**| Expression ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## DeleteRoutingSkillexpressions
+
+> void DeleteRoutingSkillexpressions (List<string> id = null)
+
+
+Archive a set of skill expressions to remove them from the set of active expressions
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:delete
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class DeleteRoutingSkillexpressionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var id = new List<string>(); // List<string> | Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional) 
+
+            try
+            { 
+                // Archive a set of skill expressions to remove them from the set of active expressions
+                apiInstance.DeleteRoutingSkillexpressions(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.DeleteRoutingSkillexpressions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**List<string>**](string)| Expression ID(s) to filter. Repeat for multiple or use comma-separated list. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
 ## DeleteRoutingSkillgroup
 
 > void DeleteRoutingSkillgroup (string skillGroupId)
@@ -1459,71 +1648,6 @@ namespace Example
 |------------- | ------------- | ------------- | -------------|
 | **labelId** | **string**| Utilization Label ID |  |
 | **forceDelete** | **bool?**| Remove all label usages (if found) without warning | [optional] [default to false] |
-
-### Return type
-
-void (empty response body)
-
-
-## DeleteRoutingUtilizationTag
-
-> void DeleteRoutingUtilizationTag (string tagId, bool? forceDelete = null)
-
-
-Delete an utilization tag
-
-DeleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* routing:utilization:manage
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class DeleteRoutingUtilizationTagExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new RoutingApi();
-            var tagId = tagId_example;  // string | Utilization Tag ID
-            var forceDelete = true;  // bool? | Remove all tag usages (if found) without warning (optional)  (default to false)
-
-            try
-            { 
-                // Delete an utilization tag
-                apiInstance.DeleteRoutingUtilizationTag(tagId, forceDelete);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling RoutingApi.DeleteRoutingUtilizationTag: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **tagId** | **string**| Utilization Tag ID |  |
-| **forceDelete** | **bool?**| Remove all tag usages (if found) without warning | [optional] [default to false] |
 
 ### Return type
 
@@ -2805,6 +2929,132 @@ namespace Example
 ### Return type
 
 [**OutboundDomainEntityListing**](OutboundDomainEntityListing)
+
+
+## GetRoutingEmailSetting
+
+> [**EmailSettingEntityListing**](EmailSettingEntityListing) GetRoutingEmailSetting (int? pageSize = null, int? pageNumber = null)
+
+
+Get a paged list of email routing settings.
+
+Requires ALL permissions: 
+
+* email:settings:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetRoutingEmailSettingExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var pageSize = 56;  // int? | Page size (optional)  (default to 25)
+            var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
+
+            try
+            { 
+                // Get a paged list of email routing settings.
+                EmailSettingEntityListing result = apiInstance.GetRoutingEmailSetting(pageSize, pageNumber);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.GetRoutingEmailSetting: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pageSize** | **int?**| Page size | [optional] [default to 25] |
+| **pageNumber** | **int?**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**EmailSettingEntityListing**](EmailSettingEntityListing)
+
+
+## GetRoutingEmailSettingEmailSettingId
+
+> [**EmailSetting**](EmailSetting) GetRoutingEmailSettingEmailSettingId (string emailSettingId)
+
+
+Get email setting. Returns the specified email setting that defines settings for email
+
+Requires ALL permissions: 
+
+* email:settings:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetRoutingEmailSettingEmailSettingIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var emailSettingId = emailSettingId_example;  // string | Email Setting ID
+
+            try
+            { 
+                // Get email setting. Returns the specified email setting that defines settings for email
+                EmailSetting result = apiInstance.GetRoutingEmailSettingEmailSettingId(emailSettingId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.GetRoutingEmailSettingEmailSettingId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **emailSettingId** | **string**| Email Setting ID |  |
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
 
 
 ## GetRoutingEmailSetup
@@ -4393,7 +4643,7 @@ namespace Example
             var sortOrder = sortOrder_example;  // string | Sort order (optional)  (default to asc)
             var name = name_example;  // string | Name (optional) 
             var id = new List<string>(); // List<string> | Queue ID(s) (optional) 
-            var divisionId = new List<string>(); // List<string> | Division ID(s) (optional) 
+            var divisionId = new List<string>(); // List<string> | Division ID(s). Including '*' will query for all divisions (optional) 
 
             try
             { 
@@ -4421,7 +4671,7 @@ namespace Example
 | **sortOrder** | **string**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
 | **name** | **string**| Name | [optional]  |
 | **id** | [**List<string>**](string)| Queue ID(s) | [optional]  |
-| **divisionId** | [**List<string>**](string)| Division ID(s) | [optional]  |
+| **divisionId** | [**List<string>**](string)| Division ID(s). Including &#39;*&#39; will query for all divisions | [optional]  |
 
 ### Return type
 
@@ -4792,6 +5042,204 @@ namespace Example
 [**RoutingSkill**](RoutingSkill)
 
 
+## GetRoutingSkillexpression
+
+> [**SkillExpression**](SkillExpression) GetRoutingSkillexpression (string expressionId, bool? includeArchived = null, string format = null)
+
+
+Get a skill expression by ID
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetRoutingSkillexpressionExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var expressionId = expressionId_example;  // string | Expression ID
+            var includeArchived = true;  // bool? | Include archived (optional)  (default to false)
+            var format = format_example;  // string | Response format: raw expression or normalized (optional)  (default to Raw)
+
+            try
+            { 
+                // Get a skill expression by ID
+                SkillExpression result = apiInstance.GetRoutingSkillexpression(expressionId, includeArchived, format);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.GetRoutingSkillexpression: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **expressionId** | **string**| Expression ID |  |
+| **includeArchived** | **bool?**| Include archived | [optional] [default to false] |
+| **format** | **string**| Response format: raw expression or normalized | [optional] [default to Raw]<br />**Values**: Raw, Normalized |
+
+### Return type
+
+[**SkillExpression**](SkillExpression)
+
+
+## GetRoutingSkillexpressions
+
+> [**SkillExpressionEntityListing**](SkillExpressionEntityListing) GetRoutingSkillexpressions (string format = null, bool? includeArchived = null, List<string> id = null)
+
+
+Get skill expressions
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetRoutingSkillexpressionsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var format = format_example;  // string | Response format: raw expression or normalized (optional)  (default to Raw)
+            var includeArchived = true;  // bool? | Include archived (optional)  (default to false)
+            var id = new List<string>(); // List<string> | Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional) 
+
+            try
+            { 
+                // Get skill expressions
+                SkillExpressionEntityListing result = apiInstance.GetRoutingSkillexpressions(format, includeArchived, id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.GetRoutingSkillexpressions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **format** | **string**| Response format: raw expression or normalized | [optional] [default to Raw]<br />**Values**: Raw, Normalized |
+| **includeArchived** | **bool?**| Include archived | [optional] [default to false] |
+| **id** | [**List<string>**](string)| Expression ID(s) to filter. Repeat for multiple or use comma-separated list. | [optional]  |
+
+### Return type
+
+[**SkillExpressionEntityListing**](SkillExpressionEntityListing)
+
+
+## GetRoutingSkillexpressionsQueueQueueId
+
+> [**SkillExpressionEntityListing**](SkillExpressionEntityListing) GetRoutingSkillexpressionsQueueQueueId (string queueId, string format = null, bool? includeArchived = null)
+
+
+Get skill expressions associated with a queue
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetRoutingSkillexpressionsQueueQueueIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var queueId = queueId_example;  // string | Queue ID
+            var format = format_example;  // string | Response format: raw expression or normalized (optional)  (default to Raw)
+            var includeArchived = true;  // bool? | Include archived (optional)  (default to false)
+
+            try
+            { 
+                // Get skill expressions associated with a queue
+                SkillExpressionEntityListing result = apiInstance.GetRoutingSkillexpressionsQueueQueueId(queueId, format, includeArchived);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.GetRoutingSkillexpressionsQueueQueueId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **queueId** | **string**| Queue ID |  |
+| **format** | **string**| Response format: raw expression or normalized | [optional] [default to Raw]<br />**Values**: Raw, Normalized |
+| **includeArchived** | **bool?**| Include archived | [optional] [default to false] |
+
+### Return type
+
+[**SkillExpressionEntityListing**](SkillExpressionEntityListing)
+
+
 ## GetRoutingSkillgroup
 
 > [**SkillGroup**](SkillGroup) GetRoutingSkillgroup (string skillGroupId)
@@ -5061,7 +5509,7 @@ namespace Example
 > [**SkillEntityListing**](SkillEntityListing) GetRoutingSkills (int? pageSize = null, int? pageNumber = null, string name = null, List<string> id = null)
 
 
-Get the list of routing skills.
+Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 
 Requires ANY permissions: 
 
@@ -5096,7 +5544,7 @@ namespace Example
 
             try
             { 
-                // Get the list of routing skills.
+                // Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
                 SkillEntityListing result = apiInstance.GetRoutingSkills(pageSize, pageNumber, name, id);
                 Debug.WriteLine(result);
             }
@@ -5916,204 +6364,6 @@ namespace Example
 [**UtilizationLabelEntityListing**](UtilizationLabelEntityListing)
 
 
-## GetRoutingUtilizationTag
-
-> [**UtilizationTag**](UtilizationTag) GetRoutingUtilizationTag (string tagId)
-
-
-Get details about this utilization tag
-
-GetRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* routing:utilization:view
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetRoutingUtilizationTagExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new RoutingApi();
-            var tagId = tagId_example;  // string | Utilization Tag ID
-
-            try
-            { 
-                // Get details about this utilization tag
-                UtilizationTag result = apiInstance.GetRoutingUtilizationTag(tagId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling RoutingApi.GetRoutingUtilizationTag: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **tagId** | **string**| Utilization Tag ID |  |
-
-### Return type
-
-[**UtilizationTag**](UtilizationTag)
-
-
-## GetRoutingUtilizationTagAgents
-
-> **List&lt;Object&gt;** GetRoutingUtilizationTagAgents (string tagId)
-
-
-Get list of agent ids associated with a utilization tag
-
-GetRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* routing:utilization:view
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetRoutingUtilizationTagAgentsExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new RoutingApi();
-            var tagId = tagId_example;  // string | Utilization Tag ID
-
-            try
-            { 
-                // Get list of agent ids associated with a utilization tag
-                List<Object> result = apiInstance.GetRoutingUtilizationTagAgents(tagId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling RoutingApi.GetRoutingUtilizationTagAgents: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **tagId** | **string**| Utilization Tag ID |  |
-
-### Return type
-
-**List<Object>**
-
-
-## GetRoutingUtilizationTags
-
-> [**UtilizationTagEntityListing**](UtilizationTagEntityListing) GetRoutingUtilizationTags (int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null)
-
-
-Get list of utilization tags
-
-GetRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* routing:utilization:view
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetRoutingUtilizationTagsExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new RoutingApi();
-            var pageSize = 56;  // int? | Page size (optional)  (default to 25)
-            var pageNumber = 56;  // int? | Page number (optional)  (default to 1)
-            var sortOrder = sortOrder_example;  // string | Sort order by name (optional)  (default to ascending)
-            var name = name_example;  // string | Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional) 
-
-            try
-            { 
-                // Get list of utilization tags
-                UtilizationTagEntityListing result = apiInstance.GetRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling RoutingApi.GetRoutingUtilizationTags: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **pageSize** | **int?**| Page size | [optional] [default to 25] |
-| **pageNumber** | **int?**| Page number | [optional] [default to 1] |
-| **sortOrder** | **string**| Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending |
-| **name** | **string**| Utilization tag&#39;s name (Wildcard is supported, e.g., &#39;tag1*&#39;) | [optional]  |
-
-### Return type
-
-[**UtilizationTagEntityListing**](UtilizationTagEntityListing)
-
-
 ## GetRoutingWrapupcode
 
 > [**WrapupCode**](WrapupCode) GetRoutingWrapupcode (string codeId)
@@ -6914,6 +7164,70 @@ namespace Example
 ### Return type
 
 [**OutboundDomain**](OutboundDomain)
+
+
+## PatchRoutingEmailSettingEmailSettingId
+
+> [**EmailSetting**](EmailSetting) PatchRoutingEmailSettingEmailSettingId (string emailSettingId, EmailSetting body)
+
+
+Update an email setting. Modifies the settings for email setting
+
+Requires ALL permissions: 
+
+* email:settings:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchRoutingEmailSettingEmailSettingIdExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var emailSettingId = emailSettingId_example;  // string | Email Setting ID
+            var body = new EmailSetting(); // EmailSetting | EmailSetting
+
+            try
+            { 
+                // Update an email setting. Modifies the settings for email setting
+                EmailSetting result = apiInstance.PatchRoutingEmailSettingEmailSettingId(emailSettingId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PatchRoutingEmailSettingEmailSettingId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **emailSettingId** | **string**| Email Setting ID |  |
+| **body** | [**EmailSetting**](EmailSetting)| EmailSetting |  |
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
 
 
 ## PatchRoutingPredictor
@@ -8789,6 +9103,68 @@ namespace Example
 [**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
 
+## PostRoutingEmailSetting
+
+> [**EmailSetting**](EmailSetting) PostRoutingEmailSetting (EmailSetting body)
+
+
+Create a new email setting. Used to define various settings, that can then be associated with email domains
+
+Requires ANY permissions: 
+
+* email:settings:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostRoutingEmailSettingExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var body = new EmailSetting(); // EmailSetting | EmailSetting
+
+            try
+            { 
+                // Create a new email setting. Used to define various settings, that can then be associated with email domains
+                EmailSetting result = apiInstance.PostRoutingEmailSetting(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PostRoutingEmailSetting: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EmailSetting**](EmailSetting)| EmailSetting |  |
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
+
+
 ## PostRoutingLanguages
 
 > [**Language**](Language) PostRoutingLanguages (Language body)
@@ -9237,6 +9613,68 @@ namespace Example
 ### Return type
 
 [**Queue**](Queue)
+
+
+## PostRoutingSkillexpressionsValidate
+
+> [**SkillExpressionValidationResult**](SkillExpressionValidationResult) PostRoutingSkillexpressionsValidate (SkillExpressionData body)
+
+
+Validate and normalize a skill expression
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:add
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostRoutingSkillexpressionsValidateExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new RoutingApi();
+            var body = new SkillExpressionData(); // SkillExpressionData | Skill expression data to validate
+
+            try
+            { 
+                // Validate and normalize a skill expression
+                SkillExpressionValidationResult result = apiInstance.PostRoutingSkillexpressionsValidate(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RoutingApi.PostRoutingSkillexpressionsValidate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SkillExpressionData**](SkillExpressionData)| Skill expression data to validate |  |
+
+### Return type
+
+[**SkillExpressionValidationResult**](SkillExpressionValidationResult)
 
 
 ## PostRoutingSkillgroupMembersDivisions
@@ -9739,70 +10177,6 @@ namespace Example
 ### Return type
 
 [**UtilizationLabel**](UtilizationLabel)
-
-
-## PostRoutingUtilizationTags
-
-> [**UtilizationTag**](UtilizationTag) PostRoutingUtilizationTags (CreateUtilizationTagRequest body)
-
-
-Create an utilization tag
-
-PostRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ALL permissions: 
-
-* routing:utilization:manage
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class PostRoutingUtilizationTagsExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new RoutingApi();
-            var body = new CreateUtilizationTagRequest(); // CreateUtilizationTagRequest | UtilizationTag
-
-            try
-            { 
-                // Create an utilization tag
-                UtilizationTag result = apiInstance.PostRoutingUtilizationTags(body);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling RoutingApi.PostRoutingUtilizationTags: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest)| UtilizationTag |  |
-
-### Return type
-
-[**UtilizationTag**](UtilizationTag)
 
 
 ## PostRoutingWrapupcodes
@@ -11083,4 +11457,4 @@ namespace Example
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

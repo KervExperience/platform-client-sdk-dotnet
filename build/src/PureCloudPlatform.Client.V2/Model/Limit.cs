@@ -33,10 +33,16 @@ namespace PureCloudPlatform.Client.V2.Model
             OutdatedSdkVersion,
             
             /// <summary>
-            /// Enum Workforcemanagementforecast for "workforce.management.forecast"
+            /// Enum Webdeployments for "web.deployments"
             /// </summary>
-            [EnumMember(Value = "workforce.management.forecast")]
-            Workforcemanagementforecast,
+            [EnumMember(Value = "web.deployments")]
+            Webdeployments,
+            
+            /// <summary>
+            /// Enum Webmessaging for "web.messaging"
+            /// </summary>
+            [EnumMember(Value = "web.messaging")]
+            Webmessaging,
             
             /// <summary>
             /// Enum Agentassistant for "agent.assistant"
@@ -85,6 +91,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "analytics.reporting.settings")]
             Analyticsreportingsettings,
+            
+            /// <summary>
+            /// Enum Anomalydetection for "anomaly.detection"
+            /// </summary>
+            [EnumMember(Value = "anomaly.detection")]
+            Anomalydetection,
             
             /// <summary>
             /// Enum Architect for "architect"
@@ -151,6 +163,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "callback")]
             Callback,
+            
+            /// <summary>
+            /// Enum Casemanagement for "case.management"
+            /// </summary>
+            [EnumMember(Value = "case.management")]
+            Casemanagement,
             
             /// <summary>
             /// Enum Cobrowse for "cobrowse"
@@ -327,6 +345,18 @@ namespace PureCloudPlatform.Client.V2.Model
             Marketplace,
             
             /// <summary>
+            /// Enum Mcpanalyticsaggregates for "mcp.analytics.aggregates"
+            /// </summary>
+            [EnumMember(Value = "mcp.analytics.aggregates")]
+            Mcpanalyticsaggregates,
+            
+            /// <summary>
+            /// Enum Mcp for "mcp"
+            /// </summary>
+            [EnumMember(Value = "mcp")]
+            Mcp,
+            
+            /// <summary>
             /// Enum Mediacommunications for "media.communications"
             /// </summary>
             [EnumMember(Value = "media.communications")]
@@ -343,6 +373,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "micro.frontend")]
             Microfrontend,
+            
+            /// <summary>
+            /// Enum Multiorg for "multi.org"
+            /// </summary>
+            [EnumMember(Value = "multi.org")]
+            Multiorg,
             
             /// <summary>
             /// Enum Notifications for "notifications"
@@ -495,18 +531,6 @@ namespace PureCloudPlatform.Client.V2.Model
             Voicetranscription,
             
             /// <summary>
-            /// Enum Webdeployments for "web.deployments"
-            /// </summary>
-            [EnumMember(Value = "web.deployments")]
-            Webdeployments,
-            
-            /// <summary>
-            /// Enum Webmessaging for "web.messaging"
-            /// </summary>
-            [EnumMember(Value = "web.messaging")]
-            Webmessaging,
-            
-            /// <summary>
             /// Enum Webchat for "webchat"
             /// </summary>
             [EnumMember(Value = "webchat")]
@@ -519,16 +543,34 @@ namespace PureCloudPlatform.Client.V2.Model
             Webhooks,
             
             /// <summary>
+            /// Enum Workforcemanagementadherence for "workforce.management.adherence"
+            /// </summary>
+            [EnumMember(Value = "workforce.management.adherence")]
+            Workforcemanagementadherence,
+            
+            /// <summary>
             /// Enum Workforcemanagementagentavailability for "workforce.management.agent.availability"
             /// </summary>
             [EnumMember(Value = "workforce.management.agent.availability")]
             Workforcemanagementagentavailability,
             
             /// <summary>
+            /// Enum Workforcemanagementforecast for "workforce.management.forecast"
+            /// </summary>
+            [EnumMember(Value = "workforce.management.forecast")]
+            Workforcemanagementforecast,
+            
+            /// <summary>
             /// Enum Workforcemanagement for "workforce.management"
             /// </summary>
             [EnumMember(Value = "workforce.management")]
             Workforcemanagement,
+            
+            /// <summary>
+            /// Enum Workforcemanagementschedulingpreferences for "workforce.management.scheduling.preferences"
+            /// </summary>
+            [EnumMember(Value = "workforce.management.scheduling.preferences")]
+            Workforcemanagementschedulingpreferences,
             
             /// <summary>
             /// Enum Workforcemanagementselfschedule for "workforce.management.self.schedule"

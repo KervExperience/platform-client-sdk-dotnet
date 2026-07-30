@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **Id** | **string** | The globally unique identifier for the object. | [optional] |
+| **Id** | **string** | The globally unique identifier for the object. | |
 | **Name** | **string** | The name of the activity plan | |
 | **ManagementUnits** | [**List&lt;ManagementUnitReference&gt;**](ManagementUnitReference) | The management units to which this activity plan applies. Empty list or null means this activity plan applies to all management units in the business unit | [optional] |
 | **Description** | **string** | The description of this activity plan | |
@@ -21,8 +21,9 @@
 | **CreatedBy** | [**UserReference**](UserReference) | The user who created this activity plan | |
 | **ModifiedDate** | **DateTime?** | The date the activity plan was modified, in ISO-8601 format | |
 | **ModifiedBy** | [**UserReference**](UserReference) | The last user to modify this activity plan. The id may be &#39;System&#39; if it was an automated process | |
+| **InitialSchedulePeriod** | [**SchedulingPeriodBase**](SchedulingPeriodBase) | The initial schedule period of the activity plan | [optional] |
 | **SelfUri** | **string** | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

@@ -11,8 +11,9 @@
 | **Header** | [**RecordingTemplateHeader**](RecordingTemplateHeader) | The template header. | [optional] |
 | **Body** | [**RecordingTemplateBody**](RecordingTemplateBody) | The template body. | [optional] |
 | **Buttons** | [**List&lt;RecordingTemplateButton&gt;**](RecordingTemplateButton) | Template buttons | [optional] |
+| **Carousel** | [**RecordingTemplateCarousel**](RecordingTemplateCarousel) | The template carousel | [optional] |
 | **Footer** | [**RecordingTemplateFooter**](RecordingTemplateFooter) | The template footer. | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

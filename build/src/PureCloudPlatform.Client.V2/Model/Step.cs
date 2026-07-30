@@ -81,8 +81,8 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="ModifiedBy">The ID of the User who modified the Step..</param>
         /// <param name="Version">The version of the Step..</param>
         /// <param name="Status">The Status of the Step..</param>
-        /// <param name="Stage">The parent stage of the step..</param>
-        /// <param name="Case">The parent case of the step..</param>
+        /// <param name="Stage">The parent Stage of the Step..</param>
+        /// <param name="Case">The parent Case of the Step..</param>
         public Step(string Name = null, string Description = null, DateTime? DateCreated = null, DateTime? DateModified = null, DateTime? DateCompleted = null, DateTime? DateStarted = null, UserReference ModifiedBy = null, int? Version = null, StatusEnum? Status = null, StageReference Stage = null, CaseReference Case = null)
         {
             this.Name = Name;
@@ -185,11 +185,20 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// The parent stage of the step.
+        /// The parent Stage of the Step.
         /// </summary>
-        /// <value>The parent stage of the step.</value>
+        /// <value>The parent Stage of the Step.</value>
         [DataMember(Name="stage", EmitDefaultValue=false)]
         public StageReference Stage { get; set; }
+
+
+
+        /// <summary>
+        /// The workitem activity linked to this step. Present only for workitem-type steps that have been activated.
+        /// </summary>
+        /// <value>The workitem activity linked to this step. Present only for workitem-type steps that have been activated.</value>
+        [DataMember(Name="workitemActivity", EmitDefaultValue=false)]
+        public WorkitemActivityReference WorkitemActivity { get; private set; }
 
 
 
@@ -203,9 +212,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// The parent case of the step.
+        /// The parent Case of the Step.
         /// </summary>
-        /// <value>The parent case of the step.</value>
+        /// <value>The parent Case of the Step.</value>
         [DataMember(Name="case", EmitDefaultValue=false)]
         public CaseReference Case { get; set; }
 
@@ -230,6 +239,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Stage: ").Append(Stage).Append("\n");
+            sb.Append("  WorkitemActivity: ").Append(WorkitemActivity).Append("\n");
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("  Case: ").Append(Case).Append("\n");
             sb.Append("}\n");
@@ -328,6 +338,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.Stage.Equals(other.Stage)
                 ) &&
                 (
+                    this.WorkitemActivity == other.WorkitemActivity ||
+                    this.WorkitemActivity != null &&
+                    this.WorkitemActivity.Equals(other.WorkitemActivity)
+                ) &&
+                (
                     this.SelfUri == other.SelfUri ||
                     this.SelfUri != null &&
                     this.SelfUri.Equals(other.SelfUri)
@@ -382,6 +397,9 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.Stage != null)
                     hash = hash * 59 + this.Stage.GetHashCode();
+
+                if (this.WorkitemActivity != null)
+                    hash = hash * 59 + this.WorkitemActivity.GetHashCode();
 
                 if (this.SelfUri != null)
                     hash = hash * 59 + this.SelfUri.GetHashCode();

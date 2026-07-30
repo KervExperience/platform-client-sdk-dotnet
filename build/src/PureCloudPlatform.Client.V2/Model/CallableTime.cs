@@ -28,10 +28,12 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Initializes a new instance of the <see cref="CallableTime" /> class.
         /// </summary>
         /// <param name="TimeSlots">The time intervals for which it is acceptable to place outbound calls. (required).</param>
-        /// <param name="TimeZoneId">The time zone for the time slots; for example, Africa/Abidjan (required).</param>
-        public CallableTime(List<CampaignTimeSlot> TimeSlots = null, string TimeZoneId = null)
+        /// <param name="Name">The name for the callable time..</param>
+        /// <param name="TimeZoneId">The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London (required).</param>
+        public CallableTime(List<CampaignTimeSlot> TimeSlots = null, string Name = null, string TimeZoneId = null)
         {
             this.TimeSlots = TimeSlots;
+            this.Name = Name;
             this.TimeZoneId = TimeZoneId;
             
         }
@@ -48,9 +50,18 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// The time zone for the time slots; for example, Africa/Abidjan
+        /// The name for the callable time.
         /// </summary>
-        /// <value>The time zone for the time slots; for example, Africa/Abidjan</value>
+        /// <value>The name for the callable time.</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
+
+
+
+        /// <summary>
+        /// The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+        /// </summary>
+        /// <value>The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
         [DataMember(Name="timeZoneId", EmitDefaultValue=false)]
         public string TimeZoneId { get; set; }
 
@@ -65,6 +76,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("class CallableTime {\n");
 
             sb.Append("  TimeSlots: ").Append(TimeSlots).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  TimeZoneId: ").Append(TimeZoneId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -112,6 +124,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.TimeSlots.SequenceEqual(other.TimeSlots)
                 ) &&
                 (
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
+                ) &&
+                (
                     this.TimeZoneId == other.TimeZoneId ||
                     this.TimeZoneId != null &&
                     this.TimeZoneId.Equals(other.TimeZoneId)
@@ -131,6 +148,9 @@ namespace PureCloudPlatform.Client.V2.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.TimeSlots != null)
                     hash = hash * 59 + this.TimeSlots.GetHashCode();
+
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
 
                 if (this.TimeZoneId != null)
                     hash = hash * 59 + this.TimeZoneId.GetHashCode();

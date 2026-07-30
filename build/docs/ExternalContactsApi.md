@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsContactUnresolved**](#GetExternalcontactsContactUnresolved) | **Get** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact |
 | [**GetExternalcontactsContacts**](#GetExternalcontactsContacts) | **Get** /api/v2/externalcontacts/contacts | Search for external contacts |
 | [**GetExternalcontactsContactsExport**](#GetExternalcontactsContactsExport) | **Get** /api/v2/externalcontacts/contacts/exports/{exportId} | Get export for exportId |
-| [**GetExternalcontactsContactsExports**](#GetExternalcontactsContactsExports) | **Get** /api/v2/externalcontacts/contacts/exports | List exports for organization |
+| [**GetExternalcontactsContactsExports**](#GetExternalcontactsContactsExports) | **Get** /api/v2/externalcontacts/contacts/exports | List contact exports for organization |
 | [**GetExternalcontactsContactsSchema**](#GetExternalcontactsContactsSchema) | **Get** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema |
 | [**GetExternalcontactsContactsSchemaVersion**](#GetExternalcontactsContactsSchemaVersion) | **Get** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
 | [**GetExternalcontactsContactsSchemaVersions**](#GetExternalcontactsContactsSchemaVersions) | **Get** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact&#39;s schema |
@@ -43,6 +43,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsImportJobs**](#GetExternalcontactsImportJobs) | **Get** /api/v2/externalcontacts/import/jobs | List jobs for organization |
 | [**GetExternalcontactsImportSetting**](#GetExternalcontactsImportSetting) | **Get** /api/v2/externalcontacts/import/settings/{settingsId} | Get setting based on id |
 | [**GetExternalcontactsImportSettings**](#GetExternalcontactsImportSettings) | **Get** /api/v2/externalcontacts/import/settings | List settings for organization |
+| [**GetExternalcontactsNotesExport**](#GetExternalcontactsNotesExport) | **Get** /api/v2/externalcontacts/notes/exports/{exportId} | Get notes export for exportId |
+| [**GetExternalcontactsNotesExports**](#GetExternalcontactsNotesExports) | **Get** /api/v2/externalcontacts/notes/exports | List note exports for organization |
 | [**GetExternalcontactsOrganization**](#GetExternalcontactsOrganization) | **Get** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization |
 | [**GetExternalcontactsOrganizationContacts**](#GetExternalcontactsOrganizationContacts) | **Get** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization |
 | [**GetExternalcontactsOrganizationIdentifiers**](#GetExternalcontactsOrganizationIdentifiers) | **Get** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | List the identifiers for an external organization |
@@ -50,6 +52,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsOrganizationNotes**](#GetExternalcontactsOrganizationNotes) | **Get** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization |
 | [**GetExternalcontactsOrganizationRelationships**](#GetExternalcontactsOrganizationRelationships) | **Get** /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships | Fetch a relationship for an external organization |
 | [**GetExternalcontactsOrganizations**](#GetExternalcontactsOrganizations) | **Get** /api/v2/externalcontacts/organizations | Search for external organizations |
+| [**GetExternalcontactsOrganizationsExport**](#GetExternalcontactsOrganizationsExport) | **Get** /api/v2/externalcontacts/organizations/exports/{exportId} | Get organizations export for exportId |
+| [**GetExternalcontactsOrganizationsExports**](#GetExternalcontactsOrganizationsExports) | **Get** /api/v2/externalcontacts/organizations/exports | List organization exports for organization |
 | [**GetExternalcontactsOrganizationsSchema**](#GetExternalcontactsOrganizationsSchema) | **Get** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Get a schema |
 | [**GetExternalcontactsOrganizationsSchemaVersion**](#GetExternalcontactsOrganizationsSchemaVersion) | **Get** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema |
 | [**GetExternalcontactsOrganizationsSchemaVersions**](#GetExternalcontactsOrganizationsSchemaVersions) | **Get** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization&#39;s schema |
@@ -58,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsOrganizationsSchemasCoretypes**](#GetExternalcontactsOrganizationsSchemasCoretypes) | **Get** /api/v2/externalcontacts/organizations/schemas/coretypes | Get the core types from which all schemas are built. |
 | [**GetExternalcontactsOrganizationsSchemasLimits**](#GetExternalcontactsOrganizationsSchemasLimits) | **Get** /api/v2/externalcontacts/organizations/schemas/limits | Get quantitative limits on schemas |
 | [**GetExternalcontactsRelationship**](#GetExternalcontactsRelationship) | **Get** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship |
+| [**GetExternalcontactsRelationshipsExport**](#GetExternalcontactsRelationshipsExport) | **Get** /api/v2/externalcontacts/relationships/exports/{exportId} | Get relationships export for exportId |
+| [**GetExternalcontactsRelationshipsExports**](#GetExternalcontactsRelationshipsExports) | **Get** /api/v2/externalcontacts/relationships/exports | List relationship exports for organization |
 | [**GetExternalcontactsReversewhitepageslookup**](#GetExternalcontactsReversewhitepageslookup) | **Get** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts based on an attribute. Maximum of 25 values returned. |
 | [**GetExternalcontactsScanContacts**](#GetExternalcontactsScanContacts) | **Get** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging |
 | [**GetExternalcontactsScanContactsDivisionviewsAll**](#GetExternalcontactsScanContactsDivisionviewsAll) | **Get** /api/v2/externalcontacts/scan/contacts/divisionviews/all | Scan for external contacts using paging |
@@ -69,7 +75,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetExternalcontactsScanRelationshipsDivisionviewsAll**](#GetExternalcontactsScanRelationshipsDivisionviewsAll) | **Get** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships |
 | [**PatchExternalcontactsContact**](#PatchExternalcontactsContact) | **Patch** /api/v2/externalcontacts/contacts/{contactId} | Update specific fields of an external contact |
 | [**PatchExternalcontactsContactIdentifiers**](#PatchExternalcontactsContactIdentifiers) | **Patch** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact |
+| [**PatchExternalcontactsContactNote**](#PatchExternalcontactsContactNote) | **Patch** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a Contact Note |
+| [**PatchExternalcontactsOrganization**](#PatchExternalcontactsOrganization) | **Patch** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update specific fields of an external organization |
 | [**PatchExternalcontactsOrganizationIdentifiers**](#PatchExternalcontactsOrganizationIdentifiers) | **Patch** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | Claim or release identifiers for an external organization |
+| [**PatchExternalcontactsOrganizationNote**](#PatchExternalcontactsOrganizationNote) | **Patch** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update an External Organization Note |
+| [**PatchExternalcontactsRelationship**](#PatchExternalcontactsRelationship) | **Patch** /api/v2/externalcontacts/relationships/{relationshipId} | Update specific fields of a relationship |
 | [**PostExternalcontactsBulkContacts**](#PostExternalcontactsBulkContacts) | **Post** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts |
 | [**PostExternalcontactsBulkContactsAdd**](#PostExternalcontactsBulkContactsAdd) | **Post** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts |
 | [**PostExternalcontactsBulkContactsDivisionviews**](#PostExternalcontactsBulkContactsDivisionviews) | **Post** /api/v2/externalcontacts/bulk/contacts/divisionviews | Bulk fetch contacts across divisions |
@@ -109,11 +119,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**PostExternalcontactsImportJobs**](#PostExternalcontactsImportJobs) | **Post** /api/v2/externalcontacts/import/jobs | Create a new job |
 | [**PostExternalcontactsImportSettings**](#PostExternalcontactsImportSettings) | **Post** /api/v2/externalcontacts/import/settings | Create a new settings |
 | [**PostExternalcontactsMergeContacts**](#PostExternalcontactsMergeContacts) | **Post** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record |
+| [**PostExternalcontactsNotesExports**](#PostExternalcontactsNotesExports) | **Post** /api/v2/externalcontacts/notes/exports | Create notes export |
 | [**PostExternalcontactsOrganizationNotes**](#PostExternalcontactsOrganizationNotes) | **Post** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization |
 | [**PostExternalcontactsOrganizations**](#PostExternalcontactsOrganizations) | **Post** /api/v2/externalcontacts/organizations | Create an external organization |
 | [**PostExternalcontactsOrganizationsEnrich**](#PostExternalcontactsOrganizationsEnrich) | **Post** /api/v2/externalcontacts/organizations/enrich | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs. |
+| [**PostExternalcontactsOrganizationsExports**](#PostExternalcontactsOrganizationsExports) | **Post** /api/v2/externalcontacts/organizations/exports | Create organizations export |
 | [**PostExternalcontactsOrganizationsSchemas**](#PostExternalcontactsOrganizationsSchemas) | **Post** /api/v2/externalcontacts/organizations/schemas | Create a schema |
 | [**PostExternalcontactsRelationships**](#PostExternalcontactsRelationships) | **Post** /api/v2/externalcontacts/relationships | Create a relationship |
+| [**PostExternalcontactsRelationshipsExports**](#PostExternalcontactsRelationshipsExports) | **Post** /api/v2/externalcontacts/relationships/exports | Create relationships export |
 | [**PutExternalcontactsContact**](#PutExternalcontactsContact) | **Put** /api/v2/externalcontacts/contacts/{contactId} | Update an external contact |
 | [**PutExternalcontactsContactNote**](#PutExternalcontactsContactNote) | **Put** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a note for an external contact |
 | [**PutExternalcontactsContactsSchema**](#PutExternalcontactsContactsSchema) | **Put** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema |
@@ -1356,10 +1369,10 @@ namespace Example
 
 ## GetExternalcontactsContactsExports
 
-> [**ExportListing**](ExportListing) GetExternalcontactsContactsExports (List<string> divisionIds = null, string after = null, int? pageSize = null)
+> [**ContactsExportListing**](ContactsExportListing) GetExternalcontactsContactsExports (List<string> divisionIds = null, string after = null, int? pageSize = null)
 
 
-List exports for organization
+List contact exports for organization
 
 Requires ALL permissions: 
 
@@ -1394,8 +1407,8 @@ namespace Example
 
             try
             { 
-                // List exports for organization
-                ExportListing result = apiInstance.GetExternalcontactsContactsExports(divisionIds, after, pageSize);
+                // List contact exports for organization
+                ContactsExportListing result = apiInstance.GetExternalcontactsContactsExports(divisionIds, after, pageSize);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1418,7 +1431,7 @@ namespace Example
 
 ### Return type
 
-[**ExportListing**](ExportListing)
+[**ContactsExportListing**](ContactsExportListing)
 
 
 ## GetExternalcontactsContactsSchema
@@ -2492,6 +2505,138 @@ namespace Example
 [**ContactImportSettingsEntityListing**](ContactImportSettingsEntityListing)
 
 
+## GetExternalcontactsNotesExport
+
+> [**NotesExport**](NotesExport) GetExternalcontactsNotesExport (string exportId)
+
+
+Get notes export for exportId
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetExternalcontactsNotesExportExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var exportId = exportId_example;  // string | Export id
+
+            try
+            { 
+                // Get notes export for exportId
+                NotesExport result = apiInstance.GetExternalcontactsNotesExport(exportId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.GetExternalcontactsNotesExport: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **exportId** | **string**| Export id |  |
+
+### Return type
+
+[**NotesExport**](NotesExport)
+
+
+## GetExternalcontactsNotesExports
+
+> [**NotesExportListing**](NotesExportListing) GetExternalcontactsNotesExports (List<string> divisionIds = null, string after = null, int? pageSize = null)
+
+
+List note exports for organization
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetExternalcontactsNotesExportsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var divisionIds = new List<string>(); // List<string> | Division IDs of entities (optional) 
+            var after = after_example;  // string | The cursor that points to the end of the set of entities (optional) 
+            var pageSize = 56;  // int? | Number of entities to return (optional) 
+
+            try
+            { 
+                // List note exports for organization
+                NotesExportListing result = apiInstance.GetExternalcontactsNotesExports(divisionIds, after, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.GetExternalcontactsNotesExports: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **divisionIds** | [**List<string>**](string)| Division IDs of entities | [optional]  |
+| **after** | **string**| The cursor that points to the end of the set of entities | [optional]  |
+| **pageSize** | **int?**| Number of entities to return | [optional]  |
+
+### Return type
+
+[**NotesExportListing**](NotesExportListing)
+
+
 ## GetExternalcontactsOrganization
 
 > [**ExternalOrganization**](ExternalOrganization) GetExternalcontactsOrganization (string externalOrganizationId, List<string> expand = null, bool? includeTrustors = null)
@@ -2980,6 +3125,136 @@ namespace Example
 [**ExternalOrganizationListing**](ExternalOrganizationListing)
 
 
+## GetExternalcontactsOrganizationsExport
+
+> [**OrganizationsExport**](OrganizationsExport) GetExternalcontactsOrganizationsExport (string exportId)
+
+
+Get organizations export for exportId
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetExternalcontactsOrganizationsExportExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var exportId = exportId_example;  // string | Export id
+
+            try
+            { 
+                // Get organizations export for exportId
+                OrganizationsExport result = apiInstance.GetExternalcontactsOrganizationsExport(exportId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.GetExternalcontactsOrganizationsExport: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **exportId** | **string**| Export id |  |
+
+### Return type
+
+[**OrganizationsExport**](OrganizationsExport)
+
+
+## GetExternalcontactsOrganizationsExports
+
+> [**OrganizationsExportListing**](OrganizationsExportListing) GetExternalcontactsOrganizationsExports (List<string> divisionIds = null, string after = null, int? pageSize = null)
+
+
+List organization exports for organization
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetExternalcontactsOrganizationsExportsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var divisionIds = new List<string>(); // List<string> | Division IDs of entities (optional) 
+            var after = after_example;  // string | The cursor that points to the end of the set of entities (optional) 
+            var pageSize = 56;  // int? | Number of entities to return (optional) 
+
+            try
+            { 
+                // List organization exports for organization
+                OrganizationsExportListing result = apiInstance.GetExternalcontactsOrganizationsExports(divisionIds, after, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.GetExternalcontactsOrganizationsExports: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **divisionIds** | [**List<string>**](string)| Division IDs of entities | [optional]  |
+| **after** | **string**| The cursor that points to the end of the set of entities | [optional]  |
+| **pageSize** | **int?**| Number of entities to return | [optional]  |
+
+### Return type
+
+[**OrganizationsExportListing**](OrganizationsExportListing)
+
+
 ## GetExternalcontactsOrganizationsSchema
 
 > [**DataSchema**](DataSchema) GetExternalcontactsOrganizationsSchema (string schemaId)
@@ -3464,6 +3739,136 @@ namespace Example
 ### Return type
 
 [**Relationship**](Relationship)
+
+
+## GetExternalcontactsRelationshipsExport
+
+> [**RelationshipsExport**](RelationshipsExport) GetExternalcontactsRelationshipsExport (string exportId)
+
+
+Get relationships export for exportId
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetExternalcontactsRelationshipsExportExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var exportId = exportId_example;  // string | Export id
+
+            try
+            { 
+                // Get relationships export for exportId
+                RelationshipsExport result = apiInstance.GetExternalcontactsRelationshipsExport(exportId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.GetExternalcontactsRelationshipsExport: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **exportId** | **string**| Export id |  |
+
+### Return type
+
+[**RelationshipsExport**](RelationshipsExport)
+
+
+## GetExternalcontactsRelationshipsExports
+
+> [**RelationshipsExportListing**](RelationshipsExportListing) GetExternalcontactsRelationshipsExports (List<string> divisionIds = null, string after = null, int? pageSize = null)
+
+
+List relationship exports for organization
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class GetExternalcontactsRelationshipsExportsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var divisionIds = new List<string>(); // List<string> | Division IDs of entities (optional) 
+            var after = after_example;  // string | The cursor that points to the end of the set of entities (optional) 
+            var pageSize = 56;  // int? | Number of entities to return (optional) 
+
+            try
+            { 
+                // List relationship exports for organization
+                RelationshipsExportListing result = apiInstance.GetExternalcontactsRelationshipsExports(divisionIds, after, pageSize);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.GetExternalcontactsRelationshipsExports: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **divisionIds** | [**List<string>**](string)| Division IDs of entities | [optional]  |
+| **after** | **string**| The cursor that points to the end of the set of entities | [optional]  |
+| **pageSize** | **int?**| Number of entities to return | [optional]  |
+
+### Return type
+
+[**RelationshipsExportListing**](RelationshipsExportListing)
 
 
 ## GetExternalcontactsReversewhitepageslookup
@@ -4184,6 +4589,136 @@ namespace Example
 [**ContactIdentifier**](ContactIdentifier)
 
 
+## PatchExternalcontactsContactNote
+
+> [**Note**](Note) PatchExternalcontactsContactNote (string contactId, string noteId, ExternalContactsPatchRequest body)
+
+
+Update a Contact Note
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchExternalcontactsContactNoteExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var contactId = contactId_example;  // string | ExternalContact Id
+            var noteId = noteId_example;  // string | Note Id
+            var body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Note field to update
+
+            try
+            { 
+                // Update a Contact Note
+                Note result = apiInstance.PatchExternalcontactsContactNote(contactId, noteId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PatchExternalcontactsContactNote: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **contactId** | **string**| ExternalContact Id |  |
+| **noteId** | **string**| Note Id |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Note field to update |  |
+
+### Return type
+
+[**Note**](Note)
+
+
+## PatchExternalcontactsOrganization
+
+> [**ExternalOrganization**](ExternalOrganization) PatchExternalcontactsOrganization (string externalOrganizationId, ExternalContactsPatchRequest body)
+
+
+Update specific fields of an external organization
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchExternalcontactsOrganizationExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var externalOrganizationId = externalOrganizationId_example;  // string | External Organization ID
+            var body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | External Organization fields to update
+
+            try
+            { 
+                // Update specific fields of an external organization
+                ExternalOrganization result = apiInstance.PatchExternalcontactsOrganization(externalOrganizationId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PatchExternalcontactsOrganization: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **externalOrganizationId** | **string**| External Organization ID |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| External Organization fields to update |  |
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
+
+
 ## PatchExternalcontactsOrganizationIdentifiers
 
 > [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier) PatchExternalcontactsOrganizationIdentifiers (string externalOrganizationId, ExternalOrganizationIdentifierClaimRequest body)
@@ -4246,6 +4781,136 @@ namespace Example
 ### Return type
 
 [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)
+
+
+## PatchExternalcontactsOrganizationNote
+
+> [**Note**](Note) PatchExternalcontactsOrganizationNote (string externalOrganizationId, string noteId, ExternalContactsPatchRequest body)
+
+
+Update an External Organization Note
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchExternalcontactsOrganizationNoteExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var externalOrganizationId = externalOrganizationId_example;  // string | External Organization Id
+            var noteId = noteId_example;  // string | Note Id
+            var body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Note field to update
+
+            try
+            { 
+                // Update an External Organization Note
+                Note result = apiInstance.PatchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PatchExternalcontactsOrganizationNote: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **externalOrganizationId** | **string**| External Organization Id |  |
+| **noteId** | **string**| Note Id |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Note field to update |  |
+
+### Return type
+
+[**Note**](Note)
+
+
+## PatchExternalcontactsRelationship
+
+> [**Relationship**](Relationship) PatchExternalcontactsRelationship (string relationshipId, ExternalContactsPatchRequest body)
+
+
+Update specific fields of a relationship
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PatchExternalcontactsRelationshipExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var relationshipId = relationshipId_example;  // string | Relationship Id
+            var body = new ExternalContactsPatchRequest(); // ExternalContactsPatchRequest | Relationship fields to update
+
+            try
+            { 
+                // Update specific fields of a relationship
+                Relationship result = apiInstance.PatchExternalcontactsRelationship(relationshipId, body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PatchExternalcontactsRelationship: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **relationshipId** | **string**| Relationship Id |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Relationship fields to update |  |
+
+### Return type
+
+[**Relationship**](Relationship)
 
 
 ## PostExternalcontactsBulkContacts
@@ -6717,6 +7382,70 @@ namespace Example
 [**ExternalContact**](ExternalContact)
 
 
+## PostExternalcontactsNotesExports
+
+> [**NotesExport**](NotesExport) PostExternalcontactsNotesExports (NotesExport body)
+
+
+Create notes export
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostExternalcontactsNotesExportsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var body = new NotesExport(); // NotesExport | Export
+
+            try
+            { 
+                // Create notes export
+                NotesExport result = apiInstance.PostExternalcontactsNotesExports(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PostExternalcontactsNotesExports: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**NotesExport**](NotesExport)| Export |  |
+
+### Return type
+
+[**NotesExport**](NotesExport)
+
+
 ## PostExternalcontactsOrganizationNotes
 
 > [**Note**](Note) PostExternalcontactsOrganizationNotes (string externalOrganizationId, Note body)
@@ -6911,6 +7640,69 @@ namespace Example
 [**ExternalOrganization**](ExternalOrganization)
 
 
+## PostExternalcontactsOrganizationsExports
+
+> [**OrganizationsExport**](OrganizationsExport) PostExternalcontactsOrganizationsExports (OrganizationsExport body)
+
+
+Create organizations export
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostExternalcontactsOrganizationsExportsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var body = new OrganizationsExport(); // OrganizationsExport | Export
+
+            try
+            { 
+                // Create organizations export
+                OrganizationsExport result = apiInstance.PostExternalcontactsOrganizationsExports(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PostExternalcontactsOrganizationsExports: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrganizationsExport**](OrganizationsExport)| Export |  |
+
+### Return type
+
+[**OrganizationsExport**](OrganizationsExport)
+
+
 ## PostExternalcontactsOrganizationsSchemas
 
 > [**DataSchema**](DataSchema) PostExternalcontactsOrganizationsSchemas (DataSchema body)
@@ -7034,6 +7826,69 @@ namespace Example
 ### Return type
 
 [**Relationship**](Relationship)
+
+
+## PostExternalcontactsRelationshipsExports
+
+> [**RelationshipsExport**](RelationshipsExport) PostExternalcontactsRelationshipsExports (RelationshipsExport body)
+
+
+Create relationships export
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example
+```{"language":"csharp"}
+using System;
+using System.Diagnostics;
+using PureCloudPlatform.Client.V2.Api;
+using PureCloudPlatform.Client.V2.Client;
+using PureCloudPlatform.Client.V2.Model;
+
+namespace Example
+{
+    public class PostExternalcontactsRelationshipsExportsExample
+    {
+        public void main()
+        { 
+            // Configure OAuth2 access token for authorization: PureCloud OAuth
+            // The following example is using the Authorization Code Grant
+            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
+                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
+                "http://redirecturi.com/",
+                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
+
+            var apiInstance = new ExternalContactsApi();
+            var body = new RelationshipsExport(); // RelationshipsExport | Export
+
+            try
+            { 
+                // Create relationships export
+                RelationshipsExport result = apiInstance.PostExternalcontactsRelationshipsExports(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ExternalContactsApi.PostExternalcontactsRelationshipsExports: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RelationshipsExport**](RelationshipsExport)| Export |  |
+
+### Return type
+
+[**RelationshipsExport**](RelationshipsExport)
 
 
 ## PutExternalcontactsContact
@@ -7879,4 +8734,4 @@ namespace Example
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

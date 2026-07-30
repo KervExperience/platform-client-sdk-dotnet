@@ -32,13 +32,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="GenerationSetting">Setting for answer generation. (required).</param>
         /// <param name="Stateful">Indicates if stateful search and generation is enabled for the knowledge setting..</param>
         /// <param name="ConversationTurns">List of conversation turns to use for stateful search..</param>
-        public KnowledgeSearchPreviewRequest(string Query = null, List<V3SourceRef> Sources = null, KnowledgeGenerationSetting GenerationSetting = null, bool? Stateful = null, List<KnowledgeConversationTurn> ConversationTurns = null)
+        /// <param name="Filter">Composite tag filter applied to the search preview..</param>
+        /// <param name="Application">The touchpoint application to simulate for the preview..</param>
+        /// <param name="ConversationContext">The channel context to simulate for the preview..</param>
+        public KnowledgeSearchPreviewRequest(string Query = null, List<V3SourceRef> Sources = null, KnowledgeGenerationSetting GenerationSetting = null, bool? Stateful = null, List<KnowledgeConversationTurn> ConversationTurns = null, V3SourceTagFilter Filter = null, V3KnowledgeSearchPreviewClientApplication Application = null, KnowledgeV3PreviewConversationContext ConversationContext = null)
         {
             this.Query = Query;
             this.Sources = Sources;
             this.GenerationSetting = GenerationSetting;
             this.Stateful = Stateful;
             this.ConversationTurns = ConversationTurns;
+            this.Filter = Filter;
+            this.Application = Application;
+            this.ConversationContext = ConversationContext;
             
         }
         
@@ -88,6 +94,33 @@ namespace PureCloudPlatform.Client.V2.Model
         public List<KnowledgeConversationTurn> ConversationTurns { get; set; }
 
 
+
+        /// <summary>
+        /// Composite tag filter applied to the search preview.
+        /// </summary>
+        /// <value>Composite tag filter applied to the search preview.</value>
+        [DataMember(Name="filter", EmitDefaultValue=false)]
+        public V3SourceTagFilter Filter { get; set; }
+
+
+
+        /// <summary>
+        /// The touchpoint application to simulate for the preview.
+        /// </summary>
+        /// <value>The touchpoint application to simulate for the preview.</value>
+        [DataMember(Name="application", EmitDefaultValue=false)]
+        public V3KnowledgeSearchPreviewClientApplication Application { get; set; }
+
+
+
+        /// <summary>
+        /// The channel context to simulate for the preview.
+        /// </summary>
+        /// <value>The channel context to simulate for the preview.</value>
+        [DataMember(Name="conversationContext", EmitDefaultValue=false)]
+        public KnowledgeV3PreviewConversationContext ConversationContext { get; set; }
+
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -102,6 +135,9 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  GenerationSetting: ").Append(GenerationSetting).Append("\n");
             sb.Append("  Stateful: ").Append(Stateful).Append("\n");
             sb.Append("  ConversationTurns: ").Append(ConversationTurns).Append("\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  Application: ").Append(Application).Append("\n");
+            sb.Append("  ConversationContext: ").Append(ConversationContext).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +202,21 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.ConversationTurns == other.ConversationTurns ||
                     this.ConversationTurns != null &&
                     this.ConversationTurns.SequenceEqual(other.ConversationTurns)
+                ) &&
+                (
+                    this.Filter == other.Filter ||
+                    this.Filter != null &&
+                    this.Filter.Equals(other.Filter)
+                ) &&
+                (
+                    this.Application == other.Application ||
+                    this.Application != null &&
+                    this.Application.Equals(other.Application)
+                ) &&
+                (
+                    this.ConversationContext == other.ConversationContext ||
+                    this.ConversationContext != null &&
+                    this.ConversationContext.Equals(other.ConversationContext)
                 );
         }
 
@@ -194,6 +245,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.ConversationTurns != null)
                     hash = hash * 59 + this.ConversationTurns.GetHashCode();
+
+                if (this.Filter != null)
+                    hash = hash * 59 + this.Filter.GetHashCode();
+
+                if (this.Application != null)
+                    hash = hash * 59 + this.Application.GetHashCode();
+
+                if (this.ConversationContext != null)
+                    hash = hash * 59 + this.ConversationContext.GetHashCode();
 
                 return hash;
             }

@@ -6,12 +6,12 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **User** | [**User**](User) |  | [optional] |
-| **Queue** | [**Queue**](Queue) |  | [optional] |
-| **Team** | [**Team**](Team) |  | [optional] |
+| **User** | [**UserFullReference**](UserFullReference) |  | [optional] |
+| **Queue** | [**QueueFullReference**](QueueFullReference) |  | [optional] |
+| **Team** | [**TeamFullReference**](TeamFullReference) |  | [optional] |
 | **Value** | **string** |  | [optional] |
 | **Type** | **string** |  | [optional] |
 
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

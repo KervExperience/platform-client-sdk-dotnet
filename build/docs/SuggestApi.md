@@ -155,6 +155,7 @@ Search resources.
 Requires ANY permissions: 
 
 * directory:user:view
+* routing:skill:view
 
 ### Example
 ```{"language":"csharp"}
@@ -273,4 +274,4 @@ namespace Example
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

@@ -105,6 +105,12 @@ namespace PureCloudPlatform.Client.V2.Model
             Knowledgebasedocumentversionid,
             
             /// <summary>
+            /// Enum Knowledgesettingid for "knowledgeSettingId"
+            /// </summary>
+            [EnumMember(Value = "knowledgeSettingId")]
+            Knowledgesettingid,
+            
+            /// <summary>
             /// Enum Mediatype for "mediaType"
             /// </summary>
             [EnumMember(Value = "mediaType")]
@@ -195,6 +201,12 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "nCannedResponseSuggestions")]
             Ncannedresponsesuggestions,
+            
+            /// <summary>
+            /// Enum Ndistinctconversations for "nDistinctConversations"
+            /// </summary>
+            [EnumMember(Value = "nDistinctConversations")]
+            Ndistinctconversations,
             
             /// <summary>
             /// Enum Ndistinctsuggestions for "nDistinctSuggestions"

@@ -18,6 +18,39 @@ namespace PureCloudPlatform.Client.V2.Model
     [DataContract]
     public partial class EstimateAvailableFullDayTimeOffResponse :  IEquatable<EstimateAvailableFullDayTimeOffResponse>
     {
+        /// <summary>
+        /// The override date type, if the requested day is an override date
+        /// </summary>
+        /// <value>The override date type, if the requested day is an override date</value>
+        [JsonConverter(typeof(UpgradeSdkEnumConverter))]
+        public enum OverrideDateTypeEnum
+        {
+            /// <summary>
+            /// Your SDK version is out of date and an unknown enum value was encountered. 
+            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+            /// in the Package Manager Console
+            /// </summary>
+            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+            OutdatedSdkVersion,
+            
+            /// <summary>
+            /// Enum Blocked for "Blocked"
+            /// </summary>
+            [EnumMember(Value = "Blocked")]
+            Blocked,
+            
+            /// <summary>
+            /// Enum Manualreview for "ManualReview"
+            /// </summary>
+            [EnumMember(Value = "ManualReview")]
+            Manualreview
+        }
+        /// <summary>
+        /// The override date type, if the requested day is an override date
+        /// </summary>
+        /// <value>The override date type, if the requested day is an override date</value>
+        [DataMember(Name="overrideDateType", EmitDefaultValue=false)]
+        public OverrideDateTypeEnum? OverrideDateType { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EstimateAvailableFullDayTimeOffResponse" /> class.
@@ -31,12 +64,18 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="DurationMinutes">An estimation of time off request length in minutes (required).</param>
         /// <param name="PayableMinutes">An estimation of payable part of time off request in minutes (required).</param>
         /// <param name="Flexible">Whether there is flexibility for a user to choose different hours than the system estimated (required).</param>
-        public EstimateAvailableFullDayTimeOffResponse(String Date = null, int? DurationMinutes = null, int? PayableMinutes = null, bool? Flexible = null)
+        /// <param name="OverrideDateType">The override date type, if the requested day is an override date.</param>
+        /// <param name="EarliestStartOffsetMinutes">Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled.</param>
+        /// <param name="LatestEndOffsetMinutes">Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled.</param>
+        public EstimateAvailableFullDayTimeOffResponse(String Date = null, int? DurationMinutes = null, int? PayableMinutes = null, bool? Flexible = null, OverrideDateTypeEnum? OverrideDateType = null, int? EarliestStartOffsetMinutes = null, int? LatestEndOffsetMinutes = null)
         {
             this.Date = Date;
             this.DurationMinutes = DurationMinutes;
             this.PayableMinutes = PayableMinutes;
             this.Flexible = Flexible;
+            this.OverrideDateType = OverrideDateType;
+            this.EarliestStartOffsetMinutes = EarliestStartOffsetMinutes;
+            this.LatestEndOffsetMinutes = LatestEndOffsetMinutes;
             
         }
         
@@ -77,6 +116,26 @@ namespace PureCloudPlatform.Client.V2.Model
         public bool? Flexible { get; set; }
 
 
+
+
+
+        /// <summary>
+        /// Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+        /// </summary>
+        /// <value>Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled</value>
+        [DataMember(Name="earliestStartOffsetMinutes", EmitDefaultValue=false)]
+        public int? EarliestStartOffsetMinutes { get; set; }
+
+
+
+        /// <summary>
+        /// Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+        /// </summary>
+        /// <value>Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled</value>
+        [DataMember(Name="latestEndOffsetMinutes", EmitDefaultValue=false)]
+        public int? LatestEndOffsetMinutes { get; set; }
+
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -90,6 +149,9 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  DurationMinutes: ").Append(DurationMinutes).Append("\n");
             sb.Append("  PayableMinutes: ").Append(PayableMinutes).Append("\n");
             sb.Append("  Flexible: ").Append(Flexible).Append("\n");
+            sb.Append("  OverrideDateType: ").Append(OverrideDateType).Append("\n");
+            sb.Append("  EarliestStartOffsetMinutes: ").Append(EarliestStartOffsetMinutes).Append("\n");
+            sb.Append("  LatestEndOffsetMinutes: ").Append(LatestEndOffsetMinutes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,6 +211,21 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.Flexible == other.Flexible ||
                     this.Flexible != null &&
                     this.Flexible.Equals(other.Flexible)
+                ) &&
+                (
+                    this.OverrideDateType == other.OverrideDateType ||
+                    this.OverrideDateType != null &&
+                    this.OverrideDateType.Equals(other.OverrideDateType)
+                ) &&
+                (
+                    this.EarliestStartOffsetMinutes == other.EarliestStartOffsetMinutes ||
+                    this.EarliestStartOffsetMinutes != null &&
+                    this.EarliestStartOffsetMinutes.Equals(other.EarliestStartOffsetMinutes)
+                ) &&
+                (
+                    this.LatestEndOffsetMinutes == other.LatestEndOffsetMinutes ||
+                    this.LatestEndOffsetMinutes != null &&
+                    this.LatestEndOffsetMinutes.Equals(other.LatestEndOffsetMinutes)
                 );
         }
 
@@ -174,6 +251,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
                 if (this.Flexible != null)
                     hash = hash * 59 + this.Flexible.GetHashCode();
+
+                if (this.OverrideDateType != null)
+                    hash = hash * 59 + this.OverrideDateType.GetHashCode();
+
+                if (this.EarliestStartOffsetMinutes != null)
+                    hash = hash * 59 + this.EarliestStartOffsetMinutes.GetHashCode();
+
+                if (this.LatestEndOffsetMinutes != null)
+                    hash = hash * 59 + this.LatestEndOffsetMinutes.GetHashCode();
 
                 return hash;
             }

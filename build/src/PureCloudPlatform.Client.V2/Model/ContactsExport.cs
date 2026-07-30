@@ -90,15 +90,6 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
         /// <summary>
-        /// Query conditions to apply on export
-        /// </summary>
-        /// <value>Query conditions to apply on export</value>
-        [DataMember(Name="queryConditions", EmitDefaultValue=false)]
-        public ContactsExportQueryConditions QueryConditions { get; set; }
-
-
-
-        /// <summary>
         /// The user that created this request
         /// </summary>
         /// <value>The user that created this request</value>
@@ -116,6 +107,15 @@ namespace PureCloudPlatform.Client.V2.Model
 
 
 
+        /// <summary>
+        /// When the request reached a terminal state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        /// </summary>
+        /// <value>When the request reached a terminal state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
+        [DataMember(Name="dateCompletion", EmitDefaultValue=false)]
+        public DateTime? DateCompletion { get; private set; }
+
+
+
 
 
         /// <summary>
@@ -124,6 +124,24 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <value>The location where the results of the request can be retrieved</value>
         [DataMember(Name="downloadUrl", EmitDefaultValue=false)]
         public string DownloadUrl { get; private set; }
+
+
+
+        /// <summary>
+        /// Number of rows returned by the export query
+        /// </summary>
+        /// <value>Number of rows returned by the export query</value>
+        [DataMember(Name="resultRowCount", EmitDefaultValue=false)]
+        public int? ResultRowCount { get; private set; }
+
+
+
+        /// <summary>
+        /// Query conditions to apply on export
+        /// </summary>
+        /// <value>Query conditions to apply on export</value>
+        [DataMember(Name="queryConditions", EmitDefaultValue=false)]
+        public ContactsExportQueryConditions QueryConditions { get; set; }
 
 
 
@@ -146,11 +164,13 @@ namespace PureCloudPlatform.Client.V2.Model
 
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DivisionIds: ").Append(DivisionIds).Append("\n");
-            sb.Append("  QueryConditions: ").Append(QueryConditions).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
+            sb.Append("  DateCompletion: ").Append(DateCompletion).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  DownloadUrl: ").Append(DownloadUrl).Append("\n");
+            sb.Append("  ResultRowCount: ").Append(ResultRowCount).Append("\n");
+            sb.Append("  QueryConditions: ").Append(QueryConditions).Append("\n");
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -203,11 +223,6 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.DivisionIds.SequenceEqual(other.DivisionIds)
                 ) &&
                 (
-                    this.QueryConditions == other.QueryConditions ||
-                    this.QueryConditions != null &&
-                    this.QueryConditions.Equals(other.QueryConditions)
-                ) &&
-                (
                     this.CreatedBy == other.CreatedBy ||
                     this.CreatedBy != null &&
                     this.CreatedBy.Equals(other.CreatedBy)
@@ -218,6 +233,11 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.DateCreated.Equals(other.DateCreated)
                 ) &&
                 (
+                    this.DateCompletion == other.DateCompletion ||
+                    this.DateCompletion != null &&
+                    this.DateCompletion.Equals(other.DateCompletion)
+                ) &&
+                (
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
@@ -226,6 +246,16 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.DownloadUrl == other.DownloadUrl ||
                     this.DownloadUrl != null &&
                     this.DownloadUrl.Equals(other.DownloadUrl)
+                ) &&
+                (
+                    this.ResultRowCount == other.ResultRowCount ||
+                    this.ResultRowCount != null &&
+                    this.ResultRowCount.Equals(other.ResultRowCount)
+                ) &&
+                (
+                    this.QueryConditions == other.QueryConditions ||
+                    this.QueryConditions != null &&
+                    this.QueryConditions.Equals(other.QueryConditions)
                 ) &&
                 (
                     this.SelfUri == other.SelfUri ||
@@ -251,20 +281,26 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.DivisionIds != null)
                     hash = hash * 59 + this.DivisionIds.GetHashCode();
 
-                if (this.QueryConditions != null)
-                    hash = hash * 59 + this.QueryConditions.GetHashCode();
-
                 if (this.CreatedBy != null)
                     hash = hash * 59 + this.CreatedBy.GetHashCode();
 
                 if (this.DateCreated != null)
                     hash = hash * 59 + this.DateCreated.GetHashCode();
 
+                if (this.DateCompletion != null)
+                    hash = hash * 59 + this.DateCompletion.GetHashCode();
+
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
 
                 if (this.DownloadUrl != null)
                     hash = hash * 59 + this.DownloadUrl.GetHashCode();
+
+                if (this.ResultRowCount != null)
+                    hash = hash * 59 + this.ResultRowCount.GetHashCode();
+
+                if (this.QueryConditions != null)
+                    hash = hash * 59 + this.QueryConditions.GetHashCode();
 
                 if (this.SelfUri != null)
                     hash = hash * 59 + this.SelfUri.GetHashCode();

@@ -36,7 +36,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**GetIntegrationsBotconnectorIntegrationIdBots**](#GetIntegrationsBotconnectorIntegrationIdBots) | **Get** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration |
 | [**GetIntegrationsBotconnectorIntegrationIdBotsSummaries**](#GetIntegrationsBotconnectorIntegrationIdBotsSummaries) | **Get** /api/v2/integrations/botconnector/{integrationId}/bots/summaries | Get a summary list of botConnector bots for this integration |
 | [**GetIntegrationsClientapps**](#GetIntegrationsClientapps) | **Get** /api/v2/integrations/clientapps | List permitted client app integrations for the logged in user |
-| [**GetIntegrationsClientappsUnifiedcommunications**](#GetIntegrationsClientappsUnifiedcommunications) | **Get** /api/v2/integrations/clientapps/unifiedcommunications | UC integration client application configuration. |
 | [**GetIntegrationsCredential**](#GetIntegrationsCredential) | **Get** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted |
 | [**GetIntegrationsCredentials**](#GetIntegrationsCredentials) | **Get** /api/v2/integrations/credentials | List multiple sets of credentials |
 | [**GetIntegrationsCredentialsListing**](#GetIntegrationsCredentialsListing) | **Get** /api/v2/integrations/credentials/listing | List multiple sets of credentials using cursor-based paging |
@@ -484,7 +483,7 @@ namespace Example
 
 ## GetIntegrations
 
-> [**IntegrationEntityListing**](IntegrationEntityListing) GetIntegrations (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null)
+> [**IntegrationEntityListing**](IntegrationEntityListing) GetIntegrations (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null, List<string> ids = null, string integrationType = null, string reportedState = null, string credentialId = null)
 
 
 List integrations
@@ -524,11 +523,12 @@ namespace Example
             var ids = new List<string>(); // List<string> | Comma-separated list of integration IDs to filter by (max 100) (optional) 
             var integrationType = webhook;  // string | Filter integrations by integration type ID (optional) 
             var reportedState = ACTIVE;  // string | Filter integrations by reported state (case-insensitive) (optional) 
+            var credentialId = a1b2c3d4-e5f6-7890-abcd-ef1234567890;  // string | Filter integrations by credential ID (optional) 
 
             try
             { 
                 // List integrations
-                IntegrationEntityListing result = apiInstance.GetIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState);
+                IntegrationEntityListing result = apiInstance.GetIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, ids, integrationType, reportedState, credentialId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -554,6 +554,7 @@ namespace Example
 | **ids** | [**List<string>**](string)| Comma-separated list of integration IDs to filter by (max 100) | [optional]  |
 | **integrationType** | **string**| Filter integrations by integration type ID | [optional]  |
 | **reportedState** | **string**| Filter integrations by reported state (case-insensitive) | [optional] <br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR |
+| **credentialId** | **string**| Filter integrations by credential ID | [optional]  |
 
 ### Return type
 
@@ -2106,83 +2107,6 @@ namespace Example
 ### Return type
 
 [**ClientAppEntityListing**](ClientAppEntityListing)
-
-
-## GetIntegrationsClientappsUnifiedcommunications
-
-> [**UCIntegrationListing**](UCIntegrationListing) GetIntegrationsClientappsUnifiedcommunications (int? pageSize = null, int? pageNumber = null, string sortBy = null, List<string> expand = null, string nextPage = null, string previousPage = null)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-UC integration client application configuration.
-
-Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-
-Requires ANY permissions: 
-
-* integration:unifiedCommunications:view
-
-### Example
-```{"language":"csharp"}
-using System;
-using System.Diagnostics;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Client;
-using PureCloudPlatform.Client.V2.Model;
-
-namespace Example
-{
-    public class GetIntegrationsClientappsUnifiedcommunicationsExample
-    {
-        public void main()
-        { 
-            // Configure OAuth2 access token for authorization: PureCloud OAuth
-            // The following example is using the Authorization Code Grant
-            var accessTokenInfo = Configuration.Default.ApiClient.PostToken("18a4c365-7ea3-4f0g-9fb7-884fb4d2e9c6",
-                "M7FfdYQyL5TA6BdbEZ8M9-Wx4uZai1rNQ7jcuFdcJJo",
-                "http://redirecturi.com/",
-                "6Zxcb0oASMBI55wQJ6bVmOmO57k8CxXBKgzDKtYXbtk");
-
-            var apiInstance = new IntegrationsApi();
-            var pageSize = 56;  // int? | The total page size requested (optional)  (default to 25)
-            var pageNumber = 56;  // int? | The page number requested (optional)  (default to 1)
-            var sortBy = sortBy_example;  // string | variable name requested to sort by (optional) 
-            var expand = new List<string>(); // List<string> | variable name requested by expand list (optional) 
-            var nextPage = nextPage_example;  // string | next page token (optional) 
-            var previousPage = previousPage_example;  // string | Previous page token (optional) 
-
-            try
-            { 
-                // UC integration client application configuration.
-                UCIntegrationListing result = apiInstance.GetIntegrationsClientappsUnifiedcommunications(pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling IntegrationsApi.GetIntegrationsClientappsUnifiedcommunications: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **pageSize** | **int?**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **int?**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **string**| variable name requested to sort by | [optional]  |
-| **expand** | [**List<string>**](string)| variable name requested by expand list | [optional]  |
-| **nextPage** | **string**| next page token | [optional]  |
-| **previousPage** | **string**| Previous page token | [optional]  |
-
-### Return type
-
-[**UCIntegrationListing**](UCIntegrationListing)
 
 
 ## GetIntegrationsCredential
@@ -6145,4 +6069,4 @@ namespace Example
 **string**
 
 
-_PureCloudPlatform.Client.V2 263.0.0_
+_PureCloudPlatform.Client.V2 268.0.0_

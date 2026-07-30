@@ -11,7 +11,7 @@ The following details the changes from the master branch to the logging-updates 
 **Comparison Base:** master  
 **Date:** January 2026  
 
----
+Documentation version PureCloudPlatform.Client.V2 268.0.0
 
 ## Executive Summary
 
